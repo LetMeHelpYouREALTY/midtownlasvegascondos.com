@@ -1,3 +1,5 @@
+/// <reference path="../../global.d.ts" />
+
 export function RealScoutSearch() {
   return (
     <div className="w-full">

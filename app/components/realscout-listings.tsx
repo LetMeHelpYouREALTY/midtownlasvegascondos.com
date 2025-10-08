@@ -1,3 +1,5 @@
+/// <reference path="../../global.d.ts" />
+
 interface RealScoutListingsProps {
   title?: string
   description?: string
