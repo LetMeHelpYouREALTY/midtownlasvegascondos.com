@@ -1,4 +1,6 @@
 // RealScout custom element type definitions
+// These elements are loaded via Cloudflare Worker
+
 declare namespace JSX {
   interface IntrinsicElements {
     'realscout-advanced-search': {
@@ -17,4 +19,6 @@ declare namespace JSX {
     }
   }
 }
+
+export {}
 
