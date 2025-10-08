@@ -79,7 +79,16 @@ export function Footer() {
                   921 S Main St<br />
                   Las Vegas, NV 89101
                 </p>
-                <p>(702) 500-1955</p>
+                <p>
+                  <a href="tel:7025001955" className="hover:text-white transition-colors">
+                    (702) 500-1955
+                  </a>
+                </p>
+                <p>
+                  <a href="mailto:DrJanSells@MidtownLasVegasCondos.com" className="hover:text-white transition-colors">
+                    DrJanSells@MidtownLasVegasCondos.com
+                  </a>
+                </p>
                 <p>
                   Mon-Fri: 9 am – 5 pm<br />
                   Sat/Sun: Closed

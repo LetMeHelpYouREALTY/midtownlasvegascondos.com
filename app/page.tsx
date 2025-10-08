@@ -184,7 +184,19 @@ export default function HomePage() {
             </div>
             <div>
               <h3 className="text-xl font-semibold text-slate-900 mb-2">Phone</h3>
-              <p className="text-slate-600">(702) 500-1955</p>
+              <p className="text-slate-600">
+                <a href="tel:7025001955" className="hover:text-slate-900 transition-colors">
+                  (702) 500-1955
+                </a>
+              </p>
+            </div>
+            <div>
+              <h3 className="text-xl font-semibold text-slate-900 mb-2">Email</h3>
+              <p className="text-slate-600">
+                <a href="mailto:DrJanSells@MidtownLasVegasCondos.com" className="hover:text-slate-900 transition-colors">
+                  DrJanSells@MidtownLasVegasCondos.com
+                </a>
+              </p>
             </div>
             <div>
               <h3 className="text-xl font-semibold text-slate-900 mb-2">Hours</h3>
