@@ -37,7 +37,6 @@ export function RealScoutListings({
           )}
         </div>
       )}
-      {/* @ts-expect-error - Custom element loaded via Cloudflare Worker */}
       {React.createElement('realscout-office-listings', {
         'agent-encoded-id': 'QWdlbnQtMjI1MDUw',
         'sort-order': sortOrder,
