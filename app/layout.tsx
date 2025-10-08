@@ -1,9 +1,10 @@
 import type { Metadata } from 'next'
-import { GeistSans } from 'geist/font/sans'
-import { GeistMono } from 'geist/font/mono'
+import { Inter } from 'next/font/google'
 import './globals.css'
 import { Header } from './components/header'
 import { Footer } from './components/footer'
+
+const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
   title: 'Midtown Las Vegas Condos | Luxury Living in the Arts District',
@@ -33,8 +34,8 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" className={`${GeistSans.variable} ${GeistMono.variable}`}>
-      <body className="font-sans antialiased">
+    <html lang="en">
+      <body className={`${inter.className} antialiased`}>
         <Header />
         <main className="pt-16">{children}</main>
         <Footer />
