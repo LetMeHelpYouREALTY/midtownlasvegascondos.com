@@ -41,7 +41,7 @@ export function Footer() {
               <h4 className="font-bold text-lg mb-4">Navigation</h4>
               <div className="grid grid-cols-2 gap-4">
                 {navigation.map((item) =>
-                  'items' in item ? (
+                  'items' in item && item.items ? (
                     <div key={item.name}>
                       <div className="font-semibold mb-2">{item.name}</div>
                       <ul className="space-y-2 text-sm text-slate-300">
@@ -57,7 +57,7 @@ export function Footer() {
                         ))}
                       </ul>
                     </div>
-                  ) : (
+                  ) : 'href' in item ? (
                     <div key={item.name}>
                       <Link
                         href={item.href}
@@ -66,7 +66,7 @@ export function Footer() {
                         {item.name}
                       </Link>
                     </div>
-                  )
+                  ) : null
                 )}
               </div>
             </div>
