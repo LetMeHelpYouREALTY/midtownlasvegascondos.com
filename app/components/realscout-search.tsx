@@ -6,15 +6,3 @@ export function RealScoutSearch() {
   )
 }
 
-// Declare custom element for TypeScript
-declare global {
-  namespace JSX {
-    interface IntrinsicElements {
-      'realscout-advanced-search': {
-        'agent-encoded-id': string
-        children?: React.ReactNode
-      }
-    }
-  }
-}
-

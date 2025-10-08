@@ -1,21 +1,3 @@
-// Declare custom element for TypeScript
-declare global {
-  namespace JSX {
-    interface IntrinsicElements {
-      'realscout-office-listings': {
-        'agent-encoded-id': string
-        'sort-order'?: string
-        'listing-status'?: string
-        'property-types'?: string
-        'price-min'?: string
-        'price-max'?: string
-        'limit'?: string
-        children?: React.ReactNode
-      }
-    }
-  }
-}
-
 interface RealScoutListingsProps {
   title?: string
   description?: string
