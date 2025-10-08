@@ -1,286 +1,201 @@
-'use client'
-
-import { useState, useEffect } from 'react'
-import { useRouter } from 'next/navigation'
-import PromptComponent from './components/prompt-component'
-import ApiKeyError from './components/api-key-error'
-import RateLimitDialog from './components/rate-limit-dialog'
-import ErrorDialog from './components/error-dialog'
-import { useApiValidation } from '../lib/hooks/useApiValidation'
+import Link from 'next/link'
+import Image from 'next/image'
+import { Newsletter } from './components/newsletter'
+import { UpcomingEvents } from './components/upcoming-events'
 
 export default function HomePage() {
-  const router = useRouter()
-  const [isLoading, setIsLoading] = useState(false)
-  const [error, setError] = useState<string | null>(null)
-  const [projects, setProjects] = useState<any[]>([])
-  const [projectsLoaded, setProjectsLoaded] = useState(false)
-  const [selectedProjectId, setSelectedProjectId] = useState('new')
-  const [selectedChatId, setSelectedChatId] = useState('new')
-  const [projectChats, setProjectChats] = useState<any[]>([])
-  const [showRateLimitDialog, setShowRateLimitDialog] = useState(false)
-  const [rateLimitInfo, setRateLimitInfo] = useState<{
-    resetTime?: string
-    remaining?: number
-  }>({})
-  const [showErrorDialog, setShowErrorDialog] = useState(false)
-  const [errorMessage, setErrorMessage] = useState('')
-
-  // API validation on page load
-  const { isValidating, showApiKeyError } = useApiValidation()
-
-  // Load projects on page mount (only if API is valid)
-  useEffect(() => {
-    if (!isValidating && !showApiKeyError) {
-      loadProjectsWithCache()
-    }
-  }, [isValidating, showApiKeyError])
-
-  const loadProjectsWithCache = async () => {
-    // First, try to load from sessionStorage for immediate display
-    try {
-      const cachedProjects = sessionStorage.getItem('projects')
-      if (cachedProjects) {
-        const parsedProjects = JSON.parse(cachedProjects)
-        setProjects(parsedProjects)
-        setProjectsLoaded(true)
-      }
-    } catch (err) {
-      // Silently handle cache loading errors
-    }
-
-    // Then fetch fresh data in the background
-    loadProjects()
-  }
-
-  const loadProjects = async () => {
-    try {
-      const response = await fetch('/api/projects')
-      if (response.ok) {
-        const data = await response.json()
-        const projectsData = data.data || data || []
-        setProjects(projectsData)
-        setProjectsLoaded(true)
-
-        // Store in sessionStorage for next time
-        try {
-          sessionStorage.setItem('projects', JSON.stringify(projectsData))
-        } catch (err) {
-          // Silently handle cache storage errors
-        }
-      } else if (response.status === 401) {
-        const errorData = await response.json()
-        if (errorData.error === 'API_KEY_MISSING') {
-          // API key error is now handled by useApiValidation hook
-          return
-        }
-      }
-    } catch (err) {
-      // Silently handle project loading errors
-    } finally {
-      // Mark as loaded even if there was an error
-      setProjectsLoaded(true)
-    }
-  }
-
-  const loadProjectChatsWithCache = async (projectId: string) => {
-    // First, try to load from sessionStorage for immediate display
-    try {
-      const cachedChats = sessionStorage.getItem(`project-chats-${projectId}`)
-      if (cachedChats) {
-        const parsedChats = JSON.parse(cachedChats)
-        setProjectChats(parsedChats)
-      }
-    } catch (err) {
-      // Silently handle cache loading errors
-    }
-
-    // Then fetch fresh data in the background
-    try {
-      const response = await fetch(`/api/projects/${projectId}`)
-      if (response.ok) {
-        const data = await response.json()
-        const chatsData = data.chats || []
-        setProjectChats(chatsData)
-
-        // Store in sessionStorage for next time
-        try {
-          sessionStorage.setItem(
-            `project-chats-${projectId}`,
-            JSON.stringify(chatsData),
-          )
-        } catch (err) {
-          // Silently handle cache storage errors
-        }
-      }
-    } catch (err) {
-      // Silently handle project chats loading errors
-    }
-  }
-
-  const handleProjectChange = async (newProjectId: string) => {
-    if (newProjectId === 'new') {
-      // Stay on homepage for new project
-      setSelectedProjectId('new')
-      setSelectedChatId('new')
-      setProjectChats([])
-    } else {
-      // Redirect to the selected project page
-      router.push(`/projects/${newProjectId}`)
-    }
-  }
-
-  const handleChatChange = (newChatId: string) => {
-    setSelectedChatId(newChatId)
-  }
-
-  const handleSubmit = async (
-    prompt: string,
-    settings: { modelId: string; imageGenerations: boolean; thinking: boolean },
-    attachments?: { url: string; name?: string; type?: string }[],
-  ) => {
-    setIsLoading(true)
-    setError(null)
-
-    try {
-      const response = await fetch('/api/generate', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          message: prompt,
-          modelId: settings.modelId,
-          imageGenerations: settings.imageGenerations,
-          thinking: settings.thinking,
-          ...(attachments && attachments.length > 0 && { attachments }),
-        }),
-      })
-
-      if (!response.ok) {
-        const errorData = await response.json()
-
-        // Check for API key error
-        if (response.status === 401 && errorData.error === 'API_KEY_MISSING') {
-          // API key error is now handled by useApiValidation hook
-          return
-        }
-
-        // Check for rate limit error
-        if (
-          response.status === 429 &&
-          errorData.error === 'RATE_LIMIT_EXCEEDED'
-        ) {
-          setRateLimitInfo({
-            resetTime: errorData.resetTime,
-            remaining: errorData.remaining,
-          })
-          setShowRateLimitDialog(true)
-          return
-        }
-
-        setErrorMessage(errorData.error || 'Failed to generate app')
-        setShowErrorDialog(true)
-        return
-      }
-
-      const data = await response.json()
-
-      // Redirect to the new chat
-      if (data.id || data.chatId) {
-        const newChatId = data.id || data.chatId
-        const projectId = data.projectId || 'default' // Fallback project
-        router.push(`/projects/${projectId}/chats/${newChatId}`)
-        return
-      }
-    } catch (err) {
-      setErrorMessage(
-        err instanceof Error
-          ? err.message
-          : 'Failed to generate app. Please try again.',
-      )
-      setShowErrorDialog(true)
-    } finally {
-      setIsLoading(false)
-    }
-  }
-
-  // Show API key error page if needed
-  if (showApiKeyError) {
-    return <ApiKeyError />
-  }
-
   return (
-    <div className="relative min-h-dvh bg-background">
-      {/* Homepage Welcome Message */}
-      <div className="absolute inset-0 flex items-center justify-center">
-        <div
-          className="text-center px-4 sm:px-6"
-          style={{ transform: 'translateY(-25%)' }}
-        >
-          <h1 className="text-4xl md:text-6xl font-bold text-foreground mb-4 text-pretty">
-            Simple v0
+    <div className="min-h-screen bg-white">
+      {/* Hero Section */}
+      <section className="relative h-screen flex items-center justify-center bg-gradient-to-br from-slate-900 to-slate-700">
+        <div className="absolute inset-0 bg-black/40" />
+        <div className="relative z-10 text-center px-4 sm:px-6 max-w-4xl mx-auto">
+          <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 tracking-tight">
+            Meet me
+            <br />
+            in Midtown.
           </h1>
-          <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto text-pretty">
-            This is a demo of the{' '}
-            <a
-              href="https://v0.dev/docs/api/platform"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-foreground hover:text-muted-foreground underline"
-            >
-              v0 Platform API
-            </a>
-            . Build your own AI app builder with programmatic access to v0's app
-            generation pipeline.
+          <p className="text-xl md:text-2xl text-white/90 mb-8">
+            Discover luxury living in the heart of Las Vegas Arts District
           </p>
-
-          {/* Mobile-only GitHub link */}
-          <div className="sm:hidden mt-6 flex items-center justify-center">
-            <a
-              href="https://github.com/vercel/simple-v0"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 bg-muted hover:bg-muted/80 text-muted-foreground px-4 py-2 rounded-lg text-sm font-medium transition-colors"
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Link
+              href="#residences"
+              className="px-8 py-4 bg-white text-slate-900 rounded-lg font-semibold hover:bg-slate-100 transition-colors"
             >
-              <svg
-                width="16"
-                height="16"
-                viewBox="0 0 24 24"
-                fill="currentColor"
-              >
-                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
-              </svg>
-              View on GitHub
-            </a>
+              Explore Residences
+            </Link>
+            <Link
+              href="#contact"
+              className="px-8 py-4 bg-transparent border-2 border-white text-white rounded-lg font-semibold hover:bg-white/10 transition-colors"
+            >
+              Contact Us
+            </Link>
           </div>
         </div>
-      </div>
+      </section>
 
-      <PromptComponent
-        onSubmit={handleSubmit}
-        isLoading={isLoading}
-        placeholder="Describe your app..."
-        showDropdowns={projectsLoaded}
-        projects={projects}
-        projectChats={projectChats}
-        currentProjectId={selectedProjectId}
-        currentChatId={selectedChatId}
-        onProjectChange={handleProjectChange}
-        onChatChange={handleChatChange}
-      />
+      {/* Midtown at the Arts District */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+        <div className="text-center mb-12">
+          <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6">
+            Midtown at the Arts District
+          </h2>
+          <p className="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
+            Say hello to the most rapidly evolving cultural center in the heart of Las Vegas. 
+            This is where you can enjoy a walkable neighborhood with art galleries and privately 
+            owned restaurants and now residences at Midtown.
+          </p>
+        </div>
 
-      <RateLimitDialog
-        isOpen={showRateLimitDialog}
-        onClose={() => setShowRateLimitDialog(false)}
-        resetTime={rateLimitInfo.resetTime}
-        remaining={rateLimitInfo.remaining}
-      />
+        {/* Category Grid */}
+        <div className="grid grid-cols-2 md:grid-cols-5 gap-4 mt-16">
+          {['Shop', 'Dine', 'Live', 'Stay', 'Events'].map((category) => (
+            <Link
+              key={category}
+              href={`#${category.toLowerCase()}`}
+              className="aspect-square bg-slate-100 hover:bg-slate-200 transition-colors rounded-lg flex items-center justify-center group"
+            >
+              <span className="text-2xl font-semibold text-slate-900 group-hover:scale-110 transition-transform">
+                {category}
+              </span>
+            </Link>
+          ))}
+        </div>
+      </section>
 
-      <ErrorDialog
-        isOpen={showErrorDialog}
-        onClose={() => setShowErrorDialog(false)}
-        message={errorMessage}
-      />
+      {/* Where is Midtown */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-slate-50">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            <div>
+              <p className="text-sm font-semibold text-slate-500 uppercase tracking-wide mb-4">
+                The Arts District <span className="italic">North of Charleston</span>
+              </p>
+              <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6">
+                Where is Midtown?
+              </h2>
+              <p className="text-lg text-slate-600 leading-relaxed">
+                Emerging is Midtown, the new neighborhood just north of Charleston, offering 
+                the perfect homebase to fully experience the Las Vegas Arts District.
+              </p>
+            </div>
+            <div className="aspect-video bg-slate-200 rounded-lg">
+              {/* Map or image placeholder */}
+              <div className="w-full h-full flex items-center justify-center text-slate-400">
+                Map Location
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Journey of Transformation */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+        <div className="text-center mb-16">
+          <p className="text-sm font-semibold text-slate-500 uppercase tracking-wide mb-4">
+            Constantly Evolving but Always True to Itself
+          </p>
+          <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6">
+            A Journey of Transformation
+          </h2>
+          <p className="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
+            From its origins as an industrial hub to the art center of Sin City, change is 
+            baked into the Arts District identity. Witness the transformation of a neighborhood 
+            that continues to redefine art, design and culture.
+          </p>
+        </div>
+
+        {/* Timeline */}
+        <div className="relative">
+          <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-0.5 bg-slate-200" />
+          <div className="space-y-12">
+            {[
+              { year: '1997', event: 'Wes Myles opens the Arts Factory' },
+              { year: '1999', event: 'Mayor Oscar Goodman elected' },
+              { year: '2002', event: 'Renamed the Las Vegas Arts District', event2: 'Cindy Funkhouser founds First Friday' },
+              { year: '2009', event: '18b Arts District sign installed on Casino Center Blvd.' },
+              { year: '2014', event: 'Anthony Bourdain highlights Makers & Finders on "Parts Unknown"' },
+              { year: '2016', event: 'Majestic Repertory Theatre Opens' },
+              { year: '2022', event: 'The English Hotel Opens', event2: 'The Pepper Club Opens' },
+              { year: '2024', event: 'CNN called the Arts District "the most exciting neighborhood" in Las Vegas' },
+              { year: '2025', event: 'The Plaza Tower will open' },
+            ].map((item, index) => (
+              <div
+                key={item.year}
+                className={`relative grid md:grid-cols-2 gap-8 ${
+                  index % 2 === 0 ? '' : 'md:text-right'
+                }`}
+              >
+                <div className={index % 2 === 0 ? 'md:pr-12' : 'md:col-start-2 md:pl-12'}>
+                  <div className="bg-white p-6 rounded-lg shadow-sm border border-slate-200">
+                    <div className="text-3xl font-bold text-slate-900 mb-2">{item.year}</div>
+                    <p className="text-slate-600">{item.event}</p>
+                    {item.event2 && <p className="text-slate-600 mt-2">{item.event2}</p>}
+                  </div>
+                </div>
+                <div className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 w-4 h-4 bg-slate-900 rounded-full border-4 border-white shadow" />
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Upcoming Events */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-slate-50">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6">
+              Upcoming Events
+            </h2>
+            <p className="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
+              Stay in the know with what's happening in Midtown. From art walks and food 
+              festivals to pop-up markets and live performances, there's always something 
+              exciting to discover.
+            </p>
+          </div>
+          <UpcomingEvents />
+        </div>
+      </section>
+
+      {/* Newsletter Signup */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-slate-900 text-white">
+        <div className="max-w-xl mx-auto text-center">
+          <h2 className="text-3xl font-bold mb-4">
+            Get the latest Midtown happenings in your inbox
+          </h2>
+          <Newsletter />
+        </div>
+      </section>
+
+      {/* Contact Section */}
+      <section id="contact" className="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+        <div className="text-center">
+          <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-12">
+            Contact Us
+          </h2>
+          <div className="grid md:grid-cols-3 gap-8">
+            <div>
+              <h3 className="text-xl font-semibold text-slate-900 mb-2">Address</h3>
+              <p className="text-slate-600">
+                921 S Main St<br />
+                Las Vegas, NV 89101
+              </p>
+            </div>
+            <div>
+              <h3 className="text-xl font-semibold text-slate-900 mb-2">Phone</h3>
+              <p className="text-slate-600">(702) 500-1955</p>
+            </div>
+            <div>
+              <h3 className="text-xl font-semibold text-slate-900 mb-2">Hours</h3>
+              <p className="text-slate-600">
+                Mon-Fri: 9 am – 5 pm<br />
+                Sat/Sun: Closed
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
   )
 }
