@@ -2,6 +2,8 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { Newsletter } from './components/newsletter'
 import { UpcomingEvents } from './components/upcoming-events'
+import { RealScoutSearch } from './components/realscout-search'
+import { RealScoutListings } from './components/realscout-listings'
 
 export default function HomePage() {
   return (
@@ -35,8 +37,23 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* Property Search Widget */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto bg-white">
+        <div className="text-center mb-8">
+          <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-4">
+            Find Your Midtown Home
+          </h2>
+          <p className="text-xl text-slate-600 max-w-3xl mx-auto">
+            Search available properties in the Arts District
+          </p>
+        </div>
+        <div className="max-w-4xl mx-auto">
+          <RealScoutSearch />
+        </div>
+      </section>
+
       {/* Midtown at the Arts District */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+      <section className="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto bg-slate-50">
         <div className="text-center mb-12">
           <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6">
             Midtown at the Arts District
@@ -138,6 +155,20 @@ export default function HomePage() {
               </div>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* Featured Listings */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
+        <div className="max-w-7xl mx-auto">
+          <RealScoutListings
+            title="Featured Midtown Properties"
+            description="Explore luxury condos and homes in the heart of the Arts District"
+            priceMin="300000"
+            priceMax="2000000"
+            sortOrder="PRICE_LOW"
+            propertyTypes=",CONDO,SFR"
+          />
         </div>
       </section>
 

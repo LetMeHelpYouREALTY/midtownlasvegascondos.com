@@ -1,4 +1,6 @@
 import Link from 'next/link'
+import { RealScoutSearch } from '@/app/components/realscout-search'
+import { RealScoutListings } from '@/app/components/realscout-listings'
 
 export default function MidtownPlazaPage() {
   return (
@@ -91,6 +93,38 @@ export default function MidtownPlazaPage() {
         </div>
       </section>
 
+      {/* Available Listings Near Plaza */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
+        <div className="max-w-7xl mx-auto">
+          <RealScoutListings
+            title="Homes Near Midtown Plaza"
+            description="Walk to restaurants, shops, and entertainment from these properties"
+            priceMin="200000"
+            priceMax="1000000"
+            sortOrder="PRICE_LOW"
+            propertyTypes=",CONDO,SFR"
+            limit="9"
+          />
+        </div>
+      </section>
+
+      {/* Property Search */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-slate-50">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-8">
+            <h2 className="text-4xl font-bold text-slate-900 mb-4">
+              Find Homes Near Midtown Plaza
+            </h2>
+            <p className="text-xl text-slate-600 max-w-3xl mx-auto">
+              Search all available properties in walking distance
+            </p>
+          </div>
+          <div className="max-w-4xl mx-auto">
+            <RealScoutSearch />
+          </div>
+        </div>
+      </section>
+
       {/* CTA Section */}
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-slate-50">
         <div className="max-w-4xl mx-auto text-center">
@@ -101,7 +135,7 @@ export default function MidtownPlazaPage() {
             Experience the vibrant heart of the Arts District. Open daily with something new to discover.
           </p>
           <Link
-            href="#contact"
+            href="/contact"
             className="inline-block px-8 py-4 bg-slate-900 text-white rounded-lg font-semibold hover:bg-slate-800 transition-colors"
           >
             Get Directions

@@ -1,4 +1,6 @@
 import Link from 'next/link'
+import { RealScoutSearch } from '@/app/components/realscout-search'
+import { RealScoutListings } from '@/app/components/realscout-listings'
 
 export default function EnglishResidencesPage() {
   return (
@@ -97,6 +99,38 @@ export default function EnglishResidencesPage() {
         </div>
       </section>
 
+      {/* Available Condo Listings */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
+        <div className="max-w-7xl mx-auto">
+          <RealScoutListings
+            title="Available English Residences & Midtown Condos"
+            description="Browse luxury condo-hotel units and condominiums in the Arts District"
+            priceMin="250000"
+            priceMax="1500000"
+            sortOrder="PRICE_LOW"
+            propertyTypes=",CONDO"
+            limit="9"
+          />
+        </div>
+      </section>
+
+      {/* Property Search */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-slate-50">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-8">
+            <h2 className="text-4xl font-bold text-slate-900 mb-4">
+              Search All Properties
+            </h2>
+            <p className="text-xl text-slate-600 max-w-3xl mx-auto">
+              Find your perfect home in Midtown and the Arts District
+            </p>
+          </div>
+          <div className="max-w-4xl mx-auto">
+            <RealScoutSearch />
+          </div>
+        </div>
+      </section>
+
       {/* CTA Section */}
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-slate-50">
         <div className="max-w-4xl mx-auto text-center">
@@ -107,7 +141,7 @@ export default function EnglishResidencesPage() {
             Join our webinar to discover the unique opportunity of owning an English Residence.
           </p>
           <Link
-            href="#contact"
+            href="/contact"
             className="inline-block px-8 py-4 bg-slate-900 text-white rounded-lg font-semibold hover:bg-slate-800 transition-colors"
           >
             Contact Us Today

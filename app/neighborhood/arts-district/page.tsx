@@ -1,4 +1,6 @@
 import Link from 'next/link'
+import { RealScoutSearch } from '@/app/components/realscout-search'
+import { RealScoutListings } from '@/app/components/realscout-listings'
 
 export default function ArtsDistrictPage() {
   return (
@@ -142,6 +144,38 @@ export default function ArtsDistrictPage() {
         </div>
       </section>
 
+      {/* Featured Arts District Listings */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
+        <div className="max-w-7xl mx-auto">
+          <RealScoutListings
+            title="Arts District Properties"
+            description="Live among galleries, restaurants, and creative spaces"
+            priceMin="250000"
+            priceMax="1500000"
+            sortOrder="DATE_NEW"
+            propertyTypes=",CONDO,SFR,TOWNHOUSE"
+            limit="12"
+          />
+        </div>
+      </section>
+
+      {/* Property Search */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-slate-50">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-8">
+            <h2 className="text-4xl font-bold text-slate-900 mb-4">
+              Search Arts District Homes
+            </h2>
+            <p className="text-xl text-slate-600 max-w-3xl mx-auto">
+              Browse all available properties in the most exciting neighborhood in Las Vegas
+            </p>
+          </div>
+          <div className="max-w-4xl mx-auto">
+            <RealScoutSearch />
+          </div>
+        </div>
+      </section>
+
       {/* CTA Section */}
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-slate-50">
         <div className="max-w-4xl mx-auto text-center">
@@ -149,11 +183,11 @@ export default function ArtsDistrictPage() {
             Live in the Arts District
           </h2>
           <p className="text-xl text-slate-600 mb-8">
-            Make the most exciting neighborhood in Las Vegas your home. Contact us to learn about 
+            Make the most exciting neighborhood in Las Vegas your home. Contact Dr. Jan to learn about 
             available residences in Midtown.
           </p>
           <Link
-            href="#contact"
+            href="/contact"
             className="inline-block px-8 py-4 bg-slate-900 text-white rounded-lg font-semibold hover:bg-slate-800 transition-colors"
           >
             Contact Us
