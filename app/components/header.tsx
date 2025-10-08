@@ -39,7 +39,7 @@ export function Header() {
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center space-x-8">
             {navigation.map((item) =>
-              'items' in item ? (
+              'items' in item && item.items ? (
                 <div key={item.name} className="relative group">
                   <button className="text-slate-700 hover:text-slate-900 font-medium transition-colors">
                     {item.name}
@@ -58,7 +58,7 @@ export function Header() {
                     </div>
                   </div>
                 </div>
-              ) : (
+              ) : 'href' in item ? (
                 <Link
                   key={item.name}
                   href={item.href}
@@ -66,7 +66,7 @@ export function Header() {
                 >
                   {item.name}
                 </Link>
-              )
+              ) : null
             )}
           </div>
 
@@ -126,7 +126,7 @@ export function Header() {
           <div className="lg:hidden py-4 border-t border-slate-200">
             <div className="space-y-4">
               {navigation.map((item) =>
-                'items' in item ? (
+                'items' in item && item.items ? (
                   <div key={item.name}>
                     <div className="font-semibold text-slate-900 mb-2">{item.name}</div>
                     <div className="pl-4 space-y-2">
@@ -142,7 +142,7 @@ export function Header() {
                       ))}
                     </div>
                   </div>
-                ) : (
+                ) : 'href' in item ? (
                   <Link
                     key={item.name}
                     href={item.href}
@@ -151,7 +151,7 @@ export function Header() {
                   >
                     {item.name}
                   </Link>
-                )
+                ) : null
               )}
             </div>
           </div>
