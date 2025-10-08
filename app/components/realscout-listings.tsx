@@ -44,6 +44,7 @@ export function RealScoutListings({
         price-min={priceMin}
         price-max={priceMax}
         limit={limit}
+      {/* @ts-expect-error - Custom element loaded via Cloudflare Worker */}
       ></realscout-office-listings>
     </div>
   )
