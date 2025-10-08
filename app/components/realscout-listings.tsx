@@ -1,5 +1,7 @@
 /// <reference path="../../global.d.ts" />
 
+import React from 'react'
+
 interface RealScoutListingsProps {
   title?: string
   description?: string
@@ -36,16 +38,15 @@ export function RealScoutListings({
         </div>
       )}
       {/* @ts-expect-error - Custom element loaded via Cloudflare Worker */}
-      <realscout-office-listings
-        agent-encoded-id="QWdlbnQtMjI1MDUw"
-        sort-order={sortOrder}
-        listing-status={listingStatus}
-        property-types={propertyTypes}
-        price-min={priceMin}
-        price-max={priceMax}
-        limit={limit}
-      {/* @ts-expect-error - Custom element loaded via Cloudflare Worker */}
-      ></realscout-office-listings>
+      {React.createElement('realscout-office-listings', {
+        'agent-encoded-id': 'QWdlbnQtMjI1MDUw',
+        'sort-order': sortOrder,
+        'listing-status': listingStatus,
+        'property-types': propertyTypes,
+        'price-min': priceMin,
+        'price-max': priceMax,
+        'limit': limit,
+      })}
     </div>
   )
 }
