@@ -136,7 +136,7 @@ export function Footer() {
 
           {/* Copyright */}
           <div className="text-center text-sm text-slate-400 border-t border-slate-800 pt-8">
-            <p>© 2025 Midtown Las Vegas Condos. All Rights Reserved.</p>
+            <p>© 2025 Midtown Las Vegas | Condos By Dr. Jan Duffy S.0197614. All Rights Reserved.</p>
           </div>
         </div>
       </div>
