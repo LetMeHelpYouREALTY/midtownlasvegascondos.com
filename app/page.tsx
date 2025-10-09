@@ -4,6 +4,7 @@ import { Newsletter } from './components/newsletter'
 import { UpcomingEvents } from './components/upcoming-events'
 import { RealScoutSearch } from './components/realscout-search'
 import { RealScoutListings } from './components/realscout-listings'
+import { PageFAQ } from './components/page-faq'
 
 export default function HomePage() {
   return (
@@ -206,6 +207,44 @@ export default function HomePage() {
             </p>
           </div>
           <UpcomingEvents />
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-slate-50">
+        <div className="max-w-7xl mx-auto">
+          <PageFAQ
+            faqs={[
+              {
+                question: 'What is Midtown Las Vegas?',
+                answer:
+                  'Midtown is the emerging neighborhood just north of Charleston Boulevard in the heart of the Las Vegas Arts District. It offers walkable access to galleries, restaurants, The English Hotel, and vibrant cultural events like First Friday.',
+              },
+              {
+                question: 'What types of properties are available in Midtown?',
+                answer:
+                  'Midtown offers luxury condos, condo-hotels (The English Residences), townhouses, and single-family homes ranging from $250,000 to $2,000,000+. Browse available properties at drjanduffy.realscout.com or call Dr. Jan at (702) 500-1955.',
+              },
+              {
+                question: 'Why should I buy in the Arts District?',
+                answer:
+                  'CNN called it "the most exciting neighborhood" in Las Vegas. You get walkable urban living, monthly First Friday events, 30+ art galleries, locally-owned restaurants, and a vibrant creative community - all while being close to the Strip and downtown.',
+              },
+              {
+                question: 'How do I get started?',
+                answer:
+                  'Contact Dr. Jan Duffy at (702) 500-1955 or DrJanSells@MidtownLasVegasCondos.com. She specializes in Midtown properties and can schedule a personal tour, show you available homes, and guide you through the entire buying process.',
+              },
+            ]}
+          />
+          <div className="text-center mt-8">
+            <Link
+              href="/faq"
+              className="text-slate-900 hover:text-slate-700 font-semibold underline"
+            >
+              View All FAQs →
+            </Link>
+          </div>
         </div>
       </section>
 

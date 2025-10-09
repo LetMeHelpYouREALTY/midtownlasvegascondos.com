@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import { RealScoutSearch } from '@/app/components/realscout-search'
 import { RealScoutListings } from '@/app/components/realscout-listings'
+import { PageFAQ } from '@/app/components/page-faq'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
@@ -129,6 +130,32 @@ export default function MidtownPlazaPage() {
           <div className="max-w-4xl mx-auto">
             <RealScoutSearch />
           </div>
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
+        <div className="max-w-7xl mx-auto">
+          <PageFAQ
+            title="Midtown Plaza FAQ"
+            faqs={[
+              {
+                question: 'What businesses are in Midtown Plaza?',
+                answer:
+                  'Midtown Plaza is home to locally-owned restaurants, unique retail shops, cafes, and community spaces. It serves as the central hub for the neighborhood with new businesses regularly opening.',
+              },
+              {
+                question: 'Is parking available near Midtown Plaza?',
+                answer:
+                  'Yes! Street parking is available throughout Midtown, and many residential properties near the Plaza include assigned parking. First Friday events may have busier parking, but the neighborhood is very walkable.',
+              },
+              {
+                question: 'How far is Midtown Plaza from the Strip?',
+                answer:
+                  'Midtown Plaza is approximately 2-3 miles from the Las Vegas Strip, about a 10-minute drive or rideshare. Many residents appreciate being close enough to work on the Strip but living in a walkable neighborhood.',
+              },
+            ]}
+          />
         </div>
       </section>
 
