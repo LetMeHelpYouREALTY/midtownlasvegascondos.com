@@ -47,13 +47,13 @@ export default function ArtsDistrictPage() {
             </h3>
             <ul className="space-y-3">
               {[
-                'Over 30 galleries and art spaces',
-                'Monthly First Friday art walk',
-                'Street art and murals throughout',
-                'Artist studios and workshops',
-                'Performance venues and theaters',
+                { text: 'Over 30 galleries and art spaces', link: null },
+                { text: 'Monthly First Friday art walk', link: '/neighborhood/first-fridays' },
+                { text: 'Street art and murals throughout', link: null },
+                { text: 'Artist studios and workshops', link: null },
+                { text: 'Performance venues and theaters', link: null },
               ].map((item) => (
-                <li key={item} className="flex items-start">
+                <li key={item.text} className="flex items-start">
                   <svg
                     className="w-5 h-5 text-slate-900 mr-3 flex-shrink-0 mt-1"
                     fill="none"
@@ -67,7 +67,15 @@ export default function ArtsDistrictPage() {
                       d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
                     />
                   </svg>
-                  <span className="text-slate-700">{item}</span>
+                  <span className="text-slate-700">
+                    {item.link ? (
+                      <Link href={item.link} className="text-slate-900 font-semibold hover:underline">
+                        {item.text}
+                      </Link>
+                    ) : (
+                      item.text
+                    )}
+                  </span>
                 </li>
               ))}
             </ul>
@@ -79,13 +87,13 @@ export default function ArtsDistrictPage() {
             </h3>
             <ul className="space-y-3">
               {[
-                'Locally-owned restaurants',
-                'Craft cocktail bars',
-                'Coffee shops and cafes',
-                'Food festivals and events',
-                'Late-night entertainment',
+                { text: 'Locally-owned restaurants', link: '/neighborhood/midtown-plaza' },
+                { text: 'Craft cocktail bars', link: null },
+                { text: 'Coffee shops and cafes', link: null },
+                { text: 'Food festivals and events', link: '/events' },
+                { text: 'Late-night entertainment', link: '/neighborhood/pepper-club' },
               ].map((item) => (
-                <li key={item} className="flex items-start">
+                <li key={item.text} className="flex items-start">
                   <svg
                     className="w-5 h-5 text-slate-900 mr-3 flex-shrink-0 mt-1"
                     fill="none"
@@ -99,7 +107,15 @@ export default function ArtsDistrictPage() {
                       d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
                     />
                   </svg>
-                  <span className="text-slate-700">{item}</span>
+                  <span className="text-slate-700">
+                    {item.link ? (
+                      <Link href={item.link} className="text-slate-900 font-semibold hover:underline">
+                        {item.text}
+                      </Link>
+                    ) : (
+                      item.text
+                    )}
+                  </span>
                 </li>
               ))}
             </ul>

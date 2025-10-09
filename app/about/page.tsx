@@ -82,7 +82,10 @@ export default function AboutPage() {
               </svg>
               <span>
                 <strong>Vibrant Arts Scene:</strong> Home to numerous galleries, studios, 
-                and creative spaces showcasing local and international talent.
+                and creative spaces showcasing local and international talent. Discover the{' '}
+                <Link href="/neighborhood/arts-district" className="text-slate-900 font-semibold hover:underline">
+                  18b Arts District
+                </Link>.
               </span>
             </li>
             <li className="flex items-start">
@@ -101,7 +104,14 @@ export default function AboutPage() {
               </svg>
               <span>
                 <strong>Culinary Excellence:</strong> Locally-owned restaurants and cafes 
-                offering diverse dining experiences.
+                offering diverse dining experiences. Visit{' '}
+                <Link href="/neighborhood/pepper-club" className="text-slate-900 font-semibold hover:underline">
+                  The Pepper Club
+                </Link>{' '}
+                or explore{' '}
+                <Link href="/neighborhood/midtown-plaza" className="text-slate-900 font-semibold hover:underline">
+                  Midtown Plaza
+                </Link>.
               </span>
             </li>
             <li className="flex items-start">

@@ -115,7 +115,10 @@ export default function HomePage() {
               </h2>
               <p className="text-lg text-slate-600 leading-relaxed">
                 Emerging is Midtown, the new neighborhood just north of Charleston, offering 
-                the perfect homebase to fully experience the Las Vegas Arts District.
+                the perfect homebase to fully experience the{' '}
+                <Link href="/neighborhood/arts-district" className="text-slate-900 font-semibold hover:underline">
+                  Las Vegas Arts District
+                </Link>.
               </p>
             </div>
             <div className="aspect-video bg-slate-200 rounded-lg">
@@ -151,11 +154,11 @@ export default function HomePage() {
             {[
               { year: '1997', event: 'Wes Myles opens the Arts Factory' },
               { year: '1999', event: 'Mayor Oscar Goodman elected' },
-              { year: '2002', event: 'Renamed the Las Vegas Arts District', event2: 'Cindy Funkhouser founds First Friday' },
+              { year: '2002', event: 'Renamed the Las Vegas Arts District', event2: 'Cindy Funkhouser founds First Friday', link: '/neighborhood/first-fridays' },
               { year: '2009', event: '18b Arts District sign installed on Casino Center Blvd.' },
               { year: '2014', event: 'Anthony Bourdain highlights Makers & Finders on "Parts Unknown"' },
               { year: '2016', event: 'Majestic Repertory Theatre Opens' },
-              { year: '2022', event: 'The English Hotel Opens', event2: 'The Pepper Club Opens' },
+              { year: '2022', event: 'The English Hotel Opens', event2: 'The Pepper Club Opens', link: '/neighborhood/english-hotel', link2: '/neighborhood/pepper-club' },
               { year: '2024', event: 'CNN called the Arts District "the most exciting neighborhood" in Las Vegas' },
               { year: '2025', event: 'The Plaza Tower will open' },
             ].map((item, index) => (
@@ -168,8 +171,26 @@ export default function HomePage() {
                 <div className={index % 2 === 0 ? 'md:pr-12' : 'md:col-start-2 md:pl-12'}>
                   <div className="bg-white p-6 rounded-lg shadow-sm border border-slate-200">
                     <div className="text-3xl font-bold text-slate-900 mb-2">{item.year}</div>
-                    <p className="text-slate-600">{item.event}</p>
-                    {item.event2 && <p className="text-slate-600 mt-2">{item.event2}</p>}
+                    <p className="text-slate-600">
+                      {item.link ? (
+                        <Link href={item.link} className="text-slate-900 font-semibold hover:underline">
+                          {item.event}
+                        </Link>
+                      ) : (
+                        item.event
+                      )}
+                    </p>
+                    {item.event2 && (
+                      <p className="text-slate-600 mt-2">
+                        {item.link2 ? (
+                          <Link href={item.link2} className="text-slate-900 font-semibold hover:underline">
+                            {item.event2}
+                          </Link>
+                        ) : (
+                          item.event2
+                        )}
+                      </p>
+                    )}
                   </div>
                 </div>
                 <div className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 w-4 h-4 bg-slate-900 rounded-full border-4 border-white shadow" />
@@ -201,9 +222,15 @@ export default function HomePage() {
               Upcoming Events
             </h2>
             <p className="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
-              Stay in the know with what's happening in Midtown. From art walks and food 
-              festivals to pop-up markets and live performances, there's always something 
-              exciting to discover.
+              Stay in the know with what's happening in Midtown. From{' '}
+              <Link href="/neighborhood/first-fridays" className="text-slate-900 font-semibold hover:underline">
+                art walks
+              </Link>{' '}
+              and food festivals to pop-up markets and live performances, there's always something 
+              exciting to discover.{' '}
+              <Link href="/events" className="text-slate-900 font-semibold hover:underline">
+                View all events
+              </Link>.
             </p>
           </div>
           <UpcomingEvents />

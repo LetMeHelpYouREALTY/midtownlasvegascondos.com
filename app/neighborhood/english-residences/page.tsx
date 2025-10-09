@@ -98,13 +98,25 @@ export default function EnglishResidencesPage() {
               title: 'Prime Location',
               description:
                 'Walk to galleries, restaurants, and entertainment in the heart of the Arts District.',
+              link: '/neighborhood/arts-district',
             },
           ].map((feature) => (
             <div key={feature.title} className="text-center">
               <h3 className="text-2xl font-bold text-slate-900 mb-4">
                 {feature.title}
               </h3>
-              <p className="text-slate-600">{feature.description}</p>
+              <p className="text-slate-600">
+                {feature.link ? (
+                  <>
+                    Walk to galleries, restaurants, and entertainment in the heart of the{' '}
+                    <Link href={feature.link} className="text-slate-900 font-semibold hover:underline">
+                      Arts District
+                    </Link>.
+                  </>
+                ) : (
+                  feature.description
+                )}
+              </p>
             </div>
           ))}
         </div>

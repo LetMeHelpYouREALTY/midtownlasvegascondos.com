@@ -16,6 +16,7 @@ export default function EventsPage() {
       description:
         'Experience the monthly celebration of art, culture, and community. First Friday transforms the Arts District into a vibrant street festival.',
       category: 'Monthly',
+      link: '/neighborhood/first-fridays',
     },
     {
       title: 'The Las Vegas Book Festival',
@@ -48,6 +49,7 @@ export default function EventsPage() {
       description:
         'Join fellow runners for a community run through Midtown and the Arts District. All paces welcome.',
       category: 'Weekly',
+      link: '/neighborhood/run-club',
     },
     {
       title: 'Makers Market',
@@ -93,7 +95,13 @@ export default function EventsPage() {
                   {event.category}
                 </div>
                 <h3 className="text-2xl font-bold text-slate-900 mb-2">
-                  {event.title}
+                  {event.link ? (
+                    <Link href={event.link} className="hover:underline">
+                      {event.title}
+                    </Link>
+                  ) : (
+                    event.title
+                  )}
                 </h3>
                 <div className="space-y-2 mb-4">
                   <p className="text-slate-600">
@@ -103,7 +111,17 @@ export default function EventsPage() {
                     <span className="font-semibold">Time:</span> {event.time}
                   </p>
                 </div>
-                <p className="text-slate-600">{event.description}</p>
+                <p className="text-slate-600">
+                  {event.description}
+                  {event.link && (
+                    <>
+                      {' '}
+                      <Link href={event.link} className="text-slate-900 font-semibold hover:underline">
+                        Learn more →
+                      </Link>
+                    </>
+                  )}
+                </p>
               </div>
             </div>
           ))}
