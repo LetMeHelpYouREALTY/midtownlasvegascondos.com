@@ -1,4 +1,11 @@
 import Link from 'next/link'
+import { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'Midtown Las Vegas Events Calendar | First Friday & More',
+  description: 'Discover events in Midtown and the Arts District: First Friday, art walks, Book Festival, Las Vegas Marathon, and more. Live where it happens!',
+  keywords: 'Midtown Las Vegas events, First Friday Las Vegas, Arts District events, Las Vegas Book Festival, Las Vegas Marathon, Arts District calendar',
+}
 
 export default function EventsPage() {
   const events = [
