@@ -41,6 +41,21 @@ export default function EnglishResidencesPage() {
               collection of rooms. Experience the perfect blend of luxury ownership and 
               investment opportunity in the heart of Midtown.
             </p>
+            <p className="text-base text-slate-600 mb-6 leading-relaxed">
+              The English Residences represent a revolutionary approach to Las Vegas real estate ownership. Unlike traditional 
+              condominiums where your unit sits empty while you're away, condo-hotel ownership allows you to generate revenue 
+              through The English Hotel's professional management program. When you're not using your residence, it becomes 
+              part of the hotel's luxury room inventory, generating rental income with zero effort on your part. This innovative 
+              model has become increasingly popular among investors, part-time residents, and anyone seeking flexible urban living 
+              with financial benefits.
+            </p>
+            <p className="text-base text-slate-600 mb-6 leading-relaxed">
+              Each residence features contemporary design, high-end appliances, spa-inspired bathrooms, and floor-to-ceiling windows 
+              showcasing Arts District views. Owners enjoy exclusive access to The Pepper Club restaurant, priority reservations, 
+              24/7 concierge services, and professional housekeeping. The building's prime location at 921 S Main Street places you 
+              steps from First Friday, Midtown Plaza's dining scene, and over 30 art galleries, creating an unmatched urban lifestyle 
+              that combines luxury hotel amenities with true property ownership.
+            </p>
             <ul className="space-y-3 mb-8">
               {[
                 'Prime location in Las Vegas Arts District',
@@ -79,6 +94,31 @@ export default function EnglishResidencesPage() {
               Residence Image
             </div>
           </div>
+        </div>
+
+        {/* Investment Details */}
+        <div className="bg-slate-50 rounded-lg p-8 mt-12">
+          <h3 className="text-2xl font-bold text-slate-900 mb-4">The Condo-Hotel Advantage</h3>
+          <p className="text-slate-600 mb-4 leading-relaxed">
+            Traditional condo ownership means your unit sits vacant whenever you're away, costing you money in HOA fees, utilities, 
+            and property taxes without generating any income. The English Residences solve this problem through revenue sharing. 
+            When you're not in residence, your unit joins the hotel's rental pool, professionally marketed and managed by experienced 
+            hospitality staff. You receive a share of the rental revenue proportional to your unit's usage in the rental program.
+          </p>
+          <p className="text-slate-600 leading-relaxed">
+            This arrangement provides the best of both worlds: a luxury urban residence for personal use, plus passive income that 
+            can offset ownership costs. Many owners report that rental revenue covers 50-80% of their annual HOA fees and property 
+            taxes. Additionally, because your unit is part of a hotel operation, you may qualify for favorable tax treatment as an 
+            investment property. Consult with your tax advisor about potential deductions for depreciation, operating expenses, and 
+            management fees. The English Hotel handles all guest services, maintenance, and reservations—you simply enjoy your home 
+            when you want it and collect revenue when you don't.
+          </p>
+          <p className="text-slate-600 mt-4 leading-relaxed">
+            Financing options for condo-hotel purchases have evolved significantly, with several lenders now specializing in these unique 
+            properties. While traditional mortgages may require higher down payments (typically 20-30%), the income potential and tax advantages 
+            often make The English Residences a compelling investment compared to traditional vacation properties or rental condos. Contact Dr. Jan 
+            to discuss current financing options, estimated income projections, and how condo-hotel ownership fits into your real estate portfolio.
+          </p>
         </div>
 
         {/* Features Grid */}

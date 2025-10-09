@@ -43,14 +43,56 @@ export default function ContactPage() {
           <h1 className="text-5xl md:text-6xl font-bold mb-6">
             Contact Us
           </h1>
-          <p className="text-xl text-white/90">
+          <p className="text-xl text-white/90 mb-6">
             Get in touch to learn more about luxury living in Midtown
+          </p>
+          <p className="text-lg text-white/80 max-w-2xl mx-auto">
+            Dr. Jan Duffy specializes in Midtown Las Vegas real estate and is ready to help you find your perfect home 
+            or investment property in the Arts District. Schedule a personal consultation today.
           </p>
         </div>
       </section>
 
+      {/* Why Contact Dr. Jan */}
+      <section className="py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-4xl font-bold text-slate-900 mb-8 text-center">Why Work With Dr. Jan Duffy?</h2>
+          <div className="prose prose-lg max-w-none text-slate-600 space-y-6">
+            <p>
+              Dr. Jan Duffy brings unparalleled expertise to Midtown Las Vegas real estate. With deep knowledge of the Arts District, 
+              The English Residences, and surrounding neighborhoods, Dr. Jan provides personalized service that goes beyond typical 
+              real estate transactions. Whether you're a first-time buyer exploring urban living, an investor seeking income-generating 
+              properties, or a relocating professional discovering Las Vegas's cultural center, Dr. Jan's hands-on approach ensures 
+              you find the perfect match for your lifestyle and financial goals.
+            </p>
+            <p>
+              The consultation process begins with understanding your unique needs. Are you looking for walkable access to galleries 
+              and restaurants? Interested in condo-hotel ownership with rental income potential? Need proximity to downtown Las Vegas 
+              or the Strip for work? Dr. Jan takes time to discuss your priorities, budget, and timeline, then provides curated property 
+              recommendations that align with your criteria. This includes access to off-market opportunities, upcoming listings before 
+              they're publicly available, and insider knowledge about neighborhood developments that may impact property values.
+            </p>
+            <p>
+              Every property tour is personalized and informative. Dr. Jan doesn't just show you condos—she shares detailed information 
+              about HOA fees, building amenities, parking options, nearby restaurants and galleries, and the character of each micro-neighborhood 
+              within Midtown. You'll learn about First Friday accessibility, proximity to Midtown Plaza's dining scene, and how different 
+              locations balance urban energy with residential tranquility. For English Residences buyers, Dr. Jan explains the condo-hotel 
+              revenue sharing model, historical occupancy rates, and owner benefits in detail, ensuring you fully understand this unique 
+              ownership structure.
+            </p>
+            <p>
+              The service continues after purchase. Dr. Jan connects clients with trusted local service providers, from mortgage brokers 
+              and home inspectors to movers and interior designers familiar with Midtown's aesthetic. Need recommendations for the best 
+              coffee shop walking distance from your new condo? Want to know which First Friday galleries are must-visits? Dr. Jan's 
+              commitment extends beyond closing to help you truly become part of the Midtown community. Contact her today to start your 
+              Arts District living journey with confidence and expert guidance.
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* Contact Form & Info */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+      <section className="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto bg-slate-50">
         <div className="grid lg:grid-cols-2 gap-12">
           {/* Contact Form */}
           <div>
