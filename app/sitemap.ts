@@ -1,7 +1,7 @@
 import { MetadataRoute } from 'next'
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://midtownlasvegascondos.com'
+  const baseUrl = 'https://www.midtownlasvegascondos.com'
   const currentDate = new Date()
 
   return [

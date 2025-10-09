@@ -12,12 +12,12 @@ export const metadata: Metadata = {
   title: 'Midtown Las Vegas Condos | Luxury Living in the Arts District',
   description:
     'Discover luxury condominium living in the heart of Las Vegas Arts District. Experience the vibrant culture, dining, and entertainment of Midtown. Contact Dr. Jan at (702) 500-1955 or DrJanSells@MidtownLasVegasCondos.com',
-  metadataBase: new URL('https://midtownlasvegascondos.com'),
+  metadataBase: new URL('https://www.midtownlasvegascondos.com'),
   openGraph: {
     title: 'Midtown Las Vegas Condos',
     description:
       'Luxury condominium living in the heart of Las Vegas Arts District. Contact Dr. Jan at (702) 500-1955',
-    url: 'https://midtownlasvegascondos.com',
+    url: 'https://www.midtownlasvegascondos.com',
     siteName: 'Midtown Las Vegas Condos',
     locale: 'en_US',
     type: 'website',

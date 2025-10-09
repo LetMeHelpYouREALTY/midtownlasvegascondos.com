@@ -5,9 +5,9 @@ export function LocalBusinessSchema() {
     '@context': 'https://schema.org',
     '@type': 'RealEstateAgent',
     name: 'Dr. Jan Duffy - Midtown Las Vegas Condos',
-    image: 'https://midtownlasvegascondos.com/images/logos/midtown-logo.svg',
-    '@id': 'https://midtownlasvegascondos.com',
-    url: 'https://midtownlasvegascondos.com',
+    image: 'https://www.midtownlasvegascondos.com/images/logos/midtown-logo.svg',
+    '@id': 'https://www.midtownlasvegascondos.com',
+    url: 'https://www.midtownlasvegascondos.com',
     telephone: '+17025001955',
     email: 'DrJanSells@MidtownLasVegasCondos.com',
     address: {
@@ -83,7 +83,7 @@ export function ResidenceSchema() {
     name: 'The English Residences',
     description:
       'Luxury condo-hotel residences in the heart of the Las Vegas Arts District. Own your unit and earn income through professional hotel management.',
-    url: 'https://midtownlasvegascondos.com/neighborhood/english-residences',
+    url: 'https://www.midtownlasvegascondos.com/neighborhood/english-residences',
     address: {
       '@type': 'PostalAddress',
       streetAddress: '921 S Main St',

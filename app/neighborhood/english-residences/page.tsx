@@ -7,6 +7,9 @@ export const metadata: Metadata = {
   title: 'The English Residences | Luxury Condo-Hotels in Midtown Las Vegas',
   description: 'Own a piece of The English Hotel. Luxury condo-hotel units in the Arts District. Stay when you want, earn when you\'re away. Call Dr. Jan at (702) 500-1955.',
   keywords: 'English Residences, Midtown Las Vegas condos, Arts District condos, condo-hotel Las Vegas, luxury condos downtown Las Vegas, investment property Las Vegas',
+  alternates: {
+    canonical: 'https://www.midtownlasvegascondos.com/neighborhood/english-residences',
+  },
 }
 
 export default function EnglishResidencesPage() {
