@@ -159,21 +159,31 @@ export default function PepperClubPage() {
         </div>
       </section>
 
-      {/* Location */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto text-center">
-        <h2 className="text-4xl font-bold text-slate-900 mb-6">
-          Visit Us at The English Hotel
-        </h2>
-        <p className="text-xl text-slate-600 mb-8">
-          921 S Main St, Las Vegas, NV 89101<br />
-          (702) 500-1955
-        </p>
-        <Link
-          href="/contact"
-          className="inline-block px-8 py-4 bg-slate-900 text-white rounded-lg font-semibold hover:bg-slate-800 transition-colors"
-        >
-          Get Directions
-        </Link>
+      {/* Location & CTA */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-amber-900 to-red-900 text-white">
+        <div className="max-w-4xl mx-auto text-center">
+          <h2 className="text-4xl font-bold mb-6">
+            Visit The Pepper Club
+          </h2>
+          <p className="text-xl text-white/90 mb-8">
+            921 S Main St, Las Vegas, NV 89101<br />
+            Inside The English Hotel
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <a
+              href="tel:7025001955"
+              className="inline-block px-8 py-4 bg-white text-slate-900 rounded-lg font-semibold hover:bg-slate-100 transition-colors"
+            >
+              Call for Reservations
+            </a>
+            <Link
+              href="/contact"
+              className="inline-block px-8 py-4 bg-transparent border-2 border-white text-white rounded-lg font-semibold hover:bg-white/10 transition-colors"
+            >
+              Contact Us
+            </Link>
+          </div>
+        </div>
       </section>
     </div>
   )

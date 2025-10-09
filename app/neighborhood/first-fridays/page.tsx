@@ -1,3 +1,5 @@
+import Link from 'next/link'
+
 export default function FirstFridaysPage() {
   return (
     <div className="min-h-screen bg-white">
@@ -161,21 +163,29 @@ export default function FirstFridaysPage() {
       </section>
 
       {/* CTA */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-slate-50">
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-purple-900 to-pink-900 text-white">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-4xl font-bold text-slate-900 mb-6">
+          <h2 className="text-4xl font-bold mb-6">
             Live Where First Friday Happens
           </h2>
-          <p className="text-xl text-slate-600 mb-8">
+          <p className="text-xl text-white/90 mb-8">
             Imagine having Las Vegas's best monthly event right outside your door. 
             Discover luxury living in the heart of the Arts District.
           </p>
-          <a
-            href="#contact"
-            className="inline-block px-8 py-4 bg-slate-900 text-white rounded-lg font-semibold hover:bg-slate-800 transition-colors"
-          >
-            Learn About Midtown Residences
-          </a>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <a
+              href="tel:7025001955"
+              className="inline-block px-8 py-4 bg-white text-slate-900 rounded-lg font-semibold hover:bg-slate-100 transition-colors"
+            >
+              Call (702) 500-1955
+            </a>
+            <Link
+              href="/contact"
+              className="inline-block px-8 py-4 bg-transparent border-2 border-white text-white rounded-lg font-semibold hover:bg-white/10 transition-colors"
+            >
+              Learn More
+            </Link>
+          </div>
         </div>
       </section>
     </div>

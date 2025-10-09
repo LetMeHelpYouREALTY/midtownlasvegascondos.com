@@ -1,3 +1,5 @@
+import Link from 'next/link'
+
 export default function NewsPage() {
   const newsArticles = [
     {
@@ -120,15 +122,29 @@ export default function NewsPage() {
         </div>
       </section>
 
-      {/* Newsletter CTA */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-slate-900 text-white">
+      {/* CTA */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-slate-900 to-slate-700 text-white">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-4xl font-bold mb-6">
-            Stay Informed
+            Be Part of Midtown's Growth
           </h2>
           <p className="text-xl text-white/90 mb-8">
-            Subscribe to our newsletter and never miss an update about Midtown.
+            Contact Dr. Jan to learn about investment and living opportunities in Las Vegas's most exciting neighborhood.
           </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <a
+              href="tel:7025001955"
+              className="inline-block px-8 py-4 bg-white text-slate-900 rounded-lg font-semibold hover:bg-slate-100 transition-colors"
+            >
+              Call (702) 500-1955
+            </a>
+            <Link
+              href="/contact"
+              className="inline-block px-8 py-4 bg-transparent border-2 border-white text-white rounded-lg font-semibold hover:bg-white/10 transition-colors"
+            >
+              Contact Dr. Jan
+            </Link>
+          </div>
         </div>
       </section>
     </div>

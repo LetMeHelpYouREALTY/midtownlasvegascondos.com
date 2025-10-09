@@ -277,21 +277,29 @@ export default function ContactPage() {
       </section>
 
       {/* Additional CTA */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-slate-50">
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-slate-900 to-slate-700 text-white">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl font-bold text-slate-900 mb-4">
-            Schedule a Tour
+          <h2 className="text-3xl font-bold mb-4">
+            Schedule Your Personal Tour
           </h2>
-          <p className="text-lg text-slate-600 mb-8">
-            Experience Midtown in person. Contact us to schedule a personalized tour 
-            of the neighborhood and available residences.
+          <p className="text-xl text-white/90 mb-8">
+            Experience Midtown in person. Dr. Jan will provide a personalized tour 
+            of the neighborhood and show you available residences.
           </p>
-          <a
-            href="tel:7025001955"
-            className="inline-block px-8 py-4 bg-slate-900 text-white rounded-lg font-semibold hover:bg-slate-800 transition-colors"
-          >
-            Call (702) 500-1955
-          </a>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <a
+              href="tel:7025001955"
+              className="inline-block px-8 py-4 bg-white text-slate-900 rounded-lg font-semibold hover:bg-slate-100 transition-colors"
+            >
+              Call (702) 500-1955
+            </a>
+            <a
+              href="mailto:DrJanSells@MidtownLasVegasCondos.com"
+              className="inline-block px-8 py-4 bg-transparent border-2 border-white text-white rounded-lg font-semibold hover:bg-white/10 transition-colors"
+            >
+              Email Dr. Jan
+            </a>
+          </div>
         </div>
       </section>
     </div>

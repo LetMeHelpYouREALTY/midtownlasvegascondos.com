@@ -169,20 +169,30 @@ export default function EVProgramPage() {
       </section>
 
       {/* CTA */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto text-center">
-        <h2 className="text-4xl font-bold text-slate-900 mb-6">
-          Learn More About EV Living
-        </h2>
-        <p className="text-xl text-slate-600 mb-8">
-          Interested in learning more about our EV program and sustainability initiatives? 
-          Contact us for details on incentives and charging infrastructure.
-        </p>
-        <Link
-          href="/contact"
-          className="inline-block px-8 py-4 bg-slate-900 text-white rounded-lg font-semibold hover:bg-slate-800 transition-colors"
-        >
-          Contact Us
-        </Link>
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-green-900 to-teal-900 text-white">
+        <div className="max-w-4xl mx-auto text-center">
+          <h2 className="text-4xl font-bold mb-6">
+            Join the EV Revolution in Midtown
+          </h2>
+          <p className="text-xl text-white/90 mb-8">
+            Interested in learning more about our EV program and sustainability initiatives? 
+            Contact Dr. Jan for details on incentives and charging infrastructure.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <a
+              href="tel:7025001955"
+              className="inline-block px-8 py-4 bg-white text-slate-900 rounded-lg font-semibold hover:bg-slate-100 transition-colors"
+            >
+              Call (702) 500-1955
+            </a>
+            <Link
+              href="/contact"
+              className="inline-block px-8 py-4 bg-transparent border-2 border-white text-white rounded-lg font-semibold hover:bg-white/10 transition-colors"
+            >
+              Contact Us
+            </Link>
+          </div>
+        </div>
       </section>
     </div>
   )
