@@ -251,7 +251,7 @@ Your NAP (Name, Address, Phone) is consistent across:
 
 **NAP**:
 ```
-Dr. Jan Duffy - Midtown Las Vegas Condos
+Midtown Las Vegas | Condos By Dr. Jan Duffy
 921 S Main St
 Las Vegas, NV 89101
 (702) 500-1955

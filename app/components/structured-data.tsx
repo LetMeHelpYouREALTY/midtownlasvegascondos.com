@@ -4,7 +4,7 @@ export function LocalBusinessSchema() {
   const schema = {
     '@context': 'https://schema.org',
     '@type': 'RealEstateAgent',
-    name: 'Dr. Jan Duffy - Midtown Las Vegas Condos',
+    name: 'Midtown Las Vegas | Condos By Dr. Jan Duffy',
     image: 'https://www.midtownlasvegascondos.com/images/logos/midtown-logo.svg',
     '@id': 'https://www.midtownlasvegascondos.com',
     url: 'https://www.midtownlasvegascondos.com',

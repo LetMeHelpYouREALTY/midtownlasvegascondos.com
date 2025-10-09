@@ -95,7 +95,7 @@ Structure ready for when you add media:
 
 **Must Do** (Not Yet Set Up):
 1. **Create/Claim GBP**:
-   - Business name: "Dr. Jan Duffy - Midtown Las Vegas Condos"
+   - Business name: "Midtown Las Vegas | Condos By Dr. Jan Duffy"
    - Address: 921 S Main St, Las Vegas, NV 89101
    - Phone: (702) 500-1955
    - Website: https://www.midtownlasvegascondos.com
