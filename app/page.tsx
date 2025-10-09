@@ -79,10 +79,18 @@ export default function HomePage() {
           <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6">
             Midtown at the Arts District
           </h2>
-          <p className="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed mb-6">
             Say hello to the most rapidly evolving cultural center in the heart of Las Vegas. 
             This is where you can enjoy a walkable neighborhood with art galleries and privately 
             owned restaurants and now residences at Midtown.
+          </p>
+          <p className="text-lg text-slate-600 max-w-3xl mx-auto leading-relaxed">
+            Midtown represents a unique convergence of urban sophistication and creative energy. Unlike the tourist-focused Strip, 
+            Midtown offers authentic Las Vegas living where residents become part of a thriving artistic community. The neighborhood 
+            features converted warehouses housing contemporary art galleries, chef-driven restaurants serving innovative cuisine, 
+            and residential spaces designed for modern urban lifestyles. With walkable streets, monthly cultural events, and a genuine 
+            sense of community, Midtown has emerged as the premier destination for those seeking an authentic Las Vegas experience 
+            beyond the casinos and resorts.
           </p>
         </div>
 
@@ -113,12 +121,21 @@ export default function HomePage() {
               <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6">
                 Where is Midtown?
               </h2>
-              <p className="text-lg text-slate-600 leading-relaxed">
+              <p className="text-lg text-slate-600 leading-relaxed mb-4">
                 Emerging is Midtown, the new neighborhood just north of Charleston, offering 
                 the perfect homebase to fully experience the{' '}
                 <Link href="/neighborhood/arts-district" className="text-slate-900 font-semibold hover:underline">
                   Las Vegas Arts District
                 </Link>.
+              </p>
+              <p className="text-base text-slate-600 leading-relaxed">
+                Located between Charleston Boulevard and the Fremont East Entertainment District, Midtown encompasses 
+                approximately 18 blocks of vibrant urban development. This strategic location provides residents with 
+                easy access to downtown Las Vegas, the Las Vegas Strip, and McCarran International Airport, while 
+                maintaining the neighborhood's distinct character. The area is anchored by landmarks like The English 
+                Hotel, Midtown Plaza, and over 30 art galleries that have transformed former industrial spaces into 
+                cultural destinations. With new residential developments, improved infrastructure, and a growing roster 
+                of local businesses, Midtown continues to evolve while staying true to its artistic roots.
               </p>
             </div>
             <div className="aspect-video bg-slate-200 rounded-lg">
@@ -140,10 +157,19 @@ export default function HomePage() {
           <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6">
             A Journey of Transformation
           </h2>
-          <p className="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed mb-6">
             From its origins as an industrial hub to the art center of Sin City, change is 
             baked into the Arts District identity. Witness the transformation of a neighborhood 
             that continues to redefine art, design and culture.
+          </p>
+          <p className="text-lg text-slate-600 max-w-3xl mx-auto leading-relaxed">
+            The Arts District's evolution began in the late 1990s when artists and creative entrepreneurs discovered 
+            the potential in abandoned warehouses and industrial buildings south of downtown. What started as a grassroots 
+            movement has blossomed into a nationally recognized arts destination. The neighborhood gained momentum with the 
+            establishment of First Friday in 2002, which has since grown into the largest monthly art event in the Southwest, 
+            attracting over 10,000 visitors each month. Today, Midtown builds on this legacy, offering residential opportunities 
+            that allow residents to live within walking distance of world-class galleries, chef-driven restaurants, and cultural 
+            institutions like the Majestic Repertory Theatre.
           </p>
         </div>
 
