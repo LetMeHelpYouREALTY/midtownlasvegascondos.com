@@ -37,8 +37,24 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Property Search Widget */}
+      {/* Featured Homes $500K-$600K */}
       <section className="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto bg-white">
+        <div className="max-w-7xl mx-auto">
+          <RealScoutListings
+            title="Featured Homes in Midtown"
+            description="Discover beautiful single-family homes in your price range"
+            priceMin="500000"
+            priceMax="600000"
+            sortOrder="PRICE_LOW"
+            propertyTypes=",SFR"
+            listingStatus="For Sale"
+            limit="6"
+          />
+        </div>
+      </section>
+
+      {/* Property Search Widget */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto bg-slate-50">
         <div className="text-center mb-8">
           <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-4">
             Find Your Midtown Home
