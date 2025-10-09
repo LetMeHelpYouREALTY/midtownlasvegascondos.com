@@ -122,6 +122,34 @@ export default function ArtsDistrictPage() {
           </div>
         </div>
 
+        {/* Living in the Arts District */}
+        <div className="bg-slate-50 rounded-lg p-8 mb-12">
+          <h3 className="text-2xl font-bold text-slate-900 mb-4">Living in the Arts District</h3>
+          <p className="text-slate-600 mb-4 leading-relaxed">
+            Daily life in the Arts District revolves around walkability and cultural immersion. Residents start mornings 
+            at local coffee roasters like PublicUs or Makers & Finders, walk to work in downtown Las Vegas or nearby offices, 
+            and return home to explore new gallery openings, grab dinner at neighborhood restaurants, or simply enjoy the urban 
+            energy. Unlike suburban Las Vegas, where cars dominate every errand, Arts District residents genuinely walk to 
+            accomplish daily tasks—a rarity in car-centric Nevada.
+          </p>
+          <p className="text-slate-600 mb-4 leading-relaxed">
+            The demographic mix includes artists and creative professionals drawn to the cultural scene, young professionals 
+            seeking authentic urban living, empty-nesters downsizing from suburban homes, and investors recognizing the 
+            neighborhood's appreciation potential. This diversity creates vibrant street life where you're as likely to encounter 
+            gallery owners, tech entrepreneurs, retirees, and visiting tourists all enjoying the same sidewalk café.
+          </p>
+          <p className="text-slate-600 leading-relaxed">
+            Property values reflect the neighborhood's transformation and continuing demand. Condos purchased in 2015 for $200,000 
+            now sell for $350,000+, while newer developments command $400-$800 per square foot. First-time visitors often compare 
+            the vibe to Portland's Pearl District, Austin's East Sixth Street, or Denver's RiNo—walkable arts neighborhoods with 
+            authentic character. For potential residents, the question isn't "Is the Arts District worth it?" but rather "Which 
+            part of the Arts District fits my lifestyle best?" Whether you prioritize proximity to galleries, walkability to 
+            dining, or investment potential near upcoming developments, Dr. Jan can help identify the perfect Arts District location 
+            for your needs. Contact her today to explore your options and discover why CNN called this "the most exciting neighborhood" 
+            in Las Vegas.
+          </p>
+        </div>
+
         {/* History Section */}
         <div className="bg-gradient-to-br from-slate-900 to-slate-700 text-white rounded-lg p-12 mb-20">
           <h2 className="text-3xl font-bold mb-6">A Neighborhood Transformed</h2>

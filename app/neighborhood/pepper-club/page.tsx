@@ -48,6 +48,44 @@ export default function PepperClubPage() {
         </div>
       </section>
 
+      {/* Chef's Vision */}
+      <section className="py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+        <div className="max-w-4xl mx-auto">
+          <h3 className="text-2xl font-bold text-slate-900 mb-4">Chef Todd English's Culinary Vision</h3>
+          <p className="text-slate-600 mb-4 leading-relaxed">
+            The Pepper Club represents Chef Todd English's interpretation of modern American cuisine with global influences, 
+            focusing on seasonal ingredients and innovative techniques. The menu changes regularly to showcase peak-season produce, 
+            sustainable proteins, and creative preparations that surprise while remaining approachable. Signature dishes might include 
+            wood-fired steaks with house-made steak sauce variations, fresh pasta with locally-sourced ingredients when available, 
+            and creative vegetable preparations that elevate produce beyond side-dish status.
+          </p>
+          <p className="text-slate-600 mb-4 leading-relaxed">
+            The restaurant's design reflects Midtown's industrial-chic aesthetic with exposed brick, contemporary art pieces, and 
+            intimate lighting that creates sophisticated ambiance without pretension. The space features a central bar perfect for 
+            cocktails and casual dining, intimate booth seating for date nights, and larger tables accommodating groups. English 
+            Residences owners enjoy priority reservations and exclusive menu previews, integrating the restaurant into the condo-hotel 
+            ownership experience.
+          </p>
+          <p className="text-slate-600 leading-relaxed">
+            Beyond regular dinner service, The Pepper Club hosts special events including wine dinners pairing exceptional vintages 
+            with multi-course tasting menus, seasonal celebrations highlighting holiday traditions, and occasionally, cooking 
+            demonstrations where Chef English or team members share techniques. Private dining options accommodate celebrations, 
+            business meetings, or intimate gatherings with customized menus. The restaurant serves as a neighborhood gathering spot 
+            where Arts District residents celebrate special occasions, entertain visitors, or simply enjoy exceptional food steps 
+            from home. Reservations recommended, especially during First Friday weekends when the entire neighborhood comes alive.
+          </p>
+          <p className="text-slate-600 mt-4 leading-relaxed">
+            The Pepper Club's cocktail program deserves special mention, featuring creative libations crafted by skilled mixologists 
+            using house-made syrups, fresh herbs, and premium spirits. The bar serves as a social hub where neighborhood regulars 
+            mix with hotel guests and Arts District visitors, creating the convivial atmosphere that defines Midtown dining. Happy 
+            hour specials and seasonal cocktail menus keep the offerings fresh while maintaining signature drinks that have become 
+            neighborhood favorites. For English Residences owners, the restaurant provides the convenience of world-class dining 
+            without leaving the building—yet another advantage of the condo-hotel lifestyle that combines luxury residence with 
+            hotel amenities.
+          </p>
+        </div>
+      </section>
+
       {/* Menu Highlights */}
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-slate-50">
         <div className="max-w-7xl mx-auto">
