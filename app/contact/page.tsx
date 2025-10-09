@@ -288,16 +288,18 @@ export default function ContactPage() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
-              href="tel:7025001955"
+              href="http://drjanduffy.realscout.com/onboarding"
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-block px-8 py-4 bg-white text-slate-900 rounded-lg font-semibold hover:bg-slate-100 transition-colors"
             >
-              Call (702) 500-1955
+              Start Property Search
             </a>
             <a
-              href="mailto:DrJanSells@MidtownLasVegasCondos.com"
+              href="tel:7025001955"
               className="inline-block px-8 py-4 bg-transparent border-2 border-white text-white rounded-lg font-semibold hover:bg-white/10 transition-colors"
             >
-              Email Dr. Jan
+              Call (702) 500-1955
             </a>
           </div>
         </div>

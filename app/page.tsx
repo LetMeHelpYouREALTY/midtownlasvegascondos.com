@@ -21,18 +21,22 @@ export default function HomePage() {
             Discover luxury living in the heart of Las Vegas Arts District
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link
-              href="#residences"
+            <a
+              href="http://drjanduffy.realscout.com/onboarding"
+              target="_blank"
+              rel="noopener noreferrer"
               className="px-8 py-4 bg-white text-slate-900 rounded-lg font-semibold hover:bg-slate-100 transition-colors"
             >
-              Explore Residences
-            </Link>
-            <Link
-              href="#contact"
+              Get Started
+            </a>
+            <a
+              href="http://drjanduffy.realscout.com/"
+              target="_blank"
+              rel="noopener noreferrer"
               className="px-8 py-4 bg-transparent border-2 border-white text-white rounded-lg font-semibold hover:bg-white/10 transition-colors"
             >
-              Contact Us
-            </Link>
+              Browse Properties
+            </a>
           </div>
         </div>
       </section>

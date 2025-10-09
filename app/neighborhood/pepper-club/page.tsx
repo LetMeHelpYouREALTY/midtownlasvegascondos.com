@@ -176,12 +176,14 @@ export default function PepperClubPage() {
             >
               Call for Reservations
             </a>
-            <Link
-              href="/contact"
+            <a
+              href="http://drjanduffy.realscout.com/"
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-block px-8 py-4 bg-transparent border-2 border-white text-white rounded-lg font-semibold hover:bg-white/10 transition-colors"
             >
-              Contact Us
-            </Link>
+              View Nearby Homes
+            </a>
           </div>
         </div>
       </section>

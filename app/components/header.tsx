@@ -21,7 +21,7 @@ export function Header() {
         { name: 'Midtown Run Club', href: '/neighborhood/run-club' },
       ],
     },
-    { name: 'Search Properties', href: '/search' },
+    { name: 'Search Properties', href: 'http://drjanduffy.realscout.com/' },
     { name: 'Events', href: '/events' },
     { name: 'News', href: '/news' },
     { name: 'About', href: '/about' },
