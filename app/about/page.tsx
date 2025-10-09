@@ -42,6 +42,21 @@ export default function AboutPage() {
             is more than just a place to live—it's a lifestyle centered around creativity, 
             connection, and authentic experiences.
           </p>
+          <p className="text-base text-slate-600 mb-6 leading-relaxed">
+            Since 2015, Midtown has experienced remarkable transformation, with property values increasing an average of 45% 
+            as urban revitalization efforts converted former industrial warehouses into sought-after residential and commercial 
+            destinations. This growth reflects Las Vegas's evolution beyond its entertainment reputation, proving the city offers 
+            world-class cultural amenities and authentic urban living. The neighborhood now attracts creative professionals, young 
+            families, empty-nesters seeking walkable communities, and investors recognizing the area's appreciation potential and 
+            cultural significance.
+          </p>
+          <p className="text-base text-slate-600 mb-6 leading-relaxed">
+            What began as a grassroots artist movement in the late 1990s has matured into a thriving mixed-use neighborhood where 
+            residents enjoy morning coffee at local roasters, afternoon gallery visits, evening dinners at chef-driven restaurants, 
+            and monthly First Friday celebrations that draw over 10,000 visitors. Unlike typical Las Vegas developments focused on 
+            tourists, Midtown serves locals first—creating genuine community rather than manufactured experience. This authenticity 
+            resonates with people seeking substance over spectacle, community over crowds.
+          </p>
 
           <h2 className="text-3xl font-bold text-slate-900 mb-6 mt-12">
             What Makes Midtown Special
