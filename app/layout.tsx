@@ -5,6 +5,7 @@ import './globals.css'
 import { Header } from './components/header'
 import { Footer } from './components/footer'
 import { LocalBusinessSchema } from './components/structured-data'
+import { FAQSchema } from './components/faq-schema'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -46,6 +47,7 @@ export default function RootLayout({
       </head>
       <body className={`${inter.className} antialiased`}>
         <LocalBusinessSchema />
+        <FAQSchema />
         <Header />
         <main className="pt-16">{children}</main>
         <Footer />
