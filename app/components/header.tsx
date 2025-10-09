@@ -24,6 +24,7 @@ export function Header() {
     { name: 'Search Properties', href: 'http://drjanduffy.realscout.com/' },
     { name: 'Events', href: '/events' },
     { name: 'News', href: '/news' },
+    { name: 'FAQ', href: '/faq' },
     { name: 'About', href: '/about' },
     { name: 'Contact', href: '/contact' },
   ]

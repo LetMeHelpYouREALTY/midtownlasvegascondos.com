@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import { RealScoutSearch } from '@/app/components/realscout-search'
 import { RealScoutListings } from '@/app/components/realscout-listings'
+import { PageFAQ } from '@/app/components/page-faq'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
@@ -180,6 +181,37 @@ export default function ArtsDistrictPage() {
           <div className="max-w-4xl mx-auto">
             <RealScoutSearch />
           </div>
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
+        <div className="max-w-7xl mx-auto">
+          <PageFAQ
+            title="Arts District Living FAQ"
+            faqs={[
+              {
+                question: 'Why is the Arts District called "18b"?',
+                answer:
+                  'The "18b" designation comes from the original Las Vegas township plat. The area was Township 18, Block B. This historic designation has become a beloved nickname for the neighborhood.',
+              },
+              {
+                question: 'What happens during First Friday?',
+                answer:
+                  'On the first Friday of every month from 5-11 PM, the Arts District transforms into a massive street festival with 30+ galleries opening their doors, live music stages, food trucks, artisan markets, and thousands of visitors.',
+              },
+              {
+                question: 'How walkable is the neighborhood?',
+                answer:
+                  'The Arts District is one of Las Vegas\'s most walkable neighborhoods. You can easily walk to galleries, restaurants, cafes, and shops. The entire 18-block district is designed for pedestrians.',
+              },
+              {
+                question: 'What type of people live in the Arts District?',
+                answer:
+                  'The neighborhood attracts artists, creative professionals, young urban dwellers, and people who appreciate walkable urban living. It\'s a diverse community of locals who love authentic Las Vegas culture.',
+              },
+            ]}
+          />
         </div>
       </section>
 

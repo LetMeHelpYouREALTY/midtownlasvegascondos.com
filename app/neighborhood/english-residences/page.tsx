@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import { RealScoutSearch } from '@/app/components/realscout-search'
 import { RealScoutListings } from '@/app/components/realscout-listings'
+import { PageFAQ } from '@/app/components/page-faq'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
@@ -138,6 +139,37 @@ export default function EnglishResidencesPage() {
           <div className="max-w-4xl mx-auto">
             <RealScoutSearch />
           </div>
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
+        <div className="max-w-7xl mx-auto">
+          <PageFAQ
+            title="English Residences FAQ"
+            faqs={[
+              {
+                question: 'What makes The English Residences different from regular condos?',
+                answer:
+                  'The English Residences are condo-hotel units with professional hotel management. You can use your unit when you want and generate rental income when you\'re away. Regular condos don\'t offer this built-in income opportunity.',
+              },
+              {
+                question: 'What are the monthly costs of ownership?',
+                answer:
+                  'Costs include your mortgage (if financed), HOA fees, property taxes, and insurance. However, rental income when you\'re not using the unit can offset these costs. Contact Dr. Jan at (702) 500-1955 for specific estimates.',
+              },
+              {
+                question: 'How is this different from a timeshare?',
+                answer:
+                  'You own 100% of your unit with a traditional deed - it\'s real property ownership. You can sell it, rent it, or pass it to heirs. Timeshares are different ownership structures with limited usage rights.',
+              },
+              {
+                question: 'What amenities do residents have access to?',
+                answer:
+                  'Residents enjoy hotel amenities including The Pepper Club restaurant, concierge services, housekeeping options, and priority access to hotel facilities. You also get the walkability of the entire Arts District.',
+              },
+            ]}
+          />
         </div>
       </section>
 
