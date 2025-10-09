@@ -71,11 +71,55 @@ export default function EventsPage() {
           <h1 className="text-5xl md:text-6xl font-bold mb-6">
             Events in Midtown
           </h1>
-          <p className="text-xl text-white/90 max-w-3xl mx-auto">
+          <p className="text-xl text-white/90 max-w-3xl mx-auto mb-6">
             Stay in the know with what's happening in Midtown. From art walks and food 
             festivals to pop-up markets and live performances, there's always something 
             exciting to discover.
           </p>
+          <p className="text-lg text-white/80 max-w-3xl mx-auto">
+            Monthly First Fridays, weekly run clubs, annual book festivals, and seasonal celebrations make Midtown Las Vegas's most culturally active neighborhood.
+          </p>
+        </div>
+      </section>
+
+      {/* Event Culture Section */}
+      <section className="py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-4xl font-bold text-slate-900 mb-8">The Midtown Event Experience</h2>
+          <div className="prose prose-lg text-slate-600 space-y-6">
+            <p>
+              Midtown's event calendar reflects the neighborhood's unique blend of art, culture, and community engagement. Unlike entertainment 
+              districts focused purely on tourist attractions, Midtown events serve locals first—creating authentic gatherings that prioritize 
+              community connection over commercial spectacle. This philosophy manifests in First Friday's grassroots atmosphere, the Run Club's 
+              inclusive culture, and seasonal celebrations that genuinely bring neighbors together rather than simply extracting tourist dollars.
+            </p>
+            <p>
+              The events transform how residents experience their neighborhood. First Friday converts quiet streets into vibrant festivals monthly. 
+              The Run Club provides built-in fitness structure and social connections. The Book Festival celebrates literacy and learning. The Las 
+              Vegas Marathon showcases the city to runners nationwide. These regular gatherings create rhythm and anticipation—residents mark calendars, 
+              plan around events, and incorporate them into lifestyle routines. This predictable cultural programming distinguishes Midtown from typical 
+              residential neighborhoods where community events feel sporadic or forced.
+            </p>
+            <p>
+              For prospective residents evaluating Midtown, the event calendar demonstrates neighborhood vitality and community strength. Active event 
+              participation indicates resident investment in the area's success, while diverse programming suggests the neighborhood accommodates varied 
+              interests and demographics. When visiting Midtown, attend events to observe community dynamics, meet residents who can share authentic 
+              perspectives, and experience the energy that makes the Arts District special. These real-world interactions provide invaluable insight 
+              beyond property tours and listing photos, helping you determine whether Midtown's community culture aligns with your social preferences 
+              and lifestyle expectations.
+            </p>
+            <p>
+              Living in Midtown means events become convenient neighborhood activities rather than destination excursions requiring planning and 
+              transportation. Residents walk to First Friday instead of fighting traffic, join Run Club without dawn drives across town, and explore 
+              the Book Festival steps from home. This convenience dramatically increases event participation, creating the high engagement that makes 
+              Midtown's community so vibrant. For event enthusiasts who currently drive hours to attend cultural programming, the walkable convenience 
+              represents lifestyle transformation worth the higher per-square-foot real estate costs. The events also drive property values—homes near 
+              First Friday enjoy premium pricing due to location desirability, while Run Club routes passing properties demonstrate walkability that 
+              attracts health-conscious buyers. Understanding the event calendar helps evaluate specific properties for how they experience Midtown's 
+              cultural programming, whether located at the energetic center near Main Street or quieter edges offering more residential tranquility. Event proximity 
+              influences daily living patterns significantly.
+            </p>
+          </div>
         </div>
       </section>
 

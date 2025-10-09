@@ -31,6 +31,35 @@ export default function RunClubPage() {
           meet twice weekly to run through the Arts District and surrounding neighborhoods. 
           All paces are welcome—from beginners to experienced marathoners.
         </p>
+        <div className="max-w-3xl mx-auto text-left mt-12">
+          <p className="text-lg text-slate-600 mb-4 leading-relaxed">
+            Running in Midtown offers unique advantages beyond typical suburban routes. The Arts District's urban grid provides varied scenery 
+            every run—passing colorful murals, gallery windows displaying contemporary art, and local cafes beginning morning service. Unlike 
+            monotonous loops through residential subdivisions, Midtown routes change character block by block, maintaining engagement through 
+            visual variety. Early morning runs encounter delivery trucks supplying restaurants, artists heading to studios, and other runners 
+            exploring the neighborhood's energetic awakening.
+          </p>
+          <p className="text-lg text-slate-600 mb-4 leading-relaxed">
+            The community aspect distinguishes Midtown Run Club from solo training. Regular members form genuine friendships, supporting each 
+            other's fitness goals while socializing during post-run coffee at nearby cafes. The group maintains an inclusive culture where 
+            experienced marathoners pace beginners, faster runners circle back to encourage slower members, and everyone celebrates personal 
+            improvements rather than competitive achievements. This supportive environment helps newcomers build running habits while providing 
+            experienced runners with training partners and social motivation.
+          </p>
+          <p className="text-lg text-slate-600 mb-4 leading-relaxed">
+            Routes vary weekly, exploring different Arts District areas and occasional ventures to nearby neighborhoods. Summer runs start 
+            earlier to avoid desert heat, while winter allows later starts with comfortable temperatures. The club occasionally organizes 
+            special events including First Friday fun runs where participants stop at galleries, charity fundraising runs supporting local 
+            causes, and social runs ending at neighborhood restaurants for group breakfast. For Midtown residents, the Run Club provides built-in 
+            fitness structure, social connection, and deeper neighborhood exploration—discovering hidden murals, new business openings, and 
+            Arts District corners you might otherwise miss. The club welcomes visitors considering Midtown living—join a run to experience 
+            the neighborhood's walkability firsthand, meet residents who can share authentic perspectives about Arts District life, and discover 
+            whether the community vibe matches your expectations. Many current Midtown residents first encountered the neighborhood through Run Club, 
+            fell in love with the energy and people, and eventually purchased properties to become permanent community members. Running provides 
+            unique neighborhood perspective—experiencing streets during quiet morning hours, witnessing the transformation from sleeping 
+            residential area to bustling cultural center, and literally covering more ground than walking tours allow.
+          </p>
+        </div>
       </section>
 
       {/* Schedule */}

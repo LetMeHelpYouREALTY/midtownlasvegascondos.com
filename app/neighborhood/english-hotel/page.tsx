@@ -69,6 +69,39 @@ export default function EnglishHotelPage() {
           </div>
         </div>
 
+        {/* Hotel Experience */}
+        <div className="mt-16 max-w-4xl mx-auto">
+          <h3 className="text-2xl font-bold text-slate-900 mb-4">The Boutique Difference</h3>
+          <p className="text-slate-600 mb-4 leading-relaxed">
+            Unlike the mega-resorts dominating the Las Vegas Strip, The English Hotel offers an intimate boutique experience with 
+            personalized service, distinctive design, and genuine connection to local culture. Each room reflects contemporary elegance 
+            with custom furnishings, locally-curated artwork, luxury bedding, and spa-inspired bathrooms. The hotel eschews generic chain 
+            aesthetics in favor of a sophisticated urban vibe that mirrors the Arts District's creative character—think industrial-chic 
+            details, curated art pieces, and design elements celebrating Midtown's warehouse heritage.
+          </p>
+          <p className="text-slate-600 mb-4 leading-relaxed">
+            Guest services emphasize quality over quantity. The 24/7 concierge provides personalized recommendations for Arts District 
+            galleries, neighborhood restaurants, and First Friday experiences that guidebooks miss. The Pepper Club restaurant serves 
+            hotel guests and local residents alike, creating a neighborhood gathering spot that exemplifies the hotel's integration 
+            into the community. This approach resonates with travelers seeking authentic Las Vegas experiences beyond slot machines and 
+            buffets—people who want to discover the city's creative soul.
+          </p>
+          <p className="text-slate-600 leading-relaxed">
+            The hotel's location at 921 S Main Street provides unmatched access to Midtown's attractions. Walk to 30+ art galleries, 
+            discover chef-driven restaurants, attend monthly First Friday celebrations, and explore the neighborhood's creative energy—all 
+            without requiring a car. For visitors considering relocating to Las Vegas or investing in English Residences condo-hotels, 
+            staying at The English Hotel offers perfect introduction to Arts District living. Experience the walkability, meet neighborhood 
+            regulars, and discover whether Midtown's urban lifestyle matches your preferences. Many English Residences owners first 
+            discovered the property by staying at the hotel and falling in love with the neighborhood. Book a stay to test-drive Midtown 
+            living before committing to real estate purchase—wake up in the Arts District, explore galleries and restaurants on foot, 
+            experience First Friday if timing aligns, and genuinely evaluate whether urban Las Vegas living matches your expectations. 
+            This try-before-you-buy approach provides invaluable perspective that virtual tours and property visits cannot replicate. The English 
+            Hotel serves as showcase for the neighborhood's potential, offering immersive introduction to Arts District living that helps visitors 
+            make informed decisions about whether Midtown's urban energy, cultural programming, and walkable lifestyle align with their long-term 
+            residential preferences and investment goals. The hotel's boutique scale ensures personalized attention impossible at large resorts.
+          </p>
+        </div>
+
         {/* Amenities */}
         <div className="grid md:grid-cols-3 gap-8 mt-20">
           {[

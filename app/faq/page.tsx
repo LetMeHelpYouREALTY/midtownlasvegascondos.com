@@ -122,8 +122,47 @@ export default function FAQPage() {
           <h1 className="text-5xl md:text-6xl font-bold mb-6">
             Frequently Asked Questions
           </h1>
-          <p className="text-xl text-white/90">
+          <p className="text-xl text-white/90 mb-6">
             Everything you need to know about Midtown Las Vegas condos and The English Residences
+          </p>
+          <p className="text-lg text-white/80 max-w-3xl mx-auto">
+            From property prices and condo-hotel ownership to First Friday parking and neighborhood culture, get the information you need.
+          </p>
+        </div>
+      </section>
+
+      {/* FAQ Introduction */}
+      <section className="py-12 px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto">
+        <div className="prose prose-lg text-slate-600 space-y-4 mb-12">
+          <p>
+            Moving to or investing in Midtown Las Vegas represents a significant decision, and we understand you'll have questions about 
+            everything from property types and pricing to neighborhood culture and daily living logistics. This comprehensive FAQ addresses 
+            the most common questions we receive from prospective buyers, investors, and residents curious about Arts District living. Whether 
+            you're wondering about condo-hotel ownership mechanics, First Friday parking strategies, property appreciation trends, or simply 
+            what it's like to wake up in the heart of Las Vegas's creative center, you'll find answers below.
+          </p>
+          <p>
+            Midtown attracts diverse buyers with varying priorities. Some seek walkable urban convenience after years of suburban car-dependent 
+            living. Others prioritize investment properties with income generation potential. Creative professionals want proximity to galleries 
+            and cultural events. Retirees desire vibrant community without overwhelming tourist crowds. Whatever brings you to explore Midtown, 
+            understanding the neighborhood's unique characteristics helps determine whether it matches your lifestyle and financial goals.
+          </p>
+          <p>
+            The English Residences condo-hotel model generates particular interest and questions. How does revenue sharing work? What percentage 
+            of HOA fees does rental income cover? Can you use your unit whenever you want despite hotel management? These questions deserve detailed 
+            answers beyond marketing generalities, which is why we provide specific information about ownership structure, historical performance, 
+            and realistic expectations. Transparency helps buyers make informed decisions aligned with their situations.
+          </p>
+          <p>
+            Beyond specific FAQ answers, understanding Midtown requires experiencing the neighborhood. We encourage potential residents to visit 
+            during First Friday, walk the Arts District, dine at local restaurants, and explore galleries before committing to property purchases. 
+            Many buyers schedule multiple visits across different days and times to observe neighborhood rhythms—quiet weekday mornings versus energetic 
+            Friday evenings, for example. This hands-on research, combined with Dr. Jan's expert guidance, ensures you find the perfect Midtown property 
+            for your unique needs. Can't find your question below? Contact Dr. Jan directly at (702) 500-1955 for personalized answers to your specific 
+            questions about Midtown living and real estate opportunities. Dr. Jan provides detailed consultation for serious buyers, including property 
+            comparisons, market analysis, financing options, and rental income projections for English Residences. Her expertise covers not just 
+            individual properties but the broader Midtown context—understanding how location within the neighborhood affects lifestyle, how proximity to 
+            First Friday impacts weekend energy levels, and how different buildings' character attracts different demographics.
           </p>
         </div>
       </section>

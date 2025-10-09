@@ -152,6 +152,25 @@ export default function AboutPage() {
           </ul>
 
           <h2 className="text-3xl font-bold text-slate-900 mb-6 mt-12">
+            The Future of Midtown
+          </h2>
+          <p className="text-lg text-slate-600 mb-6 leading-relaxed">
+            Looking ahead, Midtown continues evolving with new residential developments, expanded cultural programming, 
+            and infrastructure improvements that enhance walkability and sustainability. This ongoing development ensures 
+            Midtown remains dynamic while preserving the authentic character that makes it special. For residents and investors, 
+            this means a neighborhood that grows smarter, not just bigger—maintaining cultural identity while improving quality 
+            of life for everyone who calls Midtown home.
+          </p>
+          <p className="text-lg text-slate-600 mb-6 leading-relaxed">
+            Choosing where to live shapes daily life in profound ways. Midtown offers something increasingly rare: genuine 
+            walkability combined with cultural richness and community connection. Instead of hours commuting from suburban 
+            developments, residents walk to work, dinner, and entertainment while building relationships with local business 
+            owners. This lifestyle appeals to professionals tired of car-dependent living, empty-nesters seeking vibrant retirement 
+            alternatives, and young creatives drawn to the neighborhood's artistic energy. The investment case extends beyond lifestyle 
+            to financial performance, with properties consistently appreciating ahead of Las Vegas averages.
+          </p>
+
+          <h2 className="text-3xl font-bold text-slate-900 mb-6 mt-12">
             Join the Community
           </h2>
           <p className="text-lg text-slate-600 mb-6 leading-relaxed">
