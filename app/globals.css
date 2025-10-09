@@ -189,3 +189,13 @@
     flex-direction: column !important;
   }
 }
+
+/* RealScout Widget Customization (loaded via Cloudflare Worker) */
+realscout-office-listings {
+  --rs-listing-divider-color: #0e64c8;
+  width: 100%;
+}
+
+realscout-advanced-search {
+  width: 100%;
+}
