@@ -100,10 +100,77 @@ export default function ContactPage() {
             <p>
               The service continues after purchase. Dr. Jan connects clients with trusted local service providers, from mortgage brokers 
               and home inspectors to movers and interior designers familiar with Midtown's aesthetic. Need recommendations for the best 
-              coffee shop walking distance from your new condo? Want to know which First Friday galleries are must-visits? Dr. Jan's 
+              coffee shop walking distance from your new condo? Want to know which{' '}
+              <Link href="/neighborhood/first-fridays" className="text-slate-900 font-semibold hover:underline">
+                First Friday
+              </Link>
+              {' '}galleries are must-visits? Dr. Jan's 
               commitment extends beyond closing to help you truly become part of the Midtown community. Contact her today to start your 
               Arts District living journey with confidence and expert guidance.
             </p>
+            <div className="space-y-6 mt-8">
+              <div>
+                <h3 className="text-2xl font-bold text-slate-900 mb-4">Personalized Property Matching</h3>
+                <p className="mb-3">
+                  Dr. Jan's approach to property matching goes beyond simple price and location criteria. She takes time to understand 
+                  your lifestyle, work patterns, and long-term goals. Are you seeking a primary residence or investment property? Do you 
+                  prioritize walkability to{' '}
+                  <Link href="/neighborhood/first-fridays" className="text-slate-900 font-semibold hover:underline">
+                    First Friday
+                  </Link>
+                  {' '}events, proximity to{' '}
+                  <Link href="/neighborhood/midtown-plaza" className="text-slate-900 font-semibold hover:underline">
+                    Midtown Plaza
+                  </Link>
+                  , or access to{' '}
+                  <Link href="/neighborhood/english-hotel" className="text-slate-900 font-semibold hover:underline">
+                    The English Hotel
+                  </Link>
+                  {' '}amenities? Understanding these preferences allows Dr. Jan to recommend properties that truly match your needs.
+                </p>
+                <p>
+                  For{' '}
+                  <Link href="/neighborhood/english-residences" className="text-slate-900 font-semibold hover:underline">
+                    English Residences
+                  </Link>
+                  {' '}buyers, Dr. Jan provides detailed analysis of the condo-hotel model, including revenue-sharing terms, 
+                  historical occupancy rates, and owner usage policies. She explains the unique benefits of this ownership structure 
+                  while ensuring you understand all aspects of the arrangement. This comprehensive approach prevents surprises and ensures 
+                  you make informed decisions aligned with your goals.
+                </p>
+              </div>
+              <div>
+                <h3 className="text-2xl font-bold text-slate-900 mb-4">Market Expertise and Insider Knowledge</h3>
+                <p className="mb-3">
+                  Dr. Jan's deep knowledge of Midtown extends beyond current listings to market trends, upcoming developments, and 
+                  neighborhood evolution. She understands how projects like the Plaza Tower or infrastructure improvements impact property 
+                  values. This insight helps clients time purchases optimally and identify opportunities before they become widely known.
+                </p>
+                <p>
+                  Her relationships with developers, property managers, and other real estate professionals provide access to off-market 
+                  opportunities and pre-listing notifications. This insider advantage is particularly valuable in Midtown's competitive 
+                  market, where desirable properties may receive multiple offers. Dr. Jan's network ensures you see the best properties 
+                  as soon as they become available.
+                </p>
+              </div>
+              <div>
+                <h3 className="text-2xl font-bold text-slate-900 mb-4">Post-Purchase Support</h3>
+                <p className="mb-3">
+                  Dr. Jan's service doesn't end at closing. She connects new owners with trusted local service providers, from mortgage 
+                  brokers and home inspectors to movers and interior designers familiar with Midtown's aesthetic. Her recommendations 
+                  help you quickly settle into your new home and become part of the community.
+                </p>
+                <p>
+                  Need recommendations for the best coffee shop within walking distance? Want to know which{' '}
+                  <Link href="/neighborhood/first-fridays" className="text-slate-900 font-semibold hover:underline">
+                    First Friday
+                  </Link>
+                  {' '}galleries are must-visits? Looking for reliable contractors or property management services? Dr. Jan's local 
+                  knowledge extends beyond real estate to the broader Midtown community, ensuring you have the resources you need to 
+                  thrive in your new neighborhood.
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </section>

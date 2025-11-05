@@ -141,7 +141,11 @@ export default function FAQPage() {
             Moving to or investing in Midtown Las Vegas represents a significant decision, and we understand you'll have questions about 
             everything from property types and pricing to neighborhood culture and daily living logistics. This comprehensive FAQ addresses 
             the most common questions we receive from prospective buyers, investors, and residents curious about Arts District living. Whether 
-            you're wondering about condo-hotel ownership mechanics, First Friday parking strategies, property appreciation trends, or simply 
+            you're wondering about condo-hotel ownership mechanics,{' '}
+            <Link href="/neighborhood/first-fridays" className="text-slate-900 font-semibold hover:underline">
+              First Friday
+            </Link>
+            {' '}parking strategies, property appreciation trends, or simply 
             what it's like to wake up in the heart of Las Vegas's creative center, you'll find answers below.
           </p>
           <p>
@@ -150,23 +154,81 @@ export default function FAQPage() {
             and cultural events. Retirees desire vibrant community without overwhelming tourist crowds. Whatever brings you to explore Midtown, 
             understanding the neighborhood's unique characteristics helps determine whether it matches your lifestyle and financial goals.
           </p>
-          <p>
-            The English Residences condo-hotel model generates particular interest and questions. How does revenue sharing work? What percentage 
-            of HOA fees does rental income cover? Can you use your unit whenever you want despite hotel management? These questions deserve detailed 
-            answers beyond marketing generalities, which is why we provide specific information about ownership structure, historical performance, 
-            and realistic expectations. Transparency helps buyers make informed decisions aligned with their situations.
-          </p>
-          <p>
-            Beyond specific FAQ answers, understanding Midtown requires experiencing the neighborhood. We encourage potential residents to visit 
-            during First Friday, walk the Arts District, dine at local restaurants, and explore galleries before committing to property purchases. 
-            Many buyers schedule multiple visits across different days and times to observe neighborhood rhythms—quiet weekday mornings versus energetic 
-            Friday evenings, for example. This hands-on research, combined with Dr. Jan's expert guidance, ensures you find the perfect Midtown property 
-            for your unique needs. Can't find your question below? Contact Dr. Jan directly at (702) 500-1955 for personalized answers to your specific 
-            questions about Midtown living and real estate opportunities. Dr. Jan provides detailed consultation for serious buyers, including property 
-            comparisons, market analysis, financing options, and rental income projections for English Residences. Her expertise covers not just 
-            individual properties but the broader Midtown context—understanding how location within the neighborhood affects lifestyle, how proximity to 
-            First Friday impacts weekend energy levels, and how different buildings' character attracts different demographics.
-          </p>
+          <div className="space-y-6 mt-8">
+            <div>
+              <h3 className="text-2xl font-bold text-slate-900 mb-4">Understanding Midtown's Appeal</h3>
+              <p className="mb-3">
+                Midtown's appeal extends beyond typical real estate considerations. The neighborhood offers a unique lifestyle that combines 
+                urban convenience with cultural richness. Residents enjoy walkable access to over 30 art galleries, chef-driven restaurants, 
+                and monthly{' '}
+                <Link href="/neighborhood/first-fridays" className="text-slate-900 font-semibold hover:underline">
+                  First Friday
+                </Link>
+                {' '}celebrations that draw thousands of visitors. This cultural infrastructure creates a sense of community and belonging 
+                that's rare in Las Vegas, where many neighborhoods lack genuine gathering spaces and shared experiences.
+              </p>
+              <p>
+                The neighborhood's transformation from industrial zone to cultural destination reflects broader trends in urban development. 
+                Cities nationwide are recognizing the value of walkable, mixed-use neighborhoods that support both residents and local businesses. 
+                Midtown exemplifies this model, demonstrating how creative industries can drive economic development while preserving authentic 
+                character. This success story attracts both residents seeking this lifestyle and investors recognizing the neighborhood's 
+                appreciation potential.
+              </p>
+            </div>
+            <div>
+              <h3 className="text-2xl font-bold text-slate-900 mb-4">The English Residences Condo-Hotel Model</h3>
+              <p className="mb-3">
+                The{' '}
+                <Link href="/neighborhood/english-residences" className="text-slate-900 font-semibold hover:underline">
+                  English Residences
+                </Link>
+                {' '}condo-hotel model generates particular interest and questions. How does revenue sharing work? What percentage 
+                of HOA fees does rental income cover? Can you use your unit whenever you want despite hotel management? These questions deserve detailed 
+                answers beyond marketing generalities, which is why we provide specific information about ownership structure, historical performance, 
+                and realistic expectations. Transparency helps buyers make informed decisions aligned with their situations.
+              </p>
+              <p>
+                Condo-hotel ownership represents an innovative approach to real estate that combines personal use with investment potential. 
+                Unlike traditional condos where units sit vacant when owners are away, condo-hotels allow owners to generate rental income 
+                through professional hotel management. This model appeals to investors seeking passive income, part-time residents who want 
+                flexibility, and anyone interested in the unique benefits of both ownership and hotel services. The{' '}
+                <Link href="/neighborhood/english-hotel" className="text-slate-900 font-semibold hover:underline">
+                  English Hotel
+                </Link>
+                {' '}management ensures professional marketing, guest services, and maintenance, while owners retain full ownership rights 
+                and can use their units whenever desired.
+              </p>
+            </div>
+            <div>
+              <h3 className="text-2xl font-bold text-slate-900 mb-4">Experiencing Midtown Before You Buy</h3>
+              <p className="mb-3">
+                Beyond specific FAQ answers, understanding Midtown requires experiencing the neighborhood. We encourage potential residents to visit 
+                during{' '}
+                <Link href="/neighborhood/first-fridays" className="text-slate-900 font-semibold hover:underline">
+                  First Friday
+                </Link>
+                , walk the{' '}
+                <Link href="/neighborhood/arts-district" className="text-slate-900 font-semibold hover:underline">
+                  Arts District
+                </Link>
+                , dine at local restaurants, and explore galleries before committing to property purchases. 
+                Many buyers schedule multiple visits across different days and times to observe neighborhood rhythms—quiet weekday mornings versus energetic 
+                Friday evenings, for example. This hands-on research, combined with Dr. Jan's expert guidance, ensures you find the perfect Midtown property 
+                for your unique needs.
+              </p>
+              <p>
+                Can't find your question below? Contact Dr. Jan directly at (702) 500-1955 for personalized answers to your specific 
+                questions about Midtown living and real estate opportunities. Dr. Jan provides detailed consultation for serious buyers, including property 
+                comparisons, market analysis, financing options, and rental income projections for{' '}
+                <Link href="/neighborhood/english-residences" className="text-slate-900 font-semibold hover:underline">
+                  English Residences
+                </Link>
+                . Her expertise covers not just 
+                individual properties but the broader Midtown context—understanding how location within the neighborhood affects lifestyle, how proximity to 
+                First Friday impacts weekend energy levels, and how different buildings' character attracts different demographics.
+              </p>
+            </div>
+          </div>
         </div>
       </section>
 
