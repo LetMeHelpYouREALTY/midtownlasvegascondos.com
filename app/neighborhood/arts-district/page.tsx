@@ -161,11 +161,70 @@ export default function ArtsDistrictPage() {
             into the city's creative soul. Starting in the late 1990s, artists and entrepreneurs 
             began transforming abandoned buildings into galleries, studios, and unique businesses.
           </p>
-          <p className="text-lg text-white/90 leading-relaxed">
+          <p className="text-lg text-white/90 mb-6 leading-relaxed">
             Today, the 18b Arts District (named for the original Las Vegas township designation) 
             stands as a testament to community-driven urban renewal, attracting visitors from 
             around the world while maintaining its authentic, local character.
           </p>
+          <div className="space-y-6 mt-8">
+            <div>
+              <h3 className="text-2xl font-bold mb-4">The Industrial Beginnings</h3>
+              <p className="text-base text-white/90 leading-relaxed mb-3">
+                Before becoming Las Vegas's cultural heart, the Arts District functioned as an industrial zone serving the city's 
+                manufacturing and distribution needs. Warehouses and factories dominated the landscape, with minimal residential development. 
+                The area's transformation began when visionary artists like Wes Myles recognized the potential in these abandoned structures, 
+                seeing not dilapidated buildings but blank canvases for creative expression.
+              </p>
+              <p className="text-base text-white/90 leading-relaxed">
+                The Arts Factory, opened in 1997, became a pioneering example of adaptive reuse, demonstrating how industrial spaces could 
+                be repurposed for creative industries. Artists and entrepreneurs followed, drawn by affordable space and the opportunity to 
+                build something new. This grassroots movement gained momentum throughout the late 1990s and early 2000s, as more creatives 
+                discovered the area's potential. The neighborhood's transformation wasn't driven by top-down planning but by organic growth, 
+                as artists, gallery owners, and small business owners invested in the community.
+              </p>
+            </div>
+            <div>
+              <h3 className="text-2xl font-bold mb-4">The First Friday Revolution</h3>
+              <p className="text-base text-white/90 leading-relaxed mb-3">
+                The establishment of{' '}
+                <Link href="/neighborhood/first-fridays" className="text-white font-semibold hover:underline">
+                  First Friday
+                </Link>
+                {' '}in 2002 marked a turning point in the Arts District's evolution. Founded by Cindy Funkhouser, this monthly 
+                event transformed the neighborhood from a quiet creative enclave into a vibrant cultural destination. What began as a small 
+                gathering of artists and art enthusiasts has grown into the largest monthly art event in the Southwest, regularly attracting 
+                over 10,000 visitors.
+              </p>
+              <p className="text-base text-white/90 leading-relaxed">
+                First Friday created a regular platform for artists to showcase their work, galleries to attract new visitors, and the 
+                community to come together in celebration of creativity. The event's success demonstrated the neighborhood's potential as a 
+                cultural destination, drawing attention from developers, investors, and city planners. This recognition led to increased 
+                investment in infrastructure, new business development, and eventually, residential projects that would allow people to live 
+                within walking distance of this cultural hub.
+              </p>
+            </div>
+            <div>
+              <h3 className="text-2xl font-bold mb-4">Modern Development and Recognition</h3>
+              <p className="text-base text-white/90 leading-relaxed mb-3">
+                The 2010s marked a new phase in the Arts District's evolution, as residential development began to complement the existing 
+                commercial and creative spaces. Projects like{' '}
+                <Link href="/neighborhood/english-residences" className="text-white font-semibold hover:underline">
+                  The English Residences
+                </Link>
+                {' '}demonstrated that luxury living could coexist with the neighborhood's artistic character. The opening of{' '}
+                <Link href="/neighborhood/english-hotel" className="text-white font-semibold hover:underline">
+                  The English Hotel
+                </Link>
+                {' '}in 2022 brought international attention to Midtown while maintaining the area's authentic character.
+              </p>
+              <p className="text-base text-white/90 leading-relaxed">
+                CNN's 2024 recognition of the Arts District as "the most exciting neighborhood" in Las Vegas validated what locals had known 
+                for years—Midtown offers authentic urban culture that rivals established arts districts in larger cities. Today, the neighborhood 
+                continues to evolve, with new developments like the Plaza Tower scheduled to open in 2025, bringing modern amenities while 
+                preserving the neighborhood's artistic identity.
+              </p>
+            </div>
+          </div>
         </div>
 
         {/* Visit Section */}
