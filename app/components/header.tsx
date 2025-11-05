@@ -22,6 +22,15 @@ export function Header() {
       ],
     },
     { name: 'Search Properties', href: 'http://drjanduffy.realscout.com/' },
+    {
+      name: 'Resources',
+      items: [
+        { name: 'Midtown Real Estate', href: '/midtown-real-estate' },
+        { name: "Buyer's Guide", href: '/buyers-guide-midtown' },
+        { name: 'Investment Properties', href: '/investment-properties' },
+        { name: 'Arts District Guide', href: '/arts-district-guide' },
+      ],
+    },
     { name: 'Events', href: '/events' },
     { name: 'News', href: '/news' },
     { name: 'FAQ', href: '/faq' },

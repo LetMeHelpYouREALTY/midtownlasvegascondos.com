@@ -221,7 +221,7 @@ export default function EventsPage() {
                     <>
                       {' '}
                       <Link href={event.link} className="text-slate-900 font-semibold hover:underline">
-                        Learn more →
+                        Explore Arts District events →
                       </Link>
                     </>
                   )}

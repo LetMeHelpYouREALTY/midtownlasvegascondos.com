@@ -5,8 +5,8 @@ import { PageFAQ } from '@/app/components/page-faq'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Las Vegas Arts District | 18b Arts District Homes & Condos',
-  description: 'CNN called it "the most exciting neighborhood" in Las Vegas. Find your home in the Arts District with galleries, restaurants, and First Friday. Call (702) 500-1955.',
+  title: 'Arts District Las Vegas Real Estate | Midtown Condo Homes for Sale',
+  description: 'Explore homes for sale in Las Vegas\'s Arts District. 18 blocks of galleries, restaurants, culture. Midtown condos offer authentic urban living near downtown. Schedule your tour today.',
   keywords: 'Las Vegas Arts District, 18b Arts District, downtown Las Vegas homes, First Friday Las Vegas, Arts District condos, creative Las Vegas neighborhood',
   alternates: {
     canonical: 'https://www.midtownlasvegascondos.com/neighborhood/arts-district',

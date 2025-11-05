@@ -8,8 +8,9 @@ import { RealScoutListings } from './components/realscout-listings'
 import { PageFAQ } from './components/page-faq'
 
 export const metadata: Metadata = {
+  title: 'Luxury Midtown Las Vegas Condos | Arts District Real Estate | 702-500-1955',
   description:
-    'Discover luxury condominium living in the heart of Las Vegas Arts District. Experience the vibrant culture, dining, and entertainment of Midtown. Contact Dr. Jan at (702) 500-1955 or DrJanSells@MidtownLasVegasCondos.com',
+    'Discover luxury condominium living in the heart of Las Vegas Arts District. Experience the vibrant culture, dining, and entertainment of Midtown. Contact us today at (702) 500-1955.',
   alternates: {
     canonical: 'https://www.midtownlasvegascondos.com/',
   },
@@ -23,9 +24,9 @@ export default function HomePage() {
         <div className="absolute inset-0 bg-black/40" />
         <div className="relative z-10 text-center px-4 sm:px-6 max-w-4xl mx-auto">
           <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 tracking-tight">
-            Meet me
+            Luxury Midtown Las Vegas Condos
             <br />
-            in Midtown.
+            <span className="text-4xl md:text-6xl">Arts District Living Reimagined</span>
           </h1>
           <p className="text-xl md:text-2xl text-white/90 mb-8">
             Discover luxury living in the heart of Las Vegas Arts District
@@ -440,8 +441,92 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Featured Listings */}
+      {/* Why Choose Midtown */}
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6">
+              Why Midtown Las Vegas Stands Out
+            </h2>
+            <p className="text-xl text-slate-600 max-w-3xl mx-auto">
+              Discover what makes Midtown the premier destination for authentic Las Vegas living
+            </p>
+          </div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="bg-slate-50 rounded-lg p-8">
+              <div className="text-3xl mb-4">✓</div>
+              <h3 className="text-xl font-bold text-slate-900 mb-3">
+                Walkable Urban Lifestyle
+              </h3>
+              <p className="text-slate-600 leading-relaxed">
+                Enjoy genuine walkability in the cultural heart of Vegas. Stroll to galleries, 
+                restaurants, and entertainment within steps of your home.
+              </p>
+            </div>
+            <div className="bg-slate-50 rounded-lg p-8">
+              <div className="text-3xl mb-4">✓</div>
+              <h3 className="text-xl font-bold text-slate-900 mb-3">
+                World-Class Culture & Dining
+              </h3>
+              <p className="text-slate-600 leading-relaxed">
+                Access 30+ art galleries, monthly First Friday events, chef-driven restaurants, 
+                and cultural venues like the Majestic Repertory Theatre.
+              </p>
+            </div>
+            <div className="bg-slate-50 rounded-lg p-8">
+              <div className="text-3xl mb-4">✓</div>
+              <h3 className="text-xl font-bold text-slate-900 mb-3">
+                45% Property Appreciation
+              </h3>
+              <p className="text-slate-600 leading-relaxed">
+                Average property appreciation since 2015, reflecting the neighborhood's 
+                transformation and strong investment potential.
+              </p>
+            </div>
+            <div className="bg-slate-50 rounded-lg p-8">
+              <div className="text-3xl mb-4">✓</div>
+              <h3 className="text-xl font-bold text-slate-900 mb-3">
+                Prime Location Access
+              </h3>
+              <p className="text-slate-600 leading-relaxed">
+                15 minutes to airport, minutes to downtown & Strip. Convenient access to city 
+                amenities while maintaining neighborhood character.
+              </p>
+            </div>
+            <div className="bg-slate-50 rounded-lg p-8">
+              <div className="text-3xl mb-4">✓</div>
+              <h3 className="text-xl font-bold text-slate-900 mb-3">
+                Authentic Community
+              </h3>
+              <p className="text-slate-600 leading-relaxed">
+                Experience authentic Las Vegas living vs. typical developments. Join a thriving 
+                creative community with genuine neighborhood connections.
+              </p>
+            </div>
+            <div className="bg-slate-50 rounded-lg p-8">
+              <div className="text-3xl mb-4">✓</div>
+              <h3 className="text-xl font-bold text-slate-900 mb-3">
+                Investment & Income Potential
+              </h3>
+              <p className="text-slate-600 leading-relaxed">
+                Unique investment opportunities with rental income potential. The English Residences 
+                condo-hotel model allows income generation when not in use.
+              </p>
+            </div>
+          </div>
+          <div className="text-center mt-12">
+            <Link
+              href="/midtown-real-estate"
+              className="inline-block px-8 py-4 bg-slate-900 text-white rounded-lg font-semibold hover:bg-slate-800 transition-colors"
+            >
+              Explore Midtown Real Estate
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Featured Listings */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-slate-50">
         <div className="max-w-7xl mx-auto">
           <RealScoutListings
             title="Featured Midtown Properties"

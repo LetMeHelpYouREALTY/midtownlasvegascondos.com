@@ -32,11 +32,25 @@ export function LocalBusinessSchema() {
       },
     ],
     priceRange: '$$$',
-    areaServed: {
-      '@type': 'City',
-      name: 'Las Vegas',
-      '@id': 'https://www.wikidata.org/wiki/Q23768',
-    },
+    areaServed: [
+      {
+        '@type': 'City',
+        name: 'Las Vegas',
+        '@id': 'https://www.wikidata.org/wiki/Q23768',
+      },
+      {
+        '@type': 'AdministrativeArea',
+        name: 'Midtown',
+      },
+      {
+        '@type': 'AdministrativeArea',
+        name: 'Arts District',
+      },
+      {
+        '@type': 'City',
+        name: 'Downtown Las Vegas',
+      },
+    ],
     serviceArea: {
       '@type': 'GeoCircle',
       geoMidpoint: {
@@ -46,6 +60,14 @@ export function LocalBusinessSchema() {
       },
       geoRadius: '10000',
     },
+    knowsAbout: [
+      'Real Estate',
+      'Luxury Condos',
+      'Downtown Living',
+      'Arts District Real Estate',
+      'Investment Properties',
+      'Property Management',
+    ],
   }
 
   return (

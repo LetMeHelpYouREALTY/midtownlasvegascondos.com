@@ -7,16 +7,18 @@ import { Footer } from './components/footer'
 import { LocalBusinessSchema } from './components/structured-data'
 import { FAQSchema } from './components/faq-schema'
 import { GoogleAnalytics } from './components/google-analytics'
+import { AggregateRatingSchema } from './components/aggregate-rating-schema'
+import { StickyCTABar } from './components/sticky-cta-bar'
 
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
   title: {
-    default: 'Midtown Las Vegas Condos | Luxury Living in the Arts District',
+    default: 'Luxury Midtown Las Vegas Condos | Arts District Real Estate | 702-500-1955',
     template: '%s | Midtown Las Vegas Condos',
   },
   description:
-    'Discover luxury condominium living in the heart of Las Vegas Arts District. Experience the vibrant culture, dining, and entertainment of Midtown. Contact Dr. Jan at (702) 500-1955 or DrJanSells@MidtownLasVegasCondos.com',
+    'Discover luxury condominium living in the heart of Las Vegas Arts District. Experience the vibrant culture, dining, and entertainment of Midtown. Contact us today at (702) 500-1955.',
   metadataBase: new URL('https://www.midtownlasvegascondos.com'),
   alternates: {
     canonical: 'https://www.midtownlasvegascondos.com/',
@@ -101,10 +103,12 @@ export default function RootLayout({
       <body className={`${inter.className} antialiased`}>
         <GoogleAnalytics />
         <LocalBusinessSchema />
+        <AggregateRatingSchema />
         <FAQSchema />
         <Header />
         <main className="pt-16">{children}</main>
         <Footer />
+        <StickyCTABar />
       </body>
     </html>
   )
