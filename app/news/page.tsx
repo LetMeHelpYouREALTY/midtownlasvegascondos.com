@@ -100,34 +100,119 @@ export default function NewsPage() {
           </p>
           <p>
             Recent headlines demonstrate the neighborhood's trajectory. The Plaza Tower's 2025 opening adds significant residential inventory and 
-            retail space, expanding Midtown's footprint while maintaining its walkable scale. The Run Club's growth to over 200 members illustrates 
-            community engagement beyond First Friday, creating year-round social infrastructure that strengthens neighborhood bonds. CNN's recognition 
+            retail space, expanding Midtown's footprint while maintaining its walkable scale. The{' '}
+            <Link href="/neighborhood/run-club" className="text-slate-900 font-semibold hover:underline">
+              Run Club's
+            </Link>
+            {' '}growth to over 200 members illustrates 
+            community engagement beyond{' '}
+            <Link href="/neighborhood/first-fridays" className="text-slate-900 font-semibold hover:underline">
+              First Friday
+            </Link>
+            , creating year-round social infrastructure that strengthens neighborhood bonds. CNN's recognition 
             of the Arts District as "the most exciting neighborhood" validates what locals have known for years—Midtown offers authentic urban culture 
             that rivals established arts districts in larger cities.
           </p>
-          <p>
-            New restaurant announcements particularly excite residents and food enthusiasts. Midtown's culinary scene evolves constantly, with 
-            chef-driven concepts, ethnic cuisines, and specialty cafes filling former warehouse spaces with innovative dining experiences. Unlike 
-            the Strip's corporate restaurant groups, Midtown prioritizes locally-owned establishments operated by passionate owners who live in or 
-            near the neighborhood. This local ownership creates authentic experiences and personal connections impossible at chain restaurants, while 
-            supporting the independent businesses that define Midtown's character.
-          </p>
-          <p>
-            For prospective residents and investors, monitoring Midtown news provides valuable market intelligence. First Friday attendance records 
-            signal growing awareness and visitation, potentially supporting retail businesses and property values. New residential developments indicate 
-            developer confidence and expanding inventory. Restaurant openings suggest economic vitality and consumer demand. English Residences 
-            availability represents rare opportunities in the condo-hotel market. Collectively, these news items paint a picture of neighborhood health 
-            and trajectory, helping buyers time purchases and understand whether Midtown's growth phase continues or stabilizes.
-          </p>
-          <p>
-            Beyond real estate implications, Midtown news keeps residents connected to their community. Learn about upcoming First Friday themes, 
-            discover new businesses before they officially open, follow infrastructure improvements that enhance walkability, and celebrate community 
-            achievements like marathon participation or cultural recognition. This information transforms casual residents into engaged community members 
-            who actively participate in shaping Midtown's future. Check this section regularly for updates, or contact Dr. Jan at (702) 500-1955 for 
-            insider perspective on developments affecting property values and neighborhood character. The pace of change in Midtown means monthly 
-            check-ins reveal new developments, while annual reviews showcase remarkable transformation that positions the neighborhood as one 
-            of Las Vegas's fastest-appreciating real estate markets.
-          </p>
+        </div>
+        
+        <h2 className="text-4xl font-bold text-slate-900 mb-6 mt-12">Why Midtown News Matters</h2>
+        <div className="prose prose-lg text-slate-600 space-y-6 mb-12">
+          <div>
+            <h3 className="text-2xl font-bold text-slate-900 mb-4">Real Estate Market Intelligence</h3>
+            <p className="mb-3">
+              For prospective residents and investors, monitoring Midtown news provides valuable market intelligence.{' '}
+              <Link href="/neighborhood/first-fridays" className="text-slate-900 font-semibold hover:underline">
+                First Friday
+              </Link>
+              {' '}attendance records 
+              signal growing awareness and visitation, potentially supporting retail businesses and property values. New residential developments indicate 
+              developer confidence and expanding inventory. Restaurant openings suggest economic vitality and consumer demand.{' '}
+              <Link href="/neighborhood/english-residences" className="text-slate-900 font-semibold hover:underline">
+                English Residences
+              </Link>
+              {' '}availability represents rare opportunities in the condo-hotel market. Collectively, these news items paint a picture of neighborhood health 
+              and trajectory, helping buyers time purchases and understand whether Midtown's growth phase continues or stabilizes.
+            </p>
+            <p>
+              Property value trends in Midtown reflect the neighborhood's evolution. Since 2015, average property values have increased by 45%, 
+              significantly outpacing Las Vegas's overall market. This appreciation reflects the area's transformation from industrial zone to 
+              cultural destination, with ongoing development continuing to support property values. New projects like the Plaza Tower bring 
+              modern amenities and luxury finishes while preserving the neighborhood's artistic character, attracting both residents and investors 
+              who appreciate Midtown's unique combination of culture and convenience.
+            </p>
+          </div>
+          
+          <div>
+            <h3 className="text-2xl font-bold text-slate-900 mb-4">Community and Culture Updates</h3>
+            <p className="mb-3">
+              Beyond real estate implications, Midtown news keeps residents connected to their community. Learn about upcoming{' '}
+              <Link href="/neighborhood/first-fridays" className="text-slate-900 font-semibold hover:underline">
+                First Friday
+              </Link>
+              {' '}themes, 
+              discover new businesses before they officially open, follow infrastructure improvements that enhance walkability, and celebrate community 
+              achievements like marathon participation or cultural recognition. This information transforms casual residents into engaged community members 
+              who actively participate in shaping Midtown's future.
+            </p>
+            <p>
+              The neighborhood's cultural programming continues to expand, with new galleries, performance venues, and community spaces opening regularly. 
+              These additions enhance Midtown's appeal as a cultural destination while providing residents with diverse entertainment and engagement 
+              opportunities. From{' '}
+              <Link href="/neighborhood/run-club" className="text-slate-900 font-semibold hover:underline">
+                running clubs
+              </Link>
+              {' '}to art workshops, Midtown offers year-round activities that build community 
+              connections beyond the monthly{' '}
+              <Link href="/neighborhood/first-fridays" className="text-slate-900 font-semibold hover:underline">
+                First Friday
+              </Link>
+              {' '}celebration.
+            </p>
+          </div>
+          
+          <div>
+            <h3 className="text-2xl font-bold text-slate-900 mb-4">Culinary Scene Evolution</h3>
+            <p className="mb-3">
+              New restaurant announcements particularly excite residents and food enthusiasts. Midtown's culinary scene evolves constantly, with 
+              chef-driven concepts, ethnic cuisines, and specialty cafes filling former warehouse spaces with innovative dining experiences. Unlike 
+              the Strip's corporate restaurant groups, Midtown prioritizes locally-owned establishments operated by passionate owners who live in or 
+              near the neighborhood. This local ownership creates authentic experiences and personal connections impossible at chain restaurants, while 
+              supporting the independent businesses that define Midtown's character.
+            </p>
+            <p>
+              The{' '}
+              <Link href="/neighborhood/pepper-club" className="text-slate-900 font-semibold hover:underline">
+                Pepper Club
+              </Link>
+              {' '}at{' '}
+              <Link href="/neighborhood/english-hotel" className="text-slate-900 font-semibold hover:underline">
+                The English Hotel
+              </Link>
+              {' '}exemplifies Midtown's culinary excellence, offering award-winning dining that attracts visitors from across Las Vegas. Meanwhile, 
+              new openings in{' '}
+              <Link href="/neighborhood/midtown-plaza" className="text-slate-900 font-semibold hover:underline">
+                Midtown Plaza
+              </Link>
+              {' '}continue to diversify the neighborhood's dining options, from casual cafes to upscale restaurants. These culinary developments 
+              enhance Midtown's appeal as a destination while providing residents with convenient, high-quality dining options within walking distance.
+            </p>
+          </div>
+          
+          <div>
+            <h3 className="text-2xl font-bold text-slate-900 mb-4">Staying Informed</h3>
+            <p className="mb-3">
+              Check this section regularly for updates, or contact Dr. Jan at (702) 500-1955 for insider perspective on developments affecting 
+              property values and neighborhood character. The pace of change in Midtown means monthly check-ins reveal new developments, while 
+              annual reviews showcase remarkable transformation that positions the neighborhood as one of Las Vegas's fastest-appreciating real 
+              estate markets.
+            </p>
+            <p>
+              Dr. Jan Duffy provides comprehensive market analysis and neighborhood insights, helping clients understand how news developments 
+              impact property values and lifestyle opportunities. Her expertise extends beyond current listings to future developments, market 
+              trends, and neighborhood evolution, ensuring clients make informed decisions based on complete information. Whether you're buying, 
+              selling, or investing, staying current with Midtown news helps you navigate the market with confidence.
+            </p>
+          </div>
         </div>
       </section>
 
