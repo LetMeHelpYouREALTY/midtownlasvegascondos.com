@@ -12,3 +12,13 @@ Disallow: /api/
 Disallow: /_next/
 Disallow: /static/
 
+# Allow Google specific crawlers
+User-agent: Googlebot
+Allow: /
+
+User-agent: Googlebot-Image
+Allow: /
+
+User-agent: Googlebot-Video
+Allow: /
+
