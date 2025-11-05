@@ -84,7 +84,11 @@ export default function FirstFridaysPage() {
               hassles. This represents the ultimate urban living advantage—world-class cultural events literally outside your door.
             </p>
             <p>
-              First-time visitors should start at the Arts District information booth near Main Street and Charleston to grab an event 
+              First-time visitors should start at the{' '}
+              <Link href="/neighborhood/arts-district" className="text-slate-900 font-semibold hover:underline">
+                Arts District
+              </Link>
+              {' '}information booth near Main Street and Charleston to grab an event 
               map showing all participating galleries, food vendors, and performance stages. Come with comfortable walking shoes, bring 
               cash for artisan vendors (though most galleries and food trucks accept cards), and don't hesitate to engage with artists 
               and gallery owners—they're passionate about sharing their work and stories. The event is family-friendly earlier in the 
@@ -92,6 +96,39 @@ export default function FirstFridaysPage() {
               to support local artists and acquire unique pieces that remind you of Las Vegas's creative soul beyond the Strip's 
               commercial galleries.
             </p>
+            <div>
+              <h3 className="text-2xl font-bold text-slate-900 mt-6 mb-4">The First Friday Experience</h3>
+              <p className="mb-3">
+                First Friday creates a unique atmosphere that transforms the Arts District from a quiet neighborhood into a vibrant cultural 
+                celebration. The event's success reflects the neighborhood's collaborative spirit, with galleries, restaurants, and businesses 
+                working together to create an unforgettable experience. This monthly transformation demonstrates the Arts District's dynamic 
+                character and the community's commitment to celebrating creativity and culture.
+              </p>
+              <p>
+                The event's impact extends beyond the monthly celebration, supporting local businesses, showcasing artists, and attracting visitors 
+                who discover the Arts District's authentic character. For residents, First Friday provides a regular opportunity to experience 
+                the neighborhood's cultural offerings while connecting with neighbors and visitors. The event's growth from a small gathering 
+                to Las Vegas's largest monthly art event demonstrates the Arts District's evolution and the neighborhood's appeal as a cultural 
+                destination.
+              </p>
+            </div>
+            <div>
+              <h3 className="text-2xl font-bold text-slate-900 mt-6 mb-4">Living in the First Friday Neighborhood</h3>
+              <p className="mb-3">
+                Living in Midtown means First Friday becomes your monthly neighborhood party rather than a destination event. Residents 
+                enjoy the convenience of walking to galleries, ducking home to refresh, and experiencing the energy without transportation 
+                hassles. This represents the ultimate urban living advantage—world-class cultural events literally outside your door. The 
+                walkability that defines Midtown living makes First Friday particularly accessible, allowing residents to fully participate 
+                in the celebration without parking concerns or transportation planning.
+              </p>
+              <p>
+                Properties near Main Street and the heart of the Arts District offer immediate access to First Friday activities, while 
+                locations slightly further provide a quieter residential experience with easy walking access to the event. This proximity 
+                to First Friday represents a significant advantage for Midtown residents, creating a lifestyle that combines urban convenience 
+                with cultural richness. The monthly celebration becomes a regular part of neighborhood life, supporting both community connection 
+                and property values.
+              </p>
+            </div>
           </div>
         </div>
       </section>

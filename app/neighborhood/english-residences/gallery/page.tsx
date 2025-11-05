@@ -198,9 +198,61 @@ export default function EnglishResidencesGalleryPage() {
       {/* Floor Plans */}
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-slate-50">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-3xl font-bold text-slate-900 mb-8">
-            Floor Plans
-          </h2>
+          <div className="mb-12">
+            <h2 className="text-3xl font-bold text-slate-900 mb-6">
+              Floor Plans
+            </h2>
+            <p className="text-lg text-slate-600 mb-6 leading-relaxed">
+              Explore The English Residences floor plans to understand the layout, square footage, and design of each unit type. From efficient 
+              studios perfect for part-time residents to spacious penthouses ideal for full-time living, each floor plan is thoughtfully designed 
+              to maximize space and functionality while maintaining luxury standards.
+            </p>
+            <div className="space-y-6 mt-8">
+              <div>
+                <h3 className="text-2xl font-bold text-slate-900 mb-4">Studio and One-Bedroom Units</h3>
+                <p className="text-base text-slate-600 mb-3 leading-relaxed">
+                  Studio and one-bedroom units at The English Residences offer efficient layouts that maximize functionality within compact spaces. 
+                  Open-concept designs create a sense of spaciousness, while thoughtful storage solutions ensure that every square foot serves a 
+                  purpose. These units are ideal for part-time residents, investors seeking rental income, or anyone prioritizing location and 
+                  amenities over square footage.
+                </p>
+                <p className="text-base text-slate-600 leading-relaxed">
+                  The efficient layouts demonstrate thoughtful design that balances living space, storage, and functionality. Premium finishes 
+                  and luxury amenities ensure that even the smallest units maintain the high standards that define The English Residences. These 
+                  units offer an excellent entry point into Midtown living while providing access to all the neighborhood's cultural amenities 
+                  and the building's luxury services.
+                </p>
+              </div>
+              <div>
+                <h3 className="text-2xl font-bold text-slate-900 mb-4">Two-Bedroom and Penthouse Units</h3>
+                <p className="text-base text-slate-600 mb-3 leading-relaxed">
+                  Two-bedroom and penthouse units provide spacious layouts ideal for full-time residents or those seeking more living space. 
+                  These units feature separate bedrooms, additional bathrooms, and expanded living areas that accommodate comfortable daily living. 
+                  The additional space allows for home offices, guest accommodations, or simply more room to enjoy the luxury amenities.
+                </p>
+                <p className="text-base text-slate-600 leading-relaxed">
+                  Penthouse units offer the ultimate in luxury living, with premium finishes, expansive layouts, and often, enhanced views of 
+                  the Arts District. These units represent the pinnacle of The English Residences experience, combining luxury amenities with 
+                  generous living space. The thoughtful design ensures that even the largest units maintain the intimate, residential feel that 
+                  distinguishes the building from typical hotel properties.
+                </p>
+              </div>
+              <div>
+                <h3 className="text-2xl font-bold text-slate-900 mb-4">Understanding Floor Plan Options</h3>
+                <p className="text-base text-slate-600 mb-3 leading-relaxed">
+                  When evaluating floor plans, consider how you'll use the space—are you seeking a primary residence, part-time home, or 
+                  investment property? Studio and one-bedroom units work well for part-time residents and investors, while two-bedroom and 
+                  penthouse units better accommodate full-time living or those who need more space. The flexible layouts accommodate diverse 
+                  needs, from home offices to guest accommodations.
+                </p>
+                <p className="text-base text-slate-600 leading-relaxed">
+                  Contact Dr. Jan Duffy at (702) 500-1955 to discuss which floor plan best matches your lifestyle and investment goals. She can 
+                  provide detailed information about available units, pricing, and how different floor plans support different usage patterns. 
+                  Her expertise helps you understand not just the square footage but how each layout supports your specific needs and preferences.
+                </p>
+              </div>
+            </div>
+          </div>
           <FloorPlanViewer plans={floorPlans} />
           
           <div className="mt-12 p-6 bg-blue-50 border border-blue-200 rounded-lg">
