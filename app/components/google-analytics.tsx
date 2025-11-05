@@ -2,7 +2,8 @@
 import Script from 'next/script'
 
 export function GoogleAnalytics() {
-  const gaId = process.env.NEXT_PUBLIC_GA_ID
+  // Use environment variable or fallback to hardcoded ID for production
+  const gaId = process.env.NEXT_PUBLIC_GA_ID || 'G-772V5VK7G0'
   const gtmId = process.env.NEXT_PUBLIC_GTM_ID
 
   if (!gaId && !gtmId) {
