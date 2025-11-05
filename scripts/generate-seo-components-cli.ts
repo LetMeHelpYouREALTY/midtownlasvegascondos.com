@@ -5,7 +5,7 @@
  * Component types: seoImage, seoLink, seoHero, featureCard
  */
 
-import { v0 } from 'v0-sdk'
+import { v0, ChatDetail } from 'v0-sdk'
 
 const componentPrompts: Record<string, string> = {
   seoImage: `Create an SEO-optimized Next.js Image component for a luxury real estate website in Las Vegas Arts District.
@@ -116,7 +116,7 @@ async function generateComponent(componentType: string) {
   console.log(`\n🚀 Generating ${componentType} component...\n`)
 
   try {
-    const response = await v0.chats.create({
+    const response = (await v0.chats.create({
       system:
         'You are an expert React/Next.js developer. Generate complete, production-ready TypeScript components with proper SEO optimization, accessibility, and modern design. Always include proper TypeScript types, Tailwind CSS v4 classes, and Next.js 15 App Router best practices. Export components as default exports.',
       message: componentPrompts[componentType],
@@ -126,7 +126,7 @@ async function generateComponent(componentType: string) {
         thinking: false,
       },
       responseMode: 'sync',
-    })
+    })) as ChatDetail
 
     console.log(`✅ Successfully generated ${componentType}`)
     console.log(`📝 Chat ID: ${response.id}`)

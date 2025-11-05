@@ -3,7 +3,7 @@
  * Run: pnpm tsx scripts/generate-all-seo-components.ts
  */
 
-import { v0 } from 'v0-sdk'
+import { v0, ChatDetail } from 'v0-sdk'
 
 const systemPrompt = `You are an expert React/Next.js developer. Generate complete, production-ready TypeScript components with proper SEO optimization, accessibility, and modern design. Always include proper TypeScript types, Tailwind CSS v4 classes, and Next.js 15 App Router best practices. Export components as default exports. Use 'use client' only when necessary.`
 
@@ -110,7 +110,7 @@ async function generateComponent(
   console.log(`\n🚀 Generating ${name}...`)
   
   try {
-    const response = await v0.chats.create({
+    const response = (await v0.chats.create({
       system: systemPrompt,
       message: prompt,
       modelConfiguration: {
@@ -119,7 +119,7 @@ async function generateComponent(
         thinking: false,
       },
       responseMode: 'sync',
-    })
+    })) as ChatDetail
 
     console.log(`✅ Generated ${name}`)
     console.log(`🔗 View: ${response.url}`)
