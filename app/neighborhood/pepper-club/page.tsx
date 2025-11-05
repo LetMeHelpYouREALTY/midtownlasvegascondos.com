@@ -2,6 +2,17 @@ import Link from 'next/link'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
+  title: 'The Pepper Club | Award-Winning Restaurant at The English Hotel',
+  description:
+    'The Pepper Club at The English Hotel offers award-winning dining in Midtown Las Vegas Arts District. Chef-driven cuisine, craft cocktails, and an elegant atmosphere. Located at 921 S Main Street.',
+  keywords: [
+    'Pepper Club Las Vegas',
+    'English Hotel restaurant',
+    'Arts District dining',
+    'Midtown Las Vegas restaurants',
+    'award-winning restaurant Las Vegas',
+    '921 S Main Street restaurant',
+  ],
   alternates: {
     canonical: 'https://www.midtownlasvegascondos.com/neighborhood/pepper-club',
   },

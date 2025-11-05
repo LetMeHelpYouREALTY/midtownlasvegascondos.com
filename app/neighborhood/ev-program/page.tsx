@@ -2,6 +2,17 @@ import Link from 'next/link'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
+  title: 'EV Vehicle Program | Electric Vehicle Charging in Midtown Las Vegas',
+  description:
+    'Midtown Las Vegas offers Level 2 electric vehicle charging stations for residents. Sustainable living meets luxury in the Arts District. Charge your EV while you live, work, and play in Midtown.',
+  keywords: [
+    'EV charging Las Vegas',
+    'electric vehicle Midtown',
+    'Arts District EV charging',
+    'Level 2 charging station',
+    'sustainable Las Vegas living',
+    'EV program Midtown',
+  ],
   alternates: {
     canonical: 'https://www.midtownlasvegascondos.com/neighborhood/ev-program',
   },

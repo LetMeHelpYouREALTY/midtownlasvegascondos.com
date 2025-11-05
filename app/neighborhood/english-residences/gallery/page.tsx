@@ -4,6 +4,17 @@ import { Metadata } from 'next'
 import Link from 'next/link'
 
 export const metadata: Metadata = {
+  title: 'English Residences Gallery | Luxury Condo-Hotel Photos & Floor Plans',
+  description:
+    'View photos and floor plans of The English Residences luxury condo-hotel units in Midtown Las Vegas. Modern interiors, floor-to-ceiling windows, and Arts District views. Contact Dr. Jan at (702) 500-1955 for a private tour.',
+  keywords: [
+    'English Residences photos',
+    'English Residences floor plans',
+    'Midtown Las Vegas condos gallery',
+    'Arts District luxury condos',
+    'condo-hotel Las Vegas',
+    'English Hotel residences',
+  ],
   alternates: {
     canonical: 'https://www.midtownlasvegascondos.com/neighborhood/english-residences/gallery',
   },

@@ -2,6 +2,17 @@ import Link from 'next/link'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
+  title: 'First Friday Las Vegas | Arts District Monthly Art Walk',
+  description:
+    'Experience First Friday Las Vegas, the largest monthly art event in the Southwest. Join 10,000+ visitors for gallery walks, live music, food trucks, and street art in the Arts District. Free admission, 5-11 PM first Friday of every month.',
+  keywords: [
+    'First Friday Las Vegas',
+    'Arts District First Friday',
+    'Las Vegas art walk',
+    'monthly art event Las Vegas',
+    '18b Arts District events',
+    'First Friday festival',
+  ],
   alternates: {
     canonical: 'https://www.midtownlasvegascondos.com/neighborhood/first-fridays',
   },

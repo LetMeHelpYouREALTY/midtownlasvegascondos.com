@@ -2,6 +2,17 @@ import Link from 'next/link'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
+  title: 'Midtown Las Vegas News & Updates | Arts District Development',
+  description:
+    'Stay updated on the latest Midtown Las Vegas news, developments, and neighborhood updates. From Plaza Tower opening to Arts District growth and community events.',
+  keywords: [
+    'Midtown Las Vegas news',
+    'Arts District development',
+    'Plaza Tower Las Vegas',
+    'Midtown updates',
+    'Las Vegas Arts District news',
+    'Midtown real estate news',
+  ],
   alternates: {
     canonical: 'https://www.midtownlasvegascondos.com/news',
   },

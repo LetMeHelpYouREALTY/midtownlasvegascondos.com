@@ -2,6 +2,17 @@ import Link from 'next/link'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
+  title: 'Midtown Run Club | Community Running Group in Arts District',
+  description:
+    'Join the Midtown Run Club for weekly group runs through the Las Vegas Arts District. Tuesdays and Thursdays at 6:30 PM. All fitness levels welcome. Build community while staying active in Midtown.',
+  keywords: [
+    'Midtown Run Club',
+    'Las Vegas running group',
+    'Arts District running',
+    'community fitness Las Vegas',
+    'Midtown Las Vegas activities',
+    'group runs Las Vegas',
+  ],
   alternates: {
     canonical: 'https://www.midtownlasvegascondos.com/neighborhood/run-club',
   },

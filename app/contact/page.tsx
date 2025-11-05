@@ -75,8 +75,20 @@ export default function ContactPage() {
             <p>
               Every property tour is personalized and informative. Dr. Jan doesn't just show you condos—she shares detailed information 
               about HOA fees, building amenities, parking options, nearby restaurants and galleries, and the character of each micro-neighborhood 
-              within Midtown. You'll learn about First Friday accessibility, proximity to Midtown Plaza's dining scene, and how different 
-              locations balance urban energy with residential tranquility. For English Residences buyers, Dr. Jan explains the condo-hotel 
+              within Midtown. You'll learn about{' '}
+              <Link href="/neighborhood/first-fridays" className="text-slate-900 font-semibold hover:underline">
+                First Friday
+              </Link>{' '}
+              accessibility, proximity to{' '}
+              <Link href="/neighborhood/midtown-plaza" className="text-slate-900 font-semibold hover:underline">
+                Midtown Plaza's dining scene
+              </Link>
+              , and how different 
+              locations balance urban energy with residential tranquility. For{' '}
+              <Link href="/neighborhood/english-residences" className="text-slate-900 font-semibold hover:underline">
+                English Residences
+              </Link>{' '}
+              buyers, Dr. Jan explains the condo-hotel 
               revenue sharing model, historical occupancy rates, and owner benefits in detail, ensuring you fully understand this unique 
               ownership structure.
             </p>

@@ -8,6 +8,8 @@ import { RealScoutListings } from './components/realscout-listings'
 import { PageFAQ } from './components/page-faq'
 
 export const metadata: Metadata = {
+  description:
+    'Discover luxury condominium living in the heart of Las Vegas Arts District. Experience the vibrant culture, dining, and entertainment of Midtown. Contact Dr. Jan at (702) 500-1955 or DrJanSells@MidtownLasVegasCondos.com',
   alternates: {
     canonical: 'https://www.midtownlasvegascondos.com/',
   },

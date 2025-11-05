@@ -2,6 +2,17 @@ import Link from 'next/link'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
+  title: 'The English Hotel | Boutique Luxury Hotel in Las Vegas Arts District',
+  description:
+    'The English Hotel at 921 S Main Street is a boutique luxury hotel in the heart of Midtown Las Vegas Arts District. Home to The Pepper Club restaurant and The English Residences. Experience authentic Las Vegas culture.',
+  keywords: [
+    'English Hotel Las Vegas',
+    'boutique hotel Arts District',
+    'Midtown Las Vegas hotel',
+    '921 S Main Street',
+    'Arts District hotel',
+    'luxury hotel downtown Las Vegas',
+  ],
   alternates: {
     canonical: 'https://www.midtownlasvegascondos.com/neighborhood/english-hotel',
   },

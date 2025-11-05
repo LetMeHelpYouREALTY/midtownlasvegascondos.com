@@ -4,6 +4,17 @@ import { Metadata } from 'next'
 import Link from 'next/link'
 
 export const metadata: Metadata = {
+  title: 'Property Search | Midtown Las Vegas Condos & Homes',
+  description:
+    'Search available luxury condominiums, condo-hotels, townhouses, and single-family homes in Midtown Las Vegas and the Arts District. Prices from $150,000 to $3,000,000+. Find your perfect property today.',
+  keywords: [
+    'Midtown Las Vegas homes',
+    'Arts District condos',
+    'property search Las Vegas',
+    'English Residences',
+    'Midtown condos for sale',
+    'downtown Las Vegas real estate',
+  ],
   alternates: {
     canonical: 'https://www.midtownlasvegascondos.com/search',
   },

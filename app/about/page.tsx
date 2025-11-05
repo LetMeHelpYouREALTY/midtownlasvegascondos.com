@@ -148,8 +148,11 @@ export default function AboutPage() {
                 />
               </svg>
               <span>
-                <strong>Community Events:</strong> Regular events like First Friday bring 
-                the neighborhood together in celebration of art and culture.
+                <strong>Community Events:</strong> Regular events like{' '}
+                <Link href="/neighborhood/first-fridays" className="text-slate-900 font-semibold hover:underline">
+                  First Friday
+                </Link>{' '}
+                bring the neighborhood together in celebration of art and culture.
               </span>
             </li>
           </ul>
