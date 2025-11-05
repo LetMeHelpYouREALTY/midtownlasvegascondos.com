@@ -1,4 +1,4 @@
-import { v0 } from 'v0-sdk'
+import { v0, ChatDetail } from 'v0-sdk'
 import { NextRequest, NextResponse } from 'next/server'
 
 const componentPrompts: Record<string, string> = {
@@ -74,7 +74,7 @@ export async function POST(request: NextRequest) {
       )
     }
 
-    const response = await v0.chats.create({
+    const response = (await v0.chats.create({
       system:
         'You are an expert React/Next.js developer. Generate complete, production-ready TypeScript components with proper SEO optimization and accessibility. Use Tailwind CSS v4 and Next.js 15 App Router best practices. Export as default.',
       message: componentPrompts[componentType],
@@ -84,7 +84,7 @@ export async function POST(request: NextRequest) {
         thinking: false,
       },
       responseMode: 'sync',
-    })
+    })) as ChatDetail
 
     return NextResponse.json({
       success: true,
