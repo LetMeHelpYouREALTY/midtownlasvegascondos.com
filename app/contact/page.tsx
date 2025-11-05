@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import Link from 'next/link'
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -67,7 +68,11 @@ export default function ContactPage() {
             </p>
             <p>
               The consultation process begins with understanding your unique needs. Are you looking for walkable access to galleries 
-              and restaurants? Interested in condo-hotel ownership with rental income potential? Need proximity to downtown Las Vegas 
+              and restaurants? Interested in{' '}
+              <Link href="/neighborhood/english-residences" className="text-slate-900 font-semibold hover:underline">
+                condo-hotel ownership
+              </Link>{' '}
+              with rental income potential? Need proximity to downtown Las Vegas 
               or the Strip for work? Dr. Jan takes time to discuss your priorities, budget, and timeline, then provides curated property 
               recommendations that align with your criteria. This includes access to off-market opportunities, upcoming listings before 
               they're publicly available, and insider knowledge about neighborhood developments that may impact property values.
