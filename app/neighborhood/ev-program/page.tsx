@@ -182,9 +182,9 @@ export default function EVProgramPage() {
               ))}
             </ul>
           </div>
-          <div className="aspect-[4/3] bg-slate-200 rounded-lg">
+          <div className="aspect-[4/3] bg-slate-200 rounded-lg" role="img" aria-label="Level 2 electric vehicle charging station in Midtown Las Vegas Arts District with modern charging infrastructure for residents">
             <div className="w-full h-full flex items-center justify-center text-slate-400">
-              EV Charging Image
+              Electric Vehicle Charging Station
             </div>
           </div>
         </div>

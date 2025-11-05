@@ -134,7 +134,7 @@ export default function EventsPage() {
               key={index}
               className="bg-white rounded-lg shadow-md border border-slate-200 overflow-hidden hover:shadow-lg transition-shadow"
             >
-              <div className="h-48 bg-slate-200 flex items-center justify-center text-slate-400">
+              <div className="h-48 bg-slate-200 flex items-center justify-center text-slate-400" role="img" aria-label={`${event.title} event in Midtown Las Vegas Arts District`}>
                 Event Image
               </div>
               <div className="p-6">

@@ -124,9 +124,9 @@ export default function NewsPage() {
       <section className="py-12 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
         <div className="bg-gradient-to-br from-slate-900 to-slate-700 rounded-lg overflow-hidden">
           <div className="grid md:grid-cols-2 gap-8">
-            <div className="aspect-video md:aspect-auto bg-slate-700">
+            <div className="aspect-video md:aspect-auto bg-slate-700" role="img" aria-label="Plaza Tower development in Midtown Las Vegas Arts District showcasing new luxury residential building">
               <div className="w-full h-full flex items-center justify-center text-slate-400">
-                Featured Image
+                Featured News Image
               </div>
             </div>
             <div className="p-8 md:p-12 flex flex-col justify-center text-white">
@@ -153,7 +153,7 @@ export default function NewsPage() {
               key={index}
               className="bg-white rounded-lg shadow-md border border-slate-200 overflow-hidden hover:shadow-lg transition-shadow"
             >
-              <div className="h-48 bg-slate-200 flex items-center justify-center text-slate-400">
+              <div className="h-48 bg-slate-200 flex items-center justify-center text-slate-400" role="img" aria-label={`${article.title} news image from Midtown Las Vegas Arts District`}>
                 Article Image
               </div>
               <div className="p-6">

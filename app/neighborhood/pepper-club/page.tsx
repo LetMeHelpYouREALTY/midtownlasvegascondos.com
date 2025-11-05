@@ -26,9 +26,9 @@ export default function PepperClubPage() {
       {/* Introduction */}
       <section className="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
         <div className="grid md:grid-cols-2 gap-12 items-center mb-16">
-          <div className="aspect-[4/3] bg-slate-200 rounded-lg">
+          <div className="aspect-[4/3] bg-slate-200 rounded-lg" role="img" aria-label="The Pepper Club restaurant interior at The English Hotel in Midtown Las Vegas Arts District featuring modern dining space with contemporary design">
             <div className="w-full h-full flex items-center justify-center text-slate-400">
-              Restaurant Image
+              The Pepper Club Restaurant
             </div>
           </div>
           <div>
@@ -176,9 +176,9 @@ export default function PepperClubPage() {
               ))}
             </ul>
           </div>
-          <div className="aspect-[4/3] bg-slate-200 rounded-lg">
+          <div className="aspect-[4/3] bg-slate-200 rounded-lg" role="img" aria-label="The Pepper Club restaurant interior showcasing sophisticated dining atmosphere with exposed brick and contemporary art in the Arts District">
             <div className="w-full h-full flex items-center justify-center text-slate-400">
-              Interior Image
+              Restaurant Interior
             </div>
           </div>
         </div>

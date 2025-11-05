@@ -69,9 +69,9 @@ export default function EnglishHotelPage() {
               Book Your Stay
             </Link>
           </div>
-          <div className="aspect-[4/3] bg-slate-200 rounded-lg">
+          <div className="aspect-[4/3] bg-slate-200 rounded-lg" role="img" aria-label="The English Hotel boutique luxury hotel exterior in Las Vegas Arts District at 921 S Main Street with modern industrial design">
             <div className="w-full h-full flex items-center justify-center text-slate-400">
-              Hotel Image
+              The English Hotel
             </div>
           </div>
         </div>

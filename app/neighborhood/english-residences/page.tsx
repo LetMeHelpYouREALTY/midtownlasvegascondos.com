@@ -89,9 +89,9 @@ export default function EnglishResidencesPage() {
               Register for Webinar
             </Link>
           </div>
-          <div className="aspect-[4/3] bg-slate-200 rounded-lg">
+          <div className="aspect-[4/3] bg-slate-200 rounded-lg" role="img" aria-label="Luxury English Residences condo-hotel unit interior in The English Hotel featuring modern design, floor-to-ceiling windows, and Arts District views">
             <div className="w-full h-full flex items-center justify-center text-slate-400">
-              Residence Image
+              English Residences Interior
             </div>
           </div>
         </div>

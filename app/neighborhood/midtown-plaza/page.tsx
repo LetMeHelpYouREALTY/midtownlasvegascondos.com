@@ -99,9 +99,9 @@ export default function MidtownPlazaPage() {
               ))}
             </ul>
           </div>
-          <div className="aspect-[4/3] bg-slate-200 rounded-lg">
+          <div className="aspect-[4/3] bg-slate-200 rounded-lg" role="img" aria-label="Midtown Plaza shopping and dining district in Las Vegas Arts District with walkable streets, local restaurants, and unique retail shops">
             <div className="w-full h-full flex items-center justify-center text-slate-400">
-              Plaza Image
+              Midtown Plaza
             </div>
           </div>
         </div>
