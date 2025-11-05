@@ -89,39 +89,96 @@ export default function EventsPage() {
       <section className="py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-4xl font-bold text-slate-900 mb-8">The Midtown Event Experience</h2>
-          <div className="prose prose-lg text-slate-600 space-y-6">
+          <div className="prose prose-lg text-slate-600 space-y-6 mb-12">
             <p>
-              Midtown's event calendar reflects the neighborhood's unique blend of art, culture, and community engagement. Unlike entertainment 
-              districts focused purely on tourist attractions, Midtown events serve locals first—creating authentic gatherings that prioritize 
-              community connection over commercial spectacle. This philosophy manifests in First Friday's grassroots atmosphere, the Run Club's 
-              inclusive culture, and seasonal celebrations that genuinely bring neighbors together rather than simply extracting tourist dollars.
+              Midtown's event calendar reflects the neighborhood's vibrant cultural character. From the monthly{' '}
+              <Link href="/neighborhood/first-fridays" className="text-slate-900 font-semibold hover:underline">
+                First Friday
+              </Link>
+              {' '}celebration that draws over 10,000 visitors to weekly{' '}
+              <Link href="/neighborhood/run-club" className="text-slate-900 font-semibold hover:underline">
+                running clubs
+              </Link>
+              {' '}and gallery walks, Midtown offers year-round activities that build community and showcase local talent. These events 
+              create opportunities for residents to connect with neighbors, support local businesses, and experience the Arts District's 
+              creative energy firsthand.
             </p>
-            <p>
-              The events transform how residents experience their neighborhood. First Friday converts quiet streets into vibrant festivals monthly. 
-              The Run Club provides built-in fitness structure and social connections. The Book Festival celebrates literacy and learning. The Las 
-              Vegas Marathon showcases the city to runners nationwide. These regular gatherings create rhythm and anticipation—residents mark calendars, 
-              plan around events, and incorporate them into lifestyle routines. This predictable cultural programming distinguishes Midtown from typical 
-              residential neighborhoods where community events feel sporadic or forced.
-            </p>
-            <p>
-              For prospective residents evaluating Midtown, the event calendar demonstrates neighborhood vitality and community strength. Active event 
-              participation indicates resident investment in the area's success, while diverse programming suggests the neighborhood accommodates varied 
-              interests and demographics. When visiting Midtown, attend events to observe community dynamics, meet residents who can share authentic 
-              perspectives, and experience the energy that makes the Arts District special. These real-world interactions provide invaluable insight 
-              beyond property tours and listing photos, helping you determine whether Midtown's community culture aligns with your social preferences 
-              and lifestyle expectations.
-            </p>
-            <p>
-              Living in Midtown means events become convenient neighborhood activities rather than destination excursions requiring planning and 
-              transportation. Residents walk to First Friday instead of fighting traffic, join Run Club without dawn drives across town, and explore 
-              the Book Festival steps from home. This convenience dramatically increases event participation, creating the high engagement that makes 
-              Midtown's community so vibrant. For event enthusiasts who currently drive hours to attend cultural programming, the walkable convenience 
-              represents lifestyle transformation worth the higher per-square-foot real estate costs. The events also drive property values—homes near 
-              First Friday enjoy premium pricing due to location desirability, while Run Club routes passing properties demonstrate walkability that 
-              attracts health-conscious buyers. Understanding the event calendar helps evaluate specific properties for how they experience Midtown's 
-              cultural programming, whether located at the energetic center near Main Street or quieter edges offering more residential tranquility. Event proximity 
-              influences daily living patterns significantly.
-            </p>
+            <div>
+              <h3 className="text-2xl font-bold text-slate-900 mb-4">Monthly Celebrations</h3>
+              <p className="mb-3">
+                {' '}
+                <Link href="/neighborhood/first-fridays" className="text-slate-900 font-semibold hover:underline">
+                  First Friday
+                </Link>
+                {' '}stands as Midtown's signature event, transforming the Arts District into a monthly street festival. This celebration 
+                began in 2002 and has grown into the largest monthly art event in the Southwest. Gallery openings, live music, food trucks, 
+                street performers, and interactive art installations create a festive atmosphere that attracts visitors from across Las Vegas 
+                and beyond. The event demonstrates Midtown's collaborative spirit, with galleries, restaurants, and businesses working together 
+                to create an unforgettable experience.
+              </p>
+              <p>
+                Beyond{' '}
+                <Link href="/neighborhood/first-fridays" className="text-slate-900 font-semibold hover:underline">
+                  First Friday
+                </Link>
+                , the Makers Market on the last Sunday of each month provides another regular gathering opportunity. This outdoor market 
+                features local artisans, crafters, and food vendors, creating a space for community commerce and connection. These monthly 
+                events create rhythm and anticipation in the neighborhood, giving residents and visitors regular reasons to gather and 
+                celebrate.
+              </p>
+            </div>
+            <div>
+              <h3 className="text-2xl font-bold text-slate-900 mb-4">Weekly Activities</h3>
+              <p className="mb-3">
+                Weekly events provide ongoing opportunities for community engagement. The{' '}
+                <Link href="/neighborhood/run-club" className="text-slate-900 font-semibold hover:underline">
+                  Midtown Run Club
+                </Link>
+                {' '}meets Tuesdays and Thursdays at 6:30 AM, offering residents a chance to stay active while building relationships with 
+                neighbors. The group has grown to over 200 members, demonstrating the neighborhood's commitment to health and wellness. 
+                Saturday evening gallery walks provide another weekly tradition, with galleries opening their doors for special exhibitions 
+                and artist meet-and-greets.
+              </p>
+              <p>
+                These weekly activities create structure and routine in the neighborhood, helping residents build consistent connections 
+                with their community. Unlike one-time events, weekly gatherings allow relationships to develop over time, creating deeper 
+                social bonds. This regular programming contributes to Midtown's sense of community, distinguishing it from neighborhoods 
+                where residents rarely interact beyond their immediate neighbors.
+              </p>
+            </div>
+            <div>
+              <h3 className="text-2xl font-bold text-slate-900 mb-4">Annual Festivals and Special Events</h3>
+              <p className="mb-3">
+                Annual events bring additional excitement to Midtown's calendar. The Las Vegas Book Festival, held each October, celebrates 
+                literature with author talks, book signings, and literary workshops. The Las Vegas Marathon route includes the Arts District, 
+                allowing runners to experience Midtown's vibrant streets while participating in this city-wide event. These annual celebrations 
+                provide special moments that draw attention to Midtown while creating memorable experiences for residents and visitors.
+              </p>
+              <p>
+                Special events throughout the year add variety to Midtown's programming. Pop-up markets, food festivals, and cultural 
+                celebrations create unexpected opportunities for community gathering. These events often emerge organically from neighborhood 
+                initiatives, demonstrating Midtown's grassroots character and resident-driven community building.
+              </p>
+            </div>
+            <div>
+              <h3 className="text-2xl font-bold text-slate-900 mb-4">Participating in Midtown Events</h3>
+              <p className="mb-3">
+                Participating in Midtown events is as simple as showing up. Most events are free and open to the public, requiring no 
+                advance registration or tickets. The{' '}
+                <Link href="/neighborhood/first-fridays" className="text-slate-900 font-semibold hover:underline">
+                  First Friday
+                </Link>
+                {' '}street festival, for example, welcomes everyone to stroll through the Arts District, visit galleries, enjoy food 
+                trucks, and experience live entertainment. The casual, inclusive atmosphere makes it easy for newcomers to feel comfortable 
+                and engaged.
+              </p>
+              <p>
+                For those interested in more active participation, opportunities exist to volunteer, perform, or showcase work. Artists 
+                can contact galleries about exhibition opportunities, musicians can reach out to event organizers about performance slots, 
+                and community members can volunteer with event coordination. This participatory culture distinguishes Midtown from 
+                spectator-focused entertainment districts, creating genuine community engagement.
+              </p>
+            </div>
           </div>
         </div>
       </section>
