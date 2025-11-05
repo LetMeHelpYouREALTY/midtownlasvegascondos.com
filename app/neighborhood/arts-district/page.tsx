@@ -8,6 +8,9 @@ export const metadata: Metadata = {
   title: 'Las Vegas Arts District | 18b Arts District Homes & Condos',
   description: 'CNN called it "the most exciting neighborhood" in Las Vegas. Find your home in the Arts District with galleries, restaurants, and First Friday. Call (702) 500-1955.',
   keywords: 'Las Vegas Arts District, 18b Arts District, downtown Las Vegas homes, First Friday Las Vegas, Arts District condos, creative Las Vegas neighborhood',
+  alternates: {
+    canonical: 'https://www.midtownlasvegascondos.com/neighborhood/arts-district',
+  },
 }
 
 export default function ArtsDistrictPage() {

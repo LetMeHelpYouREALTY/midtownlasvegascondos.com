@@ -1,10 +1,17 @@
 import Link from 'next/link'
 import Image from 'next/image'
+import { Metadata } from 'next'
 import { Newsletter } from './components/newsletter'
 import { UpcomingEvents } from './components/upcoming-events'
 import { RealScoutSearch } from './components/realscout-search'
 import { RealScoutListings } from './components/realscout-listings'
 import { PageFAQ } from './components/page-faq'
+
+export const metadata: Metadata = {
+  alternates: {
+    canonical: 'https://www.midtownlasvegascondos.com/',
+  },
+}
 
 export default function HomePage() {
   return (

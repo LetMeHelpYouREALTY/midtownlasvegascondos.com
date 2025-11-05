@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     'Discover luxury condominium living in the heart of Las Vegas Arts District. Experience the vibrant culture, dining, and entertainment of Midtown. Contact Dr. Jan at (702) 500-1955 or DrJanSells@MidtownLasVegasCondos.com',
   metadataBase: new URL('https://www.midtownlasvegascondos.com'),
   alternates: {
-    canonical: '/',
+    canonical: 'https://www.midtownlasvegascondos.com/',
   },
   keywords: [
     'Las Vegas condos',

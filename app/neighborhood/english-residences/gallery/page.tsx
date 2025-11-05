@@ -1,6 +1,13 @@
 import { ImageGallery } from '@/app/components/image-gallery'
 import { FloorPlanViewer } from '@/app/components/floor-plan-viewer'
+import { Metadata } from 'next'
 import Link from 'next/link'
+
+export const metadata: Metadata = {
+  alternates: {
+    canonical: 'https://www.midtownlasvegascondos.com/neighborhood/english-residences/gallery',
+  },
+}
 
 // Example data - replace with actual images and plans once you have them from Midtown Vegas
 const propertyImages = [

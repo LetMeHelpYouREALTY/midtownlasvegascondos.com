@@ -1,4 +1,11 @@
 import Link from 'next/link'
+import { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  alternates: {
+    canonical: 'https://www.midtownlasvegascondos.com/neighborhood/run-club',
+  },
+}
 
 export default function RunClubPage() {
   return (

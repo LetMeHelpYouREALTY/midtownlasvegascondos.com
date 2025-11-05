@@ -7,6 +7,9 @@ export const metadata: Metadata = {
     'Frequently asked questions about living in Midtown Las Vegas, The English Residences, Arts District real estate, and working with Dr. Jan Duffy. Call (702) 500-1955.',
   keywords:
     'Midtown Las Vegas FAQ, Arts District questions, English Residences information, Las Vegas condo questions',
+  alternates: {
+    canonical: 'https://www.midtownlasvegascondos.com/faq',
+  },
 }
 
 const faqs = [

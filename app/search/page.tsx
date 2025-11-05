@@ -1,6 +1,13 @@
 import { RealScoutSearch } from '../components/realscout-search'
 import { RealScoutListings } from '../components/realscout-listings'
+import { Metadata } from 'next'
 import Link from 'next/link'
+
+export const metadata: Metadata = {
+  alternates: {
+    canonical: 'https://www.midtownlasvegascondos.com/search',
+  },
+}
 
 export default function SearchPage() {
   return (
