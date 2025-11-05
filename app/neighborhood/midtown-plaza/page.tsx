@@ -46,32 +46,96 @@ export default function MidtownPlazaPage() {
               artisan coffee and fresh pastries for breakfast to craft cocktails and chef-driven dinners. Retail shops offer curated 
               selections you won't find in corporate chains—vintage clothing boutiques, contemporary art galleries doubling as retail 
               spaces, specialty food markets featuring local producers, and home goods stores emphasizing sustainable, handcrafted items. 
-              Many businesses participate in First Friday events, extending hours and hosting special promotions that integrate the Plaza 
+              Many businesses participate in{' '}
+              <Link href="/neighborhood/first-fridays" className="text-slate-900 font-semibold hover:underline">
+                First Friday
+              </Link>
+              {' '}events, extending hours and hosting special promotions that integrate the Plaza 
               into the Arts District's monthly celebration.
             </p>
-            <p className="text-base text-slate-600 mb-6 leading-relaxed">
-              For Midtown residents, the Plaza provides essential conveniences within walking distance. Need groceries? The specialty market 
-              stocks fresh produce and pantry staples. Want fresh flowers? The local florist creates custom arrangements. Looking for a 
-              gift? Artisan shops offer unique options impossible to find at conventional malls. This walkable access to daily needs—without 
-              requiring car trips to distant strip malls—represents a fundamental lifestyle shift that Midtown residents consistently cite 
-              as transformative. Parking is available with both street spaces and nearby lots, though many Plaza visitors arrive on foot from 
-              surrounding condos and apartments, creating the pedestrian-oriented streetscape that defines authentic urban neighborhoods.
-            </p>
-            <p className="text-base text-slate-600 mb-6 leading-relaxed">
-              The Plaza also serves as a social hub where neighbors encounter each other organically during daily routines. Unlike suburban 
-              communities where residents only meet through scheduled events, Midtown's walkability creates spontaneous social interactions— 
-              running into neighbors at the coffee shop, chatting with friends while browsing the farmer's market, or joining impromptu 
-              gatherings on Plaza patios. This casual community building contributes to the strong neighborly bonds that make Midtown feel 
-              like a village within Las Vegas's urban landscape. For potential residents evaluating different areas, proximity to Midtown 
-              Plaza translates to both convenience and community connection. Living near the Plaza means daily errands become pleasant 
-              neighborhood walks rather than car-dependent chores, fundamentally improving quality of life in ways suburban residents rarely 
-              experience. This walkable convenience, combined with the Plaza's locally-owned character and community atmosphere, exemplifies 
-            why buyers increasingly prioritize Midtown properties despite often-higher per-square-foot costs compared to generic Las Vegas 
-            developments. The Plaza continues evolving with new restaurant openings, retail additions, and seasonal events that keep 
-            the commercial district fresh and engaging, ensuring residents always discover something new even after years of neighborhood 
-            familiarity. First Friday participation showcases this dynamism, with Plaza businesses hosting special events, extending hours, and creating 
-            unique promotions that integrate shopping and dining with Arts District's monthly celebration.
-            </p>
+            <div className="space-y-6 mt-8">
+              <div>
+                <h3 className="text-2xl font-bold text-slate-900 mb-4">Dining and Culinary Scene</h3>
+                <p className="text-base text-slate-600 mb-3 leading-relaxed">
+                  Midtown Plaza's dining scene exemplifies the neighborhood's commitment to locally-owned, chef-driven establishments. 
+                  Breakfast options range from artisan coffee roasters serving carefully sourced beans to bakeries offering fresh pastries 
+                  and artisanal breads. Lunch spots feature diverse cuisines, from innovative fusion to traditional comfort food with 
+                  creative twists. Dinner destinations include upscale restaurants showcasing chef-driven menus alongside casual eateries 
+                  perfect for weeknight meals.
+                </p>
+                <p className="text-base text-slate-600 leading-relaxed">
+                  The Plaza's culinary diversity reflects Las Vegas's evolving food scene, where independent restaurants celebrate local 
+                  ingredients and innovative techniques. Unlike the Strip's corporate restaurant groups, Midtown Plaza prioritizes locally-owned 
+                  establishments operated by passionate owners who live in or near the neighborhood. This local ownership creates authentic 
+                  experiences and personal connections impossible at chain restaurants, while supporting the independent businesses that define 
+                  Midtown's character. The proximity to{' '}
+                  <Link href="/neighborhood/pepper-club" className="text-slate-900 font-semibold hover:underline">
+                    The Pepper Club
+                  </Link>
+                  {' '}at{' '}
+                  <Link href="/neighborhood/english-hotel" className="text-slate-900 font-semibold hover:underline">
+                    The English Hotel
+                  </Link>
+                  {' '}adds another layer of dining excellence within walking distance.
+                </p>
+              </div>
+              <div>
+                <h3 className="text-2xl font-bold text-slate-900 mb-4">Retail and Shopping</h3>
+                <p className="text-base text-slate-600 mb-3 leading-relaxed">
+                  The Plaza's retail shops offer curated selections you won't find in corporate chains. Vintage clothing boutiques feature 
+                  carefully selected pieces that reflect individual style rather than mass-market trends. Contemporary art galleries double 
+                  as retail spaces, allowing visitors to purchase artwork directly from local artists. Specialty food markets feature local 
+                  producers, offering fresh produce, artisanal cheeses, and pantry staples that support both cooking and local agriculture.
+                </p>
+                <p className="text-base text-slate-600 leading-relaxed">
+                  Home goods stores emphasize sustainable, handcrafted items that reflect the Arts District's creative character. These 
+                  shops provide alternatives to generic big-box stores, offering unique products that support local artisans and sustainable 
+                  practices. For Midtown residents, the Plaza provides essential conveniences within walking distance. Need groceries? The 
+                  specialty market stocks fresh produce and pantry staples. Want fresh flowers? The local florist creates custom arrangements. 
+                  Looking for a gift? Artisan shops offer unique options impossible to find at conventional malls. This walkable access to 
+                  daily needs—without requiring car trips to distant strip malls—represents a fundamental lifestyle shift that Midtown residents 
+                  consistently cite as transformative.
+                </p>
+              </div>
+              <div>
+                <h3 className="text-2xl font-bold text-slate-900 mb-4">Community and Social Hub</h3>
+                <p className="text-base text-slate-600 mb-3 leading-relaxed">
+                  The Plaza serves as a social hub where neighbors encounter each other organically during daily routines. Unlike suburban 
+                  communities where residents only meet through scheduled events, Midtown's walkability creates spontaneous social interactions— 
+                  running into neighbors at the coffee shop, chatting with friends while browsing the farmer's market, or joining impromptu 
+                  gatherings on Plaza patios. This casual community building contributes to the strong neighborly bonds that make Midtown feel 
+                  like a village within Las Vegas's urban landscape.
+                </p>
+                <p className="text-base text-slate-600 leading-relaxed">
+                  The Plaza's community atmosphere extends beyond individual businesses to encompass the entire commercial district. Outdoor 
+                  seating areas create gathering spaces where residents can enjoy meals, coffee, or conversation while watching neighborhood 
+                  activity. Regular events, from farmers markets to seasonal celebrations, bring the community together while showcasing local 
+                  businesses. This integration of commerce and community creates a vibrant atmosphere that distinguishes Midtown Plaza from 
+                  generic shopping centers.
+                </p>
+              </div>
+              <div>
+                <h3 className="text-2xl font-bold text-slate-900 mb-4">Living Near Midtown Plaza</h3>
+                <p className="text-base text-slate-600 mb-3 leading-relaxed">
+                  For potential residents evaluating different areas, proximity to Midtown Plaza translates to both convenience and community 
+                  connection. Living near the Plaza means daily errands become pleasant neighborhood walks rather than car-dependent chores, 
+                  fundamentally improving quality of life in ways suburban residents rarely experience. This walkable convenience, combined 
+                  with the Plaza's locally-owned character and community atmosphere, exemplifies why buyers increasingly prioritize Midtown 
+                  properties despite often-higher per-square-foot costs compared to generic Las Vegas developments.
+                </p>
+                <p className="text-base text-slate-600 leading-relaxed">
+                  The Plaza continues evolving with new restaurant openings, retail additions, and seasonal events that keep the commercial 
+                  district fresh and engaging, ensuring residents always discover something new even after years of neighborhood familiarity.{' '}
+                  <Link href="/neighborhood/first-fridays" className="text-slate-900 font-semibold hover:underline">
+                    First Friday
+                  </Link>
+                  {' '}participation showcases this dynamism, with Plaza businesses hosting special events, extending hours, and creating 
+                  unique promotions that integrate shopping and dining with Arts District's monthly celebration. Parking is available with 
+                  both street spaces and nearby lots, though many Plaza visitors arrive on foot from surrounding condos and apartments, 
+                  creating the pedestrian-oriented streetscape that defines authentic urban neighborhoods.
+                </p>
+              </div>
+            </div>
             <ul className="space-y-3 mb-8">
               {[
                 'Locally-owned restaurants and cafes',

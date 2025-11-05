@@ -89,7 +89,7 @@ export default function EnglishHotelPage() {
 
         {/* Hotel Experience */}
         <div className="mt-16 max-w-4xl mx-auto">
-          <h3 className="text-2xl font-bold text-slate-900 mb-4">The Boutique Difference</h3>
+          <h2 className="text-3xl font-bold text-slate-900 mb-6">The Boutique Difference</h2>
           <p className="text-slate-600 mb-4 leading-relaxed">
             Unlike the mega-resorts dominating the Las Vegas Strip, The English Hotel offers an intimate boutique experience with 
             personalized service, distinctive design, and genuine connection to local culture. Each room reflects contemporary elegance 
@@ -98,26 +98,112 @@ export default function EnglishHotelPage() {
             details, curated art pieces, and design elements celebrating Midtown's warehouse heritage.
           </p>
           <p className="text-slate-600 mb-4 leading-relaxed">
-            Guest services emphasize quality over quantity. The 24/7 concierge provides personalized recommendations for Arts District 
-            galleries, neighborhood restaurants, and First Friday experiences that guidebooks miss. The Pepper Club restaurant serves 
+            Guest services emphasize quality over quantity. The 24/7 concierge provides personalized recommendations for{' '}
+            <Link href="/neighborhood/arts-district" className="text-slate-900 font-semibold hover:underline">
+              Arts District
+            </Link>
+            {' '}galleries, neighborhood restaurants, and{' '}
+            <Link href="/neighborhood/first-fridays" className="text-slate-900 font-semibold hover:underline">
+              First Friday
+            </Link>
+            {' '}experiences that guidebooks miss. The{' '}
+            <Link href="/neighborhood/pepper-club" className="text-slate-900 font-semibold hover:underline">
+              Pepper Club
+            </Link>
+            {' '}restaurant serves 
             hotel guests and local residents alike, creating a neighborhood gathering spot that exemplifies the hotel's integration 
             into the community. This approach resonates with travelers seeking authentic Las Vegas experiences beyond slot machines and 
             buffets—people who want to discover the city's creative soul.
           </p>
-          <p className="text-slate-600 leading-relaxed">
-            The hotel's location at 921 S Main Street provides unmatched access to Midtown's attractions. Walk to 30+ art galleries, 
-            discover chef-driven restaurants, attend monthly First Friday celebrations, and explore the neighborhood's creative energy—all 
-            without requiring a car. For visitors considering relocating to Las Vegas or investing in English Residences condo-hotels, 
-            staying at The English Hotel offers perfect introduction to Arts District living. Experience the walkability, meet neighborhood 
-            regulars, and discover whether Midtown's urban lifestyle matches your preferences. Many English Residences owners first 
-            discovered the property by staying at the hotel and falling in love with the neighborhood. Book a stay to test-drive Midtown 
-            living before committing to real estate purchase—wake up in the Arts District, explore galleries and restaurants on foot, 
-            experience First Friday if timing aligns, and genuinely evaluate whether urban Las Vegas living matches your expectations. 
-            This try-before-you-buy approach provides invaluable perspective that virtual tours and property visits cannot replicate. The English 
-            Hotel serves as showcase for the neighborhood's potential, offering immersive introduction to Arts District living that helps visitors 
-            make informed decisions about whether Midtown's urban energy, cultural programming, and walkable lifestyle align with their long-term 
-            residential preferences and investment goals. The hotel's boutique scale ensures personalized attention impossible at large resorts.
-          </p>
+          <div className="space-y-6 mt-8">
+            <div>
+              <h3 className="text-2xl font-bold text-slate-900 mb-4">Design and Architecture</h3>
+              <p className="text-slate-600 mb-3 leading-relaxed">
+                The English Hotel's design reflects the Arts District's industrial heritage while incorporating contemporary luxury. The 
+                building at 921 S Main Street showcases adaptive reuse principles, transforming a former industrial structure into a 
+                sophisticated hospitality destination. Interior spaces feature custom furnishings, locally-curated artwork, and design 
+                elements that celebrate Midtown's creative character. This approach distinguishes The English Hotel from generic chain 
+                properties, creating a unique aesthetic that resonates with guests seeking authentic experiences.
+              </p>
+              <p className="text-slate-600 leading-relaxed">
+                Each room is thoughtfully designed to maximize comfort while reflecting the neighborhood's artistic spirit. Luxury bedding, 
+                spa-inspired bathrooms, and contemporary furnishings create a sophisticated urban retreat. The design avoids generic hotel 
+                aesthetics in favor of a curated, gallery-like atmosphere that connects guests with the Arts District's creative energy. 
+                This attention to detail extends throughout the property, from public spaces to guest rooms, creating a cohesive experience 
+                that celebrates Midtown's unique character.
+              </p>
+            </div>
+            <div>
+              <h3 className="text-2xl font-bold text-slate-900 mb-4">Location and Walkability</h3>
+              <p className="text-slate-600 mb-3 leading-relaxed">
+                The hotel's location at 921 S Main Street provides unmatched access to Midtown's attractions. Walk to 30+ art galleries, 
+                discover chef-driven restaurants, attend monthly{' '}
+                <Link href="/neighborhood/first-fridays" className="text-slate-900 font-semibold hover:underline">
+                  First Friday
+                </Link>
+                {' '}celebrations, and explore the neighborhood's creative energy—all 
+                without requiring a car. This walkability distinguishes The English Hotel from Strip properties, where guests must 
+                navigate massive resorts or rely on transportation to access different experiences.
+              </p>
+              <p className="text-slate-600 leading-relaxed">
+                The hotel's proximity to{' '}
+                <Link href="/neighborhood/midtown-plaza" className="text-slate-900 font-semibold hover:underline">
+                  Midtown Plaza
+                </Link>
+                ,{' '}
+                <Link href="/neighborhood/arts-district" className="text-slate-900 font-semibold hover:underline">
+                  Arts District galleries
+                </Link>
+                , and{' '}
+                <Link href="/neighborhood/pepper-club" className="text-slate-900 font-semibold hover:underline">
+                  The Pepper Club
+                </Link>
+                {' '}creates a truly walkable experience where guests can explore the neighborhood on foot. This convenience appeals to 
+                travelers seeking authentic urban experiences, as well as potential residents evaluating Midtown's lifestyle. The hotel 
+                serves as an ideal base for discovering the Arts District's cultural offerings while experiencing the walkability that 
+                defines Midtown living.
+              </p>
+            </div>
+            <div>
+              <h3 className="text-2xl font-bold text-slate-900 mb-4">Guest Experience and Services</h3>
+              <p className="text-slate-600 mb-3 leading-relaxed">
+                The English Hotel's boutique scale enables personalized service impossible at large resorts. The 24/7 concierge provides 
+                customized recommendations for Arts District galleries, neighborhood restaurants, and local experiences that guidebooks miss. 
+                This personalized approach helps guests discover Midtown's authentic character, from hidden galleries to chef-driven 
+                restaurants that reflect the neighborhood's creative spirit.
+              </p>
+              <p className="text-slate-600 leading-relaxed">
+                For visitors considering relocating to Las Vegas or investing in{' '}
+                <Link href="/neighborhood/english-residences" className="text-slate-900 font-semibold hover:underline">
+                  English Residences
+                </Link>
+                {' '}condo-hotels, staying at The English Hotel offers a perfect introduction to Arts District living. Experience the 
+                walkability, meet neighborhood regulars, and discover whether Midtown's urban lifestyle matches your preferences. Many 
+                English Residences owners first discovered the property by staying at the hotel and falling in love with the neighborhood. 
+                This try-before-you-buy approach provides invaluable perspective that virtual tours and property visits cannot replicate.
+              </p>
+            </div>
+            <div>
+              <h3 className="text-2xl font-bold text-slate-900 mb-4">The Pepper Club Restaurant</h3>
+              <p className="text-slate-600 mb-3 leading-relaxed">
+                {' '}
+                <Link href="/neighborhood/pepper-club" className="text-slate-900 font-semibold hover:underline">
+                  The Pepper Club
+                </Link>
+                {' '}restaurant exemplifies The English Hotel's integration into the Midtown community. This award-winning restaurant serves 
+                both hotel guests and local residents, creating a neighborhood gathering spot that reflects the hotel's commitment to 
+                authentic community connection. The restaurant's chef-driven cuisine and craft cocktails attract diners from across Las Vegas, 
+                while its presence within the hotel creates a seamless experience for guests seeking exceptional dining without leaving the property.
+              </p>
+              <p className="text-slate-600 leading-relaxed">
+                The restaurant's success demonstrates The English Hotel's philosophy of quality over quantity. Rather than multiple generic 
+                dining options, the hotel features one exceptional restaurant that serves as a destination in its own right. This approach 
+                aligns with the Arts District's emphasis on locally-owned, chef-driven establishments, creating an authentic experience that 
+                distinguishes The English Hotel from chain properties. Guests enjoy priority reservations, while residents appreciate access 
+                to award-winning dining within walking distance of their homes.
+              </p>
+            </div>
+          </div>
         </div>
 
         {/* Amenities */}

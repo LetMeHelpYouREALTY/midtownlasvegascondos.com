@@ -51,11 +51,72 @@ export default function EnglishResidencesPage() {
             </p>
             <p className="text-base text-slate-600 mb-6 leading-relaxed">
               Each residence features contemporary design, high-end appliances, spa-inspired bathrooms, and floor-to-ceiling windows 
-              showcasing Arts District views. Owners enjoy exclusive access to The Pepper Club restaurant, priority reservations, 
+              showcasing{' '}
+              <Link href="/neighborhood/arts-district" className="text-slate-900 font-semibold hover:underline">
+                Arts District
+              </Link>
+              {' '}views. Owners enjoy exclusive access to{' '}
+              <Link href="/neighborhood/pepper-club" className="text-slate-900 font-semibold hover:underline">
+                The Pepper Club
+              </Link>
+              {' '}restaurant, priority reservations, 
               24/7 concierge services, and professional housekeeping. The building's prime location at 921 S Main Street places you 
-              steps from First Friday, Midtown Plaza's dining scene, and over 30 art galleries, creating an unmatched urban lifestyle 
+              steps from{' '}
+              <Link href="/neighborhood/first-fridays" className="text-slate-900 font-semibold hover:underline">
+                First Friday
+              </Link>
+              ,{' '}
+              <Link href="/neighborhood/midtown-plaza" className="text-slate-900 font-semibold hover:underline">
+                Midtown Plaza's
+              </Link>
+              {' '}dining scene, and over 30 art galleries, creating an unmatched urban lifestyle 
               that combines luxury hotel amenities with true property ownership.
             </p>
+            <div className="space-y-6 mt-8">
+              <div>
+                <h3 className="text-2xl font-bold text-slate-900 mb-4">Residence Features and Amenities</h3>
+                <p className="text-base text-slate-600 leading-relaxed mb-3">
+                  The English Residences feature thoughtfully designed interiors that blend contemporary luxury with practical functionality. 
+                  Floor-to-ceiling windows maximize natural light while showcasing panoramic views of the Arts District's vibrant streetscape. 
+                  High-end appliances, including Sub-Zero and Wolf or similar premium brands, support both casual entertaining and serious 
+                  cooking. Spa-inspired bathrooms feature premium fixtures and finishes, creating a retreat-like atmosphere that complements 
+                  the urban setting.
+                </p>
+                <p className="text-base text-slate-600 leading-relaxed">
+                  Owners benefit from{' '}
+                  <Link href="/neighborhood/english-hotel" className="text-slate-900 font-semibold hover:underline">
+                    The English Hotel's
+                  </Link>
+                  {' '}full suite of services, including 24/7 concierge support, professional housekeeping, and priority access to{' '}
+                  <Link href="/neighborhood/pepper-club" className="text-slate-900 font-semibold hover:underline">
+                    The Pepper Club
+                  </Link>
+                  {' '}restaurant. The building's prime location at 921 S Main Street places residents within walking distance of over 30 
+                  art galleries, numerous restaurants, and monthly{' '}
+                  <Link href="/neighborhood/first-fridays" className="text-slate-900 font-semibold hover:underline">
+                    First Friday
+                  </Link>
+                  {' '}celebrations. This combination of luxury amenities and urban convenience creates a lifestyle that's difficult to 
+                  replicate elsewhere in Las Vegas.
+                </p>
+              </div>
+              <div>
+                <h3 className="text-2xl font-bold text-slate-900 mb-4">Revenue Sharing and Income Potential</h3>
+                <p className="text-base text-slate-600 leading-relaxed mb-3">
+                  The revenue-sharing model represents one of The English Residences' most compelling features. When owners aren't using 
+                  their units, the hotel management program markets and rents them to guests, generating income that can offset ownership 
+                  costs. Many owners report that rental revenue covers 50-80% of annual HOA fees and property taxes, significantly reducing 
+                  the financial burden compared to traditional condos that sit vacant when not in use.
+                </p>
+                <p className="text-base text-slate-600 leading-relaxed">
+                  Income potential varies based on unit size, location within the building, and market demand. The English Hotel's 
+                  professional marketing and established reputation help maximize occupancy rates, while the Arts District's growing 
+                  popularity as a destination supports strong rental demand. Owners receive detailed statements showing rental activity 
+                  and revenue distribution, providing transparency about the program's performance. This passive income component makes 
+                  The English Residences particularly attractive to investors seeking both lifestyle benefits and financial returns.
+                </p>
+              </div>
+            </div>
             <ul className="space-y-3 mb-8">
               {[
                 'Prime location in Las Vegas Arts District',
@@ -98,27 +159,76 @@ export default function EnglishResidencesPage() {
 
         {/* Investment Details */}
         <div className="bg-slate-50 rounded-lg p-8 mt-12">
-          <h3 className="text-2xl font-bold text-slate-900 mb-4">The Condo-Hotel Advantage</h3>
+          <h2 className="text-3xl font-bold text-slate-900 mb-6">The Condo-Hotel Advantage</h2>
           <p className="text-slate-600 mb-4 leading-relaxed">
             Traditional condo ownership means your unit sits vacant whenever you're away, costing you money in HOA fees, utilities, 
             and property taxes without generating any income. The English Residences solve this problem through revenue sharing. 
             When you're not in residence, your unit joins the hotel's rental pool, professionally marketed and managed by experienced 
             hospitality staff. You receive a share of the rental revenue proportional to your unit's usage in the rental program.
           </p>
-          <p className="text-slate-600 leading-relaxed">
+          <p className="text-slate-600 leading-relaxed mb-6">
             This arrangement provides the best of both worlds: a luxury urban residence for personal use, plus passive income that 
             can offset ownership costs. Many owners report that rental revenue covers 50-80% of their annual HOA fees and property 
             taxes. Additionally, because your unit is part of a hotel operation, you may qualify for favorable tax treatment as an 
             investment property. Consult with your tax advisor about potential deductions for depreciation, operating expenses, and 
-            management fees. The English Hotel handles all guest services, maintenance, and reservations—you simply enjoy your home 
+            management fees. The{' '}
+            <Link href="/neighborhood/english-hotel" className="text-slate-900 font-semibold hover:underline">
+              English Hotel
+            </Link>
+            {' '}handles all guest services, maintenance, and reservations—you simply enjoy your home 
             when you want it and collect revenue when you don't.
           </p>
-          <p className="text-slate-600 mt-4 leading-relaxed">
-            Financing options for condo-hotel purchases have evolved significantly, with several lenders now specializing in these unique 
-            properties. While traditional mortgages may require higher down payments (typically 20-30%), the income potential and tax advantages 
-            often make The English Residences a compelling investment compared to traditional vacation properties or rental condos. Contact Dr. Jan 
-            to discuss current financing options, estimated income projections, and how condo-hotel ownership fits into your real estate portfolio.
-          </p>
+          <div className="space-y-6">
+            <div>
+              <h3 className="text-2xl font-bold text-slate-900 mb-4">Understanding the Revenue Model</h3>
+              <p className="text-slate-600 mb-3 leading-relaxed">
+                The revenue-sharing model operates through The English Hotel's professional management program. When your unit isn't 
+                reserved for personal use, it becomes part of the hotel's inventory, marketed through standard hotel booking channels 
+                and the hotel's website. The hotel handles all aspects of guest services, from reservations and check-in to housekeeping 
+                and maintenance. Revenue is distributed proportionally based on your unit's participation in the rental program, with 
+                transparent accounting provided through regular statements.
+              </p>
+              <p className="text-slate-600 leading-relaxed">
+                Owners maintain flexibility in using their units, with reservation systems that allow you to block dates for personal 
+                use. The hotel's established reputation and marketing reach help maximize occupancy rates, while the Arts District's 
+                growing popularity as a destination supports strong rental demand throughout the year. This combination of professional 
+                management and market demand creates income potential that distinguishes The English Residences from traditional condos.
+              </p>
+            </div>
+            <div>
+              <h3 className="text-2xl font-bold text-slate-900 mb-4">Tax Benefits and Financial Considerations</h3>
+              <p className="text-slate-600 mb-3 leading-relaxed">
+                Condo-hotel ownership may provide tax advantages compared to traditional vacation properties or rental condos. Because 
+                your unit is part of a hotel operation, you may qualify for investment property tax treatment, potentially allowing 
+                deductions for depreciation, operating expenses, and management fees. The specific tax benefits depend on your usage 
+                pattern and individual tax situation, making consultation with a qualified tax advisor essential.
+              </p>
+              <p className="text-slate-600 leading-relaxed">
+                Financing options for condo-hotel purchases have evolved significantly, with several lenders now specializing in these 
+                unique properties. While traditional mortgages may require higher down payments (typically 20-30%), the income potential 
+                and tax advantages often make The English Residences a compelling investment compared to traditional vacation properties 
+                or rental condos. The rental income potential can help offset higher financing costs, while the tax benefits may improve 
+                overall returns. Contact Dr. Jan to discuss current financing options, estimated income projections, and how condo-hotel 
+                ownership fits into your real estate portfolio.
+              </p>
+            </div>
+            <div>
+              <h3 className="text-2xl font-bold text-slate-900 mb-4">Owner Usage and Reservation Policies</h3>
+              <p className="text-slate-600 mb-3 leading-relaxed">
+                One of The English Residences' key advantages is the flexibility owners enjoy in using their units. While the hotel 
+                management program helps generate income when you're away, you retain full ownership rights and can use your residence 
+                whenever desired. Reservation systems allow you to block dates for personal use, ensuring availability for your planned 
+                visits. This flexibility distinguishes condo-hotel ownership from timeshare arrangements, where usage is more restricted.
+              </p>
+              <p className="text-slate-600 leading-relaxed">
+                The hotel's professional management ensures your unit is maintained to high standards whether you're in residence or it's 
+                being rented to guests. Housekeeping services keep your unit clean and ready for your arrival, while concierge services 
+                support both your personal stays and guest experiences. This comprehensive management approach creates a truly hands-off 
+                ownership experience, allowing you to enjoy the benefits of property ownership without the typical hassles of maintenance 
+                and management.
+              </p>
+            </div>
+          </div>
         </div>
 
         {/* Features Grid */}
