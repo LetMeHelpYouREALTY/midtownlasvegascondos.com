@@ -92,15 +92,86 @@ export default function PepperClubPage() {
             where Arts District residents celebrate special occasions, entertain visitors, or simply enjoy exceptional food steps 
             from home. Reservations recommended, especially during First Friday weekends when the entire neighborhood comes alive.
           </p>
-          <p className="text-slate-600 mt-4 leading-relaxed">
+          <p className="text-slate-600 mt-4 leading-relaxed mb-6">
             The Pepper Club's cocktail program deserves special mention, featuring creative libations crafted by skilled mixologists 
             using house-made syrups, fresh herbs, and premium spirits. The bar serves as a social hub where neighborhood regulars 
             mix with hotel guests and Arts District visitors, creating the convivial atmosphere that defines Midtown dining. Happy 
             hour specials and seasonal cocktail menus keep the offerings fresh while maintaining signature drinks that have become 
-            neighborhood favorites. For English Residences owners, the restaurant provides the convenience of world-class dining 
+            neighborhood favorites. For{' '}
+            <Link href="/neighborhood/english-residences" className="text-slate-900 font-semibold hover:underline">
+              English Residences
+            </Link>
+            {' '}owners, the restaurant provides the convenience of world-class dining 
             without leaving the building—yet another advantage of the condo-hotel lifestyle that combines luxury residence with 
             hotel amenities.
           </p>
+          <div className="space-y-6 mt-8">
+            <div>
+              <h3 className="text-2xl font-bold text-slate-900 mb-4">The Dining Experience</h3>
+              <p className="text-slate-600 mb-3 leading-relaxed">
+                The Pepper Club offers a sophisticated dining experience that balances fine dining elegance with neighborhood warmth. 
+                The restaurant's design reflects Midtown's industrial-chic aesthetic with exposed brick, contemporary art pieces, and 
+                intimate lighting that creates sophisticated ambiance without pretension. The space features a central bar perfect for 
+                cocktails and casual dining, intimate booth seating for date nights, and larger tables accommodating groups. This 
+                flexible layout accommodates diverse dining occasions, from casual weeknight meals to special celebrations.
+              </p>
+              <p className="text-slate-600 leading-relaxed">
+                Service emphasizes personalized attention, with staff members who understand the neighborhood and can provide recommendations 
+                for both dining and local experiences. The restaurant's commitment to exceptional service extends beyond the meal itself, 
+                creating an experience that makes guests want to return. Whether you're a neighborhood regular or a first-time visitor, 
+                The Pepper Club strives to make every dining experience memorable. This approach has earned the restaurant recognition as 
+                one of Las Vegas's premier dining destinations, while maintaining its role as a neighborhood gathering place.
+              </p>
+            </div>
+            <div>
+              <h3 className="text-2xl font-bold text-slate-900 mb-4">Special Events and Private Dining</h3>
+              <p className="text-slate-600 mb-3 leading-relaxed">
+                Beyond regular dinner service, The Pepper Club hosts special events including wine dinners pairing exceptional vintages 
+                with multi-course tasting menus, seasonal celebrations highlighting holiday traditions, and occasionally, cooking 
+                demonstrations where Chef Todd English or team members share techniques. These events create opportunities for diners to 
+                explore new flavors, learn about culinary techniques, and connect with the restaurant's culinary philosophy.
+              </p>
+              <p className="text-slate-600 leading-relaxed">
+                Private dining options accommodate celebrations, business meetings, or intimate gatherings with customized menus. The 
+                restaurant's flexible space can accommodate groups of various sizes, from intimate parties to larger corporate events. 
+                This versatility makes The Pepper Club a popular choice for special occasions, whether celebrating personal milestones 
+                or hosting business gatherings. The restaurant serves as a neighborhood gathering spot where Arts District residents 
+                celebrate special occasions, entertain visitors, or simply enjoy exceptional food steps from home. Reservations recommended, 
+                especially during{' '}
+                <Link href="/neighborhood/first-fridays" className="text-slate-900 font-semibold hover:underline">
+                  First Friday
+                </Link>
+                {' '}weekends when the entire neighborhood comes alive.
+              </p>
+            </div>
+            <div>
+              <h3 className="text-2xl font-bold text-slate-900 mb-4">Integration with The English Hotel</h3>
+              <p className="text-slate-600 mb-3 leading-relaxed">
+                The Pepper Club's location within{' '}
+                <Link href="/neighborhood/english-hotel" className="text-slate-900 font-semibold hover:underline">
+                  The English Hotel
+                </Link>
+                {' '}creates a seamless experience for hotel guests and local residents alike. Hotel guests enjoy convenient access to 
+                exceptional dining without leaving the property, while neighborhood residents appreciate having a world-class restaurant 
+                within walking distance. This integration exemplifies Midtown's mixed-use character, where hospitality, dining, and 
+                residential living converge to create a vibrant urban community.
+              </p>
+              <p className="text-slate-600 leading-relaxed">
+                {' '}
+                <Link href="/neighborhood/english-residences" className="text-slate-900 font-semibold hover:underline">
+                  English Residences
+                </Link>
+                {' '}owners enjoy priority reservations and exclusive menu previews, integrating the restaurant into the condo-hotel 
+                ownership experience. This benefit adds value to ownership, providing convenient access to exceptional dining while 
+                supporting the neighborhood's culinary scene. The restaurant's success demonstrates the synergy between{' '}
+                <Link href="/neighborhood/english-hotel" className="text-slate-900 font-semibold hover:underline">
+                  The English Hotel
+                </Link>
+                {' '}and the broader Midtown community, creating a model for how hospitality and residential development can enhance 
+                neighborhood character.
+              </p>
+            </div>
+          </div>
         </div>
       </section>
 

@@ -66,19 +66,64 @@ export default function EVProgramPage() {
           </p>
           <p className="text-lg text-slate-600 mb-4 leading-relaxed">
             As electric vehicle technology evolves and adoption accelerates, Midtown's early infrastructure investment positions the neighborhood 
-            advantageously. Properties with EV charging access command premium values as more buyers prioritize green transportation. The English 
-            Residences and newer Midtown developments include EV charging as standard amenity rather than afterthought, future-proofing properties 
+            advantageously. Properties with EV charging access command premium values as more buyers prioritize green transportation. The{' '}
+            <Link href="/neighborhood/english-residences" className="text-slate-900 font-semibold hover:underline">
+              English Residences
+            </Link>
+            {' '}and newer Midtown developments include EV charging as standard amenity rather than afterthought, future-proofing properties 
             for changing transportation preferences. For residents, this means enjoying cutting-edge amenities today while benefiting from forward-thinking 
-            planning that enhances property values tomorrow. When evaluating Midtown properties, verify EV charging availability and capacity—buildings 
-            with robust infrastructure attract environmentally-conscious buyers and command higher resale values as electric vehicles become mainstream. 
-            Dr. Jan can provide specific details about EV amenities in different Midtown buildings, helping you find properties aligned with your 
-            sustainability priorities and transportation needs. The EV Program exemplifies Midtown's forward-thinking approach to urban development—anticipating 
-            future resident needs and implementing solutions before they become critical rather than retrofitting infrastructure after demand exceeds capacity. 
-            This proactive planning extends to solar panel integration on newer buildings, energy-efficient HVAC systems in residential developments, and water 
-            conservation initiatives that collectively reduce environmental impact while lowering resident utility costs. The comprehensive sustainability approach 
-            resonates with buyers prioritizing environmental responsibility and recognizing that green amenities enhance property values as sustainability becomes 
-            mainstream expectation rather than luxury add-on.
+            planning that enhances property values tomorrow.
           </p>
+          <div className="space-y-6 mt-8">
+            <div>
+              <h3 className="text-2xl font-bold text-slate-900 mb-4">Charging Infrastructure and Technology</h3>
+              <p className="text-lg text-slate-600 mb-3 leading-relaxed">
+                Midtown's EV Program addresses a fundamental challenge of urban electric vehicle ownership: reliable, convenient charging 
+                infrastructure. While suburban homeowners install garage chargers easily, urban condo residents traditionally face limited 
+                charging access. Midtown solves this through strategically placed Level 2 charging stations in residential parking areas, 
+                ensuring electric vehicle ownership remains practical for apartment and condo residents who lack private garages.
+              </p>
+              <p className="text-lg text-slate-600 leading-relaxed">
+                The program extends beyond infrastructure to comprehensive support. Residents receive charging credits that offset electricity 
+                costs, making EV ownership more economical. Reserved EV parking spots eliminate the frustration of finding available chargers, 
+                while the mobile app allows scheduling charging sessions and monitoring status remotely. This integrated approach removes barriers 
+                that often discourage urban residents from adopting electric vehicles despite environmental and financial benefits.
+              </p>
+            </div>
+            <div>
+              <h3 className="text-2xl font-bold text-slate-900 mb-4">Environmental Impact and Sustainability</h3>
+              <p className="text-lg text-slate-600 mb-3 leading-relaxed">
+                Beyond individual benefits, the EV Program contributes to broader sustainability goals. Reducing vehicular emissions in dense 
+                urban neighborhoods improves air quality for all residents, while normalized electric vehicle adoption demonstrates environmental 
+                leadership. The program aligns with Nevada's renewable energy initiatives and Las Vegas's efforts to position itself as a 
+                forward-thinking city beyond entertainment stereotypes.
+              </p>
+              <p className="text-lg text-slate-600 leading-relaxed">
+                For environmentally-conscious buyers evaluating Midtown properties, the EV infrastructure represents tangible commitment to 
+                sustainability rather than mere marketing rhetoric. The comprehensive sustainability approach extends to solar panel integration on 
+                newer buildings, energy-efficient HVAC systems in residential developments, and water conservation initiatives that collectively 
+                reduce environmental impact while lowering resident utility costs. This resonates with buyers prioritizing environmental 
+                responsibility and recognizing that green amenities enhance property values as sustainability becomes mainstream expectation 
+                rather than luxury add-on.
+              </p>
+            </div>
+            <div>
+              <h3 className="text-2xl font-bold text-slate-900 mb-4">Property Value and Future-Proofing</h3>
+              <p className="text-lg text-slate-600 mb-3 leading-relaxed">
+                When evaluating Midtown properties, verify EV charging availability and capacity—buildings with robust infrastructure attract 
+                environmentally-conscious buyers and command higher resale values as electric vehicles become mainstream. The EV Program exemplifies 
+                Midtown's forward-thinking approach to urban development—anticipating future resident needs and implementing solutions before they 
+                become critical rather than retrofitting infrastructure after demand exceeds capacity.
+              </p>
+              <p className="text-lg text-slate-600 leading-relaxed">
+                The English Residences and newer Midtown developments include EV charging as standard amenity rather than afterthought, 
+                future-proofing properties for changing transportation preferences. For residents, this means enjoying cutting-edge amenities 
+                today while benefiting from forward-thinking planning that enhances property values tomorrow. Dr. Jan can provide specific details 
+                about EV amenities in different Midtown buildings, helping you find properties aligned with your sustainability priorities and 
+                transportation needs.
+              </p>
+            </div>
+          </div>
         </div>
       </section>
 

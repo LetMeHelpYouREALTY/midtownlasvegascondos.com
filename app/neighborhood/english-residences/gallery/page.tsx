@@ -113,9 +113,77 @@ export default function EnglishResidencesGalleryPage() {
 
       {/* Image Gallery */}
       <section className="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
-        <h2 className="text-3xl font-bold text-slate-900 mb-8">
-          Property Gallery
-        </h2>
+        <div className="mb-12">
+          <h2 className="text-3xl font-bold text-slate-900 mb-6">
+            Property Gallery
+          </h2>
+          <p className="text-lg text-slate-600 mb-6 leading-relaxed">
+            Explore The English Residences through our comprehensive gallery showcasing the luxury finishes, contemporary design, and 
+            stunning Arts District views that define these exceptional condo-hotel units. Each residence features thoughtfully designed 
+            interiors that blend modern elegance with practical functionality, creating spaces that are both beautiful and livable.
+          </p>
+          <div className="space-y-6 mt-8">
+            <div>
+              <h3 className="text-2xl font-bold text-slate-900 mb-4">Living Spaces and Design</h3>
+              <p className="text-base text-slate-600 mb-3 leading-relaxed">
+                The English Residences feature open-concept living spaces designed to maximize natural light and create a sense of spaciousness. 
+                Floor-to-ceiling windows showcase panoramic views of the Arts District, bringing the neighborhood's vibrant energy into your home. 
+                Contemporary design elements, including exposed concrete accents and custom lighting, reflect Midtown's industrial-chic aesthetic 
+                while maintaining sophisticated elegance.
+              </p>
+              <p className="text-base text-slate-600 leading-relaxed">
+                High-end finishes throughout create a luxurious atmosphere, from premium flooring to custom cabinetry and designer fixtures. 
+                Each residence is thoughtfully designed to balance aesthetic appeal with practical functionality, ensuring that beauty and 
+                livability coexist. The design philosophy emphasizes quality materials and craftsmanship, creating spaces that will remain 
+                beautiful and functional for years to come.
+              </p>
+            </div>
+            <div>
+              <h3 className="text-2xl font-bold text-slate-900 mb-4">Kitchen and Dining</h3>
+              <p className="text-base text-slate-600 mb-3 leading-relaxed">
+                Gourmet kitchens feature top-of-the-line appliances from premium brands like Sub-Zero and Wolf, supporting both casual 
+                entertaining and serious cooking. Spacious countertops and custom cabinetry provide ample workspace and storage, while 
+                thoughtful layouts ensure efficient workflow. The kitchens seamlessly connect to living and dining areas, creating ideal 
+                spaces for entertaining and daily living.
+              </p>
+              <p className="text-base text-slate-600 leading-relaxed">
+                Whether you're preparing a quick breakfast before work or hosting an elaborate dinner party, the kitchens in The English 
+                Residences accommodate diverse culinary needs. The proximity to{' '}
+                <Link href="/neighborhood/pepper-club" className="text-slate-900 font-semibold hover:underline">
+                  The Pepper Club
+                </Link>
+                {' '}restaurant also provides the option of exceptional dining without leaving the building, creating a flexible approach 
+                to meals that supports both cooking and dining out.
+              </p>
+            </div>
+            <div>
+              <h3 className="text-2xl font-bold text-slate-900 mb-4">Bedrooms and Private Spaces</h3>
+              <p className="text-base text-slate-600 mb-3 leading-relaxed">
+                Master bedrooms feature spacious layouts with premium finishes and abundant natural light. Thoughtful design creates peaceful 
+                retreats that support rest and relaxation, while generous closet space accommodates storage needs. The bedroom design emphasizes 
+                comfort and tranquility, creating spaces that serve as true sanctuaries within the urban setting.
+              </p>
+              <p className="text-base text-slate-600 leading-relaxed">
+                Additional bedrooms, where applicable, provide flexibility for guests, home offices, or additional living space. The thoughtful 
+                design ensures that every room serves a purpose, maximizing the utility of each square foot. Whether you're using bedrooms for 
+                sleeping, working, or entertaining, the layouts accommodate diverse needs while maintaining aesthetic consistency throughout the residence.
+              </p>
+            </div>
+            <div>
+              <h3 className="text-2xl font-bold text-slate-900 mb-4">Bathrooms and Spa Features</h3>
+              <p className="text-base text-slate-600 mb-3 leading-relaxed">
+                Spa-inspired bathrooms feature premium fixtures, designer finishes, and thoughtful layouts that create a retreat-like atmosphere. 
+                Large showers, soaking tubs where available, and dual vanities provide luxury amenities that enhance daily routines. The bathroom 
+                design emphasizes relaxation and rejuvenation, creating spaces that serve as personal sanctuaries within the home.
+              </p>
+              <p className="text-base text-slate-600 leading-relaxed">
+                Premium materials and finishes throughout the bathrooms create a sense of luxury that complements the overall residence design. 
+                The attention to detail in these spaces reflects the commitment to quality that defines The English Residences, ensuring that 
+                every aspect of the residence meets the highest standards of luxury and functionality.
+              </p>
+            </div>
+          </div>
+        </div>
         <ImageGallery images={propertyImages} />
         
         <div className="mt-12 p-6 bg-blue-50 border border-blue-200 rounded-lg">
