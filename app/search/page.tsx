@@ -86,10 +86,74 @@ export default function SearchPage() {
             </p>
             
             <p>
-              Consider factors beyond the property itself: proximity to First Friday events, walkability to cafes and galleries, 
-              parking availability, HOA fees, and future development plans that may impact property values. The English Hotel area 
-              offers immediate access to fine dining and hotel amenities, while properties near Midtown Plaza provide more retail 
+              Consider factors beyond the property itself: proximity to{' '}
+              <Link href="/neighborhood/first-fridays" className="text-slate-900 font-semibold hover:underline">
+                First Friday events
+              </Link>
+              , walkability to cafes and galleries, 
+              parking availability, HOA fees, and future development plans that may impact property values. The{' '}
+              <Link href="/neighborhood/english-hotel" className="text-slate-900 font-semibold hover:underline">
+                English Hotel area
+              </Link>
+              {' '}offers immediate access to fine dining and hotel amenities, while properties near{' '}
+              <Link href="/neighborhood/midtown-plaza" className="text-slate-900 font-semibold hover:underline">
+                Midtown Plaza
+              </Link>
+              {' '}provide more retail 
               and dining variety. Arts District locations immerse you in creative culture with over 30 galleries within walking distance.
+            </p>
+            
+            <h3 className="text-2xl font-bold text-slate-900 mt-8 mb-4">Investment Considerations in Midtown</h3>
+            <p>
+              Midtown's real estate market offers unique investment opportunities. Property values have appreciated consistently, 
+              with average increases of 45% since 2015. The neighborhood's growing reputation, combined with ongoing development, 
+              suggests continued appreciation potential. For investors,{' '}
+              <Link href="/neighborhood/english-residences" className="text-slate-900 font-semibold hover:underline">
+                The English Residences
+              </Link>
+              {' '}condo-hotel model provides an additional revenue stream through rental income when units aren't in personal use.
+            </p>
+            <p>
+              Traditional condos and single-family homes offer rental potential, with the Arts District's cultural amenities 
+              attracting both long-term residents and short-term visitors. The neighborhood's walkability and proximity to 
+              downtown Las Vegas make it appealing to professionals, while the artistic community draws creatives and culture 
+              enthusiasts. This diverse tenant base supports strong rental demand and occupancy rates.
+            </p>
+            
+            <h3 className="text-2xl font-bold text-slate-900 mt-8 mb-4">Financing Your Midtown Property</h3>
+            <p>
+              Financing options for Midtown properties vary by property type. Traditional condos qualify for conventional 
+              mortgages with standard down payments (typically 20% for investment properties, 3-5% for primary residences). 
+              Condo-hotel properties may require specialized financing, with some lenders offering products specifically 
+              designed for these unique ownership structures. Dr. Jan Duffy can connect you with lenders experienced in 
+              Midtown real estate who understand the neighborhood's market dynamics.
+            </p>
+            <p>
+              Investment property financing typically requires higher down payments (20-25%) and may have different interest 
+              rates than primary residence loans. However, the rental income potential, especially for condo-hotel units, 
+              can offset these costs. Work with a lender who understands Midtown's market to explore all available financing 
+              options and find the best terms for your situation.
+            </p>
+            
+            <h3 className="text-2xl font-bold text-slate-900 mt-8 mb-4">The Buying Process in Midtown</h3>
+            <p>
+              Purchasing property in Midtown follows the standard Las Vegas real estate process, with some unique considerations. 
+              Once you've identified a property, you'll submit an offer through your agent. In competitive markets, properties 
+              may receive multiple offers, so working with an experienced agent like Dr. Jan Duffy provides valuable negotiation 
+              expertise. The inspection period allows you to thoroughly evaluate the property, including building systems, 
+              potential HOA issues, and any special considerations for condo-hotel units.
+            </p>
+            <p>
+              For condo-hotel purchases, additional due diligence is essential. Review the hotel management agreement, 
+              revenue-sharing terms, historical occupancy rates, and owner usage policies. Understand any restrictions on 
+              personal use during peak seasons and the process for reserving your unit. Dr. Jan provides detailed guidance 
+              through this process, ensuring you fully understand the condo-hotel ownership model before committing.
+            </p>
+            <p>
+              Closing typically occurs 30-45 days after offer acceptance, depending on financing and inspection timelines. 
+              Dr. Jan coordinates all aspects of the transaction, from initial search through closing and beyond. Post-closing, 
+              she connects new owners with local service providers, from property management companies to interior designers, 
+              ensuring a smooth transition to Midtown living.
             </p>
           </div>
         </div>

@@ -93,7 +93,7 @@ export default function HomePage() {
             This is where you can enjoy a walkable neighborhood with art galleries and privately 
             owned restaurants and now residences at Midtown.
           </p>
-          <p className="text-lg text-slate-600 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-lg text-slate-600 max-w-3xl mx-auto leading-relaxed mb-6">
             Midtown represents a unique convergence of urban sophistication and creative energy. Unlike the tourist-focused Strip, 
             Midtown offers authentic Las Vegas living where residents become part of a thriving artistic community. The neighborhood 
             features converted warehouses housing contemporary art galleries, chef-driven restaurants serving innovative cuisine, 
@@ -101,6 +101,78 @@ export default function HomePage() {
             sense of community, Midtown has emerged as the premier destination for those seeking an authentic Las Vegas experience 
             beyond the casinos and resorts.
           </p>
+          <div className="max-w-4xl mx-auto text-left mt-12 space-y-6">
+            <div>
+              <h3 className="text-2xl font-bold text-slate-900 mb-4">The Arts District Revolution</h3>
+              <p className="text-base text-slate-600 leading-relaxed mb-4">
+                What began as a grassroots movement in the late 1990s has transformed into Las Vegas's most dynamic cultural destination. 
+                The{' '}
+                <Link href="/neighborhood/arts-district" className="text-slate-900 font-semibold hover:underline">
+                  Las Vegas Arts District
+                </Link>{' '}
+                spans 18 blocks of creative energy, housing over 30 art galleries, studios, and performance venues. Artists and 
+                entrepreneurs discovered the potential in abandoned warehouses and industrial buildings, transforming them into vibrant 
+                cultural spaces. Today, these converted spaces attract visitors from around the world, drawn by the neighborhood's 
+                authentic character and creative spirit.
+              </p>
+              <p className="text-base text-slate-600 leading-relaxed">
+                The Arts District's growth accelerated with the establishment of{' '}
+                <Link href="/neighborhood/first-fridays" className="text-slate-900 font-semibold hover:underline">
+                  First Friday
+                </Link>
+                {' '}in 2002, which has become the largest monthly art event in the Southwest, drawing over 10,000 visitors each month. 
+                This monthly celebration showcases the neighborhood's creative talent, featuring gallery openings, live music, food trucks, 
+                street performers, and interactive art installations. The event has become a cornerstone of Las Vegas culture, demonstrating 
+                the city's evolution beyond its entertainment reputation into a genuine cultural destination.
+              </p>
+            </div>
+            <div>
+              <h3 className="text-2xl font-bold text-slate-900 mb-4">Living in the Heart of Culture</h3>
+              <p className="text-base text-slate-600 leading-relaxed mb-4">
+                Midtown residents enjoy unparalleled access to the Arts District's cultural offerings. Within walking distance, you'll find 
+                world-class galleries like the{' '}
+                <Link href="/neighborhood/arts-district" className="text-slate-900 font-semibold hover:underline">
+                  Arts Factory
+                </Link>
+                , which houses multiple artist studios and exhibition spaces. The neighborhood's dining scene features locally-owned 
+                restaurants that celebrate Las Vegas's culinary diversity, from innovative fusion cuisine to traditional comfort food with 
+                creative twists. The{' '}
+                <Link href="/neighborhood/midtown-plaza" className="text-slate-900 font-semibold hover:underline">
+                  Midtown Plaza
+                </Link>{' '}
+                serves as a central gathering space, offering a curated selection of dining, shopping, and entertainment options that 
+                reflect the neighborhood's artistic character.
+              </p>
+              <p className="text-base text-slate-600 leading-relaxed">
+                The residential experience in Midtown differs fundamentally from typical Las Vegas developments. Rather than isolated 
+                communities accessible only by car, Midtown offers genuine walkability. Residents can stroll to breakfast at local cafes, 
+                browse galleries during lunch breaks, enjoy dinner at chef-driven restaurants, and attend evening performances—all 
+                without leaving the neighborhood. This lifestyle appeals to professionals seeking work-life balance, empty-nesters looking 
+                for vibrant retirement communities, and young creatives drawn to the area's artistic energy. The neighborhood's mix of 
+                residential and commercial spaces creates a 24/7 community where people live, work, and play in close proximity.
+              </p>
+            </div>
+            <div>
+              <h3 className="text-2xl font-bold text-slate-900 mb-4">Investment and Growth Potential</h3>
+              <p className="text-base text-slate-600 leading-relaxed mb-4">
+                Property values in Midtown have demonstrated consistent appreciation, with average increases of 45% since 2015. This growth 
+                reflects the neighborhood's transformation from an industrial area to a sought-after residential and commercial destination. 
+                The ongoing development of new residential projects, including{' '}
+                <Link href="/neighborhood/english-residences" className="text-slate-900 font-semibold hover:underline">
+                  The English Residences
+                </Link>
+                {' '}and the upcoming Plaza Tower, signals continued investment in the area's future. These developments bring modern 
+                amenities and luxury finishes while preserving the neighborhood's authentic character.
+              </p>
+              <p className="text-base text-slate-600 leading-relaxed">
+                Investors recognize Midtown's potential for long-term appreciation and rental income. The neighborhood's proximity to 
+                downtown Las Vegas and the Strip, combined with its unique cultural offerings, makes it attractive to both permanent 
+                residents and short-term visitors. The English Residences condo-hotel model, for example, allows owners to generate 
+                rental income when not using their units, providing an innovative approach to real estate investment. As Midtown continues 
+                to evolve, early investors benefit from the area's growing reputation and increasing property values.
+              </p>
+            </div>
+          </div>
         </div>
 
         {/* Category Grid */}
@@ -137,15 +209,66 @@ export default function HomePage() {
                   Las Vegas Arts District
                 </Link>.
               </p>
-              <p className="text-base text-slate-600 leading-relaxed">
+              <p className="text-base text-slate-600 leading-relaxed mb-4">
                 Located between Charleston Boulevard and the Fremont East Entertainment District, Midtown encompasses 
                 approximately 18 blocks of vibrant urban development. This strategic location provides residents with 
                 easy access to downtown Las Vegas, the Las Vegas Strip, and McCarran International Airport, while 
-                maintaining the neighborhood's distinct character. The area is anchored by landmarks like The English 
-                Hotel, Midtown Plaza, and over 30 art galleries that have transformed former industrial spaces into 
+                maintaining the neighborhood's distinct character. The area is anchored by landmarks like{' '}
+                <Link href="/neighborhood/english-hotel" className="text-slate-900 font-semibold hover:underline">
+                  The English Hotel
+                </Link>
+                ,{' '}
+                <Link href="/neighborhood/midtown-plaza" className="text-slate-900 font-semibold hover:underline">
+                  Midtown Plaza
+                </Link>
+                , and over 30 art galleries that have transformed former industrial spaces into 
                 cultural destinations. With new residential developments, improved infrastructure, and a growing roster 
                 of local businesses, Midtown continues to evolve while staying true to its artistic roots.
               </p>
+              <div className="space-y-4 mt-6">
+                <div>
+                  <h3 className="text-xl font-bold text-slate-900 mb-3">Strategic Location Benefits</h3>
+                  <p className="text-base text-slate-600 leading-relaxed mb-3">
+                    Midtown's location offers unparalleled advantages for residents. Just minutes from downtown Las Vegas, 
+                    the neighborhood provides easy access to the city's business district, government offices, and cultural 
+                    institutions. The Las Vegas Strip is a short drive away, making it convenient for entertainment and 
+                    dining options beyond the Arts District. McCarran International Airport is approximately 15 minutes 
+                    by car, ideal for frequent travelers and business professionals.
+                  </p>
+                  <p className="text-base text-slate-600 leading-relaxed">
+                    The proximity to major transportation routes makes Midtown accessible while maintaining its distinct 
+                    neighborhood character. Unlike suburban developments that require long commutes, Midtown residents can 
+                    walk to work, entertainment, and dining within the neighborhood itself. This walkability reduces 
+                    transportation costs, improves quality of life, and creates a genuine sense of community that's rare 
+                    in Las Vegas.
+                  </p>
+                </div>
+                <div>
+                  <h3 className="text-xl font-bold text-slate-900 mb-3">Neighborhood Landmarks and Destinations</h3>
+                  <p className="text-base text-slate-600 leading-relaxed mb-3">
+                    The English Hotel at 921 S Main Street serves as a cornerstone of Midtown, offering luxury accommodations, 
+                    the award-winning{' '}
+                    <Link href="/neighborhood/pepper-club" className="text-slate-900 font-semibold hover:underline">
+                      Pepper Club restaurant
+                    </Link>
+                    , and{' '}
+                    <Link href="/neighborhood/english-residences" className="text-slate-900 font-semibold hover:underline">
+                      The English Residences
+                    </Link>
+                    {' '}condo-hotel units. Midtown Plaza functions as the neighborhood's commercial heart, featuring locally-owned 
+                    restaurants, boutique shops, and gathering spaces. The Arts Factory, one of the district's first converted 
+                    warehouse spaces, houses multiple galleries and artist studios, representing the neighborhood's creative 
+                    transformation.
+                  </p>
+                  <p className="text-base text-slate-600 leading-relaxed">
+                    Beyond these major landmarks, Midtown features numerous smaller galleries, studios, and creative spaces 
+                    that contribute to the neighborhood's artistic identity. Street art and murals throughout the district 
+                    showcase local and international talent, creating an ever-changing outdoor gallery. Performance venues 
+                    like the Majestic Repertory Theatre offer year-round programming, while pop-up markets and festivals 
+                    create regular opportunities for community gathering and cultural celebration.
+                  </p>
+                </div>
+              </div>
             </div>
             <div className="aspect-video bg-slate-200 rounded-lg">
               {/* Map or image placeholder */}
@@ -171,7 +294,7 @@ export default function HomePage() {
             baked into the Arts District identity. Witness the transformation of a neighborhood 
             that continues to redefine art, design and culture.
           </p>
-          <p className="text-lg text-slate-600 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-lg text-slate-600 max-w-3xl mx-auto leading-relaxed mb-8">
             The Arts District's evolution began in the late 1990s when artists and creative entrepreneurs discovered 
             the potential in abandoned warehouses and industrial buildings south of downtown. What started as a grassroots 
             movement has blossomed into a nationally recognized arts destination. The neighborhood gained momentum with the 
@@ -180,6 +303,88 @@ export default function HomePage() {
             that allow residents to live within walking distance of world-class galleries, chef-driven restaurants, and cultural 
             institutions like the Majestic Repertory Theatre.
           </p>
+          <div className="max-w-4xl mx-auto text-left space-y-6">
+            <div>
+              <h3 className="text-2xl font-bold text-slate-900 mb-4">The Early Years: Industrial Roots</h3>
+              <p className="text-base text-slate-600 leading-relaxed mb-3">
+                Before becoming Las Vegas's cultural heart, the Arts District functioned as an industrial zone serving 
+                the city's manufacturing and distribution needs. Warehouses and factories dominated the landscape, with 
+                minimal residential development. The area's transformation began when visionary artists like Wes Myles 
+                recognized the potential in these abandoned structures, seeing not dilapidated buildings but blank canvases 
+                for creative expression.
+              </p>
+              <p className="text-base text-slate-600 leading-relaxed">
+                The Arts Factory, opened in 1997, became a pioneering example of adaptive reuse, demonstrating how industrial 
+                spaces could be repurposed for creative industries. Artists and entrepreneurs followed, drawn by affordable 
+                space and the opportunity to build something new. This grassroots movement gained momentum throughout the late 
+                1990s and early 2000s, as more creatives discovered the area's potential. The neighborhood's transformation 
+                wasn't driven by top-down planning but by organic growth, as artists, gallery owners, and small business 
+                owners invested in the community.
+              </p>
+            </div>
+            <div>
+              <h3 className="text-2xl font-bold text-slate-900 mb-4">The First Friday Revolution</h3>
+              <p className="text-base text-slate-600 leading-relaxed mb-3">
+                The establishment of{' '}
+                <Link href="/neighborhood/first-fridays" className="text-slate-900 font-semibold hover:underline">
+                  First Friday
+                </Link>
+                {' '}in 2002 marked a turning point in the Arts District's evolution. Founded by Cindy Funkhouser, this monthly 
+                event transformed the neighborhood from a quiet creative enclave into a vibrant cultural destination. What 
+                began as a small gathering of artists and art enthusiasts has grown into the largest monthly art event in the 
+                Southwest, regularly attracting over 10,000 visitors.
+              </p>
+              <p className="text-base text-slate-600 leading-relaxed mb-3">
+                First Friday created a regular platform for artists to showcase their work, galleries to attract new visitors, 
+                and the community to come together in celebration of creativity. The event's success demonstrated the neighborhood's 
+                potential as a cultural destination, drawing attention from developers, investors, and city planners. This 
+                recognition led to increased investment in infrastructure, new business development, and eventually, residential 
+                projects that would allow people to live within walking distance of this cultural hub.
+              </p>
+              <p className="text-base text-slate-600 leading-relaxed">
+                The event's impact extends beyond the monthly celebration. First Friday has become a symbol of the neighborhood's 
+                identity, representing the collaborative spirit that defines the Arts District. Local businesses have thrived 
+                thanks to the increased foot traffic, while artists have found new audiences for their work. The event's 
+                international recognition has elevated the Arts District's profile, attracting visitors from around the world 
+                who want to experience authentic Las Vegas culture.
+              </p>
+            </div>
+            <div>
+              <h3 className="text-2xl font-bold text-slate-900 mb-4">Modern Development and Residential Growth</h3>
+              <p className="text-base text-slate-600 leading-relaxed mb-3">
+                The 2010s marked a new phase in the Arts District's evolution, as residential development began to complement 
+                the existing commercial and creative spaces. Projects like{' '}
+                <Link href="/neighborhood/english-residences" className="text-slate-900 font-semibold hover:underline">
+                  The English Residences
+                </Link>
+                {' '}demonstrated that luxury living could coexist with the neighborhood's artistic character. These developments 
+                attracted a new demographic of residents—professionals, empty-nesters, and investors—who appreciated both the 
+                cultural amenities and the investment potential.
+              </p>
+              <p className="text-base text-slate-600 leading-relaxed mb-3">
+                The opening of{' '}
+                <Link href="/neighborhood/english-hotel" className="text-slate-900 font-semibold hover:underline">
+                  The English Hotel
+                </Link>
+                {' '}in 2022 represented a milestone in the neighborhood's maturation. This boutique luxury hotel, featuring 
+                the award-winning{' '}
+                <Link href="/neighborhood/pepper-club" className="text-slate-900 font-semibold hover:underline">
+                  Pepper Club restaurant
+                </Link>
+                , brought international attention to Midtown while maintaining the area's authentic character. The hotel's success 
+                validated the neighborhood's appeal to both tourists and residents, demonstrating that luxury and authenticity 
+                could coexist.
+              </p>
+              <p className="text-base text-slate-600 leading-relaxed">
+                Today, Midtown continues to evolve, with new developments like the Plaza Tower scheduled to open in 2025. These 
+                projects bring modern amenities and luxury finishes while preserving the neighborhood's artistic identity. The 
+                ongoing development reflects confidence in Midtown's future, as investors and residents recognize the value of 
+                living in a neighborhood that offers both cultural richness and urban convenience. The transformation from 
+                industrial zone to cultural destination to residential community demonstrates the neighborhood's ability to adapt 
+                and grow while maintaining its essential character.
+              </p>
+            </div>
+          </div>
         </div>
 
         {/* Timeline */}
