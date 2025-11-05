@@ -57,10 +57,58 @@ export default function AboutPage() {
           <p className="text-base text-slate-600 mb-6 leading-relaxed">
             What began as a grassroots artist movement in the late 1990s has matured into a thriving mixed-use neighborhood where 
             residents enjoy morning coffee at local roasters, afternoon gallery visits, evening dinners at chef-driven restaurants, 
-            and monthly First Friday celebrations that draw over 10,000 visitors. Unlike typical Las Vegas developments focused on 
+            and monthly{' '}
+            <Link href="/neighborhood/first-fridays" className="text-slate-900 font-semibold hover:underline">
+              First Friday
+            </Link>
+            {' '}celebrations that draw over 10,000 visitors. Unlike typical Las Vegas developments focused on 
             tourists, Midtown serves locals first—creating genuine community rather than manufactured experience. This authenticity 
             resonates with people seeking substance over spectacle, community over crowds.
           </p>
+          <div className="space-y-6 mt-8">
+            <div>
+              <h3 className="text-2xl font-bold text-slate-900 mb-4">The Evolution of Midtown</h3>
+              <p className="text-base text-slate-600 leading-relaxed mb-3">
+                Midtown's transformation from industrial zone to cultural destination represents one of Las Vegas's most successful 
+                examples of urban revitalization. The process began organically, as artists and creative entrepreneurs discovered 
+                affordable space in abandoned warehouses. What started as individual studios and galleries gradually coalesced into 
+                a cohesive arts district, attracting visitors and eventually residents who appreciated the neighborhood's unique character.
+              </p>
+              <p className="text-base text-slate-600 leading-relaxed">
+                The establishment of{' '}
+                <Link href="/neighborhood/first-fridays" className="text-slate-900 font-semibold hover:underline">
+                  First Friday
+                </Link>
+                {' '}in 2002 marked a turning point, transforming the neighborhood from a quiet creative enclave into a monthly 
+                cultural destination. This event's success demonstrated the area's potential, attracting investment and development 
+                that would eventually include residential projects. Today, Midtown represents the successful integration of arts, 
+                commerce, and residential living, creating a model for urban development that other cities seek to emulate.
+              </p>
+            </div>
+            <div>
+              <h3 className="text-2xl font-bold text-slate-900 mb-4">Community and Culture</h3>
+              <p className="text-base text-slate-600 leading-relaxed mb-3">
+                Midtown's community distinguishes itself through genuine connection and shared values. Unlike neighborhoods defined 
+                solely by geography, Midtown residents share a commitment to creativity, sustainability, and authentic urban living. 
+                This common ground creates strong social bonds, whether through monthly{' '}
+                <Link href="/neighborhood/first-fridays" className="text-slate-900 font-semibold hover:underline">
+                  First Friday
+                </Link>
+                {' '}celebrations, gallery openings, or casual encounters at local cafes and restaurants.
+              </p>
+              <p className="text-base text-slate-600 leading-relaxed">
+                The neighborhood's cultural programming extends beyond First Friday, with year-round events including gallery walks, 
+                performance series, and community festivals. The{' '}
+                <Link href="/neighborhood/arts-district" className="text-slate-900 font-semibold hover:underline">
+                  Las Vegas Arts District
+                </Link>
+                {' '}organization works to support local artists and businesses, while residents actively participate in shaping the 
+                neighborhood's future through community meetings and collaborative initiatives. This participatory approach ensures 
+                that Midtown continues to evolve in ways that preserve its essential character while welcoming new residents and 
+                businesses.
+              </p>
+            </div>
+          </div>
 
           <h2 className="text-3xl font-bold text-slate-900 mb-6 mt-12">
             What Makes Midtown Special
@@ -175,6 +223,57 @@ export default function AboutPage() {
             alternatives, and young creatives drawn to the neighborhood's artistic energy. The investment case extends beyond lifestyle 
             to financial performance, with properties consistently appreciating ahead of Las Vegas averages.
           </p>
+          <div className="space-y-6 mt-8">
+            <div>
+              <h3 className="text-2xl font-bold text-slate-900 mb-4">Upcoming Developments</h3>
+              <p className="text-base text-slate-600 leading-relaxed mb-3">
+                The Plaza Tower, scheduled to open in 2025, represents the next phase of Midtown's residential growth. This 
+                development will bring additional luxury units to the neighborhood while maintaining the area's artistic character. 
+                Planned infrastructure improvements include enhanced walkability, expanded public transportation access, and sustainability 
+                initiatives that align with the neighborhood's values.
+              </p>
+              <p className="text-base text-slate-600 leading-relaxed">
+                Future developments continue to emphasize the integration of residential and commercial spaces, ensuring that new 
+                projects contribute to rather than detract from Midtown's walkable character. The neighborhood's master plan prioritizes 
+                cultural amenities, green spaces, and community gathering areas, recognizing that these elements are essential to 
+                Midtown's identity and appeal.
+              </p>
+            </div>
+            <div>
+              <h3 className="text-2xl font-bold text-slate-900 mb-4">Sustainable Growth</h3>
+              <p className="text-base text-slate-600 leading-relaxed mb-3">
+                Midtown's growth strategy focuses on sustainability in multiple dimensions. Environmentally, the neighborhood promotes 
+                walkability and reduced car dependence, with initiatives like the{' '}
+                <Link href="/neighborhood/ev-program" className="text-slate-900 font-semibold hover:underline">
+                  EV Vehicle Program
+                </Link>
+                {' '}supporting electric vehicle adoption. Socially, development emphasizes community engagement and preservation of 
+                local character. Economically, growth benefits both existing residents and new arrivals, with property appreciation 
+                balanced by affordable housing initiatives.
+              </p>
+              <p className="text-base text-slate-600 leading-relaxed">
+                The neighborhood's commitment to sustainable growth ensures that Midtown remains attractive to both residents and 
+                investors. By maintaining its authentic character while welcoming new development, Midtown creates a model for urban 
+                revitalization that other neighborhoods seek to replicate. This balanced approach supports continued appreciation 
+                while preserving the qualities that make Midtown special.
+              </p>
+            </div>
+            <div>
+              <h3 className="text-2xl font-bold text-slate-900 mb-4">Community Investment</h3>
+              <p className="text-base text-slate-600 leading-relaxed mb-3">
+                Ongoing investment in Midtown's cultural infrastructure ensures the neighborhood remains a vibrant arts destination. 
+                The Arts District organization continues to support local artists and galleries, while new performance venues and 
+                cultural spaces expand programming options. These investments attract visitors, support local businesses, and enhance 
+                the quality of life for residents.
+              </p>
+              <p className="text-base text-slate-600 leading-relaxed">
+                Community members actively participate in shaping Midtown's future through neighborhood associations, arts organizations, 
+                and business groups. This participatory approach ensures that development serves the community's interests while 
+                welcoming new ideas and perspectives. The result is a neighborhood that evolves organically, maintaining its essential 
+                character while adapting to new opportunities and challenges.
+              </p>
+            </div>
+          </div>
 
           <h2 className="text-3xl font-bold text-slate-900 mb-6 mt-12">
             Join the Community
@@ -184,6 +283,73 @@ export default function AboutPage() {
             arts scene, or simply experience authentic Las Vegas culture, Midtown welcomes 
             you. Discover what makes this neighborhood the most exciting address in the city.
           </p>
+          <div className="space-y-6 mt-8">
+            <div>
+              <h3 className="text-2xl font-bold text-slate-900 mb-4">For Prospective Residents</h3>
+              <p className="text-base text-slate-600 leading-relaxed mb-3">
+                If you're considering making Midtown your home, start by exploring the neighborhood during{' '}
+                <Link href="/neighborhood/first-fridays" className="text-slate-900 font-semibold hover:underline">
+                  First Friday
+                </Link>
+                {' '}or a weekend gallery walk. Visit local restaurants, chat with gallery owners, and experience the community's 
+                energy firsthand. Dr. Jan Duffy specializes in Midtown properties and can provide personalized tours, market insights, 
+                and guidance through the entire buying process.
+              </p>
+              <p className="text-base text-slate-600 leading-relaxed">
+                Consider what type of property best matches your lifestyle. Are you seeking a low-maintenance condo with walkable 
+                access to galleries and restaurants? Interested in the unique{' '}
+                <Link href="/neighborhood/english-residences" className="text-slate-900 font-semibold hover:underline">
+                  condo-hotel ownership
+                </Link>
+                {' '}model that generates rental income? Need more space in a townhouse or single-family home? Each option offers 
+                different benefits, and Dr. Jan can help you understand which aligns best with your priorities and budget.
+              </p>
+            </div>
+            <div>
+              <h3 className="text-2xl font-bold text-slate-900 mb-4">For Investors</h3>
+              <p className="text-base text-slate-600 leading-relaxed mb-3">
+                Midtown offers compelling investment opportunities, with property values appreciating consistently and rental demand 
+                supported by the neighborhood's cultural amenities. The{' '}
+                <Link href="/neighborhood/english-residences" className="text-slate-900 font-semibold hover:underline">
+                  English Residences
+                </Link>
+                {' '}condo-hotel model provides an innovative approach to real estate investment, combining personal use with income 
+                generation. Traditional condos and single-family homes also offer strong rental potential, given the neighborhood's 
+                appeal to professionals and creatives.
+              </p>
+              <p className="text-base text-slate-600 leading-relaxed">
+                Dr. Jan Duffy provides comprehensive investment analysis, including market trends, rental income projections, and 
+                property comparison reports. She understands the unique aspects of Midtown real estate, from HOA considerations to 
+                condo-hotel management agreements, ensuring investors make informed decisions. Her expertise extends to financing 
+                options, tax implications, and long-term appreciation potential.
+              </p>
+            </div>
+            <div>
+              <h3 className="text-2xl font-bold text-slate-900 mb-4">Getting Started</h3>
+              <p className="text-base text-slate-600 leading-relaxed mb-3">
+                Ready to explore Midtown? Contact Dr. Jan Duffy at (702) 500-1955 or{' '}
+                <Link href="/contact" className="text-slate-900 font-semibold hover:underline">
+                  schedule a consultation
+                </Link>
+                {' '}to discuss your real estate goals. Whether you're buying, selling, or investing, Dr. Jan provides personalized 
+                service tailored to your unique needs. She offers property tours, market analysis, and expert guidance throughout 
+                the entire process.
+              </p>
+              <p className="text-base text-slate-600 leading-relaxed">
+                For those interested in learning more about Midtown before committing to a purchase, consider attending{' '}
+                <Link href="/neighborhood/first-fridays" className="text-slate-900 font-semibold hover:underline">
+                  First Friday
+                </Link>
+                {' '}or exploring the{' '}
+                <Link href="/neighborhood/arts-district" className="text-slate-900 font-semibold hover:underline">
+                  Arts District
+                </Link>
+                {' '}on your own. The neighborhood's walkable character makes it easy to experience the area's culture, dining, and 
+                community firsthand. Many prospective residents find that spending time in Midtown confirms their decision to make 
+                it their home.
+              </p>
+            </div>
+          </div>
         </div>
       </section>
 
