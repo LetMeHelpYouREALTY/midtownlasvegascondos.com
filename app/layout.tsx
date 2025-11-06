@@ -10,7 +10,11 @@ import { GoogleAnalytics } from './components/google-analytics'
 import { AggregateRatingSchema } from './components/aggregate-rating-schema'
 import { StickyCTABar } from './components/sticky-cta-bar'
 
-const inter = Inter({ subsets: ['latin'] })
+const inter = Inter({ 
+  subsets: ['latin'],
+  display: 'swap',
+  preload: true,
+})
 
 export const metadata: Metadata = {
   title: {

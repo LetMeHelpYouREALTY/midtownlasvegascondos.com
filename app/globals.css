@@ -176,10 +176,7 @@
     @apply border-border outline-ring/50;
   }
   body {
-    @apply bg-background text-foreground font-mono;
-  }
-  html {
-    font-family: var(--font-geist-mono), ui-monospace, monospace;
+    @apply bg-background text-foreground;
   }
 }
 
