@@ -13,12 +13,18 @@ export function RealScoutSearch() {
       return
     }
 
+    let attempts = 0
+    const maxAttempts = 50 // 5 seconds max
+
     const checkElement = () => {
+      attempts++
       try {
         if (window.customElements?.get('realscout-advanced-search')) {
           setIsReady(true)
-        } else {
+        } else if (attempts < maxAttempts) {
           setTimeout(checkElement, 100)
+        } else {
+          setIsReady(true) // Timeout - try to render anyway
         }
       } catch (error) {
         setIsReady(true)
