@@ -21,13 +21,15 @@ export function GoogleAnalytics() {
           />
           <Script id="google-analytics" strategy="afterInteractive">
             {`
-              window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-              gtag('js', new Date());
-              gtag('config', '${gaId}', {
-                page_path: window.location.pathname,
-                send_page_view: true
-              });
+              (function() {
+                if (typeof window === 'undefined') return;
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+                gtag('config', '${gaId}', {
+                  send_page_view: true
+                });
+              })();
             `}
           </Script>
         </>

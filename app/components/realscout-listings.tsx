@@ -1,6 +1,8 @@
 /// <reference path="../../global.d.ts" />
 
-import React from 'react'
+'use client'
+
+import React, { useEffect, useState } from 'react'
 
 interface RealScoutListingsProps {
   title?: string
@@ -23,6 +25,29 @@ export function RealScoutListings({
   propertyTypes = ',SFR,CONDO',
   limit = '12',
 }: RealScoutListingsProps) {
+  const [isReady, setIsReady] = useState(false)
+
+  useEffect(() => {
+    if (typeof window === 'undefined' || !window.customElements) {
+      setIsReady(true)
+      return
+    }
+
+    const checkElement = () => {
+      try {
+        if (window.customElements?.get('realscout-office-listings')) {
+          setIsReady(true)
+        } else {
+          setTimeout(checkElement, 100)
+        }
+      } catch (error) {
+        setIsReady(true)
+      }
+    }
+
+    checkElement()
+  }, [])
+
   return (
     <div className="w-full">
       {title && (
@@ -37,15 +62,21 @@ export function RealScoutListings({
           )}
         </div>
       )}
-      {React.createElement('realscout-office-listings', {
-        'agent-encoded-id': 'QWdlbnQtMjI1MDUw',
-        'sort-order': sortOrder,
-        'listing-status': listingStatus,
-        'property-types': propertyTypes,
-        'price-min': priceMin,
-        'price-max': priceMax,
-        'limit': limit,
-      })}
+      {isReady ? (
+        React.createElement('realscout-office-listings', {
+          'agent-encoded-id': 'QWdlbnQtMjI1MDUw',
+          'sort-order': sortOrder,
+          'listing-status': listingStatus,
+          'property-types': propertyTypes,
+          'price-min': priceMin,
+          'price-max': priceMax,
+          'limit': limit,
+        })
+      ) : (
+        <div className="w-full h-64 bg-slate-100 rounded-lg flex items-center justify-center">
+          <p className="text-slate-600">Loading properties...</p>
+        </div>
+      )}
     </div>
   )
 }

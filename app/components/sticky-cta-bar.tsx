@@ -1,16 +1,46 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
 export function StickyCTABar() {
-  const [isVisible, setIsVisible] = useState(true)
+  const [isVisible, setIsVisible] = useState(false)
+
+  useEffect(() => {
+    if (typeof window === 'undefined') return
+    
+    const handleScroll = () => {
+      try {
+        if (window.scrollY > 200) {
+          setIsVisible(true)
+        } else {
+          setIsVisible(false)
+        }
+      } catch (error) {
+        // Silently fail
+      }
+    }
+
+    window.addEventListener('scroll', handleScroll)
+    return () => {
+      try {
+        window.removeEventListener('scroll', handleScroll)
+      } catch (error) {
+        // Silently fail
+      }
+    }
+  }, [])
 
   if (!isVisible) return null
 
   const scrollToContact = () => {
-    const contactSection = document.getElementById('contact')
-    if (contactSection) {
-      contactSection.scrollIntoView({ behavior: 'smooth' })
+    try {
+      if (typeof window === 'undefined' || !document) return
+      const contactSection = document.getElementById('contact')
+      if (contactSection) {
+        contactSection.scrollIntoView({ behavior: 'smooth' })
+      }
+    } catch (error) {
+      // Silently fail
     }
   }
 
