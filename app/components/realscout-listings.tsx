@@ -61,7 +61,7 @@ export function RealScoutListings({
     } catch (error) {
       setHasError(true)
     }
-  }, [sortOrder, listingStatus, propertyTypes, priceMin, priceMax, limit, hasError])
+  }, [sortOrder, listingStatus, propertyTypes, priceMin, priceMax, limit])
 
   return (
     <div className="w-full">

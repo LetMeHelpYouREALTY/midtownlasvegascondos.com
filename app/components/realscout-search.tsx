@@ -35,7 +35,7 @@ export function RealScoutSearch() {
     } catch (error) {
       setHasError(true)
     }
-  }, [hasError])
+  }, [])
 
   return (
     <div className="w-full">
