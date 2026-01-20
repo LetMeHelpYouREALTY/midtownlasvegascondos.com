@@ -1,5 +1,10 @@
 import { NextRequest, NextResponse } from 'next/server'
 import crypto from 'crypto'
+import {
+  createContactFromCalendly,
+  addNoteToContact,
+  updateContact,
+} from '@/lib/follow-up-boss'
 
 // Calendly webhook event types
 type CalendlyEvent = 'invitee.created' | 'invitee.canceled'
@@ -155,10 +160,34 @@ async function handleInviteeCreated(payload: CalendlyWebhookPayload) {
     rescheduleUrl: payload.reschedule_url,
   }
 
-  // TODO: Add your automation logic here
-  // Examples:
+  // Create contact in Follow Up Boss CRM
+  try {
+    const fubResult = await createContactFromCalendly({
+      name: invitee.name,
+      email: invitee.email,
+      phone: invitee.text_reminder_number,
+      scheduledTime: time,
+      questions: invitee.questions_and_answers,
+      tracking: invitee.tracking,
+    })
+
+    if (fubResult.success) {
+      console.log('[Calendly → Follow Up Boss] Contact created successfully:', {
+        email: invitee.email,
+        name: invitee.name,
+      })
+    } else {
+      console.error('[Calendly → Follow Up Boss] Failed to create contact:', {
+        email: invitee.email,
+        error: fubResult.error,
+      })
+    }
+  } catch (error) {
+    console.error('[Calendly → Follow Up Boss] Error:', error)
+  }
+
+  // Additional automation can be added here:
   // - Send welcome email
-  // - Create lead in CRM (Salesforce, HubSpot, etc.)
   // - Add to email marketing list
   // - Send Slack/Discord notification
   // - Update internal database
@@ -192,14 +221,33 @@ async function handleInviteeCanceled(payload: CalendlyWebhookPayload) {
     wasRescheduled: invitee.rescheduled,
   }
 
-  // TODO: Add your automation logic here
-  // Examples:
+  // Add note to Follow Up Boss contact about cancellation
+  try {
+    const note = `Appointment canceled${cancel_reason ? ` - Reason: ${cancel_reason}` : ''}${canceled_at ? ` on ${canceled_at}` : ''}${invitee.rescheduled ? ' (Rescheduled)' : ''}`
+    
+    const fubResult = await addNoteToContact(invitee.email, note)
+
+    if (fubResult.success) {
+      console.log('[Calendly → Follow Up Boss] Cancellation note added:', {
+        email: invitee.email,
+      })
+    } else {
+      console.error('[Calendly → Follow Up Boss] Failed to add note:', {
+        email: invitee.email,
+        error: fubResult.error,
+      })
+    }
+  } catch (error) {
+    console.error('[Calendly → Follow Up Boss] Error adding cancellation note:', error)
+  }
+
+  // Additional automation can be added here:
   // - Send cancellation confirmation email
-  // - Update CRM record
+  // - Update CRM record status
   // - Free up calendar slot
   // - Send notification to team
   // - Update database
-  // - Trigger follow-up automation
+  // - Trigger follow-up automation (rescheduling offer)
 
   return cancelData
 }
