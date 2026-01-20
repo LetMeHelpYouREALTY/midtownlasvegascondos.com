@@ -3,6 +3,7 @@ import Image from 'next/image'
 import { RealScoutSearch } from '@/app/components/realscout-search'
 import { RealScoutListings } from '@/app/components/realscout-listings'
 import { PageFAQ } from '@/app/components/page-faq'
+import { Breadcrumb } from '@/app/components/breadcrumb'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
@@ -15,6 +16,12 @@ export const metadata: Metadata = {
 }
 
 export default function ArtsDistrictPage() {
+  const breadcrumbItems = [
+    { name: 'Home', url: '/' },
+    { name: 'Neighborhoods', url: '/neighborhood' },
+    { name: 'Arts District', url: '/neighborhood/arts-district' },
+  ]
+
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
@@ -42,6 +49,7 @@ export default function ArtsDistrictPage() {
 
       {/* Content */}
       <section className="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+        <Breadcrumb items={breadcrumbItems} />
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-slate-900 mb-6">
             The Most Exciting Neighborhood in Las Vegas

@@ -2,6 +2,7 @@ import Link from 'next/link'
 import { RealScoutSearch } from '@/app/components/realscout-search'
 import { RealScoutListings } from '@/app/components/realscout-listings'
 import { PageFAQ } from '@/app/components/page-faq'
+import { Breadcrumb } from '@/app/components/breadcrumb'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
@@ -14,6 +15,12 @@ export const metadata: Metadata = {
 }
 
 export default function MidtownPlazaPage() {
+  const breadcrumbItems = [
+    { name: 'Home', url: '/' },
+    { name: 'Neighborhoods', url: '/neighborhood' },
+    { name: 'Midtown Plaza', url: '/neighborhood/midtown-plaza' },
+  ]
+
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}

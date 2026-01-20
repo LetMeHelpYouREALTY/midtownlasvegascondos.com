@@ -51,6 +51,7 @@ export function ImageGallery({ images }: ImageGalleryProps) {
                 alt={image.alt}
                 fill
                 className="object-cover"
+                loading="lazy"
               />
             ) : (
               <div className="w-full h-full flex items-center justify-center text-xs text-slate-400">

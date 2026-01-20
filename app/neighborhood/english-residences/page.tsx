@@ -3,6 +3,7 @@ import Image from 'next/image'
 import { RealScoutSearch } from '@/app/components/realscout-search'
 import { RealScoutListings } from '@/app/components/realscout-listings'
 import { PageFAQ } from '@/app/components/page-faq'
+import { Breadcrumb } from '@/app/components/breadcrumb'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
@@ -15,6 +16,12 @@ export const metadata: Metadata = {
 }
 
 export default function EnglishResidencesPage() {
+  const breadcrumbItems = [
+    { name: 'Home', url: '/' },
+    { name: 'Neighborhoods', url: '/neighborhood' },
+    { name: 'English Residences', url: '/neighborhood/english-residences' },
+  ]
+
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}

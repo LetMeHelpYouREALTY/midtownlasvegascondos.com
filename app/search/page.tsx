@@ -2,6 +2,7 @@ import { RealScoutSearch } from '../components/realscout-search'
 import { RealScoutListings } from '../components/realscout-listings'
 import { Metadata } from 'next'
 import Link from 'next/link'
+import { Breadcrumb } from '../components/breadcrumb'
 
 export const metadata: Metadata = {
   title: 'Property Search | Midtown Las Vegas Condos & Homes',
@@ -21,6 +22,11 @@ export const metadata: Metadata = {
 }
 
 export default function SearchPage() {
+  const breadcrumbItems = [
+    { name: 'Home', url: '/' },
+    { name: 'Property Search', url: '/search' },
+  ]
+
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
@@ -42,6 +48,9 @@ export default function SearchPage() {
 
       {/* Search Guide Section */}
       <section className="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+        <div className="mb-8">
+          <Breadcrumb items={breadcrumbItems} />
+        </div>
         <div className="max-w-4xl mx-auto mb-16">
           <h2 className="text-4xl font-bold text-slate-900 mb-8">Your Midtown Property Search Starts Here</h2>
           
