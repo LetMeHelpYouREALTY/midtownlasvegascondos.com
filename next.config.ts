@@ -89,9 +89,7 @@ const nextConfig: NextConfig = {
   poweredByHeader: false,
   // Enable React strict mode
   reactStrictMode: true,
-  // Optimize for INP (Interaction to Next Paint) - 2025 Core Web Vital
-  // Reduce JavaScript execution time
-  swcMinify: true,
+  // Note: SWC minification is enabled by default in Next.js 13+
   // Experimental features for better performance
   experimental: {
     // Optimize server components
