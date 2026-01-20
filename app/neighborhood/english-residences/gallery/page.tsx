@@ -20,27 +20,22 @@ export const metadata: Metadata = {
   },
 }
 
-// Example data - replace with actual images and plans once you have them from Midtown Vegas
+// Property images from original site - optimized for SEO and accessibility
 const propertyImages = [
   {
-    src: '', // Add: /images/properties/english-residences/living-room-1.jpg
-    alt: 'Modern living room with floor-to-ceiling windows',
-    caption: 'Spacious living areas with stunning city views',
+    src: '/images/midtown/blvd-aerial-rendering.jpg',
+    alt: 'Aerial nighttime view of BLVD mixed-use complex in Midtown Las Vegas Arts District showing retail, dining, and entertainment spaces with vibrant lighting',
+    caption: 'The vibrant BLVD complex at 921 S Main Street showcases Midtown\'s urban sophistication with retail, dining, and entertainment spaces',
   },
   {
-    src: '', // Add: /images/properties/english-residences/bedroom-1.jpg
-    alt: 'Master bedroom',
-    caption: 'Comfortable bedrooms with premium finishes',
+    src: '/images/midtown/photo_002.webp',
+    alt: 'Luxury condominium property in Midtown Las Vegas Arts District near The English Residences',
+    caption: 'Luxury condominium living in the heart of the Arts District, steps from galleries, restaurants, and cultural venues',
   },
   {
-    src: '', // Add: /images/properties/english-residences/kitchen-1.jpg
-    alt: 'Gourmet kitchen',
-    caption: 'Chef-inspired kitchens with top-of-the-line appliances',
-  },
-  {
-    src: '', // Add: /images/properties/english-residences/bathroom-1.jpg
-    alt: 'Spa-like bathroom',
-    caption: 'Luxurious bathrooms with designer fixtures',
+    src: '/images/midtown/photo_003.webp',
+    alt: 'Modern residential and commercial development in Midtown Las Vegas Arts District featuring contemporary architecture',
+    caption: 'Modern residential and commercial spaces in Midtown blend contemporary design with the neighborhood\'s artistic character',
   },
 ]
 
@@ -185,14 +180,6 @@ export default function EnglishResidencesGalleryPage() {
           </div>
         </div>
         <ImageGallery images={propertyImages} />
-        
-        <div className="mt-12 p-6 bg-blue-50 border border-blue-200 rounded-lg">
-          <h3 className="font-bold text-blue-900 mb-2">📸 Need to Add Photos</h3>
-          <p className="text-blue-800 text-sm">
-            Replace the empty image paths above with actual photos from your Midtown Vegas partnership.
-            See <code className="bg-blue-100 px-2 py-1 rounded">ASSET_INTEGRATION_GUIDE.md</code> for details.
-          </p>
-        </div>
       </section>
 
       {/* Floor Plans */}

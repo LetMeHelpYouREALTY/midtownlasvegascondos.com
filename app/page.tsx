@@ -20,8 +20,18 @@ export default function HomePage() {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="relative h-screen flex items-center justify-center bg-gradient-to-br from-slate-900 to-slate-700">
-        <div className="absolute inset-0 bg-black/40" />
+      <section className="relative h-screen flex items-center justify-center">
+        <div className="absolute inset-0">
+          <Image
+            src="/images/midtown/blvd-aerial-rendering.jpg"
+            alt="Aerial nighttime view of BLVD mixed-use complex in Midtown Las Vegas Arts District at 921 S Main Street showing retail, dining, entertainment spaces, and The English Hotel with vibrant urban lighting"
+            fill
+            className="object-cover"
+            priority
+            quality={90}
+          />
+        </div>
+        <div className="absolute inset-0 bg-black/50" />
         <div className="relative z-10 text-center px-4 sm:px-6 max-w-4xl mx-auto">
           <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 tracking-tight">
             Luxury Midtown Las Vegas Condos
@@ -271,11 +281,14 @@ export default function HomePage() {
                 </div>
               </div>
             </div>
-            <div className="aspect-video bg-slate-200 rounded-lg">
-              {/* Map or image placeholder */}
-              <div className="w-full h-full flex items-center justify-center text-slate-400">
-                Map Location
-              </div>
+            <div className="relative aspect-video rounded-lg overflow-hidden">
+              <Image
+                src="/images/midtown/blvd-aerial-rendering.jpg"
+                alt="Aerial view of Midtown Las Vegas Arts District location showing BLVD complex, The English Hotel, and surrounding neighborhood with galleries, restaurants, and cultural venues"
+                fill
+                className="object-cover"
+                quality={85}
+              />
             </div>
           </div>
         </div>

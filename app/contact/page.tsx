@@ -2,6 +2,7 @@
 
 import { useState } from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -389,12 +390,16 @@ export default function ContactPage() {
                 </p>
               </div>
 
-              {/* Map Placeholder */}
+              {/* Map Image */}
               <div className="mt-8">
-                <div className="aspect-video bg-slate-200 rounded-lg">
-                  <div className="w-full h-full flex items-center justify-center text-slate-400">
-                    Map Location
-                  </div>
+                <div className="relative aspect-video rounded-lg overflow-hidden">
+                  <Image
+                    src="/images/midtown/blvd-aerial-rendering.jpg"
+                    alt="Aerial view of Midtown Las Vegas Arts District location showing BLVD complex at 921 S Main Street, The English Hotel, and surrounding neighborhood where Dr. Jan Duffy serves real estate clients"
+                    fill
+                    className="object-cover"
+                    quality={85}
+                  />
                 </div>
               </div>
             </div>

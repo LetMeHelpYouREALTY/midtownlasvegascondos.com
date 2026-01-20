@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image'
 import { RealScoutSearch } from '@/app/components/realscout-search'
 import { RealScoutListings } from '@/app/components/realscout-listings'
 import { PageFAQ } from '@/app/components/page-faq'
@@ -17,8 +18,18 @@ export default function EnglishResidencesPage() {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="relative h-[60vh] flex items-center justify-center bg-gradient-to-br from-slate-900 to-slate-700">
-        <div className="absolute inset-0 bg-black/30" />
+      <section className="relative h-[60vh] flex items-center justify-center">
+        <div className="absolute inset-0">
+          <Image
+            src="/images/midtown/blvd-aerial-rendering.jpg"
+            alt="Aerial view of The English Hotel and BLVD complex at 921 S Main Street in Midtown Las Vegas Arts District where The English Residences condo-hotel units are located"
+            fill
+            className="object-cover"
+            priority
+            quality={85}
+          />
+        </div>
+        <div className="absolute inset-0 bg-black/40" />
         <div className="relative z-10 text-center px-4 sm:px-6 max-w-4xl mx-auto">
           <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">
             The English Residences
