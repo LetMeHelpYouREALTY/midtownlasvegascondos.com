@@ -38,17 +38,36 @@ export function RealScoutListings({
       const timeoutId = setTimeout(() => {
         try {
           if (containerRef.current && window.customElements?.get('realscout-office-listings')) {
+            // Clear container first
+            containerRef.current.innerHTML = ''
+            
+            // Create element and set ALL attributes BEFORE appending to DOM
+            // This ensures RealScout widget reads our attributes during initialization
             const element = document.createElement('realscout-office-listings')
+            
+            // Set agent ID first (required)
             element.setAttribute('agent-encoded-id', 'QWdlbnQtMjI1MDUw')
+            
+            // Set price attributes BEFORE other attributes to ensure they're not overridden
+            element.setAttribute('price-min', priceMin)
+            element.setAttribute('price-max', priceMax)
+            
+            // Set other attributes
             element.setAttribute('sort-order', sortOrder)
             element.setAttribute('listing-status', listingStatus)
             element.setAttribute('property-types', propertyTypes)
-            element.setAttribute('price-min', priceMin)
-            element.setAttribute('price-max', priceMax)
             element.setAttribute('limit', limit)
             
-            containerRef.current.innerHTML = ''
+            // Append to DOM after all attributes are set
             containerRef.current.appendChild(element)
+            
+            // Force attribute update after a brief delay to ensure widget reads them
+            setTimeout(() => {
+              if (element && containerRef.current?.contains(element)) {
+                element.setAttribute('price-min', priceMin)
+                element.setAttribute('price-max', priceMax)
+              }
+            }, 100)
           }
         } catch (error) {
           setHasError(true)

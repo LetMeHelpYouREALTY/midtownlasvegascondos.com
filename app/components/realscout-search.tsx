@@ -26,13 +26,30 @@ export function RealScoutSearch({
       const timeoutId = setTimeout(() => {
         try {
           if (containerRef.current && window.customElements?.get('realscout-advanced-search')) {
+            // Clear container first
+            containerRef.current.innerHTML = ''
+            
+            // Create element and set ALL attributes BEFORE appending to DOM
+            // This ensures RealScout widget reads our attributes during initialization
             const element = document.createElement('realscout-advanced-search')
+            
+            // Set agent ID first (required)
             element.setAttribute('agent-encoded-id', 'QWdlbnQtMjI1MDUw')
+            
+            // Set price attributes to ensure they're not overridden
             element.setAttribute('price-min', priceMin)
             element.setAttribute('price-max', priceMax)
             
-            containerRef.current.innerHTML = ''
+            // Append to DOM after all attributes are set
             containerRef.current.appendChild(element)
+            
+            // Force attribute update after a brief delay to ensure widget reads them
+            setTimeout(() => {
+              if (element && containerRef.current?.contains(element)) {
+                element.setAttribute('price-min', priceMin)
+                element.setAttribute('price-max', priceMax)
+              }
+            }, 100)
           }
         } catch (error) {
           setHasError(true)
