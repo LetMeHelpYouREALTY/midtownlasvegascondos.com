@@ -47,7 +47,6 @@ interface CalendlyWebhookPayload {
       utm_term?: string
       salesforce_uuid?: string
     }
-    text_reminder_number?: string
   }
   created_at: string
   updated_at: string
