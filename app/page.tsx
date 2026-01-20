@@ -67,7 +67,7 @@ export default function HomePage() {
             priceMin="450000"
             priceMax="1000000"
             sortOrder="PRICE_LOW"
-            propertyTypes=",SFR"
+            propertyTypes=",SFR,CONDO"
             listingStatus="For Sale"
             limit="6"
           />
