@@ -162,7 +162,6 @@ export function RealScoutListings({
           )}
         </div>
       </div>
-    </>
   )
 }
 

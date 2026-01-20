@@ -116,7 +116,6 @@ export function RealScoutSearch({
           </div>
         )}
       </div>
-    </>
   )
 }
 
