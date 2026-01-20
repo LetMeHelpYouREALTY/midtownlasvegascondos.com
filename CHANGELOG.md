@@ -1,5 +1,16 @@
 # simple-v0
 
+## 0.1.6
+
+### RealScout Widget Fixes
+
+- Fixed price attribute conflicts in RealScout widgets
+  - Set price attributes before appending elements to DOM
+  - Added delayed attribute refresh to ensure widget reads correct values
+  - Fixed default price range to $450K-$1M across all widgets
+- Updated all RealScoutSearch widgets with explicit price props
+- Fixed domain consistency (www prefix) in metadata
+
 ## 0.1.5
 
 ### Patch Changes
