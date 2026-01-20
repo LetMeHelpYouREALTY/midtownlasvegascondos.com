@@ -275,8 +275,8 @@ export default function ArtsDistrictPage() {
           <RealScoutListings
             title="Arts District Properties"
             description="Live among galleries, restaurants, and creative spaces"
-            priceMin="250000"
-            priceMax="1500000"
+            priceMin="450000"
+            priceMax="1000000"
             sortOrder="DATE_NEW"
             propertyTypes=",CONDO,SFR,TOWNHOUSE"
             limit="12"

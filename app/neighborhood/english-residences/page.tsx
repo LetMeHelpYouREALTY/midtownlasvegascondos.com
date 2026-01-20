@@ -289,8 +289,8 @@ export default function EnglishResidencesPage() {
           <RealScoutListings
             title="Available English Residences & Midtown Condos"
             description="Browse luxury condo-hotel units and condominiums in the Arts District"
-            priceMin="250000"
-            priceMax="1500000"
+            priceMin="450000"
+            priceMax="1000000"
             sortOrder="PRICE_LOW"
             propertyTypes=",CONDO"
             limit="9"

@@ -18,8 +18,8 @@ interface RealScoutListingsProps {
 export function RealScoutListings({
   title,
   description,
-  priceMin = '250000',
-  priceMax = '1500000',
+  priceMin = '450000',
+  priceMax = '1000000',
   sortOrder = 'PRICE_LOW',
   listingStatus = 'For Sale',
   propertyTypes = ',SFR,CONDO',

@@ -4,7 +4,15 @@
 
 import React, { useEffect, useRef, useState } from 'react'
 
-export function RealScoutSearch() {
+interface RealScoutSearchProps {
+  priceMin?: string
+  priceMax?: string
+}
+
+export function RealScoutSearch({
+  priceMin = '450000',
+  priceMax = '1000000',
+}: RealScoutSearchProps = {} as RealScoutSearchProps) {
   const containerRef = useRef<HTMLDivElement>(null)
   const [hasError, setHasError] = useState(false)
 
@@ -20,6 +28,8 @@ export function RealScoutSearch() {
           if (containerRef.current && window.customElements?.get('realscout-advanced-search')) {
             const element = document.createElement('realscout-advanced-search')
             element.setAttribute('agent-encoded-id', 'QWdlbnQtMjI1MDUw')
+            element.setAttribute('price-min', priceMin)
+            element.setAttribute('price-max', priceMax)
             
             containerRef.current.innerHTML = ''
             containerRef.current.appendChild(element)
@@ -35,7 +45,7 @@ export function RealScoutSearch() {
     } catch (error) {
       setHasError(true)
     }
-  }, [])
+  }, [priceMin, priceMax])
 
   return (
     <div className="w-full">

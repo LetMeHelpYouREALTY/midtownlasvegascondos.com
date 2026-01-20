@@ -167,8 +167,8 @@ export default function SearchPage() {
           <RealScoutListings
             title="All Midtown & Arts District Listings"
             description="Browse all available properties in and around Midtown"
-            priceMin="150000"
-            priceMax="3000000"
+            priceMin="450000"
+            priceMax="1000000"
             sortOrder="DATE_NEW"
             propertyTypes=",CONDO,SFR,TOWNHOUSE"
             limit="24"

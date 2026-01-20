@@ -205,7 +205,7 @@ export default function MidtownPlazaPage() {
           <RealScoutListings
             title="Homes Near Midtown Plaza"
             description="Walk to restaurants, shops, and entertainment from these properties"
-            priceMin="200000"
+            priceMin="450000"
             priceMax="1000000"
             sortOrder="PRICE_LOW"
             propertyTypes=",CONDO,SFR"

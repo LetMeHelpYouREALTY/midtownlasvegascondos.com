@@ -164,8 +164,8 @@ export default function MidtownRealEstatePage() {
           <RealScoutListings
             title="Featured Midtown Properties"
             description="Explore luxury condos and homes in the heart of the Arts District"
-            priceMin="300000"
-            priceMax="2000000"
+            priceMin="450000"
+            priceMax="1000000"
             sortOrder="PRICE_LOW"
             propertyTypes=",CONDO,SFR"
             limit="6"
