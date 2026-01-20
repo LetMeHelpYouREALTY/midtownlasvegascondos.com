@@ -9,6 +9,7 @@ import { FAQSchema } from './components/faq-schema'
 import { GoogleAnalytics } from './components/google-analytics'
 import { AggregateRatingSchema } from './components/aggregate-rating-schema'
 import { StickyCTABar } from './components/sticky-cta-bar'
+import { WidgetTracker } from './components/widget-tracker'
 
 const inter = Inter({ 
   subsets: ['latin'],
@@ -107,6 +108,7 @@ export default function RootLayout({
       </head>
       <body className={`${inter.className} antialiased`}>
         <GoogleAnalytics />
+        <WidgetTracker />
         <LocalBusinessSchema />
         <AggregateRatingSchema />
         <FAQSchema />

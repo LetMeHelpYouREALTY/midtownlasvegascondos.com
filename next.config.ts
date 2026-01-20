@@ -35,11 +35,11 @@ const nextConfig: NextConfig = {
             key: 'Content-Security-Policy',
             value: [
               "default-src 'self'",
-              "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://em.realscout.com https://assets.calendly.com",
+              "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://em.realscout.com https://assets.calendly.com https://widgetbe.com",
               "style-src 'self' 'unsafe-inline' https://assets.calendly.com",
               "img-src 'self' data: https:",
               "font-src 'self' data:",
-              "connect-src 'self' https://www.google-analytics.com https://em.realscout.com https://calendly.com",
+              "connect-src 'self' https://www.google-analytics.com https://em.realscout.com https://calendly.com https://widgetbe.com",
               "frame-src 'self' https://www.googletagmanager.com https://calendly.com",
             ].join('; '),
           },
