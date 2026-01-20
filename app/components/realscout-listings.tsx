@@ -101,8 +101,24 @@ export function RealScoutListings({
       <Script
         src="https://em.realscout.com/widgets/realscout-web-components.umd.js"
         type="module"
-        strategy="beforeInteractive"
+        strategy="afterInteractive"
         id="realscout-office-listings-script"
+        onLoad={() => {
+          // Script loaded, trigger re-check
+          if (containerRef.current && window.customElements?.get('realscout-office-listings')) {
+            const element = document.createElement('realscout-office-listings')
+            element.setAttribute('agent-encoded-id', 'QWdlbnQtMjI1MDUw')
+            element.setAttribute('sort-order', mappedSortOrder)
+            element.setAttribute('listing-status', listingStatus)
+            element.setAttribute('property-types', propertyTypes)
+            element.setAttribute('price-min', priceMin)
+            element.setAttribute('price-max', priceMax)
+            element.setAttribute('limit', limit)
+            containerRef.current.innerHTML = ''
+            containerRef.current.appendChild(element)
+            setIsLoaded(true)
+          }
+        }}
       />
       <div className="w-full">
         {title && (

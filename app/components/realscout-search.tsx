@@ -69,8 +69,20 @@ export function RealScoutSearch({
       <Script
         src="https://em.realscout.com/widgets/realscout-web-components.umd.js"
         type="module"
-        strategy="beforeInteractive"
+        strategy="afterInteractive"
         id="realscout-advanced-search-script"
+        onLoad={() => {
+          // Script loaded, trigger re-check
+          if (containerRef.current && window.customElements?.get('realscout-advanced-search')) {
+            const element = document.createElement('realscout-advanced-search')
+            element.setAttribute('agent-encoded-id', 'QWdlbnQtMjI1MDUw')
+            element.setAttribute('price-min', priceMin)
+            element.setAttribute('price-max', priceMax)
+            containerRef.current.innerHTML = ''
+            containerRef.current.appendChild(element)
+            setIsLoaded(true)
+          }
+        }}
       />
       <div ref={containerRef} className="w-full">
         {!isLoaded && (
