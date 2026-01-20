@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     'EV program Midtown',
   ],
   alternates: {
-    canonical: 'https://www.midtownlasvegascondos.com/neighborhood/ev-program',
+    canonical: 'https://www.midtownvegascondos.com/neighborhood/ev-program',
   },
 }
 

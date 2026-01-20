@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     'First Friday festival',
   ],
   alternates: {
-    canonical: 'https://www.midtownlasvegascondos.com/neighborhood/first-fridays',
+    canonical: 'https://www.midtownvegascondos.com/neighborhood/first-fridays',
   },
 }
 

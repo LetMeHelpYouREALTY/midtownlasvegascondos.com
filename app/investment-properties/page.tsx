@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     'Arts District investment',
   ],
   alternates: {
-    canonical: 'https://www.midtownlasvegascondos.com/investment-properties',
+    canonical: 'https://www.midtownvegascondos.com/investment-properties',
   },
 }
 
@@ -230,7 +230,7 @@ export default function InvestmentPropertiesPage() {
               Call (702) 500-1955
             </a>
             <a
-              href="mailto:DrJanSells@MidtownLasVegasCondos.com"
+              href="mailto:DrJanSells@MidtownVegasCondos.com"
               className="px-8 py-4 bg-transparent border-2 border-white text-white rounded-lg font-semibold hover:bg-white/10 transition-colors"
             >
               Email Dr. Jan

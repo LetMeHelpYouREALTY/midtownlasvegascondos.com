@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   description:
     'Discover luxury condominium living in the heart of Las Vegas Arts District. Experience the vibrant culture, dining, and entertainment of Midtown. Contact us today at (702) 500-1955.',
   alternates: {
-    canonical: 'https://www.midtownlasvegascondos.com/',
+    canonical: 'https://www.midtownvegascondos.com/',
   },
 }
 
@@ -598,7 +598,7 @@ export default function HomePage() {
               {
                 question: 'How do I get started?',
                 answer:
-                  'Contact Dr. Jan Duffy at (702) 500-1955 or DrJanSells@MidtownLasVegasCondos.com. She specializes in Midtown properties and can schedule a personal tour, show you available homes, and guide you through the entire buying process.',
+                  'Contact Dr. Jan Duffy at (702) 500-1955 or DrJanSells@MidtownVegasCondos.com. She specializes in Midtown properties and can schedule a personal tour, show you available homes, and guide you through the entire buying process.',
               },
             ]}
           />
@@ -648,8 +648,8 @@ export default function HomePage() {
             <div>
               <h3 className="text-xl font-semibold text-slate-900 mb-2">Email</h3>
               <p className="text-slate-600">
-                <a href="mailto:DrJanSells@MidtownLasVegasCondos.com" className="hover:text-slate-900 transition-colors">
-                  DrJanSells@MidtownLasVegasCondos.com
+                <a href="mailto:DrJanSells@MidtownVegasCondos.com" className="hover:text-slate-900 transition-colors">
+                  DrJanSells@MidtownVegasCondos.com
                 </a>
               </p>
             </div>

@@ -50,7 +50,7 @@ export function FAQSchema() {
         name: 'How do I contact Dr. Jan Duffy about Midtown properties?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'You can reach Dr. Jan Duffy at (702) 500-1955 or email DrJanSells@MidtownLasVegasCondos.com. Visit www.midtownlasvegascondos.com to search available properties or schedule a personal tour of the Midtown neighborhood.',
+          text: 'You can reach Dr. Jan Duffy at (702) 500-1955 or email DrJanSells@MidtownVegasCondos.com. Visit www.midtownvegascondos.com to search available properties or schedule a personal tour of the Midtown neighborhood.',
         },
       },
       {
@@ -90,7 +90,7 @@ export function FAQSchema() {
         name: 'How do I get started buying in Midtown?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'Contact Dr. Jan Duffy at (702) 500-1955 or DrJanSells@MidtownLasVegasCondos.com. She specializes in Midtown properties and can schedule a personal tour, show you available homes, help with financing options, and guide you through the entire buying process from search to closing.',
+          text: 'Contact Dr. Jan Duffy at (702) 500-1955 or DrJanSells@MidtownVegasCondos.com. She specializes in Midtown properties and can schedule a personal tour, show you available homes, help with financing options, and guide you through the entire buying process from search to closing.',
         },
       },
       {

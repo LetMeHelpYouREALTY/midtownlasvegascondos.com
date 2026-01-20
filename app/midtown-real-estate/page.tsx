@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     'Midtown Las Vegas condos',
   ],
   alternates: {
-    canonical: 'https://www.midtownlasvegascondos.com/midtown-real-estate',
+    canonical: 'https://www.midtownvegascondos.com/midtown-real-estate',
   },
 }
 

@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   description: 'Discover the story of Midtown, the walkable neighborhood north of Charleston in the heart of the Las Vegas Arts District. From industrial hub to cultural center.',
   keywords: 'Midtown Las Vegas history, Arts District transformation, 18b Arts District, walkable Las Vegas, downtown Las Vegas community',
   alternates: {
-    canonical: 'https://www.midtownlasvegascondos.com/about',
+    canonical: 'https://www.midtownvegascondos.com/about',
   },
 }
 

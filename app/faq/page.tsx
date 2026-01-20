@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   keywords:
     'Midtown Las Vegas FAQ, Arts District questions, English Residences information, Las Vegas condo questions',
   alternates: {
-    canonical: 'https://www.midtownlasvegascondos.com/faq',
+    canonical: 'https://www.midtownvegascondos.com/faq',
   },
 }
 
@@ -68,7 +68,7 @@ const faqs = [
       },
       {
         q: 'Can I see properties in person?',
-        a: 'Absolutely! Dr. Jan provides personalized tours of Midtown and shows available properties. Schedule your tour by calling (702) 500-1955 or emailing DrJanSells@MidtownLasVegasCondos.com.',
+        a: 'Absolutely! Dr. Jan provides personalized tours of Midtown and shows available properties. Schedule your tour by calling (702) 500-1955 or emailing DrJanSells@MidtownVegasCondos.com.',
       },
       {
         q: 'How long does the buying process take?',
@@ -268,7 +268,7 @@ export default function FAQPage() {
               Call (702) 500-1955
             </a>
             <a
-              href="mailto:DrJanSells@MidtownLasVegasCondos.com"
+              href="mailto:DrJanSells@MidtownVegasCondos.com"
               className="inline-block px-8 py-4 bg-transparent border-2 border-white text-white rounded-lg font-semibold hover:bg-white/10 transition-colors"
             >
               Email Dr. Jan

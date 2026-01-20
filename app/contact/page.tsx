@@ -361,8 +361,8 @@ export default function ContactPage() {
                   Email
                 </h3>
                 <p className="text-slate-600 ml-9">
-                  <a href="mailto:DrJanSells@MidtownLasVegasCondos.com" className="hover:text-slate-900 transition-colors">
-                    DrJanSells@MidtownLasVegasCondos.com
+                  <a href="mailto:DrJanSells@MidtownVegasCondos.com" className="hover:text-slate-900 transition-colors">
+                    DrJanSells@MidtownVegasCondos.com
                   </a>
                 </p>
               </div>

@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   description: 'The heart of Midtown - walkable access to local restaurants, shops, and Arts District culture. Find homes near Midtown Plaza. Call (702) 500-1955.',
   keywords: 'Midtown Plaza Las Vegas, Arts District shopping, downtown Las Vegas dining, walkable Las Vegas neighborhood',
   alternates: {
-    canonical: 'https://www.midtownlasvegascondos.com/neighborhood/midtown-plaza',
+    canonical: 'https://www.midtownvegascondos.com/neighborhood/midtown-plaza',
   },
 }
 

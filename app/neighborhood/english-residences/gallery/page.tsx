@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     'English Hotel residences',
   ],
   alternates: {
-    canonical: 'https://www.midtownlasvegascondos.com/neighborhood/english-residences/gallery',
+    canonical: 'https://www.midtownvegascondos.com/neighborhood/english-residences/gallery',
   },
 }
 

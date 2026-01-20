@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     'downtown Las Vegas real estate',
   ],
   alternates: {
-    canonical: 'https://www.midtownlasvegascondos.com/search',
+    canonical: 'https://www.midtownvegascondos.com/search',
   },
 }
 
@@ -238,7 +238,7 @@ export default function SearchPage() {
             Call (702) 500-1955
           </a>
           <a
-            href="mailto:DrJanSells@MidtownLasVegasCondos.com"
+            href="mailto:DrJanSells@MidtownVegasCondos.com"
             className="inline-block px-8 py-4 bg-transparent border-2 border-slate-900 text-slate-900 rounded-lg font-semibold hover:bg-slate-50 transition-colors"
           >
             Email Dr. Jan

@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     'luxury hotel downtown Las Vegas',
   ],
   alternates: {
-    canonical: 'https://www.midtownlasvegascondos.com/neighborhood/english-hotel',
+    canonical: 'https://www.midtownvegascondos.com/neighborhood/english-hotel',
   },
 }
 

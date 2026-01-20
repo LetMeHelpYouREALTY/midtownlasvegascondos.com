@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   description: 'Discover events in Midtown and the Arts District: First Friday, art walks, Book Festival, Las Vegas Marathon, and more. Live where it happens!',
   keywords: 'Midtown Las Vegas events, First Friday Las Vegas, Arts District events, Las Vegas Book Festival, Las Vegas Marathon, Arts District calendar',
   alternates: {
-    canonical: 'https://www.midtownlasvegascondos.com/events',
+    canonical: 'https://www.midtownvegascondos.com/events',
   },
 }
 

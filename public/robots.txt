@@ -5,7 +5,7 @@ User-agent: *
 Allow: /
 
 # Sitemap location
-Sitemap: https://www.midtownlasvegascondos.com/sitemap.xml
+Sitemap: https://www.midtownvegascondos.com/sitemap.xml
 
 # Disallow admin/API routes
 Disallow: /api/

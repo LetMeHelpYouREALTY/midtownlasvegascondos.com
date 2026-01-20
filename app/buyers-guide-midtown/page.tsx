@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     'Las Vegas real estate process',
   ],
   alternates: {
-    canonical: 'https://www.midtownlasvegascondos.com/buyers-guide-midtown',
+    canonical: 'https://www.midtownvegascondos.com/buyers-guide-midtown',
   },
 }
 

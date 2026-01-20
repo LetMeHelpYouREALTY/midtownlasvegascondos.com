@@ -85,8 +85,8 @@ export function Footer() {
                   </a>
                 </p>
                 <p>
-                  <a href="mailto:DrJanSells@MidtownLasVegasCondos.com" className="hover:text-white transition-colors">
-                    DrJanSells@MidtownLasVegasCondos.com
+                  <a href="mailto:DrJanSells@MidtownVegasCondos.com" className="hover:text-white transition-colors">
+                    DrJanSells@MidtownVegasCondos.com
                   </a>
                 </p>
                 <p>

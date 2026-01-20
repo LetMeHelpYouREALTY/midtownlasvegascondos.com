@@ -29,7 +29,7 @@ export async function generateMetadata({
     title: `${post.title} | Midtown Las Vegas Blog`,
     description: post.content.substring(0, 160),
     alternates: {
-      canonical: `https://www.midtownlasvegascondos.com/blog/${slug}`,
+      canonical: `https://www.midtownvegascondos.com/blog/${slug}`,
     },
   }
 }
