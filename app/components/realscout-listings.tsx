@@ -3,7 +3,6 @@
 'use client'
 
 import React, { useEffect, useRef, useState } from 'react'
-import Script from 'next/script'
 
 interface RealScoutListingsProps {
   title?: string
@@ -43,13 +42,59 @@ export function RealScoutListings({
 }: RealScoutListingsProps) {
   const containerRef = useRef<HTMLDivElement>(null)
   const [isLoaded, setIsLoaded] = useState(false)
+  const [scriptLoaded, setScriptLoaded] = useState(false)
   const mappedSortOrder = mapSortOrder(sortOrder)
 
+  // Load script on component mount
   useEffect(() => {
-    if (typeof window === 'undefined' || !containerRef.current) return
+    if (typeof window === 'undefined') return
 
-    // Check if custom element is already registered
-    const checkAndRender = () => {
+    // Check if script is already loaded
+    const existingScript = document.querySelector(
+      'script[src*="realscout-web-components.umd.js"]'
+    )
+    
+    if (existingScript) {
+      // Script already exists, wait for it to load
+      if (window.customElements?.get('realscout-office-listings')) {
+        setScriptLoaded(true)
+        return
+      }
+      // Wait for existing script to finish loading
+      existingScript.addEventListener('load', () => {
+        setScriptLoaded(true)
+      })
+      return
+    }
+
+    // Create and inject script tag
+    const script = document.createElement('script')
+    script.src = 'https://em.realscout.com/widgets/realscout-web-components.umd.js'
+    script.type = 'module'
+    script.async = true
+    script.id = 'realscout-office-listings-script'
+    
+    script.onload = () => {
+      setScriptLoaded(true)
+    }
+    
+    script.onerror = () => {
+      console.error('Failed to load RealScout script')
+    }
+
+    document.head.appendChild(script)
+
+    return () => {
+      // Don't remove script on unmount - it might be used by other components
+    }
+  }, [])
+
+  // Initialize widget when script is loaded
+  useEffect(() => {
+    if (typeof window === 'undefined' || !containerRef.current || !scriptLoaded) return
+
+    // Wait a bit for custom element to be registered after script loads
+    const initializeWidget = () => {
       if (window.customElements?.get('realscout-office-listings')) {
         // Clear container
         containerRef.current!.innerHTML = ''
@@ -72,55 +117,31 @@ export function RealScoutListings({
     }
 
     // Try immediately
-    if (checkAndRender()) {
+    if (initializeWidget()) {
       return
     }
 
-    // Wait for script to load - check every 100ms for up to 10 seconds
+    // Wait for custom element registration - check every 100ms for up to 5 seconds
     let attempts = 0
-    const maxAttempts = 100
+    const maxAttempts = 50
     
     const checkInterval = setInterval(() => {
       attempts++
-      if (checkAndRender()) {
+      if (initializeWidget()) {
         clearInterval(checkInterval)
       } else if (attempts >= maxAttempts) {
         clearInterval(checkInterval)
-        console.warn('RealScout script did not load within timeout')
+        console.warn('RealScout custom element did not register within timeout')
       }
     }, 100)
 
     return () => {
       clearInterval(checkInterval)
     }
-  }, [mappedSortOrder, listingStatus, propertyTypes, priceMin, priceMax, limit])
+  }, [scriptLoaded, mappedSortOrder, listingStatus, propertyTypes, priceMin, priceMax, limit])
 
   return (
-    <>
-      {/* Load RealScout script for this widget */}
-      <Script
-        src="https://em.realscout.com/widgets/realscout-web-components.umd.js"
-        type="module"
-        strategy="afterInteractive"
-        id="realscout-office-listings-script"
-        onLoad={() => {
-          // Script loaded, trigger re-check
-          if (containerRef.current && window.customElements?.get('realscout-office-listings')) {
-            const element = document.createElement('realscout-office-listings')
-            element.setAttribute('agent-encoded-id', 'QWdlbnQtMjI1MDUw')
-            element.setAttribute('sort-order', mappedSortOrder)
-            element.setAttribute('listing-status', listingStatus)
-            element.setAttribute('property-types', propertyTypes)
-            element.setAttribute('price-min', priceMin)
-            element.setAttribute('price-max', priceMax)
-            element.setAttribute('limit', limit)
-            containerRef.current.innerHTML = ''
-            containerRef.current.appendChild(element)
-            setIsLoaded(true)
-          }
-        }}
-      />
-      <div className="w-full">
+    <div className="w-full">
         {title && (
           <div className="text-center mb-8">
             <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">

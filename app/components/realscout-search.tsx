@@ -3,7 +3,6 @@
 'use client'
 
 import React, { useEffect, useRef, useState } from 'react'
-import Script from 'next/script'
 
 interface RealScoutSearchProps {
   priceMin?: string
@@ -16,12 +15,58 @@ export function RealScoutSearch({
 }: RealScoutSearchProps = {} as RealScoutSearchProps) {
   const containerRef = useRef<HTMLDivElement>(null)
   const [isLoaded, setIsLoaded] = useState(false)
+  const [scriptLoaded, setScriptLoaded] = useState(false)
 
+  // Load script on component mount
   useEffect(() => {
-    if (typeof window === 'undefined' || !containerRef.current) return
+    if (typeof window === 'undefined') return
 
-    // Check if custom element is already registered
-    const checkAndRender = () => {
+    // Check if script is already loaded
+    const existingScript = document.querySelector(
+      'script[src*="realscout-web-components.umd.js"]'
+    )
+    
+    if (existingScript) {
+      // Script already exists, wait for it to load
+      if (window.customElements?.get('realscout-advanced-search')) {
+        setScriptLoaded(true)
+        return
+      }
+      // Wait for existing script to finish loading
+      existingScript.addEventListener('load', () => {
+        setScriptLoaded(true)
+      })
+      return
+    }
+
+    // Create and inject script tag
+    const script = document.createElement('script')
+    script.src = 'https://em.realscout.com/widgets/realscout-web-components.umd.js'
+    script.type = 'module'
+    script.async = true
+    script.id = 'realscout-advanced-search-script'
+    
+    script.onload = () => {
+      setScriptLoaded(true)
+    }
+    
+    script.onerror = () => {
+      console.error('Failed to load RealScout script')
+    }
+
+    document.head.appendChild(script)
+
+    return () => {
+      // Don't remove script on unmount - it might be used by other components
+    }
+  }, [])
+
+  // Initialize widget when script is loaded
+  useEffect(() => {
+    if (typeof window === 'undefined' || !containerRef.current || !scriptLoaded) return
+
+    // Wait a bit for custom element to be registered after script loads
+    const initializeWidget = () => {
       if (window.customElements?.get('realscout-advanced-search')) {
         // Clear container
         containerRef.current!.innerHTML = ''
@@ -40,51 +85,31 @@ export function RealScoutSearch({
     }
 
     // Try immediately
-    if (checkAndRender()) {
+    if (initializeWidget()) {
       return
     }
 
-    // Wait for script to load - check every 100ms for up to 10 seconds
+    // Wait for custom element registration - check every 100ms for up to 5 seconds
     let attempts = 0
-    const maxAttempts = 100
+    const maxAttempts = 50
     
     const checkInterval = setInterval(() => {
       attempts++
-      if (checkAndRender()) {
+      if (initializeWidget()) {
         clearInterval(checkInterval)
       } else if (attempts >= maxAttempts) {
         clearInterval(checkInterval)
-        console.warn('RealScout script did not load within timeout')
+        console.warn('RealScout custom element did not register within timeout')
       }
     }, 100)
 
     return () => {
       clearInterval(checkInterval)
     }
-  }, [priceMin, priceMax])
+  }, [scriptLoaded, priceMin, priceMax])
 
   return (
-    <>
-      {/* Load RealScout script for this widget */}
-      <Script
-        src="https://em.realscout.com/widgets/realscout-web-components.umd.js"
-        type="module"
-        strategy="afterInteractive"
-        id="realscout-advanced-search-script"
-        onLoad={() => {
-          // Script loaded, trigger re-check
-          if (containerRef.current && window.customElements?.get('realscout-advanced-search')) {
-            const element = document.createElement('realscout-advanced-search')
-            element.setAttribute('agent-encoded-id', 'QWdlbnQtMjI1MDUw')
-            element.setAttribute('price-min', priceMin)
-            element.setAttribute('price-max', priceMax)
-            containerRef.current.innerHTML = ''
-            containerRef.current.appendChild(element)
-            setIsLoaded(true)
-          }
-        }}
-      />
-      <div ref={containerRef} className="w-full">
+    <div ref={containerRef} className="w-full">
         {!isLoaded && (
           <div className="w-full h-64 bg-slate-100 rounded-lg flex items-center justify-center">
             <p className="text-slate-600">Loading search...</p>
