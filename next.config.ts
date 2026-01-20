@@ -43,6 +43,32 @@ const nextConfig: NextConfig = {
               "frame-src 'self' https://www.googletagmanager.com https://calendly.com",
             ].join('; '),
           },
+          // Cache headers for static assets
+          {
+            key: 'Cache-Control',
+            value: 'public, max-age=31536000, immutable',
+          },
+        ],
+      },
+      // Cache headers for third-party resources (via proxy/rewrite if possible)
+      // Note: These headers apply to our own responses, not third-party resources
+      // For third-party resources, we rely on their own cache headers
+      {
+        source: '/_next/static/:path*',
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: 'public, max-age=31536000, immutable',
+          },
+        ],
+      },
+      {
+        source: '/images/:path*',
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: 'public, max-age=31536000, immutable',
+          },
         ],
       },
     ]

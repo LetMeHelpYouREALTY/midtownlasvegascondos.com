@@ -99,11 +99,30 @@ export default function RootLayout({
       <head>
         <link rel="manifest" href="/manifest.json" />
         <meta name="theme-color" content="#0f172a" />
-        <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet" />
+        {/* Preconnect to critical third-party origins for faster LCP */}
+        <link rel="preconnect" href="https://em.realscout.com" />
+        <link rel="preconnect" href="https://www.realscout.com" />
+        <link rel="dns-prefetch" href="https://assets.calendly.com" />
+        <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+        {/* Calendly CSS - loaded asynchronously to avoid render blocking */}
+        <link
+          href="https://assets.calendly.com/assets/external/widget.css"
+          rel="stylesheet"
+          media="print"
+        />
+        <Script id="calendly-css-loader" strategy="afterInteractive">
+          {`
+            const link = document.querySelector('link[href*="calendly.com"][media="print"]');
+            if (link) {
+              link.media = 'all';
+            }
+          `}
+        </Script>
+        {/* Defer RealScout script - load after page is interactive */}
         <Script
           src="https://em.realscout.com/widgets/realscout-web-components.umd.js"
           type="module"
-          strategy="beforeInteractive"
+          strategy="lazyOnload"
         />
       </head>
       <body className={`${inter.className} antialiased`}>

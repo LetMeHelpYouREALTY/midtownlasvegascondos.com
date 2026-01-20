@@ -3,7 +3,7 @@ import Script from 'next/script'
 
 export function WidgetTracker() {
   return (
-    <Script id="widget-tracker" strategy="afterInteractive">
+    <Script id="widget-tracker" strategy="lazyOnload">
       {`
         (function(w,i,d,g,e,t){
           w["WidgetTrackerObject"]=g;

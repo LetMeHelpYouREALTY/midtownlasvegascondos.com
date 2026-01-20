@@ -29,7 +29,9 @@ export default function HomePage() {
             fill
             className="object-cover"
             priority
-            quality={90}
+            fetchPriority="high"
+            quality={75}
+            sizes="100vw"
           />
         </div>
         <div className="absolute inset-0 bg-black/50" />
