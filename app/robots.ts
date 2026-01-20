@@ -23,6 +23,21 @@ export default function robots(): MetadataRoute.Robots {
         userAgent: 'Googlebot-Video',
         allow: '/',
       },
+      {
+        userAgent: 'Google-Search-Agent',
+        allow: '/',
+        disallow: ['/api/', '/_next/', '/static/'],
+      },
+      {
+        userAgent: 'ChatGPT-User',
+        allow: '/',
+        disallow: ['/api/', '/_next/', '/static/'],
+      },
+      {
+        userAgent: 'GPTBot',
+        allow: '/',
+        disallow: ['/api/', '/_next/', '/static/'],
+      },
     ],
     sitemap: `${baseUrl}/sitemap.xml`,
   }

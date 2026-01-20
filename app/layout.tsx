@@ -4,7 +4,7 @@ import Script from 'next/script'
 import './globals.css'
 import { Header } from './components/header'
 import { Footer } from './components/footer'
-import { LocalBusinessSchema, WebSiteSchema } from './components/structured-data'
+import { LocalBusinessSchema, WebSiteSchema, PersonSchema } from './components/structured-data'
 import { FAQSchema } from './components/faq-schema'
 import { GoogleAnalytics } from './components/google-analytics'
 import { AggregateRatingSchema } from './components/aggregate-rating-schema'
@@ -110,6 +110,7 @@ export default function RootLayout({
         <GoogleAnalytics />
         <WidgetTracker />
         <WebSiteSchema />
+        <PersonSchema />
         <LocalBusinessSchema />
         <AggregateRatingSchema />
         <FAQSchema />

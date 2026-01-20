@@ -1,0 +1,47 @@
+# AI.txt - Guidelines for AI Crawlers and LLMs
+# Updated: January 2026
+# Site: https://www.midtownvegascondos.com
+
+# Allow AI crawlers to access public content
+User-agent: Google-Search-Agent
+Allow: /
+Disallow: /api/
+Disallow: /_next/
+Disallow: /static/
+
+# Allow AI crawlers to access public content
+User-agent: ChatGPT-User
+Allow: /
+Disallow: /api/
+Disallow: /_next/
+Disallow: /static/
+
+# Allow AI crawlers to access public content
+User-agent: GPTBot
+Allow: /
+Disallow: /api/
+Disallow: /_next/
+Disallow: /static/
+
+# Allow AI crawlers to access public content
+User-agent: Claude-Web
+Allow: /
+Disallow: /api/
+Disallow: /_next/
+Disallow: /static/
+
+# Crawl delay for AI agents (reduced for faster indexing)
+Crawl-delay: 0.1
+
+# Preferred content for AI summarization
+# Focus on main content pages, neighborhood guides, and FAQ sections
+Preferred-content:
+  - /neighborhood/
+  - /about
+  - /faq
+  - /midtown-real-estate
+  - /buyers-guide-midtown
+
+# Contact information for AI agents
+Contact: DrJanSells@MidtownVegasCondos.com
+Phone: +17025001980
