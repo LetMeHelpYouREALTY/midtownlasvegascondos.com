@@ -34,7 +34,7 @@ export function FAQSchema() {
         name: 'How much do condos in Midtown Las Vegas cost?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'Midtown Las Vegas condos in our featured listings range from $450,000 to $1,000,000 depending on size, location, and amenities. The English Residences offer condo-hotel units with various price points. Contact Dr. Jan at (702) 500-1955 for current availability.',
+          text: 'Midtown Las Vegas condos in our featured listings range from $450,000 to $1,000,000 depending on size, location, and amenities. The English Residences offer condo-hotel units with various price points. Contact Dr. Jan at (702) 500-1980 for current availability.',
         },
       },
       {
@@ -50,7 +50,7 @@ export function FAQSchema() {
         name: 'How do I contact Dr. Jan Duffy about Midtown properties?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'You can reach Dr. Jan Duffy at (702) 500-1955 or email DrJanSells@MidtownVegasCondos.com. Visit www.midtownvegascondos.com to search available properties or schedule a personal tour of the Midtown neighborhood.',
+          text: 'You can reach Dr. Jan Duffy at (702) 500-1980 or email DrJanSells@MidtownVegasCondos.com. Visit www.midtownvegascondos.com to search available properties or schedule a personal tour of the Midtown neighborhood.',
         },
       },
       {
@@ -66,7 +66,7 @@ export function FAQSchema() {
         name: 'What types of properties are available in Midtown?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'Midtown offers luxury condos, condo-hotels (The English Residences), townhouses, and single-family homes. Our featured properties range from $450,000 to $1,000,000. Browse available properties at drjanduffy.realscout.com or call Dr. Jan at (702) 500-1955.',
+          text: 'Midtown offers luxury condos, condo-hotels (The English Residences), townhouses, and single-family homes. Our featured properties range from $450,000 to $1,000,000. Browse available properties at drjanduffy.realscout.com or call Dr. Jan at (702) 500-1980.',
         },
       },
       {
@@ -90,7 +90,7 @@ export function FAQSchema() {
         name: 'How do I get started buying in Midtown?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'Contact Dr. Jan Duffy at (702) 500-1955 or DrJanSells@MidtownVegasCondos.com. She specializes in Midtown properties and can schedule a personal tour, show you available homes, help with financing options, and guide you through the entire buying process from search to closing.',
+          text: 'Contact Dr. Jan Duffy at (702) 500-1980 or DrJanSells@MidtownVegasCondos.com. She specializes in Midtown properties and can schedule a personal tour, show you available homes, help with financing options, and guide you through the entire buying process from search to closing.',
         },
       },
       {

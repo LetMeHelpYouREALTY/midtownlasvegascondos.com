@@ -298,7 +298,7 @@ export default function PepperClubPage() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
-              href="tel:7025001955"
+              href="tel:7025001980"
               className="inline-block px-8 py-4 bg-white text-slate-900 rounded-lg font-semibold hover:bg-slate-100 transition-colors"
             >
               Call for Reservations

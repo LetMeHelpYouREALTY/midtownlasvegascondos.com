@@ -76,12 +76,12 @@ export function Footer() {
               <h4 className="font-bold text-lg mb-4">CONTACT US</h4>
               <div className="space-y-3 text-sm text-slate-300">
                 <p>
-                  921 S Main St<br />
+                  921 South Main Street<br />
                   Las Vegas, NV 89101
                 </p>
                 <p>
-                  <a href="tel:7025001955" className="hover:text-white transition-colors">
-                    (702) 500-1955
+                  <a href="tel:7025001980" className="hover:text-white transition-colors">
+                    (702) 500-1980
                   </a>
                 </p>
                 <p>
@@ -90,8 +90,8 @@ export function Footer() {
                   </a>
                 </p>
                 <p>
-                  Mon-Fri: 9 am – 5 pm<br />
-                  Sat/Sun: Closed
+                  Sun-Thu: 9 am – 5 pm<br />
+                  Fri-Sat: Closed
                 </p>
               </div>
             </div>

@@ -56,7 +56,7 @@ export function StickyCTABar() {
             Free Valuation
           </button>
           <a
-            href="tel:7025001955"
+            href="tel:7025001980"
             className="flex-1 ml-2 px-4 py-2 bg-transparent border-2 border-white text-white rounded-lg font-semibold text-sm hover:bg-white/10 transition-colors flex items-center justify-center"
           >
             <span className="mr-2">☎️</span>

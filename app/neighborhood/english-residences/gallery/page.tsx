@@ -6,7 +6,7 @@ import Link from 'next/link'
 export const metadata: Metadata = {
   title: 'English Residences Gallery | Luxury Condo-Hotel Photos & Floor Plans',
   description:
-    'View photos and floor plans of The English Residences luxury condo-hotel units in Midtown Las Vegas. Modern interiors, floor-to-ceiling windows, and Arts District views. Contact Dr. Jan at (702) 500-1955 for a private tour.',
+    'View photos and floor plans of The English Residences luxury condo-hotel units in Midtown Las Vegas. Modern interiors, floor-to-ceiling windows, and Arts District views. Contact Dr. Jan at (702) 500-1980 for a private tour.',
   keywords: [
     'English Residences photos',
     'English Residences floor plans',
@@ -233,7 +233,7 @@ export default function EnglishResidencesGalleryPage() {
                   needs, from home offices to guest accommodations.
                 </p>
                 <p className="text-base text-slate-600 leading-relaxed">
-                  Contact Dr. Jan Duffy at (702) 500-1955 to discuss which floor plan best matches your lifestyle and investment goals. She can 
+                  Contact Dr. Jan Duffy at (702) 500-1980 to discuss which floor plan best matches your lifestyle and investment goals. She can 
                   provide detailed information about available units, pricing, and how different floor plans support different usage patterns. 
                   Her expertise helps you understand not just the square footage but how each layout supports your specific needs and preferences.
                 </p>

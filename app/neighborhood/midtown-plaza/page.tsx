@@ -7,7 +7,7 @@ import { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'Midtown Plaza Las Vegas | Shopping, Dining & Entertainment',
-  description: 'The heart of Midtown - walkable access to local restaurants, shops, and Arts District culture. Find homes near Midtown Plaza. Call (702) 500-1955.',
+  description: 'The heart of Midtown - walkable access to local restaurants, shops, and Arts District culture. Find homes near Midtown Plaza. Call (702) 500-1980.',
   keywords: 'Midtown Plaza Las Vegas, Arts District shopping, downtown Las Vegas dining, walkable Las Vegas neighborhood',
   alternates: {
     canonical: 'https://www.midtownvegascondos.com/neighborhood/midtown-plaza',
@@ -284,10 +284,10 @@ export default function MidtownPlazaPage() {
               Find Your Home
             </a>
             <a
-              href="tel:7025001955"
+              href="tel:7025001980"
               className="inline-block px-8 py-4 bg-transparent border-2 border-white text-white rounded-lg font-semibold hover:bg-white/10 transition-colors"
             >
-              Call (702) 500-1955
+              Call (702) 500-1980
             </a>
           </div>
         </div>

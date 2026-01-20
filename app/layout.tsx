@@ -18,11 +18,11 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: {
-    default: 'Luxury Midtown Las Vegas Condos | Arts District Real Estate | 702-500-1955',
-    template: '%s | Midtown Las Vegas Condos',
+    default: 'Luxury Midtown Las Vegas Condos | Arts District Real Estate | 702-500-1980',
+    template: '%s | Las Vegas Arts District Condos | Homes by Dr. Jan Duffy',
   },
   description:
-    'Discover luxury condominium living in the heart of Las Vegas Arts District. Experience the vibrant culture, dining, and entertainment of Midtown. Contact us today at (702) 500-1955.',
+    'Discover luxury condominium living in the heart of Las Vegas Arts District. Experience the vibrant culture, dining, and entertainment of Midtown. Contact us today at (702) 500-1980.',
   metadataBase: new URL('https://www.midtownvegascondos.com'),
   alternates: {
     canonical: 'https://www.midtownvegascondos.com/',
@@ -56,7 +56,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Luxury Midtown Las Vegas Condos | Arts District Real Estate',
     description:
-      'Luxury condominium living in the heart of Las Vegas Arts District. Contact Dr. Jan at (702) 500-1955',
+      'Luxury condominium living in the heart of Las Vegas Arts District. Contact Dr. Jan at (702) 500-1980',
     url: 'https://www.midtownvegascondos.com',
     siteName: 'Midtown Las Vegas Condos',
     locale: 'en_US',

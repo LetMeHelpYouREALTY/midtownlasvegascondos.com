@@ -228,7 +228,7 @@ export default function ContactPage() {
                   value={formData.phone}
                   onChange={handleChange}
                   className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:outline-none focus:ring-2 focus:ring-slate-500"
-                  placeholder="(702) 500-1955"
+                  placeholder="(702) 500-1980"
                 />
               </div>
 
@@ -314,7 +314,7 @@ export default function ContactPage() {
                   Address
                 </h3>
                 <p className="text-slate-600 ml-9">
-                  921 S Main St<br />
+                  921 South Main Street<br />
                   Las Vegas, NV 89101
                 </p>
               </div>
@@ -337,8 +337,8 @@ export default function ContactPage() {
                   Phone
                 </h3>
                 <p className="text-slate-600 ml-9">
-                  <a href="tel:7025001955" className="hover:text-slate-900 transition-colors">
-                    (702) 500-1955
+                  <a href="tel:7025001980" className="hover:text-slate-900 transition-colors">
+                    (702) 500-1980
                   </a>
                 </p>
               </div>
@@ -385,7 +385,8 @@ export default function ContactPage() {
                   Office Hours
                 </h3>
                 <p className="text-slate-600 ml-9">
-                  Monday - Friday: 9:00 AM - 5:00 PM<br />
+                  Sunday - Thursday: 9:00 AM - 5:00 PM<br />
+                  Friday - Saturday: Closed<br />
                   Saturday - Sunday: Closed
                 </p>
               </div>
@@ -427,10 +428,10 @@ export default function ContactPage() {
               Start Property Search
             </a>
             <a
-              href="tel:7025001955"
+              href="tel:7025001980"
               className="inline-block px-8 py-4 bg-transparent border-2 border-white text-white rounded-lg font-semibold hover:bg-white/10 transition-colors"
             >
-              Call (702) 500-1955
+              Call (702) 500-1980
             </a>
           </div>
         </div>

@@ -241,10 +241,10 @@ export default function SearchPage() {
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <a
-            href="tel:7025001955"
+            href="tel:7025001980"
             className="inline-block px-8 py-4 bg-slate-900 text-white rounded-lg font-semibold hover:bg-slate-800 transition-colors"
           >
-            Call (702) 500-1955
+            Call (702) 500-1980
           </a>
           <a
             href="mailto:DrJanSells@MidtownVegasCondos.com"

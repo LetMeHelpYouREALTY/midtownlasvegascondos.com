@@ -281,10 +281,10 @@ export default function FirstFridaysPage() {
               Find Your Arts District Home
             </a>
             <a
-              href="tel:7025001955"
+              href="tel:7025001980"
               className="inline-block px-8 py-4 bg-transparent border-2 border-white text-white rounded-lg font-semibold hover:bg-white/10 transition-colors"
             >
-              Call (702) 500-1955
+              Call (702) 500-1980
             </a>
           </div>
         </div>

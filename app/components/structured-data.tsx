@@ -4,15 +4,15 @@ export function LocalBusinessSchema() {
   const schema = {
     '@context': 'https://schema.org',
     '@type': 'RealEstateAgent',
-    name: 'Midtown Las Vegas | Condos By Dr. Jan Duffy',
+    name: 'Las Vegas Arts District Condos | Homes by Dr. Jan Duffy',
     image: 'https://www.midtownvegascondos.com/images/logos/midtown-logo.svg',
     '@id': 'https://www.midtownvegascondos.com',
     url: 'https://www.midtownvegascondos.com',
-    telephone: '+17025001955',
+    telephone: '+17025001980',
     email: 'DrJanSells@MidtownVegasCondos.com',
     address: {
       '@type': 'PostalAddress',
-      streetAddress: '921 S Main St',
+      streetAddress: '921 South Main Street',
       addressLocality: 'Las Vegas',
       addressRegion: 'NV',
       postalCode: '89101',
@@ -26,7 +26,7 @@ export function LocalBusinessSchema() {
     openingHoursSpecification: [
       {
         '@type': 'OpeningHoursSpecification',
-        dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
+        dayOfWeek: ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday'],
         opens: '09:00',
         closes: '17:00',
       },
@@ -108,7 +108,7 @@ export function ResidenceSchema() {
     url: 'https://www.midtownvegascondos.com/neighborhood/english-residences',
     address: {
       '@type': 'PostalAddress',
-      streetAddress: '921 S Main St',
+      streetAddress: '921 South Main Street',
       addressLocality: 'Las Vegas',
       addressRegion: 'NV',
       postalCode: '89101',

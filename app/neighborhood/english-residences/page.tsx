@@ -8,7 +8,7 @@ import { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'The English Residences | Luxury Condo-Hotels in Midtown Las Vegas',
-  description: 'Own a piece of The English Hotel. Luxury condo-hotel units in the Arts District. Stay when you want, earn when you\'re away. Call Dr. Jan at (702) 500-1955.',
+  description: 'Own a piece of The English Hotel. Luxury condo-hotel units in the Arts District. Stay when you want, earn when you\'re away. Call Dr. Jan at (702) 500-1980.',
   keywords: 'English Residences, Midtown Las Vegas condos, Arts District condos, condo-hotel Las Vegas, luxury condos downtown Las Vegas, investment property Las Vegas',
   alternates: {
     canonical: 'https://www.midtownvegascondos.com/neighborhood/english-residences',
@@ -337,7 +337,7 @@ export default function EnglishResidencesPage() {
               {
                 question: 'What are the monthly costs of ownership?',
                 answer:
-                  'Costs include your mortgage (if financed), HOA fees, property taxes, and insurance. However, rental income when you\'re not using the unit can offset these costs. Contact Dr. Jan at (702) 500-1955 for specific estimates.',
+                  'Costs include your mortgage (if financed), HOA fees, property taxes, and insurance. However, rental income when you\'re not using the unit can offset these costs. Contact Dr. Jan at (702) 500-1980 for specific estimates.',
               },
               {
                 question: 'How is this different from a timeshare?',
@@ -373,10 +373,10 @@ export default function EnglishResidencesPage() {
               Schedule a Tour
             </a>
             <a
-              href="tel:7025001955"
+              href="tel:7025001980"
               className="inline-block px-8 py-4 bg-transparent border-2 border-white text-white rounded-lg font-semibold hover:bg-white/10 transition-colors"
             >
-              Call (702) 500-1955
+              Call (702) 500-1980
             </a>
           </div>
         </div>

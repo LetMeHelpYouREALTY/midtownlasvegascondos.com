@@ -201,7 +201,7 @@ export default function NewsPage() {
           <div>
             <h3 className="text-2xl font-bold text-slate-900 mb-4">Staying Informed</h3>
             <p className="mb-3">
-              Check this section regularly for updates, or contact Dr. Jan at (702) 500-1955 for insider perspective on developments affecting 
+              Check this section regularly for updates, or contact Dr. Jan at (702) 500-1980 for insider perspective on developments affecting 
               property values and neighborhood character. The pace of change in Midtown means monthly check-ins reveal new developments, while 
               annual reviews showcase remarkable transformation that positions the neighborhood as one of Las Vegas's fastest-appreciating real 
               estate markets.
@@ -290,10 +290,10 @@ export default function NewsPage() {
               Start Your Search
             </a>
             <a
-              href="tel:7025001955"
+              href="tel:7025001980"
               className="inline-block px-8 py-4 bg-transparent border-2 border-white text-white rounded-lg font-semibold hover:bg-white/10 transition-colors"
             >
-              Call (702) 500-1955
+              Call (702) 500-1980
             </a>
           </div>
         </div>

@@ -4,7 +4,7 @@ import Link from 'next/link'
 export const metadata: Metadata = {
   title: 'FAQ | Midtown Las Vegas Condos - Your Questions Answered',
   description:
-    'Frequently asked questions about living in Midtown Las Vegas, The English Residences, Arts District real estate, and working with Dr. Jan Duffy. Call (702) 500-1955.',
+    'Frequently asked questions about living in Midtown Las Vegas, The English Residences, Arts District real estate, and working with Dr. Jan Duffy. Call (702) 500-1980.',
   keywords:
     'Midtown Las Vegas FAQ, Arts District questions, English Residences information, Las Vegas condo questions',
   alternates: {
@@ -26,7 +26,7 @@ const faqs = [
       },
       {
         q: 'What are the price ranges for English Residences?',
-        a: 'English Residences typically range from approximately $250,000 for studios to $800,000+ for penthouse units. Contact Dr. Jan at (702) 500-1955 for current availability and pricing.',
+        a: 'English Residences typically range from approximately $250,000 for studios to $800,000+ for penthouse units. Contact Dr. Jan at (702) 500-1980 for current availability and pricing.',
       },
       {
         q: 'Can I use my residence whenever I want?',
@@ -60,7 +60,7 @@ const faqs = [
     questions: [
       {
         q: 'How do I start my home search in Midtown?',
-        a: 'Start by browsing available properties at drjanduffy.realscout.com, then contact Dr. Jan at (702) 500-1955 to schedule a personal tour. Dr. Jan specializes in Midtown and Arts District properties and can help you find the perfect home.',
+        a: 'Start by browsing available properties at drjanduffy.realscout.com, then contact Dr. Jan at (702) 500-1980 to schedule a personal tour. Dr. Jan specializes in Midtown and Arts District properties and can help you find the perfect home.',
       },
       {
         q: 'What types of properties are available?',
@@ -68,7 +68,7 @@ const faqs = [
       },
       {
         q: 'Can I see properties in person?',
-        a: 'Absolutely! Dr. Jan provides personalized tours of Midtown and shows available properties. Schedule your tour by calling (702) 500-1955 or emailing DrJanSells@MidtownVegasCondos.com.',
+        a: 'Absolutely! Dr. Jan provides personalized tours of Midtown and shows available properties. Schedule your tour by calling (702) 500-1980 or emailing DrJanSells@MidtownVegasCondos.com.',
       },
       {
         q: 'How long does the buying process take?',
@@ -217,7 +217,7 @@ export default function FAQPage() {
                 for your unique needs.
               </p>
               <p>
-                Can't find your question below? Contact Dr. Jan directly at (702) 500-1955 for personalized answers to your specific 
+                Can't find your question below? Contact Dr. Jan directly at (702) 500-1980 for personalized answers to your specific 
                 questions about Midtown living and real estate opportunities. Dr. Jan provides detailed consultation for serious buyers, including property 
                 comparisons, market analysis, financing options, and rental income projections for{' '}
                 <Link href="/neighborhood/english-residences" className="text-slate-900 font-semibold hover:underline">
@@ -262,10 +262,10 @@ export default function FAQPage() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
-              href="tel:7025001955"
+              href="tel:7025001980"
               className="inline-block px-8 py-4 bg-white text-slate-900 rounded-lg font-semibold hover:bg-slate-100 transition-colors"
             >
-              Call (702) 500-1955
+              Call (702) 500-1980
             </a>
             <a
               href="mailto:DrJanSells@MidtownVegasCondos.com"

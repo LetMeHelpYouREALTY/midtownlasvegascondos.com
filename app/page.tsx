@@ -8,9 +8,9 @@ import { RealScoutListings } from './components/realscout-listings'
 import { PageFAQ } from './components/page-faq'
 
 export const metadata: Metadata = {
-  title: 'Luxury Midtown Las Vegas Condos | Arts District Real Estate | 702-500-1955',
+  title: 'Luxury Midtown Las Vegas Condos | Arts District Real Estate | 702-500-1980',
   description:
-    'Discover luxury condominium living in the heart of Las Vegas Arts District. Experience the vibrant culture, dining, and entertainment of Midtown. Contact us today at (702) 500-1955.',
+    'Discover luxury condominium living in the heart of Las Vegas Arts District. Experience the vibrant culture, dining, and entertainment of Midtown. Contact us today at (702) 500-1980.',
   alternates: {
     canonical: 'https://www.midtownvegascondos.com/',
   },
@@ -588,7 +588,7 @@ export default function HomePage() {
               {
                 question: 'What types of properties are available in Midtown?',
                 answer:
-                  'Midtown offers luxury condos, condo-hotels (The English Residences), townhouses, and single-family homes. Our featured properties range from $450,000 to $1,000,000. Browse available properties at drjanduffy.realscout.com or call Dr. Jan at (702) 500-1955.',
+                  'Midtown offers luxury condos, condo-hotels (The English Residences), townhouses, and single-family homes. Our featured properties range from $450,000 to $1,000,000. Browse available properties at drjanduffy.realscout.com or call Dr. Jan at (702) 500-1980.',
               },
               {
                 question: 'Why should I buy in the Arts District?',
@@ -598,7 +598,7 @@ export default function HomePage() {
               {
                 question: 'How do I get started?',
                 answer:
-                  'Contact Dr. Jan Duffy at (702) 500-1955 or DrJanSells@MidtownVegasCondos.com. She specializes in Midtown properties and can schedule a personal tour, show you available homes, and guide you through the entire buying process.',
+                  'Contact Dr. Jan Duffy at (702) 500-1980 or DrJanSells@MidtownVegasCondos.com. She specializes in Midtown properties and can schedule a personal tour, show you available homes, and guide you through the entire buying process.',
               },
             ]}
           />
@@ -633,15 +633,15 @@ export default function HomePage() {
             <div>
               <h3 className="text-xl font-semibold text-slate-900 mb-2">Address</h3>
               <p className="text-slate-600">
-                921 S Main St<br />
+                921 South Main Street<br />
                 Las Vegas, NV 89101
               </p>
             </div>
             <div>
               <h3 className="text-xl font-semibold text-slate-900 mb-2">Phone</h3>
               <p className="text-slate-600">
-                <a href="tel:7025001955" className="hover:text-slate-900 transition-colors">
-                  (702) 500-1955
+                <a href="tel:7025001980" className="hover:text-slate-900 transition-colors">
+                  (702) 500-1980
                 </a>
               </p>
             </div>
@@ -656,8 +656,8 @@ export default function HomePage() {
             <div>
               <h3 className="text-xl font-semibold text-slate-900 mb-2">Hours</h3>
               <p className="text-slate-600">
-                Mon-Fri: 9 am – 5 pm<br />
-                Sat/Sun: Closed
+                Sun-Thu: 9 am – 5 pm<br />
+                Fri-Sat: Closed
               </p>
             </div>
           </div>
