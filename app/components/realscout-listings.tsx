@@ -102,23 +102,28 @@ export function RealScoutListings({
         // Create the element
         const element = document.createElement('realscout-office-listings')
         
-        // Set ALL attributes BEFORE appending to DOM
-        // This ensures the widget reads them during initialization
+        // Set attributes in the EXACT order RealScout expects (based on their documentation)
+        // Order: agent-encoded-id, sort-order, listing-status, property-types, price-min, price-max
         element.setAttribute('agent-encoded-id', 'QWdlbnQtMjI1MDUw')
-        element.setAttribute('price-min', priceMin)
-        element.setAttribute('price-max', priceMax)
         element.setAttribute('sort-order', mappedSortOrder)
         element.setAttribute('listing-status', listingStatus)
         element.setAttribute('property-types', propertyTypes)
-        element.setAttribute('limit', limit)
+        element.setAttribute('price-min', priceMin)
+        element.setAttribute('price-max', priceMax)
+        
+        // Set limit if provided (not in the example, but we'll keep it)
+        if (limit) {
+          element.setAttribute('limit', limit)
+        }
         
         // Debug: Log attributes before appending
         console.log('RealScout Listings Widget - Setting attributes:', {
+          'agent-encoded-id': 'QWdlbnQtMjI1MDUw',
+          'sort-order': mappedSortOrder,
+          'listing-status': listingStatus,
+          'property-types': propertyTypes,
           'price-min': priceMin,
           'price-max': priceMax,
-          'property-types': propertyTypes,
-          'listing-status': listingStatus,
-          'sort-order': mappedSortOrder,
           'limit': limit
         })
         
@@ -128,23 +133,14 @@ export function RealScoutListings({
         // Debug: Verify attributes after appending
         setTimeout(() => {
           console.log('RealScout Listings Widget - Attributes after append:', {
+            'agent-encoded-id': element.getAttribute('agent-encoded-id'),
+            'sort-order': element.getAttribute('sort-order'),
+            'listing-status': element.getAttribute('listing-status'),
+            'property-types': element.getAttribute('property-types'),
             'price-min': element.getAttribute('price-min'),
             'price-max': element.getAttribute('price-max'),
-            'property-types': element.getAttribute('property-types'),
-            'listing-status': element.getAttribute('listing-status'),
-            'sort-order': element.getAttribute('sort-order'),
             'limit': element.getAttribute('limit')
           })
-          
-          // Force re-application of ALL attributes after widget initializes
-          if (element.parentElement) {
-            element.setAttribute('price-min', priceMin)
-            element.setAttribute('price-max', priceMax)
-            element.setAttribute('property-types', propertyTypes)
-            element.setAttribute('listing-status', listingStatus)
-            element.setAttribute('sort-order', mappedSortOrder)
-            element.setAttribute('limit', limit)
-          }
         }, 200)
         
         setIsLoaded(true)

@@ -74,24 +74,29 @@ export function RealScoutSearch({
         // Create the element
         const element = document.createElement('realscout-advanced-search')
         
-        // Set price attributes FIRST (most important for filtering)
+        // Set attributes in the correct order (agent-encoded-id first, then price attributes)
+        element.setAttribute('agent-encoded-id', 'QWdlbnQtMjI1MDUw')
         element.setAttribute('price-min', priceMin)
         element.setAttribute('price-max', priceMax)
         
-        // Then set other attributes
-        element.setAttribute('agent-encoded-id', 'QWdlbnQtMjI1MDUw')
+        // Debug: Log attributes before appending
+        console.log('RealScout Search Widget - Setting attributes:', {
+          'agent-encoded-id': 'QWdlbnQtMjI1MDUw',
+          'price-min': priceMin,
+          'price-max': priceMax
+        })
         
         // Append to DOM
         containerRef.current!.appendChild(element)
         
-        // Force re-application of price attributes after a short delay
-        // This ensures the widget reads them correctly after initialization
+        // Debug: Verify attributes after appending
         setTimeout(() => {
-          if (element.parentElement) {
-            element.setAttribute('price-min', priceMin)
-            element.setAttribute('price-max', priceMax)
-          }
-        }, 100)
+          console.log('RealScout Search Widget - Attributes after append:', {
+            'agent-encoded-id': element.getAttribute('agent-encoded-id'),
+            'price-min': element.getAttribute('price-min'),
+            'price-max': element.getAttribute('price-max')
+          })
+        }, 200)
         
         setIsLoaded(true)
         return true
