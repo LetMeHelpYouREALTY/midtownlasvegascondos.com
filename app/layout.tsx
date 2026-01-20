@@ -118,11 +118,11 @@ export default function RootLayout({
             }
           `}
         </Script>
-        {/* Load RealScout script after page becomes interactive (not lazyOnload to ensure widgets initialize) */}
+        {/* Load RealScout script - must load before widgets render */}
         <Script
           src="https://em.realscout.com/widgets/realscout-web-components.umd.js"
           type="module"
-          strategy="afterInteractive"
+          strategy="beforeInteractive"
         />
       </head>
       <body className={`${inter.className} antialiased`}>
