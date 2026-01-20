@@ -118,12 +118,6 @@ export default function RootLayout({
             }
           `}
         </Script>
-        {/* Load RealScout script - must load before widgets render */}
-        <Script
-          src="https://em.realscout.com/widgets/realscout-web-components.umd.js"
-          type="module"
-          strategy="beforeInteractive"
-        />
       </head>
       <body className={`${inter.className} antialiased`}>
         <GoogleAnalytics />

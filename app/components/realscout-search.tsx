@@ -3,6 +3,7 @@
 'use client'
 
 import React, { useEffect, useRef, useState } from 'react'
+import Script from 'next/script'
 
 interface RealScoutSearchProps {
   priceMin?: string
@@ -63,13 +64,22 @@ export function RealScoutSearch({
   }, [priceMin, priceMax])
 
   return (
-    <div ref={containerRef} className="w-full">
-      {!isLoaded && (
-        <div className="w-full h-64 bg-slate-100 rounded-lg flex items-center justify-center">
-          <p className="text-slate-600">Loading search...</p>
-        </div>
-      )}
-    </div>
+    <>
+      {/* Load RealScout script for this widget */}
+      <Script
+        src="https://em.realscout.com/widgets/realscout-web-components.umd.js"
+        type="module"
+        strategy="beforeInteractive"
+        id="realscout-advanced-search-script"
+      />
+      <div ref={containerRef} className="w-full">
+        {!isLoaded && (
+          <div className="w-full h-64 bg-slate-100 rounded-lg flex items-center justify-center">
+            <p className="text-slate-600">Loading search...</p>
+          </div>
+        )}
+      </div>
+    </>
   )
 }
 

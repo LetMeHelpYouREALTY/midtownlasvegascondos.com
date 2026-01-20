@@ -3,6 +3,7 @@
 'use client'
 
 import React, { useEffect, useRef, useState } from 'react'
+import Script from 'next/script'
 
 interface RealScoutListingsProps {
   title?: string
@@ -95,27 +96,36 @@ export function RealScoutListings({
   }, [mappedSortOrder, listingStatus, propertyTypes, priceMin, priceMax, limit])
 
   return (
-    <div className="w-full">
-      {title && (
-        <div className="text-center mb-8">
-          <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
-            {title}
-          </h2>
-          {description && (
-            <p className="text-lg text-slate-600 max-w-2xl mx-auto">
-              {description}
-            </p>
-          )}
-        </div>
-      )}
-      <div ref={containerRef} className="w-full">
-        {!isLoaded && (
-          <div className="w-full h-64 bg-slate-100 rounded-lg flex items-center justify-center">
-            <p className="text-slate-600">Loading properties...</p>
+    <>
+      {/* Load RealScout script for this widget */}
+      <Script
+        src="https://em.realscout.com/widgets/realscout-web-components.umd.js"
+        type="module"
+        strategy="beforeInteractive"
+        id="realscout-office-listings-script"
+      />
+      <div className="w-full">
+        {title && (
+          <div className="text-center mb-8">
+            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
+              {title}
+            </h2>
+            {description && (
+              <p className="text-lg text-slate-600 max-w-2xl mx-auto">
+                {description}
+              </p>
+            )}
           </div>
         )}
+        <div ref={containerRef} className="w-full">
+          {!isLoaded && (
+            <div className="w-full h-64 bg-slate-100 rounded-lg flex items-center justify-center">
+              <p className="text-slate-600">Loading properties...</p>
+            </div>
+          )}
+        </div>
       </div>
-    </div>
+    </>
   )
 }
 
