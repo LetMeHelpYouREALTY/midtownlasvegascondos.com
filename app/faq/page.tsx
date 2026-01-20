@@ -1,5 +1,6 @@
 import { Metadata } from 'next'
 import Link from 'next/link'
+import { CalendlyLink } from '../components/calendly-link'
 
 export const metadata: Metadata = {
   title: 'FAQ | Midtown Las Vegas Condos - Your Questions Answered',
@@ -261,17 +262,12 @@ export default function FAQPage() {
             Dr. Jan is here to help! Get personalized answers about Midtown living and available properties.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <CalendlyLink text="Schedule Your Walk-to-Everything Tour" variant="primary" />
             <a
               href="tel:7025001980"
-              className="inline-block px-8 py-4 bg-white text-slate-900 rounded-lg font-semibold hover:bg-slate-100 transition-colors"
-            >
-              Call (702) 500-1980
-            </a>
-            <a
-              href="mailto:DrJanSells@MidtownVegasCondos.com"
               className="inline-block px-8 py-4 bg-transparent border-2 border-white text-white rounded-lg font-semibold hover:bg-white/10 transition-colors"
             >
-              Email Dr. Jan
+              Call (702) 500-1980
             </a>
           </div>
         </div>

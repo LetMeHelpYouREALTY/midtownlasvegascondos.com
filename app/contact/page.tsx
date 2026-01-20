@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import Image from 'next/image'
+import { CalendlyLink } from '../components/calendly-link'
 
   return (
     <div className="min-h-screen bg-white">
@@ -327,14 +328,7 @@ import Image from 'next/image'
             of the neighborhood and show you available residences.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a
-              href="https://calendly.com/drjanduffy/1-home-tour-30-mins"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-block px-8 py-4 bg-white text-slate-900 rounded-lg font-semibold hover:bg-slate-100 transition-colors"
-            >
-              Schedule Your Tour
-            </a>
+            <CalendlyLink text="Schedule Your Walk-to-Everything Tour" variant="primary" />
             <a
               href="tel:7025001980"
               className="inline-block px-8 py-4 bg-transparent border-2 border-white text-white rounded-lg font-semibold hover:bg-white/10 transition-colors"

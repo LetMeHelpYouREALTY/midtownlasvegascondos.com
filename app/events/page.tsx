@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import { Metadata } from 'next'
+import { CalendlyLink } from '../components/calendly-link'
 
 export const metadata: Metadata = {
   title: 'Midtown Las Vegas Events Calendar | First Friday & More',
@@ -242,14 +243,7 @@ export default function EventsPage() {
             Live in the heart of the action. Contact Dr. Jan to find your perfect home in Midtown.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a
-              href="http://drjanduffy.realscout.com/onboarding"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-block px-8 py-4 bg-white text-slate-900 rounded-lg font-semibold hover:bg-slate-100 transition-colors"
-            >
-              Find Your Home
-            </a>
+            <CalendlyLink text="Schedule Your Walk-to-Everything Tour" variant="primary" />
             <a
               href="tel:7025001980"
               className="inline-block px-8 py-4 bg-transparent border-2 border-white text-white rounded-lg font-semibold hover:bg-white/10 transition-colors"

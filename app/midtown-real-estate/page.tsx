@@ -2,6 +2,7 @@ import Link from 'next/link'
 import { Metadata } from 'next'
 import { Breadcrumb } from '../components/breadcrumb'
 import { RealScoutListings } from '../components/realscout-listings'
+import { CalendlyLink } from '../components/calendly-link'
 import { RealScoutSearch } from '../components/realscout-search'
 
 export const metadata: Metadata = {
@@ -260,17 +261,12 @@ export default function MidtownRealEstatePage() {
             properties. Specializing in Arts District real estate.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <CalendlyLink text="Schedule Your Walk-to-Everything Tour" variant="primary" />
             <a
               href="tel:7025001980"
-              className="px-8 py-4 bg-white text-slate-900 rounded-lg font-semibold hover:bg-slate-100 transition-colors"
-            >
-              Call (702) 500-1980
-            </a>
-            <a
-              href="/contact"
               className="px-8 py-4 bg-transparent border-2 border-white text-white rounded-lg font-semibold hover:bg-white/10 transition-colors"
             >
-              Schedule Tour
+              Call (702) 500-1980
             </a>
           </div>
         </section>

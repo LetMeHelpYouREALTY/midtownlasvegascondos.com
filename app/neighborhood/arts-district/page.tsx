@@ -5,6 +5,7 @@ import { RealScoutListings } from '@/app/components/realscout-listings'
 import { PageFAQ } from '@/app/components/page-faq'
 import { Breadcrumb } from '@/app/components/breadcrumb'
 import { Metadata } from 'next'
+import { CalendlyLink } from '@/app/components/calendly-link'
 
 export const metadata: Metadata = {
   title: 'Arts District Las Vegas Real Estate | Midtown Condo Homes for Sale',
@@ -351,14 +352,7 @@ export default function ArtsDistrictPage() {
             luxury living in the heart of the Arts District.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a
-              href="http://drjanduffy.realscout.com/onboarding"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-block px-8 py-4 bg-white text-slate-900 rounded-lg font-semibold hover:bg-slate-100 transition-colors"
-            >
-              Start Your Search
-            </a>
+            <CalendlyLink text="Schedule Your Walk-to-Everything Tour" variant="primary" />
             <a
               href="tel:7025001980"
               className="inline-block px-8 py-4 bg-transparent border-2 border-white text-white rounded-lg font-semibold hover:bg-white/10 transition-colors"

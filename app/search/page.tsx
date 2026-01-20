@@ -3,6 +3,7 @@ import { RealScoutListings } from '../components/realscout-listings'
 import { Metadata } from 'next'
 import Link from 'next/link'
 import { Breadcrumb } from '../components/breadcrumb'
+import { CalendlyLink } from '../components/calendly-link'
 
 export const metadata: Metadata = {
   title: 'Property Search | Midtown Las Vegas Condos & Homes',
@@ -240,9 +241,10 @@ export default function SearchPage() {
           receive personalized property recommendations.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <CalendlyLink text="Schedule Your Walk-to-Everything Tour" variant="primary" className="bg-slate-900 text-white hover:bg-slate-800" />
           <a
             href="tel:7025001980"
-            className="inline-block px-8 py-4 bg-slate-900 text-white rounded-lg font-semibold hover:bg-slate-800 transition-colors"
+            className="inline-block px-8 py-4 bg-transparent border-2 border-slate-900 text-slate-900 rounded-lg font-semibold hover:bg-slate-50 transition-colors"
           >
             Call (702) 500-1980
           </a>

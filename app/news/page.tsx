@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import { Metadata } from 'next'
+import { CalendlyLink } from '../components/calendly-link'
 
 export const metadata: Metadata = {
   title: 'Midtown Las Vegas News & Updates | Arts District Development',
@@ -281,14 +282,7 @@ export default function NewsPage() {
             Contact Dr. Jan to learn about investment and living opportunities in Las Vegas's most exciting neighborhood.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a
-              href="http://drjanduffy.realscout.com/onboarding"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-block px-8 py-4 bg-white text-slate-900 rounded-lg font-semibold hover:bg-slate-100 transition-colors"
-            >
-              Start Your Search
-            </a>
+            <CalendlyLink text="Schedule Your Walk-to-Everything Tour" variant="primary" />
             <a
               href="tel:7025001980"
               className="inline-block px-8 py-4 bg-transparent border-2 border-white text-white rounded-lg font-semibold hover:bg-white/10 transition-colors"

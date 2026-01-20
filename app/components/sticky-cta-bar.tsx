@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useEffect } from 'react'
+import { CalendlyLink } from './calendly-link'
 
 export function StickyCTABar() {
   const [isVisible, setIsVisible] = useState(false)
@@ -48,13 +49,11 @@ export function StickyCTABar() {
     <div className="fixed bottom-0 left-0 right-0 z-50 md:hidden">
       <div className="bg-gradient-to-r from-slate-900 to-slate-700 text-white shadow-lg">
         <div className="flex items-center justify-between px-4 py-3">
-          <button
-            onClick={scrollToContact}
-            className="flex-1 mr-2 px-4 py-2 bg-white text-slate-900 rounded-lg font-semibold text-sm hover:bg-slate-100 transition-colors flex items-center justify-center"
-          >
-            <span className="mr-2">💰</span>
-            Free Valuation
-          </button>
+          <CalendlyLink
+            text="Schedule Tour"
+            variant="primary"
+            className="flex-1 mr-2 px-4 py-2 text-sm flex items-center justify-center"
+          />
           <a
             href="tel:7025001980"
             className="flex-1 ml-2 px-4 py-2 bg-transparent border-2 border-white text-white rounded-lg font-semibold text-sm hover:bg-white/10 transition-colors flex items-center justify-center"
