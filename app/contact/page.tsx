@@ -2,6 +2,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { CalendlyLink } from '../components/calendly-link'
 
+export default function ContactPage() {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
