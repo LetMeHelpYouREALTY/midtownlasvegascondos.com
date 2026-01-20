@@ -43,6 +43,7 @@ export function RealScoutListings({
   const containerRef = useRef<HTMLDivElement>(null)
   const [isLoaded, setIsLoaded] = useState(false)
   const [scriptLoaded, setScriptLoaded] = useState(false)
+  const widgetInitializedRef = useRef(false)
   const mappedSortOrder = mapSortOrder(sortOrder)
 
   // Load script on component mount
@@ -92,12 +93,18 @@ export function RealScoutListings({
   // Initialize widget when script is loaded
   useEffect(() => {
     if (typeof window === 'undefined' || !containerRef.current || !scriptLoaded) return
+    
+    // Reset initialization flag when dependencies change
+    widgetInitializedRef.current = false
 
     // Wait a bit for custom element to be registered after script loads
     const initializeWidget = () => {
-      if (window.customElements?.get('realscout-office-listings')) {
+      if (window.customElements?.get('realscout-office-listings') && !widgetInitializedRef.current) {
+        widgetInitializedRef.current = true
+        
         // Clear container
-        containerRef.current!.innerHTML = ''
+        if (!containerRef.current) return false
+        containerRef.current.innerHTML = ''
         
         // Create the element
         const element = document.createElement('realscout-office-listings')
