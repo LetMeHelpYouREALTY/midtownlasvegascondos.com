@@ -38,6 +38,7 @@ export default function MidtownPlazaPage() {
 
       {/* Content */}
       <section className="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+        <Breadcrumb items={breadcrumbItems} />
         <div className="grid md:grid-cols-2 gap-12 items-center mb-16">
           <div>
             <h2 className="text-4xl font-bold text-slate-900 mb-6">
