@@ -89,7 +89,7 @@ export default function HomePage() {
           </p>
         </div>
         <div className="max-w-4xl mx-auto">
-          <RealScoutSearch />
+          <RealScoutSearch priceMin="450000" priceMax="1000000" />
         </div>
       </section>
 
