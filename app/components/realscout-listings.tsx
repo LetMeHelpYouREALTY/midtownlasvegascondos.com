@@ -99,17 +99,32 @@ export function RealScoutListings({
         // Clear container
         containerRef.current!.innerHTML = ''
         
-        // Create and configure the element
+        // Create the element
         const element = document.createElement('realscout-office-listings')
+        
+        // Set price attributes FIRST (most important for filtering)
+        element.setAttribute('price-min', priceMin)
+        element.setAttribute('price-max', priceMax)
+        
+        // Then set other attributes
         element.setAttribute('agent-encoded-id', 'QWdlbnQtMjI1MDUw')
         element.setAttribute('sort-order', mappedSortOrder)
         element.setAttribute('listing-status', listingStatus)
         element.setAttribute('property-types', propertyTypes)
-        element.setAttribute('price-min', priceMin)
-        element.setAttribute('price-max', priceMax)
         element.setAttribute('limit', limit)
         
+        // Append to DOM
         containerRef.current!.appendChild(element)
+        
+        // Force re-application of price attributes after a short delay
+        // This ensures the widget reads them correctly after initialization
+        setTimeout(() => {
+          if (element.parentElement) {
+            element.setAttribute('price-min', priceMin)
+            element.setAttribute('price-max', priceMax)
+          }
+        }, 100)
+        
         setIsLoaded(true)
         return true
       }
