@@ -98,6 +98,7 @@ export default function RootLayout({
       <head>
         <link rel="manifest" href="/manifest.json" />
         <meta name="theme-color" content="#0f172a" />
+        <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet" />
         <Script
           src="https://em.realscout.com/widgets/realscout-web-components.umd.js"
           type="module"
@@ -113,6 +114,27 @@ export default function RootLayout({
         <main className="pt-16">{children}</main>
         <Footer />
         <StickyCTABar />
+        {/* Calendly badge widget */}
+        <Script
+          src="https://assets.calendly.com/assets/external/widget.js"
+          type="text/javascript"
+          strategy="afterInteractive"
+        />
+        <Script id="calendly-badge" strategy="afterInteractive">
+          {`
+            window.onload = function() {
+              if (typeof Calendly !== 'undefined') {
+                Calendly.initBadgeWidget({
+                  url: 'https://calendly.com/drjanduffy?hide_gdpr_banner=1',
+                  text: '',
+                  color: '#0069ff',
+                  textColor: '#ffffff',
+                  branding: true
+                });
+              }
+            };
+          `}
+        </Script>
       </body>
     </html>
   )
