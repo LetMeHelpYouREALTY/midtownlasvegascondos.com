@@ -57,12 +57,6 @@ export function RealScoutListings({
           )}
         </div>
       )}
-      <style jsx global>{`
-        realscout-office-listings {
-          --rs-listing-divider-color: #0e64c8;
-          width: 100%;
-        }
-      `}</style>
       <div
         className="w-full"
         dangerouslySetInnerHTML={{ __html: widgetHtml }}
