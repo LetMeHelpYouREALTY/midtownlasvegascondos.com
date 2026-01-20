@@ -158,7 +158,7 @@ export default function SearchPage() {
           </div>
         </div>
 
-        <RealScoutSearch />
+        <RealScoutSearch priceMin="450000" priceMax="1000000" />
       </section>
 
       {/* All Midtown Listings */}
