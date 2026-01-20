@@ -1,41 +1,5 @@
-'use client'
-
-import { useState } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
-
-export default function ContactPage() {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    interest: '',
-    message: '',
-  })
-  const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle')
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault()
-    setStatus('loading')
-
-    // Simulate form submission
-    await new Promise((resolve) => setTimeout(resolve, 1500))
-
-    console.log('Form submission:', formData)
-    setStatus('success')
-
-    // Reset form after 3 seconds
-    setTimeout(() => {
-      setFormData({ name: '', email: '', phone: '', interest: '', message: '' })
-      setStatus('idle')
-    }, 3000)
-  }
-
-  const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
-  ) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value })
-  }
 
   return (
     <div className="min-h-screen bg-white">
@@ -176,112 +140,56 @@ export default function ContactPage() {
         </div>
       </section>
 
-      {/* Contact Form & Info */}
+      {/* Schedule Tour & Contact Info */}
       <section className="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto bg-slate-50">
         <div className="grid lg:grid-cols-2 gap-12">
-          {/* Contact Form */}
+          {/* Schedule Tour with Calendly */}
           <div>
             <h2 className="text-3xl font-bold text-slate-900 mb-6">
-              Send Us a Message
+              Schedule Your Home Tour
             </h2>
-            <form onSubmit={handleSubmit} className="space-y-6">
-              <div>
-                <label htmlFor="name" className="block text-sm font-semibold text-slate-900 mb-2">
-                  Name *
-                </label>
-                <input
-                  type="text"
-                  id="name"
-                  name="name"
-                  value={formData.name}
-                  onChange={handleChange}
-                  required
-                  className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:outline-none focus:ring-2 focus:ring-slate-500"
-                  placeholder="Your name"
-                />
-              </div>
-
-              <div>
-                <label htmlFor="email" className="block text-sm font-semibold text-slate-900 mb-2">
-                  Email *
-                </label>
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  value={formData.email}
-                  onChange={handleChange}
-                  required
-                  className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:outline-none focus:ring-2 focus:ring-slate-500"
-                  placeholder="your@email.com"
-                />
-              </div>
-
-              <div>
-                <label htmlFor="phone" className="block text-sm font-semibold text-slate-900 mb-2">
-                  Phone
-                </label>
-                <input
-                  type="tel"
-                  id="phone"
-                  name="phone"
-                  value={formData.phone}
-                  onChange={handleChange}
-                  className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:outline-none focus:ring-2 focus:ring-slate-500"
-                  placeholder="(702) 500-1980"
-                />
-              </div>
-
-              <div>
-                <label htmlFor="interest" className="block text-sm font-semibold text-slate-900 mb-2">
-                  I'm interested in...
-                </label>
-                <select
-                  id="interest"
-                  name="interest"
-                  value={formData.interest}
-                  onChange={handleChange}
-                  className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:outline-none focus:ring-2 focus:ring-slate-500"
+            <p className="text-lg text-slate-600 mb-8">
+              Book a personalized 30-minute home tour with Dr. Jan Duffy. Experience Midtown properties in person and get expert guidance on finding your perfect home in the Arts District.
+            </p>
+            <div className="bg-white rounded-lg shadow-lg p-8 border border-slate-200">
+              <div className="text-center mb-6">
+                <svg
+                  className="w-16 h-16 mx-auto mb-4 text-slate-900"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
                 >
-                  <option value="">Select an option</option>
-                  <option value="english-residences">The English Residences</option>
-                  <option value="plaza-tower">Plaza Tower</option>
-                  <option value="investment">Investment Opportunities</option>
-                  <option value="neighborhood">Learning About the Neighborhood</option>
-                  <option value="other">Other</option>
-                </select>
-              </div>
-
-              <div>
-                <label htmlFor="message" className="block text-sm font-semibold text-slate-900 mb-2">
-                  Message *
-                </label>
-                <textarea
-                  id="message"
-                  name="message"
-                  value={formData.message}
-                  onChange={handleChange}
-                  required
-                  rows={6}
-                  className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:outline-none focus:ring-2 focus:ring-slate-500 resize-none"
-                  placeholder="Tell us about your interest in Midtown..."
-                />
-              </div>
-
-              <button
-                type="submit"
-                disabled={status === 'loading'}
-                className="w-full px-8 py-4 bg-slate-900 text-white rounded-lg font-semibold hover:bg-slate-800 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
-              >
-                {status === 'loading' ? 'Sending...' : status === 'success' ? 'Message Sent!' : 'Send Message'}
-              </button>
-
-              {status === 'success' && (
-                <p className="text-green-600 text-center">
-                  Thank you! We'll be in touch soon.
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
+                  />
+                </svg>
+                <h3 className="text-2xl font-bold text-slate-900 mb-2">
+                  Book Your Tour
+                </h3>
+                <p className="text-slate-600">
+                  Choose a time that works for you
                 </p>
-              )}
-            </form>
+              </div>
+              <a
+                href="https://calendly.com/drjanduffy/1-home-tour-30-mins"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block w-full px-8 py-4 bg-slate-900 text-white rounded-lg font-semibold hover:bg-slate-800 transition-colors text-center"
+              >
+                Schedule Your 30-Minute Home Tour
+              </a>
+              <p className="text-sm text-slate-500 text-center mt-4">
+                Opens in a new window. No account required.
+              </p>
+            </div>
+            <div className="mt-6 p-4 bg-slate-100 rounded-lg">
+              <p className="text-sm text-slate-600">
+                <strong className="text-slate-900">What to expect:</strong> Dr. Jan will provide a personalized tour of available properties, answer your questions about Midtown living, and help you understand the unique features of each neighborhood.
+              </p>
+            </div>
           </div>
 
           {/* Contact Information */}
@@ -420,12 +328,12 @@ export default function ContactPage() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
-              href="http://drjanduffy.realscout.com/onboarding"
+              href="https://calendly.com/drjanduffy/1-home-tour-30-mins"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-block px-8 py-4 bg-white text-slate-900 rounded-lg font-semibold hover:bg-slate-100 transition-colors"
             >
-              Start Property Search
+              Schedule Your Tour
             </a>
             <a
               href="tel:7025001980"
