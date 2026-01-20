@@ -44,7 +44,7 @@ Your RealScout widgets (agent ID: `QWdlbnQtMjI1MDUw`) are now live on your site!
 
 #### 1. **Homepage** (`/`)
 - **Title**: "Featured Midtown Properties"
-- **Price Range**: $300,000 - $2,000,000
+- **Price Range**: $450,000 - $1,000,000
 - **Property Types**: Condos, Single Family Residences
 - **Sort**: Price (Low to High)
 - **Limit**: 12 properties
@@ -52,7 +52,7 @@ Your RealScout widgets (agent ID: `QWdlbnQtMjI1MDUw`) are now live on your site!
 
 #### 2. **English Residences** (`/neighborhood/english-residences`)
 - **Title**: "Available English Residences & Midtown Condos"
-- **Price Range**: $250,000 - $1,500,000
+- **Price Range**: $450,000 - $1,000,000
 - **Property Types**: Condos only
 - **Sort**: Price (Low to High)
 - **Limit**: 9 properties
@@ -60,7 +60,7 @@ Your RealScout widgets (agent ID: `QWdlbnQtMjI1MDUw`) are now live on your site!
 
 #### 3. **Midtown Plaza** (`/neighborhood/midtown-plaza`)
 - **Title**: "Homes Near Midtown Plaza"
-- **Price Range**: $200,000 - $1,000,000
+- **Price Range**: $450,000 - $1,000,000
 - **Property Types**: Condos, Single Family Residences
 - **Sort**: Price (Low to High)
 - **Limit**: 9 properties
@@ -68,7 +68,7 @@ Your RealScout widgets (agent ID: `QWdlbnQtMjI1MDUw`) are now live on your site!
 
 #### 4. **Arts District** (`/neighborhood/arts-district`)
 - **Title**: "Arts District Properties"
-- **Price Range**: $250,000 - $1,500,000
+- **Price Range**: $450,000 - $1,000,000
 - **Property Types**: Condos, SFR, Townhouses
 - **Sort**: Newest First
 - **Limit**: 12 properties
@@ -76,7 +76,7 @@ Your RealScout widgets (agent ID: `QWdlbnQtMjI1MDUw`) are now live on your site!
 
 #### 5. **Search Page** (`/search`)
 - **Title**: "All Midtown & Arts District Listings"
-- **Price Range**: $150,000 - $3,000,000
+- **Price Range**: $450,000 - $1,000,000
 - **Property Types**: Condos, SFR, Townhouses
 - **Sort**: Newest First
 - **Limit**: 24 properties

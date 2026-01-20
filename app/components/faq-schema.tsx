@@ -34,7 +34,7 @@ export function FAQSchema() {
         name: 'How much do condos in Midtown Las Vegas cost?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'Midtown Las Vegas condos range from approximately $250,000 to $1,500,000 depending on size, location, and amenities. The English Residences offer condo-hotel units starting in the mid-$200s. Contact Dr. Jan at (702) 500-1955 for current availability.',
+          text: 'Midtown Las Vegas condos in our featured listings range from $450,000 to $1,000,000 depending on size, location, and amenities. The English Residences offer condo-hotel units with various price points. Contact Dr. Jan at (702) 500-1955 for current availability.',
         },
       },
       {
@@ -66,7 +66,7 @@ export function FAQSchema() {
         name: 'What types of properties are available in Midtown?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'Midtown offers luxury condos, condo-hotels (The English Residences), townhouses, and single-family homes ranging from $250,000 to $2,000,000+. Browse available properties at drjanduffy.realscout.com or call Dr. Jan at (702) 500-1955.',
+          text: 'Midtown offers luxury condos, condo-hotels (The English Residences), townhouses, and single-family homes. Our featured properties range from $450,000 to $1,000,000. Browse available properties at drjanduffy.realscout.com or call Dr. Jan at (702) 500-1955.',
         },
       },
       {

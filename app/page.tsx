@@ -588,7 +588,7 @@ export default function HomePage() {
               {
                 question: 'What types of properties are available in Midtown?',
                 answer:
-                  'Midtown offers luxury condos, condo-hotels (The English Residences), townhouses, and single-family homes ranging from $250,000 to $2,000,000+. Browse available properties at drjanduffy.realscout.com or call Dr. Jan at (702) 500-1955.',
+                  'Midtown offers luxury condos, condo-hotels (The English Residences), townhouses, and single-family homes. Our featured properties range from $450,000 to $1,000,000. Browse available properties at drjanduffy.realscout.com or call Dr. Jan at (702) 500-1955.',
               },
               {
                 question: 'Why should I buy in the Arts District?',
