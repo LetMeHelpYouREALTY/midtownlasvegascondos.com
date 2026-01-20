@@ -47,12 +47,15 @@ const nextConfig: NextConfig = {
       },
     ]
   },
-  // Image optimization
+  // Image optimization for Core Web Vitals
   images: {
     formats: ['image/avif', 'image/webp'],
     deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
     imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
     minimumCacheTTL: 60,
+    // Optimize for LCP (Largest Contentful Paint)
+    dangerouslyAllowSVG: false,
+    contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
   },
   // Compression
   compress: true,
@@ -60,6 +63,14 @@ const nextConfig: NextConfig = {
   poweredByHeader: false,
   // Enable React strict mode
   reactStrictMode: true,
+  // Optimize for INP (Interaction to Next Paint) - 2025 Core Web Vital
+  // Reduce JavaScript execution time
+  swcMinify: true,
+  // Experimental features for better performance
+  experimental: {
+    // Optimize server components
+    optimizePackageImports: ['lucide-react', '@radix-ui/react-icons'],
+  },
 }
 
 export default nextConfig

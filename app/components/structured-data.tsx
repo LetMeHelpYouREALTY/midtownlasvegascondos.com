@@ -201,3 +201,39 @@ export function ResidenceSchema() {
   )
 }
 
+/**
+ * WebSite schema with SearchAction for Google site search
+ * This enables Google to show a search box in search results
+ */
+export function WebSiteSchema() {
+  const schema = {
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    name: 'Midtown Las Vegas Condos',
+    url: 'https://www.midtownvegascondos.com',
+    description:
+      'Luxury condominium living in the heart of Las Vegas Arts District. Find your perfect home with Dr. Jan Duffy.',
+    publisher: {
+      '@type': 'Organization',
+      name: 'Las Vegas Arts District Condos | Homes by Dr. Jan Duffy',
+      url: 'https://www.midtownvegascondos.com',
+    },
+    potentialAction: {
+      '@type': 'SearchAction',
+      target: {
+        '@type': 'EntryPoint',
+        urlTemplate:
+          'https://www.midtownvegascondos.com/search?q={search_term_string}',
+      },
+      'query-input': 'required name=search_term_string',
+    },
+    inLanguage: 'en-US',
+  }
+
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+    />
+  )
+}
