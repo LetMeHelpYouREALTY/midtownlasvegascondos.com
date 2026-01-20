@@ -54,7 +54,7 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: 'Midtown Las Vegas Condos',
+    title: 'Luxury Midtown Las Vegas Condos | Arts District Real Estate',
     description:
       'Luxury condominium living in the heart of Las Vegas Arts District. Contact Dr. Jan at (702) 500-1955',
     url: 'https://www.midtownvegascondos.com',
