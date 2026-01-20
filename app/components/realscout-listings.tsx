@@ -94,89 +94,87 @@ export function RealScoutListings({
   useEffect(() => {
     if (typeof window === 'undefined' || !containerRef.current || !scriptLoaded) return
     
-    // Reset initialization flag when dependencies change
+    // Reset state when dependencies change
     widgetInitializedRef.current = false
+    setIsLoaded(false)
+
+    let checkInterval: NodeJS.Timeout | null = null
+    let isMounted = true
 
     // Wait a bit for custom element to be registered after script loads
     const initializeWidget = () => {
+      if (!isMounted || !containerRef.current) return false
+      
       if (window.customElements?.get('realscout-office-listings') && !widgetInitializedRef.current) {
         widgetInitializedRef.current = true
         
-        // Clear container
-        if (!containerRef.current) return false
-        containerRef.current.innerHTML = ''
-        
-        // Create the element
-        const element = document.createElement('realscout-office-listings')
-        
-        // Set attributes in the EXACT order RealScout expects (based on their documentation)
-        // Order: agent-encoded-id, sort-order, listing-status, property-types, price-min, price-max
-        element.setAttribute('agent-encoded-id', 'QWdlbnQtMjI1MDUw')
-        element.setAttribute('sort-order', mappedSortOrder)
-        element.setAttribute('listing-status', listingStatus)
-        element.setAttribute('property-types', propertyTypes)
-        element.setAttribute('price-min', priceMin)
-        element.setAttribute('price-max', priceMax)
-        
-        // Set limit if provided (not in the example, but we'll keep it)
-        if (limit) {
-          element.setAttribute('limit', limit)
+        try {
+          // Clear container
+          containerRef.current.innerHTML = ''
+          
+          // Create the element
+          const element = document.createElement('realscout-office-listings')
+          
+          // Set attributes in the EXACT order RealScout expects
+          element.setAttribute('agent-encoded-id', 'QWdlbnQtMjI1MDUw')
+          element.setAttribute('sort-order', mappedSortOrder)
+          element.setAttribute('listing-status', listingStatus)
+          element.setAttribute('property-types', propertyTypes)
+          element.setAttribute('price-min', priceMin)
+          element.setAttribute('price-max', priceMax)
+          
+          // Set limit if provided
+          if (limit) {
+            element.setAttribute('limit', limit)
+          }
+          
+          // Append to DOM
+          containerRef.current.appendChild(element)
+          
+          if (isMounted) {
+            setIsLoaded(true)
+          }
+          
+          return true
+        } catch (error) {
+          console.error('Error initializing RealScout widget:', error)
+          widgetInitializedRef.current = false
+          return false
         }
-        
-        // Debug: Log attributes before appending
-        console.log('RealScout Listings Widget - Setting attributes:', {
-          'agent-encoded-id': 'QWdlbnQtMjI1MDUw',
-          'sort-order': mappedSortOrder,
-          'listing-status': listingStatus,
-          'property-types': propertyTypes,
-          'price-min': priceMin,
-          'price-max': priceMax,
-          'limit': limit
-        })
-        
-        // Append to DOM
-        containerRef.current!.appendChild(element)
-        
-        // Debug: Verify attributes after appending
-        setTimeout(() => {
-          console.log('RealScout Listings Widget - Attributes after append:', {
-            'agent-encoded-id': element.getAttribute('agent-encoded-id'),
-            'sort-order': element.getAttribute('sort-order'),
-            'listing-status': element.getAttribute('listing-status'),
-            'property-types': element.getAttribute('property-types'),
-            'price-min': element.getAttribute('price-min'),
-            'price-max': element.getAttribute('price-max'),
-            'limit': element.getAttribute('limit')
-          })
-        }, 200)
-        
-        setIsLoaded(true)
-        return true
       }
       return false
     }
 
     // Try immediately
     if (initializeWidget()) {
-      return
+      return () => {
+        isMounted = false
+        if (checkInterval) clearInterval(checkInterval)
+      }
     }
 
     // Wait for custom element registration - check every 100ms for up to 5 seconds
     let attempts = 0
     const maxAttempts = 50
     
-    const checkInterval = setInterval(() => {
+    checkInterval = setInterval(() => {
+      if (!isMounted) {
+        if (checkInterval) clearInterval(checkInterval)
+        return
+      }
+      
       attempts++
       if (initializeWidget()) {
-        clearInterval(checkInterval)
+        if (checkInterval) clearInterval(checkInterval)
       } else if (attempts >= maxAttempts) {
-        clearInterval(checkInterval)
+        if (checkInterval) clearInterval(checkInterval)
         console.warn('RealScout custom element did not register within timeout')
       }
     }, 100)
 
     return () => {
-      clearInterval(checkInterval)
+      isMounted = false
+      if (checkInterval) clearInterval(checkInterval)
     }
   }, [scriptLoaded, mappedSortOrder, listingStatus, propertyTypes, priceMin, priceMax, limit])
 

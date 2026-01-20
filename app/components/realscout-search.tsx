@@ -66,72 +66,79 @@ export function RealScoutSearch({
   useEffect(() => {
     if (typeof window === 'undefined' || !containerRef.current || !scriptLoaded) return
     
-    // Reset initialization flag when dependencies change
+    // Reset state when dependencies change
     widgetInitializedRef.current = false
+    setIsLoaded(false)
+
+    let checkInterval: NodeJS.Timeout | null = null
+    let isMounted = true
 
     // Wait a bit for custom element to be registered after script loads
     const initializeWidget = () => {
+      if (!isMounted || !containerRef.current) return false
+      
       if (window.customElements?.get('realscout-advanced-search') && !widgetInitializedRef.current) {
         widgetInitializedRef.current = true
         
-        // Clear container
-        if (!containerRef.current) return false
-        containerRef.current.innerHTML = ''
-        
-        // Create the element
-        const element = document.createElement('realscout-advanced-search')
-        
-        // Set attributes in the correct order (agent-encoded-id first, then price attributes)
-        element.setAttribute('agent-encoded-id', 'QWdlbnQtMjI1MDUw')
-        element.setAttribute('price-min', priceMin)
-        element.setAttribute('price-max', priceMax)
-        
-        // Debug: Log attributes before appending
-        console.log('RealScout Search Widget - Setting attributes:', {
-          'agent-encoded-id': 'QWdlbnQtMjI1MDUw',
-          'price-min': priceMin,
-          'price-max': priceMax
-        })
-        
-        // Append to DOM
-        containerRef.current!.appendChild(element)
-        
-        // Debug: Verify attributes after appending
-        setTimeout(() => {
-          console.log('RealScout Search Widget - Attributes after append:', {
-            'agent-encoded-id': element.getAttribute('agent-encoded-id'),
-            'price-min': element.getAttribute('price-min'),
-            'price-max': element.getAttribute('price-max')
-          })
-        }, 200)
-        
-        setIsLoaded(true)
-        return true
+        try {
+          // Clear container
+          containerRef.current.innerHTML = ''
+          
+          // Create the element
+          const element = document.createElement('realscout-advanced-search')
+          
+          // Set attributes in the correct order
+          element.setAttribute('agent-encoded-id', 'QWdlbnQtMjI1MDUw')
+          element.setAttribute('price-min', priceMin)
+          element.setAttribute('price-max', priceMax)
+          
+          // Append to DOM
+          containerRef.current.appendChild(element)
+          
+          if (isMounted) {
+            setIsLoaded(true)
+          }
+          
+          return true
+        } catch (error) {
+          console.error('Error initializing RealScout widget:', error)
+          widgetInitializedRef.current = false
+          return false
+        }
       }
       return false
     }
 
     // Try immediately
     if (initializeWidget()) {
-      return
+      return () => {
+        isMounted = false
+        if (checkInterval) clearInterval(checkInterval)
+      }
     }
 
     // Wait for custom element registration - check every 100ms for up to 5 seconds
     let attempts = 0
     const maxAttempts = 50
     
-    const checkInterval = setInterval(() => {
+    checkInterval = setInterval(() => {
+      if (!isMounted) {
+        if (checkInterval) clearInterval(checkInterval)
+        return
+      }
+      
       attempts++
       if (initializeWidget()) {
-        clearInterval(checkInterval)
+        if (checkInterval) clearInterval(checkInterval)
       } else if (attempts >= maxAttempts) {
-        clearInterval(checkInterval)
+        if (checkInterval) clearInterval(checkInterval)
         console.warn('RealScout custom element did not register within timeout')
       }
     }, 100)
 
     return () => {
-      clearInterval(checkInterval)
+      isMounted = false
+      if (checkInterval) clearInterval(checkInterval)
     }
   }, [scriptLoaded, priceMin, priceMax])
 
