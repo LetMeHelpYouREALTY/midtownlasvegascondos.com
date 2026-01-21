@@ -44,7 +44,7 @@ export default function HomePage() {
             className="object-cover"
             priority
             fetchPriority="high"
-            quality={75}
+            quality={65}
             sizes="100vw"
           />
         </div>

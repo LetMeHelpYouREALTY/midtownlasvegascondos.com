@@ -105,6 +105,13 @@ export default function RootLayout({
         {/* Explicit robots meta tag to ensure indexing */}
         <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
         <link rel="manifest" href="/manifest.json" />
+        {/* Preload hero image for faster LCP */}
+        <link
+          rel="preload"
+          as="image"
+          href="/images/midtown/blvd-aerial-rendering.jpg"
+          fetchPriority="high"
+        />
         {/* Apple touch icon - using favicon.ico as fallback until dedicated PNG is created */}
         <link rel="apple-touch-icon" href="/favicon.ico" sizes="180x180" />
         {/* theme-color is supported by Chrome, Edge, Safari, and mobile browsers (not Firefox/Opera) */}
@@ -115,6 +122,8 @@ export default function RootLayout({
         <link rel="preconnect" href="https://www.googletagmanager.com" />
         <link rel="preconnect" href="https://em.realscout.com" />
         <link rel="preconnect" href="https://www.realscout.com" />
+        {/* Preconnect to CloudFront for RealScout listing images - critical for LCP */}
+        <link rel="preconnect" href="https://d1buiexcd5gara.cloudfront.net" crossOrigin="anonymous" />
         {/* DNS Prefetch for non-critical resources */}
         <link rel="dns-prefetch" href="https://assets.calendly.com" />
         <link rel="dns-prefetch" href="https://calendly.com" />
@@ -122,13 +131,12 @@ export default function RootLayout({
         <link rel="dns-prefetch" href="https://maps.googleapis.com" />
         <link rel="dns-prefetch" href="https://storage.googleapis.com" />
         <meta httpEquiv="x-dns-prefetch-control" content="on" />
-        {/* RealScout widget script - must load before widgets */}
+        {/* RealScout widget script - load after interactive to reduce blocking */}
         <Script
           src="https://em.realscout.com/widgets/realscout-web-components.umd.js"
-          strategy="beforeInteractive"
+          strategy="lazyOnload"
           id="realscout-web-components-script"
         />
-        <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
         {/* Calendly CSS - loaded asynchronously to avoid render blocking */}
         <link
           href="https://assets.calendly.com/assets/external/widget.css"
