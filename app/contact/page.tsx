@@ -356,12 +356,11 @@ export default function ContactPage() {
                     src="https://storage.googleapis.com/maps-solutions-v9iuebxrqf/locator-plus/2bo5/locator-plus.html"
                     width="100%"
                     height="100%"
-                    className="border-0"
+                    className="absolute inset-0 w-full h-full border-0"
                     loading="lazy"
                     allowFullScreen
                     referrerPolicy="no-referrer-when-downgrade"
                     title="Midtown Las Vegas Location Map"
-                    className="absolute inset-0 w-full h-full"
                   />
                 </div>
               </div>
