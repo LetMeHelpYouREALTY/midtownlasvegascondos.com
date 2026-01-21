@@ -78,10 +78,9 @@ export default function HomePage() {
           <RealScoutListings
             title="Featured Homes in Midtown"
             description="Discover beautiful single-family homes in your price range"
-            priceMin="450000"
-            priceMax="1300000"
+            priceMin="250000"
+            priceMax="2000000"
             sortOrder="NEWEST"
-            propertyTypes=",SFR,TC,MF"
             listingStatus="For Sale"
           />
         </div>

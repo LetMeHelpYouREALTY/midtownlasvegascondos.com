@@ -37,7 +37,7 @@ export function RealScoutListings({
   priceMax = '1300000',
   sortOrder = 'NEWEST',
   listingStatus = 'For Sale',
-  propertyTypes = ',SFR,TC,MF',
+  propertyTypes,
 }: RealScoutListingsProps) {
   const [isClient, setIsClient] = useState(false)
   const containerRef = useRef<HTMLDivElement>(null)
@@ -48,15 +48,17 @@ export function RealScoutListings({
     setIsClient(true)
   }, [])
 
-  // Create the widget HTML
-  const widgetHtml = `<realscout-office-listings 
-    agent-encoded-id="QWdlbnQtMjI1MDUw"
-    sort-order="${mappedSortOrder}"
-    listing-status="${listingStatus}"
-    property-types="${propertyTypes}"
-    price-min="${priceMin}"
-    price-max="${priceMax}"
-  ></realscout-office-listings>`
+  // Create the widget HTML - only include attributes with values
+  const attributes = [
+    'agent-encoded-id="QWdlbnQtMjI1MDUw"',
+    `sort-order="${mappedSortOrder}"`,
+    `listing-status="${listingStatus}"`,
+    propertyTypes ? `property-types="${propertyTypes}"` : '',
+    priceMin ? `price-min="${priceMin}"` : '',
+    priceMax ? `price-max="${priceMax}"` : '',
+  ].filter(Boolean).join(' ')
+
+  const widgetHtml = `<realscout-office-listings ${attributes}></realscout-office-listings>`
 
   return (
     <div className="w-full">
