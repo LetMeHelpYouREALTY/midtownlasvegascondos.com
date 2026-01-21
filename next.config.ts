@@ -96,6 +96,17 @@ const nextConfig: NextConfig = {
         destination: '/midtown-real-estate',
         permanent: true,
       },
+      // Redirect old incomplete URLs that Google is trying to crawl
+      {
+        source: '/ap',
+        destination: '/',
+        permanent: true,
+      },
+      {
+        source: '/lc',
+        destination: '/',
+        permanent: true,
+      },
     ]
   },
   // Compression
