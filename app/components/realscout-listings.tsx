@@ -44,7 +44,7 @@ export function RealScoutListings({
   const containerRef = useRef<HTMLDivElement>(null)
   const mappedSortOrder = mapSortOrder(sortOrder)
 
-  // Use Intersection Observer to load widget and script only when it's about to be visible
+  // Load widget script - use Intersection Observer if below fold, otherwise load immediately
   useEffect(() => {
     setIsClient(true)
     
@@ -52,68 +52,88 @@ export function RealScoutListings({
     
     let scriptLoaded = false
     
-    // Use Intersection Observer to load widget when it's about to enter viewport
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting && !scriptLoaded) {
-            scriptLoaded = true
-            
-            // Dynamically load RealScout script only when widget is about to be visible
-            const loadScript = () => {
-              if (typeof window === 'undefined') return
-              
-              // Check if script is already loaded
-              if (window.customElements?.get('realscout-office-listings')) {
-                setScriptLoaded(true)
-                return
-              }
-              
-              // Check if script tag already exists
-              const existingScript = document.getElementById('realscout-web-components-script')
-              if (existingScript) {
-                // Script is loading, poll for custom element
-                const interval = setInterval(() => {
-                  if (window.customElements?.get('realscout-office-listings')) {
-                    setScriptLoaded(true)
-                    clearInterval(interval)
-                  }
-                }, 100)
-                
-                setTimeout(() => {
-                  clearInterval(interval)
-                  setScriptLoaded(true)
-                }, 5000)
-                return
-              }
-              
-              // Load script dynamically
-              const script = document.createElement('script')
-              script.id = 'realscout-web-components-script'
-              script.src = 'https://em.realscout.com/widgets/realscout-web-components.umd.js'
-              script.async = true
-              script.onload = () => {
-                setScriptLoaded(true)
-              }
-              script.onerror = () => {
-                setScriptLoaded(true) // Still render, will show error state
-              }
-              document.head.appendChild(script)
-            }
-            
-            loadScript()
-            observer.disconnect()
-          }
-        })
-      },
-      {
-        rootMargin: '200px', // Start loading 200px before widget enters viewport
+    // Function to load RealScout script
+    const loadScript = () => {
+      if (typeof window === 'undefined' || scriptLoaded) return
+      scriptLoaded = true
+      
+      // Check if script is already loaded
+      if (window.customElements?.get('realscout-office-listings')) {
+        setScriptLoaded(true)
+        return
       }
-    )
+      
+      // Check if script tag already exists
+      const existingScript = document.getElementById('realscout-web-components-script')
+      if (existingScript) {
+        // Script is loading, poll for custom element
+        const interval = setInterval(() => {
+          if (window.customElements?.get('realscout-office-listings')) {
+            setScriptLoaded(true)
+            clearInterval(interval)
+          }
+        }, 100)
+        
+        setTimeout(() => {
+          clearInterval(interval)
+          setScriptLoaded(true)
+        }, 5000)
+        return
+      }
+      
+      // Load script dynamically
+      const script = document.createElement('script')
+      script.id = 'realscout-web-components-script'
+      script.src = 'https://em.realscout.com/widgets/realscout-web-components.umd.js'
+      script.async = true
+      script.onload = () => {
+        // Wait for custom element to be registered
+        const checkElement = setInterval(() => {
+          if (window.customElements?.get('realscout-office-listings')) {
+            setScriptLoaded(true)
+            clearInterval(checkElement)
+          }
+        }, 50)
+        
+        // Timeout after 3 seconds
+        setTimeout(() => {
+          clearInterval(checkElement)
+          setScriptLoaded(true)
+        }, 3000)
+      }
+      script.onerror = () => {
+        setScriptLoaded(true) // Still render, will show error state
+      }
+      document.head.appendChild(script)
+    }
     
-    observer.observe(containerRef.current)
+    // Check if element is already visible (above fold)
+    const rect = containerRef.current.getBoundingClientRect()
+    const isVisible = rect.top < window.innerHeight + 200
     
-    return () => observer.disconnect()
+    if (isVisible) {
+      // Widget is above fold or close to viewport, load immediately
+      loadScript()
+    } else {
+      // Widget is below fold, use Intersection Observer
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting && !scriptLoaded) {
+              loadScript()
+              observer.disconnect()
+            }
+          })
+        },
+        {
+          rootMargin: '200px', // Start loading 200px before widget enters viewport
+        }
+      )
+      
+      observer.observe(containerRef.current)
+      
+      return () => observer.disconnect()
+    }
   }, [])
 
   // Create the widget HTML - only include attributes with values
