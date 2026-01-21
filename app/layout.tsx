@@ -10,6 +10,7 @@ import { GoogleAnalytics } from './components/google-analytics'
 import { AggregateRatingSchema } from './components/aggregate-rating-schema'
 import { StickyCTABar } from './components/sticky-cta-bar'
 import { WidgetTracker } from './components/widget-tracker'
+import { CalendlyBadge } from './components/calendly-badge'
 
 const inter = Inter({ 
   subsets: ['latin'],
@@ -131,27 +132,7 @@ export default function RootLayout({
         <main className="pt-16">{children}</main>
         <Footer />
         <StickyCTABar />
-        {/* Calendly badge widget */}
-        <Script
-          src="https://assets.calendly.com/assets/external/widget.js"
-          type="text/javascript"
-          strategy="afterInteractive"
-        />
-        <Script id="calendly-badge" strategy="afterInteractive">
-          {`
-            window.onload = function() {
-              if (typeof Calendly !== 'undefined') {
-                Calendly.initBadgeWidget({
-                  url: 'https://calendly.com/drjanduffy?hide_gdpr_banner=1',
-                  text: '',
-                  color: '#0069ff',
-                  textColor: '#ffffff',
-                  branding: true
-                });
-              }
-            };
-          `}
-        </Script>
+        <CalendlyBadge />
       </body>
     </html>
   )

@@ -44,6 +44,8 @@ export function RealScoutListings({
   const [isLoaded, setIsLoaded] = useState(false)
   const [scriptLoaded, setScriptLoaded] = useState(false)
   const widgetInitializedRef = useRef(false)
+  const elementRef = useRef<HTMLElement | null>(null)
+  const mountedRef = useRef(true)
   const mappedSortOrder = mapSortOrder(sortOrder)
 
   // Load script on component mount
@@ -137,16 +139,24 @@ export function RealScoutListings({
   useEffect(() => {
     if (typeof window === 'undefined' || !containerRef.current || !scriptLoaded) return
     
+    mountedRef.current = true
+    
     // Reset state when dependencies change
     widgetInitializedRef.current = false
     setIsLoaded(false)
+    
+    // Clear any existing element
+    if (elementRef.current && elementRef.current.parentNode) {
+      elementRef.current.parentNode.removeChild(elementRef.current)
+    }
+    elementRef.current = null
 
     let checkInterval: NodeJS.Timeout | null = null
-    let isMounted = true
+    let timeoutId: NodeJS.Timeout | null = null
 
     // Wait a bit for custom element to be registered after script loads
     const initializeWidget = () => {
-      if (!isMounted || !containerRef.current) return false
+      if (!mountedRef.current || !containerRef.current) return false
       
       try {
         if (window.customElements?.get('realscout-office-listings') && !widgetInitializedRef.current) {
@@ -159,6 +169,7 @@ export function RealScoutListings({
           
           // Create the element
           const element = document.createElement('realscout-office-listings')
+          elementRef.current = element
           
           // Set attributes BEFORE appending (RealScout may read them during connection)
           element.setAttribute('agent-encoded-id', 'QWdlbnQtMjI1MDUw')
@@ -176,38 +187,31 @@ export function RealScoutListings({
           // Append to DOM
           containerRef.current.appendChild(element)
           
-          // Re-apply attributes after connection to ensure they're recognized
-          // Some custom elements need attributes set after being connected
-          requestAnimationFrame(() => {
-            if (!isMounted || !containerRef.current || !element.parentNode) return
-            
-            // Re-apply all attributes to ensure widget recognizes them
-            element.setAttribute('agent-encoded-id', 'QWdlbnQtMjI1MDUw')
-            element.setAttribute('sort-order', mappedSortOrder)
-            element.setAttribute('listing-status', listingStatus)
-            element.setAttribute('property-types', propertyTypes)
-            element.setAttribute('price-min', priceMin)
-            element.setAttribute('price-max', priceMax)
-            
-            if (limit) {
-              element.setAttribute('limit', limit)
+          // Use setTimeout instead of requestAnimationFrame to avoid closure issues
+          // Small delay to ensure element is connected before setting attributes again
+          timeoutId = setTimeout(() => {
+            if (!mountedRef.current || !containerRef.current || !element.parentNode || element !== elementRef.current) {
+              return
             }
             
-            // Debug: Log attribute values to console (remove in production if needed)
-            if (process.env.NODE_ENV === 'development') {
-              console.log('RealScout Listings Attributes:', {
-                'agent-encoded-id': element.getAttribute('agent-encoded-id'),
-                'sort-order': element.getAttribute('sort-order'),
-                'listing-status': element.getAttribute('listing-status'),
-                'property-types': element.getAttribute('property-types'),
-                'price-min': element.getAttribute('price-min'),
-                'price-max': element.getAttribute('price-max'),
-                'limit': element.getAttribute('limit'),
-              })
+            try {
+              // Re-apply all attributes to ensure widget recognizes them
+              element.setAttribute('agent-encoded-id', 'QWdlbnQtMjI1MDUw')
+              element.setAttribute('sort-order', mappedSortOrder)
+              element.setAttribute('listing-status', listingStatus)
+              element.setAttribute('property-types', propertyTypes)
+              element.setAttribute('price-min', priceMin)
+              element.setAttribute('price-max', priceMax)
+              
+              if (limit) {
+                element.setAttribute('limit', limit)
+              }
+            } catch (err) {
+              // Silently fail - attributes may already be set
             }
-          })
+          }, 50)
           
-          if (isMounted) {
+          if (mountedRef.current) {
             setIsLoaded(true)
           }
           
@@ -216,7 +220,7 @@ export function RealScoutListings({
       } catch (error) {
         console.error('Error initializing RealScout widget:', error)
         widgetInitializedRef.current = false
-        if (isMounted) {
+        if (mountedRef.current) {
           setIsLoaded(false)
         }
         return false
@@ -227,8 +231,17 @@ export function RealScoutListings({
     // Try immediately
     if (initializeWidget()) {
       return () => {
-        isMounted = false
+        mountedRef.current = false
         if (checkInterval) clearInterval(checkInterval)
+        if (timeoutId) clearTimeout(timeoutId)
+        if (elementRef.current && elementRef.current.parentNode) {
+          try {
+            elementRef.current.parentNode.removeChild(elementRef.current)
+          } catch (e) {
+            // Ignore errors during cleanup
+          }
+        }
+        elementRef.current = null
       }
     }
 
@@ -237,7 +250,7 @@ export function RealScoutListings({
     const maxAttempts = 50
     
     checkInterval = setInterval(() => {
-      if (!isMounted) {
+      if (!mountedRef.current) {
         if (checkInterval) clearInterval(checkInterval)
         return
       }
@@ -252,8 +265,17 @@ export function RealScoutListings({
     }, 100)
 
     return () => {
-      isMounted = false
+      mountedRef.current = false
       if (checkInterval) clearInterval(checkInterval)
+      if (timeoutId) clearTimeout(timeoutId)
+      if (elementRef.current && elementRef.current.parentNode) {
+        try {
+          elementRef.current.parentNode.removeChild(elementRef.current)
+        } catch (e) {
+          // Ignore errors during cleanup
+        }
+      }
+      elementRef.current = null
     }
   }, [scriptLoaded, mappedSortOrder, listingStatus, propertyTypes, priceMin, priceMax, limit])
 

@@ -1,5 +1,7 @@
 'use client'
 
+import { useEffect, useState } from 'react'
+
 interface CalendlyLinkProps {
   text?: string
   className?: string
@@ -11,13 +13,56 @@ export function CalendlyLink({
   className = '',
   variant = 'primary',
 }: CalendlyLinkProps) {
+  const [calendlyReady, setCalendlyReady] = useState(false)
+
+  useEffect(() => {
+    if (typeof window === 'undefined') return
+
+    // Check if Calendly is already loaded
+    if ((window as any).Calendly) {
+      setCalendlyReady(true)
+      return
+    }
+
+    // Wait for Calendly to load
+    const checkCalendly = setInterval(() => {
+      if ((window as any).Calendly) {
+        setCalendlyReady(true)
+        clearInterval(checkCalendly)
+      }
+    }, 100)
+
+    // Timeout after 5 seconds
+    const timeout = setTimeout(() => {
+      clearInterval(checkCalendly)
+    }, 5000)
+
+    return () => {
+      clearInterval(checkCalendly)
+      clearTimeout(timeout)
+    }
+  }, [])
+
   const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
     e.preventDefault()
-    if (typeof window !== 'undefined' && (window as any).Calendly) {
-      ;(window as any).Calendly.initPopupWidget({
-        url: 'https://calendly.com/drjanduffy',
-      })
+    
+    if (typeof window === 'undefined') return false
+
+    try {
+      if ((window as any).Calendly) {
+        ;(window as any).Calendly.initPopupWidget({
+          url: 'https://calendly.com/drjanduffy',
+        })
+      } else {
+        // Fallback: open Calendly in new tab if widget not available
+        window.open('https://calendly.com/drjanduffy', '_blank')
+      }
+    } catch (error) {
+      console.error('Error opening Calendly:', error)
+      // Fallback: open Calendly in new tab
+      window.open('https://calendly.com/drjanduffy', '_blank')
     }
+    
     return false
   }
 

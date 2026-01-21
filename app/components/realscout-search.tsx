@@ -17,12 +17,14 @@ export function RealScoutSearch({
   const [isLoaded, setIsLoaded] = useState(false)
   const [scriptLoaded, setScriptLoaded] = useState(false)
   const widgetInitializedRef = useRef(false)
+  const elementRef = useRef<HTMLElement | null>(null)
+  const mountedRef = useRef(true)
 
   // Load script on component mount
   useEffect(() => {
     if (typeof window === 'undefined') return
 
-    let isMounted = true
+    mountedRef.current = true
 
     // Check if script is already loaded
     const existingScript = document.querySelector(
@@ -32,10 +34,12 @@ export function RealScoutSearch({
     if (existingScript) {
       // Script already exists, check if custom element is registered
       if (window.customElements?.get('realscout-advanced-search')) {
-        if (isMounted) {
+        if (mountedRef.current) {
           setScriptLoaded(true)
         }
-        return
+        return () => {
+          mountedRef.current = false
+        }
       }
       
       // Check if script has already loaded (for module scripts, check if it's in the DOM)
@@ -44,12 +48,12 @@ export function RealScoutSearch({
       let attempts = 0
       const maxAttempts = 50 // 5 seconds max
       const checkCustomElement = () => {
-        if (!isMounted) {
+        if (!mountedRef.current) {
           if (checkTimeout) clearTimeout(checkTimeout)
           return
         }
         if (window.customElements?.get('realscout-advanced-search')) {
-          if (isMounted) {
+          if (mountedRef.current) {
             setScriptLoaded(true)
           }
         } else {
@@ -69,14 +73,14 @@ export function RealScoutSearch({
         checkCustomElement()
       } else {
         existingScript.addEventListener('load', () => {
-          if (isMounted) {
+          if (mountedRef.current) {
             setScriptLoaded(true)
           }
         })
       }
       
       return () => {
-        isMounted = false
+        mountedRef.current = false
         if (checkTimeout) clearTimeout(checkTimeout)
       }
     }
@@ -89,7 +93,7 @@ export function RealScoutSearch({
     script.id = 'realscout-advanced-search-script'
     
     script.onload = () => {
-      if (isMounted) {
+      if (mountedRef.current) {
         setScriptLoaded(true)
       }
     }
@@ -101,7 +105,7 @@ export function RealScoutSearch({
     document.head.appendChild(script)
 
     return () => {
-      isMounted = false
+      mountedRef.current = false
     }
   }, [])
 
@@ -109,16 +113,23 @@ export function RealScoutSearch({
   useEffect(() => {
     if (typeof window === 'undefined' || !containerRef.current || !scriptLoaded) return
     
+    mountedRef.current = true
+    
     // Reset state when dependencies change
     widgetInitializedRef.current = false
     setIsLoaded(false)
+    
+    // Clear any existing element
+    if (elementRef.current && elementRef.current.parentNode) {
+      elementRef.current.parentNode.removeChild(elementRef.current)
+    }
+    elementRef.current = null
 
     let checkInterval: NodeJS.Timeout | null = null
-    let isMounted = true
 
     // Wait a bit for custom element to be registered after script loads
     const initializeWidget = () => {
-      if (!isMounted || !containerRef.current) return false
+      if (!mountedRef.current || !containerRef.current) return false
       
       try {
         if (window.customElements?.get('realscout-advanced-search') && !widgetInitializedRef.current) {
@@ -131,6 +142,7 @@ export function RealScoutSearch({
           
           // Create the element
           const element = document.createElement('realscout-advanced-search')
+          elementRef.current = element
           
           // Set attributes in the correct order
           element.setAttribute('agent-encoded-id', 'QWdlbnQtMjI1MDUw')
@@ -140,7 +152,7 @@ export function RealScoutSearch({
           // Append to DOM
           containerRef.current.appendChild(element)
           
-          if (isMounted) {
+          if (mountedRef.current) {
             setIsLoaded(true)
           }
           
@@ -149,7 +161,7 @@ export function RealScoutSearch({
       } catch (error) {
         console.error('Error initializing RealScout widget:', error)
         widgetInitializedRef.current = false
-        if (isMounted) {
+        if (mountedRef.current) {
           setIsLoaded(false)
         }
         return false
@@ -160,8 +172,16 @@ export function RealScoutSearch({
     // Try immediately
     if (initializeWidget()) {
       return () => {
-        isMounted = false
+        mountedRef.current = false
         if (checkInterval) clearInterval(checkInterval)
+        if (elementRef.current && elementRef.current.parentNode) {
+          try {
+            elementRef.current.parentNode.removeChild(elementRef.current)
+          } catch (e) {
+            // Ignore errors during cleanup
+          }
+        }
+        elementRef.current = null
       }
     }
 
@@ -170,7 +190,7 @@ export function RealScoutSearch({
     const maxAttempts = 50
     
     checkInterval = setInterval(() => {
-      if (!isMounted) {
+      if (!mountedRef.current) {
         if (checkInterval) clearInterval(checkInterval)
         return
       }
@@ -185,8 +205,16 @@ export function RealScoutSearch({
     }, 100)
 
     return () => {
-      isMounted = false
+      mountedRef.current = false
       if (checkInterval) clearInterval(checkInterval)
+      if (elementRef.current && elementRef.current.parentNode) {
+        try {
+          elementRef.current.parentNode.removeChild(elementRef.current)
+        } catch (e) {
+          // Ignore errors during cleanup
+        }
+      }
+      elementRef.current = null
     }
   }, [scriptLoaded, priceMin, priceMax])
 
