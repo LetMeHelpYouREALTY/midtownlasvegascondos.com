@@ -36,11 +36,11 @@ const nextConfig: NextConfig = {
             value: [
               "default-src 'self'",
               "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://em.realscout.com https://www.realscout.com https://assets.calendly.com https://widgetbe.com https://maps.googleapis.com",
-              "style-src 'self' 'unsafe-inline' https://assets.calendly.com https://fonts.googleapis.com https://maps.gstatic.com",
+              "style-src 'self' 'unsafe-inline' https://assets.calendly.com https://fonts.googleapis.com https://maps.gstatic.com https://em.realscout.com https://www.realscout.com",
               "img-src 'self' data: https: https://maps.gstatic.com https://maps.googleapis.com",
               "font-src 'self' data: https://fonts.gstatic.com",
               "connect-src 'self' https://www.google-analytics.com https://em.realscout.com https://www.realscout.com https://calendly.com https://widgetbe.com https://maps.googleapis.com",
-              "frame-src 'self' https://www.googletagmanager.com https://calendly.com https://storage.googleapis.com https://maps.google.com",
+              "frame-src 'self' https://www.googletagmanager.com https://calendly.com https://storage.googleapis.com https://maps.google.com https://em.realscout.com https://www.realscout.com",
             ].join('; '),
           },
           // Cache headers for static assets
