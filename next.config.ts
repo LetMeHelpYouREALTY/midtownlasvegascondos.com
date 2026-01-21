@@ -40,7 +40,7 @@ const nextConfig: NextConfig = {
               "img-src 'self' data: https: https://maps.gstatic.com https://maps.googleapis.com https://em.realscout.com https://www.realscout.com https://widget.realscout.com https://cdn.realscout.com https://assets.realscout.com",
               "font-src 'self' data: https://fonts.gstatic.com https://em.realscout.com https://www.realscout.com https://widget.realscout.com https://cdn.realscout.com",
               "connect-src 'self' https://www.google-analytics.com https://em.realscout.com https://www.realscout.com https://widget.realscout.com https://api.realscout.com https://cdn.realscout.com https://calendly.com https://widgetbe.com https://maps.googleapis.com",
-              "frame-src 'self' https://www.googletagmanager.com https://calendly.com https://storage.googleapis.com https://maps.google.com https://em.realscout.com https://www.realscout.com https://widget.realscout.com",
+              "frame-src 'self' https://www.googletagmanager.com https://calendly.com https://storage.googleapis.com https://maps.google.com https://www.google.com https://em.realscout.com https://www.realscout.com https://widget.realscout.com",
             ].join('; '),
           },
           // Cache headers for static assets
