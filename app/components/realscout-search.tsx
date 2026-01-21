@@ -35,13 +35,16 @@ export function RealScoutSearch({
         return
       }
       
-      // Check if script tag already exists
+      // Check if script tag already exists (from layout.tsx)
       const existingScript = document.getElementById('realscout-web-components-script')
       if (existingScript) {
-        // Script is loading, poll for custom element
+        // Script is loading from layout, poll for custom element
         const interval = setInterval(() => {
           if (window.customElements?.get('realscout-advanced-search')) {
-            setScriptLoaded(true)
+            // Give it a moment to fully initialize before rendering widget
+            setTimeout(() => {
+              setScriptLoaded(true)
+            }, 300)
             clearInterval(interval)
           }
         }, 100)
@@ -53,25 +56,30 @@ export function RealScoutSearch({
         return
       }
       
-      // Load script dynamically
+      // Script not found - this shouldn't happen if layout.tsx is correct
+      // But fallback: load script dynamically
       const script = document.createElement('script')
       script.id = 'realscout-web-components-script'
       script.src = 'https://em.realscout.com/widgets/realscout-web-components.umd.js'
       script.async = true
       script.onload = () => {
-        // Wait for custom element to be registered
+        // Wait for custom element to be registered and ensure it's ready
+        let attempts = 0
+        const maxAttempts = 60 // 3 seconds at 50ms intervals
         const checkElement = setInterval(() => {
+          attempts++
           if (window.customElements?.get('realscout-advanced-search')) {
+            // Give it a moment to fully initialize
+            setTimeout(() => {
+              setScriptLoaded(true)
+            }, 300)
+            clearInterval(checkElement)
+          } else if (attempts >= maxAttempts) {
+            // Timeout - render anyway, widget will show error if script isn't ready
             setScriptLoaded(true)
             clearInterval(checkElement)
           }
         }, 50)
-        
-        // Timeout after 3 seconds
-        setTimeout(() => {
-          clearInterval(checkElement)
-          setScriptLoaded(true)
-        }, 3000)
       }
       script.onerror = () => {
         setScriptLoaded(true) // Still render, will show error state
