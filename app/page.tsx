@@ -536,21 +536,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Featured Listings */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-slate-50">
-        <div className="max-w-7xl mx-auto">
-          <RealScoutListings
-            title="Featured Midtown Properties"
-            description="Explore luxury condos and homes in the heart of the Arts District"
-            priceMin="450000"
-            priceMax="1200000"
-            sortOrder="NEWEST"
-            propertyTypes=",SFR"
-            listingStatus="For Sale"
-          />
-        </div>
-      </section>
-
       {/* Upcoming Events */}
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-slate-50">
         <div className="max-w-7xl mx-auto">
