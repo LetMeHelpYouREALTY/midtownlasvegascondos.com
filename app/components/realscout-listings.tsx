@@ -50,22 +50,63 @@ export function RealScoutListings({
   useEffect(() => {
     if (typeof window === 'undefined') return
 
+    let isMounted = true
+
     // Check if script is already loaded
     const existingScript = document.querySelector(
       'script[src*="realscout-web-components.umd.js"]'
     )
     
     if (existingScript) {
-      // Script already exists, wait for it to load
+      // Script already exists, check if custom element is registered
       if (window.customElements?.get('realscout-office-listings')) {
-        setScriptLoaded(true)
+        if (isMounted) {
+          setScriptLoaded(true)
+        }
         return
       }
+      
+      // Check if script has already loaded (for module scripts, check if it's in the DOM)
+      // If script exists but custom element isn't registered yet, wait for it
+      let checkTimeout: NodeJS.Timeout | null = null
+      let attempts = 0
+      const maxAttempts = 50 // 5 seconds max
+      const checkCustomElement = () => {
+        if (!isMounted) {
+          if (checkTimeout) clearTimeout(checkTimeout)
+          return
+        }
+        if (window.customElements?.get('realscout-office-listings')) {
+          if (isMounted) {
+            setScriptLoaded(true)
+          }
+        } else {
+          attempts++
+          if (attempts < maxAttempts) {
+            // Retry after a short delay
+            checkTimeout = setTimeout(checkCustomElement, 100)
+          } else {
+            console.warn('RealScout custom element did not register within timeout in script loading')
+          }
+        }
+      }
+      
       // Wait for existing script to finish loading
-      existingScript.addEventListener('load', () => {
-        setScriptLoaded(true)
-      })
-      return
+      if (existingScript.getAttribute('type') === 'module') {
+        // For module scripts, check periodically
+        checkCustomElement()
+      } else {
+        existingScript.addEventListener('load', () => {
+          if (isMounted) {
+            setScriptLoaded(true)
+          }
+        })
+      }
+      
+      return () => {
+        isMounted = false
+        if (checkTimeout) clearTimeout(checkTimeout)
+      }
     }
 
     // Create and inject script tag
@@ -76,7 +117,9 @@ export function RealScoutListings({
     script.id = 'realscout-office-listings-script'
     
     script.onload = () => {
-      setScriptLoaded(true)
+      if (isMounted) {
+        setScriptLoaded(true)
+      }
     }
     
     script.onerror = () => {
@@ -86,7 +129,7 @@ export function RealScoutListings({
     document.head.appendChild(script)
 
     return () => {
-      // Don't remove script on unmount - it might be used by other components
+      isMounted = false
     }
   }, [])
 
@@ -105,17 +148,19 @@ export function RealScoutListings({
     const initializeWidget = () => {
       if (!isMounted || !containerRef.current) return false
       
-      if (window.customElements?.get('realscout-office-listings') && !widgetInitializedRef.current) {
-        widgetInitializedRef.current = true
-        
-        try {
-          // Clear container
-          containerRef.current.innerHTML = ''
+      try {
+        if (window.customElements?.get('realscout-office-listings') && !widgetInitializedRef.current) {
+          widgetInitializedRef.current = true
+          
+          // Clear container safely
+          while (containerRef.current.firstChild) {
+            containerRef.current.removeChild(containerRef.current.firstChild)
+          }
           
           // Create the element
           const element = document.createElement('realscout-office-listings')
           
-          // Set attributes in the EXACT order RealScout expects
+          // Set attributes BEFORE appending (RealScout may read them during connection)
           element.setAttribute('agent-encoded-id', 'QWdlbnQtMjI1MDUw')
           element.setAttribute('sort-order', mappedSortOrder)
           element.setAttribute('listing-status', listingStatus)
@@ -131,16 +176,50 @@ export function RealScoutListings({
           // Append to DOM
           containerRef.current.appendChild(element)
           
+          // Re-apply attributes after connection to ensure they're recognized
+          // Some custom elements need attributes set after being connected
+          requestAnimationFrame(() => {
+            if (!isMounted || !containerRef.current || !element.parentNode) return
+            
+            // Re-apply all attributes to ensure widget recognizes them
+            element.setAttribute('agent-encoded-id', 'QWdlbnQtMjI1MDUw')
+            element.setAttribute('sort-order', mappedSortOrder)
+            element.setAttribute('listing-status', listingStatus)
+            element.setAttribute('property-types', propertyTypes)
+            element.setAttribute('price-min', priceMin)
+            element.setAttribute('price-max', priceMax)
+            
+            if (limit) {
+              element.setAttribute('limit', limit)
+            }
+            
+            // Debug: Log attribute values to console (remove in production if needed)
+            if (process.env.NODE_ENV === 'development') {
+              console.log('RealScout Listings Attributes:', {
+                'agent-encoded-id': element.getAttribute('agent-encoded-id'),
+                'sort-order': element.getAttribute('sort-order'),
+                'listing-status': element.getAttribute('listing-status'),
+                'property-types': element.getAttribute('property-types'),
+                'price-min': element.getAttribute('price-min'),
+                'price-max': element.getAttribute('price-max'),
+                'limit': element.getAttribute('limit'),
+              })
+            }
+          })
+          
           if (isMounted) {
             setIsLoaded(true)
           }
           
           return true
-        } catch (error) {
-          console.error('Error initializing RealScout widget:', error)
-          widgetInitializedRef.current = false
-          return false
         }
+      } catch (error) {
+        console.error('Error initializing RealScout widget:', error)
+        widgetInitializedRef.current = false
+        if (isMounted) {
+          setIsLoaded(false)
+        }
+        return false
       }
       return false
     }
