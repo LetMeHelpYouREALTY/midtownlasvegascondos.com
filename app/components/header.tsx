@@ -136,7 +136,7 @@ export function Header() {
             className="lg:hidden p-2 text-slate-700 hover:text-slate-900"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             aria-label={mobileMenuOpen ? 'Close menu' : 'Open menu'}
-            aria-expanded={mobileMenuOpen}
+            aria-expanded={mobileMenuOpen ? 'true' : 'false'}
           >
             {mobileMenuOpen ? (
               <X className="h-6 w-6" />
