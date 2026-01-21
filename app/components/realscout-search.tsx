@@ -16,44 +16,65 @@ export function RealScoutSearch({
 
   const containerRef = useRef<HTMLDivElement>(null)
 
-  // Use Intersection Observer to load widget only when it's about to be visible
+  // Use Intersection Observer to load widget and script only when it's about to be visible
   useEffect(() => {
     setIsClient(true)
     
     if (!containerRef.current) return
     
+    let scriptLoaded = false
+    
     // Use Intersection Observer to load widget when it's about to enter viewport
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            // Widget is about to be visible, check for script
-            const checkScript = () => {
-              if (typeof window !== 'undefined' && window.customElements) {
-                if (window.customElements.get('realscout-advanced-search')) {
-                  setScriptLoaded(true)
-                  observer.disconnect()
-                } else {
-                  // Poll for custom element definition
-                  const interval = setInterval(() => {
-                    if (window.customElements.get('realscout-advanced-search')) {
-                      setScriptLoaded(true)
-                      clearInterval(interval)
-                      observer.disconnect()
-                    }
-                  }, 100)
-                  
-                  // Timeout after 5 seconds
-                  setTimeout(() => {
-                    clearInterval(interval)
-                    setScriptLoaded(true)
-                    observer.disconnect()
-                  }, 5000)
-                }
+          if (entry.isIntersecting && !scriptLoaded) {
+            scriptLoaded = true
+            
+            // Dynamically load RealScout script only when widget is about to be visible
+            const loadScript = () => {
+              if (typeof window === 'undefined') return
+              
+              // Check if script is already loaded
+              if (window.customElements?.get('realscout-advanced-search')) {
+                setScriptLoaded(true)
+                return
               }
+              
+              // Check if script tag already exists
+              const existingScript = document.getElementById('realscout-web-components-script')
+              if (existingScript) {
+                // Script is loading, poll for custom element
+                const interval = setInterval(() => {
+                  if (window.customElements?.get('realscout-advanced-search')) {
+                    setScriptLoaded(true)
+                    clearInterval(interval)
+                  }
+                }, 100)
+                
+                setTimeout(() => {
+                  clearInterval(interval)
+                  setScriptLoaded(true)
+                }, 5000)
+                return
+              }
+              
+              // Load script dynamically
+              const script = document.createElement('script')
+              script.id = 'realscout-web-components-script'
+              script.src = 'https://em.realscout.com/widgets/realscout-web-components.umd.js'
+              script.async = true
+              script.onload = () => {
+                setScriptLoaded(true)
+              }
+              script.onerror = () => {
+                setScriptLoaded(true) // Still render, will show error state
+              }
+              document.head.appendChild(script)
             }
             
-            checkScript()
+            loadScript()
+            observer.disconnect()
           }
         })
       },

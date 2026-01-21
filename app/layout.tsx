@@ -131,12 +131,7 @@ export default function RootLayout({
         <link rel="dns-prefetch" href="https://maps.googleapis.com" />
         <link rel="dns-prefetch" href="https://storage.googleapis.com" />
         <meta httpEquiv="x-dns-prefetch-control" content="on" />
-        {/* RealScout widget script - load after interactive to reduce blocking but not too late */}
-        <Script
-          src="https://em.realscout.com/widgets/realscout-web-components.umd.js"
-          strategy="afterInteractive"
-          id="realscout-web-components-script"
-        />
+        {/* RealScout widget script - load lazily, widgets will load it dynamically when needed */}
         {/* Calendly CSS - loaded asynchronously to avoid render blocking */}
         <link
           href="https://assets.calendly.com/assets/external/widget.css"
