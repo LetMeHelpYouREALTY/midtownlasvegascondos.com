@@ -294,6 +294,7 @@ export default function HomePage() {
                 fill
                 className="object-cover"
                 quality={85}
+                loading="lazy"
               />
             </div>
           </div>
