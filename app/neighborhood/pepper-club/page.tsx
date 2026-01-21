@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import { Metadata } from 'next'
+import { RealScoutListings } from '@/app/components/realscout-listings'
 
 export const metadata: Metadata = {
   title: 'The Pepper Club | Award-Winning Restaurant at The English Hotel',
@@ -283,6 +284,21 @@ export default function PepperClubPage() {
           >
             Inquire About Events
           </Link>
+        </div>
+      </section>
+
+      {/* Featured Properties */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
+        <div className="max-w-7xl mx-auto">
+          <RealScoutListings
+            title="Homes Near The Pepper Club"
+            description="Live steps away from award-winning dining"
+            priceMin="250000"
+            priceMax="1500000"
+            sortOrder="NEWEST"
+            propertyTypes=",SFR,CONDO,TC"
+            listingStatus="For Sale"
+          />
         </div>
       </section>
 

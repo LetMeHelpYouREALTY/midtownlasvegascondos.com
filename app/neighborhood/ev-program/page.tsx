@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import { Metadata } from 'next'
+import { RealScoutListings } from '@/app/components/realscout-listings'
 
 export const metadata: Metadata = {
   title: 'EV Vehicle Program | Electric Vehicle Charging in Midtown Las Vegas',
@@ -264,6 +265,21 @@ export default function EVProgramPage() {
               </div>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* Featured EV-Friendly Properties */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
+        <div className="max-w-7xl mx-auto">
+          <RealScoutListings
+            title="EV-Friendly Homes in Midtown"
+            description="Find properties with electric vehicle charging infrastructure"
+            priceMin="250000"
+            priceMax="2000000"
+            sortOrder="NEWEST"
+            propertyTypes=",SFR,CONDO,TC"
+            listingStatus="For Sale"
+          />
         </div>
       </section>
 

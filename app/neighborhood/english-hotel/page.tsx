@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import { Metadata } from 'next'
+import { RealScoutListings } from '@/app/components/realscout-listings'
 
 export const metadata: Metadata = {
   title: 'The English Hotel | Boutique Luxury Hotel in Las Vegas Arts District',
@@ -260,6 +261,21 @@ export default function EnglishHotelPage() {
               </Link>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* Featured Properties Near The English Hotel */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
+        <div className="max-w-7xl mx-auto">
+          <RealScoutListings
+            title="Homes Near The English Hotel"
+            description="Find your home in the heart of Midtown"
+            priceMin="250000"
+            priceMax="1500000"
+            sortOrder="NEWEST"
+            propertyTypes=",SFR,CONDO,TC"
+            listingStatus="For Sale"
+          />
         </div>
       </section>
 

@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import { Metadata } from 'next'
 import { Breadcrumb } from '../components/breadcrumb'
+import { RealScoutListings } from '../components/realscout-listings'
 
 export const metadata: Metadata = {
   title: 'Arts District Las Vegas Guide | Culture, Dining, Real Estate',
@@ -232,6 +233,19 @@ export default function ArtsDistrictGuidePage() {
               opportunities for both long-term and short-term rental income.
             </p>
           </div>
+        </section>
+
+        {/* Featured Properties */}
+        <section className="mb-20">
+          <RealScoutListings
+            title="Arts District Homes for Sale"
+            description="Discover available properties in the Las Vegas Arts District"
+            priceMin="250000"
+            priceMax="2000000"
+            sortOrder="NEWEST"
+            propertyTypes=",SFR,CONDO,TC"
+            listingStatus="For Sale"
+          />
         </section>
 
         {/* CTA Section */}

@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import { Metadata } from 'next'
+import { RealScoutListings } from '@/app/components/realscout-listings'
 
 export const metadata: Metadata = {
   title: 'First Friday Las Vegas | Arts District Monthly Art Walk',
@@ -258,6 +259,21 @@ export default function FirstFridaysPage() {
               </p>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* Featured Properties */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
+        <div className="max-w-7xl mx-auto">
+          <RealScoutListings
+            title="Live in the Heart of First Friday"
+            description="Find your home in the Arts District where First Friday happens"
+            priceMin="250000"
+            priceMax="2000000"
+            sortOrder="NEWEST"
+            propertyTypes=",SFR,CONDO,TC"
+            listingStatus="For Sale"
+          />
         </div>
       </section>
 

@@ -2,6 +2,8 @@ import Link from 'next/link'
 import { Metadata } from 'next'
 import { Breadcrumb } from '../components/breadcrumb'
 import { CalendlyLink } from '../components/calendly-link'
+import { RealScoutListings } from '../components/realscout-listings'
+import { RealScoutSearch } from '../components/realscout-search'
 
 export const metadata: Metadata = {
   title: "Buyer's Guide to Midtown Las Vegas | How to Buy in Arts District",
@@ -269,6 +271,24 @@ export default function BuyersGuideMidtownPage() {
               property specifics, and seller motivations.
             </p>
           </div>
+        </section>
+
+        {/* Property Search */}
+        <section className="mb-20">
+          <RealScoutSearch priceMin="250000" priceMax="2000000" />
+        </section>
+
+        {/* Featured Properties */}
+        <section className="mb-20">
+          <RealScoutListings
+            title="Available Homes in Midtown"
+            description="Start your search with these featured properties"
+            priceMin="250000"
+            priceMax="2000000"
+            sortOrder="NEWEST"
+            propertyTypes=",SFR,CONDO,TC"
+            listingStatus="For Sale"
+          />
         </section>
 
         {/* CTA Section */}

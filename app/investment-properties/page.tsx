@@ -3,6 +3,7 @@ import { Metadata } from 'next'
 import { Breadcrumb } from '../components/breadcrumb'
 import { RealEstateListingSchema } from '../components/real-estate-listing-schema'
 import { CalendlyLink } from '../components/calendly-link'
+import { RealScoutListings } from '../components/realscout-listings'
 
 export const metadata: Metadata = {
   title: 'Investment Properties Midtown Las Vegas | Cap Rates, Cash Flow',
@@ -232,6 +233,19 @@ export default function InvestmentPropertiesPage() {
               Call (702) 500-1980
             </a>
           </div>
+        </section>
+
+        {/* Featured Investment Properties */}
+        <section className="mb-20">
+          <RealScoutListings
+            title="Featured Investment Properties"
+            description="Browse available investment opportunities in Midtown Las Vegas"
+            priceMin="250000"
+            priceMax="1500000"
+            sortOrder="NEWEST"
+            propertyTypes=",SFR,CONDO,TC,MF"
+            listingStatus="For Sale"
+          />
         </section>
 
         {/* Related Links */}
