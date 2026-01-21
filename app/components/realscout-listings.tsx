@@ -124,26 +124,36 @@ export function RealScoutListings({
   useEffect(() => {
     if (typeof window === 'undefined' || !containerRef.current || !scriptLoaded) return
     
+    // If widget is already initialized and element is still in DOM, don't re-initialize
+    if (widgetInitializedRef.current && elementRef.current && elementRef.current.isConnected) {
+      console.log('RealScout widget already initialized, skipping re-initialization')
+      return
+    }
+    
     mountedRef.current = true
     
-    // Reset state when dependencies change - defer to avoid synchronous updates
-    widgetInitializedRef.current = false
-    // Defer state update to next tick to avoid React warnings
-    setTimeout(() => {
-      if (mountedRef.current) {
-        setIsLoaded(false)
-      }
-    }, 0)
+    // Only reset if not already initialized
+    if (!widgetInitializedRef.current) {
+      widgetInitializedRef.current = false
+      // Defer state update to next tick to avoid React warnings
+      setTimeout(() => {
+        if (mountedRef.current) {
+          setIsLoaded(false)
+        }
+      }, 0)
+    }
     
-    // Clear any existing element
-    if (elementRef.current && elementRef.current.parentNode) {
+    // Only clear existing element if it's not connected or we're re-initializing
+    if (elementRef.current && elementRef.current.parentNode && !elementRef.current.isConnected) {
       try {
         elementRef.current.parentNode.removeChild(elementRef.current)
       } catch (e) {
         // Element may have already been removed
       }
+      elementRef.current = null
+    } else if (elementRef.current && !elementRef.current.isConnected) {
+      elementRef.current = null
     }
-    elementRef.current = null
 
     // Clear any existing timeouts
     if (timeoutRef.current) {
@@ -436,7 +446,7 @@ export function RealScoutListings({
       }
       elementRef.current = null
     }
-  }, [scriptLoaded, mappedSortOrder, listingStatus, propertyTypes, priceMin, priceMax])
+  }, [scriptLoaded]) // Only depend on scriptLoaded - don't re-initialize when props change
 
   return (
     <div className="w-full">
