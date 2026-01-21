@@ -46,13 +46,15 @@ export function RealScoutListings({
   const widgetInitializedRef = useRef(false)
   const elementRef = useRef<HTMLElement | null>(null)
   const mountedRef = useRef(true)
+  const timeoutRef = useRef<NodeJS.Timeout | null>(null)
   const mappedSortOrder = mapSortOrder(sortOrder)
 
   // Load script on component mount
   useEffect(() => {
     if (typeof window === 'undefined') return
 
-    let isMounted = true
+    mountedRef.current = true
+    let checkTimeout: NodeJS.Timeout | null = null
 
     // Check if script is already loaded
     const existingScript = document.querySelector(
@@ -62,24 +64,29 @@ export function RealScoutListings({
     if (existingScript) {
       // Script already exists, check if custom element is registered
       if (window.customElements?.get('realscout-office-listings')) {
-        if (isMounted) {
-          setScriptLoaded(true)
+        // Defer state update to avoid synchronous updates
+        setTimeout(() => {
+          if (mountedRef.current) {
+            setScriptLoaded(true)
+          }
+        }, 0)
+        return () => {
+          mountedRef.current = false
+          if (checkTimeout) clearTimeout(checkTimeout)
         }
-        return
       }
       
       // Check if script has already loaded (for module scripts, check if it's in the DOM)
       // If script exists but custom element isn't registered yet, wait for it
-      let checkTimeout: NodeJS.Timeout | null = null
       let attempts = 0
       const maxAttempts = 50 // 5 seconds max
       const checkCustomElement = () => {
-        if (!isMounted) {
+        if (!mountedRef.current) {
           if (checkTimeout) clearTimeout(checkTimeout)
           return
         }
         if (window.customElements?.get('realscout-office-listings')) {
-          if (isMounted) {
+          if (mountedRef.current) {
             setScriptLoaded(true)
           }
         } else {
@@ -98,15 +105,21 @@ export function RealScoutListings({
         // For module scripts, check periodically
         checkCustomElement()
       } else {
-        existingScript.addEventListener('load', () => {
-          if (isMounted) {
+        const loadHandler = () => {
+          if (mountedRef.current) {
             setScriptLoaded(true)
           }
-        })
+        }
+        existingScript.addEventListener('load', loadHandler)
+      return () => {
+        mountedRef.current = false
+        if (checkTimeout) clearTimeout(checkTimeout)
+        existingScript.removeEventListener('load', loadHandler)
+      }
       }
       
       return () => {
-        isMounted = false
+        mountedRef.current = false
         if (checkTimeout) clearTimeout(checkTimeout)
       }
     }
@@ -118,11 +131,16 @@ export function RealScoutListings({
     script.async = true
     script.id = 'realscout-office-listings-script'
     
-    script.onload = () => {
-      if (isMounted) {
-        setScriptLoaded(true)
-      }
+    const loadHandler = () => {
+      // Defer state update
+      setTimeout(() => {
+        if (mountedRef.current) {
+          setScriptLoaded(true)
+        }
+      }, 0)
     }
+    
+    script.onload = loadHandler
     
     script.onerror = () => {
       console.error('Failed to load RealScout script')
@@ -131,7 +149,9 @@ export function RealScoutListings({
     document.head.appendChild(script)
 
     return () => {
-      isMounted = false
+      mountedRef.current = false
+      if (checkTimeout) clearTimeout(checkTimeout)
+      // Note: Don't remove script from DOM as other components might use it
     }
   }, [])
 
@@ -141,18 +161,32 @@ export function RealScoutListings({
     
     mountedRef.current = true
     
-    // Reset state when dependencies change
+    // Reset state when dependencies change - defer to avoid synchronous updates
     widgetInitializedRef.current = false
-    setIsLoaded(false)
+    // Defer state update to next tick to avoid React warnings
+    setTimeout(() => {
+      if (mountedRef.current) {
+        setIsLoaded(false)
+      }
+    }, 0)
     
     // Clear any existing element
     if (elementRef.current && elementRef.current.parentNode) {
-      elementRef.current.parentNode.removeChild(elementRef.current)
+      try {
+        elementRef.current.parentNode.removeChild(elementRef.current)
+      } catch (e) {
+        // Element may have already been removed
+      }
     }
     elementRef.current = null
 
+    // Clear any existing timeouts
+    if (timeoutRef.current) {
+      clearTimeout(timeoutRef.current)
+      timeoutRef.current = null
+    }
+
     let checkInterval: NodeJS.Timeout | null = null
-    let timeoutId: NodeJS.Timeout | null = null
 
     // Wait a bit for custom element to be registered after script loads
     const initializeWidget = () => {
@@ -189,7 +223,7 @@ export function RealScoutListings({
           
           // Use setTimeout instead of requestAnimationFrame to avoid closure issues
           // Small delay to ensure element is connected before setting attributes again
-          timeoutId = setTimeout(() => {
+          timeoutRef.current = setTimeout(() => {
             if (!mountedRef.current || !containerRef.current || !element.parentNode || element !== elementRef.current) {
               return
             }
@@ -233,7 +267,10 @@ export function RealScoutListings({
       return () => {
         mountedRef.current = false
         if (checkInterval) clearInterval(checkInterval)
-        if (timeoutId) clearTimeout(timeoutId)
+        if (timeoutRef.current) {
+          clearTimeout(timeoutRef.current)
+          timeoutRef.current = null
+        }
         if (elementRef.current && elementRef.current.parentNode) {
           try {
             elementRef.current.parentNode.removeChild(elementRef.current)
@@ -267,7 +304,10 @@ export function RealScoutListings({
     return () => {
       mountedRef.current = false
       if (checkInterval) clearInterval(checkInterval)
-      if (timeoutId) clearTimeout(timeoutId)
+      if (timeoutRef.current) {
+        clearTimeout(timeoutRef.current)
+        timeoutRef.current = null
+      }
       if (elementRef.current && elementRef.current.parentNode) {
         try {
           elementRef.current.parentNode.removeChild(elementRef.current)

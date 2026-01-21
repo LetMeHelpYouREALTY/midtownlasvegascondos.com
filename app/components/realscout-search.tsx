@@ -72,11 +72,20 @@ export function RealScoutSearch({
         // For module scripts, check periodically
         checkCustomElement()
       } else {
-        existingScript.addEventListener('load', () => {
-          if (mountedRef.current) {
-            setScriptLoaded(true)
-          }
-        })
+        const loadHandler = () => {
+          // Defer state update
+          setTimeout(() => {
+            if (mountedRef.current) {
+              setScriptLoaded(true)
+            }
+          }, 0)
+        }
+        existingScript.addEventListener('load', loadHandler)
+        return () => {
+          mountedRef.current = false
+          if (checkTimeout) clearTimeout(checkTimeout)
+          existingScript.removeEventListener('load', loadHandler)
+        }
       }
       
       return () => {
@@ -93,9 +102,12 @@ export function RealScoutSearch({
     script.id = 'realscout-advanced-search-script'
     
     script.onload = () => {
-      if (mountedRef.current) {
-        setScriptLoaded(true)
-      }
+      // Defer state update
+      setTimeout(() => {
+        if (mountedRef.current) {
+          setScriptLoaded(true)
+        }
+      }, 0)
     }
     
     script.onerror = () => {
@@ -115,13 +127,22 @@ export function RealScoutSearch({
     
     mountedRef.current = true
     
-    // Reset state when dependencies change
+    // Reset state when dependencies change - defer to avoid synchronous updates
     widgetInitializedRef.current = false
-    setIsLoaded(false)
+    // Defer state update to next tick to avoid React warnings
+    setTimeout(() => {
+      if (mountedRef.current) {
+        setIsLoaded(false)
+      }
+    }, 0)
     
     // Clear any existing element
     if (elementRef.current && elementRef.current.parentNode) {
-      elementRef.current.parentNode.removeChild(elementRef.current)
+      try {
+        elementRef.current.parentNode.removeChild(elementRef.current)
+      } catch (e) {
+        // Element may have already been removed
+      }
     }
     elementRef.current = null
 

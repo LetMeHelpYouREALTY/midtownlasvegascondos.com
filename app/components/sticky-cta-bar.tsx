@@ -21,7 +21,12 @@ export function StickyCTABar() {
       }
     }
 
-    window.addEventListener('scroll', handleScroll)
+    try {
+      window.addEventListener('scroll', handleScroll, { passive: true })
+    } catch (error) {
+      // Silently fail if addEventListener fails
+    }
+    
     return () => {
       try {
         window.removeEventListener('scroll', handleScroll)
