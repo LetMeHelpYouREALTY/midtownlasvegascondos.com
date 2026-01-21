@@ -70,13 +70,25 @@ export function Header() {
                   </div>
                 </div>
               ) : 'href' in item ? (
-                <Link
-                  key={item.name}
-                  href={item.href}
-                  className="text-slate-700 hover:text-slate-900 font-medium transition-colors"
-                >
-                  {item.name}
-                </Link>
+                item.href.startsWith('http') ? (
+                  <a
+                    key={item.name}
+                    href={item.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-slate-700 hover:text-slate-900 font-medium transition-colors"
+                  >
+                    {item.name}
+                  </a>
+                ) : (
+                  <Link
+                    key={item.name}
+                    href={item.href}
+                    className="text-slate-700 hover:text-slate-900 font-medium transition-colors"
+                  >
+                    {item.name}
+                  </Link>
+                )
               ) : null
             )}
           </div>
@@ -154,14 +166,27 @@ export function Header() {
                     </div>
                   </div>
                 ) : 'href' in item ? (
-                  <Link
-                    key={item.name}
-                    href={item.href}
-                    className="block text-slate-700 hover:text-slate-900 font-medium"
-                    onClick={() => setMobileMenuOpen(false)}
-                  >
-                    {item.name}
-                  </Link>
+                  item.href.startsWith('http') ? (
+                    <a
+                      key={item.name}
+                      href={item.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="block text-slate-700 hover:text-slate-900 font-medium"
+                      onClick={() => setMobileMenuOpen(false)}
+                    >
+                      {item.name}
+                    </a>
+                  ) : (
+                    <Link
+                      key={item.name}
+                      href={item.href}
+                      className="block text-slate-700 hover:text-slate-900 font-medium"
+                      onClick={() => setMobileMenuOpen(false)}
+                    >
+                      {item.name}
+                    </Link>
+                  )
                 ) : null
               )}
             </div>
