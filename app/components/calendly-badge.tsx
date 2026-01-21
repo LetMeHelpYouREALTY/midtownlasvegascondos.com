@@ -38,7 +38,10 @@ export function CalendlyBadge() {
       strategy="afterInteractive"
       id="calendly-widget-script"
       onLoad={() => {
-        setScriptLoaded(true)
+        // Defer state update to avoid hydration issues
+        setTimeout(() => {
+          setScriptLoaded(true)
+        }, 0)
       }}
     />
   )

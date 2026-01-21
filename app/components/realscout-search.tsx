@@ -31,12 +31,15 @@ export function RealScoutSearch({
       'script[src*="realscout-web-components.umd.js"]'
     )
     
-    if (existingScript) {
+      if (existingScript) {
       // Script already exists, check if custom element is registered
       if (window.customElements?.get('realscout-advanced-search')) {
-        if (mountedRef.current) {
-          setScriptLoaded(true)
-        }
+        // Defer state update
+        setTimeout(() => {
+          if (mountedRef.current) {
+            setScriptLoaded(true)
+          }
+        }, 0)
         return () => {
           mountedRef.current = false
         }
@@ -53,9 +56,12 @@ export function RealScoutSearch({
           return
         }
         if (window.customElements?.get('realscout-advanced-search')) {
-          if (mountedRef.current) {
-            setScriptLoaded(true)
-          }
+          // Defer state update
+          setTimeout(() => {
+            if (mountedRef.current) {
+              setScriptLoaded(true)
+            }
+          }, 0)
         } else {
           attempts++
           if (attempts < maxAttempts) {
@@ -173,9 +179,12 @@ export function RealScoutSearch({
           // Append to DOM
           containerRef.current.appendChild(element)
           
-          if (mountedRef.current) {
-            setIsLoaded(true)
-          }
+          // Defer state update to avoid synchronous updates during render
+          setTimeout(() => {
+            if (mountedRef.current) {
+              setIsLoaded(true)
+            }
+          }, 0)
           
           return true
         }

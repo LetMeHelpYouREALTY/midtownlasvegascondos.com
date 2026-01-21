@@ -113,10 +113,13 @@ export default function RootLayout({
         />
         <Script id="calendly-css-loader" strategy="afterInteractive">
           {`
-            const link = document.querySelector('link[href*="calendly.com"][media="print"]');
-            if (link) {
-              link.media = 'all';
-            }
+            (function() {
+              if (typeof document === 'undefined') return;
+              const link = document.querySelector('link[href*="calendly.com"][media="print"]');
+              if (link) {
+                link.media = 'all';
+              }
+            })();
           `}
         </Script>
       </head>

@@ -86,9 +86,12 @@ export function RealScoutListings({
           return
         }
         if (window.customElements?.get('realscout-office-listings')) {
-          if (mountedRef.current) {
-            setScriptLoaded(true)
-          }
+          // Defer state update
+          setTimeout(() => {
+            if (mountedRef.current) {
+              setScriptLoaded(true)
+            }
+          }, 0)
         } else {
           attempts++
           if (attempts < maxAttempts) {
@@ -245,9 +248,12 @@ export function RealScoutListings({
             }
           }, 50)
           
-          if (mountedRef.current) {
-            setIsLoaded(true)
-          }
+          // Defer state update to avoid synchronous updates during render
+          setTimeout(() => {
+            if (mountedRef.current) {
+              setIsLoaded(true)
+            }
+          }, 0)
           
           return true
         }
