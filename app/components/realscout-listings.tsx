@@ -12,7 +12,6 @@ interface RealScoutListingsProps {
   sortOrder?: 'PRICE_LOW' | 'PRICE_HIGH' | 'DATE_NEW' | 'NEWEST'
   listingStatus?: 'For Sale' | 'For Rent' | 'Sold'
   propertyTypes?: string
-  limit?: string
 }
 
 // Map our sort order values to RealScout's expected values
@@ -34,11 +33,10 @@ export function RealScoutListings({
   title,
   description,
   priceMin = '450000',
-  priceMax = '1000000',
-  sortOrder = 'PRICE_LOW',
+  priceMax = '1200000',
+  sortOrder = 'NEWEST',
   listingStatus = 'For Sale',
-  propertyTypes = ',SFR,CONDO',
-  limit = '12',
+  propertyTypes = ',SFR',
 }: RealScoutListingsProps) {
   const containerRef = useRef<HTMLDivElement>(null)
   const [isLoaded, setIsLoaded] = useState(false)
@@ -155,7 +153,8 @@ export function RealScoutListings({
           const element = document.createElement('realscout-office-listings')
           elementRef.current = element
           
-          // Set attributes BEFORE appending (RealScout may read them during connection)
+          // Set attributes in the exact order and format as specified
+          // Must match: <realscout-office-listings agent-encoded-id="..." sort-order="..." listing-status="..." property-types="..." price-min="..." price-max="..."></realscout-office-listings>
           element.setAttribute('agent-encoded-id', 'QWdlbnQtMjI1MDUw')
           element.setAttribute('sort-order', mappedSortOrder)
           element.setAttribute('listing-status', listingStatus)
@@ -163,37 +162,28 @@ export function RealScoutListings({
           element.setAttribute('price-min', priceMin)
           element.setAttribute('price-max', priceMax)
           
-          // Set limit if provided
-          if (limit) {
-            element.setAttribute('limit', limit)
-          }
-          
-          // Append to DOM
+          // Append to DOM (body container) - RealScout needs element in DOM to initialize
           containerRef.current.appendChild(element)
           
-          // Use setTimeout instead of requestAnimationFrame to avoid closure issues
-          // Small delay to ensure element is connected before setting attributes again
+          // Re-apply attributes after element is connected to DOM
+          // RealScout custom elements read attributes in connectedCallback
           timeoutRef.current = setTimeout(() => {
             if (!mountedRef.current || !containerRef.current || !element.parentNode || element !== elementRef.current) {
               return
             }
             
             try {
-              // Re-apply all attributes to ensure widget recognizes them
+              // Re-apply all attributes in exact order after element is connected
               element.setAttribute('agent-encoded-id', 'QWdlbnQtMjI1MDUw')
               element.setAttribute('sort-order', mappedSortOrder)
               element.setAttribute('listing-status', listingStatus)
               element.setAttribute('property-types', propertyTypes)
               element.setAttribute('price-min', priceMin)
               element.setAttribute('price-max', priceMax)
-              
-              if (limit) {
-                element.setAttribute('limit', limit)
-              }
             } catch (err) {
-              // Silently fail - attributes may already be set
+              console.error('Error re-applying RealScout attributes:', err)
             }
-          }, 50)
+          }, 150)
           
           // Defer state update to avoid synchronous updates during render
           setTimeout(() => {
@@ -270,7 +260,7 @@ export function RealScoutListings({
       }
       elementRef.current = null
     }
-  }, [scriptLoaded, mappedSortOrder, listingStatus, propertyTypes, priceMin, priceMax, limit])
+  }, [scriptLoaded, mappedSortOrder, listingStatus, propertyTypes, priceMin, priceMax])
 
   return (
     <div className="w-full">
