@@ -181,9 +181,9 @@ export default function SearchPage() {
             title="All Midtown & Arts District Listings"
             description="Browse all available properties in and around Midtown"
             priceMin="450000"
-            priceMax="1200000"
+            priceMax="1300000"
             sortOrder="NEWEST"
-            propertyTypes=",SFR"
+            propertyTypes=",SFR,TC,MF"
             listingStatus="For Sale"
           />
         </div>

@@ -33,10 +33,10 @@ export function RealScoutListings({
   title,
   description,
   priceMin = '450000',
-  priceMax = '1200000',
+  priceMax = '1300000',
   sortOrder = 'NEWEST',
   listingStatus = 'For Sale',
-  propertyTypes = ',SFR',
+  propertyTypes = ',SFR,TC,MF',
 }: RealScoutListingsProps) {
   const containerRef = useRef<HTMLDivElement>(null)
   const [isLoaded, setIsLoaded] = useState(false)
@@ -172,7 +172,7 @@ export function RealScoutListings({
           elementRef.current = element
           
           // Set ALL attributes BEFORE appending to DOM (critical for RealScout)
-          // Must match exactly: <realscout-office-listings agent-encoded-id="QWdlbnQtMjI1MDUw" sort-order="NEWEST" listing-status="For Sale" property-types=",SFR" price-min="450000" price-max="1200000"></realscout-office-listings>
+          // Must match exactly: <realscout-office-listings agent-encoded-id="QWdlbnQtMjI1MDUw" sort-order="NEWEST" listing-status="For Sale" property-types=",SFR,TC,MF" price-min="450000" price-max="1300000"></realscout-office-listings>
           // Set attributes in the exact order specified by RealScout documentation
           element.setAttribute('agent-encoded-id', 'QWdlbnQtMjI1MDUw')
           element.setAttribute('sort-order', mappedSortOrder)

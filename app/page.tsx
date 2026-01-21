@@ -68,9 +68,9 @@ export default function HomePage() {
             title="Featured Homes in Midtown"
             description="Discover beautiful single-family homes in your price range"
             priceMin="450000"
-            priceMax="1200000"
+            priceMax="1300000"
             sortOrder="NEWEST"
-            propertyTypes=",SFR"
+            propertyTypes=",SFR,TC,MF"
             listingStatus="For Sale"
           />
         </div>

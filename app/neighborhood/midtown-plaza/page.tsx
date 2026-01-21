@@ -217,9 +217,9 @@ export default function MidtownPlazaPage() {
             title="Homes Near Midtown Plaza"
             description="Walk to restaurants, shops, and entertainment from these properties"
             priceMin="450000"
-            priceMax="1200000"
+            priceMax="1300000"
             sortOrder="NEWEST"
-            propertyTypes=",SFR"
+            propertyTypes=",SFR,TC,MF"
             listingStatus="For Sale"
           />
         </div>
