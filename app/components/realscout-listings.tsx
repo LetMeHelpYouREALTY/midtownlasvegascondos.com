@@ -68,15 +68,21 @@ export function RealScoutListings({
       }
     }
     
-    // Wait for custom element to register (script is loaded in head)
+    // Wait for custom element to register (script is loaded per-page)
     let attempts = 0
-    const maxAttempts = 50 // 5 seconds max
+    const maxAttempts = 100 // 10 seconds max - module scripts can take longer
     const checkCustomElement = () => {
       if (!mountedRef.current) {
         if (checkTimeout) clearTimeout(checkTimeout)
         return
       }
-      if (window.customElements?.get('realscout-office-listings')) {
+      
+      // Check if script is in DOM
+      const script = document.querySelector('script[src*="realscout-web-components.umd.js"]')
+      const customElementRegistered = window.customElements?.get('realscout-office-listings')
+      
+      if (customElementRegistered) {
+        console.log('✅ RealScout custom element registered successfully')
         // Defer state update
         setTimeout(() => {
           if (mountedRef.current) {
@@ -85,11 +91,22 @@ export function RealScoutListings({
         }, 0)
       } else {
         attempts++
+        if (attempts % 10 === 0) {
+          console.log(`Waiting for RealScout custom element... (attempt ${attempts}/${maxAttempts})`, {
+            scriptInDOM: !!script,
+            scriptLoaded: script?.getAttribute('data-loaded'),
+            customElementsAvailable: !!window.customElements,
+          })
+        }
         if (attempts < maxAttempts) {
           // Retry after a short delay
           checkTimeout = setTimeout(checkCustomElement, 100)
         } else {
-          console.warn('RealScout custom element did not register within timeout')
+          console.error('❌ RealScout custom element did not register within timeout', {
+            scriptInDOM: !!script,
+            scriptSrc: script?.getAttribute('src'),
+            attempts,
+          })
         }
       }
     }
@@ -149,12 +166,13 @@ export function RealScoutListings({
             containerRef.current.removeChild(containerRef.current.firstChild)
           }
           
-          // Create the element
+          // Create the element with all attributes set BEFORE appending
+          // RealScout reads attributes during connectedCallback, so they must be set first
           const element = document.createElement('realscout-office-listings')
           elementRef.current = element
           
-          // Set attributes in the exact order and format as specified
-          // Must match: <realscout-office-listings agent-encoded-id="..." sort-order="..." listing-status="..." property-types="..." price-min="..." price-max="..."></realscout-office-listings>
+          // Set ALL attributes BEFORE appending to DOM (critical for RealScout)
+          // Must match exactly: <realscout-office-listings agent-encoded-id="QWdlbnQtMjI1MDUw" sort-order="NEWEST" listing-status="For Sale" property-types=",SFR" price-min="450000" price-max="1200000"></realscout-office-listings>
           element.setAttribute('agent-encoded-id', 'QWdlbnQtMjI1MDUw')
           element.setAttribute('sort-order', mappedSortOrder)
           element.setAttribute('listing-status', listingStatus)
@@ -162,8 +180,25 @@ export function RealScoutListings({
           element.setAttribute('price-min', priceMin)
           element.setAttribute('price-max', priceMax)
           
-          // Append to DOM (body container) - RealScout needs element in DOM to initialize
+          // Verify attributes are set before appending
+          console.log('✅ RealScout element created with attributes:', {
+            'agent-encoded-id': element.getAttribute('agent-encoded-id'),
+            'sort-order': element.getAttribute('sort-order'),
+            'listing-status': element.getAttribute('listing-status'),
+            'property-types': element.getAttribute('property-types'),
+            'price-min': element.getAttribute('price-min'),
+            'price-max': element.getAttribute('price-max'),
+            'all-attributes': Array.from(element.attributes).map(attr => `${attr.name}="${attr.value}"`).join(' '),
+          })
+          
+          // Append to DOM (body container) - RealScout initializes on connect
           containerRef.current.appendChild(element)
+          
+          console.log('✅ RealScout element appended to DOM:', {
+            isConnected: element.isConnected,
+            parentNode: element.parentNode?.nodeName,
+            containerId: containerRef.current.id || 'no-id',
+          })
           
           // Verify element is in DOM with correct attributes
           if (process.env.NODE_ENV === 'development') {
@@ -183,6 +218,7 @@ export function RealScoutListings({
           
           // Re-apply attributes after element is connected to DOM
           // RealScout custom elements read attributes in connectedCallback
+          // Use longer delay to ensure RealScout has fully initialized
           timeoutRef.current = setTimeout(() => {
             if (!mountedRef.current || !containerRef.current || !element.parentNode || element !== elementRef.current) {
               return
@@ -190,6 +226,7 @@ export function RealScoutListings({
             
             try {
               // Re-apply all attributes in exact order after element is connected
+              // This ensures RealScout sees them even if it missed them during initial connection
               element.setAttribute('agent-encoded-id', 'QWdlbnQtMjI1MDUw')
               element.setAttribute('sort-order', mappedSortOrder)
               element.setAttribute('listing-status', listingStatus)
@@ -197,21 +234,25 @@ export function RealScoutListings({
               element.setAttribute('price-min', priceMin)
               element.setAttribute('price-max', priceMax)
               
-              // Final verification
-              if (process.env.NODE_ENV === 'development') {
-                console.log('RealScout element attributes after re-apply:', {
-                  'agent-encoded-id': element.getAttribute('agent-encoded-id'),
-                  'sort-order': element.getAttribute('sort-order'),
-                  'listing-status': element.getAttribute('listing-status'),
-                  'property-types': element.getAttribute('property-types'),
-                  'price-min': element.getAttribute('price-min'),
-                  'price-max': element.getAttribute('price-max'),
-                })
-              }
+              // Force a re-render by triggering attribute change
+              // Some custom elements need this to re-read attributes
+              const event = new Event('attributechanged', { bubbles: true })
+              element.dispatchEvent(event)
+              
+              console.log('RealScout element attributes RE-APPLIED after 300ms:', {
+                'agent-encoded-id': element.getAttribute('agent-encoded-id'),
+                'sort-order': element.getAttribute('sort-order'),
+                'listing-status': element.getAttribute('listing-status'),
+                'property-types': element.getAttribute('property-types'),
+                'price-min': element.getAttribute('price-min'),
+                'price-max': element.getAttribute('price-max'),
+                'element-in-DOM': element.isConnected,
+                'parent': element.parentNode?.nodeName,
+              })
             } catch (err) {
               console.error('Error re-applying RealScout attributes:', err)
             }
-          }, 150)
+          }, 300)
           
           // Defer state update to avoid synchronous updates during render
           setTimeout(() => {

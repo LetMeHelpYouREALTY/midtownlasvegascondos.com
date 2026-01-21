@@ -23,11 +23,22 @@ export function RealScoutScript() {
   }, [])
 
   return (
-    <Script
-      src="https://em.realscout.com/widgets/realscout-web-components.umd.js"
-      type="module"
-      strategy="afterInteractive"
-      id="realscout-web-components-script"
-    />
+    <>
+      <Script
+        src="https://em.realscout.com/widgets/realscout-web-components.umd.js"
+        type="module"
+        strategy="afterInteractive"
+        id="realscout-web-components-script"
+        onLoad={() => {
+          // Script loaded - custom element should be available soon
+          if (typeof window !== 'undefined') {
+            console.log('RealScout script loaded, waiting for custom element registration...')
+          }
+        }}
+        onError={() => {
+          console.error('Failed to load RealScout script')
+        }}
+      />
+    </>
   )
 }
