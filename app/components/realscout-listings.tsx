@@ -49,7 +49,7 @@ export function RealScoutListings({
   const timeoutRef = useRef<NodeJS.Timeout | null>(null)
   const mappedSortOrder = mapSortOrder(sortOrder)
 
-  // Wait for RealScout script to load (script is loaded globally in layout.tsx)
+  // Wait for RealScout script to load (script is loaded per-page via RealScoutScript component)
   useEffect(() => {
     if (typeof window === 'undefined') return
 

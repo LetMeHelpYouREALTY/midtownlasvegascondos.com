@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server'
 import type { NextRequest } from 'next/server'
 
-export function middleware(request: NextRequest) {
+export function proxy(request: NextRequest) {
   const hostname = request.headers.get('host') || ''
   const url = request.nextUrl.clone()
 
@@ -20,7 +20,7 @@ export function middleware(request: NextRequest) {
   return NextResponse.next()
 }
 
-// Configure which routes this middleware runs on
+// Configure which routes this proxy runs on
 export const config = {
   matcher: [
     /*
