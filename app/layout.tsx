@@ -99,6 +99,8 @@ export default function RootLayout({
     <html lang="en">
       <head>
         <link rel="manifest" href="/manifest.json" />
+        <link rel="apple-touch-icon" href="/favicon.ico" />
+        {/* theme-color is supported by Chrome, Edge, Safari, and mobile browsers */}
         <meta name="theme-color" content="#0f172a" />
         {/* Preconnect to critical third-party origins for faster LCP */}
         <link rel="preconnect" href="https://em.realscout.com" />

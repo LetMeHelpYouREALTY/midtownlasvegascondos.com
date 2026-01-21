@@ -20,19 +20,35 @@ export function RealScoutSearch({
   const elementRef = useRef<HTMLElement | null>(null)
   const mountedRef = useRef(true)
 
-  // Load script on component mount
+  // Wait for RealScout script to load (script is loaded per-page via RealScoutScript component)
   useEffect(() => {
     if (typeof window === 'undefined') return
 
     mountedRef.current = true
+    let checkTimeout: NodeJS.Timeout | null = null
 
-    // Check if script is already loaded
-    const existingScript = document.querySelector(
-      'script[src*="realscout-web-components.umd.js"]'
-    )
+    // Check if custom element is already registered
+    if (window.customElements?.get('realscout-advanced-search')) {
+      // Defer state update to avoid synchronous updates
+      setTimeout(() => {
+        if (mountedRef.current) {
+          setScriptLoaded(true)
+        }
+      }, 0)
+      return () => {
+        mountedRef.current = false
+        if (checkTimeout) clearTimeout(checkTimeout)
+      }
+    }
     
-      if (existingScript) {
-      // Script already exists, check if custom element is registered
+    // Wait for custom element to register (script is loaded per-page)
+    let attempts = 0
+    const maxAttempts = 50 // 5 seconds max
+    const checkCustomElement = () => {
+      if (!mountedRef.current) {
+        if (checkTimeout) clearTimeout(checkTimeout)
+        return
+      }
       if (window.customElements?.get('realscout-advanced-search')) {
         // Defer state update
         setTimeout(() => {
@@ -40,90 +56,23 @@ export function RealScoutSearch({
             setScriptLoaded(true)
           }
         }, 0)
-        return () => {
-          mountedRef.current = false
-        }
-      }
-      
-      // Check if script has already loaded (for module scripts, check if it's in the DOM)
-      // If script exists but custom element isn't registered yet, wait for it
-      let checkTimeout: NodeJS.Timeout | null = null
-      let attempts = 0
-      const maxAttempts = 50 // 5 seconds max
-      const checkCustomElement = () => {
-        if (!mountedRef.current) {
-          if (checkTimeout) clearTimeout(checkTimeout)
-          return
-        }
-        if (window.customElements?.get('realscout-advanced-search')) {
-          // Defer state update
-          setTimeout(() => {
-            if (mountedRef.current) {
-              setScriptLoaded(true)
-            }
-          }, 0)
-        } else {
-          attempts++
-          if (attempts < maxAttempts) {
-            // Retry after a short delay
-            checkTimeout = setTimeout(checkCustomElement, 100)
-          } else {
-            console.warn('RealScout custom element did not register within timeout in script loading')
-          }
-        }
-      }
-      
-      // Wait for existing script to finish loading
-      if (existingScript.getAttribute('type') === 'module') {
-        // For module scripts, check periodically
-        checkCustomElement()
       } else {
-        const loadHandler = () => {
-          // Defer state update
-          setTimeout(() => {
-            if (mountedRef.current) {
-              setScriptLoaded(true)
-            }
-          }, 0)
-        }
-        existingScript.addEventListener('load', loadHandler)
-        return () => {
-          mountedRef.current = false
-          if (checkTimeout) clearTimeout(checkTimeout)
-          existingScript.removeEventListener('load', loadHandler)
+        attempts++
+        if (attempts < maxAttempts) {
+          // Retry after a short delay
+          checkTimeout = setTimeout(checkCustomElement, 100)
+        } else {
+          console.warn('RealScout custom element did not register within timeout')
         }
       }
-      
-      return () => {
-        mountedRef.current = false
-        if (checkTimeout) clearTimeout(checkTimeout)
-      }
-    }
-
-    // Create and inject script tag
-    const script = document.createElement('script')
-    script.src = 'https://em.realscout.com/widgets/realscout-web-components.umd.js'
-    script.type = 'module'
-    script.async = true
-    script.id = 'realscout-advanced-search-script'
-    
-    script.onload = () => {
-      // Defer state update
-      setTimeout(() => {
-        if (mountedRef.current) {
-          setScriptLoaded(true)
-        }
-      }, 0)
     }
     
-    script.onerror = () => {
-      console.error('Failed to load RealScout script')
-    }
-
-    document.head.appendChild(script)
-
+    // Start checking
+    checkCustomElement()
+    
     return () => {
       mountedRef.current = false
+      if (checkTimeout) clearTimeout(checkTimeout)
     }
   }, [])
 

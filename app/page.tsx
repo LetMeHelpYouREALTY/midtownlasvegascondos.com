@@ -5,6 +5,7 @@ import { Newsletter } from './components/newsletter'
 import { UpcomingEvents } from './components/upcoming-events'
 import { RealScoutSearch } from './components/realscout-search'
 import { RealScoutListings } from './components/realscout-listings'
+import { RealScoutScript } from './components/realscout-script'
 import { PageFAQ } from './components/page-faq'
 import { CalendlyLink } from './components/calendly-link'
 
@@ -19,7 +20,9 @@ export const metadata: Metadata = {
 
 export default function HomePage() {
   return (
-    <div className="min-h-screen bg-white">
+    <>
+      <RealScoutScript />
+      <div className="min-h-screen bg-white">
       {/* Hero Section */}
       <section className="relative h-screen flex items-center justify-center">
         <div className="absolute inset-0">
@@ -660,5 +663,6 @@ export default function HomePage() {
         </div>
       </section>
     </div>
+    </>
   )
 }

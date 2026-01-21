@@ -49,112 +49,59 @@ export function RealScoutListings({
   const timeoutRef = useRef<NodeJS.Timeout | null>(null)
   const mappedSortOrder = mapSortOrder(sortOrder)
 
-  // Load script on component mount
+  // Wait for RealScout script to load (script is loaded globally in layout.tsx)
   useEffect(() => {
     if (typeof window === 'undefined') return
 
     mountedRef.current = true
     let checkTimeout: NodeJS.Timeout | null = null
 
-    // Check if script is already loaded
-    const existingScript = document.querySelector(
-      'script[src*="realscout-web-components.umd.js"]'
-    )
-    
-    if (existingScript) {
-      // Script already exists, check if custom element is registered
-      if (window.customElements?.get('realscout-office-listings')) {
-        // Defer state update to avoid synchronous updates
-        setTimeout(() => {
-          if (mountedRef.current) {
-            setScriptLoaded(true)
-          }
-        }, 0)
-        return () => {
-          mountedRef.current = false
-          if (checkTimeout) clearTimeout(checkTimeout)
-        }
-      }
-      
-      // Check if script has already loaded (for module scripts, check if it's in the DOM)
-      // If script exists but custom element isn't registered yet, wait for it
-      let attempts = 0
-      const maxAttempts = 50 // 5 seconds max
-      const checkCustomElement = () => {
-        if (!mountedRef.current) {
-          if (checkTimeout) clearTimeout(checkTimeout)
-          return
-        }
-        if (window.customElements?.get('realscout-office-listings')) {
-          // Defer state update
-          setTimeout(() => {
-            if (mountedRef.current) {
-              setScriptLoaded(true)
-            }
-          }, 0)
-        } else {
-          attempts++
-          if (attempts < maxAttempts) {
-            // Retry after a short delay
-            checkTimeout = setTimeout(checkCustomElement, 100)
-          } else {
-            console.warn('RealScout custom element did not register within timeout in script loading')
-          }
-        }
-      }
-      
-      // Wait for existing script to finish loading
-      if (existingScript.getAttribute('type') === 'module') {
-        // For module scripts, check periodically
-        checkCustomElement()
-      } else {
-        const loadHandler = () => {
-          if (mountedRef.current) {
-            setScriptLoaded(true)
-          }
-        }
-        existingScript.addEventListener('load', loadHandler)
-      return () => {
-        mountedRef.current = false
-        if (checkTimeout) clearTimeout(checkTimeout)
-        existingScript.removeEventListener('load', loadHandler)
-      }
-      }
-      
-      return () => {
-        mountedRef.current = false
-        if (checkTimeout) clearTimeout(checkTimeout)
-      }
-    }
-
-    // Create and inject script tag
-    const script = document.createElement('script')
-    script.src = 'https://em.realscout.com/widgets/realscout-web-components.umd.js'
-    script.type = 'module'
-    script.async = true
-    script.id = 'realscout-office-listings-script'
-    
-    const loadHandler = () => {
-      // Defer state update
+    // Check if custom element is already registered
+    if (window.customElements?.get('realscout-office-listings')) {
+      // Defer state update to avoid synchronous updates
       setTimeout(() => {
         if (mountedRef.current) {
           setScriptLoaded(true)
         }
       }, 0)
+      return () => {
+        mountedRef.current = false
+        if (checkTimeout) clearTimeout(checkTimeout)
+      }
     }
     
-    script.onload = loadHandler
-    
-    script.onerror = () => {
-      console.error('Failed to load RealScout script')
+    // Wait for custom element to register (script is loaded in head)
+    let attempts = 0
+    const maxAttempts = 50 // 5 seconds max
+    const checkCustomElement = () => {
+      if (!mountedRef.current) {
+        if (checkTimeout) clearTimeout(checkTimeout)
+        return
+      }
+      if (window.customElements?.get('realscout-office-listings')) {
+        // Defer state update
+        setTimeout(() => {
+          if (mountedRef.current) {
+            setScriptLoaded(true)
+          }
+        }, 0)
+      } else {
+        attempts++
+        if (attempts < maxAttempts) {
+          // Retry after a short delay
+          checkTimeout = setTimeout(checkCustomElement, 100)
+        } else {
+          console.warn('RealScout custom element did not register within timeout')
+        }
+      }
     }
-
-    document.head.appendChild(script)
-
+    
+    // Start checking
+    checkCustomElement()
+    
     return () => {
       mountedRef.current = false
       if (checkTimeout) clearTimeout(checkTimeout)
-      // Note: Don't remove script from DOM as other components might use it
     }
   }, [])
 

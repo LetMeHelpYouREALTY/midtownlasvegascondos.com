@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import { RealScoutSearch } from '@/app/components/realscout-search'
 import { RealScoutListings } from '@/app/components/realscout-listings'
+import { RealScoutScript } from '@/app/components/realscout-script'
 import { PageFAQ } from '@/app/components/page-faq'
 import { Breadcrumb } from '@/app/components/breadcrumb'
 import { Metadata } from 'next'
@@ -22,7 +23,9 @@ export default function MidtownPlazaPage() {
   ]
 
   return (
-    <div className="min-h-screen bg-white">
+    <>
+      <RealScoutScript />
+      <div className="min-h-screen bg-white">
       {/* Hero Section */}
       <section className="relative h-[60vh] flex items-center justify-center bg-gradient-to-br from-slate-900 to-slate-700">
         <div className="absolute inset-0 bg-black/30" />
@@ -293,6 +296,7 @@ export default function MidtownPlazaPage() {
         </div>
       </section>
     </div>
+    </>
   )
 }
 

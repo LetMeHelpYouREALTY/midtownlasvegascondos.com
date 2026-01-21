@@ -1,5 +1,6 @@
 import { RealScoutSearch } from '../components/realscout-search'
 import { RealScoutListings } from '../components/realscout-listings'
+import { RealScoutScript } from '../components/realscout-script'
 import { Metadata } from 'next'
 import Link from 'next/link'
 import { Breadcrumb } from '../components/breadcrumb'
@@ -29,7 +30,9 @@ export default function SearchPage() {
   ]
 
   return (
-    <div className="min-h-screen bg-white">
+    <>
+      <RealScoutScript />
+      <div className="min-h-screen bg-white">
       {/* Hero Section */}
       <section className="relative py-20 bg-gradient-to-br from-slate-900 to-slate-700 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -257,6 +260,7 @@ export default function SearchPage() {
         </div>
       </section>
     </div>
+    </>
   )
 }
 

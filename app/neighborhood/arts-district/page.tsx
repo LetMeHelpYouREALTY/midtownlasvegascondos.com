@@ -2,6 +2,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { RealScoutSearch } from '@/app/components/realscout-search'
 import { RealScoutListings } from '@/app/components/realscout-listings'
+import { RealScoutScript } from '@/app/components/realscout-script'
 import { PageFAQ } from '@/app/components/page-faq'
 import { Breadcrumb } from '@/app/components/breadcrumb'
 import { Metadata } from 'next'
@@ -24,7 +25,9 @@ export default function ArtsDistrictPage() {
   ]
 
   return (
-    <div className="min-h-screen bg-white">
+    <>
+      <RealScoutScript />
+      <div className="min-h-screen bg-white">
       {/* Hero Section */}
       <section className="relative h-[60vh] flex items-center justify-center">
         <div className="absolute inset-0">
@@ -363,6 +366,7 @@ export default function ArtsDistrictPage() {
         </div>
       </section>
     </div>
+    </>
   )
 }
 

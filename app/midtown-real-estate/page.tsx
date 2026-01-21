@@ -2,6 +2,7 @@ import Link from 'next/link'
 import { Metadata } from 'next'
 import { Breadcrumb } from '../components/breadcrumb'
 import { RealScoutListings } from '../components/realscout-listings'
+import { RealScoutScript } from '../components/realscout-script'
 import { CalendlyLink } from '../components/calendly-link'
 import { RealScoutSearch } from '../components/realscout-search'
 
@@ -29,7 +30,9 @@ export default function MidtownRealEstatePage() {
   ]
 
   return (
-    <div className="min-h-screen bg-white">
+    <>
+      <RealScoutScript />
+      <div className="min-h-screen bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <Breadcrumb items={breadcrumbItems} />
         
@@ -272,6 +275,7 @@ export default function MidtownRealEstatePage() {
         </section>
       </div>
     </div>
+    </>
   )
 }
 
