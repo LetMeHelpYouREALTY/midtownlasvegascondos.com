@@ -1,13 +1,24 @@
 import Link from 'next/link'
 import { Metadata } from 'next'
 import { CalendlyLink } from '../components/calendly-link'
+import { Breadcrumb } from '../components/breadcrumb'
+import { EventSchema } from '../components/event-schema'
 
 export const metadata: Metadata = {
   title: 'Midtown Las Vegas Events Calendar | First Friday & More',
   description: 'Discover events in Midtown and the Arts District: First Friday, art walks, Book Festival, Las Vegas Marathon, and more. Live where it happens!',
   keywords: 'Midtown Las Vegas events, First Friday Las Vegas, Arts District events, Las Vegas Book Festival, Las Vegas Marathon, Arts District calendar',
+  authors: [{ name: 'Dr. Jan Duffy' }],
+  creator: 'Dr. Jan Duffy',
+  publisher: 'Midtown Las Vegas Condos',
   alternates: {
     canonical: 'https://www.midtownvegascondos.com/events',
+  },
+  openGraph: {
+    title: 'Midtown Las Vegas Events Calendar',
+    description: 'Discover events in Midtown and the Arts District: First Friday, art walks, and more.',
+    type: 'website',
+    url: 'https://www.midtownvegascondos.com/events',
   },
 }
 
@@ -66,6 +77,10 @@ export default function EventsPage() {
   ]
 
   const categories = ['All', 'Weekly', 'Monthly', 'Annual']
+  const breadcrumbItems = [
+    { name: 'Home', url: '/' },
+    { name: 'Events', url: '/events' },
+  ]
 
   return (
     <div className="min-h-screen bg-white">
@@ -89,6 +104,7 @@ export default function EventsPage() {
       {/* Event Culture Section */}
       <section className="py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
         <div className="max-w-4xl mx-auto">
+          <Breadcrumb items={breadcrumbItems} />
           <h2 className="text-4xl font-bold text-slate-900 mb-8">The Midtown Event Experience</h2>
           <div className="prose prose-lg text-slate-600 space-y-6 mb-12">
             <p>

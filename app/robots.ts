@@ -8,12 +8,24 @@ export default function robots(): MetadataRoute.Robots {
       {
         userAgent: '*',
         allow: '/',
-        disallow: ['/api/', '/_next/', '/static/'],
+        disallow: [
+          '/api/',
+          '/_next/',
+          '/static/',
+          '/listings/',
+          '/static/img/icons/',
+        ],
       },
       {
         userAgent: 'Googlebot',
         allow: '/',
-        disallow: ['/api/', '/_next/', '/static/'],
+        disallow: [
+          '/api/',
+          '/_next/',
+          '/static/',
+          '/listings/',
+          '/static/img/icons/',
+        ],
       },
       {
         userAgent: 'Googlebot-Image',
@@ -26,7 +38,13 @@ export default function robots(): MetadataRoute.Robots {
       {
         userAgent: 'Google-Search-Agent',
         allow: '/',
-        disallow: ['/api/', '/_next/', '/static/'],
+        disallow: [
+          '/api/',
+          '/_next/',
+          '/static/',
+          '/listings/',
+          '/static/img/icons/',
+        ],
       },
       {
         userAgent: 'ChatGPT-User',

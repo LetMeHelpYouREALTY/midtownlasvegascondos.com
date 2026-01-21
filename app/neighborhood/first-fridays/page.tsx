@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import { Metadata } from 'next'
 import { RealScoutListings } from '@/app/components/realscout-listings'
+import { EventSchema } from '@/app/components/event-schema'
 
 export const metadata: Metadata = {
   title: 'First Friday Las Vegas | Arts District Monthly Art Walk',
@@ -39,6 +40,27 @@ export default function FirstFridaysPage() {
           </div>
         </div>
       </section>
+
+      {/* Event Schema for First Friday */}
+      <EventSchema
+        name="First Friday Las Vegas"
+        description="Las Vegas's largest monthly art event in the Arts District. Gallery openings, live music, food trucks, street performers, and artisan markets."
+        startDate="2025-02-07T17:00:00-08:00"
+        endDate="2025-02-07T23:00:00-08:00"
+        location={{
+          name: "Las Vegas Arts District",
+          address: {
+            addressLocality: "Las Vegas",
+            addressRegion: "NV",
+            postalCode: "89101",
+            addressCountry: "US",
+          },
+        }}
+        organizer={{
+          name: "First Friday Foundation",
+        }}
+        url="https://www.midtownvegascondos.com/neighborhood/first-fridays"
+      />
 
       {/* Introduction */}
       <section className="py-20 px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto text-center">

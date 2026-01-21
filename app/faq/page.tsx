@@ -1,6 +1,7 @@
 import { Metadata } from 'next'
 import Link from 'next/link'
 import { CalendlyLink } from '../components/calendly-link'
+import { Breadcrumb } from '../components/breadcrumb'
 
 export const metadata: Metadata = {
   title: 'FAQ | Midtown Las Vegas Condos - Your Questions Answered',
@@ -8,8 +9,17 @@ export const metadata: Metadata = {
     'Frequently asked questions about living in Midtown Las Vegas, The English Residences, Arts District real estate, and working with Dr. Jan Duffy. Call (702) 500-1980.',
   keywords:
     'Midtown Las Vegas FAQ, Arts District questions, English Residences information, Las Vegas condo questions',
+  authors: [{ name: 'Dr. Jan Duffy' }],
+  creator: 'Dr. Jan Duffy',
+  publisher: 'Midtown Las Vegas Condos',
   alternates: {
     canonical: 'https://www.midtownvegascondos.com/faq',
+  },
+  openGraph: {
+    title: 'FAQ | Midtown Las Vegas Condos',
+    description: 'Frequently asked questions about living in Midtown Las Vegas and The English Residences.',
+    type: 'website',
+    url: 'https://www.midtownvegascondos.com/faq',
   },
 }
 
@@ -118,6 +128,11 @@ const faqs = [
 ]
 
 export default function FAQPage() {
+  const breadcrumbItems = [
+    { name: 'Home', url: '/' },
+    { name: 'FAQ', url: '/faq' },
+  ]
+
   return (
     <div className="min-h-screen bg-white">
       {/* Hero */}
@@ -137,6 +152,7 @@ export default function FAQPage() {
 
       {/* FAQ Introduction */}
       <section className="py-12 px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto">
+        <Breadcrumb items={breadcrumbItems} />
         <div className="prose prose-lg text-slate-600 space-y-4 mb-12">
           <p>
             Moving to or investing in Midtown Las Vegas represents a significant decision, and we understand you'll have questions about 

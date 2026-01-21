@@ -1,8 +1,39 @@
 import Link from 'next/link'
-import Image from 'next/image'
+import { Metadata } from 'next'
 import { CalendlyLink } from '../components/calendly-link'
+import { Breadcrumb } from '../components/breadcrumb'
+
+export const metadata: Metadata = {
+  title: 'Contact Dr. Jan Duffy | Midtown Las Vegas Real Estate Agent | (702) 500-1980',
+  description:
+    'Contact Dr. Jan Duffy, your Midtown Las Vegas real estate specialist. Schedule a personalized property tour, get expert guidance on Arts District homes, or learn about investment opportunities. Call (702) 500-1980.',
+  keywords: [
+    'contact Dr. Jan Duffy',
+    'Midtown Las Vegas real estate agent',
+    'Arts District realtor',
+    'Las Vegas condo specialist',
+    'schedule property tour',
+  ],
+  authors: [{ name: 'Dr. Jan Duffy' }],
+  creator: 'Dr. Jan Duffy',
+  publisher: 'Midtown Las Vegas Condos',
+  alternates: {
+    canonical: 'https://www.midtownvegascondos.com/contact',
+  },
+  openGraph: {
+    title: 'Contact Dr. Jan Duffy | Midtown Las Vegas Real Estate',
+    description: 'Schedule a personalized property tour with Dr. Jan Duffy, your Arts District real estate specialist.',
+    type: 'website',
+    url: 'https://www.midtownvegascondos.com/contact',
+  },
+}
 
 export default function ContactPage() {
+  const breadcrumbItems = [
+    { name: 'Home', url: '/' },
+    { name: 'Contact', url: '/contact' },
+  ]
+
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
@@ -24,6 +55,7 @@ export default function ContactPage() {
       {/* Why Contact Dr. Jan */}
       <section className="py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
         <div className="max-w-4xl mx-auto">
+          <Breadcrumb items={breadcrumbItems} />
           <h2 className="text-4xl font-bold text-slate-900 mb-8 text-center">Why Work With Dr. Jan Duffy?</h2>
           <div className="prose prose-lg max-w-none text-slate-600 space-y-6">
             <p>
@@ -301,15 +333,35 @@ export default function ContactPage() {
                 </p>
               </div>
 
-              {/* Map Image */}
+              {/* Google Maps Locator */}
               <div className="mt-8">
-                <div className="relative aspect-video rounded-lg overflow-hidden">
-                  <Image
-                    src="/images/midtown/blvd-aerial-rendering.jpg"
-                    alt="Aerial view of Midtown Las Vegas Arts District location showing BLVD complex at 921 S Main Street, The English Hotel, and surrounding neighborhood where Dr. Jan Duffy serves real estate clients"
-                    fill
-                    className="object-cover"
-                    quality={85}
+                <h3 className="text-xl font-semibold text-slate-900 mb-3 flex items-center">
+                  <svg
+                    className="w-6 h-6 mr-3 text-slate-900"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7"
+                    />
+                  </svg>
+                  Location Map
+                </h3>
+                <div className="relative aspect-video rounded-lg overflow-hidden border border-slate-200 shadow-sm">
+                  <iframe
+                    src="https://storage.googleapis.com/maps-solutions-v9iuebxrqf/locator-plus/2bo5/locator-plus.html"
+                    width="100%"
+                    height="100%"
+                    className="border-0"
+                    loading="lazy"
+                    allowFullScreen
+                    referrerPolicy="no-referrer-when-downgrade"
+                    title="Midtown Las Vegas Location Map"
+                    className="absolute inset-0 w-full h-full"
                   />
                 </div>
               </div>

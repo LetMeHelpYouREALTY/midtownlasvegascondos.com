@@ -47,8 +47,18 @@ export function RealEstateListingSchema({
     agent: {
       '@type': 'RealEstateAgent',
       name: agentName,
+      url: 'https://www.midtownvegascondos.com/about',
+      telephone: '+17025001980',
+      email: 'DrJanSells@MidtownVegasCondos.com',
     },
-    areaServed,
+    areaServed: {
+      '@type': 'City',
+      name: areaServed,
+    },
+    // Enhanced for 2026 SEO
+    datePosted: new Date().toISOString().split('T')[0],
+    listingStatus: 'https://schema.org/ForSale',
+    numberOfRooms: 'Contact for details',
   }
 
   if (price) {
@@ -56,6 +66,7 @@ export function RealEstateListingSchema({
       '@type': 'PriceSpecification',
       priceCurrency,
       price,
+      valueAddedTaxIncluded: false,
     }
   }
 

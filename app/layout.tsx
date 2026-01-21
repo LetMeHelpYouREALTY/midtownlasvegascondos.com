@@ -8,6 +8,8 @@ import { LocalBusinessSchema, WebSiteSchema, PersonSchema } from './components/s
 import { FAQSchema } from './components/faq-schema'
 import { GoogleAnalytics } from './components/google-analytics'
 import { AggregateRatingSchema } from './components/aggregate-rating-schema'
+import { ReviewSchema } from './components/review-schema'
+import { ServiceSchema } from './components/service-schema'
 import { StickyCTABar } from './components/sticky-cta-bar'
 import { WidgetTracker } from './components/widget-tracker'
 import { CalendlyBadge } from './components/calendly-badge'
@@ -85,7 +87,9 @@ export const metadata: Metadata = {
   manifest: '/manifest.json',
   icons: {
     icon: '/favicon.ico',
-    apple: '/favicon.ico',
+    apple: [
+      { url: '/favicon.ico', sizes: '180x180', type: 'image/x-icon' },
+    ],
   },
   category: 'real estate',
 }
@@ -98,14 +102,26 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+        {/* Explicit robots meta tag to ensure indexing */}
+        <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
         <link rel="manifest" href="/manifest.json" />
-        <link rel="apple-touch-icon" href="/favicon.ico" />
-        {/* theme-color is supported by Chrome, Edge, Safari, and mobile browsers */}
+        {/* Apple touch icon - using favicon.ico as fallback until dedicated PNG is created */}
+        <link rel="apple-touch-icon" href="/favicon.ico" sizes="180x180" />
+        {/* theme-color is supported by Chrome, Edge, Safari, and mobile browsers (not Firefox/Opera) */}
         <meta name="theme-color" content="#0f172a" />
-        {/* Preconnect to critical third-party origins for faster LCP */}
+        {/* Core Web Vitals Optimization - Preconnect to critical third-party domains */}
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link rel="preconnect" href="https://www.googletagmanager.com" />
         <link rel="preconnect" href="https://em.realscout.com" />
         <link rel="preconnect" href="https://www.realscout.com" />
+        {/* DNS Prefetch for non-critical resources */}
         <link rel="dns-prefetch" href="https://assets.calendly.com" />
+        <link rel="dns-prefetch" href="https://calendly.com" />
+        <link rel="dns-prefetch" href="https://widgetbe.com" />
+        <link rel="dns-prefetch" href="https://maps.googleapis.com" />
+        <link rel="dns-prefetch" href="https://storage.googleapis.com" />
+        <meta httpEquiv="x-dns-prefetch-control" content="on" />
         {/* RealScout widget script - must load before widgets */}
         <Script
           src="https://em.realscout.com/widgets/realscout-web-components.umd.js"
@@ -149,6 +165,8 @@ export default function RootLayout({
         <PersonSchema />
         <LocalBusinessSchema />
         <AggregateRatingSchema />
+        <ReviewSchema />
+        <ServiceSchema />
         <FAQSchema />
         <Header />
         <main className="pt-16">{children}</main>

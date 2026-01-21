@@ -35,12 +35,12 @@ const nextConfig: NextConfig = {
             key: 'Content-Security-Policy',
             value: [
               "default-src 'self'",
-              "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://em.realscout.com https://www.realscout.com https://assets.calendly.com https://widgetbe.com",
-              "style-src 'self' 'unsafe-inline' https://assets.calendly.com https://fonts.googleapis.com",
-              "img-src 'self' data: https:",
+              "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://em.realscout.com https://www.realscout.com https://assets.calendly.com https://widgetbe.com https://maps.googleapis.com",
+              "style-src 'self' 'unsafe-inline' https://assets.calendly.com https://fonts.googleapis.com https://maps.gstatic.com",
+              "img-src 'self' data: https: https://maps.gstatic.com https://maps.googleapis.com",
               "font-src 'self' data: https://fonts.gstatic.com",
-              "connect-src 'self' https://www.google-analytics.com https://em.realscout.com https://www.realscout.com https://calendly.com https://widgetbe.com",
-              "frame-src 'self' https://www.googletagmanager.com https://calendly.com",
+              "connect-src 'self' https://www.google-analytics.com https://em.realscout.com https://www.realscout.com https://calendly.com https://widgetbe.com https://maps.googleapis.com",
+              "frame-src 'self' https://www.googletagmanager.com https://calendly.com https://storage.googleapis.com https://maps.google.com",
             ].join('; '),
           },
           // Cache headers for static assets
@@ -82,6 +82,21 @@ const nextConfig: NextConfig = {
     // Optimize for LCP (Largest Contentful Paint)
     dangerouslyAllowSVG: false,
     contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
+  },
+  // Redirects for old/dead URLs
+  async redirects() {
+    return [
+      {
+        source: '/listings/luxury-condo',
+        destination: '/midtown-real-estate',
+        permanent: true,
+      },
+      {
+        source: '/listings/:path*',
+        destination: '/midtown-real-estate',
+        permanent: true,
+      },
+    ]
   },
   // Compression
   compress: true,

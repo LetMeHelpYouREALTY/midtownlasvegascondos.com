@@ -1,17 +1,32 @@
 import { Metadata } from 'next'
 import Link from 'next/link'
 import { CalendlyLink } from '../components/calendly-link'
+import { Breadcrumb } from '../components/breadcrumb'
 
 export const metadata: Metadata = {
   title: 'About Midtown Las Vegas | Arts District History & Community',
   description: 'Discover the story of Midtown, the walkable neighborhood north of Charleston in the heart of the Las Vegas Arts District. From industrial hub to cultural center.',
   keywords: 'Midtown Las Vegas history, Arts District transformation, 18b Arts District, walkable Las Vegas, downtown Las Vegas community',
+  authors: [{ name: 'Dr. Jan Duffy' }],
+  creator: 'Dr. Jan Duffy',
+  publisher: 'Midtown Las Vegas Condos',
   alternates: {
     canonical: 'https://www.midtownvegascondos.com/about',
+  },
+  openGraph: {
+    title: 'About Midtown Las Vegas | Arts District History',
+    description: 'Discover the story of Midtown, the walkable neighborhood in the heart of the Las Vegas Arts District.',
+    type: 'website',
+    url: 'https://www.midtownvegascondos.com/about',
   },
 }
 
 export default function AboutPage() {
+  const breadcrumbItems = [
+    { name: 'Home', url: '/' },
+    { name: 'About', url: '/about' },
+  ]
+
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
@@ -28,6 +43,7 @@ export default function AboutPage() {
 
       {/* Content */}
       <section className="py-20 px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto">
+        <Breadcrumb items={breadcrumbItems} />
         <div className="prose prose-lg max-w-none">
           <h2 className="text-3xl font-bold text-slate-900 mb-6">
             The Heart of the Arts District

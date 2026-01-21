@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import { Metadata } from 'next'
 import { CalendlyLink } from '../components/calendly-link'
+import { Breadcrumb } from '../components/breadcrumb'
 
 export const metadata: Metadata = {
   title: 'Midtown Las Vegas News & Updates | Arts District Development',
@@ -14,8 +15,17 @@ export const metadata: Metadata = {
     'Las Vegas Arts District news',
     'Midtown real estate news',
   ],
+  authors: [{ name: 'Dr. Jan Duffy' }],
+  creator: 'Dr. Jan Duffy',
+  publisher: 'Midtown Las Vegas Condos',
   alternates: {
     canonical: 'https://www.midtownvegascondos.com/news',
+  },
+  openGraph: {
+    title: 'Midtown Las Vegas News & Updates',
+    description: 'Stay updated on the latest Midtown Las Vegas news and developments.',
+    type: 'website',
+    url: 'https://www.midtownvegascondos.com/news',
   },
 }
 
@@ -71,6 +81,11 @@ export default function NewsPage() {
     },
   ]
 
+  const breadcrumbItems = [
+    { name: 'Home', url: '/' },
+    { name: 'News', url: '/news' },
+  ]
+
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
@@ -91,6 +106,7 @@ export default function NewsPage() {
 
       {/* News Introduction */}
       <section className="py-12 px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto">
+        <Breadcrumb items={breadcrumbItems} />
         <div className="prose prose-lg text-slate-600 space-y-4 mb-12">
           <p>
             Staying informed about Midtown developments, new business openings, cultural events, and real estate market trends helps current 
