@@ -216,22 +216,28 @@ export function RealScoutListings({
           })
           
           // Log network requests to RealScout API (if possible)
-          if (typeof window !== 'undefined' && 'performance' in window) {
-            const observer = new PerformanceObserver((list) => {
-              for (const entry of list.getEntries()) {
-                if (entry.name.includes('realscout.com') || entry.name.includes('realscout')) {
-                  console.log('🌐 RealScout API call detected:', {
-                    url: entry.name,
-                    type: entry.entryType,
-                    duration: entry.duration,
-                  })
-                }
-              }
-            })
+          // Note: PerformanceObserver may not be available in all browsers or contexts
+          if (typeof window !== 'undefined' && 'performance' in window && 'PerformanceObserver' in window) {
             try {
+              const observer = new PerformanceObserver((list) => {
+                try {
+                  for (const entry of list.getEntries()) {
+                    if (entry.name && (entry.name.includes('realscout.com') || entry.name.includes('realscout'))) {
+                      console.log('🌐 RealScout API call detected:', {
+                        url: entry.name,
+                        type: entry.entryType,
+                        duration: entry.duration,
+                      })
+                    }
+                  }
+                } catch (e) {
+                  // Ignore errors in observer callback
+                }
+              })
               observer.observe({ entryTypes: ['resource', 'navigation'] })
             } catch (e) {
-              // PerformanceObserver might not be available
+              // PerformanceObserver might not be available or supported
+              // Silently fail - this is just for debugging
             }
           }
           
@@ -263,38 +269,49 @@ export function RealScoutListings({
           // Monitor for RealScout API calls and element state changes
           // Add event listeners to track widget initialization
           const checkWidgetState = () => {
-            if (!element.isConnected) return
-            
-            // Check if RealScout has rendered content
-            const hasContent = element.children.length > 0 || (element.shadowRoot?.children.length ?? 0) > 0
-            const innerHTML = element.innerHTML.trim()
-            const hasListings = !innerHTML.includes('No listings available') && !innerHTML.includes('Loading')
-            
-            console.log('RealScout widget state check:', {
-              hasContent,
-              hasListings,
-              innerHTML: innerHTML.substring(0, 100),
-              childrenCount: element.children.length,
-              hasShadowRoot: !!element.shadowRoot,
-            })
-            
-            // If still showing "No listings available" after 2 seconds, log detailed info
-            if (innerHTML.includes('No listings available')) {
-              console.warn('⚠️ RealScout showing "No listings available"', {
-                'agent-encoded-id': element.getAttribute('agent-encoded-id'),
-                'sort-order': element.getAttribute('sort-order'),
-                'listing-status': element.getAttribute('listing-status'),
-                'property-types': element.getAttribute('property-types'),
-                'price-min': element.getAttribute('price-min'),
-                'price-max': element.getAttribute('price-max'),
-                'all-attributes': Array.from(element.attributes).map(a => `${a.name}="${a.value}"`),
+            try {
+              if (!element || !element.isConnected) return
+              
+              // Check if RealScout has rendered content
+              const hasContent = element.children.length > 0 || (element.shadowRoot?.children.length ?? 0) > 0
+              let innerHTML = ''
+              try {
+                innerHTML = element.innerHTML.trim()
+              } catch (e) {
+                // innerHTML might not be accessible in some contexts
+                innerHTML = ''
+              }
+              const hasListings = !innerHTML.includes('No listings available') && !innerHTML.includes('Loading')
+              
+              console.log('RealScout widget state check:', {
+                hasContent,
+                hasListings,
+                innerHTML: innerHTML.substring(0, 100),
+                childrenCount: element.children.length,
+                hasShadowRoot: !!element.shadowRoot,
               })
+              
+              // If still showing "No listings available" after 2 seconds, log detailed info
+              if (innerHTML.includes('No listings available')) {
+                console.warn('⚠️ RealScout showing "No listings available"', {
+                  'agent-encoded-id': element.getAttribute('agent-encoded-id'),
+                  'sort-order': element.getAttribute('sort-order'),
+                  'listing-status': element.getAttribute('listing-status'),
+                  'property-types': element.getAttribute('property-types'),
+                  'price-min': element.getAttribute('price-min'),
+                  'price-max': element.getAttribute('price-max'),
+                  'all-attributes': Array.from(element.attributes).map(a => `${a.name}="${a.value}"`),
+                })
+              }
+            } catch (err) {
+              // Silently handle errors in state checking
+              console.error('Error checking widget state:', err)
             }
           }
           
           // Check widget state after delays
           timeoutRef.current = setTimeout(() => {
-            if (!mountedRef.current || !containerRef.current || !element.parentNode || element !== elementRef.current) {
+            if (!mountedRef.current || !containerRef.current || !element || !element.parentNode || element !== elementRef.current) {
               return
             }
             
@@ -307,6 +324,26 @@ export function RealScoutListings({
               element.setAttribute('price-min', priceMin)
               element.setAttribute('price-max', priceMax)
               
+              // Force a re-render by triggering attribute change
+              // Some custom elements need this to re-read attributes
+              try {
+                const event = new Event('attributechanged', { bubbles: true })
+                element.dispatchEvent(event)
+              } catch (e) {
+                // Event creation/dispatch might fail in some contexts
+              }
+              
+              console.log('RealScout element attributes RE-APPLIED after 500ms:', {
+                'agent-encoded-id': element.getAttribute('agent-encoded-id'),
+                'sort-order': element.getAttribute('sort-order'),
+                'listing-status': element.getAttribute('listing-status'),
+                'property-types': element.getAttribute('property-types'),
+                'price-min': element.getAttribute('price-min'),
+                'price-max': element.getAttribute('price-max'),
+                'element-in-DOM': element.isConnected,
+                'parent': element.parentNode?.nodeName,
+              })
+              
               checkWidgetState()
             } catch (err) {
               console.error('Error re-applying RealScout attributes:', err)
@@ -315,8 +352,12 @@ export function RealScoutListings({
           
           // Check again after 2 seconds to see final state
           setTimeout(() => {
-            if (element.isConnected && element === elementRef.current) {
-              checkWidgetState()
+            try {
+              if (element && element.isConnected && element === elementRef.current) {
+                checkWidgetState()
+              }
+            } catch (e) {
+              // Silently handle errors
             }
           }, 2000)
           
