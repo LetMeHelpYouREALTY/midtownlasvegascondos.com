@@ -104,8 +104,16 @@ export default function RootLayout({
       <head>
         {/* Explicit robots meta tag to ensure indexing */}
         <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+        {/* Core Web Vitals Optimization - Preconnect EARLY to critical third-party domains */}
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link rel="preconnect" href="https://www.googletagmanager.com" />
+        <link rel="preconnect" href="https://em.realscout.com" />
+        <link rel="preconnect" href="https://www.realscout.com" />
+        {/* Preconnect to CloudFront for RealScout listing images - critical for LCP */}
+        <link rel="preconnect" href="https://d1buiexcd5gara.cloudfront.net" crossOrigin="anonymous" />
         <link rel="manifest" href="/manifest.json" />
-        {/* Preload hero image for faster LCP */}
+        {/* Preload hero image for faster LCP - MUST be before other resources */}
         <link
           rel="preload"
           as="image"
@@ -116,14 +124,6 @@ export default function RootLayout({
         <link rel="apple-touch-icon" href="/favicon.ico" sizes="180x180" />
         {/* theme-color is supported by Chrome, Edge, Safari, and mobile browsers (not Firefox/Opera) */}
         <meta name="theme-color" content="#0f172a" />
-        {/* Core Web Vitals Optimization - Preconnect to critical third-party domains */}
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link rel="preconnect" href="https://www.googletagmanager.com" />
-        <link rel="preconnect" href="https://em.realscout.com" />
-        <link rel="preconnect" href="https://www.realscout.com" />
-        {/* Preconnect to CloudFront for RealScout listing images - critical for LCP */}
-        <link rel="preconnect" href="https://d1buiexcd5gara.cloudfront.net" crossOrigin="anonymous" />
         {/* DNS Prefetch for non-critical resources */}
         <link rel="dns-prefetch" href="https://assets.calendly.com" />
         <link rel="dns-prefetch" href="https://calendly.com" />
@@ -131,10 +131,10 @@ export default function RootLayout({
         <link rel="dns-prefetch" href="https://maps.googleapis.com" />
         <link rel="dns-prefetch" href="https://storage.googleapis.com" />
         <meta httpEquiv="x-dns-prefetch-control" content="on" />
-        {/* RealScout widget script - load after interactive to reduce blocking */}
+        {/* RealScout widget script - load after interactive to reduce blocking but not too late */}
         <Script
           src="https://em.realscout.com/widgets/realscout-web-components.umd.js"
-          strategy="lazyOnload"
+          strategy="afterInteractive"
           id="realscout-web-components-script"
         />
         {/* Calendly CSS - loaded asynchronously to avoid render blocking */}

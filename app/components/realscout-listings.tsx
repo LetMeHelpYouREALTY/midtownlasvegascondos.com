@@ -44,35 +44,55 @@ export function RealScoutListings({
   const containerRef = useRef<HTMLDivElement>(null)
   const mappedSortOrder = mapSortOrder(sortOrder)
 
-  // Ensure we only render the widget on the client
+  // Use Intersection Observer to load widget only when it's about to be visible
   useEffect(() => {
     setIsClient(true)
     
-    // Wait for RealScout script to load (custom element definition)
-    const checkScript = () => {
-      if (typeof window !== 'undefined' && window.customElements) {
-        if (window.customElements.get('realscout-office-listings')) {
-          setScriptLoaded(true)
-        } else {
-          // Poll for custom element definition (script loads lazily)
-          const interval = setInterval(() => {
-            if (window.customElements.get('realscout-office-listings')) {
-              setScriptLoaded(true)
-              clearInterval(interval)
-            }
-          }, 100)
-          
-          // Timeout after 5 seconds
-          setTimeout(() => {
-            clearInterval(interval)
-            // Still render even if script hasn't loaded (will show error state)
-            setScriptLoaded(true)
-          }, 5000)
-        }
-      }
-    }
+    if (!containerRef.current) return
     
-    checkScript()
+    // Use Intersection Observer to load widget when it's about to enter viewport
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            // Widget is about to be visible, check for script
+            const checkScript = () => {
+              if (typeof window !== 'undefined' && window.customElements) {
+                if (window.customElements.get('realscout-office-listings')) {
+                  setScriptLoaded(true)
+                  observer.disconnect()
+                } else {
+                  // Poll for custom element definition
+                  const interval = setInterval(() => {
+                    if (window.customElements.get('realscout-office-listings')) {
+                      setScriptLoaded(true)
+                      clearInterval(interval)
+                      observer.disconnect()
+                    }
+                  }, 100)
+                  
+                  // Timeout after 5 seconds
+                  setTimeout(() => {
+                    clearInterval(interval)
+                    setScriptLoaded(true)
+                    observer.disconnect()
+                  }, 5000)
+                }
+              }
+            }
+            
+            checkScript()
+          }
+        })
+      },
+      {
+        rootMargin: '200px', // Start loading 200px before widget enters viewport
+      }
+    )
+    
+    observer.observe(containerRef.current)
+    
+    return () => observer.disconnect()
   }, [])
 
   // Create the widget HTML - only include attributes with values
