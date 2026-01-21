@@ -41,6 +41,7 @@ export function RealScoutListings({
 }: RealScoutListingsProps) {
   const [isClient, setIsClient] = useState(false)
   const [scriptLoaded, setScriptLoaded] = useState(false)
+  const [widgetKey, setWidgetKey] = useState(0)
   const containerRef = useRef<HTMLDivElement>(null)
   const mappedSortOrder = mapSortOrder(sortOrder)
 
@@ -50,37 +51,57 @@ export function RealScoutListings({
     
     if (!containerRef.current) return
     
-    let scriptLoaded = false
+    let scriptLoadingStarted = false
     
     // Function to load RealScout script
     const loadScript = () => {
-      if (typeof window === 'undefined' || scriptLoaded) return
-      scriptLoaded = true
+      if (typeof window === 'undefined' || scriptLoadingStarted) return
+      scriptLoadingStarted = true
       
-      // Check if script is already loaded
+      // Check if custom element is already registered
       if (window.customElements?.get('realscout-office-listings')) {
-        setScriptLoaded(true)
+        // Element already registered, wait a bit then render
+        setTimeout(() => {
+          setScriptLoaded(true)
+          // Force widget re-render after a brief delay to ensure initialization
+          setTimeout(() => {
+            setWidgetKey(prev => prev + 1)
+          }, 100)
+        }, 500)
         return
       }
       
       // Check if script tag already exists (from layout.tsx)
       const existingScript = document.getElementById('realscout-web-components-script')
       if (existingScript) {
-        // Script is loading from layout, poll for custom element
+        // Script is loading from layout, poll for custom element registration
+        let attempts = 0
+        const maxAttempts = 100 // 10 seconds at 100ms intervals
+        
         const interval = setInterval(() => {
+          attempts++
+          
           if (window.customElements?.get('realscout-office-listings')) {
-            // Give it a moment to fully initialize before rendering widget
+            // Custom element registered - give it extra time to fully initialize
+            clearInterval(interval)
             setTimeout(() => {
               setScriptLoaded(true)
-            }, 300)
+              // Force widget re-render after a brief delay to ensure initialization
+              setTimeout(() => {
+                setWidgetKey(prev => prev + 1)
+              }, 100)
+            }, 500) // Increased delay to ensure full initialization
+            return
+          }
+          
+          // Timeout after max attempts
+          if (attempts >= maxAttempts) {
             clearInterval(interval)
+            // Render anyway - widget may still work
+            setScriptLoaded(true)
           }
         }, 100)
         
-        setTimeout(() => {
-          clearInterval(interval)
-          setScriptLoaded(true)
-        }, 5000)
         return
       }
       
@@ -93,21 +114,25 @@ export function RealScoutListings({
       script.onload = () => {
         // Wait for custom element to be registered and ensure it's ready
         let attempts = 0
-        const maxAttempts = 60 // 3 seconds at 50ms intervals
+        const maxAttempts = 100 // 10 seconds at 100ms intervals
         const checkElement = setInterval(() => {
           attempts++
           if (window.customElements?.get('realscout-office-listings')) {
-            // Give it a moment to fully initialize
+            // Custom element registered - give it extra time to fully initialize
+            clearInterval(checkElement)
             setTimeout(() => {
               setScriptLoaded(true)
-            }, 300)
-            clearInterval(checkElement)
+              // Force widget re-render after a brief delay to ensure initialization
+              setTimeout(() => {
+                setWidgetKey(prev => prev + 1)
+              }, 100)
+            }, 500) // Increased delay to ensure full initialization
           } else if (attempts >= maxAttempts) {
             // Timeout - render anyway, widget will show error if script isn't ready
-            setScriptLoaded(true)
             clearInterval(checkElement)
+            setScriptLoaded(true)
           }
-        }, 50)
+        }, 100)
       }
       script.onerror = () => {
         setScriptLoaded(true) // Still render, will show error state
@@ -127,7 +152,7 @@ export function RealScoutListings({
       const observer = new IntersectionObserver(
         (entries) => {
           entries.forEach((entry) => {
-            if (entry.isIntersecting && !scriptLoaded) {
+            if (entry.isIntersecting && !scriptLoadingStarted) {
               loadScript()
               observer.disconnect()
             }
@@ -174,7 +199,7 @@ export function RealScoutListings({
         {isClient && scriptLoaded ? (
           <div 
             dangerouslySetInnerHTML={{ __html: widgetHtml }}
-            key={scriptLoaded ? 'widget-ready' : 'widget-loading'}
+            key={`widget-${widgetKey}`}
           />
         ) : (
           <div className="w-full h-64 bg-slate-100 rounded-lg flex items-center justify-center">
