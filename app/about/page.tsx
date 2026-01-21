@@ -347,14 +347,15 @@ export default function AboutPage() {
               
               {/* Dr. Jan Duffy Photo */}
               <div className="flex justify-center my-6">
-                <div className="relative w-48 h-48 md:w-56 md:h-56 rounded-full overflow-hidden border-4 border-slate-200 shadow-lg">
+                <div className="relative w-48 h-48 md:w-56 md:h-56 rounded-full overflow-hidden border-4 border-slate-200 shadow-lg bg-slate-100">
                   <Image
-                    src="/images/midtown/dr-jan-duffy.jpg"
+                    src="/images/midtown/dr-jan-duffy.png"
                     alt="Dr. Jan Duffy, Midtown Las Vegas real estate specialist with 30+ years of experience"
                     fill
                     className="object-cover"
-                    quality={90}
+                    quality={75}
                     sizes="(max-width: 768px) 192px, 224px"
+                    loading="lazy"
                   />
                 </div>
               </div>
