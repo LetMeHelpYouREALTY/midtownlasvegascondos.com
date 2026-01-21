@@ -353,16 +353,26 @@ export default function ContactPage() {
                 </h3>
                 <div className="relative aspect-video rounded-lg overflow-hidden border border-slate-200 shadow-sm">
                   <iframe
-                    src="https://storage.googleapis.com/maps-solutions-v9iuebxrqf/locator-plus/2bo5/locator-plus.html"
+                    src="https://www.google.com/maps?q=921+South+Main+Street,+Las+Vegas,+NV+89101&output=embed&hl=en"
                     width="100%"
                     height="100%"
                     className="absolute inset-0 w-full h-full border-0"
                     loading="lazy"
                     allowFullScreen
                     referrerPolicy="no-referrer-when-downgrade"
-                    title="Midtown Las Vegas Location Map"
+                    title="921 South Main Street, Las Vegas, NV 89101 - Midtown Las Vegas Location"
                   />
                 </div>
+                <p className="text-sm text-slate-600 mt-3">
+                  <a
+                    href="https://www.google.com/maps/search/?api=1&query=921+South+Main+Street,+Las+Vegas,+NV+89101"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-slate-900 hover:underline font-medium"
+                  >
+                    Get Directions →
+                  </a>
+                </p>
               </div>
             </div>
           </div>
