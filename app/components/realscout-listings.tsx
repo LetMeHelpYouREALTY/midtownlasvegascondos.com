@@ -165,6 +165,22 @@ export function RealScoutListings({
           // Append to DOM (body container) - RealScout needs element in DOM to initialize
           containerRef.current.appendChild(element)
           
+          // Verify element is in DOM with correct attributes
+          if (process.env.NODE_ENV === 'development') {
+            console.log('RealScout element created:', {
+              tagName: element.tagName,
+              inDOM: element.isConnected,
+              attributes: {
+                'agent-encoded-id': element.getAttribute('agent-encoded-id'),
+                'sort-order': element.getAttribute('sort-order'),
+                'listing-status': element.getAttribute('listing-status'),
+                'property-types': element.getAttribute('property-types'),
+                'price-min': element.getAttribute('price-min'),
+                'price-max': element.getAttribute('price-max'),
+              }
+            })
+          }
+          
           // Re-apply attributes after element is connected to DOM
           // RealScout custom elements read attributes in connectedCallback
           timeoutRef.current = setTimeout(() => {
@@ -180,6 +196,18 @@ export function RealScoutListings({
               element.setAttribute('property-types', propertyTypes)
               element.setAttribute('price-min', priceMin)
               element.setAttribute('price-max', priceMax)
+              
+              // Final verification
+              if (process.env.NODE_ENV === 'development') {
+                console.log('RealScout element attributes after re-apply:', {
+                  'agent-encoded-id': element.getAttribute('agent-encoded-id'),
+                  'sort-order': element.getAttribute('sort-order'),
+                  'listing-status': element.getAttribute('listing-status'),
+                  'property-types': element.getAttribute('property-types'),
+                  'price-min': element.getAttribute('price-min'),
+                  'price-max': element.getAttribute('price-max'),
+                })
+              }
             } catch (err) {
               console.error('Error re-applying RealScout attributes:', err)
             }
