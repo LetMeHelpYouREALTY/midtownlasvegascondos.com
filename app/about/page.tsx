@@ -1,4 +1,5 @@
 import { Metadata } from 'next'
+import Image from 'next/image'
 import Link from 'next/link'
 import { CalendlyLink } from '../components/calendly-link'
 import { Breadcrumb } from '../components/breadcrumb'
@@ -343,6 +344,21 @@ export default function AboutPage() {
             </div>
             <div>
               <h3 className="text-2xl font-bold text-slate-900 mb-4">Getting Started</h3>
+              
+              {/* Dr. Jan Duffy Photo */}
+              <div className="flex justify-center my-6">
+                <div className="relative w-48 h-48 md:w-56 md:h-56 rounded-full overflow-hidden border-4 border-slate-200 shadow-lg">
+                  <Image
+                    src="/images/midtown/dr-jan-duffy.jpg"
+                    alt="Dr. Jan Duffy, Midtown Las Vegas real estate specialist with 30+ years of experience"
+                    fill
+                    className="object-cover"
+                    quality={90}
+                    sizes="(max-width: 768px) 192px, 224px"
+                  />
+                </div>
+              </div>
+              
               <p className="text-base text-slate-600 leading-relaxed mb-3">
                 Ready to explore Midtown? Contact Dr. Jan Duffy at (702) 500-1980 or{' '}
                 <Link href="/contact" className="text-slate-900 font-semibold hover:underline">

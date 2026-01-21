@@ -337,7 +337,7 @@ export function PersonSchema() {
     description:
       'Dr. Jan Duffy is a licensed real estate agent specializing in Midtown Las Vegas and Arts District properties. With 30+ years of experience, she provides personalized service for luxury condos, investment properties, and downtown living.',
     url: 'https://www.midtownvegascondos.com/about',
-    image: 'https://www.midtownvegascondos.com/og-image.png',
+    image: 'https://www.midtownvegascondos.com/images/midtown/dr-jan-duffy.jpg',
     email: 'DrJanSells@MidtownVegasCondos.com',
     telephone: '+17025001980',
     address: {
