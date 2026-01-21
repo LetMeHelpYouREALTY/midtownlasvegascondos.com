@@ -20,12 +20,57 @@ export const metadata: Metadata = {
   },
 }
 
-// Property images from original site - optimized for SEO and accessibility
+// Property images - optimized for SEO and accessibility
 const propertyImages = [
   {
     src: '/images/midtown/blvd-aerial-rendering.jpg',
     alt: 'Aerial nighttime view of BLVD mixed-use complex in Midtown Las Vegas Arts District showing retail, dining, and entertainment spaces with vibrant lighting',
     caption: 'The vibrant BLVD complex at 921 S Main Street showcases Midtown\'s urban sophistication with retail, dining, and entertainment spaces',
+  },
+  {
+    src: '/images/midtown/Kitchen_final-scaled_midtown.jpg',
+    alt: 'Luxury gourmet kitchen in The English Residences featuring premium appliances, custom cabinetry, and modern design in Midtown Las Vegas',
+    caption: 'Gourmet kitchens feature top-of-the-line appliances and custom cabinetry, creating ideal spaces for entertaining and daily living',
+  },
+  {
+    src: '/images/midtown/IMG_3463.JPG',
+    alt: 'Interior view of luxury condominium residence in The English Residences at 921 S Main Street, Midtown Las Vegas Arts District',
+    caption: 'Contemporary interior design with premium finishes and thoughtful layouts that maximize space and functionality',
+  },
+  {
+    src: '/images/midtown/IMG_3464.JPG',
+    alt: 'Modern living space in The English Residences featuring floor-to-ceiling windows and Arts District views in Midtown Las Vegas',
+    caption: 'Open-concept living spaces with floor-to-ceiling windows showcase panoramic views of the vibrant Arts District',
+  },
+  {
+    src: '/images/midtown/IMG_3469.JPG',
+    alt: 'Luxury bedroom and private space in The English Residences condo-hotel unit in Midtown Las Vegas Arts District',
+    caption: 'Spacious master bedrooms feature premium finishes and abundant natural light, creating peaceful retreats within the urban setting',
+  },
+  {
+    src: '/images/midtown/IMG_3470.JPG',
+    alt: 'Interior design detail of The English Residences luxury condominium showing contemporary finishes and modern architecture',
+    caption: 'Thoughtful design elements throughout each residence reflect Midtown\'s industrial-chic aesthetic while maintaining sophisticated elegance',
+  },
+  {
+    src: '/images/midtown/midtown-gallery-6.jpg',
+    alt: 'Gallery view of Midtown Las Vegas Arts District neighborhood showcasing the vibrant urban development and cultural destinations',
+    caption: 'Midtown\'s transformation from industrial hub to cultural destination is visible throughout the neighborhood',
+  },
+  {
+    src: '/images/midtown/midtown-gallery-tour.jpg',
+    alt: 'Tour view of Midtown Las Vegas Arts District showing walkable streets, galleries, and residential developments',
+    caption: 'Walkable streets connect residents to galleries, restaurants, and cultural venues throughout the Arts District',
+  },
+  {
+    src: '/images/midtown/design 04_new 2.jpg',
+    alt: 'Design detail and architectural feature in The English Residences luxury condominium development in Midtown Las Vegas',
+    caption: 'Contemporary design elements create spaces that are both beautiful and functional',
+  },
+  {
+    src: '/images/midtown/design 05_new 2.jpg',
+    alt: 'Interior design and architectural detail showcasing luxury finishes in The English Residences Midtown Las Vegas',
+    caption: 'Premium materials and craftsmanship ensure every aspect of the residence meets the highest standards',
   },
   {
     src: '/images/midtown/photo_002.webp',
