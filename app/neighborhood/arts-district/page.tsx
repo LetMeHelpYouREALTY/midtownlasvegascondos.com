@@ -288,10 +288,10 @@ export default function ArtsDistrictPage() {
             title="Arts District Properties"
             description="Live among galleries, restaurants, and creative spaces"
             priceMin="450000"
-            priceMax="1000000"
-            sortOrder="DATE_NEW"
-            propertyTypes=",CONDO,SFR,TOWNHOUSE"
-            limit="12"
+            priceMax="1200000"
+            sortOrder="NEWEST"
+            propertyTypes=",SFR"
+            listingStatus="For Sale"
           />
         </div>
       </section>

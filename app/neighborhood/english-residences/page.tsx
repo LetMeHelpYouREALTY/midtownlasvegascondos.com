@@ -301,10 +301,10 @@ export default function EnglishResidencesPage() {
             title="Available English Residences & Midtown Condos"
             description="Browse luxury condo-hotel units and condominiums in the Arts District"
             priceMin="450000"
-            priceMax="1000000"
-            sortOrder="PRICE_LOW"
-            propertyTypes=",CONDO"
-            limit="9"
+            priceMax="1200000"
+            sortOrder="NEWEST"
+            propertyTypes=",SFR"
+            listingStatus="For Sale"
           />
         </div>
       </section>

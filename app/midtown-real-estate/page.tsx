@@ -169,10 +169,10 @@ export default function MidtownRealEstatePage() {
             title="Featured Midtown Properties"
             description="Explore luxury condos and homes in the heart of the Arts District"
             priceMin="450000"
-            priceMax="1000000"
-            sortOrder="PRICE_LOW"
-            propertyTypes=",CONDO,SFR"
-            limit="6"
+            priceMax="1200000"
+            sortOrder="NEWEST"
+            propertyTypes=",SFR"
+            listingStatus="For Sale"
           />
         </section>
 

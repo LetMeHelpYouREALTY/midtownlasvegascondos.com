@@ -68,11 +68,10 @@ export default function HomePage() {
             title="Featured Homes in Midtown"
             description="Discover beautiful single-family homes in your price range"
             priceMin="450000"
-            priceMax="16000000"
+            priceMax="1200000"
             sortOrder="NEWEST"
-            propertyTypes=",SFR,CONDO"
+            propertyTypes=",SFR"
             listingStatus="For Sale"
-            limit="6"
           />
         </div>
       </section>
@@ -544,9 +543,10 @@ export default function HomePage() {
             title="Featured Midtown Properties"
             description="Explore luxury condos and homes in the heart of the Arts District"
             priceMin="450000"
-            priceMax="1000000"
-            sortOrder="PRICE_LOW"
-            propertyTypes=",CONDO,SFR"
+            priceMax="1200000"
+            sortOrder="NEWEST"
+            propertyTypes=",SFR"
+            listingStatus="For Sale"
           />
         </div>
       </section>
