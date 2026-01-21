@@ -33,8 +33,8 @@ const mapSortOrder = (sortOrder: string): string => {
 export function RealScoutListings({
   title,
   description,
-  priceMin = '450000',
-  priceMax = '1300000',
+  priceMin,
+  priceMax,
   sortOrder = 'NEWEST',
   listingStatus = 'For Sale',
   propertyTypes,
