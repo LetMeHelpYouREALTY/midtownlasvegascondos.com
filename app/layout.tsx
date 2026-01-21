@@ -106,6 +106,12 @@ export default function RootLayout({
         <link rel="preconnect" href="https://em.realscout.com" />
         <link rel="preconnect" href="https://www.realscout.com" />
         <link rel="dns-prefetch" href="https://assets.calendly.com" />
+        {/* RealScout widget script - must load before widgets */}
+        <Script
+          src="https://em.realscout.com/widgets/realscout-web-components.umd.js"
+          strategy="beforeInteractive"
+          id="realscout-web-components-script"
+        />
         <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
         {/* Calendly CSS - loaded asynchronously to avoid render blocking */}
         <link
@@ -113,6 +119,17 @@ export default function RootLayout({
           rel="stylesheet"
           media="print"
         />
+        {/* RealScout widget styles */}
+        <style>{`
+          realscout-office-listings,
+          realscout-advanced-search,
+          realscout-simple-search {
+            --rs-listing-divider-color: #0e64c8;
+            width: 100%;
+            display: block;
+            min-height: 200px;
+          }
+        `}</style>
         <Script id="calendly-css-loader" strategy="afterInteractive">
           {`
             (function() {

@@ -1,44 +1,10 @@
 'use client'
 
-import Script from 'next/script'
-import { useEffect } from 'react'
+// RealScout script is now loaded globally in the root layout (app/layout.tsx)
+// This component is kept for backward compatibility but does minimal work
+// The script and styles are injected via beforeInteractive in the layout
 
 export function RealScoutScript() {
-  useEffect(() => {
-    // Inject styles for RealScout widgets
-    if (typeof document !== 'undefined') {
-      const styleId = 'realscout-widget-styles'
-      if (!document.getElementById(styleId)) {
-        const style = document.createElement('style')
-        style.id = styleId
-        style.textContent = `
-          realscout-office-listings {
-            --rs-listing-divider-color: #0e64c8;
-            width: 100%;
-          }
-        `
-        document.head.appendChild(style)
-      }
-    }
-  }, [])
-
-  return (
-    <>
-      <Script
-        src="https://em.realscout.com/widgets/realscout-web-components.umd.js"
-        type="module"
-        strategy="afterInteractive"
-        id="realscout-web-components-script"
-        onLoad={() => {
-          // Script loaded - custom element should be available soon
-          if (typeof window !== 'undefined') {
-            console.log('RealScout script loaded, waiting for custom element registration...')
-          }
-        }}
-        onError={() => {
-          console.error('Failed to load RealScout script')
-        }}
-      />
-    </>
-  )
+  // No-op - script is loaded globally in layout.tsx
+  return null
 }
