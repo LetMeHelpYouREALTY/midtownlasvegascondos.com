@@ -10,6 +10,7 @@ export default function robots(): MetadataRoute.Robots {
         allow: '/',
         disallow: [
           '/api/',
+          // Next.js build assets (JS chunks) — not indexable pages; GSC may list these as "blocked"
           '/_next/',
           '/static/',
           '/listings/',
@@ -21,6 +22,7 @@ export default function robots(): MetadataRoute.Robots {
         allow: '/',
         disallow: [
           '/api/',
+          // Next.js build assets (JS chunks) — not indexable pages; GSC may list these as "blocked"
           '/_next/',
           '/static/',
           '/listings/',
@@ -40,6 +42,7 @@ export default function robots(): MetadataRoute.Robots {
         allow: '/',
         disallow: [
           '/api/',
+          // Next.js build assets (JS chunks) — not indexable pages; GSC may list these as "blocked"
           '/_next/',
           '/static/',
           '/listings/',
