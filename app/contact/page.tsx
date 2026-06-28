@@ -3,6 +3,7 @@ import Image from 'next/image'
 import { Metadata } from 'next'
 import { CalendlyLink } from '../components/calendly-link'
 import { Breadcrumb } from '../components/breadcrumb'
+import { RealScoutSection } from '../components/realscout-section'
 
 export const metadata: Metadata = {
   title: 'Contact Dr. Jan Duffy | Midtown Las Vegas Real Estate Agent | (702) 500-1980',
@@ -396,6 +397,12 @@ export default function ContactPage() {
           </div>
         </div>
       </section>
+
+      <RealScoutSection
+        listingsTitle="Properties Dr. Jan Can Show You Today"
+        listingsDescription="Browse Midtown and Arts District listings before your tour — then call (702) 500-1980 to schedule."
+        className="bg-white"
+      />
 
       {/* Additional CTA */}
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-slate-900 to-slate-700 text-white">

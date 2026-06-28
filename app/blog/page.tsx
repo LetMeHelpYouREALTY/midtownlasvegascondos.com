@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import { Metadata } from 'next'
 import { Breadcrumb } from '../components/breadcrumb'
+import { RealScoutSection } from '../components/realscout-section'
 
 export const metadata: Metadata = {
   title: 'Midtown Las Vegas Blog | Real Estate News & Insights',
@@ -76,6 +77,11 @@ export default function BlogPage() {
           </div>
         )}
       </div>
+
+      <RealScoutSection
+        listingsTitle="Midtown Real Estate Listings"
+        listingsDescription="While you wait for new blog posts, browse current Arts District properties."
+      />
     </div>
   )
 }

@@ -2,6 +2,7 @@ import Link from 'next/link'
 import { Metadata } from 'next'
 import { Breadcrumb } from '@/app/components/breadcrumb'
 import { CalendlyLink } from '@/app/components/calendly-link'
+import { RealScoutSection } from '@/app/components/realscout-section'
 import { PageFAQ } from '@/app/components/page-faq'
 import { PageFAQSchema } from '@/app/components/page-faq-schema'
 import { ArticleSchema } from '@/app/components/article-schema'
@@ -200,6 +201,12 @@ export default function WalkableArtsDistrictLivingPage() {
             <CalendlyLink text="Schedule a Walkable Neighborhood Tour" variant="primary" />
           </div>
         </div>
+
+        <RealScoutSection
+          listingsTitle="Walkable Arts District Condos"
+          listingsDescription="Find homes you can walk to galleries, First Friday, and Midtown Plaza from your door."
+          className="bg-white"
+        />
       </div>
     </>
   )

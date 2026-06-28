@@ -61,6 +61,8 @@ export default async function EventDetailPage({ params }: EventPageProps) {
       ]}
       faqs={event.faqs}
       relatedLinks={event.relatedLinks}
+      listingsTitle={`Homes Near ${event.title.split('|')[0].trim()}`}
+      listingsDescription="Explore Midtown and Arts District condos within walking distance of this event. Updated daily."
       schema={
         <EventSchema
           name={event.title.split('|')[0].trim()}

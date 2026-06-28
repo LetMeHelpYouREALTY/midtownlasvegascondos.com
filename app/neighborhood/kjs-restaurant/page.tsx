@@ -1,9 +1,9 @@
 import Link from 'next/link'
 import { Metadata } from 'next'
-import { RealScoutScript } from '@/app/components/realscout-script'
 import { Breadcrumb } from '@/app/components/breadcrumb'
 import { PageFAQSchema } from '@/app/components/page-faq-schema'
 import { CalendlyLink } from '@/app/components/calendly-link'
+import { RealScoutSection } from '@/app/components/realscout-section'
 
 export const metadata: Metadata = {
   title: 'KJ\'s Restaurant | Midtown Las Vegas at The English Hotel',
@@ -30,9 +30,7 @@ const faqs = [
 
 export default function KjsRestaurantPage() {
   return (
-    <>
-      <RealScoutScript />
-      <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white">
         <PageFAQSchema faqs={faqs} />
 
         <section className="relative h-[50vh] flex items-center justify-center bg-gradient-to-br from-slate-900 to-slate-700">
@@ -97,6 +95,12 @@ export default function KjsRestaurantPage() {
           </div>
         </section>
 
+        <RealScoutSection
+          listingsTitle="Homes Near KJ's & The English Hotel"
+          listingsDescription="Walk to dining at KJ's from The English Residences and nearby Arts District condos."
+          propertyTypes="Condo"
+        />
+
         <section className="py-16 px-4 bg-slate-900 text-white text-center">
           <h2 className="text-3xl font-bold mb-4">Dine Local, Live Local</h2>
           <p className="text-white/90 mb-6 max-w-2xl mx-auto">
@@ -104,7 +108,6 @@ export default function KjsRestaurantPage() {
           </p>
           <CalendlyLink text="Tour The English Residences" variant="primary" />
         </section>
-      </div>
-    </>
+    </div>
   )
 }

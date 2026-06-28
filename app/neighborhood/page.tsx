@@ -4,6 +4,7 @@ import { Breadcrumb } from '@/app/components/breadcrumb'
 import { PageFAQSchema } from '@/app/components/page-faq-schema'
 import { CalendlyLink } from '@/app/components/calendly-link'
 import { MIDTOWN_EVENTS } from '@/lib/midtown-content/events-data'
+import { RealScoutSection } from '@/app/components/realscout-section'
 
 export const metadata: Metadata = {
   title: 'Midtown Las Vegas Neighborhood | Arts District Places & Living',
@@ -134,6 +135,11 @@ export default function NeighborhoodHubPage() {
           ))}
         </div>
       </section>
+
+      <RealScoutSection
+        listingsTitle="Own in Midtown Las Vegas"
+        listingsDescription="The English Residences and Arts District condos — walk to everything in the neighborhood hub."
+      />
 
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-slate-900 to-slate-700 text-white">
         <div className="max-w-4xl mx-auto text-center">

@@ -3,6 +3,7 @@ import { Metadata } from 'next'
 import { CalendlyLink } from '../components/calendly-link'
 import { Breadcrumb } from '../components/breadcrumb'
 import { MIDTOWN_NEWS } from '@/lib/midtown-content/news-data'
+import { RealScoutSection } from '@/app/components/realscout-section'
 
 export const metadata: Metadata = {
   title: 'Midtown Las Vegas News & Updates | Arts District Development',
@@ -233,6 +234,11 @@ export default function NewsPage() {
           ))}
         </div>
       </section>
+
+      <RealScoutSection
+        listingsTitle="Invest in Midtown's Future"
+        listingsDescription="See available Arts District properties as Midtown continues to evolve."
+      />
 
       {/* CTA */}
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-slate-900 to-slate-700 text-white">

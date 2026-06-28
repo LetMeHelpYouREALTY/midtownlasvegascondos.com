@@ -2,6 +2,7 @@ import Link from 'next/link'
 import { CalendlyLink } from '@/app/components/calendly-link'
 import { Breadcrumb } from '@/app/components/breadcrumb'
 import { PageFAQSchema } from '@/app/components/page-faq-schema'
+import { RealScoutSection } from '@/app/components/realscout-section'
 import type { MidtownBreadcrumb, MidtownFAQ, MidtownSection } from '@/lib/midtown-content/types'
 
 type MidtownContentPageProps = {
@@ -14,6 +15,8 @@ type MidtownContentPageProps = {
   featuredLinks?: { name: string; href: string; description: string }[]
   schema?: React.ReactNode
   showAuthor?: boolean
+  listingsTitle?: string
+  listingsDescription?: string
 }
 
 export function MidtownContentPage({
@@ -26,6 +29,8 @@ export function MidtownContentPage({
   featuredLinks = [],
   schema,
   showAuthor = false,
+  listingsTitle,
+  listingsDescription,
 }: MidtownContentPageProps) {
   return (
     <div className="min-h-screen bg-white">
@@ -120,6 +125,11 @@ export function MidtownContentPage({
           </div>
         )}
       </section>
+
+      <RealScoutSection
+        listingsTitle={listingsTitle}
+        listingsDescription={listingsDescription}
+      />
 
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-slate-900 to-slate-700 text-white">
         <div className="max-w-4xl mx-auto text-center">

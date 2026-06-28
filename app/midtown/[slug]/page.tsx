@@ -51,6 +51,8 @@ export default async function MidtownCategoryPage({ params }: CategoryPageProps)
       sections={category.sections}
       faqs={category.faqs}
       featuredLinks={category.featuredLinks}
+      listingsTitle={`${category.h1} — Available Properties`}
+      listingsDescription={category.description}
     />
   )
 }

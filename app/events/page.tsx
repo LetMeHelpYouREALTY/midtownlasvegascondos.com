@@ -3,6 +3,7 @@ import { Metadata } from 'next'
 import { CalendlyLink } from '../components/calendly-link'
 import { Breadcrumb } from '../components/breadcrumb'
 import { MIDTOWN_EVENTS } from '@/lib/midtown-content/events-data'
+import { RealScoutSection } from '@/app/components/realscout-section'
 
 export const metadata: Metadata = {
   title: 'Midtown Las Vegas Events Calendar | First Friday & More',
@@ -284,6 +285,10 @@ export default function EventsPage() {
       </section>
 
       {/* CTA */}
+      <RealScoutSection
+        listingsTitle="Live Where Midtown Events Happen"
+        listingsDescription="Walk to First Friday, Market in the Alley, and Arts District festivals from your front door."
+      />
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-slate-900 to-slate-700 text-white">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-4xl font-bold mb-6">

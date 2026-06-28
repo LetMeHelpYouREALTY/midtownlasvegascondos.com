@@ -3,6 +3,7 @@ import { Metadata } from 'next'
 import Link from 'next/link'
 import { Breadcrumb } from '../../components/breadcrumb'
 import { ArticleSchema } from '../../components/article-schema'
+import { RealScoutSection } from '../../components/realscout-section'
 
 // This will be populated with actual blog posts
 const blogPosts: Record<string, {
@@ -106,6 +107,8 @@ export default async function BlogPostPage({
           </div>
         </article>
       </div>
+
+      <RealScoutSection />
     </div>
   )
 }

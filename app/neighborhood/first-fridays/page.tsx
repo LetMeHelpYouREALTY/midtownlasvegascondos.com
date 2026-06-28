@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import { Metadata } from 'next'
 import { RealScoutListings } from '@/app/components/realscout-listings'
+import { RealScoutSection } from '@/app/components/realscout-section'
 import { EventSchema } from '@/app/components/event-schema'
 
 export const metadata: Metadata = {
@@ -298,6 +299,8 @@ export default function FirstFridaysPage() {
           />
         </div>
       </section>
+
+      <RealScoutSection showListings={false} searchTitle="Search Arts District Homes Near First Friday" />
 
       {/* CTA */}
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-purple-900 to-pink-900 text-white">
