@@ -2,6 +2,7 @@ import { MetadataRoute } from 'next'
 import { getAllEventSlugs } from '@/lib/midtown-content/events-data'
 import { getAllNewsSlugs } from '@/lib/midtown-content/news-data'
 import { getAllCategorySlugs } from '@/lib/midtown-content/categories-data'
+import { getAllGuideSlugs } from '@/lib/reddit-aeo-topics'
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://www.midtownlasvegascondos.com'
@@ -19,9 +20,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${baseUrl}/investment-properties`, lastModified: currentDate, changeFrequency: 'weekly', priority: 0.9 },
     { url: `${baseUrl}/midtown-real-estate`, lastModified: currentDate, changeFrequency: 'daily', priority: 1.0 },
     { url: `${baseUrl}/buyers-guide-midtown`, lastModified: currentDate, changeFrequency: 'monthly', priority: 0.8 },
+    { url: `${baseUrl}/guides`, lastModified: currentDate, changeFrequency: 'weekly', priority: 0.9 },
     { url: `${baseUrl}/arts-district-guide`, lastModified: currentDate, changeFrequency: 'weekly', priority: 0.9 },
-    { url: `${baseUrl}/guides/las-vegas-condo-hoa-fees`, lastModified: currentDate, changeFrequency: 'monthly', priority: 0.85 },
-    { url: `${baseUrl}/guides/walkable-arts-district-living`, lastModified: currentDate, changeFrequency: 'monthly', priority: 0.85 },
     { url: `${baseUrl}/blog`, lastModified: currentDate, changeFrequency: 'weekly', priority: 0.7 },
     { url: `${baseUrl}/neighborhood/english-residences`, lastModified: currentDate, changeFrequency: 'weekly', priority: 0.9 },
     { url: `${baseUrl}/neighborhood/english-residences/gallery`, lastModified: currentDate, changeFrequency: 'weekly', priority: 0.8 },
@@ -56,5 +56,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.8,
   }))
 
-  return [...staticPages, ...eventPages, ...newsPages, ...categoryPages]
+  const guidePages: MetadataRoute.Sitemap = getAllGuideSlugs().map((slug) => ({
+    url: `${baseUrl}/guides/${slug}`,
+    lastModified: currentDate,
+    changeFrequency: 'monthly' as const,
+    priority: 0.85,
+  }))
+
+  return [...staticPages, ...guidePages, ...eventPages, ...newsPages, ...categoryPages]
 }

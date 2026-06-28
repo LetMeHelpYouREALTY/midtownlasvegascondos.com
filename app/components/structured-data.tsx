@@ -362,6 +362,9 @@ export function PersonSchema() {
       'Midtown Las Vegas Neighborhood',
       'First Friday Las Vegas',
       'The English Residences',
+      'Las Vegas condo HOA fees',
+      'Arts District walkability',
+      'Midtown vs Strip condo living',
     ],
     hasCredential: [
       {

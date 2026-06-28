@@ -38,10 +38,13 @@ export function Header() {
       items: [
         { name: 'Midtown Real Estate', href: '/midtown-real-estate' },
         { name: "Buyer's Guide", href: '/buyers-guide-midtown' },
+        { name: 'All Buyer Guides', href: '/guides' },
         { name: 'Investment Properties', href: '/investment-properties' },
         { name: 'Arts District Guide', href: '/arts-district-guide' },
         { name: 'HOA Fees Guide', href: '/guides/las-vegas-condo-hoa-fees' },
         { name: 'Walkable Living Guide', href: '/guides/walkable-arts-district-living' },
+        { name: 'Rent vs Buy Guide', href: '/guides/worth-buying-condo-las-vegas-now' },
+        { name: 'Midtown vs Strip', href: '/guides/midtown-vs-strip-condo-living' },
       ],
     },
     { name: NAV_LABELS.eventsGuide.replace(' (for buyers)', ''), href: '/events' },
