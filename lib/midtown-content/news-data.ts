@@ -210,6 +210,41 @@ export const MIDTOWN_NEWS: MidtownNewsArticle[] = [
     ],
     relatedLinks: [{ name: 'Midtown Run Club', href: '/neighborhood/run-club' }],
   },
+  {
+    slug: 'kjs-opens-at-the-english-hotel-in-midtown',
+    title: 'KJ\'s Opens at The English Hotel in Midtown',
+    description:
+      'KJ\'s Restaurant opens at The English Hotel, 921 S Main St — prime steaks, lobster, oysters, and a lively Arts District dining room in the former Pepper Club space.',
+    keywords: ['KJs opens English Hotel', 'Midtown restaurant opening', 'Arts District dining 2026'],
+    datePublished: '2026-03-04',
+    category: 'Dining',
+    sections: [
+      {
+        paragraphs: [
+          'A new restaurant has arrived at The English Hotel in Midtown. KJ\'s has officially opened its doors in the heart of the Arts District, taking over the space that previously housed The Pepper Club and bringing a lively new dinner destination to one of the neighborhood\'s most recognizable corners. KJ\'s is now open for breakfast, lunch and dinner.',
+        ],
+      },
+      {
+        heading: 'Big Flavors, Classic Indulgence',
+        paragraphs: [
+          'KJ\'s leans into big flavors and classic indulgence. The menu centers on prime steaks, lobster, oysters, seafood towers, and rich, satisfying entrées that make dinner feel like a real occasion. Popovers with salted honey butter start the table, while dishes from the sea and premium cuts of beef set the tone for the rest of the night.',
+        ],
+      },
+      {
+        heading: 'A New Table in Midtown',
+        paragraphs: [
+          'Located at The English Hotel in the former Pepper Club space, KJ\'s adds another standout dining experience to Midtown\'s growing mix of restaurants, nightlife, and creative spaces. Residents at The English Residences enjoy walkable access — contact Dr. Jan Duffy at (702) 500-1980 to explore ownership.',
+        ],
+      },
+    ],
+    faqs: [
+      { question: 'When did KJ\'s open at The English Hotel?', answer: 'KJ\'s opened in March 2026 at 921 S Main St, in the former Pepper Club space at The English Hotel.' },
+    ],
+    relatedLinks: [
+      { name: 'KJ\'s Restaurant', href: '/neighborhood/kjs-restaurant' },
+      { name: 'The English Residences', href: '/neighborhood/english-residences' },
+    ],
+  },
 ]
 
 export function getNewsBySlug(slug: string): MidtownNewsArticle | undefined {

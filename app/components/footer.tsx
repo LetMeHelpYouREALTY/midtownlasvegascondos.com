@@ -6,14 +6,23 @@ export function Footer() {
     {
       name: 'Neighborhood',
       items: [
+        { name: 'Discover Midtown', href: '/neighborhood' },
         { name: 'The English Residences', href: '/neighborhood/english-residences' },
         { name: 'Midtown Plaza', href: '/neighborhood/midtown-plaza' },
+        { name: 'KJ\'s Restaurant', href: '/neighborhood/kjs-restaurant' },
         { name: 'The English Hotel', href: '/neighborhood/english-hotel' },
-        { name: 'The Pepper Club', href: '/neighborhood/pepper-club' },
-        { name: 'Las Vegas Arts District', href: '/neighborhood/arts-district' },
         { name: 'First Fridays Las Vegas', href: '/neighborhood/first-fridays' },
-        { name: 'EV Vehicle Program', href: '/neighborhood/ev-program' },
+        { name: 'Las Vegas Arts District', href: '/neighborhood/arts-district' },
         { name: 'Midtown Run Club', href: '/neighborhood/run-club' },
+      ],
+    },
+    {
+      name: 'Explore',
+      items: [
+        { name: 'Dine', href: '/midtown/dine' },
+        { name: 'Shop', href: '/midtown/shop' },
+        { name: 'Live', href: '/midtown/live' },
+        { name: 'Things to Do', href: '/midtown/things-to-do-in-las-vegas' },
       ],
     },
     { name: 'Events', href: '/events' },
@@ -45,7 +54,7 @@ export function Footer() {
                     <div key={item.name}>
                       <div className="font-semibold mb-2">{item.name}</div>
                       <ul className="space-y-2 text-sm text-slate-300">
-                        {item.items.slice(0, 4).map((subItem) => (
+                        {item.items.map((subItem) => (
                           <li key={subItem.name}>
                             <Link
                               href={subItem.href}
