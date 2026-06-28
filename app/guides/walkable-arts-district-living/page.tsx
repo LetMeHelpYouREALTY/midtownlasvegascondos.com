@@ -1,17 +1,18 @@
 import Link from 'next/link'
 import { Metadata } from 'next'
+import { siteConfig, absoluteUrl } from '@/lib/site-config'
 import { Breadcrumb } from '@/app/components/breadcrumb'
 import { CalendlyLink } from '@/app/components/calendly-link'
 import { PageFAQ } from '@/app/components/page-faq'
 import { PageFAQSchema } from '@/app/components/page-faq-schema'
 import { ArticleSchema } from '@/app/components/article-schema'
 
-const CANONICAL_URL = 'https://www.midtownvegascondos.com/guides/walkable-arts-district-living'
+const CANONICAL_URL = absoluteUrl('/guides/walkable-arts-district-living')
 
 export const metadata: Metadata = {
-  title: 'Walkable Living in Las Vegas Arts District | Midtown Guide',
+  title: 'Walkable Arts District Living | Local Midtown Las Vegas Guide',
   description:
-    'Is the Las Vegas Arts District walkable? Guide for remote workers and relocators on walkable daily life, safety, condos vs rent, and Midtown at 921 S Main St. Call (702) 500-1980.',
+    'Is the Las Vegas Arts District walkable? Local guide to gallery life, First Friday, building choices, and daily errands on foot at 921 S Main St. Call (702) 500-1980.',
   alternates: { canonical: CANONICAL_URL },
   openGraph: {
     title: 'Walkable Arts District Living | Midtown Las Vegas',
@@ -65,14 +66,16 @@ export default function WalkableArtsDistrictLivingPage() {
         datePublished="2026-06-28"
         dateModified="2026-06-28"
         url={CANONICAL_URL}
-        author={{ name: 'Dr. Jan Duffy', url: 'https://www.midtownvegascondos.com/about' }}
+        author={{ name: siteConfig.agent.name, url: absoluteUrl('/about') }}
       />
       <PageFAQSchema faqs={faqs} />
 
       <div className="min-h-screen bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
           <Breadcrumb items={breadcrumbItems} />
-
+          <p className="text-sm font-semibold text-amber-700 uppercase tracking-wide mb-3">
+            {siteConfig.personaLabel}
+          </p>
           <h1 className="text-5xl md:text-6xl font-bold text-slate-900 mb-6">
             Walkable Living in the Las Vegas Arts District
           </h1>
@@ -82,16 +85,16 @@ export default function WalkableArtsDistrictLivingPage() {
               <strong>Quick answer:</strong> The Las Vegas Arts District is one of the city&apos;s most
               walkable neighborhoods (Walk Score ~86). Midtown at 921 S Main Street lets you walk to
               galleries, restaurants, First Friday events, and Midtown Plaza — ideal for remote workers
-              who want daily life on foot instead of Strip traffic and suburban sprawl.
+              who want daily life on foot instead of suburban commutes and Strip traffic.
             </p>
           </div>
 
           <section className="mb-16">
             <h2 className="text-3xl font-bold text-slate-900 mb-6">
-              Why do remote workers choose the Arts District over the suburbs?
+              Why do locals choose the Arts District over the suburbs?
             </h2>
             <p className="text-lg text-slate-600 leading-relaxed mb-6">
-              Las Vegas newcomers on forums like{' '}
+              Las Vegas buyers on{' '}
               <a
                 href="https://www.reddit.com/r/vegaslocals/comments/1nzs0wn/relocation_arts_district_or/"
                 target="_blank"
@@ -125,13 +128,13 @@ export default function WalkableArtsDistrictLivingPage() {
               Is it worth buying a condo in Las Vegas now?
             </h2>
             <p className="text-slate-600 leading-relaxed mb-4">
-              Buyers weighing purchase timing should compare total monthly cost against rent, factor in{' '}
-              <Link href="/guides/las-vegas-condo-hoa-fees" className="text-slate-900 font-semibold hover:underline">
-                HOA fees
+              Buyers weighing purchase timing should compare total monthly cost against rent and
+              consider how long they plan to stay. Arts District property values have appreciated
+              roughly 45% since 2015. Compare buildings in our{' '}
+              <Link href="/guides/downtown-condo-buildings-compared" className="text-slate-900 font-semibold hover:underline">
+                downtown condo guide
               </Link>
-              , and consider how long they plan to stay. Arts District property values have appreciated
-              roughly 45% since 2015 as the neighborhood transformed from industrial zone to cultural
-              destination.
+              {' '}before committing.
             </p>
             <p className="text-slate-600 leading-relaxed">
               Condo-hotel units at{' '}

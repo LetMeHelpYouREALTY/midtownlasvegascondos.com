@@ -2,23 +2,25 @@ import Link from 'next/link'
 import { Metadata } from 'next'
 import { CalendlyLink } from '../components/calendly-link'
 import { Breadcrumb } from '../components/breadcrumb'
+import { PersonaIntro } from '../components/persona-intro'
 import { EventSchema } from '../components/event-schema'
 
 export const metadata: Metadata = {
-  title: 'Midtown Las Vegas Events Calendar | First Friday & More',
-  description: 'Discover events in Midtown and the Arts District: First Friday, art walks, Book Festival, Las Vegas Marathon, and more. Live where it happens!',
+  title: 'Arts District Events | Live Where First Friday Happens',
+  description:
+    'First Friday, art walks, and neighborhood events — the local calendar for buyers who want culture on their block, not a drive across town.',
   keywords: 'Midtown Las Vegas events, First Friday Las Vegas, Arts District events, Las Vegas Book Festival, Las Vegas Marathon, Arts District calendar',
   authors: [{ name: 'Dr. Jan Duffy' }],
   creator: 'Dr. Jan Duffy',
   publisher: 'Midtown Las Vegas Condos',
   alternates: {
-    canonical: 'https://www.midtownvegascondos.com/events',
+    canonical: 'https://www.midtownlasvegascondos.com/events',
   },
   openGraph: {
-    title: 'Midtown Las Vegas Events Calendar',
+    title: 'Arts District Events | First Friday & Local Calendar',
     description: 'Discover events in Midtown and the Arts District: First Friday, art walks, and more.',
     type: 'website',
-    url: 'https://www.midtownvegascondos.com/events',
+    url: 'https://www.midtownlasvegascondos.com/events',
   },
 }
 
@@ -88,12 +90,11 @@ export default function EventsPage() {
       <section className="relative py-20 bg-gradient-to-br from-slate-900 to-slate-700 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-5xl md:text-6xl font-bold mb-6">
-            Events in Midtown
+            Live Where the Events Happen
           </h1>
           <p className="text-xl text-white/90 max-w-3xl mx-auto mb-6">
-            Stay in the know with what's happening in Midtown. From art walks and food 
-            festivals to pop-up markets and live performances, there's always something 
-            exciting to discover.
+            First Friday on your block, not across town — the local events calendar for
+            Arts District residents at 921 S Main Street.
           </p>
           <p className="text-lg text-white/80 max-w-3xl mx-auto">
             Monthly First Fridays, weekly run clubs, annual book festivals, and seasonal celebrations make Midtown Las Vegas's most culturally active neighborhood.
@@ -105,6 +106,7 @@ export default function EventsPage() {
       <section className="py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
         <div className="max-w-4xl mx-auto">
           <Breadcrumb items={breadcrumbItems} />
+          <PersonaIntro subtitle="When you live in Midtown, First Friday isn't a special trip — it's your monthly front-porch festival." className="mt-6" />
           <h2 className="text-4xl font-bold text-slate-900 mb-8">The Midtown Event Experience</h2>
           <div className="prose prose-lg text-slate-600 space-y-6 mb-12">
             <p>

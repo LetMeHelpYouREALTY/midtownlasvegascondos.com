@@ -1,16 +1,64 @@
 import { MetadataRoute } from 'next'
+import { siteConfig } from '@/lib/site-config'
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://www.midtownvegascondos.com'
+  const baseUrl = siteConfig.baseUrl
   const currentDate = new Date()
 
   return [
-    // Main pages
     {
       url: baseUrl,
       lastModified: currentDate,
       changeFrequency: 'daily',
       priority: 1.0,
+    },
+    {
+      url: `${baseUrl}/midtown-las-vegas`,
+      lastModified: currentDate,
+      changeFrequency: 'weekly',
+      priority: 0.95,
+    },
+    {
+      url: `${baseUrl}/midtown-condos-for-sale`,
+      lastModified: currentDate,
+      changeFrequency: 'daily',
+      priority: 0.95,
+    },
+    {
+      url: `${baseUrl}/midtown-condos-for-rent`,
+      lastModified: currentDate,
+      changeFrequency: 'weekly',
+      priority: 0.9,
+    },
+    {
+      url: `${baseUrl}/guides/midtown-condo-floor-plans`,
+      lastModified: currentDate,
+      changeFrequency: 'monthly',
+      priority: 0.9,
+    },
+    {
+      url: `${baseUrl}/guides/arts-district-revitalization`,
+      lastModified: currentDate,
+      changeFrequency: 'monthly',
+      priority: 0.85,
+    },
+    {
+      url: `${baseUrl}/guides/arts-district-apartments-las-vegas`,
+      lastModified: currentDate,
+      changeFrequency: 'monthly',
+      priority: 0.9,
+    },
+    {
+      url: `${baseUrl}/guides/new-apartments-arts-district-las-vegas`,
+      lastModified: currentDate,
+      changeFrequency: 'weekly',
+      priority: 0.9,
+    },
+    {
+      url: `${baseUrl}/guides/midtown-lennar-las-vegas`,
+      lastModified: currentDate,
+      changeFrequency: 'monthly',
+      priority: 0.85,
     },
     {
       url: `${baseUrl}/search`,
@@ -48,18 +96,17 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'weekly',
       priority: 0.7,
     },
-    // New landing pages
     {
       url: `${baseUrl}/investment-properties`,
       lastModified: currentDate,
       changeFrequency: 'weekly',
-      priority: 0.9,
+      priority: 0.8,
     },
     {
       url: `${baseUrl}/midtown-real-estate`,
       lastModified: currentDate,
       changeFrequency: 'daily',
-      priority: 1.0,
+      priority: 0.9,
     },
     {
       url: `${baseUrl}/buyers-guide-midtown`,
@@ -74,13 +121,25 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.9,
     },
     {
-      url: `${baseUrl}/guides/las-vegas-condo-hoa-fees`,
+      url: `${baseUrl}/guides/walkable-arts-district-living`,
+      lastModified: currentDate,
+      changeFrequency: 'monthly',
+      priority: 0.9,
+    },
+    {
+      url: `${baseUrl}/guides/downtown-condo-buildings-compared`,
+      lastModified: currentDate,
+      changeFrequency: 'monthly',
+      priority: 0.9,
+    },
+    {
+      url: `${baseUrl}/guides/first-fridays-living-guide`,
       lastModified: currentDate,
       changeFrequency: 'monthly',
       priority: 0.85,
     },
     {
-      url: `${baseUrl}/guides/walkable-arts-district-living`,
+      url: `${baseUrl}/guides/arts-district-living-at-night`,
       lastModified: currentDate,
       changeFrequency: 'monthly',
       priority: 0.85,
@@ -91,7 +150,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'weekly',
       priority: 0.7,
     },
-    // Neighborhood pages
     {
       url: `${baseUrl}/neighborhood/english-residences`,
       lastModified: currentDate,
@@ -126,13 +184,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
       url: `${baseUrl}/neighborhood/arts-district`,
       lastModified: currentDate,
       changeFrequency: 'weekly',
-      priority: 0.8,
+      priority: 0.9,
     },
     {
       url: `${baseUrl}/neighborhood/first-fridays`,
       lastModified: currentDate,
       changeFrequency: 'monthly',
-      priority: 0.7,
+      priority: 0.85,
     },
     {
       url: `${baseUrl}/neighborhood/ev-program`,
@@ -148,4 +206,3 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
   ]
 }
-

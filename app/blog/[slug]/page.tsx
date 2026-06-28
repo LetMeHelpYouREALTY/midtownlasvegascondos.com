@@ -30,7 +30,7 @@ export async function generateMetadata({
     title: `${post.title} | Midtown Las Vegas Blog`,
     description: post.content.substring(0, 160),
     alternates: {
-      canonical: `https://www.midtownvegascondos.com/blog/${slug}`,
+      canonical: `https://www.midtownlasvegascondos.com/blog/${slug}`,
     },
   }
 }
@@ -61,10 +61,10 @@ export default async function BlogPostPage({
           headline={post.title}
           description={post.content.substring(0, 160)}
           datePublished={post.date}
-          url={`https://www.midtownvegascondos.com/blog/${slug}`}
+          url={`https://www.midtownlasvegascondos.com/blog/${slug}`}
           author={{
             name: 'Dr. Jan Duffy',
-            url: 'https://www.midtownvegascondos.com/about',
+            url: 'https://www.midtownlasvegascondos.com/about',
           }}
         />
         

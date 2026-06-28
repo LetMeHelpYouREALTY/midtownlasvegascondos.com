@@ -4,11 +4,12 @@ import { Breadcrumb } from '../components/breadcrumb'
 import { RealEstateListingSchema } from '../components/real-estate-listing-schema'
 import { CalendlyLink } from '../components/calendly-link'
 import { RealScoutListings } from '../components/realscout-listings'
+import { PersonaIntro } from '../components/persona-intro'
 
 export const metadata: Metadata = {
-  title: 'Investment Properties Midtown Las Vegas | Cap Rates, Cash Flow',
+  title: 'Local Investment Condos | Walkable Midtown Income',
   description:
-    'Midtown Las Vegas condo investments. Discover rental income opportunities, ROI analysis, and growth potential in the Arts District. Schedule consultation today.',
+    'Arts District investment condos for locals — English Residences income while you keep walkable life at 921 S Main St. Dr. Jan Duffy (702) 500-1980.',
   keywords: [
     'investment properties las vegas',
     'condo investments',
@@ -18,7 +19,7 @@ export const metadata: Metadata = {
     'Arts District investment',
   ],
   alternates: {
-    canonical: 'https://www.midtownvegascondos.com/investment-properties',
+    canonical: 'https://www.midtownlasvegascondos.com/investment-properties',
   },
 }
 
@@ -32,13 +33,14 @@ export default function InvestmentPropertiesPage() {
     <div className="min-h-screen bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <Breadcrumb items={breadcrumbItems} />
+        <PersonaIntro subtitle="For locals who want rental income from a walkable Arts District asset — not a strip-mall suburb flip." />
         
         <h1 className="text-5xl md:text-6xl font-bold text-slate-900 mb-6">
-          Investment Properties in Midtown Las Vegas
+          Walkable Investment Condos in Midtown
         </h1>
         <p className="text-xl text-slate-600 mb-12 max-w-3xl">
-          Discover exceptional ROI opportunities in Las Vegas's fastest-growing neighborhood. 
-          Midtown offers unique investment models with rental income potential and strong appreciation.
+          Own in the Arts District and earn when you travel — English Residences and downtown
+          condos with the culture of First Friday outside your door.
         </p>
 
         {/* Why Midtown for Investors */}

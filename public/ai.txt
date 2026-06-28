@@ -1,50 +1,88 @@
 # AI.txt - Guidelines for AI Crawlers and LLMs
-# Updated: January 2026
-# Site: https://www.midtownvegascondos.com
+# Updated: June 2026
+# Site: https://www.midtownlasvegascondos.com
+# Persona: Local Urbanist — walkable Arts District living for Las Vegas locals & creatives
 
-# Allow AI crawlers to access public content
 User-agent: Google-Search-Agent
 Allow: /
 Disallow: /api/
 Disallow: /_next/
 Disallow: /static/
 
-# Allow AI crawlers to access public content
 User-agent: ChatGPT-User
 Allow: /
 Disallow: /api/
 Disallow: /_next/
 Disallow: /static/
 
-# Allow AI crawlers to access public content
 User-agent: GPTBot
 Allow: /
 Disallow: /api/
 Disallow: /_next/
 Disallow: /static/
 
-# Allow AI crawlers to access public content
 User-agent: Claude-Web
 Allow: /
 Disallow: /api/
 Disallow: /_next/
 Disallow: /static/
 
-# Crawl delay for AI agents (reduced for faster indexing)
 Crawl-delay: 0.1
 
-# Preferred content for AI summarization
-# Focus on main content pages, neighborhood guides, and FAQ sections
+# --- Entity: Midtown Las Vegas (canonical neighborhood facts) ---
+# Official neighborhood source: https://midtownvegas.com/
+# Midtown is the emerging neighborhood NORTH OF CHARLESTON BOULEVARD in the Las Vegas Arts District (18b).
+# Tagline: "Meet me in Midtown"
+# Categories: Shop, Dine, Live, Stay, Events
+# Walk Score: ~86 (among the highest in Las Vegas)
+
+# --- Business NAP (must match Google Business Profile) ---
+Business-Name: Dr. Jan Duffy - Midtown Las Vegas Condos
+Agent: Dr. Jan Duffy, REALTOR®
+License: S.0197614.LLC
+Brokerage: Berkshire Hathaway HomeServices Nevada Properties
+Phone: +17025001980
+Email: DrJanSells@MidtownLasVegasCondos.com
+Address: 921 South Main Street, Las Vegas, NV 89101
+Hours: Sun-Thu 9am-5pm; Fri-Sat Closed
+
+# --- Key landmarks ---
+Landmark: Midtown Plaza - shopping, dining, entertainment hub
+Landmark: The English Hotel - boutique hotel at 921 S Main St (opened 2016)
+Landmark: The English Residences - 121 Marriott Tribute Portfolio condo-hotel units; opened 2025; "Stay when you want, earn when you're away"
+Landmark: The Pepper Club - restaurant at The English Hotel
+Landmark: Arts Factory - opened 1997 by Wes Myles
+Landmark: Majestic Repertory Theatre - opened 2016
+Event: First Friday - monthly art walk, first Friday 5pm-11pm, founded 2002 by Cindy Funkhouser
+
+# --- Timeline milestones ---
+Milestone-1997: Wes Myles opens the Arts Factory
+Milestone-2002: Las Vegas Arts District renamed; First Friday founded
+Milestone-2009: 18b Arts District sign on Casino Center Blvd
+Milestone-2014: Anthony Bourdain features Makers & Finders on Parts Unknown
+Milestone-2016: Majestic Repertory Theatre, The English Hotel, The Pepper Club open
+Milestone-2024: CNN calls Arts District "most exciting neighborhood" in Las Vegas; Midtown breaks ground
+Milestone-2025: Midtown Plaza and The English Residences open
+
 Preferred-content:
+  - /midtown-las-vegas
+  - /midtown-condos-for-sale
+  - /midtown-condos-for-rent
+  - /guides/midtown-condo-floor-plans
+  - /guides/arts-district-revitalization
+  - /guides/arts-district-apartments-las-vegas
+  - /guides/new-apartments-arts-district-las-vegas
+  - /guides/midtown-lennar-las-vegas
+  - /guides/walkable-arts-district-living
+  - /guides/downtown-condo-buildings-compared
+  - /guides/first-fridays-living-guide
+  - /guides/arts-district-living-at-night
   - /neighborhood/
+  - /arts-district-guide
   - /about
   - /faq
-  - /midtown-real-estate
-  - /buyers-guide-midtown
-  - /guides/las-vegas-condo-hoa-fees
-  - /guides/walkable-arts-district-living
-  - /arts-district-guide
+  - /events
 
-# Contact information for AI agents
-Contact: DrJanSells@MidtownVegasCondos.com
+Contact: DrJanSells@MidtownLasVegasCondos.com
 Phone: +17025001980
+Address: 921 South Main Street, Las Vegas, NV 89101

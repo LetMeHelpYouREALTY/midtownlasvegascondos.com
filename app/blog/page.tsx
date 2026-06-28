@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   description:
     'Stay informed about Midtown Las Vegas real estate, market updates, neighborhood news, and investment insights. Expert advice from Arts District specialists.',
   alternates: {
-    canonical: 'https://www.midtownvegascondos.com/blog',
+    canonical: 'https://www.midtownlasvegascondos.com/blog',
   },
 }
 

@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   description: 'Explore homes for sale in Las Vegas\'s Arts District. 18 blocks of galleries, restaurants, culture. Midtown condos offer authentic urban living near downtown. Schedule your tour today.',
   keywords: 'Las Vegas Arts District, 18b Arts District, downtown Las Vegas homes, First Friday Las Vegas, Arts District condos, creative Las Vegas neighborhood',
   alternates: {
-    canonical: 'https://www.midtownvegascondos.com/neighborhood/arts-district',
+    canonical: 'https://www.midtownlasvegascondos.com/neighborhood/arts-district',
   },
 }
 

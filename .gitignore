@@ -42,4 +42,4 @@ yarn-error.log*
 next-env.d.ts
 
 # original site reference files
-/original-site/
+/original-site/package-lock.json

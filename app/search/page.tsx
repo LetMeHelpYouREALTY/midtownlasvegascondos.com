@@ -5,11 +5,12 @@ import { Metadata } from 'next'
 import Link from 'next/link'
 import { Breadcrumb } from '../components/breadcrumb'
 import { CalendlyLink } from '../components/calendly-link'
+import { PersonaIntro } from '../components/persona-intro'
 
 export const metadata: Metadata = {
-  title: 'Property Search | Midtown Las Vegas Condos & Homes',
+  title: 'Search Walkable Arts District Homes | Midtown Las Vegas',
   description:
-    'Search available luxury condominiums, condo-hotels, townhouses, and single-family homes in Midtown Las Vegas and the Arts District. Prices from $150,000 to $3,000,000+. Find your perfect property today.',
+    'Search condos and homes in walkable Midtown and the 18b Arts District — for locals choosing gallery life over suburban sprawl. Dr. Jan Duffy (702) 500-1980.',
   keywords: [
     'Midtown Las Vegas homes',
     'Arts District condos',
@@ -19,7 +20,7 @@ export const metadata: Metadata = {
     'downtown Las Vegas real estate',
   ],
   alternates: {
-    canonical: 'https://www.midtownvegascondos.com/search',
+    canonical: 'https://www.midtownlasvegascondos.com/search',
   },
 }
 
@@ -37,7 +38,7 @@ export default function SearchPage() {
       <section className="relative py-20 bg-gradient-to-br from-slate-900 to-slate-700 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-5xl md:text-6xl font-bold mb-6">
-            Property Search
+            Search Walkable Arts District Homes
           </h1>
           <p className="text-xl text-white/90 max-w-3xl mx-auto mb-6">
             Search available homes and condos in Midtown and the Las Vegas Arts District
@@ -252,7 +253,7 @@ export default function SearchPage() {
             Call (702) 500-1980
           </a>
           <a
-            href="mailto:DrJanSells@MidtownVegasCondos.com"
+            href="mailto:DrJanSells@MidtownLasVegasCondos.com"
             className="inline-block px-8 py-4 bg-transparent border-2 border-slate-900 text-slate-900 rounded-lg font-semibold hover:bg-slate-50 transition-colors"
           >
             Email Dr. Jan

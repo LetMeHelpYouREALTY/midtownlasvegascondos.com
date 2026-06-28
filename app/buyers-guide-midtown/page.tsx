@@ -4,11 +4,12 @@ import { Breadcrumb } from '../components/breadcrumb'
 import { CalendlyLink } from '../components/calendly-link'
 import { RealScoutListings } from '../components/realscout-listings'
 import { RealScoutSearch } from '../components/realscout-search'
+import { PersonaIntro } from '../components/persona-intro'
 
 export const metadata: Metadata = {
-  title: "Buyer's Guide to Midtown Las Vegas | How to Buy in Arts District",
+  title: "Local Buyer's Guide | Walkable Midtown Las Vegas Condos",
   description:
-    'Complete guide to buying in Midtown Las Vegas. Learn about neighborhoods, prices, financing, and the buying process. Get expert advice from Arts District specialists.',
+    'How Las Vegas locals buy in the Arts District — building tours, evening visits, First Friday rhythm, and walkable life at 921 S Main St. Dr. Jan Duffy (702) 500-1980.',
   keywords: [
     'buying in Midtown',
     'how to buy Arts District',
@@ -18,7 +19,7 @@ export const metadata: Metadata = {
     'Las Vegas real estate process',
   ],
   alternates: {
-    canonical: 'https://www.midtownvegascondos.com/buyers-guide-midtown',
+    canonical: 'https://www.midtownlasvegascondos.com/buyers-guide-midtown',
   },
 }
 
@@ -32,7 +33,7 @@ export default function BuyersGuideMidtownPage() {
     <div className="min-h-screen bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <Breadcrumb items={breadcrumbItems} />
-        
+        <PersonaIntro subtitle="A step-by-step path for locals comparing Juhl, Soho, Newport, and Midtown — including the evening tours Reddit buyers wish they'd done sooner." />
         <h1 className="text-5xl md:text-6xl font-bold text-slate-900 mb-6">
           Buyer's Guide to Midtown Las Vegas
         </h1>
@@ -104,8 +105,8 @@ export default function BuyersGuideMidtownPage() {
             <p className="text-slate-600 leading-relaxed mb-4">
               Beyond the purchase price, budget for closing costs (typically 2-5% of purchase 
               price), home inspections, appraisals, and moving expenses. Condo purchases include{' '}
-              <Link href="/guides/las-vegas-condo-hoa-fees" className="text-slate-900 font-semibold hover:underline">
-                HOA fees
+              <Link href="/guides/downtown-condo-buildings-compared" className="text-slate-900 font-semibold hover:underline">
+                building & HOA comparison
               </Link>{' '}
               ($50–$800+/month depending on building type) and possible special assessments — review
               the HOA budget and reserve study before you offer.

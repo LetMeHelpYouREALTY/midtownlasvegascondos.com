@@ -2,24 +2,25 @@ import { Metadata } from 'next'
 import Link from 'next/link'
 import { CalendlyLink } from '../components/calendly-link'
 import { Breadcrumb } from '../components/breadcrumb'
+import { PersonaIntro } from '../components/persona-intro'
 
 export const metadata: Metadata = {
-  title: 'FAQ | Midtown Las Vegas Condos - Your Questions Answered',
+  title: 'FAQ | Walkable Midtown Las Vegas Living',
   description:
-    'Frequently asked questions about living in Midtown Las Vegas, The English Residences, Arts District real estate, and working with Dr. Jan Duffy. Call (702) 500-1980.',
+    'Local buyer FAQs — walkability, First Friday, downtown buildings, English Residences, and Arts District life at 921 S Main St. Dr. Jan Duffy (702) 500-1980.',
   keywords:
     'Midtown Las Vegas FAQ, Arts District questions, English Residences information, Las Vegas condo questions',
   authors: [{ name: 'Dr. Jan Duffy' }],
   creator: 'Dr. Jan Duffy',
   publisher: 'Midtown Las Vegas Condos',
   alternates: {
-    canonical: 'https://www.midtownvegascondos.com/faq',
+    canonical: 'https://www.midtownlasvegascondos.com/faq',
   },
   openGraph: {
     title: 'FAQ | Midtown Las Vegas Condos',
     description: 'Frequently asked questions about living in Midtown Las Vegas and The English Residences.',
     type: 'website',
-    url: 'https://www.midtownvegascondos.com/faq',
+    url: 'https://www.midtownlasvegascondos.com/faq',
   },
 }
 
@@ -79,7 +80,7 @@ const faqs = [
       },
       {
         q: 'Can I see properties in person?',
-        a: 'Absolutely! Dr. Jan provides personalized tours of Midtown and shows available properties. Schedule your tour by calling (702) 500-1980 or emailing DrJanSells@MidtownVegasCondos.com.',
+        a: 'Absolutely! Dr. Jan provides personalized tours of Midtown and shows available properties. Schedule your tour by calling (702) 500-1980 or emailing DrJanSells@MidtownLasVegasCondos.com.',
       },
       {
         q: 'How long does the buying process take?',
@@ -157,6 +158,7 @@ export default function FAQPage() {
       {/* FAQ Introduction */}
       <section className="py-12 px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto">
         <Breadcrumb items={breadcrumbItems} />
+        <PersonaIntro subtitle="Events calendars matter when you're choosing a block — here's what happens monthly in the Arts District." />
         <div className="prose prose-lg text-slate-600 space-y-4 mb-12">
           <p>
             Moving to or investing in Midtown Las Vegas represents a significant decision, and we understand you'll have questions about 

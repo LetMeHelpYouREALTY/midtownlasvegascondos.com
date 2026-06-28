@@ -3,11 +3,12 @@ import Image from 'next/image'
 import { Metadata } from 'next'
 import { CalendlyLink } from '../components/calendly-link'
 import { Breadcrumb } from '../components/breadcrumb'
+import { PersonaIntro } from '../components/persona-intro'
 
 export const metadata: Metadata = {
-  title: 'Contact Dr. Jan Duffy | Midtown Las Vegas Real Estate Agent | (702) 500-1980',
+  title: 'Contact Dr. Jan Duffy | Walkable Midtown Tours | (702) 500-1980',
   description:
-    'Contact Dr. Jan Duffy, your Midtown Las Vegas real estate specialist. Schedule a personalized property tour, get expert guidance on Arts District homes, or learn about investment opportunities. Call (702) 500-1980.',
+    'Schedule a walk-to-everything Arts District tour with Dr. Jan Duffy at 921 S Main St. Evening visits, building comparisons, and local buyer guidance. Call (702) 500-1980.',
   keywords: [
     'contact Dr. Jan Duffy',
     'Midtown Las Vegas real estate agent',
@@ -19,13 +20,13 @@ export const metadata: Metadata = {
   creator: 'Dr. Jan Duffy',
   publisher: 'Midtown Las Vegas Condos',
   alternates: {
-    canonical: 'https://www.midtownvegascondos.com/contact',
+    canonical: 'https://www.midtownlasvegascondos.com/contact',
   },
   openGraph: {
     title: 'Contact Dr. Jan Duffy | Midtown Las Vegas Real Estate',
     description: 'Schedule a personalized property tour with Dr. Jan Duffy, your Arts District real estate specialist.',
     type: 'website',
-    url: 'https://www.midtownvegascondos.com/contact',
+    url: 'https://www.midtownlasvegascondos.com/contact',
   },
 }
 
@@ -41,7 +42,7 @@ export default function ContactPage() {
       <section className="relative py-20 bg-gradient-to-br from-slate-900 to-slate-700 text-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-5xl md:text-6xl font-bold mb-6">
-            Contact Us
+            Schedule a Walkable Neighborhood Tour
           </h1>
           <p className="text-xl text-white/90 mb-6">
             Get in touch to learn more about luxury living in Midtown
@@ -321,8 +322,8 @@ export default function ContactPage() {
                   Email
                 </h3>
                 <p className="text-slate-600 ml-9">
-                  <a href="mailto:DrJanSells@MidtownVegasCondos.com" className="hover:text-slate-900 transition-colors">
-                    DrJanSells@MidtownVegasCondos.com
+                  <a href="mailto:DrJanSells@MidtownLasVegasCondos.com" className="hover:text-slate-900 transition-colors">
+                    DrJanSells@MidtownLasVegasCondos.com
                   </a>
                 </p>
               </div>
