@@ -73,6 +73,8 @@ function firstFridayEvent(
       { name: 'Las Vegas Arts District', href: '/neighborhood/arts-district' },
       { name: 'Midtown Plaza', href: '/neighborhood/midtown-plaza' },
     ],
+    organizerName: 'First Friday Foundation',
+    organizerUrl: 'https://ffflv.org',
   }
 }
 
@@ -139,6 +141,8 @@ const STANDALONE_EVENTS: MidtownEvent[] = [
       { name: 'Midtown Plaza', href: '/neighborhood/midtown-plaza' },
       { name: 'Shop Midtown', href: '/midtown/shop' },
     ],
+    organizerName: 'Market in the Alley',
+    organizerUrl: 'https://midtownvegas.com',
   },
   {
     slug: 'market-in-the-alley-may-2026',

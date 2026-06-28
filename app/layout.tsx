@@ -45,7 +45,7 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: 'Dr. Jan Duffy' }],
   creator: 'Dr. Jan Duffy',
-  publisher: 'Midtown Las Vegas Condos',
+  publisher: 'Homes by Dr. Jan Duffy',
   robots: {
     index: true,
     follow: true,
@@ -62,7 +62,7 @@ export const metadata: Metadata = {
     description:
       'Luxury condominium living in the heart of Las Vegas Arts District. Contact Dr. Jan at (702) 500-1980',
     url: 'https://www.midtownlasvegascondos.com',
-    siteName: 'Midtown Las Vegas Condos',
+    siteName: 'Homes by Dr. Jan Duffy',
     locale: 'en_US',
     type: 'website',
     images: [

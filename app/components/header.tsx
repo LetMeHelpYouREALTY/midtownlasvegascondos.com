@@ -3,6 +3,7 @@
 import { useState } from 'react'
 import Link from 'next/link'
 import { Menu, X } from 'lucide-react'
+import { REAL_ESTATE_SITE, OFFICIAL_MIDTOWN_SITE } from '@/lib/site-persona'
 
 export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
@@ -26,6 +27,10 @@ export function Header() {
         { name: 'Live', href: '/midtown/live' },
         { name: 'Stay', href: '/midtown/stay' },
       ],
+    },
+    {
+      name: 'Official Midtown',
+      href: OFFICIAL_MIDTOWN_SITE.url,
     },
     { name: 'Search Properties', href: 'http://drjanduffy.realscout.com/' },
     {
@@ -51,8 +56,9 @@ export function Header() {
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
-          <Link href="/" className="flex items-center">
-            <span className="text-2xl font-bold text-slate-900">MIDTOWN</span>
+          <Link href="/" className="flex flex-col leading-tight">
+            <span className="text-lg font-bold text-slate-900">{REAL_ESTATE_SITE.agentName}</span>
+            <span className="text-xs font-medium text-slate-600 tracking-wide">Midtown Las Vegas Condos</span>
           </Link>
 
           {/* Desktop Navigation */}

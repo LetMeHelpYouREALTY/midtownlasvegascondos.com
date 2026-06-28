@@ -33,6 +33,9 @@ export type MidtownEvent = {
   sections: MidtownSection[]
   faqs: MidtownFAQ[]
   relatedLinks?: { name: string; href: string }[]
+  /** Actual event organizer — not this real estate site */
+  organizerName?: string
+  organizerUrl?: string
 }
 
 export type MidtownNewsArticle = {

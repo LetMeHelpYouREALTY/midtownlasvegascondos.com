@@ -5,11 +5,14 @@ import { PageFAQSchema } from '@/app/components/page-faq-schema'
 import { CalendlyLink } from '@/app/components/calendly-link'
 import { MIDTOWN_EVENTS } from '@/lib/midtown-content/events-data'
 import { RealScoutSection } from '@/app/components/realscout-section'
+import { SitePersonaBanner } from '@/app/components/site-persona-banner'
+import { AgentByline } from '@/app/components/agent-byline'
+import { OFFICIAL_MIDTOWN_SITE, REAL_ESTATE_SITE } from '@/lib/site-persona'
 
 export const metadata: Metadata = {
-  title: 'Midtown Las Vegas Neighborhood | Arts District Places & Living',
+  title: 'Midtown Las Vegas Neighborhood Guide | Buyer\'s Guide by Dr. Jan Duffy',
   description:
-    'Explore Midtown Las Vegas — Midtown Plaza, English Residences, KJ\'s, First Friday, Run Club, and walkable Arts District living north of Charleston. Call (702) 500-1980.',
+    'A real estate buyer\'s guide to Midtown Las Vegas — English Residences, Midtown Plaza, First Friday, and walkable Arts District living. Call (702) 500-1980.',
   keywords: [
     'Midtown Las Vegas neighborhood',
     'Arts District places',
@@ -66,9 +69,12 @@ export default function NeighborhoodHubPage() {
 
       <section className="relative py-20 bg-gradient-to-br from-slate-900 to-slate-700 text-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-5xl md:text-6xl font-bold mb-6">Discover Midtown</h1>
+          <p className="text-sm font-semibold uppercase tracking-wide text-white/70 mb-3">
+            {REAL_ESTATE_SITE.shortName}
+          </p>
+          <h1 className="text-5xl md:text-6xl font-bold mb-6">Midtown Neighborhood Guide</h1>
           <p className="text-xl text-white/90">
-            Meet me in Midtown — the walkable Arts District neighborhood north of Charleston
+            What homebuyers and investors should know about living near the Arts District — north of Charleston
           </p>
         </div>
       </section>
@@ -76,11 +82,23 @@ export default function NeighborhoodHubPage() {
       <section className="py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
         <Breadcrumb items={[{ name: 'Home', url: '/' }, { name: 'Neighborhood', url: '/neighborhood' }]} />
 
+        <SitePersonaBanner variant="neighborhood" />
+        <AgentByline />
+
         <div className="prose prose-lg max-w-none text-slate-600 mb-16">
           <p>
-            Say hello to the most rapidly evolving cultural center in the heart of Las Vegas. Midtown at the Arts District
-            is where you enjoy a walkable neighborhood with art galleries, privately owned restaurants, and residences —
-            north of Charleston, steps from the 18b Arts District.
+            Midtown at the Arts District is one of Las Vegas&apos;s most walkable urban cores — galleries, locally owned restaurants,
+            and new residential options north of Charleston. {REAL_ESTATE_SITE.agentName} helps buyers evaluate how places like The English
+            Residences, Midtown Plaza, and nearby events fit into everyday life here. For official neighborhood programming and the
+            events calendar, visit{' '}
+            <a
+              href={OFFICIAL_MIDTOWN_SITE.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-semibold text-slate-900 hover:underline"
+            >
+              {OFFICIAL_MIDTOWN_SITE.url.replace('https://', '')}
+            </a>.
           </p>
         </div>
 

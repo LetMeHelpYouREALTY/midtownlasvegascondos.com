@@ -8,6 +8,7 @@ import { RealScoutListings } from './components/realscout-listings'
 import { RealScoutScript } from './components/realscout-script'
 import { PageFAQ } from './components/page-faq'
 import { CalendlyLink } from './components/calendly-link'
+import { REAL_ESTATE_SITE } from '@/lib/site-persona'
 
 export const metadata: Metadata = {
   title: 'Luxury Midtown Las Vegas Condos | Arts District Real Estate | 702-500-1980',
@@ -164,9 +165,9 @@ export default function HomePage() {
             Midtown at the Arts District
           </h2>
           <p className="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed mb-6">
-            Say hello to the most rapidly evolving cultural center in the heart of Las Vegas. 
-            This is where you can enjoy a walkable neighborhood with art galleries and privately 
-            owned restaurants and now residences at Midtown.
+            Midtown at the Arts District is a walkable urban core north of Charleston — galleries, chef-driven restaurants,
+            and residential options like The English Residences. {REAL_ESTATE_SITE.agentName} helps buyers evaluate how this
+            neighborhood fits their lifestyle and investment goals.
           </p>
           <p className="text-lg text-slate-600 max-w-3xl mx-auto leading-relaxed mb-6">
             Midtown represents a unique convergence of urban sophistication and creative energy. Unlike the tourist-focused Strip, 
@@ -611,15 +612,20 @@ export default function HomePage() {
               Upcoming Events
             </h2>
             <p className="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
-              Stay in the know with what's happening in Midtown. From{' '}
-              <Link href="/neighborhood/first-fridays" className="text-slate-900 font-semibold hover:underline">
-                art walks
-              </Link>{' '}
-              and food festivals to pop-up markets and live performances, there's always something 
-              exciting to discover.{' '}
+              Planning to live near Midtown events? First Friday, run clubs, and seasonal festivals are part of the buyer
+              experience here.{' '}
               <Link href="/events" className="text-slate-900 font-semibold hover:underline">
-                View all events
-              </Link>.
+                Browse our events guide
+              </Link>{' '}
+              or visit the{' '}
+              <a
+                href="https://midtownvegas.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-slate-900 font-semibold hover:underline"
+              >
+                official Midtown calendar
+              </a>.
             </p>
           </div>
           <UpcomingEvents />

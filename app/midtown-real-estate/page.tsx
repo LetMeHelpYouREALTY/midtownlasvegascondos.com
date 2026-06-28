@@ -52,11 +52,8 @@ export default function MidtownRealEstatePage() {
           </h2>
           <div className="prose max-w-none mb-8">
             <p className="text-lg text-slate-600 leading-relaxed mb-4">
-              Midtown represents Las Vegas's most rapidly evolving cultural center, located just 
-              north of Charleston Boulevard in the heart of the Arts District. This 18-block 
-              neighborhood has transformed from an industrial zone into a vibrant residential and 
-              commercial destination, offering walkable access to galleries, restaurants, and 
-              cultural events.
+              Midtown is a walkable cultural hub north of Charleston Boulevard in the Arts District — an 18-block area
+              with galleries, restaurants, and residential options that appeal to buyers seeking authentic downtown Las Vegas living.
             </p>
             <p className="text-lg text-slate-600 leading-relaxed mb-4">
               CNN called the Arts District "the most exciting neighborhood" in Las Vegas, and 
