@@ -62,6 +62,8 @@ export const REAL_ESTATE_SITE = {
    * Pattern matches Turnberry: "[Product] | Homes by Dr. Jan Duffy"
    */
   seo: {
+    /** Primary geo keyword — leads homepage H1 and default title */
+    primaryKeyword: 'Midtown Las Vegas Condos',
     defaultTitle: 'Midtown Las Vegas Condos | Dr. Jan Duffy, REALTOR® | (702) 500-1980',
     titleTemplate: '%s | Dr. Jan Duffy, REALTOR®',
     schemaBrandName: 'Midtown Las Vegas Condos | Homes by Dr. Jan Duffy',

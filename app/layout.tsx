@@ -69,7 +69,7 @@ export const metadata: Metadata = {
         url: 'https://www.midtownlasvegascondos.com/og-image.png',
         width: 1200,
         height: 630,
-        alt: 'Midtown Las Vegas Condos',
+        alt: REAL_ESTATE_SITE.seo.primaryKeyword,
       },
     ],
   },

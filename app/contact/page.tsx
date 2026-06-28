@@ -10,9 +10,9 @@ const officeMapQuery = encodeURIComponent(formatPostalAddress(REAL_ESTATE_SITE.a
 const midtownMapQuery = encodeURIComponent(formatPostalAddress(REAL_ESTATE_SITE.midtownShowroom))
 
 export const metadata: Metadata = {
-  title: 'Contact Dr. Jan Duffy | Midtown Las Vegas Real Estate Agent | (702) 500-1980',
+  title: 'Contact Dr. Jan Duffy',
   description:
-    'Contact Dr. Jan Duffy, your Midtown Las Vegas real estate specialist. Schedule a personalized property tour, get expert guidance on Arts District homes, or learn about investment opportunities. Call (702) 500-1980.',
+    `Contact ${REAL_ESTATE_SITE.agentName} for Midtown Las Vegas condos and English Residences. Call ${REAL_ESTATE_SITE.phone}, email ${REAL_ESTATE_SITE.email}, or visit ${REAL_ESTATE_SITE.address.street}.`,
   keywords: [
     'contact Dr. Jan Duffy',
     'Midtown Las Vegas real estate agent',
@@ -20,17 +20,17 @@ export const metadata: Metadata = {
     'Las Vegas condo specialist',
     'schedule property tour',
   ],
-  authors: [{ name: 'Dr. Jan Duffy' }],
-  creator: 'Dr. Jan Duffy',
-  publisher: 'Midtown Las Vegas Condos',
+  authors: [{ name: REAL_ESTATE_SITE.agentName }],
+  creator: REAL_ESTATE_SITE.agentName,
+  publisher: REAL_ESTATE_SITE.name,
   alternates: {
-    canonical: 'https://www.midtownlasvegascondos.com/contact',
+    canonical: `${REAL_ESTATE_SITE.url}/contact`,
   },
   openGraph: {
-    title: 'Contact Dr. Jan Duffy | Midtown Las Vegas Real Estate',
-    description: 'Schedule a personalized property tour with Dr. Jan Duffy, your Arts District real estate specialist.',
+    title: `Contact ${REAL_ESTATE_SITE.agentName}`,
+    description: REAL_ESTATE_SITE.seo.defaultDescription,
     type: 'website',
-    url: 'https://www.midtownlasvegascondos.com/contact',
+    url: `${REAL_ESTATE_SITE.url}/contact`,
   },
 }
 

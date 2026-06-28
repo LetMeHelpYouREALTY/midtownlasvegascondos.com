@@ -9,7 +9,7 @@ import { AgentByline } from '../components/agent-byline'
 import { OFFICIAL_MIDTOWN_SITE, REAL_ESTATE_SITE } from '@/lib/site-persona'
 
 export const metadata: Metadata = {
-  title: 'About Dr. Jan Duffy | Midtown & Arts District REALTOR®',
+  title: 'About Dr. Jan Duffy',
   description: `${REAL_ESTATE_SITE.agentName}, ${REAL_ESTATE_SITE.agentTitle} — ${REAL_ESTATE_SITE.yearsExperience} years helping Las Vegas buyers with Midtown condos, English Residences, and Arts District investments. Call (702) 500-1980.`,
   keywords: 'Dr. Jan Duffy realtor, Midtown Las Vegas real estate agent, English Residences specialist, Arts District REALTOR, Berkshire Hathaway Nevada',
   authors: [{ name: 'Dr. Jan Duffy' }],

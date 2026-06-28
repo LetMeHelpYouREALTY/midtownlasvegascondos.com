@@ -3,24 +3,25 @@ import Link from 'next/link'
 import { CalendlyLink } from '../components/calendly-link'
 import { RealScoutSection } from '../components/realscout-section'
 import { Breadcrumb } from '../components/breadcrumb'
+import { REAL_ESTATE_SITE } from '@/lib/site-persona'
 
 export const metadata: Metadata = {
-  title: 'FAQ | Midtown Las Vegas Condos - Your Questions Answered',
+  title: 'Midtown Buyer FAQ',
   description:
-    'Frequently asked questions about living in Midtown Las Vegas, The English Residences, Arts District real estate, and working with Dr. Jan Duffy. Call (702) 500-1980.',
+    `FAQ for Midtown Las Vegas condos, English Residences, and Arts District buying — answered by ${REAL_ESTATE_SITE.agentName}. Call ${REAL_ESTATE_SITE.phone}.`,
   keywords:
     'Midtown Las Vegas FAQ, Arts District questions, English Residences information, Las Vegas condo questions',
-  authors: [{ name: 'Dr. Jan Duffy' }],
-  creator: 'Dr. Jan Duffy',
-  publisher: 'Midtown Las Vegas Condos',
+  authors: [{ name: REAL_ESTATE_SITE.agentName }],
+  creator: REAL_ESTATE_SITE.agentName,
+  publisher: REAL_ESTATE_SITE.name,
   alternates: {
-    canonical: 'https://www.midtownlasvegascondos.com/faq',
+    canonical: `${REAL_ESTATE_SITE.url}/faq`,
   },
   openGraph: {
-    title: 'FAQ | Midtown Las Vegas Condos',
-    description: 'Frequently asked questions about living in Midtown Las Vegas and The English Residences.',
+    title: 'Midtown Buyer FAQ',
+    description: REAL_ESTATE_SITE.seo.defaultDescription,
     type: 'website',
-    url: 'https://www.midtownlasvegascondos.com/faq',
+    url: `${REAL_ESTATE_SITE.url}/faq`,
   },
 }
 

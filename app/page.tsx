@@ -12,7 +12,9 @@ import { REAL_ESTATE_SITE, OFFICIAL_MIDTOWN_SITE } from '@/lib/site-persona'
 import { SitePersonaBanner } from './components/site-persona-banner'
 
 export const metadata: Metadata = {
-  title: REAL_ESTATE_SITE.seo.defaultTitle,
+  title: {
+    absolute: REAL_ESTATE_SITE.seo.defaultTitle,
+  },
   description: REAL_ESTATE_SITE.seo.defaultDescription,
   alternates: {
     canonical: 'https://www.midtownlasvegascondos.com/',
@@ -55,10 +57,13 @@ export default function HomePage() {
             {REAL_ESTATE_SITE.tagline}
           </p>
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-4 tracking-tight">
-            {REAL_ESTATE_SITE.subtagline}
+            {REAL_ESTATE_SITE.seo.primaryKeyword}
           </h1>
-          <p className="text-xl md:text-2xl text-white/90 mb-2">
-            {REAL_ESTATE_SITE.agentName} · {REAL_ESTATE_SITE.brokerage}
+          <p className="text-2xl md:text-3xl font-semibold text-white/95 mb-2">
+            {REAL_ESTATE_SITE.agentName}, {REAL_ESTATE_SITE.agentTitle}
+          </p>
+          <p className="text-lg md:text-xl text-amber-100/90 mb-2 italic">
+            {REAL_ESTATE_SITE.name}
           </p>
           <p className="text-lg text-white/80 mb-8 max-w-2xl mx-auto">
             English Residences, Arts District condos, and walkable Midtown listings — private tours and buyer guidance from a {REAL_ESTATE_SITE.yearsExperience}-year Las Vegas specialist.

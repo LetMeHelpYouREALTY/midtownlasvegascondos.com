@@ -19,7 +19,7 @@ export async function generateMetadata({ params }: NewsPageProps): Promise<Metad
   if (!article) return { title: 'Article Not Found' }
 
   return {
-    title: `${article.title} | Midtown Las Vegas News`,
+    title: `${article.title} | Midtown News`,
     description: article.description,
     keywords: article.keywords,
     authors: [{ name: 'Dr. Jan Duffy' }],
