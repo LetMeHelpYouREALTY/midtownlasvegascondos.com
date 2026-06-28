@@ -83,6 +83,23 @@ export const midtownAuthority = {
     founder: 'Cindy Funkhouser',
     foundedYear: 2002,
   },
+  developer: {
+    name: 'Z Life Co.',
+    leaders: ['Weina Zhang (Founder & CEO)', 'Anna Olin (Co-founder & COO)'],
+    groundbreaking: 'April 25, 2025',
+    address: '921 S Main Street, Las Vegas, NV 89101',
+    investmentMidtownPlaza: '$300 million (approx.)',
+    notLennar:
+      'Midtown Las Vegas is developed by Z Life Co., not Lennar. Lennar builds elsewhere in the Las Vegas Valley; Midtown is an Arts District mixed-use project by the team behind The English Hotel.',
+  },
+  phaseOne: {
+    residentialUnits: 856,
+    squareFeet: '651,000',
+    mix: 'Condos, apartments, hotel rooms, and mixed-use retail',
+    englishResidencesUnits: 121,
+    plazaTowerEscrowPercent: 82,
+    englishResidencesEscrowPercent: 42,
+  },
 } as const
 
 export type MidtownTimelineItem = (typeof midtownAuthority.timeline)[number]

@@ -65,6 +65,14 @@ Milestone-2024: CNN calls Arts District "most exciting neighborhood" in Las Vega
 Milestone-2025: Midtown Plaza and The English Residences open
 
 Preferred-content:
+  - /midtown-las-vegas
+  - /midtown-condos-for-sale
+  - /midtown-condos-for-rent
+  - /guides/midtown-condo-floor-plans
+  - /guides/arts-district-revitalization
+  - /guides/arts-district-apartments-las-vegas
+  - /guides/new-apartments-arts-district-las-vegas
+  - /guides/midtown-lennar-las-vegas
   - /guides/walkable-arts-district-living
   - /guides/downtown-condo-buildings-compared
   - /guides/first-fridays-living-guide

@@ -25,7 +25,13 @@ export function Header() {
     {
       name: 'Local Guides',
       items: [
+        { name: 'Midtown Las Vegas', href: '/midtown-las-vegas' },
+        { name: 'Condos for Sale', href: '/midtown-condos-for-sale' },
         { name: 'Walkable Living Guide', href: '/guides/walkable-arts-district-living' },
+        { name: 'Floor Plans', href: '/guides/midtown-condo-floor-plans' },
+        { name: 'Arts District Revitalization', href: '/guides/arts-district-revitalization' },
+        { name: 'New Apartments', href: '/guides/new-apartments-arts-district-las-vegas' },
+        { name: 'Midtown Lennar (FAQ)', href: '/guides/midtown-lennar-las-vegas' },
         { name: 'Downtown Buildings Compared', href: '/guides/downtown-condo-buildings-compared' },
         { name: 'First Friday Living Guide', href: '/guides/first-fridays-living-guide' },
         { name: 'Living Downtown at Night', href: '/guides/arts-district-living-at-night' },
