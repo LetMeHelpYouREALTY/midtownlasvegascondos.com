@@ -4,7 +4,7 @@ import { getAllNewsSlugs } from '@/lib/midtown-content/news-data'
 import { getAllCategorySlugs } from '@/lib/midtown-content/categories-data'
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://www.midtownvegascondos.com'
+  const baseUrl = 'https://www.midtownlasvegascondos.com'
   const currentDate = new Date()
 
   const staticPages: MetadataRoute.Sitemap = [

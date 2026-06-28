@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   keywords:
     'Dr. Jan Duffy realtor, Midtown Las Vegas real estate agent, Arts District realtor, downtown Las Vegas condos agent',
   alternates: {
-    canonical: 'https://www.midtownvegascondos.com/contact',
+    canonical: 'https://www.midtownlasvegascondos.com/contact',
   },
 }
 

@@ -14,13 +14,13 @@ export const metadata: Metadata = {
   creator: 'Dr. Jan Duffy',
   publisher: 'Midtown Las Vegas Condos',
   alternates: {
-    canonical: 'https://www.midtownvegascondos.com/faq',
+    canonical: 'https://www.midtownlasvegascondos.com/faq',
   },
   openGraph: {
     title: 'FAQ | Midtown Las Vegas Condos',
     description: 'Frequently asked questions about living in Midtown Las Vegas and The English Residences.',
     type: 'website',
-    url: 'https://www.midtownvegascondos.com/faq',
+    url: 'https://www.midtownlasvegascondos.com/faq',
   },
 }
 

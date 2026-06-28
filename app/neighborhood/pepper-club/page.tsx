@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     '921 S Main Street restaurant',
   ],
   alternates: {
-    canonical: 'https://www.midtownvegascondos.com/neighborhood/pepper-club',
+    canonical: 'https://www.midtownlasvegascondos.com/neighborhood/pepper-club',
   },
 }
 

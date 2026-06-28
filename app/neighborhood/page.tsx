@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     'Midtown Plaza',
     'walkable Las Vegas',
   ],
-  alternates: { canonical: 'https://www.midtownvegascondos.com/neighborhood' },
+  alternates: { canonical: 'https://www.midtownlasvegascondos.com/neighborhood' },
 }
 
 const places = [

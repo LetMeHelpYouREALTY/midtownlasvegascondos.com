@@ -7,9 +7,9 @@ export function LocalBusinessSchema() {
     name: 'Las Vegas Arts District Condos | Homes by Dr. Jan Duffy',
     description:
       'Discover luxury condos and charming homes in Downtown Las Vegas with Dr. Jan Duffy, a real estate expert with 30+ years of experience. Personalized service guaranteed!',
-    image: 'https://www.midtownvegascondos.com/images/logos/midtown-logo.svg',
-    '@id': 'https://www.midtownvegascondos.com#business',
-    url: 'https://www.midtownvegascondos.com',
+    image: 'https://www.midtownlasvegascondos.com/images/logos/midtown-logo.svg',
+    '@id': 'https://www.midtownlasvegascondos.com#business',
+    url: 'https://www.midtownlasvegascondos.com',
     telephone: '+17025001980',
     email: 'DrJanSells@MidtownVegasCondos.com',
     foundingDate: '2009-09-20',
@@ -205,7 +205,7 @@ export function ResidenceSchema() {
     name: 'The English Residences',
     description:
       'Luxury condo-hotel residences in the heart of the Las Vegas Arts District. Own your unit and earn income through professional hotel management.',
-    url: 'https://www.midtownvegascondos.com/neighborhood/english-residences',
+    url: 'https://www.midtownlasvegascondos.com/neighborhood/english-residences',
     address: {
       '@type': 'PostalAddress',
       streetAddress: '921 South Main Street',
@@ -258,13 +258,13 @@ export function WebSiteSchema() {
     '@context': 'https://schema.org',
     '@type': 'WebSite',
     name: 'Midtown Las Vegas Condos',
-    url: 'https://www.midtownvegascondos.com',
+    url: 'https://www.midtownlasvegascondos.com',
     description:
       'Luxury condominium living in the heart of Las Vegas Arts District. Find your perfect home with Dr. Jan Duffy.',
     publisher: {
       '@type': 'Organization',
       name: 'Las Vegas Arts District Condos | Homes by Dr. Jan Duffy',
-      url: 'https://www.midtownvegascondos.com',
+      url: 'https://www.midtownlasvegascondos.com',
     },
     potentialAction: [
       {
@@ -272,7 +272,7 @@ export function WebSiteSchema() {
         target: {
           '@type': 'EntryPoint',
           urlTemplate:
-            'https://www.midtownvegascondos.com/search?q={search_term_string}',
+            'https://www.midtownlasvegascondos.com/search?q={search_term_string}',
           actionPlatform: [
             'http://schema.org/DesktopWebPlatform',
             'http://schema.org/MobileWebPlatform',
@@ -336,8 +336,8 @@ export function PersonSchema() {
     },
     description:
       'Dr. Jan Duffy is a licensed real estate agent specializing in Midtown Las Vegas and Arts District properties. With 30+ years of experience, she provides personalized service for luxury condos, investment properties, and downtown living.',
-    url: 'https://www.midtownvegascondos.com/about',
-    image: 'https://www.midtownvegascondos.com/images/midtown/dr-jan-duffy.png',
+    url: 'https://www.midtownlasvegascondos.com/about',
+    image: 'https://www.midtownlasvegascondos.com/images/midtown/dr-jan-duffy.png',
     email: 'DrJanSells@MidtownVegasCondos.com',
     telephone: '+17025001980',
     address: {

@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'The English Residences | Luxury Condo-Hotels in Midtown',
     description: 'Own a luxury condo-hotel in the heart of the Arts District. Professional management and income potential.',
-    url: 'https://www.midtownvegascondos.com/neighborhood/english-residences',
+    url: 'https://www.midtownlasvegascondos.com/neighborhood/english-residences',
   },
 }
 

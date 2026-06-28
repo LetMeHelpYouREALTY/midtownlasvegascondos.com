@@ -21,13 +21,13 @@ export const metadata: Metadata = {
   creator: 'Dr. Jan Duffy',
   publisher: 'Midtown Las Vegas Condos',
   alternates: {
-    canonical: 'https://www.midtownvegascondos.com/news',
+    canonical: 'https://www.midtownlasvegascondos.com/news',
   },
   openGraph: {
     title: 'Midtown Las Vegas News & Updates',
     description: 'Stay updated on the latest Midtown Las Vegas news and developments.',
     type: 'website',
-    url: 'https://www.midtownvegascondos.com/news',
+    url: 'https://www.midtownlasvegascondos.com/news',
   },
 }
 

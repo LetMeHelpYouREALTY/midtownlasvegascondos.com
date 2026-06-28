@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     'Arts District investment',
   ],
   alternates: {
-    canonical: 'https://www.midtownvegascondos.com/investment-properties',
+    canonical: 'https://www.midtownlasvegascondos.com/investment-properties',
   },
 }
 

@@ -14,7 +14,7 @@ export const metadata: Metadata = {
   description:
     'Discover luxury condominium living in the heart of Las Vegas Arts District. Experience the vibrant culture, dining, and entertainment of Midtown. Contact us today at (702) 500-1980.',
   alternates: {
-    canonical: 'https://www.midtownvegascondos.com/',
+    canonical: 'https://www.midtownlasvegascondos.com/',
   },
   robots: {
     index: true,

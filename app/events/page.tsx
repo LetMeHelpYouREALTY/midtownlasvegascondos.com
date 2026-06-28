@@ -13,13 +13,13 @@ export const metadata: Metadata = {
   creator: 'Dr. Jan Duffy',
   publisher: 'Midtown Las Vegas Condos',
   alternates: {
-    canonical: 'https://www.midtownvegascondos.com/events',
+    canonical: 'https://www.midtownlasvegascondos.com/events',
   },
   openGraph: {
     title: 'Midtown Las Vegas Events Calendar',
     description: 'Discover events in Midtown and the Arts District: First Friday, art walks, and more.',
     type: 'website',
-    url: 'https://www.midtownvegascondos.com/events',
+    url: 'https://www.midtownlasvegascondos.com/events',
   },
 }
 

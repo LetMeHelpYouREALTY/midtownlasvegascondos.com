@@ -7,7 +7,7 @@ import { PageFAQ } from '@/app/components/page-faq'
 import { PageFAQSchema } from '@/app/components/page-faq-schema'
 import { ArticleSchema } from '@/app/components/article-schema'
 
-const CANONICAL_URL = 'https://www.midtownvegascondos.com/guides/walkable-arts-district-living'
+const CANONICAL_URL = 'https://www.midtownlasvegascondos.com/guides/walkable-arts-district-living'
 
 export const metadata: Metadata = {
   title: 'Walkable Living in Las Vegas Arts District | Midtown Guide',
@@ -66,7 +66,7 @@ export default function WalkableArtsDistrictLivingPage() {
         datePublished="2026-06-28"
         dateModified="2026-06-28"
         url={CANONICAL_URL}
-        author={{ name: 'Dr. Jan Duffy', url: 'https://www.midtownvegascondos.com/about' }}
+        author={{ name: 'Dr. Jan Duffy', url: 'https://www.midtownlasvegascondos.com/about' }}
       />
       <PageFAQSchema faqs={faqs} />
 

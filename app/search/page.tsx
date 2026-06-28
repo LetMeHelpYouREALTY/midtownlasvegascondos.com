@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     'downtown Las Vegas real estate',
   ],
   alternates: {
-    canonical: 'https://www.midtownvegascondos.com/search',
+    canonical: 'https://www.midtownlasvegascondos.com/search',
   },
 }
 

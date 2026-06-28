@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   description:
     'KJ\'s Restaurant at The English Hotel, 921 S Main St — lobster, oysters, prime steaks, and sports-bar energy in the Las Vegas Arts District. Near The English Residences.',
   keywords: ['KJs Restaurant Las Vegas', 'English Hotel dining', 'Midtown restaurants', 'Arts District food'],
-  alternates: { canonical: 'https://www.midtownvegascondos.com/neighborhood/kjs-restaurant' },
+  alternates: { canonical: 'https://www.midtownlasvegascondos.com/neighborhood/kjs-restaurant' },
 }
 
 const faqs = [

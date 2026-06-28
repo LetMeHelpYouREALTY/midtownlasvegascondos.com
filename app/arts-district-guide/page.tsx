@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     'Las Vegas galleries',
   ],
   alternates: {
-    canonical: 'https://www.midtownvegascondos.com/arts-district-guide',
+    canonical: 'https://www.midtownlasvegascondos.com/arts-district-guide',
   },
 }
 

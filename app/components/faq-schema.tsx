@@ -50,7 +50,7 @@ export function FAQSchema() {
         name: 'How do I contact Dr. Jan Duffy about Midtown properties?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'You can reach Dr. Jan Duffy at (702) 500-1980 or email DrJanSells@MidtownVegasCondos.com. Visit www.midtownvegascondos.com to search available properties or schedule a personal tour of the Midtown neighborhood.',
+          text: 'You can reach Dr. Jan Duffy at (702) 500-1980 or email DrJanSells@MidtownVegasCondos.com. Visit www.midtownlasvegascondos.com to search available properties or schedule a personal tour of the Midtown neighborhood.',
         },
       },
       {

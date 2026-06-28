@@ -13,13 +13,13 @@ export const metadata: Metadata = {
   creator: 'Dr. Jan Duffy',
   publisher: 'Midtown Las Vegas Condos',
   alternates: {
-    canonical: 'https://www.midtownvegascondos.com/about',
+    canonical: 'https://www.midtownlasvegascondos.com/about',
   },
   openGraph: {
     title: 'About Midtown Las Vegas | Arts District History',
     description: 'Discover the story of Midtown, the walkable neighborhood in the heart of the Las Vegas Arts District.',
     type: 'website',
-    url: 'https://www.midtownvegascondos.com/about',
+    url: 'https://www.midtownlasvegascondos.com/about',
   },
 }
 

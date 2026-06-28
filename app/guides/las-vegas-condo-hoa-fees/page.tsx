@@ -7,7 +7,7 @@ import { PageFAQ } from '@/app/components/page-faq'
 import { PageFAQSchema } from '@/app/components/page-faq-schema'
 import { ArticleSchema } from '@/app/components/article-schema'
 
-const CANONICAL_URL = 'https://www.midtownvegascondos.com/guides/las-vegas-condo-hoa-fees'
+const CANONICAL_URL = 'https://www.midtownlasvegascondos.com/guides/las-vegas-condo-hoa-fees'
 
 export const metadata: Metadata = {
   title: 'Las Vegas Condo HOA Fees Guide | Arts District & Midtown',
@@ -66,7 +66,7 @@ export default function LasVegasCondoHoaFeesPage() {
         datePublished="2026-06-28"
         dateModified="2026-06-28"
         url={CANONICAL_URL}
-        author={{ name: 'Dr. Jan Duffy', url: 'https://www.midtownvegascondos.com/about' }}
+        author={{ name: 'Dr. Jan Duffy', url: 'https://www.midtownlasvegascondos.com/about' }}
       />
       <PageFAQSchema faqs={faqs} />
 

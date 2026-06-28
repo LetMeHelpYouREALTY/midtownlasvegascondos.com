@@ -1,4 +1,4 @@
-export const SITE_URL = 'https://www.midtownvegascondos.com'
+export const SITE_URL = 'https://www.midtownlasvegascondos.com'
 
 export const ARTS_DISTRICT_LOCATION = {
   name: 'Las Vegas Arts District',

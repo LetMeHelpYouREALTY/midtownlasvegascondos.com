@@ -27,9 +27,9 @@ export const metadata: Metadata = {
   },
   description:
     'Discover luxury condominium living in the heart of Las Vegas Arts District. Experience the vibrant culture, dining, and entertainment of Midtown. Contact us today at (702) 500-1980.',
-  metadataBase: new URL('https://www.midtownvegascondos.com'),
+  metadataBase: new URL('https://www.midtownlasvegascondos.com'),
   alternates: {
-    canonical: 'https://www.midtownvegascondos.com/',
+    canonical: 'https://www.midtownlasvegascondos.com/',
   },
   keywords: [
     'Las Vegas condos',
@@ -61,13 +61,13 @@ export const metadata: Metadata = {
     title: 'Luxury Midtown Las Vegas Condos | Arts District Real Estate',
     description:
       'Luxury condominium living in the heart of Las Vegas Arts District. Contact Dr. Jan at (702) 500-1980',
-    url: 'https://www.midtownvegascondos.com',
+    url: 'https://www.midtownlasvegascondos.com',
     siteName: 'Midtown Las Vegas Condos',
     locale: 'en_US',
     type: 'website',
     images: [
       {
-        url: 'https://www.midtownvegascondos.com/og-image.png',
+        url: 'https://www.midtownlasvegascondos.com/og-image.png',
         width: 1200,
         height: 630,
         alt: 'Midtown Las Vegas Condos',
@@ -79,7 +79,7 @@ export const metadata: Metadata = {
     title: 'Midtown Las Vegas Condos',
     description:
       'Luxury condominium living in the heart of Las Vegas Arts District',
-    images: ['https://www.midtownvegascondos.com/og-image.png'],
+    images: ['https://www.midtownlasvegascondos.com/og-image.png'],
   },
   verification: {
     google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION,

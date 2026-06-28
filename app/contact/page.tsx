@@ -20,13 +20,13 @@ export const metadata: Metadata = {
   creator: 'Dr. Jan Duffy',
   publisher: 'Midtown Las Vegas Condos',
   alternates: {
-    canonical: 'https://www.midtownvegascondos.com/contact',
+    canonical: 'https://www.midtownlasvegascondos.com/contact',
   },
   openGraph: {
     title: 'Contact Dr. Jan Duffy | Midtown Las Vegas Real Estate',
     description: 'Schedule a personalized property tour with Dr. Jan Duffy, your Arts District real estate specialist.',
     type: 'website',
-    url: 'https://www.midtownvegascondos.com/contact',
+    url: 'https://www.midtownlasvegascondos.com/contact',
   },
 }
 

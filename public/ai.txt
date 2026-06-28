@@ -1,6 +1,6 @@
 # AI.txt - Guidelines for AI Crawlers and LLMs
 # Updated: January 2026
-# Site: https://www.midtownvegascondos.com
+# Site: https://www.midtownlasvegascondos.com
 
 # Allow AI crawlers to access public content
 User-agent: Google-Search-Agent
