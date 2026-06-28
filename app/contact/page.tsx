@@ -4,6 +4,10 @@ import { Metadata } from 'next'
 import { CalendlyLink } from '../components/calendly-link'
 import { Breadcrumb } from '../components/breadcrumb'
 import { RealScoutSection } from '../components/realscout-section'
+import { REAL_ESTATE_SITE, formatPostalAddress } from '@/lib/site-persona'
+
+const officeMapQuery = encodeURIComponent(formatPostalAddress(REAL_ESTATE_SITE.address))
+const midtownMapQuery = encodeURIComponent(formatPostalAddress(REAL_ESTATE_SITE.midtownShowroom))
 
 export const metadata: Metadata = {
   title: 'Contact Dr. Jan Duffy | Midtown Las Vegas Real Estate Agent | (702) 500-1980',
@@ -272,11 +276,48 @@ export default function ContactPage() {
                       d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
                     />
                   </svg>
-                  Address
+                  Office
                 </h3>
                 <p className="text-slate-600 ml-9">
-                  921 South Main Street<br />
-                  Las Vegas, NV 89101
+                  {REAL_ESTATE_SITE.address.street}<br />
+                  {REAL_ESTATE_SITE.address.city}, {REAL_ESTATE_SITE.address.region}{' '}
+                  {REAL_ESTATE_SITE.address.postalCode}
+                </p>
+                <p className="text-sm text-slate-500 ml-9 mt-2">
+                  Same office hub as Nevada Real Estate Group — consultations and paperwork by appointment.
+                </p>
+              </div>
+
+              <div>
+                <h3 className="text-xl font-semibold text-slate-900 mb-3 flex items-center">
+                  <svg
+                    className="w-6 h-6 mr-3 text-slate-900"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+                    />
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+                    />
+                  </svg>
+                  Midtown property tours
+                </h3>
+                <p className="text-slate-600 ml-9">
+                  {REAL_ESTATE_SITE.midtownShowroom.street}<br />
+                  {REAL_ESTATE_SITE.midtownShowroom.city}, {REAL_ESTATE_SITE.midtownShowroom.region}{' '}
+                  {REAL_ESTATE_SITE.midtownShowroom.postalCode}
+                </p>
+                <p className="text-sm text-slate-500 ml-9 mt-2">
+                  {REAL_ESTATE_SITE.midtownShowroom.label} — English Residences & Arts District showings.
                 </p>
               </div>
 
@@ -368,28 +409,37 @@ export default function ContactPage() {
                       d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7"
                     />
                   </svg>
-                  Location Map
+                  Office location
                 </h3>
                 <div className="relative aspect-video rounded-lg overflow-hidden border border-slate-200 shadow-sm">
                   <iframe
-                    src="https://www.google.com/maps?q=921+South+Main+Street,+Las+Vegas,+NV+89101&output=embed&hl=en"
+                    src={`https://www.google.com/maps?q=${officeMapQuery}&output=embed&hl=en`}
                     width="100%"
                     height="100%"
                     className="absolute inset-0 w-full h-full border-0"
                     loading="lazy"
                     allowFullScreen
                     referrerPolicy="no-referrer-when-downgrade"
-                    title="921 South Main Street, Las Vegas, NV 89101 - Midtown Las Vegas Location"
+                    title={`${formatPostalAddress(REAL_ESTATE_SITE.address)} - Dr. Jan Duffy office`}
                   />
                 </div>
                 <p className="text-sm text-slate-600 mt-3">
                   <a
-                    href="https://www.google.com/maps/search/?api=1&query=921+South+Main+Street,+Las+Vegas,+NV+89101"
+                    href={`https://www.google.com/maps/search/?api=1&query=${officeMapQuery}`}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-slate-900 hover:underline font-medium"
                   >
-                    Get Directions →
+                    Get directions to the office →
+                  </a>
+                  {' · '}
+                  <a
+                    href={`https://www.google.com/maps/search/?api=1&query=${midtownMapQuery}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-slate-900 hover:underline font-medium"
+                  >
+                    Midtown tour meeting point →
                   </a>
                 </p>
               </div>

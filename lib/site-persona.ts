@@ -6,6 +6,29 @@
  * - midtownlasvegascondos.com = Dr. Jan Duffy REALTOR® buyer/advisor site (listings, tours, investment)
  */
 
+/** Shared brokerage office (same as Nevada Real Estate Group / valley team hub) */
+export const OFFICE_ADDRESS = {
+  street: '8945 W Russell Rd, Suite 170',
+  city: 'Las Vegas',
+  region: 'NV',
+  postalCode: '89148',
+} as const
+
+/** Midtown listings & property tours — not the business office NAP */
+export const MIDTOWN_SHOWROOM = {
+  street: '921 South Main Street',
+  city: 'Las Vegas',
+  region: 'NV',
+  postalCode: '89101',
+  label: 'Midtown listing hub & tour meeting point',
+} as const
+
+export function formatPostalAddress(
+  addr: { street: string; city: string; region: string; postalCode: string },
+): string {
+  return `${addr.street}, ${addr.city}, ${addr.region} ${addr.postalCode}`
+}
+
 export const REAL_ESTATE_SITE = {
   name: 'Homes by Dr. Jan Duffy',
   shortName: 'Dr. Jan Duffy Real Estate',
@@ -21,11 +44,16 @@ export const REAL_ESTATE_SITE = {
   license: 'S.0197614.LLC',
   brokerage: 'Berkshire Hathaway HomeServices Nevada Properties',
   yearsExperience: '30+',
-  address: {
-    street: '921 South Main Street',
-    city: 'Las Vegas',
-    region: 'NV',
-    postalCode: '89101',
+  /** Business office NAP — matches shared Russell Rd location */
+  address: OFFICE_ADDRESS,
+  midtownShowroom: MIDTOWN_SHOWROOM,
+  geo: {
+    latitude: 36.0994,
+    longitude: -115.2624,
+  },
+  midtownGeo: {
+    latitude: 36.1622,
+    longitude: -115.1513,
   },
   realScoutUrl: 'http://drjanduffy.realscout.com/',
   realScoutOnboardingUrl: 'http://drjanduffy.realscout.com/onboarding',

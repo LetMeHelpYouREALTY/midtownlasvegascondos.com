@@ -1,5 +1,19 @@
 // Structured Data (JSON-LD) for SEO
 
+import {
+  MIDTOWN_SHOWROOM,
+  REAL_ESTATE_SITE,
+} from '@/lib/site-persona'
+
+const officePostalAddress = {
+  '@type': 'PostalAddress' as const,
+  streetAddress: REAL_ESTATE_SITE.address.street,
+  addressLocality: REAL_ESTATE_SITE.address.city,
+  addressRegion: REAL_ESTATE_SITE.address.region,
+  postalCode: REAL_ESTATE_SITE.address.postalCode,
+  addressCountry: 'US',
+}
+
 export function LocalBusinessSchema() {
   const schema = {
     '@context': 'https://schema.org',
@@ -21,18 +35,11 @@ export function LocalBusinessSchema() {
       bestRating: '5',
       worstRating: '1',
     },
-    address: {
-      '@type': 'PostalAddress',
-      streetAddress: '921 South Main Street',
-      addressLocality: 'Las Vegas',
-      addressRegion: 'NV',
-      postalCode: '89101',
-      addressCountry: 'US',
-    },
+    address: officePostalAddress,
     geo: {
       '@type': 'GeoCoordinates',
-      latitude: 36.1622,
-      longitude: -115.1513,
+      latitude: REAL_ESTATE_SITE.geo.latitude,
+      longitude: REAL_ESTATE_SITE.geo.longitude,
     },
     openingHoursSpecification: [
       {
@@ -57,8 +64,8 @@ export function LocalBusinessSchema() {
       '@type': 'GeoCircle',
       geoMidpoint: {
         '@type': 'GeoCoordinates',
-        latitude: 36.1622,
-        longitude: -115.1513,
+        latitude: REAL_ESTATE_SITE.midtownGeo.latitude,
+        longitude: REAL_ESTATE_SITE.midtownGeo.longitude,
       },
       geoRadius: '10000',
     },
@@ -208,16 +215,16 @@ export function ResidenceSchema() {
     url: 'https://www.midtownlasvegascondos.com/neighborhood/english-residences',
     address: {
       '@type': 'PostalAddress',
-      streetAddress: '921 South Main Street',
-      addressLocality: 'Las Vegas',
-      addressRegion: 'NV',
-      postalCode: '89101',
+      streetAddress: MIDTOWN_SHOWROOM.street,
+      addressLocality: MIDTOWN_SHOWROOM.city,
+      addressRegion: MIDTOWN_SHOWROOM.region,
+      postalCode: MIDTOWN_SHOWROOM.postalCode,
       addressCountry: 'US',
     },
     geo: {
       '@type': 'GeoCoordinates',
-      latitude: 36.1622,
-      longitude: -115.1513,
+      latitude: REAL_ESTATE_SITE.midtownGeo.latitude,
+      longitude: REAL_ESTATE_SITE.midtownGeo.longitude,
     },
     amenityFeature: [
       {
@@ -340,14 +347,7 @@ export function PersonSchema() {
     image: 'https://www.midtownlasvegascondos.com/images/midtown/dr-jan-duffy.png',
     email: 'DrJanSells@MidtownVegasCondos.com',
     telephone: '+17025001980',
-    address: {
-      '@type': 'PostalAddress',
-      streetAddress: '921 South Main Street',
-      addressLocality: 'Las Vegas',
-      addressRegion: 'NV',
-      postalCode: '89101',
-      addressCountry: 'US',
-    },
+    address: officePostalAddress,
     sameAs: [
       'https://www.linkedin.com/company/downtown-las-vegas-condos-and-homes-for-sale',
     ],

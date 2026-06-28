@@ -670,10 +670,11 @@ export default function HomePage() {
           </h2>
           <div className="grid md:grid-cols-3 gap-8">
             <div>
-              <h3 className="text-xl font-semibold text-slate-900 mb-2">Address</h3>
+              <h3 className="text-xl font-semibold text-slate-900 mb-2">Office</h3>
               <p className="text-slate-600">
-                921 South Main Street<br />
-                Las Vegas, NV 89101
+                {REAL_ESTATE_SITE.address.street}<br />
+                {REAL_ESTATE_SITE.address.city}, {REAL_ESTATE_SITE.address.region}{' '}
+                {REAL_ESTATE_SITE.address.postalCode}
               </p>
             </div>
             <div>
