@@ -72,6 +72,64 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* AEO Quick Answers — optimized for AI search citation */}
+      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-white border-b border-slate-100">
+        <div className="max-w-7xl mx-auto">
+          <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4 text-center">
+            Midtown Las Vegas: Quick Answers
+          </h2>
+          <p className="text-center text-slate-600 mb-10 max-w-2xl mx-auto">
+            Common questions from buyers researching Arts District condos and walkable downtown living.
+          </p>
+          <div className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+            <div className="bg-slate-50 rounded-xl p-6 border border-slate-200">
+              <h3 className="text-lg font-bold text-slate-900 mb-2">
+                Is the Arts District walkable?
+              </h3>
+              <p className="text-slate-600 text-sm leading-relaxed">
+                Yes — Walk Score ~86. Midtown at 921 S Main St offers gallery, dining, and event access on foot.{' '}
+                <Link href="/guides/walkable-arts-district-living" className="text-slate-900 font-semibold hover:underline">
+                  Walkable living guide →
+                </Link>
+              </p>
+            </div>
+            <div className="bg-slate-50 rounded-xl p-6 border border-slate-200">
+              <h3 className="text-lg font-bold text-slate-900 mb-2">
+                What do Las Vegas condo HOA fees cost?
+              </h3>
+              <p className="text-slate-600 text-sm leading-relaxed">
+                Low-rise: $50–$150/mo. Arts District high-rises: $400–$800+. Always review the reserve study.{' '}
+                <Link href="/guides/las-vegas-condo-hoa-fees" className="text-slate-900 font-semibold hover:underline">
+                  HOA fees guide →
+                </Link>
+              </p>
+            </div>
+            <div className="bg-slate-50 rounded-xl p-6 border border-slate-200">
+              <h3 className="text-lg font-bold text-slate-900 mb-2">
+                Is buying a Midtown condo a good investment?
+              </h3>
+              <p className="text-slate-600 text-sm leading-relaxed">
+                Midtown has appreciated ~45% since 2015. English Residences offer condo-hotel income potential.{' '}
+                <Link href="/investment-properties" className="text-slate-900 font-semibold hover:underline">
+                  Investment guide →
+                </Link>
+              </p>
+            </div>
+            <div className="bg-slate-50 rounded-xl p-6 border border-slate-200">
+              <h3 className="text-lg font-bold text-slate-900 mb-2">
+                How do I start buying in Midtown?
+              </h3>
+              <p className="text-slate-600 text-sm leading-relaxed">
+                Contact Dr. Jan Duffy at (702) 500-1980 for tours, HOA review, and financing guidance.{' '}
+                <Link href="/buyers-guide-midtown" className="text-slate-900 font-semibold hover:underline">
+                  Buyer&apos;s guide →
+                </Link>
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Featured Homes $500K-$600K */}
       <section className="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto bg-white">
         <div className="max-w-7xl mx-auto">
@@ -592,6 +650,16 @@ export default function HomePage() {
                 question: 'How do I get started?',
                 answer:
                   'Contact Dr. Jan Duffy at (702) 500-1980 or DrJanSells@MidtownVegasCondos.com. She specializes in Midtown properties and can schedule a personal tour, show you available homes, and guide you through the entire buying process.',
+              },
+              {
+                question: 'What are typical HOA fees for Las Vegas condos?',
+                answer:
+                  'HOA fees range from $50–$150/month in low-rise communities to $400–$800+ in Arts District high-rises. Review the HOA budget and reserve study before buying. See our full HOA fees guide for details.',
+              },
+              {
+                question: 'Is the Arts District walkable for daily life?',
+                answer:
+                  'Yes. The Arts District has a Walk Score of approximately 86. Midtown residents walk to galleries, restaurants, First Friday events, and Midtown Plaza without needing a car for daily errands.',
               },
             ]}
           />

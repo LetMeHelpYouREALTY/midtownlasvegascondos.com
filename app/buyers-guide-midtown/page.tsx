@@ -103,8 +103,12 @@ export default function BuyersGuideMidtownPage() {
             </h3>
             <p className="text-slate-600 leading-relaxed mb-4">
               Beyond the purchase price, budget for closing costs (typically 2-5% of purchase 
-              price), home inspections, appraisals, and moving expenses. Condo purchases may 
-              include HOA fees and special assessments.
+              price), home inspections, appraisals, and moving expenses. Condo purchases include{' '}
+              <Link href="/guides/las-vegas-condo-hoa-fees" className="text-slate-900 font-semibold hover:underline">
+                HOA fees
+              </Link>{' '}
+              ($50–$800+/month depending on building type) and possible special assessments — review
+              the HOA budget and reserve study before you offer.
             </p>
           </div>
         </section>

@@ -96,7 +96,11 @@ const faqs = [
       },
       {
         q: 'Are there HOA fees?',
-        a: 'Most condos and some townhouses have HOA fees that cover common area maintenance, amenities, and building insurance. Fees vary by property but typically range from $200-$500/month. Dr. Jan can provide specific details for any property.',
+        a: 'Most condos and townhouses have HOA fees covering common area maintenance, amenities, and building insurance. Low-rise Vegas condos often run $50–$150/month; Arts District high-rises commonly $400–$800+. See our Las Vegas condo HOA fees guide and ask Dr. Jan to review HOA documents for any property you consider.',
+      },
+      {
+        q: 'Is the Arts District walkable?',
+        a: 'Yes — Walk Score approximately 86. Midtown residents walk to galleries, restaurants, First Friday, and Midtown Plaza. See our walkable Arts District living guide for relocation tips.',
       },
       {
         q: 'What about schools?',

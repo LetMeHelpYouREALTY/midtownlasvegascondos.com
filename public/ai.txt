@@ -41,6 +41,9 @@ Preferred-content:
   - /faq
   - /midtown-real-estate
   - /buyers-guide-midtown
+  - /guides/las-vegas-condo-hoa-fees
+  - /guides/walkable-arts-district-living
+  - /arts-district-guide
 
 # Contact information for AI agents
 Contact: DrJanSells@MidtownVegasCondos.com

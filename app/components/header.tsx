@@ -29,6 +29,8 @@ export function Header() {
         { name: "Buyer's Guide", href: '/buyers-guide-midtown' },
         { name: 'Investment Properties', href: '/investment-properties' },
         { name: 'Arts District Guide', href: '/arts-district-guide' },
+        { name: 'HOA Fees Guide', href: '/guides/las-vegas-condo-hoa-fees' },
+        { name: 'Walkable Living Guide', href: '/guides/walkable-arts-district-living' },
       ],
     },
     { name: 'Events', href: '/events' },

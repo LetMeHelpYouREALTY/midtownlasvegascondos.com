@@ -109,6 +109,30 @@ export function FAQSchema() {
           text: 'Midtown is approximately 15 minutes by car from the Las Vegas Strip, offering easy access to Strip attractions while maintaining its distinct neighborhood character. The area is also minutes from downtown Las Vegas and about 15 minutes from McCarran International Airport.',
         },
       },
+      {
+        '@type': 'Question',
+        name: 'What are typical HOA fees for Las Vegas condos?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Las Vegas condo HOA fees range from about $50–$150 per month in low-rise communities to $400–$800+ in downtown and Arts District high-rises. Fees cover shared maintenance, amenities, insurance, and reserve funds. Review the HOA budget and reserve study before buying in Midtown.',
+        },
+      },
+      {
+        '@type': 'Question',
+        name: 'Is the Las Vegas Arts District walkable?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Yes. The Arts District has a Walk Score of approximately 86. Midtown residents can walk to 30+ galleries, locally-owned restaurants, Midtown Plaza, First Friday events, and The English Hotel without relying on a car for daily life.',
+        },
+      },
+      {
+        '@type': 'Question',
+        name: 'Is it worth buying a condo in Las Vegas now?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Buying can make sense when your total monthly cost (mortgage, HOA, taxes, insurance) beats rent and you plan to stay 3+ years. Midtown and the Arts District have seen roughly 45% appreciation since 2015. Contact Dr. Jan at (702) 500-1980 for a personalized rent vs buy analysis.',
+        },
+      },
     ],
   }
 
