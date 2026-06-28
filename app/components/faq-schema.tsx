@@ -1,6 +1,7 @@
 // FAQ Structured Data for SEO — Local Urbanist persona (midtownlasvegascondos.com)
 
 import { siteConfig, absoluteUrl } from '@/lib/site-config'
+import { midtownAuthority } from '@/lib/midtown-authority'
 
 export function FAQSchema() {
   const schema = {
@@ -9,10 +10,10 @@ export function FAQSchema() {
     mainEntity: [
       {
         '@type': 'Question',
-        name: 'What are The English Residences?',
+        name: 'What are The English Residences at Midtown?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'The English Residences are luxury condo-hotel units within The English Hotel in Midtown Las Vegas. Owners can use their residence when they want and earn income when they\'re away through professional hotel management.',
+          text: `The English Residences are fully owned condo-hotel units (${midtownAuthority.englishResidences.unitCount} units, ${midtownAuthority.englishResidences.brand}) at The English Hotel in Midtown Las Vegas. ${midtownAuthority.englishResidences.tagline} Units are seamlessly managed within the hotel's room collection. Midtown Plaza and The English Residences opened in ${midtownAuthority.englishResidences.openedYear}.`,
         },
       },
       {
@@ -20,7 +21,23 @@ export function FAQSchema() {
         name: 'Where is Midtown Las Vegas located?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'Midtown is located just north of Charleston Boulevard in the heart of the Las Vegas Arts District at 921 S Main St, Las Vegas, NV 89101. It\'s a walkable neighborhood with galleries, restaurants, and entertainment.',
+          text: `Midtown is the emerging neighborhood just north of Charleston Boulevard in the Las Vegas Arts District (18b) — a walkable cultural center with galleries, privately owned restaurants, and residences at 921 S Main St, Las Vegas, NV 89101. Official neighborhood information: ${midtownAuthority.officialUrl}`,
+        },
+      },
+      {
+        '@type': 'Question',
+        name: 'When did Midtown Plaza and The English Residences open?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Midtown Plaza and The English Residences opened in 2025 as part of the Midtown Las Vegas mixed-use development at 921 S Main Street. CNN previously called the Arts District "the most exciting neighborhood" in Las Vegas (2024), and Midtown broke ground that same year.',
+        },
+      },
+      {
+        '@type': 'Question',
+        name: 'What can you do in Midtown Las Vegas?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: `Midtown offers Shop, Dine, Live, Stay, and Events — walkable access to 30+ art galleries, privately owned restaurants, Midtown Plaza, The English Hotel, The Pepper Club, First Friday art walks, and cultural venues like the Majestic Repertory Theatre. Walk Score ~${midtownAuthority.geo.walkScore}.`,
         },
       },
       {
@@ -28,7 +45,7 @@ export function FAQSchema() {
         name: 'What is First Friday in Las Vegas?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'First Friday is Las Vegas\'s largest monthly art event, held on the first Friday of every month from 5 PM to 11 PM. The Arts District transforms into a vibrant street festival with gallery openings, live music, food trucks, and artisan markets.',
+          text: `First Friday is Las Vegas's largest monthly art event in the Arts District and Midtown, held on the first Friday of every month from 5 PM to 11 PM. Founded by Cindy Funkhouser in 2002, it features gallery openings, live music, food, and artisan markets.`,
         },
       },
       {

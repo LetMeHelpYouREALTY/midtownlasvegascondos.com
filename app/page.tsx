@@ -9,6 +9,7 @@ import { RealScoutScript } from './components/realscout-script'
 import { PageFAQ } from './components/page-faq'
 import { CalendlyLink } from './components/calendly-link'
 import { siteConfig, absoluteUrl } from '@/lib/site-config'
+import { midtownAuthority } from '@/lib/midtown-authority'
 
 export const metadata: Metadata = {
   title: 'Walkable Arts District Living | Midtown Las Vegas Condos | 702-500-1980',
@@ -60,7 +61,7 @@ export default function HomePage() {
             <span className="text-4xl md:text-6xl">Not Garage Commutes</span>
           </h1>
           <p className="text-xl md:text-2xl text-white/90 mb-8">
-            Las Vegas locals choose Midtown for walkable culture — First Friday, 30+ galleries,
+            {midtownAuthority.description.split(' — ')[0]} — First Friday, 30+ galleries,
             and chef-driven dining at 921 S Main Street
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -89,12 +90,13 @@ export default function HomePage() {
           <div className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
             <div className="bg-slate-50 rounded-xl p-6 border border-slate-200">
               <h3 className="text-lg font-bold text-slate-900 mb-2">
-                Is the Arts District walkable?
+                Where is Midtown in Las Vegas?
               </h3>
               <p className="text-slate-600 text-sm leading-relaxed">
-                Yes — Walk Score ~{siteConfig.walkScore}. Midtown at 921 S Main St puts galleries, dining, and First Friday on your block.{' '}
-                <Link href="/guides/walkable-arts-district-living" className="text-slate-900 font-semibold hover:underline">
-                  Walkable living guide →
+                Just north of Charleston Boulevard in the 18b Arts District — Midtown Plaza, The English Hotel,
+                and walkable gallery life. Walk Score ~{siteConfig.walkScore}.{' '}
+                <Link href="/arts-district-guide" className="text-slate-900 font-semibold hover:underline">
+                  Arts District guide →
                 </Link>
               </p>
             </div>
@@ -450,7 +452,7 @@ export default function HomePage() {
                 <Link href="/neighborhood/english-hotel" className="text-slate-900 font-semibold hover:underline">
                   The English Hotel
                 </Link>
-                {' '}in 2022 represented a milestone in the neighborhood's maturation. This boutique luxury hotel, featuring 
+                {' '}in 2016 represented a milestone in the neighborhood's maturation. This boutique luxury hotel, featuring 
                 the award-winning{' '}
                 <Link href="/neighborhood/pepper-club" className="text-slate-900 font-semibold hover:underline">
                   Pepper Club restaurant
@@ -460,7 +462,7 @@ export default function HomePage() {
                 could coexist.
               </p>
               <p className="text-base text-slate-600 leading-relaxed">
-                Today, Midtown continues to evolve, with new developments like the Plaza Tower scheduled to open in 2025. These 
+                Today, Midtown continues to evolve — Midtown Plaza and The English Residences opened in 2025 after Midtown broke ground in 2024. These 
                 projects bring modern amenities and luxury finishes while preserving the neighborhood's artistic identity. The 
                 ongoing development reflects confidence in Midtown's future, as investors and residents recognize the value of 
                 living in a neighborhood that offers both cultural richness and urban convenience. The transformation from 
@@ -475,17 +477,7 @@ export default function HomePage() {
         <div className="relative">
           <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-0.5 bg-slate-200" />
           <div className="space-y-12">
-            {[
-              { year: '1997', event: 'Wes Myles opens the Arts Factory' },
-              { year: '1999', event: 'Mayor Oscar Goodman elected' },
-              { year: '2002', event: 'Renamed the Las Vegas Arts District', event2: 'Cindy Funkhouser founds First Friday', link: '/neighborhood/first-fridays' },
-              { year: '2009', event: '18b Arts District sign installed on Casino Center Blvd.' },
-              { year: '2014', event: 'Anthony Bourdain highlights Makers & Finders on "Parts Unknown"' },
-              { year: '2016', event: 'Majestic Repertory Theatre Opens' },
-              { year: '2022', event: 'The English Hotel Opens', event2: 'The Pepper Club Opens', link: '/neighborhood/english-hotel', link2: '/neighborhood/pepper-club' },
-              { year: '2024', event: 'CNN called the Arts District "the most exciting neighborhood" in Las Vegas' },
-              { year: '2025', event: 'The Plaza Tower will open' },
-            ].map((item, index) => (
+            {midtownAuthority.timeline.map((item, index) => (
               <div
                 key={item.year}
                 className={`relative grid md:grid-cols-2 gap-8 ${
@@ -496,7 +488,7 @@ export default function HomePage() {
                   <div className="bg-white p-6 rounded-lg shadow-sm border border-slate-200">
                     <div className="text-3xl font-bold text-slate-900 mb-2">{item.year}</div>
                     <p className="text-slate-600">
-                      {item.link ? (
+                      {'link' in item && item.link ? (
                         <Link href={item.link} className="text-slate-900 font-semibold hover:underline">
                           {item.event}
                         </Link>
@@ -504,9 +496,9 @@ export default function HomePage() {
                         item.event
                       )}
                     </p>
-                    {item.event2 && (
+                    {'event2' in item && item.event2 && (
                       <p className="text-slate-600 mt-2">
-                        {item.link2 ? (
+                        {'link2' in item && item.link2 ? (
                           <Link href={item.link2} className="text-slate-900 font-semibold hover:underline">
                             {item.event2}
                           </Link>

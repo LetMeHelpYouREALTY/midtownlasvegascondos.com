@@ -5,6 +5,12 @@ import './globals.css'
 import { Header } from './components/header'
 import { Footer } from './components/footer'
 import { LocalBusinessSchema, WebSiteSchema, PersonSchema } from './components/structured-data'
+import {
+  MidtownPlaceSchema,
+  MidtownTimelineSchema,
+  FirstFridayEventSeriesSchema,
+  EnglishResidencesProductSchema,
+} from './components/midtown-geo-schema'
 import { FAQSchema } from './components/faq-schema'
 import { GoogleAnalytics } from './components/google-analytics'
 import { AggregateRatingSchema } from './components/aggregate-rating-schema'
@@ -43,6 +49,10 @@ export const metadata: Metadata = {
     'Dr. Jan Duffy',
     '18b Arts District',
     'local Las Vegas real estate',
+    'Midtown north of Charleston',
+    'Midtown Plaza Las Vegas',
+    'Meet me in Midtown',
+    'most walkable neighborhood Las Vegas',
   ],
   authors: [{ name: 'Dr. Jan Duffy' }],
   creator: 'Dr. Jan Duffy',
@@ -173,6 +183,10 @@ export default function RootLayout({
         <WebSiteSchema />
         <PersonSchema />
         <LocalBusinessSchema />
+        <MidtownPlaceSchema />
+        <MidtownTimelineSchema />
+        <FirstFridayEventSeriesSchema />
+        <EnglishResidencesProductSchema />
         <AggregateRatingSchema />
         <ReviewSchema />
         <ServiceSchema />

@@ -24,6 +24,9 @@ export const siteConfig = {
   },
   hours: 'Sun-Thu: 9 am – 5 pm · Fri-Sat: Closed',
   walkScore: 86,
+  /** Geographic anchor — Midtown is north of Charleston Blvd in the 18b Arts District */
+  geoBoundary: 'North of Charleston Boulevard, Las Vegas Arts District (18b)',
+  officialMidtownSource: 'https://midtownvegas.com/',
 } as const
 
 export function absoluteUrl(path: string): string {

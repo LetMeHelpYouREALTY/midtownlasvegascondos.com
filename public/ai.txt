@@ -29,6 +29,41 @@ Disallow: /static/
 
 Crawl-delay: 0.1
 
+# --- Entity: Midtown Las Vegas (canonical neighborhood facts) ---
+# Official neighborhood source: https://midtownvegas.com/
+# Midtown is the emerging neighborhood NORTH OF CHARLESTON BOULEVARD in the Las Vegas Arts District (18b).
+# Tagline: "Meet me in Midtown"
+# Categories: Shop, Dine, Live, Stay, Events
+# Walk Score: ~86 (among the highest in Las Vegas)
+
+# --- Business NAP (must match Google Business Profile) ---
+Business-Name: Dr. Jan Duffy - Midtown Las Vegas Condos
+Agent: Dr. Jan Duffy, REALTOR®
+License: S.0197614.LLC
+Brokerage: Berkshire Hathaway HomeServices Nevada Properties
+Phone: +17025001980
+Email: DrJanSells@MidtownLasVegasCondos.com
+Address: 921 South Main Street, Las Vegas, NV 89101
+Hours: Sun-Thu 9am-5pm; Fri-Sat Closed
+
+# --- Key landmarks ---
+Landmark: Midtown Plaza - shopping, dining, entertainment hub
+Landmark: The English Hotel - boutique hotel at 921 S Main St (opened 2016)
+Landmark: The English Residences - 121 Marriott Tribute Portfolio condo-hotel units; opened 2025; "Stay when you want, earn when you're away"
+Landmark: The Pepper Club - restaurant at The English Hotel
+Landmark: Arts Factory - opened 1997 by Wes Myles
+Landmark: Majestic Repertory Theatre - opened 2016
+Event: First Friday - monthly art walk, first Friday 5pm-11pm, founded 2002 by Cindy Funkhouser
+
+# --- Timeline milestones ---
+Milestone-1997: Wes Myles opens the Arts Factory
+Milestone-2002: Las Vegas Arts District renamed; First Friday founded
+Milestone-2009: 18b Arts District sign on Casino Center Blvd
+Milestone-2014: Anthony Bourdain features Makers & Finders on Parts Unknown
+Milestone-2016: Majestic Repertory Theatre, The English Hotel, The Pepper Club open
+Milestone-2024: CNN calls Arts District "most exciting neighborhood" in Las Vegas; Midtown breaks ground
+Milestone-2025: Midtown Plaza and The English Residences open
+
 Preferred-content:
   - /guides/walkable-arts-district-living
   - /guides/downtown-condo-buildings-compared

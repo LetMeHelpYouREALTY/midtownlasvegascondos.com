@@ -1,6 +1,7 @@
 // Structured Data (JSON-LD) for SEO
 
 import { siteConfig, absoluteUrl } from '@/lib/site-config'
+import { midtownAuthority } from '@/lib/midtown-authority'
 
 export function LocalBusinessSchema() {
   const schema = {
@@ -47,14 +48,29 @@ export function LocalBusinessSchema() {
     priceRange: '$$$',
     areaServed: [
       {
-        '@type': 'City',
-        name: 'Arts District, Las Vegas, NV, USA',
+        '@type': 'Place',
+        name: 'Midtown Las Vegas',
+        description: midtownAuthority.description,
+        containedInPlace: {
+          '@type': 'Place',
+          name: 'Las Vegas Arts District (18b)',
+        },
       },
       {
         '@type': 'City',
         name: 'Downtown Las Vegas, Las Vegas, NV, USA',
       },
     ],
+    containsPlace: {
+      '@type': 'Place',
+      '@id': `${siteConfig.baseUrl}#midtown-place`,
+      name: midtownAuthority.officialName,
+      geo: {
+        '@type': 'GeoCoordinates',
+        latitude: midtownAuthority.geo.latitude,
+        longitude: midtownAuthority.geo.longitude,
+      },
+    },
     serviceArea: {
       '@type': 'GeoCircle',
       geoMidpoint: {
@@ -125,6 +141,9 @@ export function LocalBusinessSchema() {
     ],
     sameAs: [
       'https://www.linkedin.com/company/downtown-las-vegas-condos-and-homes-for-sale',
+      midtownAuthority.officialUrl,
+      midtownAuthority.social.instagram,
+      midtownAuthority.social.facebook,
     ],
     additionalType: [
       'https://schema.org/RealEstateAgent',
@@ -201,12 +220,12 @@ export function BreadcrumbSchema({ items }: { items: { name: string; url: string
 }
 
 export function ResidenceSchema() {
+  const er = midtownAuthority.englishResidences
   const schema = {
     '@context': 'https://schema.org',
     '@type': 'ApartmentComplex',
-    name: 'The English Residences',
-    description:
-      'Luxury condo-hotel residences in the heart of the Las Vegas Arts District. Own your unit and earn income through professional hotel management.',
+    name: er.name,
+    description: `${er.tagline} ${er.description}`,
     url: absoluteUrl('/neighborhood/english-residences'),
     address: {
       '@type': 'PostalAddress',
@@ -238,8 +257,17 @@ export function ResidenceSchema() {
         value: true,
       },
     ],
-    numberOfRooms: '50+',
+    numberOfRooms: er.unitCount,
     petsAllowed: 'Contact for policy',
+    brand: {
+      '@type': 'Brand',
+      name: er.brand,
+    },
+    additionalProperty: {
+      '@type': 'PropertyValue',
+      name: 'Availability',
+      value: er.status,
+    },
   }
 
   return (
