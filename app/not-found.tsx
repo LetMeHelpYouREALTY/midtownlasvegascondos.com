@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import { Metadata } from 'next'
+import { RealScoutSection } from '@/app/components/realscout-section'
 
 export const metadata: Metadata = {
   title: 'Page Not Found | Midtown Las Vegas Condos',
@@ -77,6 +78,11 @@ export default function NotFound() {
           </ul>
         </div>
       </div>
+
+      <RealScoutSection
+        listingsTitle="Browse Midtown Properties"
+        listingsDescription="Find your home in the Las Vegas Arts District while you explore the site."
+      />
     </div>
   )
 }

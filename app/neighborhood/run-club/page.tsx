@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import { Metadata } from 'next'
 import { RealScoutListings } from '@/app/components/realscout-listings'
+import { RealScoutSection } from '@/app/components/realscout-section'
 
 export const metadata: Metadata = {
   title: 'Midtown Run Club | Community Running Group in Arts District',
@@ -326,6 +327,8 @@ export default function RunClubPage() {
           />
         </div>
       </section>
+
+      <RealScoutSection showListings={false} searchTitle="Find Your Home Near Midtown Run Club" />
 
       {/* CTA */}
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-blue-900 to-cyan-900 text-white">

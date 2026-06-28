@@ -3,6 +3,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { CalendlyLink } from '../components/calendly-link'
 import { Breadcrumb } from '../components/breadcrumb'
+import { RealScoutSection } from '../components/realscout-section'
 
 export const metadata: Metadata = {
   title: 'About Midtown Las Vegas | Arts District History & Community',
@@ -386,6 +387,11 @@ export default function AboutPage() {
           </div>
         </div>
       </section>
+
+      <RealScoutSection
+        listingsTitle="Midtown Las Vegas Properties"
+        listingsDescription="Explore Arts District condos and The English Residences with Dr. Jan Duffy."
+      />
 
       {/* CTA Section */}
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-slate-900 to-slate-700 text-white">

@@ -2,6 +2,7 @@ import Link from 'next/link'
 import { Metadata } from 'next'
 import { Breadcrumb } from '../components/breadcrumb'
 import { RealScoutListings } from '../components/realscout-listings'
+import { RealScoutSection } from '../components/realscout-section'
 
 export const metadata: Metadata = {
   title: 'Arts District Las Vegas Guide | Culture, Dining, Real Estate',
@@ -247,6 +248,14 @@ export default function ArtsDistrictGuidePage() {
             listingStatus="For Sale"
           />
         </section>
+
+        <RealScoutSection
+          showListings={false}
+          searchTitle="Search Arts District Homes"
+          priceMin="250000"
+          priceMax="2000000"
+          className="bg-white mb-20"
+        />
 
         {/* CTA Section */}
         <section className="bg-gradient-to-br from-slate-900 to-slate-700 text-white rounded-lg p-12 text-center">

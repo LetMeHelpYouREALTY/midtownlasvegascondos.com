@@ -2,6 +2,8 @@ import Link from 'next/link'
 import { Metadata } from 'next'
 import { CalendlyLink } from '../components/calendly-link'
 import { Breadcrumb } from '../components/breadcrumb'
+import { MIDTOWN_NEWS } from '@/lib/midtown-content/news-data'
+import { RealScoutSection } from '@/app/components/realscout-section'
 
 export const metadata: Metadata = {
   title: 'Midtown Las Vegas News & Updates | Arts District Development',
@@ -30,57 +32,6 @@ export const metadata: Metadata = {
 }
 
 export default function NewsPage() {
-  const newsArticles = [
-    {
-      date: 'January 15, 2025',
-      category: 'Development',
-      title: 'Plaza Tower Set to Open in 2025',
-      excerpt:
-        'The highly anticipated Plaza Tower is on track to open later this year, bringing additional luxury residences and retail space to Midtown.',
-      image: 'plaza-tower',
-    },
-    {
-      date: 'January 10, 2025',
-      category: 'Community',
-      title: 'Midtown Run Club Celebrates One Year Anniversary',
-      excerpt:
-        'The popular Midtown Run Club marks its first year with over 200 regular members and plans to expand to additional weekly runs.',
-      image: 'run-club',
-    },
-    {
-      date: 'December 28, 2024',
-      category: 'Arts & Culture',
-      title: 'CNN Features Arts District as "Most Exciting Neighborhood"',
-      excerpt:
-        'National recognition continues as CNN highlights the Las Vegas Arts District as one of the most dynamic urban neighborhoods in America.',
-      image: 'cnn-feature',
-    },
-    {
-      date: 'December 15, 2024',
-      category: 'Business',
-      title: 'Three New Restaurants Opening in Midtown Plaza',
-      excerpt:
-        'The culinary scene continues to grow with three new locally-owned restaurants set to open in early 2025.',
-      image: 'restaurants',
-    },
-    {
-      date: 'November 30, 2024',
-      category: 'Events',
-      title: 'First Friday Sets Attendance Record',
-      excerpt:
-        'November\'s First Friday drew the largest crowd in the event\'s history, with an estimated 15,000 visitors celebrating art and community.',
-      image: 'first-friday',
-    },
-    {
-      date: 'November 15, 2024',
-      category: 'Development',
-      title: 'English Residences Now Available',
-      excerpt:
-        'The English Hotel announces the availability of luxury condo-hotel residences, offering owners the perfect blend of investment and lifestyle.',
-      image: 'english-residences',
-    },
-  ]
-
   const breadcrumbItems = [
     { name: 'Home', url: '/' },
     { name: 'News', url: '/news' },
@@ -235,11 +186,11 @@ export default function NewsPage() {
 
       {/* Featured Article */}
       <section className="py-12 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
-        <div className="bg-gradient-to-br from-slate-900 to-slate-700 rounded-lg overflow-hidden">
+        <Link href={`/news/${MIDTOWN_NEWS[0].slug}`} className="block bg-gradient-to-br from-slate-900 to-slate-700 rounded-lg overflow-hidden hover:opacity-95 transition-opacity">
           <div className="grid md:grid-cols-2 gap-8">
-            <div className="aspect-video md:aspect-auto bg-slate-700" role="img" aria-label="Plaza Tower development in Midtown Las Vegas Arts District showcasing new luxury residential building">
+            <div className="aspect-video md:aspect-auto bg-slate-700" role="img" aria-label="Midtown Las Vegas Arts District development news">
               <div className="w-full h-full flex items-center justify-center text-slate-400">
-                Featured News Image
+                Featured News
               </div>
             </div>
             <div className="p-8 md:p-12 flex flex-col justify-center text-white">
@@ -247,46 +198,47 @@ export default function NewsPage() {
                 Featured
               </div>
               <h2 className="text-3xl md:text-4xl font-bold mb-4">
-                {newsArticles[0].title}
+                {MIDTOWN_NEWS[0].title}
               </h2>
-              <p className="text-white/80 text-sm mb-4">{newsArticles[0].date}</p>
+              <p className="text-white/80 text-sm mb-4">{MIDTOWN_NEWS[0].datePublished}</p>
               <p className="text-lg text-white/90 leading-relaxed">
-                {newsArticles[0].excerpt}
+                {MIDTOWN_NEWS[0].description}
               </p>
+              <span className="mt-4 text-white font-semibold">Read full article →</span>
             </div>
           </div>
-        </div>
+        </Link>
       </section>
 
-      {/* News Grid */}
+      {/* Midtown News Articles */}
       <section className="py-12 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+        <h2 className="text-3xl font-bold text-slate-900 mb-8">Midtown News & Updates</h2>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {newsArticles.slice(1).map((article, index) => (
-            <article
-              key={index}
-              className="bg-white rounded-lg shadow-md border border-slate-200 overflow-hidden hover:shadow-lg transition-shadow"
+          {MIDTOWN_NEWS.map((article) => (
+            <Link
+              key={article.slug}
+              href={`/news/${article.slug}`}
+              className="block bg-white rounded-lg shadow-md border border-slate-200 overflow-hidden hover:shadow-lg transition-shadow"
             >
-              <div className="h-48 bg-slate-200 flex items-center justify-center text-slate-400" role="img" aria-label={`${article.title} news image from Midtown Las Vegas Arts District`}>
-                Article Image
-              </div>
               <div className="p-6">
                 <div className="flex items-center gap-3 mb-3">
                   <span className="inline-block px-3 py-1 bg-slate-100 text-slate-700 text-sm font-semibold rounded-full">
                     {article.category}
                   </span>
-                  <span className="text-sm text-slate-500">{article.date}</span>
+                  <span className="text-sm text-slate-500">{article.datePublished}</span>
                 </div>
-                <h3 className="text-xl font-bold text-slate-900 mb-3">
-                  {article.title}
-                </h3>
-                <p className="text-slate-600 leading-relaxed">
-                  {article.excerpt}
-                </p>
+                <h3 className="text-xl font-bold text-slate-900 mb-3">{article.title}</h3>
+                <p className="text-slate-600 leading-relaxed text-sm">{article.description}</p>
               </div>
-            </article>
+            </Link>
           ))}
         </div>
       </section>
+
+      <RealScoutSection
+        listingsTitle="Invest in Midtown's Future"
+        listingsDescription="See available Arts District properties as Midtown continues to evolve."
+      />
 
       {/* CTA */}
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-slate-900 to-slate-700 text-white">

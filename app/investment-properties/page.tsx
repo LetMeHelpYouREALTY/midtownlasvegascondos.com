@@ -4,6 +4,7 @@ import { Breadcrumb } from '../components/breadcrumb'
 import { RealEstateListingSchema } from '../components/real-estate-listing-schema'
 import { CalendlyLink } from '../components/calendly-link'
 import { RealScoutListings } from '../components/realscout-listings'
+import { RealScoutSection } from '../components/realscout-section'
 
 export const metadata: Metadata = {
   title: 'Investment Properties Midtown Las Vegas | Cap Rates, Cash Flow',
@@ -278,6 +279,14 @@ export default function InvestmentPropertiesPage() {
             </Link>
           </div>
         </section>
+
+        <RealScoutSection
+          showListings={false}
+          searchTitle="Search Investment Properties in Midtown"
+          priceMin="250000"
+          priceMax="1500000"
+          className="bg-white mb-20"
+        />
       </div>
     </div>
   )

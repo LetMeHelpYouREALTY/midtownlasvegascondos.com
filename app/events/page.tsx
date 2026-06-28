@@ -2,7 +2,8 @@ import Link from 'next/link'
 import { Metadata } from 'next'
 import { CalendlyLink } from '../components/calendly-link'
 import { Breadcrumb } from '../components/breadcrumb'
-import { EventSchema } from '../components/event-schema'
+import { MIDTOWN_EVENTS } from '@/lib/midtown-content/events-data'
+import { RealScoutSection } from '@/app/components/realscout-section'
 
 export const metadata: Metadata = {
   title: 'Midtown Las Vegas Events Calendar | First Friday & More',
@@ -200,8 +201,42 @@ export default function EventsPage() {
         </div>
       </section>
 
+      {/* Midtown Events Directory */}
+      <section className="py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto border-t border-slate-200">
+        <h2 className="text-4xl font-bold text-slate-900 mb-4">All Midtown Events</h2>
+        <p className="text-slate-600 mb-8 max-w-3xl">
+          Detailed event pages with dates, locations, and FAQ schema — First Friday, Market in the Alley, festivals, and more.
+        </p>
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-8">
+          {MIDTOWN_EVENTS.map((event) => (
+            <Link
+              key={event.slug}
+              href={`/events/${event.slug}`}
+              className="block p-4 rounded-lg border border-slate-200 hover:border-slate-400 hover:shadow-sm transition-all"
+            >
+              <h3 className="font-bold text-slate-900 text-sm leading-snug">
+                {event.title.split('|')[0].trim()}
+              </h3>
+              <p className="text-xs text-slate-500 mt-1">{event.categories.slice(0, 2).join(' • ')}</p>
+            </Link>
+          ))}
+        </div>
+        <div className="flex flex-wrap gap-3">
+          <Link href="/midtown/things-to-do-in-las-vegas" className="text-slate-900 font-semibold hover:underline">
+            Things to Do in Las Vegas →
+          </Link>
+          <Link href="/midtown/art" className="text-slate-900 font-semibold hover:underline">
+            Art Events →
+          </Link>
+          <Link href="/midtown/music" className="text-slate-900 font-semibold hover:underline">
+            Music Events →
+          </Link>
+        </div>
+      </section>
+
       {/* Events Grid */}
       <section className="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+        <h2 className="text-3xl font-bold text-slate-900 mb-8">Recurring Highlights</h2>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {events.map((event, index) => (
             <div
@@ -250,6 +285,10 @@ export default function EventsPage() {
       </section>
 
       {/* CTA */}
+      <RealScoutSection
+        listingsTitle="Live Where Midtown Events Happen"
+        listingsDescription="Walk to First Friday, Market in the Alley, and Arts District festivals from your front door."
+      />
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-slate-900 to-slate-700 text-white">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-4xl font-bold mb-6">

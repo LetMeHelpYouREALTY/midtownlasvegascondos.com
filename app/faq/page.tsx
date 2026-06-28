@@ -1,6 +1,7 @@
 import { Metadata } from 'next'
 import Link from 'next/link'
 import { CalendlyLink } from '../components/calendly-link'
+import { RealScoutSection } from '../components/realscout-section'
 import { Breadcrumb } from '../components/breadcrumb'
 
 export const metadata: Metadata = {
@@ -293,25 +294,7 @@ export default function FAQPage() {
         </div>
       </section>
 
-      {/* Browse Properties CTA */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-slate-50">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-4xl font-bold text-slate-900 mb-6">
-            Ready to Find Your Home?
-          </h2>
-          <p className="text-xl text-slate-600 mb-8">
-            Browse available properties in Midtown and the Arts District
-          </p>
-          <a
-            href="http://drjanduffy.realscout.com/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-block px-8 py-4 bg-slate-900 text-white rounded-lg font-semibold hover:bg-slate-800 transition-colors"
-          >
-            Search Properties
-          </a>
-        </div>
-      </section>
+      <RealScoutSection />
     </div>
   )
 }

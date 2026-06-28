@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import { Metadata } from 'next'
 import { RealScoutListings } from '@/app/components/realscout-listings'
+import { RealScoutSection } from '@/app/components/realscout-section'
 
 export const metadata: Metadata = {
   title: 'The Pepper Club | Award-Winning Restaurant at The English Hotel',
@@ -301,6 +302,8 @@ export default function PepperClubPage() {
           />
         </div>
       </section>
+
+      <RealScoutSection showListings={false} searchTitle="Search Homes Near The Pepper Club" />
 
       {/* Location & CTA */}
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-amber-900 to-red-900 text-white">

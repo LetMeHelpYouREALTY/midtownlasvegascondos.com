@@ -2,6 +2,7 @@ import Link from 'next/link'
 import { Metadata } from 'next'
 import { Breadcrumb } from '@/app/components/breadcrumb'
 import { CalendlyLink } from '@/app/components/calendly-link'
+import { RealScoutSection } from '@/app/components/realscout-section'
 import { PageFAQ } from '@/app/components/page-faq'
 import { PageFAQSchema } from '@/app/components/page-faq-schema'
 import { ArticleSchema } from '@/app/components/article-schema'
@@ -220,6 +221,13 @@ export default function LasVegasCondoHoaFeesPage() {
             <CalendlyLink text="Schedule an HOA Review Consultation" variant="primary" />
           </div>
         </div>
+
+        <RealScoutSection
+          listingsTitle="Las Vegas Arts District Condos"
+          listingsDescription="Compare HOA and pricing across Midtown condo listings with Dr. Jan Duffy."
+          propertyTypes="Condo"
+          className="bg-white"
+        />
       </div>
     </>
   )
