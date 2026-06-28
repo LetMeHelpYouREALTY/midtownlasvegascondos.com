@@ -5,10 +5,11 @@ export function proxy(request: NextRequest) {
   const hostname = request.headers.get('host') || ''
   const url = request.nextUrl.clone()
 
-  // Redirect old domain to new domain
+  // Redirect legacy and apex domains to canonical www (Vercel also 301s at edge)
   if (
     hostname === 'midtownlasvegascondos.com' ||
-    hostname === 'www.midtownlasvegascondos.com'
+    hostname === 'www.midtownlasvegascondos.com' ||
+    hostname === 'midtownvegascondos.com'
   ) {
     // Replace the hostname with the new domain
     url.hostname = 'www.midtownvegascondos.com'

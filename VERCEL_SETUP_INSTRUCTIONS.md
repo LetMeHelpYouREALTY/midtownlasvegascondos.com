@@ -10,7 +10,7 @@ Google Search Console can't detect your Google Analytics tag because the environ
 
 1. **Go to Vercel Dashboard**:
    - Visit: https://vercel.com/dashboard
-   - Select your project: `midtownlasvegascondos.com`
+   - Select your project: `midtownlasvegascondoscom` (canonical: `www.midtownvegascondos.com`)
 
 2. **Navigate to Settings**:
    - Click **Settings** in the top navigation
@@ -50,7 +50,7 @@ I've updated the code to use your Google Analytics ID as a fallback. This means:
 ## 🔍 Verify It's Working
 
 ### Method 1: Check Page Source
-1. Visit: https://www.midtownlasvegascondos.com
+1. Visit: https://www.midtownvegascondos.com
 2. Right-click → **View Page Source** (or Ctrl+U)
 3. Search for: `G-772V5VK7G0`
 4. You should see it in the page source
