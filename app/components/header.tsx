@@ -3,7 +3,7 @@
 import { useState } from 'react'
 import Link from 'next/link'
 import { Menu, X } from 'lucide-react'
-import { REAL_ESTATE_SITE, OFFICIAL_MIDTOWN_SITE } from '@/lib/site-persona'
+import { REAL_ESTATE_SITE, OFFICIAL_MIDTOWN_SITE, NAV_LABELS } from '@/lib/site-persona'
 
 export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
@@ -12,7 +12,7 @@ export function Header() {
     {
       name: 'Neighborhood',
       items: [
-        { name: 'Discover Midtown', href: '/neighborhood' },
+        { name: NAV_LABELS.neighborhoodGuide, href: '/neighborhood' },
         { name: 'The English Residences', href: '/neighborhood/english-residences' },
         { name: 'Midtown Plaza', href: '/neighborhood/midtown-plaza' },
         { name: 'The English Hotel', href: '/neighborhood/english-hotel' },
@@ -29,7 +29,7 @@ export function Header() {
       ],
     },
     {
-      name: 'Official Midtown',
+      name: NAV_LABELS.officialMidtown.replace(' ↗', ''),
       href: OFFICIAL_MIDTOWN_SITE.url,
     },
     { name: 'Search Properties', href: 'http://drjanduffy.realscout.com/' },
@@ -44,10 +44,10 @@ export function Header() {
         { name: 'Walkable Living Guide', href: '/guides/walkable-arts-district-living' },
       ],
     },
-    { name: 'Events', href: '/events' },
-    { name: 'News', href: '/news' },
+    { name: NAV_LABELS.eventsGuide.replace(' (for buyers)', ''), href: '/events' },
+    { name: NAV_LABELS.newsForBuyers, href: '/news' },
     { name: 'FAQ', href: '/faq' },
-    { name: 'About', href: '/about' },
+    { name: NAV_LABELS.aboutAgent, href: '/about' },
     { name: 'Contact', href: '/contact' },
   ]
 
@@ -57,8 +57,8 @@ export function Header() {
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <Link href="/" className="flex flex-col leading-tight">
-            <span className="text-lg font-bold text-slate-900">{REAL_ESTATE_SITE.agentName}</span>
-            <span className="text-xs font-medium text-slate-600 tracking-wide">Midtown Las Vegas Condos</span>
+            <span className="text-base font-bold text-slate-900 tracking-tight">{REAL_ESTATE_SITE.name}</span>
+            <span className="text-xs font-medium text-amber-800">{REAL_ESTATE_SITE.tagline}</span>
           </Link>
 
           {/* Desktop Navigation */}

@@ -1,13 +1,13 @@
 import Link from 'next/link'
 import { Newsletter } from './newsletter'
-import { OFFICIAL_MIDTOWN_SITE, REAL_ESTATE_SITE } from '@/lib/site-persona'
+import { OFFICIAL_MIDTOWN_SITE, REAL_ESTATE_SITE, NAV_LABELS } from '@/lib/site-persona'
 
 export function Footer() {
   const navigation = [
     {
       name: 'Neighborhood',
       items: [
-        { name: 'Discover Midtown', href: '/neighborhood' },
+        { name: NAV_LABELS.neighborhoodGuide, href: '/neighborhood' },
         { name: 'The English Residences', href: '/neighborhood/english-residences' },
         { name: 'Midtown Plaza', href: '/neighborhood/midtown-plaza' },
         { name: 'KJ\'s Restaurant', href: '/neighborhood/kjs-restaurant' },

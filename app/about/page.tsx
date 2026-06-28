@@ -4,20 +4,23 @@ import Link from 'next/link'
 import { CalendlyLink } from '../components/calendly-link'
 import { Breadcrumb } from '../components/breadcrumb'
 import { RealScoutSection } from '../components/realscout-section'
+import { SitePersonaBanner } from '../components/site-persona-banner'
+import { AgentByline } from '../components/agent-byline'
+import { OFFICIAL_MIDTOWN_SITE, REAL_ESTATE_SITE } from '@/lib/site-persona'
 
 export const metadata: Metadata = {
-  title: 'About Midtown Las Vegas | Arts District History & Community',
-  description: 'Discover the story of Midtown, the walkable neighborhood north of Charleston in the heart of the Las Vegas Arts District. From industrial hub to cultural center.',
-  keywords: 'Midtown Las Vegas history, Arts District transformation, 18b Arts District, walkable Las Vegas, downtown Las Vegas community',
+  title: 'About Dr. Jan Duffy | Midtown & Arts District REALTOR®',
+  description: `${REAL_ESTATE_SITE.agentName}, ${REAL_ESTATE_SITE.agentTitle} — ${REAL_ESTATE_SITE.yearsExperience} years helping Las Vegas buyers with Midtown condos, English Residences, and Arts District investments. Call (702) 500-1980.`,
+  keywords: 'Dr. Jan Duffy realtor, Midtown Las Vegas real estate agent, English Residences specialist, Arts District REALTOR, Berkshire Hathaway Nevada',
   authors: [{ name: 'Dr. Jan Duffy' }],
   creator: 'Dr. Jan Duffy',
-  publisher: 'Midtown Las Vegas Condos',
+  publisher: REAL_ESTATE_SITE.name,
   alternates: {
     canonical: 'https://www.midtownlasvegascondos.com/about',
   },
   openGraph: {
-    title: 'About Midtown Las Vegas | Arts District History',
-    description: 'Discover the story of Midtown, the walkable neighborhood in the heart of the Las Vegas Arts District.',
+    title: `About ${REAL_ESTATE_SITE.agentName} | Midtown Arts District REALTOR®`,
+    description: `${REAL_ESTATE_SITE.yearsExperience} years guiding buyers through Midtown condos and English Residences ownership.`,
     type: 'website',
     url: 'https://www.midtownlasvegascondos.com/about',
   },
@@ -34,11 +37,14 @@ export default function AboutPage() {
       {/* Hero Section */}
       <section className="relative py-20 bg-gradient-to-br from-slate-900 to-slate-700 text-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <p className="text-sm font-semibold uppercase tracking-wide text-amber-200 mb-3">
+            {REAL_ESTATE_SITE.tagline}
+          </p>
           <h1 className="text-5xl md:text-6xl font-bold mb-6">
-            About Midtown
+            About {REAL_ESTATE_SITE.agentName}
           </h1>
           <p className="text-xl text-white/90">
-            Discover the story of Las Vegas's most exciting neighborhood
+            {REAL_ESTATE_SITE.subtagline} · {REAL_ESTATE_SITE.brokerage}
           </p>
         </div>
       </section>
@@ -46,24 +52,33 @@ export default function AboutPage() {
       {/* Content */}
       <section className="py-20 px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto">
         <Breadcrumb items={breadcrumbItems} />
+        <SitePersonaBanner variant="neighborhood" />
+        <AgentByline />
         <div className="prose prose-lg max-w-none">
           <h2 className="text-3xl font-bold text-slate-900 mb-6">
-            The Heart of the Arts District
+            Your guide to Midtown & Arts District real estate
           </h2>
           <p className="text-lg text-slate-600 mb-6 leading-relaxed">
-            Midtown Las Vegas represents a unique blend of urban living and cultural vibrancy. 
-            Located just north of Charleston Boulevard in the heart of the Las Vegas Arts District, 
-            Midtown has emerged as the city's premier destination for those seeking an authentic, 
-            walkable neighborhood experience.
+            I am {REAL_ESTATE_SITE.agentName}, a licensed REALTOR® ({REAL_ESTATE_SITE.license}) with {REAL_ESTATE_SITE.brokerage}.
+            For {REAL_ESTATE_SITE.yearsExperience} years I have helped Las Vegas buyers and investors navigate condos, townhomes, and condo-hotel
+            ownership — with a focus on Midtown, the English Residences, and walkable Arts District properties at 921 S Main Street.
+          </p>
+          <p className="text-lg text-slate-600 mb-6 leading-relaxed">
+            This website is my independent buyer resource. Official neighborhood events, dining directories, and Midtown brand programming
+            are published at{' '}
+            <a href={OFFICIAL_MIDTOWN_SITE.url} target="_blank" rel="noopener noreferrer" className="font-semibold text-slate-900 hover:underline">
+              {OFFICIAL_MIDTOWN_SITE.url.replace('https://', '')}
+            </a>
+            . I translate that lifestyle into comps, HOA review, and closing strategy for my clients.
           </p>
 
           <h2 className="text-3xl font-bold text-slate-900 mb-6 mt-12">
-            Our Vision
+            How I work with buyers
           </h2>
           <p className="text-lg text-slate-600 mb-6 leading-relaxed">
-            We believe in creating spaces where art, culture, and community converge. Midtown 
-            is more than just a place to live—it's a lifestyle centered around creativity, 
-            connection, and authentic experiences.
+            Every consultation starts with your timeline, budget, and how you want to use the property — primary home, second home, or
+            income-producing English Residences unit. I provide private tours, market analysis, and straight talk on HOA reserves, rental
+            programs, and walkability so you can offer with confidence.
           </p>
           <p className="text-base text-slate-600 mb-6 leading-relaxed">
             Since 2015, Midtown has experienced remarkable transformation, with property values increasing an average of 45% 
@@ -397,10 +412,10 @@ export default function AboutPage() {
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-slate-900 to-slate-700 text-white">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-4xl font-bold mb-6">
-            Ready to Experience Midtown?
+            Ready to work with Dr. Jan?
           </h2>
           <p className="text-xl text-white/90 mb-8">
-            Contact Dr. Jan today to learn more about living in Las Vegas's most dynamic neighborhood.
+            Schedule a buyer consultation or private tour of Midtown and Arts District listings.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <CalendlyLink text="Schedule Your Walk-to-Everything Tour" variant="primary" />
