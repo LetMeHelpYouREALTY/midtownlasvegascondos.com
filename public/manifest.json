@@ -1,7 +1,7 @@
 {
-  "name": "Midtown Las Vegas Condos | Luxury Living in the Arts District",
-  "short_name": "Midtown LV Condos",
-  "description": "Discover luxury condominium living in the heart of Las Vegas Arts District. Experience the vibrant culture, dining, and entertainment of Midtown.",
+  "name": "Midtown Las Vegas Condos | Dr. Jan Duffy",
+  "short_name": "Midtown · Dr. Jan",
+  "description": "Dr. Jan Duffy, REALTOR® — Midtown Las Vegas condos, English Residences, and Arts District buyer guidance. Call (702) 500-1980.",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#ffffff",
@@ -20,4 +20,3 @@
   "scope": "/",
   "screenshots": []
 }
-

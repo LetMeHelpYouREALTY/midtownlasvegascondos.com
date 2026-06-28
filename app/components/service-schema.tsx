@@ -1,4 +1,4 @@
-// Service Schema for Real Estate Services
+import { REAL_ESTATE_SITE } from '@/lib/site-persona'
 // 2026 SEO: Detailed service offerings enhance E-E-A-T and local relevance
 
 export function ServiceSchema() {
@@ -80,7 +80,7 @@ export function ServiceSchema() {
     '@context': 'https://schema.org',
     '@type': 'LocalBusiness',
     '@id': 'https://www.midtownlasvegascondos.com#business',
-    name: 'Las Vegas Arts District Condos | Homes by Dr. Jan Duffy',
+    name: REAL_ESTATE_SITE.seo.schemaBrandName,
     hasOfferCatalog: {
       '@type': 'OfferCatalog',
       name: 'Real Estate Services',

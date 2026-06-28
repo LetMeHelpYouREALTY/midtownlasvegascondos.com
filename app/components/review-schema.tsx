@@ -1,6 +1,8 @@
 // Review Schema for E-E-A-T and GBP Optimization
 // 2026 SEO best practice: Verified reviews enhance trust signals
 
+import { REAL_ESTATE_SITE } from '@/lib/site-persona'
+
 interface ReviewSchemaProps {
   reviews?: Array<{
     author: string
@@ -84,7 +86,7 @@ export function ReviewSchema({ reviews }: ReviewSchemaProps = {}) {
     '@context': 'https://schema.org',
     '@type': 'LocalBusiness',
     '@id': 'https://www.midtownlasvegascondos.com#business',
-    name: 'Las Vegas Arts District Condos | Homes by Dr. Jan Duffy',
+    name: REAL_ESTATE_SITE.seo.schemaBrandName,
     aggregateRating: {
       '@type': 'AggregateRating',
       ratingValue: '4.8',

@@ -22,7 +22,7 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: 'Dr. Jan Duffy' }],
   creator: 'Dr. Jan Duffy',
-  publisher: 'Homes by Dr. Jan Duffy',
+  publisher: REAL_ESTATE_SITE.name,
   alternates: {
     canonical: 'https://www.midtownlasvegascondos.com/news',
   },

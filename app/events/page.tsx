@@ -14,7 +14,7 @@ export const metadata: Metadata = {
   keywords: 'Midtown Las Vegas events guide, First Friday Las Vegas, Arts District events, live near First Friday',
   authors: [{ name: 'Dr. Jan Duffy' }],
   creator: 'Dr. Jan Duffy',
-  publisher: 'Homes by Dr. Jan Duffy',
+  publisher: REAL_ESTATE_SITE.name,
   alternates: {
     canonical: 'https://www.midtownlasvegascondos.com/events',
   },

@@ -23,11 +23,10 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: {
-    default: 'Homes by Dr. Jan Duffy | Midtown & Arts District REALTOR® | 702-500-1980',
-    template: '%s | Homes by Dr. Jan Duffy',
+    default: REAL_ESTATE_SITE.seo.defaultTitle,
+    template: REAL_ESTATE_SITE.seo.titleTemplate,
   },
-  description:
-    'Your Dream · Your Life · Your Home. Dr. Jan Duffy, REALTOR® GRI, guides buyers through Midtown Las Vegas condos, English Residences, and Arts District investments. Call (702) 500-1980.',
+  description: REAL_ESTATE_SITE.seo.defaultDescription,
   metadataBase: new URL('https://www.midtownlasvegascondos.com'),
   alternates: {
     canonical: 'https://www.midtownlasvegascondos.com/',
@@ -59,9 +58,8 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: 'Luxury Midtown Las Vegas Condos | Arts District Real Estate',
-    description:
-      'Luxury condominium living in the heart of Las Vegas Arts District. Contact Dr. Jan at (702) 500-1980',
+    title: REAL_ESTATE_SITE.seo.openGraphTitle,
+    description: REAL_ESTATE_SITE.seo.defaultDescription,
     url: 'https://www.midtownlasvegascondos.com',
     siteName: REAL_ESTATE_SITE.name,
     locale: 'en_US',
@@ -77,9 +75,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Midtown Las Vegas Condos',
-    description:
-      'Luxury condominium living in the heart of Las Vegas Arts District',
+    title: REAL_ESTATE_SITE.seo.openGraphTitle,
+    description: REAL_ESTATE_SITE.seo.defaultDescription,
     images: ['https://www.midtownlasvegascondos.com/og-image.png'],
   },
   verification: {

@@ -18,7 +18,7 @@ export function LocalBusinessSchema() {
   const schema = {
     '@context': 'https://schema.org',
     '@type': ['RealEstateAgent', 'RealEstateAgency', 'Organization', 'LocalBusiness'],
-    name: 'Las Vegas Arts District Condos | Homes by Dr. Jan Duffy',
+    name: REAL_ESTATE_SITE.seo.schemaBrandName,
     description:
       'Discover luxury condos and charming homes in Downtown Las Vegas with Dr. Jan Duffy, a real estate expert with 30+ years of experience. Personalized service guaranteed!',
     image: 'https://www.midtownlasvegascondos.com/images/logos/midtown-logo.svg',
@@ -264,13 +264,12 @@ export function WebSiteSchema() {
   const schema = {
     '@context': 'https://schema.org',
     '@type': 'WebSite',
-    name: 'Midtown Las Vegas Condos',
+    name: REAL_ESTATE_SITE.seo.manifestName,
     url: 'https://www.midtownlasvegascondos.com',
-    description:
-      'Luxury condominium living in the heart of Las Vegas Arts District. Find your perfect home with Dr. Jan Duffy.',
+    description: REAL_ESTATE_SITE.seo.defaultDescription,
     publisher: {
       '@type': 'Organization',
-      name: 'Las Vegas Arts District Condos | Homes by Dr. Jan Duffy',
+      name: REAL_ESTATE_SITE.seo.schemaBrandName,
       url: 'https://www.midtownlasvegascondos.com',
     },
     potentialAction: [

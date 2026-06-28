@@ -12,9 +12,8 @@ import { REAL_ESTATE_SITE, OFFICIAL_MIDTOWN_SITE } from '@/lib/site-persona'
 import { SitePersonaBanner } from './components/site-persona-banner'
 
 export const metadata: Metadata = {
-  title: 'Homes by Dr. Jan Duffy | Midtown & Arts District REALTOR® | 702-500-1980',
-  description:
-    `${REAL_ESTATE_SITE.tagline} Dr. Jan Duffy, ${REAL_ESTATE_SITE.agentTitle}, specializes in Midtown Las Vegas condos, English Residences, and Arts District investments. Schedule a private tour: (702) 500-1980.`,
+  title: REAL_ESTATE_SITE.seo.defaultTitle,
+  description: REAL_ESTATE_SITE.seo.defaultDescription,
   alternates: {
     canonical: 'https://www.midtownlasvegascondos.com/',
   },

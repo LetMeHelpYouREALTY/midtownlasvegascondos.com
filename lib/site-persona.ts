@@ -57,6 +57,20 @@ export const REAL_ESTATE_SITE = {
   },
   realScoutUrl: 'http://drjanduffy.realscout.com/',
   realScoutOnboardingUrl: 'http://drjanduffy.realscout.com/onboarding',
+  /**
+   * Title & brand for SEO (parallel search: niche geo + agent name, not "Las Vegas Real Estate Agents")
+   * Pattern matches Turnberry: "[Product] | Homes by Dr. Jan Duffy"
+   */
+  seo: {
+    defaultTitle: 'Midtown Las Vegas Condos | Dr. Jan Duffy, REALTOR® | (702) 500-1980',
+    titleTemplate: '%s | Dr. Jan Duffy, REALTOR®',
+    schemaBrandName: 'Midtown Las Vegas Condos | Homes by Dr. Jan Duffy',
+    openGraphTitle: 'Midtown Las Vegas Condos | Dr. Jan Duffy, REALTOR®',
+    manifestName: 'Midtown Las Vegas Condos | Dr. Jan Duffy',
+    manifestShortName: 'Midtown · Dr. Jan',
+    defaultDescription:
+      'Your Dream · Your Life · Your Home. Dr. Jan Duffy, REALTOR® GRI, guides buyers through Midtown Las Vegas condos, English Residences, and Arts District investments. Call (702) 500-1980.',
+  },
   /** How this site speaks — consultative, first-person agent, transaction-focused */
   voice: {
     perspective: 'first-person-agent',
