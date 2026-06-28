@@ -79,7 +79,7 @@ export function ServiceSchema() {
   const schema = {
     '@context': 'https://schema.org',
     '@type': 'LocalBusiness',
-    '@id': 'https://www.midtownvegascondos.com#business',
+    '@id': 'https://www.midtownlasvegascondos.com#business',
     name: 'Las Vegas Arts District Condos | Homes by Dr. Jan Duffy',
     hasOfferCatalog: {
       '@type': 'OfferCatalog',

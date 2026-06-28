@@ -1,17 +1,19 @@
 // Structured Data (JSON-LD) for SEO
 
+import { siteConfig, absoluteUrl } from '@/lib/site-config'
+
 export function LocalBusinessSchema() {
   const schema = {
     '@context': 'https://schema.org',
     '@type': ['RealEstateAgent', 'RealEstateAgency', 'Organization', 'LocalBusiness'],
-    name: 'Las Vegas Arts District Condos | Homes by Dr. Jan Duffy',
+    name: 'Walkable Midtown Las Vegas Condos | Dr. Jan Duffy',
     description:
-      'Discover luxury condos and charming homes in Downtown Las Vegas with Dr. Jan Duffy, a real estate expert with 30+ years of experience. Personalized service guaranteed!',
-    image: 'https://www.midtownvegascondos.com/images/logos/midtown-logo.svg',
-    '@id': 'https://www.midtownvegascondos.com#business',
-    url: 'https://www.midtownvegascondos.com',
-    telephone: '+17025001980',
-    email: 'DrJanSells@MidtownVegasCondos.com',
+      'Las Vegas Arts District condo specialist for locals who want walkable gallery life, First Friday culture, and downtown living at 921 S Main St.',
+    image: absoluteUrl('/images/logos/midtown-logo.svg'),
+    '@id': `${siteConfig.baseUrl}#business`,
+    url: siteConfig.baseUrl,
+    telephone: siteConfig.phoneTel,
+    email: siteConfig.email,
     foundingDate: '2009-09-20',
     // GBP Optimization - Aggregate Rating
     aggregateRating: {
@@ -205,7 +207,7 @@ export function ResidenceSchema() {
     name: 'The English Residences',
     description:
       'Luxury condo-hotel residences in the heart of the Las Vegas Arts District. Own your unit and earn income through professional hotel management.',
-    url: 'https://www.midtownvegascondos.com/neighborhood/english-residences',
+    url: absoluteUrl('/neighborhood/english-residences'),
     address: {
       '@type': 'PostalAddress',
       streetAddress: '921 South Main Street',
@@ -257,22 +259,21 @@ export function WebSiteSchema() {
   const schema = {
     '@context': 'https://schema.org',
     '@type': 'WebSite',
-    name: 'Midtown Las Vegas Condos',
-    url: 'https://www.midtownvegascondos.com',
+    name: siteConfig.siteName,
+    url: siteConfig.baseUrl,
     description:
-      'Luxury condominium living in the heart of Las Vegas Arts District. Find your perfect home with Dr. Jan Duffy.',
+      'Walkable Arts District living in Midtown Las Vegas — galleries, First Friday, and local dining on foot. Guides for local buyers from Dr. Jan Duffy.',
     publisher: {
       '@type': 'Organization',
-      name: 'Las Vegas Arts District Condos | Homes by Dr. Jan Duffy',
-      url: 'https://www.midtownvegascondos.com',
+      name: siteConfig.siteName,
+      url: siteConfig.baseUrl,
     },
     potentialAction: [
       {
         '@type': 'SearchAction',
         target: {
           '@type': 'EntryPoint',
-          urlTemplate:
-            'https://www.midtownvegascondos.com/search?q={search_term_string}',
+          urlTemplate: `${siteConfig.baseUrl}/search?q={search_term_string}`,
           actionPlatform: [
             'http://schema.org/DesktopWebPlatform',
             'http://schema.org/MobileWebPlatform',
@@ -336,10 +337,10 @@ export function PersonSchema() {
     },
     description:
       'Dr. Jan Duffy is a licensed real estate agent specializing in Midtown Las Vegas and Arts District properties. With 30+ years of experience, she provides personalized service for luxury condos, investment properties, and downtown living.',
-    url: 'https://www.midtownvegascondos.com/about',
-    image: 'https://www.midtownvegascondos.com/images/midtown/dr-jan-duffy.png',
-    email: 'DrJanSells@MidtownVegasCondos.com',
-    telephone: '+17025001980',
+    url: absoluteUrl('/about'),
+    image: absoluteUrl('/images/midtown/dr-jan-duffy.png'),
+    email: siteConfig.email,
+    telephone: siteConfig.phoneTel,
     address: {
       '@type': 'PostalAddress',
       streetAddress: '921 South Main Street',

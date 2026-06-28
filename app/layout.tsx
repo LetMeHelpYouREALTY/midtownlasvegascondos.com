@@ -13,6 +13,7 @@ import { ServiceSchema } from './components/service-schema'
 import { StickyCTABar } from './components/sticky-cta-bar'
 import { WidgetTracker } from './components/widget-tracker'
 import { CalendlyBadge } from './components/calendly-badge'
+import { siteConfig, absoluteUrl } from '@/lib/site-config'
 
 const inter = Inter({ 
   subsets: ['latin'],
@@ -22,26 +23,26 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: {
-    default: 'Luxury Midtown Las Vegas Condos | Arts District Real Estate | 702-500-1980',
-    template: '%s | Las Vegas Arts District Condos | Homes by Dr. Jan Duffy',
+    default: 'Walkable Arts District Condos | Midtown Las Vegas Living | 702-500-1980',
+    template: '%s | Walkable Midtown Las Vegas | Dr. Jan Duffy',
   },
   description:
-    'Discover luxury condominium living in the heart of Las Vegas Arts District. Experience the vibrant culture, dining, and entertainment of Midtown. Contact us today at (702) 500-1980.',
-  metadataBase: new URL('https://www.midtownvegascondos.com'),
+    'Las Vegas locals choose Midtown for walkable Arts District living — First Friday, galleries, and chef-driven dining on foot at 921 S Main St. Tour with Dr. Jan Duffy at (702) 500-1980.',
+  metadataBase: new URL(siteConfig.baseUrl),
   alternates: {
-    canonical: 'https://www.midtownvegascondos.com/',
+    canonical: absoluteUrl('/'),
   },
   keywords: [
-    'Las Vegas condos',
-    'Arts District real estate',
+    'walkable Las Vegas condos',
+    'Arts District living',
     'Midtown Las Vegas',
-    'luxury condos Las Vegas',
-    'English Residences',
-    'Las Vegas real estate agent',
-    'Dr. Jan Duffy',
-    'Midtown Las Vegas condos',
+    'First Friday Las Vegas',
     'downtown Las Vegas condos',
-    'Las Vegas Arts District homes',
+    'English Residences',
+    'Juhl Soho Newport lofts',
+    'Dr. Jan Duffy',
+    '18b Arts District',
+    'local Las Vegas real estate',
   ],
   authors: [{ name: 'Dr. Jan Duffy' }],
   creator: 'Dr. Jan Duffy',
@@ -58,16 +59,16 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: 'Luxury Midtown Las Vegas Condos | Arts District Real Estate',
+    title: 'Walkable Arts District Condos | Midtown Las Vegas',
     description:
-      'Luxury condominium living in the heart of Las Vegas Arts District. Contact Dr. Jan at (702) 500-1980',
-    url: 'https://www.midtownvegascondos.com',
-    siteName: 'Midtown Las Vegas Condos',
+      'Gallery nights, local dining, and First Friday on your block — walkable Midtown living at 921 S Main St. Call (702) 500-1980.',
+    url: siteConfig.baseUrl,
+    siteName: siteConfig.siteName,
     locale: 'en_US',
     type: 'website',
     images: [
       {
-        url: 'https://www.midtownvegascondos.com/og-image.png',
+        url: absoluteUrl('/og-image.png'),
         width: 1200,
         height: 630,
         alt: 'Midtown Las Vegas Condos',
@@ -79,7 +80,7 @@ export const metadata: Metadata = {
     title: 'Midtown Las Vegas Condos',
     description:
       'Luxury condominium living in the heart of Las Vegas Arts District',
-    images: ['https://www.midtownvegascondos.com/og-image.png'],
+    images: [absoluteUrl('/og-image.png')],
   },
   verification: {
     google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION,

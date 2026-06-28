@@ -5,11 +5,12 @@ import { RealScoutListings } from '../components/realscout-listings'
 import { RealScoutScript } from '../components/realscout-script'
 import { CalendlyLink } from '../components/calendly-link'
 import { RealScoutSearch } from '../components/realscout-search'
+import { PersonaIntro } from '../components/persona-intro'
 
 export const metadata: Metadata = {
-  title: 'Midtown Real Estate Las Vegas | Midtown Condos & Homes for Sale',
+  title: 'Walkable Midtown Real Estate | Arts District Condos for Locals',
   description:
-    'Discover Midtown Las Vegas real estate. Luxury condos, homes, and condo-hotels in the Arts District. Walkable urban living with galleries, restaurants, and culture. Browse properties today.',
+    'Browse walkable Arts District condos and homes — Midtown, Juhl corridor, and downtown inventory for locals who want gallery life on foot. Dr. Jan Duffy (702) 500-1980.',
   keywords: [
     'midtown real estate',
     'midtown las vegas',
@@ -19,7 +20,7 @@ export const metadata: Metadata = {
     'Midtown Las Vegas condos',
   ],
   alternates: {
-    canonical: 'https://www.midtownvegascondos.com/midtown-real-estate',
+    canonical: 'https://www.midtownlasvegascondos.com/midtown-real-estate',
   },
 }
 
@@ -35,14 +36,14 @@ export default function MidtownRealEstatePage() {
       <div className="min-h-screen bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <Breadcrumb items={breadcrumbItems} />
+        <PersonaIntro subtitle="Listings for buyers who want Walk Score ~86 life — not another Henderson commute." />
         
         <h1 className="text-5xl md:text-6xl font-bold text-slate-900 mb-6">
-          Midtown Real Estate Las Vegas
+          Walkable Midtown Real Estate
         </h1>
         <p className="text-xl text-slate-600 mb-12 max-w-3xl">
-          Experience authentic urban living in Las Vegas's most exciting neighborhood. 
-          Midtown offers luxury condos, homes, and unique condo-hotel residences in the 
-          heart of the Arts District.
+          Arts District condos and homes for locals who choose gallery walks over garage commutes —
+          Midtown, English Residences, and downtown inventory at 921 S Main Street.
         </p>
 
         {/* Neighborhood Overview */}

@@ -10,7 +10,7 @@ Google Search Console can't detect your Google Analytics tag because the environ
 
 1. **Go to Vercel Dashboard**:
    - Visit: https://vercel.com/dashboard
-   - Select your project: `midtownlasvegascondoscom` (canonical: `www.midtownvegascondos.com`)
+   - Select your project: `midtownlasvegascondoscom` (production: `www.midtownlasvegascondos.com`)
 
 2. **Navigate to Settings**:
    - Click **Settings** in the top navigation

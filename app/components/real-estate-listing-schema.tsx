@@ -47,9 +47,9 @@ export function RealEstateListingSchema({
     agent: {
       '@type': 'RealEstateAgent',
       name: agentName,
-      url: 'https://www.midtownvegascondos.com/about',
+      url: 'https://www.midtownlasvegascondos.com/about',
       telephone: '+17025001980',
-      email: 'DrJanSells@MidtownVegasCondos.com',
+      email: 'DrJanSells@MidtownLasVegasCondos.com',
     },
     areaServed: {
       '@type': 'City',

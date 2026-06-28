@@ -1,4 +1,6 @@
-// FAQ Structured Data for SEO
+// FAQ Structured Data for SEO — Local Urbanist persona (midtownlasvegascondos.com)
+
+import { siteConfig, absoluteUrl } from '@/lib/site-config'
 
 export function FAQSchema() {
   const schema = {
@@ -50,7 +52,7 @@ export function FAQSchema() {
         name: 'How do I contact Dr. Jan Duffy about Midtown properties?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'You can reach Dr. Jan Duffy at (702) 500-1980 or email DrJanSells@MidtownVegasCondos.com. Visit www.midtownvegascondos.com to search available properties or schedule a personal tour of the Midtown neighborhood.',
+          text: `You can reach Dr. Jan Duffy at ${siteConfig.phone} or email ${siteConfig.email}. Visit ${siteConfig.baseUrl} to explore walkable Arts District guides or schedule a neighborhood tour on foot.`,
         },
       },
       {
@@ -90,7 +92,7 @@ export function FAQSchema() {
         name: 'How do I get started buying in Midtown?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'Contact Dr. Jan Duffy at (702) 500-1980 or DrJanSells@MidtownVegasCondos.com. She specializes in Midtown properties and can schedule a personal tour, show you available homes, help with financing options, and guide you through the entire buying process from search to closing.',
+          text: `Contact Dr. Jan Duffy at ${siteConfig.phone} or ${siteConfig.email}. She offers walk-to-everything tours of Midtown, building comparisons (Juhl, Soho, Midtown), and evening visits so you can hear the block before you buy.`,
         },
       },
       {
@@ -111,10 +113,10 @@ export function FAQSchema() {
       },
       {
         '@type': 'Question',
-        name: 'What are typical HOA fees for Las Vegas condos?',
+        name: 'Which downtown Las Vegas condo building is best for walkability?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'Las Vegas condo HOA fees range from about $50–$150 per month in low-rise communities to $400–$800+ in downtown and Arts District high-rises. Fees cover shared maintenance, amenities, insurance, and reserve funds. Review the HOA budget and reserve study before buying in Midtown.',
+          text: 'Juhl, Soho Lofts, Newport Lofts, and Midtown all offer Walk Score ~86 Arts District access. Soho delivers loft character; Juhl adds extensive amenities; Midtown brings new English Residences at 921 S Main St. Tour each at night before deciding.',
         },
       },
       {

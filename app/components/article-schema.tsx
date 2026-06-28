@@ -28,7 +28,7 @@ export function ArticleSchema({
   author,
   publisher = {
     name: 'Midtown Las Vegas Condos',
-    logo: 'https://www.midtownvegascondos.com/images/logos/midtown-logo.svg',
+    logo: 'https://www.midtownlasvegascondos.com/images/logos/midtown-logo.svg',
   },
 }: ArticleSchemaProps) {
   const schema = {
@@ -40,7 +40,7 @@ export function ArticleSchema({
       ? Array.isArray(image)
         ? image
         : image
-      : 'https://www.midtownvegascondos.com/og-image.png',
+      : 'https://www.midtownlasvegascondos.com/og-image.png',
     datePublished,
     dateModified: dateModified || datePublished,
     author: {

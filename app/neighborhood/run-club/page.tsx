@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     'group runs Las Vegas',
   ],
   alternates: {
-    canonical: 'https://www.midtownvegascondos.com/neighborhood/run-club',
+    canonical: 'https://www.midtownlasvegascondos.com/neighborhood/run-club',
   },
 }
 

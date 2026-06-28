@@ -2,11 +2,12 @@ import Link from 'next/link'
 import { Metadata } from 'next'
 import { Breadcrumb } from '../components/breadcrumb'
 import { RealScoutListings } from '../components/realscout-listings'
+import { PersonaIntro } from '../components/persona-intro'
 
 export const metadata: Metadata = {
-  title: 'Arts District Las Vegas Guide | Culture, Dining, Real Estate',
+  title: 'Arts District Las Vegas Guide | Local Culture & Walkable Living',
   description:
-    'Comprehensive guide to the Las Vegas Arts District. History, culture, events, dining, galleries, and real estate opportunities in downtown Las Vegas\'s most exciting neighborhood.',
+    'The local guide to 18b — First Friday, galleries, chef-owned restaurants, and walkable blocks locals compare before buying downtown. Midtown at 921 S Main St.',
   keywords: [
     'Arts District Las Vegas',
     'Arts District living',
@@ -16,7 +17,7 @@ export const metadata: Metadata = {
     'Las Vegas galleries',
   ],
   alternates: {
-    canonical: 'https://www.midtownvegascondos.com/arts-district-guide',
+    canonical: 'https://www.midtownlasvegascondos.com/arts-district-guide',
   },
 }
 
@@ -30,6 +31,7 @@ export default function ArtsDistrictGuidePage() {
     <div className="min-h-screen bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <Breadcrumb items={breadcrumbItems} />
+        <PersonaIntro />
         
         <h1 className="text-5xl md:text-6xl font-bold text-slate-900 mb-6">
           Complete Guide to the Las Vegas Arts District

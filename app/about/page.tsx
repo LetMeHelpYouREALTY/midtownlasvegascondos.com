@@ -3,22 +3,24 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { CalendlyLink } from '../components/calendly-link'
 import { Breadcrumb } from '../components/breadcrumb'
+import { PersonaIntro } from '../components/persona-intro'
 
 export const metadata: Metadata = {
-  title: 'About Midtown Las Vegas | Arts District History & Community',
-  description: 'Discover the story of Midtown, the walkable neighborhood north of Charleston in the heart of the Las Vegas Arts District. From industrial hub to cultural center.',
+  title: 'About Walkable Midtown | Arts District Community for Locals',
+  description:
+    'How Midtown became Las Vegas\'s walkable cultural core — First Friday, 18b galleries, and local life at 921 S Main St. For buyers who choose neighborhood over commute.',
   keywords: 'Midtown Las Vegas history, Arts District transformation, 18b Arts District, walkable Las Vegas, downtown Las Vegas community',
   authors: [{ name: 'Dr. Jan Duffy' }],
   creator: 'Dr. Jan Duffy',
   publisher: 'Midtown Las Vegas Condos',
   alternates: {
-    canonical: 'https://www.midtownvegascondos.com/about',
+    canonical: 'https://www.midtownlasvegascondos.com/about',
   },
   openGraph: {
     title: 'About Midtown Las Vegas | Arts District History',
     description: 'Discover the story of Midtown, the walkable neighborhood in the heart of the Las Vegas Arts District.',
     type: 'website',
-    url: 'https://www.midtownvegascondos.com/about',
+    url: 'https://www.midtownlasvegascondos.com/about',
   },
 }
 
@@ -33,6 +35,10 @@ export default function AboutPage() {
       {/* Hero Section */}
       <section className="relative py-20 bg-gradient-to-br from-slate-900 to-slate-700 text-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <PersonaIntro
+            subtitle="Midtown is where Las Vegas locals trade freeway commutes for gallery walks — this is the neighborhood story behind that choice."
+            className="text-left mb-8"
+          />
           <h1 className="text-5xl md:text-6xl font-bold mb-6">
             About Midtown
           </h1>

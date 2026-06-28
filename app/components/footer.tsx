@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import { Newsletter } from './newsletter'
+import { siteConfig } from '@/lib/site-config'
 
 export function Footer() {
   const navigation = [
@@ -16,6 +17,7 @@ export function Footer() {
         { name: 'Midtown Run Club', href: '/neighborhood/run-club' },
       ],
     },
+    { name: 'Local Guides', href: '/guides/walkable-arts-district-living' },
     { name: 'Events', href: '/events' },
     { name: 'News', href: '/news' },
     { name: 'About', href: '/about' },
@@ -85,8 +87,8 @@ export function Footer() {
                   </a>
                 </p>
                 <p>
-                  <a href="mailto:DrJanSells@MidtownVegasCondos.com" className="hover:text-white transition-colors">
-                    DrJanSells@MidtownVegasCondos.com
+                  <a href={`mailto:${siteConfig.email}`} className="hover:text-white transition-colors">
+                    {siteConfig.email}
                   </a>
                 </p>
                 <p>
@@ -147,7 +149,7 @@ export function Footer() {
 
           {/* Copyright */}
           <div className="text-center text-sm text-slate-400 border-t border-slate-800 pt-8">
-            <p>© 2025 Midtown Las Vegas | Condos By Dr. Jan Duffy S.0197614. All Rights Reserved.</p>
+            <p>© {new Date().getFullYear()} {siteConfig.siteName} | {siteConfig.agent.name} {siteConfig.agent.license}. All Rights Reserved.</p>
           </div>
         </div>
       </div>

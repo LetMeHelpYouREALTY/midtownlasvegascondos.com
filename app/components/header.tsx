@@ -23,14 +23,14 @@ export function Header() {
     },
     { name: 'Search Properties', href: 'http://drjanduffy.realscout.com/' },
     {
-      name: 'Resources',
+      name: 'Local Guides',
       items: [
-        { name: 'Midtown Real Estate', href: '/midtown-real-estate' },
-        { name: "Buyer's Guide", href: '/buyers-guide-midtown' },
-        { name: 'Investment Properties', href: '/investment-properties' },
-        { name: 'Arts District Guide', href: '/arts-district-guide' },
-        { name: 'HOA Fees Guide', href: '/guides/las-vegas-condo-hoa-fees' },
         { name: 'Walkable Living Guide', href: '/guides/walkable-arts-district-living' },
+        { name: 'Downtown Buildings Compared', href: '/guides/downtown-condo-buildings-compared' },
+        { name: 'First Friday Living Guide', href: '/guides/first-fridays-living-guide' },
+        { name: 'Living Downtown at Night', href: '/guides/arts-district-living-at-night' },
+        { name: 'Arts District Guide', href: '/arts-district-guide' },
+        { name: "Buyer's Guide", href: '/buyers-guide-midtown' },
       ],
     },
     { name: 'Events', href: '/events' },
@@ -45,8 +45,9 @@ export function Header() {
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
-          <Link href="/" className="flex items-center">
-            <span className="text-2xl font-bold text-slate-900">MIDTOWN</span>
+          <Link href="/" className="flex flex-col">
+            <span className="text-xl font-bold text-slate-900 leading-tight">MIDTOWN LAS VEGAS</span>
+            <span className="text-xs text-amber-700 font-medium hidden sm:block">Walkable Arts District Living</span>
           </Link>
 
           {/* Desktop Navigation */}

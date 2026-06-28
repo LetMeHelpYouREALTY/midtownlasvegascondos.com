@@ -8,13 +8,14 @@ import { RealScoutListings } from './components/realscout-listings'
 import { RealScoutScript } from './components/realscout-script'
 import { PageFAQ } from './components/page-faq'
 import { CalendlyLink } from './components/calendly-link'
+import { siteConfig, absoluteUrl } from '@/lib/site-config'
 
 export const metadata: Metadata = {
-  title: 'Luxury Midtown Las Vegas Condos | Arts District Real Estate | 702-500-1980',
+  title: 'Walkable Arts District Living | Midtown Las Vegas Condos | 702-500-1980',
   description:
-    'Discover luxury condominium living in the heart of Las Vegas Arts District. Experience the vibrant culture, dining, and entertainment of Midtown. Contact us today at (702) 500-1980.',
+    'Gallery nights, First Friday, and local dining on foot — Midtown Las Vegas at 921 S Main St for locals who want Arts District life without suburban commutes. Call (702) 500-1980.',
   alternates: {
-    canonical: 'https://www.midtownvegascondos.com/',
+    canonical: absoluteUrl('/'),
   },
   robots: {
     index: true,
@@ -50,13 +51,17 @@ export default function HomePage() {
         </div>
         <div className="absolute inset-0 bg-black/50" />
         <div className="relative z-10 text-center px-4 sm:px-6 max-w-4xl mx-auto">
+          <p className="text-sm font-semibold text-amber-300 uppercase tracking-widest mb-4">
+            Walkable Arts District Living · Walk Score {siteConfig.walkScore}
+          </p>
           <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 tracking-tight">
-            Luxury Midtown Las Vegas Condos
+            Gallery Nights,
             <br />
-            <span className="text-4xl md:text-6xl">Arts District Living Reimagined</span>
+            <span className="text-4xl md:text-6xl">Not Garage Commutes</span>
           </h1>
           <p className="text-xl md:text-2xl text-white/90 mb-8">
-            Discover luxury living in the heart of Las Vegas Arts District
+            Las Vegas locals choose Midtown for walkable culture — First Friday, 30+ galleries,
+            and chef-driven dining at 921 S Main Street
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <CalendlyLink text="Schedule Your Walk-to-Everything Tour" variant="primary" />
@@ -76,10 +81,10 @@ export default function HomePage() {
       <section className="py-16 px-4 sm:px-6 lg:px-8 bg-white border-b border-slate-100">
         <div className="max-w-7xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4 text-center">
-            Midtown Las Vegas: Quick Answers
+            Quick Answers for Local Buyers
           </h2>
           <p className="text-center text-slate-600 mb-10 max-w-2xl mx-auto">
-            Common questions from buyers researching Arts District condos and walkable downtown living.
+            What r/vegaslocals asks before choosing walkable Arts District life over the suburbs.
           </p>
           <div className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
             <div className="bg-slate-50 rounded-xl p-6 border border-slate-200">
@@ -87,7 +92,7 @@ export default function HomePage() {
                 Is the Arts District walkable?
               </h3>
               <p className="text-slate-600 text-sm leading-relaxed">
-                Yes — Walk Score ~86. Midtown at 921 S Main St offers gallery, dining, and event access on foot.{' '}
+                Yes — Walk Score ~{siteConfig.walkScore}. Midtown at 921 S Main St puts galleries, dining, and First Friday on your block.{' '}
                 <Link href="/guides/walkable-arts-district-living" className="text-slate-900 font-semibold hover:underline">
                   Walkable living guide →
                 </Link>
@@ -95,34 +100,34 @@ export default function HomePage() {
             </div>
             <div className="bg-slate-50 rounded-xl p-6 border border-slate-200">
               <h3 className="text-lg font-bold text-slate-900 mb-2">
-                What do Las Vegas condo HOA fees cost?
+                Juhl, Soho, or Midtown — which building?
               </h3>
               <p className="text-slate-600 text-sm leading-relaxed">
-                Low-rise: $50–$150/mo. Arts District high-rises: $400–$800+. Always review the reserve study.{' '}
-                <Link href="/guides/las-vegas-condo-hoa-fees" className="text-slate-900 font-semibold hover:underline">
-                  HOA fees guide →
+                It depends on your block and noise tolerance. Tour at night before you buy.{' '}
+                <Link href="/guides/downtown-condo-buildings-compared" className="text-slate-900 font-semibold hover:underline">
+                  Building comparison →
                 </Link>
               </p>
             </div>
             <div className="bg-slate-50 rounded-xl p-6 border border-slate-200">
               <h3 className="text-lg font-bold text-slate-900 mb-2">
-                Is buying a Midtown condo a good investment?
+                What is First Friday like when you live here?
               </h3>
               <p className="text-slate-600 text-sm leading-relaxed">
-                Midtown has appreciated ~45% since 2015. English Residences offer condo-hotel income potential.{' '}
-                <Link href="/investment-properties" className="text-slate-900 font-semibold hover:underline">
-                  Investment guide →
+                Monthly art walk on your doorstep — walk to galleries, skip parking chaos.{' '}
+                <Link href="/guides/first-fridays-living-guide" className="text-slate-900 font-semibold hover:underline">
+                  First Friday guide →
                 </Link>
               </p>
             </div>
             <div className="bg-slate-50 rounded-xl p-6 border border-slate-200">
               <h3 className="text-lg font-bold text-slate-900 mb-2">
-                How do I start buying in Midtown?
+                Is downtown safe at night?
               </h3>
               <p className="text-slate-600 text-sm leading-relaxed">
-                Contact Dr. Jan Duffy at (702) 500-1980 for tours, HOA review, and financing guidance.{' '}
-                <Link href="/buyers-guide-midtown" className="text-slate-900 font-semibold hover:underline">
-                  Buyer&apos;s guide →
+                Block matters — Arts District vs Fremont East differ. Do an evening tour first.{' '}
+                <Link href="/guides/arts-district-living-at-night" className="text-slate-900 font-semibold hover:underline">
+                  Night living guide →
                 </Link>
               </p>
             </div>
@@ -649,7 +654,7 @@ export default function HomePage() {
               {
                 question: 'How do I get started?',
                 answer:
-                  'Contact Dr. Jan Duffy at (702) 500-1980 or DrJanSells@MidtownVegasCondos.com. She specializes in Midtown properties and can schedule a personal tour, show you available homes, and guide you through the entire buying process.',
+                  'Contact Dr. Jan Duffy at (702) 500-1980 or DrJanSells@MidtownLasVegasCondos.com. She specializes in Midtown properties and can schedule a personal tour, show you available homes, and guide you through the entire buying process.',
               },
               {
                 question: 'What are typical HOA fees for Las Vegas condos?',
@@ -709,8 +714,8 @@ export default function HomePage() {
             <div>
               <h3 className="text-xl font-semibold text-slate-900 mb-2">Email</h3>
               <p className="text-slate-600">
-                <a href="mailto:DrJanSells@MidtownVegasCondos.com" className="hover:text-slate-900 transition-colors">
-                  DrJanSells@MidtownVegasCondos.com
+                <a href="mailto:DrJanSells@MidtownLasVegasCondos.com" className="hover:text-slate-900 transition-colors">
+                  DrJanSells@MidtownLasVegasCondos.com
                 </a>
               </p>
             </div>
