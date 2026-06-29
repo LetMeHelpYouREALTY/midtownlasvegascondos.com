@@ -1,6 +1,9 @@
 /**
- * Google Search Console configuration — single source for canonical URLs,
- * sitemap location, and site verification.
+ * Google Search Console configuration — canonical URLs, sitemap, verification,
+ * and 2026 optimization constants (aligned with Google Search Central guidance).
+ *
+ * @see https://developers.google.com/search/docs/fundamentals/ai-optimization-guide
+ * @see https://developers.google.com/search/blog/2026/06/gen-ai-performance-reports
  */
 
 import { REAL_ESTATE_SITE } from '@/lib/site-persona'
@@ -18,9 +21,32 @@ export const SITEMAP_PATH = '/sitemap.xml'
 
 export const SITEMAP_URL = `${SITE_URL}${SITEMAP_PATH}`
 
+/**
+ * Alternate sitemap URL with trailing slash — fixes Next.js "Couldn't fetch"
+ * in Search Console when the plain URL is cached as failed (2025–2026 reports).
+ */
+export const SITEMAP_URL_TRAILING_SLASH = `${SITEMAP_URL}/`
+
 export const ROBOTS_PATH = '/robots.txt'
 
 export const ROBOTS_URL = `${SITE_URL}${ROBOTS_PATH}`
+
+/** Google Search Console property URL */
+export const GSC_PROPERTY_URL = SITE_URL
+
+/**
+ * Priority URLs to request indexing after deploy (URL Inspection tool).
+ * Focus on money pages + new AEO guide hub per 2026 AI visibility guidance.
+ */
+export const GSC_PRIORITY_INDEX_URLS = [
+  `${SITE_URL}/`,
+  `${SITE_URL}/guides`,
+  `${SITE_URL}/midtown-real-estate`,
+  `${SITE_URL}/neighborhood/english-residences`,
+  `${SITE_URL}/buyers-guide-midtown`,
+  `${SITE_URL}/guides/walkable-arts-district-living`,
+  `${SITE_URL}/guides/worth-buying-condo-las-vegas-now`,
+] as const
 
 /**
  * Google Search Console HTML-tag verification code.
@@ -37,4 +63,21 @@ export function absoluteUrl(path: string = '/'): string {
   const normalized = path.startsWith('/') ? path : `/${path}`
   if (normalized === '/') return `${SITE_URL}/`
   return `${SITE_URL}${normalized}`
+}
+
+/**
+ * Encode sitemap loc values for Google's strict XML parser.
+ * @see https://www.sitemaps.org/protocol.html — loc must be URL-escaped
+ */
+export function encodeSitemapLoc(url: string): string {
+  try {
+    const parsed = new URL(url)
+    parsed.pathname = parsed.pathname
+      .split('/')
+      .map((segment) => encodeURIComponent(decodeURIComponent(segment)))
+      .join('/')
+    return parsed.toString()
+  } catch {
+    return encodeURI(url)
+  }
 }

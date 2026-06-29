@@ -92,6 +92,34 @@ const nextConfig: NextConfig = {
           },
         ],
       },
+      // Sitemap: short cache + explicit type for Google Search Console fetchers
+      {
+        source: '/sitemap.xml',
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: 'public, max-age=3600, sitemap',
+          },
+        ],
+      },
+      {
+        source: '/sitemap.xml/',
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: 'public, max-age=3600, sitemap',
+          },
+        ],
+      },
+      {
+        source: '/robots.txt',
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: 'public, max-age=86400',
+          },
+        ],
+      },
     ]
   },
   // Image optimization for Core Web Vitals
@@ -103,6 +131,16 @@ const nextConfig: NextConfig = {
     // Optimize for LCP (Largest Contentful Paint)
     dangerouslyAllowSVG: false,
     contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
+  },
+  // Redirects for old/dead URLs
+  async rewrites() {
+    return [
+      /*
+       * GSC "Couldn't fetch" workaround for Next.js App Router sitemaps (2025–2026).
+       * Serves the same sitemap at /sitemap.xml/ without a redirect.
+       */
+      { source: '/sitemap.xml/', destination: '/sitemap.xml' },
+    ]
   },
   // Redirects for old/dead URLs
   async redirects() {

@@ -17,9 +17,9 @@ export function GoogleAnalytics() {
         <>
           <Script
             src={`https://www.googletagmanager.com/gtag/js?id=${gaId}`}
-            strategy="lazyOnload"
+            strategy="afterInteractive"
           />
-          <Script id="google-analytics" strategy="lazyOnload">
+          <Script id="google-analytics" strategy="afterInteractive">
             {`
               (function() {
                 if (typeof window === 'undefined') return;

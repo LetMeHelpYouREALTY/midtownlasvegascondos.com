@@ -27,6 +27,6 @@ export const config = {
     /*
      * Skip static assets, API, robots, sitemap, and GSC verification files (google*.html).
      */
-    '/((?!api|_next/static|_next/image|favicon.ico|robots.txt|sitemap.xml|google[a-z0-9]+\\.html|.*\\.(?:svg|png|jpg|jpeg|gif|webp|ico|xml|txt|json|woff2?)$).*)',
+    '/((?!api|_next/static|_next/image|favicon.ico|robots.txt|sitemap\\.xml|google[a-z0-9]+\\.html|.*\\.(?:svg|png|jpg|jpeg|gif|webp|ico|xml|txt|json|woff2?)$).*)',
   ],
 }
