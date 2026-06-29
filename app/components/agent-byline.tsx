@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import { NAV_LABELS, REAL_ESTATE_SITE } from '@/lib/site-persona'
+import { AgentProfilePhoto } from '@/app/components/agent-profile-photo'
 
 type AgentBylineProps = {
   compact?: boolean
@@ -7,8 +8,9 @@ type AgentBylineProps = {
 
 export function AgentByline({ compact = false }: AgentBylineProps) {
   return (
-    <div className={`flex items-center gap-3 ${compact ? 'mb-4' : 'mb-8 pt-4 border-t border-slate-200'}`}>
-      <div className="flex-1">
+    <div className={`flex items-center gap-4 ${compact ? 'mb-4' : 'mb-8 pt-4 border-t border-slate-200'}`}>
+      <AgentProfilePhoto size="sm" className="border-2 shrink-0" />
+      <div className="flex-1 min-w-0">
         <p className="text-sm font-semibold text-slate-900">
           {REAL_ESTATE_SITE.agentName}, {REAL_ESTATE_SITE.agentTitle}
         </p>

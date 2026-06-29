@@ -131,6 +131,13 @@ const nextConfig: NextConfig = {
     // Optimize for LCP (Largest Contentful Paint)
     dangerouslyAllowSVG: false,
     contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'imagedelivery.net',
+        pathname: '/**',
+      },
+    ],
   },
   // Redirects for old/dead URLs
   async rewrites() {

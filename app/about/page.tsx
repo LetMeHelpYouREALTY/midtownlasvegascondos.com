@@ -1,6 +1,6 @@
 import { Metadata } from 'next'
-import Image from 'next/image'
 import Link from 'next/link'
+import { AgentProfilePhoto } from '../components/agent-profile-photo'
 import { CalendlyLink } from '../components/calendly-link'
 import { Breadcrumb } from '../components/breadcrumb'
 import { RealScoutSection } from '../components/realscout-section'
@@ -361,19 +361,8 @@ export default function AboutPage() {
             <div>
               <h3 className="text-2xl font-bold text-slate-900 mb-4">Getting Started</h3>
               
-              {/* Dr. Jan Duffy Photo */}
               <div className="flex justify-center my-6">
-                <div className="relative w-48 h-48 md:w-56 md:h-56 rounded-full overflow-hidden border-4 border-slate-200 shadow-lg bg-slate-100">
-                  <Image
-                    src="/images/midtown/dr-jan-duffy.png"
-                    alt="Dr. Jan Duffy, Midtown Las Vegas real estate specialist with 30+ years of experience"
-                    fill
-                    className="object-cover"
-                    quality={75}
-                    sizes="(max-width: 768px) 192px, 224px"
-                    loading="lazy"
-                  />
-                </div>
+                <AgentProfilePhoto size="md" />
               </div>
               
               <p className="text-base text-slate-600 leading-relaxed mb-3">

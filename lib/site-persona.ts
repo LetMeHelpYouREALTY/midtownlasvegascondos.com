@@ -57,6 +57,8 @@ export const REAL_ESTATE_SITE = {
   },
   realScoutUrl: 'http://drjanduffy.realscout.com/',
   realScoutOnboardingUrl: 'http://drjanduffy.realscout.com/onboarding',
+  /** Professional headshot (Cloudflare portfolio asset; see lib/agent-photo.ts) */
+  agentPhotoPath: '/images/midtown/dr-jan-duffy.jpg',
   /**
    * Title & brand for SEO (parallel search: niche geo + agent name, not "Las Vegas Real Estate Agents")
    * Pattern matches Turnberry: "[Product] | Homes by Dr. Jan Duffy"

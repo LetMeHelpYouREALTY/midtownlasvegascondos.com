@@ -1,5 +1,6 @@
 // Structured Data (JSON-LD) for SEO
 
+import { getAgentPhotoAbsoluteUrl } from '@/lib/agent-photo'
 import {
   MIDTOWN_SHOWROOM,
   REAL_ESTATE_SITE,
@@ -343,7 +344,7 @@ export function PersonSchema() {
     description:
       'Dr. Jan Duffy is a licensed real estate agent specializing in Midtown Las Vegas and Arts District properties. With 30+ years of experience, she provides personalized service for luxury condos, investment properties, and downtown living.',
     url: 'https://www.midtownlasvegascondos.com/about',
-    image: 'https://www.midtownlasvegascondos.com/images/midtown/dr-jan-duffy.png',
+    image: getAgentPhotoAbsoluteUrl(),
     email: 'DrJanSells@MidtownVegasCondos.com',
     telephone: '+17025001980',
     address: officePostalAddress,
