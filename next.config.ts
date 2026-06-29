@@ -1,4 +1,5 @@
 import type { NextConfig } from 'next'
+import { withWorkflow } from 'workflow/next'
 
 const APEX_HOST = 'midtownlasvegascondos.com'
 const SITE_URL = 'https://www.midtownlasvegascondos.com'
@@ -192,8 +193,8 @@ const nextConfig: NextConfig = {
   // Experimental features for better performance
   experimental: {
     // Optimize server components
-    optimizePackageImports: ['lucide-react', '@radix-ui/react-icons'],
+    optimizePackageImports: ['lucide-react', '@radix-ui/react-dialog', '@radix-ui/react-dropdown-menu'],
   },
 }
 
-export default nextConfig
+export default withWorkflow(nextConfig)
