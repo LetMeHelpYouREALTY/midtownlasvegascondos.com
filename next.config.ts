@@ -1,5 +1,8 @@
 import type { NextConfig } from 'next'
 
+const APEX_HOST = 'midtownlasvegascondos.com'
+const SITE_URL = 'https://www.midtownlasvegascondos.com'
+
 const nextConfig: NextConfig = {
   // Security headers for SEO and security
   async headers() {
@@ -43,10 +46,15 @@ const nextConfig: NextConfig = {
               "frame-src 'self' https://www.googletagmanager.com https://calendly.com https://storage.googleapis.com https://maps.google.com https://www.google.com https://em.realscout.com https://www.realscout.com https://widget.realscout.com",
             ].join('; '),
           },
-          // Cache headers for static assets
+        ],
+      },
+      // HTML pages: allow fresh crawls for Google Search Console (no long immutable cache)
+      {
+        source: '/((?!_next/|api/|images/).*)',
+        headers: [
           {
             key: 'Cache-Control',
-            value: 'public, max-age=31536000, immutable',
+            value: 'public, max-age=0, must-revalidate',
           },
         ],
       },
@@ -99,6 +107,13 @@ const nextConfig: NextConfig = {
   // Redirects for old/dead URLs
   async redirects() {
     return [
+      // Apex → www (Search Console canonical property)
+      {
+        source: '/:path*',
+        has: [{ type: 'host', value: APEX_HOST }],
+        destination: `${SITE_URL}/:path*`,
+        permanent: true,
+      },
       {
         source: '/listings/luxury-condo',
         destination: '/midtown-real-estate',

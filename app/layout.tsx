@@ -14,6 +14,7 @@ import { StickyCTABar } from './components/sticky-cta-bar'
 import { WidgetTracker } from './components/widget-tracker'
 import { CalendlyBadge } from './components/calendly-badge'
 import { REAL_ESTATE_SITE } from '@/lib/site-persona'
+import { getGoogleSiteVerification, SITE_URL } from '@/lib/search-console'
 
 const inter = Inter({ 
   subsets: ['latin'],
@@ -21,15 +22,17 @@ const inter = Inter({
   preload: true,
 })
 
+const googleSiteVerification = getGoogleSiteVerification()
+
 export const metadata: Metadata = {
   title: {
     default: REAL_ESTATE_SITE.seo.defaultTitle,
     template: REAL_ESTATE_SITE.seo.titleTemplate,
   },
   description: REAL_ESTATE_SITE.seo.defaultDescription,
-  metadataBase: new URL('https://www.midtownlasvegascondos.com'),
+  metadataBase: new URL(SITE_URL),
   alternates: {
-    canonical: 'https://www.midtownlasvegascondos.com/',
+    canonical: `${SITE_URL}/`,
   },
   keywords: [
     'Las Vegas condos',
@@ -79,9 +82,9 @@ export const metadata: Metadata = {
     description: REAL_ESTATE_SITE.seo.defaultDescription,
     images: ['https://www.midtownlasvegascondos.com/og-image.png'],
   },
-  verification: {
-    google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION,
-  },
+  verification: googleSiteVerification
+    ? { google: googleSiteVerification }
+    : undefined,
   manifest: '/manifest.json',
   icons: {
     icon: '/favicon.ico',

@@ -1,11 +1,10 @@
 import { NextResponse } from 'next/server'
 import type { NextRequest } from 'next/server'
+import { APEX_HOST, WWW_HOST } from '@/lib/search-console'
 
-const CANONICAL_HOST = 'www.midtownlasvegascondos.com'
-
-/** Legacy / alternate hostnames that must 301 to the canonical Dr. Jan Duffy site. */
+/** Legacy / alternate hostnames that must 301 to the canonical www property (GSC). */
 const REDIRECT_HOSTS = new Set([
-  'midtownlasvegascondos.com',
+  APEX_HOST,
   'midtownvegascondos.com',
   'www.midtownvegascondos.com',
 ])
@@ -15,7 +14,8 @@ export function proxy(request: NextRequest) {
   const url = request.nextUrl.clone()
 
   if (REDIRECT_HOSTS.has(hostname)) {
-    url.hostname = CANONICAL_HOST
+    url.protocol = 'https:'
+    url.hostname = WWW_HOST
     return NextResponse.redirect(url, 301)
   }
 
@@ -24,6 +24,9 @@ export function proxy(request: NextRequest) {
 
 export const config = {
   matcher: [
-    '/((?!api|_next/static|_next/image|favicon.ico|robots.txt|sitemap.xml|images).*)',
+    /*
+     * Skip static assets, API, robots, sitemap, and GSC verification files (google*.html).
+     */
+    '/((?!api|_next/static|_next/image|favicon.ico|robots.txt|sitemap.xml|google[a-z0-9]+\\.html|.*\\.(?:svg|png|jpg|jpeg|gif|webp|ico|xml|txt|json|woff2?)$).*)',
   ],
 }
