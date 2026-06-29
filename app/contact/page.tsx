@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import { Metadata } from 'next'
 import { AgentProfilePhoto } from '../components/agent-profile-photo'
+import { CalendlyInlineWidget } from '../components/calendly-inline-widget'
 import { CalendlyLink } from '../components/calendly-link'
 import { Breadcrumb } from '../components/breadcrumb'
 import { RealScoutSection } from '../components/realscout-section'
@@ -186,53 +187,24 @@ export default function ContactPage() {
       </section>
 
       {/* Schedule Tour & Contact Info */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto bg-slate-50">
+      <section id="schedule" className="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto bg-slate-50">
         <div className="grid lg:grid-cols-2 gap-12">
           {/* Schedule Tour with Calendly */}
           <div>
             <h2 className="text-3xl font-bold text-slate-900 mb-6">
-              Schedule Your Home Tour
+              Schedule Your In-Person Consultation
             </h2>
-            <p className="text-lg text-slate-600 mb-8">
-              Book a personalized 30-minute home tour with Dr. Jan Duffy. Experience Midtown properties in person and get expert guidance on finding your perfect home in the Arts District.
+            <p className="text-lg text-slate-600 mb-6">
+              Book directly with Dr. Jan Duffy — in-person real estate consultation at the office or a Midtown property tour.
             </p>
-            <div className="bg-white rounded-lg shadow-lg p-8 border border-slate-200">
-              <div className="text-center mb-6">
-                <svg
-                  className="w-16 h-16 mx-auto mb-4 text-slate-900"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
-                  />
-                </svg>
-                <h3 className="text-2xl font-bold text-slate-900 mb-2">
-                  Book Your Tour
-                </h3>
-                <p className="text-slate-600">
-                  Choose a time that works for you
-                </p>
-              </div>
-              <a
-                href="https://calendly.com/drjanduffy/1-home-tour-30-mins"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block w-full px-8 py-4 bg-slate-900 text-white rounded-lg font-semibold hover:bg-slate-800 transition-colors text-center"
-              >
-                Schedule Your 30-Minute Home Tour
-              </a>
-              <p className="text-sm text-slate-500 text-center mt-4">
-                Opens in a new window. No account required.
-              </p>
-            </div>
+            <CalendlyInlineWidget height="680px" />
+            <p className="text-sm text-slate-500 text-center mt-4">
+              Or{' '}
+              <CalendlyLink text="open scheduling in a popup" variant="link" className="text-slate-700" />
+            </p>
             <div className="mt-6 p-4 bg-slate-100 rounded-lg">
               <p className="text-sm text-slate-600">
-                <strong className="text-slate-900">What to expect:</strong> Dr. Jan will provide a personalized tour of available properties, answer your questions about Midtown living, and help you understand the unique features of each neighborhood.
+                <strong className="text-slate-900">What to expect:</strong> Dr. Jan will discuss your goals, tour available Midtown and Arts District properties, and answer questions about English Residences, HOA fees, and neighborhood walkability.
               </p>
             </div>
           </div>

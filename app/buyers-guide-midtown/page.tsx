@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import { Metadata } from 'next'
 import { Breadcrumb } from '../components/breadcrumb'
+import { CalendlyBookingSection } from '../components/calendly-booking-section'
 import { CalendlyLink } from '../components/calendly-link'
 import { RealScoutListings } from '../components/realscout-listings'
 import { RealScoutSearch } from '../components/realscout-search'
@@ -307,6 +308,12 @@ export default function BuyersGuideMidtownPage() {
             listingStatus="For Sale"
           />
         </section>
+
+        <CalendlyBookingSection
+          heading="Book Your Buyer Consultation"
+          description="Meet Dr. Jan Duffy in person to discuss Midtown condos, English Residences, and your Arts District home search."
+          className="px-0"
+        />
 
         {/* CTA Section */}
         <section className="bg-gradient-to-br from-slate-900 to-slate-700 text-white rounded-lg p-12 text-center">

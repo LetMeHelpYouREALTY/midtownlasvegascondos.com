@@ -13,6 +13,7 @@ import { ServiceSchema } from './components/service-schema'
 import { StickyCTABar } from './components/sticky-cta-bar'
 import { WidgetTracker } from './components/widget-tracker'
 import { CalendlyBadge } from './components/calendly-badge'
+import { CalendlyScript } from './components/calendly-script'
 import { REAL_ESTATE_SITE } from '@/lib/site-persona'
 import { getGoogleSiteVerification, SITE_URL } from '@/lib/search-console'
 
@@ -181,6 +182,7 @@ export default function RootLayout({
         <main className="pt-16">{children}</main>
         <Footer />
         <StickyCTABar />
+        <CalendlyScript />
         <CalendlyBadge />
       </body>
     </html>

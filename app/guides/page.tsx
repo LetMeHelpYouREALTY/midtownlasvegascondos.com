@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import { Metadata } from 'next'
 import { Breadcrumb } from '@/app/components/breadcrumb'
+import { CalendlyBookingSection } from '@/app/components/calendly-booking-section'
 import { CalendlyLink } from '@/app/components/calendly-link'
 import { PageFAQSchema } from '@/app/components/page-faq-schema'
 import { REDDIT_AEO_GUIDES } from '@/lib/reddit-aeo-topics'
@@ -133,6 +134,13 @@ export default function GuidesHubPage() {
               </li>
             </ul>
           </section>
+
+          <CalendlyBookingSection
+            heading="Talk With Dr. Jan About Your Guide Topics"
+            description="Book an in-person consultation to apply this research to your Midtown or Arts District home search."
+            showPopupFallback={false}
+            className="px-0 py-8"
+          />
 
           <div className="text-center">
             <CalendlyLink text="Schedule a Buyer Consultation" variant="primary" />

@@ -291,7 +291,7 @@ export function WebSiteSchema() {
         '@type': 'ScheduleAction',
         target: {
           '@type': 'EntryPoint',
-          urlTemplate: 'https://calendly.com/drjanduffy/1-home-tour-30-mins',
+          urlTemplate: 'https://calendly.com/drjanduffy/in-person-real-estate-consultation',
           actionPlatform: [
             'http://schema.org/DesktopWebPlatform',
             'http://schema.org/MobileWebPlatform',

@@ -3,6 +3,7 @@ import { Metadata } from 'next'
 import { Breadcrumb } from '../components/breadcrumb'
 import { RealScoutListings } from '../components/realscout-listings'
 import { RealScoutScript } from '../components/realscout-script'
+import { CalendlyBookingSection } from '../components/calendly-booking-section'
 import { CalendlyLink } from '../components/calendly-link'
 import { RealScoutSearch } from '../components/realscout-search'
 
@@ -250,6 +251,12 @@ export default function MidtownRealEstatePage() {
             </Link>
           </div>
         </section>
+
+        <CalendlyBookingSection
+          heading="Tour Midtown Listings In Person"
+          description="Schedule an in-person consultation with Dr. Jan Duffy to view Arts District condos and English Residences."
+          className="px-0 py-12"
+        />
 
         {/* CTA Section */}
         <section className="bg-gradient-to-br from-slate-900 to-slate-700 text-white rounded-lg p-12 text-center">

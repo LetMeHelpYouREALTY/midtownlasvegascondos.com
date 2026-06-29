@@ -1,6 +1,7 @@
 import { Metadata } from 'next'
 import Link from 'next/link'
 import { AgentProfilePhoto } from '../components/agent-profile-photo'
+import { CalendlyBookingSection } from '../components/calendly-booking-section'
 import { CalendlyLink } from '../components/calendly-link'
 import { Breadcrumb } from '../components/breadcrumb'
 import { RealScoutSection } from '../components/realscout-section'
@@ -391,6 +392,8 @@ export default function AboutPage() {
           </div>
         </div>
       </section>
+
+      <CalendlyBookingSection className="bg-slate-50" />
 
       <RealScoutSection
         listingsTitle="Midtown Las Vegas Properties"

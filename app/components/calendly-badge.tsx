@@ -1,48 +1,31 @@
 'use client'
 
-import Script from 'next/script'
-import { useEffect, useState } from 'react'
+import { useEffect } from 'react'
+import { CALENDLY_BADGE } from '@/lib/calendly-config'
+import { useCalendlyReady } from '@/lib/hooks/use-calendly'
 
 export function CalendlyBadge() {
-  const [scriptLoaded, setScriptLoaded] = useState(false)
+  const ready = useCalendlyReady()
 
   useEffect(() => {
-    if (scriptLoaded && typeof window !== 'undefined') {
-      // Small delay to ensure Calendly is fully initialized
-      const timeoutId = setTimeout(() => {
-        try {
-          if ((window as any).Calendly) {
-            ;(window as any).Calendly.initBadgeWidget({
-              url: 'https://calendly.com/drjanduffy?hide_gdpr_banner=1',
-              text: '',
-              color: '#0069ff',
-              textColor: '#ffffff',
-              branding: true,
-            })
-          }
-        } catch (error) {
-          console.error('Error initializing Calendly badge:', error)
-        }
-      }, 100)
+    if (!ready || typeof window === 'undefined') return
 
-      return () => {
-        clearTimeout(timeoutId)
+    const timeoutId = setTimeout(() => {
+      try {
+        window.Calendly?.initBadgeWidget({
+          url: CALENDLY_BADGE.url,
+          text: CALENDLY_BADGE.text,
+          color: CALENDLY_BADGE.color,
+          textColor: CALENDLY_BADGE.textColor,
+          branding: CALENDLY_BADGE.branding,
+        })
+      } catch (error) {
+        console.error('[Calendly] Badge init failed:', error)
       }
-    }
-  }, [scriptLoaded])
+    }, 100)
 
-  return (
-    <Script
-      src="https://assets.calendly.com/assets/external/widget.js"
-      type="text/javascript"
-      strategy="afterInteractive"
-      id="calendly-widget-script"
-      onLoad={() => {
-        // Defer state update to avoid hydration issues
-        setTimeout(() => {
-          setScriptLoaded(true)
-        }, 0)
-      }}
-    />
-  )
+    return () => clearTimeout(timeoutId)
+  }, [ready])
+
+  return null
 }

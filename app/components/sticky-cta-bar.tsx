@@ -55,9 +55,9 @@ export function StickyCTABar() {
       <div className="bg-gradient-to-r from-slate-900 to-slate-700 text-white shadow-lg">
         <div className="flex items-center justify-between px-4 py-3">
           <CalendlyLink
-            text="Schedule Tour"
+            text="Schedule time with me"
             variant="primary"
-            className="flex-1 mr-2 px-4 py-2 text-sm flex items-center justify-center"
+            className="flex-1 mr-2 px-4 py-2 text-sm flex items-center justify-center bg-white text-slate-900"
           />
           <a
             href="tel:7025001980"
