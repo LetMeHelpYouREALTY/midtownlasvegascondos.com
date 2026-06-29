@@ -4,11 +4,14 @@ import { CalendlyLink } from '../components/calendly-link'
 import { Breadcrumb } from '../components/breadcrumb'
 import { MIDTOWN_NEWS } from '@/lib/midtown-content/news-data'
 import { RealScoutSection } from '@/app/components/realscout-section'
+import { SitePersonaBanner } from '@/app/components/site-persona-banner'
+import { AgentByline } from '@/app/components/agent-byline'
+import { OFFICIAL_MIDTOWN_SITE, REAL_ESTATE_SITE } from '@/lib/site-persona'
 
 export const metadata: Metadata = {
-  title: 'Midtown Las Vegas News & Updates | Arts District Development',
+  title: 'Midtown News for Buyers | Arts District Development Updates',
   description:
-    'Stay updated on the latest Midtown Las Vegas news, developments, and neighborhood updates. From Plaza Tower opening to Arts District growth and community events.',
+    'Real estate and neighborhood news for Midtown Las Vegas buyers — development updates, new openings, and market context from Dr. Jan Duffy.',
   keywords: [
     'Midtown Las Vegas news',
     'Arts District development',
@@ -19,7 +22,7 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: 'Dr. Jan Duffy' }],
   creator: 'Dr. Jan Duffy',
-  publisher: 'Midtown Las Vegas Condos',
+  publisher: REAL_ESTATE_SITE.name,
   alternates: {
     canonical: 'https://www.midtownlasvegascondos.com/news',
   },
@@ -42,15 +45,25 @@ export default function NewsPage() {
       {/* Hero Section */}
       <section className="relative py-20 bg-gradient-to-br from-slate-900 to-slate-700 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <p className="text-sm font-semibold uppercase tracking-wide text-white/70 mb-3">
+            {REAL_ESTATE_SITE.shortName}
+          </p>
           <h1 className="text-5xl md:text-6xl font-bold mb-6">
-            Midtown News
+            Midtown News for Buyers
           </h1>
           <p className="text-xl text-white/90 max-w-3xl mx-auto mb-6">
-            Stay updated on the latest developments, events, and stories from 
-            Las Vegas's most dynamic neighborhood.
+            Development updates and neighborhood stories that affect property values, walkability, and lifestyle near the Arts District.
           </p>
           <p className="text-lg text-white/80 max-w-3xl mx-auto">
-            From new restaurant openings and property developments to cultural milestones and community achievements, discover what's happening in Midtown.
+            Official neighborhood announcements are published at{' '}
+            <a
+              href={OFFICIAL_MIDTOWN_SITE.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline hover:text-white"
+            >
+              {OFFICIAL_MIDTOWN_SITE.url.replace('https://', '')}
+            </a>.
           </p>
         </div>
       </section>
@@ -58,13 +71,13 @@ export default function NewsPage() {
       {/* News Introduction */}
       <section className="py-12 px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto">
         <Breadcrumb items={breadcrumbItems} />
+        <SitePersonaBanner variant="news" />
+        <AgentByline compact />
         <div className="prose prose-lg text-slate-600 space-y-4 mb-12">
           <p>
-            Staying informed about Midtown developments, new business openings, cultural events, and real estate market trends helps current 
-            and prospective residents make informed decisions about this rapidly evolving neighborhood. Our news section covers everything from 
-            major infrastructure projects and new residential developments to gallery openings, restaurant debuts, and community initiatives that 
-            shape Midtown's character. The Arts District's momentum shows no signs of slowing, with monthly announcements of new businesses, 
-            cultural programming expansions, and real estate projects that continue positioning Midtown as Las Vegas's premier urban neighborhood.
+            These articles help current and prospective Midtown owners understand how new businesses, cultural programming, and
+            infrastructure projects shape the neighborhood around their investment. {REAL_ESTATE_SITE.agentName} curates this
+            coverage from a buyer&apos;s perspective — not as the official Midtown marketing team.
           </p>
           <p>
             Recent headlines demonstrate the neighborhood's trajectory. The Plaza Tower's 2025 opening adds significant residential inventory and 

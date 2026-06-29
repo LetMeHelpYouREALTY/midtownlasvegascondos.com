@@ -4,14 +4,17 @@ import { CalendlyLink } from '../components/calendly-link'
 import { Breadcrumb } from '../components/breadcrumb'
 import { MIDTOWN_EVENTS } from '@/lib/midtown-content/events-data'
 import { RealScoutSection } from '@/app/components/realscout-section'
+import { SitePersonaBanner } from '@/app/components/site-persona-banner'
+import { AgentByline } from '@/app/components/agent-byline'
+import { OFFICIAL_MIDTOWN_SITE, REAL_ESTATE_SITE } from '@/lib/site-persona'
 
 export const metadata: Metadata = {
-  title: 'Midtown Las Vegas Events Calendar | First Friday & More',
-  description: 'Discover events in Midtown and the Arts District: First Friday, art walks, Book Festival, Las Vegas Marathon, and more. Live where it happens!',
-  keywords: 'Midtown Las Vegas events, First Friday Las Vegas, Arts District events, Las Vegas Book Festival, Las Vegas Marathon, Arts District calendar',
+  title: 'Midtown Events Guide for Buyers | First Friday & Arts District Calendar',
+  description: 'Event guide for future Midtown residents: First Friday, art walks, Book Festival, and more — with links to the official Midtown calendar at midtownvegas.com.',
+  keywords: 'Midtown Las Vegas events guide, First Friday Las Vegas, Arts District events, live near First Friday',
   authors: [{ name: 'Dr. Jan Duffy' }],
   creator: 'Dr. Jan Duffy',
-  publisher: 'Midtown Las Vegas Condos',
+  publisher: REAL_ESTATE_SITE.name,
   alternates: {
     canonical: 'https://www.midtownlasvegascondos.com/events',
   },
@@ -88,16 +91,25 @@ export default function EventsPage() {
       {/* Hero Section */}
       <section className="relative py-20 bg-gradient-to-br from-slate-900 to-slate-700 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <p className="text-sm font-semibold uppercase tracking-wide text-white/70 mb-3">
+            {REAL_ESTATE_SITE.shortName}
+          </p>
           <h1 className="text-5xl md:text-6xl font-bold mb-6">
-            Events in Midtown
+            Events Guide for Midtown Buyers
           </h1>
           <p className="text-xl text-white/90 max-w-3xl mx-auto mb-6">
-            Stay in the know with what's happening in Midtown. From art walks and food 
-            festivals to pop-up markets and live performances, there's always something 
-            exciting to discover.
+            Understand the festivals, art walks, and community gatherings that make Midtown worth living in — then find a home within walking distance.
           </p>
           <p className="text-lg text-white/80 max-w-3xl mx-auto">
-            Monthly First Fridays, weekly run clubs, annual book festivals, and seasonal celebrations make Midtown Las Vegas's most culturally active neighborhood.
+            For official dates, tickets, and programming, visit{' '}
+            <a
+              href={OFFICIAL_MIDTOWN_SITE.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline hover:text-white"
+            >
+              {OFFICIAL_MIDTOWN_SITE.url.replace('https://', '')}
+            </a>.
           </p>
         </div>
       </section>
@@ -106,7 +118,9 @@ export default function EventsPage() {
       <section className="py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
         <div className="max-w-4xl mx-auto">
           <Breadcrumb items={breadcrumbItems} />
-          <h2 className="text-4xl font-bold text-slate-900 mb-8">The Midtown Event Experience</h2>
+          <SitePersonaBanner variant="event" />
+          <AgentByline compact />
+          <h2 className="text-4xl font-bold text-slate-900 mb-8">Why Events Matter When You Buy Here</h2>
           <div className="prose prose-lg text-slate-600 space-y-6 mb-12">
             <p>
               Midtown's event calendar reflects the neighborhood's vibrant cultural character. From the monthly{' '}

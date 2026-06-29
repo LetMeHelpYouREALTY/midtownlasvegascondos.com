@@ -3,6 +3,7 @@
 import { useState } from 'react'
 import Link from 'next/link'
 import { Menu, X } from 'lucide-react'
+import { REAL_ESTATE_SITE, OFFICIAL_MIDTOWN_SITE, NAV_LABELS } from '@/lib/site-persona'
 
 export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
@@ -11,7 +12,7 @@ export function Header() {
     {
       name: 'Neighborhood',
       items: [
-        { name: 'Discover Midtown', href: '/neighborhood' },
+        { name: NAV_LABELS.neighborhoodGuide, href: '/neighborhood' },
         { name: 'The English Residences', href: '/neighborhood/english-residences' },
         { name: 'Midtown Plaza', href: '/neighborhood/midtown-plaza' },
         { name: 'The English Hotel', href: '/neighborhood/english-hotel' },
@@ -27,22 +28,29 @@ export function Header() {
         { name: 'Stay', href: '/midtown/stay' },
       ],
     },
+    {
+      name: NAV_LABELS.officialMidtown.replace(' ↗', ''),
+      href: OFFICIAL_MIDTOWN_SITE.url,
+    },
     { name: 'Search Properties', href: 'http://drjanduffy.realscout.com/' },
     {
       name: 'Resources',
       items: [
         { name: 'Midtown Real Estate', href: '/midtown-real-estate' },
         { name: "Buyer's Guide", href: '/buyers-guide-midtown' },
+        { name: 'All Buyer Guides', href: '/guides' },
         { name: 'Investment Properties', href: '/investment-properties' },
         { name: 'Arts District Guide', href: '/arts-district-guide' },
         { name: 'HOA Fees Guide', href: '/guides/las-vegas-condo-hoa-fees' },
         { name: 'Walkable Living Guide', href: '/guides/walkable-arts-district-living' },
+        { name: 'Rent vs Buy Guide', href: '/guides/worth-buying-condo-las-vegas-now' },
+        { name: 'Midtown vs Strip', href: '/guides/midtown-vs-strip-condo-living' },
       ],
     },
-    { name: 'Events', href: '/events' },
-    { name: 'News', href: '/news' },
+    { name: NAV_LABELS.eventsGuide.replace(' (for buyers)', ''), href: '/events' },
+    { name: NAV_LABELS.newsForBuyers, href: '/news' },
     { name: 'FAQ', href: '/faq' },
-    { name: 'About', href: '/about' },
+    { name: NAV_LABELS.aboutAgent, href: '/about' },
     { name: 'Contact', href: '/contact' },
   ]
 
@@ -51,8 +59,9 @@ export function Header() {
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
-          <Link href="/" className="flex items-center">
-            <span className="text-2xl font-bold text-slate-900">MIDTOWN</span>
+          <Link href="/" className="flex flex-col leading-tight">
+            <span className="text-base font-bold text-slate-900 tracking-tight">{REAL_ESTATE_SITE.name}</span>
+            <span className="text-xs font-medium text-amber-800">{REAL_ESTATE_SITE.tagline}</span>
           </Link>
 
           {/* Desktop Navigation */}

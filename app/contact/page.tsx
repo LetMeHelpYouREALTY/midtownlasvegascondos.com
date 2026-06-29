@@ -1,14 +1,19 @@
 import Link from 'next/link'
-import Image from 'next/image'
 import { Metadata } from 'next'
+import { AgentProfilePhoto } from '../components/agent-profile-photo'
+import { CalendlyInlineWidget } from '../components/calendly-inline-widget'
 import { CalendlyLink } from '../components/calendly-link'
 import { Breadcrumb } from '../components/breadcrumb'
 import { RealScoutSection } from '../components/realscout-section'
+import { REAL_ESTATE_SITE, formatPostalAddress } from '@/lib/site-persona'
+
+const officeMapQuery = encodeURIComponent(formatPostalAddress(REAL_ESTATE_SITE.address))
+const midtownMapQuery = encodeURIComponent(formatPostalAddress(REAL_ESTATE_SITE.midtownShowroom))
 
 export const metadata: Metadata = {
-  title: 'Contact Dr. Jan Duffy | Midtown Las Vegas Real Estate Agent | (702) 500-1980',
+  title: 'Contact Dr. Jan Duffy',
   description:
-    'Contact Dr. Jan Duffy, your Midtown Las Vegas real estate specialist. Schedule a personalized property tour, get expert guidance on Arts District homes, or learn about investment opportunities. Call (702) 500-1980.',
+    `Contact ${REAL_ESTATE_SITE.agentName} for Midtown Las Vegas condos and English Residences. Call ${REAL_ESTATE_SITE.phone}, email ${REAL_ESTATE_SITE.email}, or visit ${REAL_ESTATE_SITE.address.street}.`,
   keywords: [
     'contact Dr. Jan Duffy',
     'Midtown Las Vegas real estate agent',
@@ -16,17 +21,17 @@ export const metadata: Metadata = {
     'Las Vegas condo specialist',
     'schedule property tour',
   ],
-  authors: [{ name: 'Dr. Jan Duffy' }],
-  creator: 'Dr. Jan Duffy',
-  publisher: 'Midtown Las Vegas Condos',
+  authors: [{ name: REAL_ESTATE_SITE.agentName }],
+  creator: REAL_ESTATE_SITE.agentName,
+  publisher: REAL_ESTATE_SITE.name,
   alternates: {
-    canonical: 'https://www.midtownlasvegascondos.com/contact',
+    canonical: `${REAL_ESTATE_SITE.url}/contact`,
   },
   openGraph: {
-    title: 'Contact Dr. Jan Duffy | Midtown Las Vegas Real Estate',
-    description: 'Schedule a personalized property tour with Dr. Jan Duffy, your Arts District real estate specialist.',
+    title: `Contact ${REAL_ESTATE_SITE.agentName}`,
+    description: REAL_ESTATE_SITE.seo.defaultDescription,
     type: 'website',
-    url: 'https://www.midtownlasvegascondos.com/contact',
+    url: `${REAL_ESTATE_SITE.url}/contact`,
   },
 }
 
@@ -60,20 +65,8 @@ export default function ContactPage() {
           <Breadcrumb items={breadcrumbItems} />
           <h2 className="text-4xl font-bold text-slate-900 mb-8 text-center">Why Work With Dr. Jan Duffy?</h2>
           
-          {/* Dr. Jan Duffy Photo */}
           <div className="flex justify-center mb-8">
-            <div className="relative w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-slate-200 shadow-lg bg-slate-100">
-              <Image
-                src="/images/midtown/dr-jan-duffy.png"
-                alt="Dr. Jan Duffy, Midtown Las Vegas real estate specialist with 30+ years of experience"
-                fill
-                className="object-cover"
-                quality={75}
-                priority
-                sizes="(max-width: 768px) 256px, 320px"
-                loading="eager"
-              />
-            </div>
+            <AgentProfilePhoto size="lg" priority />
           </div>
           
           <div className="prose prose-lg max-w-none text-slate-600 space-y-6">
@@ -194,53 +187,24 @@ export default function ContactPage() {
       </section>
 
       {/* Schedule Tour & Contact Info */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto bg-slate-50">
+      <section id="schedule" className="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto bg-slate-50">
         <div className="grid lg:grid-cols-2 gap-12">
           {/* Schedule Tour with Calendly */}
           <div>
             <h2 className="text-3xl font-bold text-slate-900 mb-6">
-              Schedule Your Home Tour
+              Schedule Your In-Person Consultation
             </h2>
-            <p className="text-lg text-slate-600 mb-8">
-              Book a personalized 30-minute home tour with Dr. Jan Duffy. Experience Midtown properties in person and get expert guidance on finding your perfect home in the Arts District.
+            <p className="text-lg text-slate-600 mb-6">
+              Book directly with Dr. Jan Duffy — in-person real estate consultation at the office or a Midtown property tour.
             </p>
-            <div className="bg-white rounded-lg shadow-lg p-8 border border-slate-200">
-              <div className="text-center mb-6">
-                <svg
-                  className="w-16 h-16 mx-auto mb-4 text-slate-900"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
-                  />
-                </svg>
-                <h3 className="text-2xl font-bold text-slate-900 mb-2">
-                  Book Your Tour
-                </h3>
-                <p className="text-slate-600">
-                  Choose a time that works for you
-                </p>
-              </div>
-              <a
-                href="https://calendly.com/drjanduffy/1-home-tour-30-mins"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block w-full px-8 py-4 bg-slate-900 text-white rounded-lg font-semibold hover:bg-slate-800 transition-colors text-center"
-              >
-                Schedule Your 30-Minute Home Tour
-              </a>
-              <p className="text-sm text-slate-500 text-center mt-4">
-                Opens in a new window. No account required.
-              </p>
-            </div>
+            <CalendlyInlineWidget height="680px" />
+            <p className="text-sm text-slate-500 text-center mt-4">
+              Or{' '}
+              <CalendlyLink text="open scheduling in a popup" variant="link" className="text-slate-700" />
+            </p>
             <div className="mt-6 p-4 bg-slate-100 rounded-lg">
               <p className="text-sm text-slate-600">
-                <strong className="text-slate-900">What to expect:</strong> Dr. Jan will provide a personalized tour of available properties, answer your questions about Midtown living, and help you understand the unique features of each neighborhood.
+                <strong className="text-slate-900">What to expect:</strong> Dr. Jan will discuss your goals, tour available Midtown and Arts District properties, and answer questions about English Residences, HOA fees, and neighborhood walkability.
               </p>
             </div>
           </div>
@@ -272,11 +236,48 @@ export default function ContactPage() {
                       d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
                     />
                   </svg>
-                  Address
+                  Office
                 </h3>
                 <p className="text-slate-600 ml-9">
-                  921 South Main Street<br />
-                  Las Vegas, NV 89101
+                  {REAL_ESTATE_SITE.address.street}<br />
+                  {REAL_ESTATE_SITE.address.city}, {REAL_ESTATE_SITE.address.region}{' '}
+                  {REAL_ESTATE_SITE.address.postalCode}
+                </p>
+                <p className="text-sm text-slate-500 ml-9 mt-2">
+                  Same office hub as Nevada Real Estate Group — consultations and paperwork by appointment.
+                </p>
+              </div>
+
+              <div>
+                <h3 className="text-xl font-semibold text-slate-900 mb-3 flex items-center">
+                  <svg
+                    className="w-6 h-6 mr-3 text-slate-900"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+                    />
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+                    />
+                  </svg>
+                  Midtown property tours
+                </h3>
+                <p className="text-slate-600 ml-9">
+                  {REAL_ESTATE_SITE.midtownShowroom.street}<br />
+                  {REAL_ESTATE_SITE.midtownShowroom.city}, {REAL_ESTATE_SITE.midtownShowroom.region}{' '}
+                  {REAL_ESTATE_SITE.midtownShowroom.postalCode}
+                </p>
+                <p className="text-sm text-slate-500 ml-9 mt-2">
+                  {REAL_ESTATE_SITE.midtownShowroom.label} — English Residences & Arts District showings.
                 </p>
               </div>
 
@@ -368,28 +369,37 @@ export default function ContactPage() {
                       d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7"
                     />
                   </svg>
-                  Location Map
+                  Office location
                 </h3>
                 <div className="relative aspect-video rounded-lg overflow-hidden border border-slate-200 shadow-sm">
                   <iframe
-                    src="https://www.google.com/maps?q=921+South+Main+Street,+Las+Vegas,+NV+89101&output=embed&hl=en"
+                    src={`https://www.google.com/maps?q=${officeMapQuery}&output=embed&hl=en`}
                     width="100%"
                     height="100%"
                     className="absolute inset-0 w-full h-full border-0"
                     loading="lazy"
                     allowFullScreen
                     referrerPolicy="no-referrer-when-downgrade"
-                    title="921 South Main Street, Las Vegas, NV 89101 - Midtown Las Vegas Location"
+                    title={`${formatPostalAddress(REAL_ESTATE_SITE.address)} - Dr. Jan Duffy office`}
                   />
                 </div>
                 <p className="text-sm text-slate-600 mt-3">
                   <a
-                    href="https://www.google.com/maps/search/?api=1&query=921+South+Main+Street,+Las+Vegas,+NV+89101"
+                    href={`https://www.google.com/maps/search/?api=1&query=${officeMapQuery}`}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-slate-900 hover:underline font-medium"
                   >
-                    Get Directions →
+                    Get directions to the office →
+                  </a>
+                  {' · '}
+                  <a
+                    href={`https://www.google.com/maps/search/?api=1&query=${midtownMapQuery}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-slate-900 hover:underline font-medium"
+                  >
+                    Midtown tour meeting point →
                   </a>
                 </p>
               </div>

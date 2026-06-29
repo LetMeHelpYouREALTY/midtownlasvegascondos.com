@@ -3,6 +3,7 @@ import { Metadata } from 'next'
 import { Breadcrumb } from '../components/breadcrumb'
 import { RealScoutListings } from '../components/realscout-listings'
 import { RealScoutScript } from '../components/realscout-script'
+import { CalendlyBookingSection } from '../components/calendly-booking-section'
 import { CalendlyLink } from '../components/calendly-link'
 import { RealScoutSearch } from '../components/realscout-search'
 
@@ -52,11 +53,8 @@ export default function MidtownRealEstatePage() {
           </h2>
           <div className="prose max-w-none mb-8">
             <p className="text-lg text-slate-600 leading-relaxed mb-4">
-              Midtown represents Las Vegas's most rapidly evolving cultural center, located just 
-              north of Charleston Boulevard in the heart of the Arts District. This 18-block 
-              neighborhood has transformed from an industrial zone into a vibrant residential and 
-              commercial destination, offering walkable access to galleries, restaurants, and 
-              cultural events.
+              Midtown is a walkable cultural hub north of Charleston Boulevard in the Arts District — an 18-block area
+              with galleries, restaurants, and residential options that appeal to buyers seeking authentic downtown Las Vegas living.
             </p>
             <p className="text-lg text-slate-600 leading-relaxed mb-4">
               CNN called the Arts District "the most exciting neighborhood" in Las Vegas, and 
@@ -253,6 +251,12 @@ export default function MidtownRealEstatePage() {
             </Link>
           </div>
         </section>
+
+        <CalendlyBookingSection
+          heading="Tour Midtown Listings In Person"
+          description="Schedule an in-person consultation with Dr. Jan Duffy to view Arts District condos and English Residences."
+          className="px-0 py-12"
+        />
 
         {/* CTA Section */}
         <section className="bg-gradient-to-br from-slate-900 to-slate-700 text-white rounded-lg p-12 text-center">

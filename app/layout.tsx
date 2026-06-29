@@ -13,6 +13,9 @@ import { ServiceSchema } from './components/service-schema'
 import { StickyCTABar } from './components/sticky-cta-bar'
 import { WidgetTracker } from './components/widget-tracker'
 import { CalendlyBadge } from './components/calendly-badge'
+import { CalendlyScript } from './components/calendly-script'
+import { REAL_ESTATE_SITE } from '@/lib/site-persona'
+import { getGoogleSiteVerification, SITE_URL } from '@/lib/search-console'
 
 const inter = Inter({ 
   subsets: ['latin'],
@@ -20,16 +23,17 @@ const inter = Inter({
   preload: true,
 })
 
+const googleSiteVerification = getGoogleSiteVerification()
+
 export const metadata: Metadata = {
   title: {
-    default: 'Luxury Midtown Las Vegas Condos | Arts District Real Estate | 702-500-1980',
-    template: '%s | Las Vegas Arts District Condos | Homes by Dr. Jan Duffy',
+    default: REAL_ESTATE_SITE.seo.defaultTitle,
+    template: REAL_ESTATE_SITE.seo.titleTemplate,
   },
-  description:
-    'Discover luxury condominium living in the heart of Las Vegas Arts District. Experience the vibrant culture, dining, and entertainment of Midtown. Contact us today at (702) 500-1980.',
-  metadataBase: new URL('https://www.midtownlasvegascondos.com'),
+  description: REAL_ESTATE_SITE.seo.defaultDescription,
+  metadataBase: new URL(SITE_URL),
   alternates: {
-    canonical: 'https://www.midtownlasvegascondos.com/',
+    canonical: `${SITE_URL}/`,
   },
   keywords: [
     'Las Vegas condos',
@@ -45,7 +49,7 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: 'Dr. Jan Duffy' }],
   creator: 'Dr. Jan Duffy',
-  publisher: 'Midtown Las Vegas Condos',
+  publisher: REAL_ESTATE_SITE.name,
   robots: {
     index: true,
     follow: true,
@@ -58,11 +62,10 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: 'Luxury Midtown Las Vegas Condos | Arts District Real Estate',
-    description:
-      'Luxury condominium living in the heart of Las Vegas Arts District. Contact Dr. Jan at (702) 500-1980',
+    title: REAL_ESTATE_SITE.seo.openGraphTitle,
+    description: REAL_ESTATE_SITE.seo.defaultDescription,
     url: 'https://www.midtownlasvegascondos.com',
-    siteName: 'Midtown Las Vegas Condos',
+    siteName: REAL_ESTATE_SITE.name,
     locale: 'en_US',
     type: 'website',
     images: [
@@ -70,20 +73,19 @@ export const metadata: Metadata = {
         url: 'https://www.midtownlasvegascondos.com/og-image.png',
         width: 1200,
         height: 630,
-        alt: 'Midtown Las Vegas Condos',
+        alt: REAL_ESTATE_SITE.seo.primaryKeyword,
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Midtown Las Vegas Condos',
-    description:
-      'Luxury condominium living in the heart of Las Vegas Arts District',
+    title: REAL_ESTATE_SITE.seo.openGraphTitle,
+    description: REAL_ESTATE_SITE.seo.defaultDescription,
     images: ['https://www.midtownlasvegascondos.com/og-image.png'],
   },
-  verification: {
-    google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION,
-  },
+  verification: googleSiteVerification
+    ? { google: googleSiteVerification }
+    : undefined,
   manifest: '/manifest.json',
   icons: {
     icon: '/favicon.ico',
@@ -180,6 +182,7 @@ export default function RootLayout({
         <main className="pt-16">{children}</main>
         <Footer />
         <StickyCTABar />
+        <CalendlyScript />
         <CalendlyBadge />
       </body>
     </html>

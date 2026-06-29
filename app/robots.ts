@@ -1,8 +1,7 @@
 import { MetadataRoute } from 'next'
+import { SITEMAP_URL } from '@/lib/search-console'
 
 export default function robots(): MetadataRoute.Robots {
-  const baseUrl = 'https://www.midtownlasvegascondos.com'
-  
   return {
     rules: [
       {
@@ -10,7 +9,6 @@ export default function robots(): MetadataRoute.Robots {
         allow: '/',
         disallow: [
           '/api/',
-          // Next.js build assets (JS chunks) — not indexable pages; GSC may list these as "blocked"
           '/_next/',
           '/static/',
           '/listings/',
@@ -22,7 +20,6 @@ export default function robots(): MetadataRoute.Robots {
         allow: '/',
         disallow: [
           '/api/',
-          // Next.js build assets (JS chunks) — not indexable pages; GSC may list these as "blocked"
           '/_next/',
           '/static/',
           '/listings/',
@@ -42,7 +39,6 @@ export default function robots(): MetadataRoute.Robots {
         allow: '/',
         disallow: [
           '/api/',
-          // Next.js build assets (JS chunks) — not indexable pages; GSC may list these as "blocked"
           '/_next/',
           '/static/',
           '/listings/',
@@ -60,6 +56,6 @@ export default function robots(): MetadataRoute.Robots {
         disallow: ['/api/', '/_next/', '/static/'],
       },
     ],
-    sitemap: `${baseUrl}/sitemap.xml`,
+    sitemap: SITEMAP_URL,
   }
 }

@@ -8,11 +8,15 @@ import { RealScoutListings } from './components/realscout-listings'
 import { RealScoutScript } from './components/realscout-script'
 import { PageFAQ } from './components/page-faq'
 import { CalendlyLink } from './components/calendly-link'
+import { REAL_ESTATE_SITE, OFFICIAL_MIDTOWN_SITE } from '@/lib/site-persona'
+import { REDDIT_HOMEPAGE_QUESTIONS } from '@/lib/reddit-aeo-topics'
+import { SitePersonaBanner } from './components/site-persona-banner'
 
 export const metadata: Metadata = {
-  title: 'Luxury Midtown Las Vegas Condos | Arts District Real Estate | 702-500-1980',
-  description:
-    'Discover luxury condominium living in the heart of Las Vegas Arts District. Experience the vibrant culture, dining, and entertainment of Midtown. Contact us today at (702) 500-1980.',
+  title: {
+    absolute: REAL_ESTATE_SITE.seo.defaultTitle,
+  },
+  description: REAL_ESTATE_SITE.seo.defaultDescription,
   alternates: {
     canonical: 'https://www.midtownlasvegascondos.com/',
   },
@@ -50,13 +54,20 @@ export default function HomePage() {
         </div>
         <div className="absolute inset-0 bg-black/50" />
         <div className="relative z-10 text-center px-4 sm:px-6 max-w-4xl mx-auto">
-          <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 tracking-tight">
-            Luxury Midtown Las Vegas Condos
-            <br />
-            <span className="text-4xl md:text-6xl">Arts District Living Reimagined</span>
+          <p className="text-sm md:text-base font-semibold uppercase tracking-widest text-amber-200 mb-4">
+            {REAL_ESTATE_SITE.tagline}
+          </p>
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-4 tracking-tight">
+            {REAL_ESTATE_SITE.seo.primaryKeyword}
           </h1>
-          <p className="text-xl md:text-2xl text-white/90 mb-8">
-            Discover luxury living in the heart of Las Vegas Arts District
+          <p className="text-2xl md:text-3xl font-semibold text-white/95 mb-2">
+            {REAL_ESTATE_SITE.agentName}, {REAL_ESTATE_SITE.agentTitle}
+          </p>
+          <p className="text-lg md:text-xl text-amber-100/90 mb-2 italic">
+            {REAL_ESTATE_SITE.name}
+          </p>
+          <p className="text-lg text-white/80 mb-8 max-w-2xl mx-auto">
+            English Residences, Arts District condos, and walkable Midtown listings — private tours and buyer guidance from a {REAL_ESTATE_SITE.yearsExperience}-year Las Vegas specialist.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <CalendlyLink text="Schedule Your Walk-to-Everything Tour" variant="primary" />
@@ -72,60 +83,43 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* AEO Quick Answers — optimized for AI search citation */}
+      <section className="py-10 px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto">
+        <SitePersonaBanner variant="neighborhood" />
+      </section>
+
+      {/* AEO Quick Answers — Reddit-informed, optimized for AI search citation */}
       <section className="py-16 px-4 sm:px-6 lg:px-8 bg-white border-b border-slate-100">
         <div className="max-w-7xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4 text-center">
-            Midtown Las Vegas: Quick Answers
+            What Reddit Asks About Midtown Las Vegas
           </h2>
-          <p className="text-center text-slate-600 mb-10 max-w-2xl mx-auto">
-            Common questions from buyers researching Arts District condos and walkable downtown living.
+          <p className="text-center text-slate-600 mb-4 max-w-2xl mx-auto">
+            Common questions from r/vegaslocals and r/vegas — answered with quick summaries
+            and links to full buyer guides.
           </p>
-          <div className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
-            <div className="bg-slate-50 rounded-xl p-6 border border-slate-200">
-              <h3 className="text-lg font-bold text-slate-900 mb-2">
-                Is the Arts District walkable?
-              </h3>
-              <p className="text-slate-600 text-sm leading-relaxed">
-                Yes — Walk Score ~86. Midtown at 921 S Main St offers gallery, dining, and event access on foot.{' '}
-                <Link href="/guides/walkable-arts-district-living" className="text-slate-900 font-semibold hover:underline">
-                  Walkable living guide →
-                </Link>
-              </p>
-            </div>
-            <div className="bg-slate-50 rounded-xl p-6 border border-slate-200">
-              <h3 className="text-lg font-bold text-slate-900 mb-2">
-                What do Las Vegas condo HOA fees cost?
-              </h3>
-              <p className="text-slate-600 text-sm leading-relaxed">
-                Low-rise: $50–$150/mo. Arts District high-rises: $400–$800+. Always review the reserve study.{' '}
-                <Link href="/guides/las-vegas-condo-hoa-fees" className="text-slate-900 font-semibold hover:underline">
-                  HOA fees guide →
-                </Link>
-              </p>
-            </div>
-            <div className="bg-slate-50 rounded-xl p-6 border border-slate-200">
-              <h3 className="text-lg font-bold text-slate-900 mb-2">
-                Is buying a Midtown condo a good investment?
-              </h3>
-              <p className="text-slate-600 text-sm leading-relaxed">
-                Midtown has appreciated ~45% since 2015. English Residences offer condo-hotel income potential.{' '}
-                <Link href="/investment-properties" className="text-slate-900 font-semibold hover:underline">
-                  Investment guide →
-                </Link>
-              </p>
-            </div>
-            <div className="bg-slate-50 rounded-xl p-6 border border-slate-200">
-              <h3 className="text-lg font-bold text-slate-900 mb-2">
-                How do I start buying in Midtown?
-              </h3>
-              <p className="text-slate-600 text-sm leading-relaxed">
-                Contact Dr. Jan Duffy at (702) 500-1980 for tours, HOA review, and financing guidance.{' '}
-                <Link href="/buyers-guide-midtown" className="text-slate-900 font-semibold hover:underline">
-                  Buyer&apos;s guide →
-                </Link>
-              </p>
-            </div>
+          <p className="text-center mb-10">
+            <Link href="/guides" className="text-slate-900 font-semibold hover:underline">
+              Browse all buyer guides →
+            </Link>
+          </p>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+            {REDDIT_HOMEPAGE_QUESTIONS.map((item) => (
+              <div
+                key={item.guideSlug}
+                className="bg-slate-50 rounded-xl p-6 border border-slate-200"
+              >
+                <h3 className="text-lg font-bold text-slate-900 mb-2">{item.question}</h3>
+                <p className="text-slate-600 text-sm leading-relaxed">
+                  {item.answer}{' '}
+                  <Link
+                    href={`/guides/${item.guideSlug}`}
+                    className="text-slate-900 font-semibold hover:underline"
+                  >
+                    Full guide →
+                  </Link>
+                </p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -161,128 +155,91 @@ export default function HomePage() {
       <section className="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto bg-white">
         <div className="text-center mb-12">
           <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6">
-            Midtown at the Arts District
+            Why I specialize in Midtown
           </h2>
           <p className="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed mb-6">
-            Say hello to the most rapidly evolving cultural center in the heart of Las Vegas. 
-            This is where you can enjoy a walkable neighborhood with art galleries and privately 
-            owned restaurants and now residences at Midtown.
-          </p>
-          <p className="text-lg text-slate-600 max-w-3xl mx-auto leading-relaxed mb-6">
-            Midtown represents a unique convergence of urban sophistication and creative energy. Unlike the tourist-focused Strip, 
-            Midtown offers authentic Las Vegas living where residents become part of a thriving artistic community. The neighborhood 
-            features converted warehouses housing contemporary art galleries, chef-driven restaurants serving innovative cuisine, 
-            and residential spaces designed for modern urban lifestyles. With walkable streets, monthly cultural events, and a genuine 
-            sense of community, Midtown has emerged as the premier destination for those seeking an authentic Las Vegas experience 
-            beyond the casinos and resorts.
+            Midtown at 921 S Main Street sits in the walkable Arts District north of Charleston. I help buyers compare
+            English Residences, resales, and investment math — while official neighborhood events and dining stay on{' '}
+            <a
+              href={OFFICIAL_MIDTOWN_SITE.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-semibold text-slate-900 hover:underline"
+            >
+              midtownvegas.com
+            </a>.
           </p>
           <div className="max-w-4xl mx-auto text-left mt-12 space-y-6">
             <div>
-              <h3 className="text-2xl font-bold text-slate-900 mb-4">The Arts District Revolution</h3>
+              <h3 className="text-2xl font-bold text-slate-900 mb-4">What buyers ask me first</h3>
               <p className="text-base text-slate-600 leading-relaxed mb-4">
-                What began as a grassroots movement in the late 1990s has transformed into Las Vegas's most dynamic cultural destination. 
-                The{' '}
-                <Link href="/neighborhood/arts-district" className="text-slate-900 font-semibold hover:underline">
-                  Las Vegas Arts District
-                </Link>{' '}
-                spans 18 blocks of creative energy, housing over 30 art galleries, studios, and performance venues. Artists and 
-                entrepreneurs discovered the potential in abandoned warehouses and industrial buildings, transforming them into vibrant 
-                cultural spaces. Today, these converted spaces attract visitors from around the world, drawn by the neighborhood's 
-                authentic character and creative spirit.
-              </p>
-              <p className="text-base text-slate-600 leading-relaxed">
-                The Arts District's growth accelerated with the establishment of{' '}
+                HOA fees and reserves, walk scores to{' '}
                 <Link href="/neighborhood/first-fridays" className="text-slate-900 font-semibold hover:underline">
                   First Friday
                 </Link>
-                {' '}in 2002, which has become the largest monthly art event in the Southwest, drawing over 10,000 visitors each month. 
-                This monthly celebration showcases the neighborhood's creative talent, featuring gallery openings, live music, food trucks, 
-                street performers, and interactive art installations. The event has become a cornerstone of Las Vegas culture, demonstrating 
-                the city's evolution beyond its entertainment reputation into a genuine cultural destination.
+                , English Residences rental rules, and how Arts District appreciation compares to other Las Vegas submarkets.
+                I answer with comps and building-specific documents — not generic neighborhood marketing.
               </p>
             </div>
             <div>
-              <h3 className="text-2xl font-bold text-slate-900 mb-4">Living in the Heart of Culture</h3>
-              <p className="text-base text-slate-600 leading-relaxed mb-4">
-                Midtown residents enjoy unparalleled access to the Arts District's cultural offerings. Within walking distance, you'll find 
-                world-class galleries like the{' '}
-                <Link href="/neighborhood/arts-district" className="text-slate-900 font-semibold hover:underline">
-                  Arts Factory
-                </Link>
-                , which houses multiple artist studios and exhibition spaces. The neighborhood's dining scene features locally-owned 
-                restaurants that celebrate Las Vegas's culinary diversity, from innovative fusion cuisine to traditional comfort food with 
-                creative twists. The{' '}
-                <Link href="/neighborhood/midtown-plaza" className="text-slate-900 font-semibold hover:underline">
-                  Midtown Plaza
-                </Link>{' '}
-                serves as a central gathering space, offering a curated selection of dining, shopping, and entertainment options that 
-                reflect the neighborhood's artistic character.
-              </p>
+              <h3 className="text-2xl font-bold text-slate-900 mb-4">Tour the neighborhood like an owner</h3>
               <p className="text-base text-slate-600 leading-relaxed">
-                The residential experience in Midtown differs fundamentally from typical Las Vegas developments. Rather than isolated 
-                communities accessible only by car, Midtown offers genuine walkability. Residents can stroll to breakfast at local cafes, 
-                browse galleries during lunch breaks, enjoy dinner at chef-driven restaurants, and attend evening performances—all 
-                without leaving the neighborhood. This lifestyle appeals to professionals seeking work-life balance, empty-nesters looking 
-                for vibrant retirement communities, and young creatives drawn to the area's artistic energy. The neighborhood's mix of 
-                residential and commercial spaces creates a 24/7 community where people live, work, and play in close proximity.
-              </p>
-            </div>
-            <div>
-              <h3 className="text-2xl font-bold text-slate-900 mb-4">Investment and Growth Potential</h3>
-              <p className="text-base text-slate-600 leading-relaxed mb-4">
-                Property values in Midtown have demonstrated consistent appreciation, with average increases of 45% since 2015. This growth 
-                reflects the neighborhood's transformation from an industrial area to a sought-after residential and commercial destination. 
-                The ongoing development of new residential projects, including{' '}
-                <Link href="/neighborhood/english-residences" className="text-slate-900 font-semibold hover:underline">
-                  The English Residences
-                </Link>
-                {' '}and the upcoming Plaza Tower, signals continued investment in the area's future. These developments bring modern 
-                amenities and luxury finishes while preserving the neighborhood's authentic character.
-              </p>
-              <p className="text-base text-slate-600 leading-relaxed">
-                Investors recognize Midtown's potential for long-term appreciation and rental income. The neighborhood's proximity to 
-                downtown Las Vegas and the Strip, combined with its unique cultural offerings, makes it attractive to both permanent 
-                residents and short-term visitors. The English Residences condo-hotel model, for example, allows owners to generate 
-                rental income when not using their units, providing an innovative approach to real estate investment. As Midtown continues 
-                to evolve, early investors benefit from the area's growing reputation and increasing property values.
+                On private tours we walk gallery row, Midtown Plaza, and evening dining routes so you feel block-by-block
+                context before you write an offer. Many clients attend First Friday after our showing to confirm the lifestyle fit.
               </p>
             </div>
           </div>
         </div>
 
-        {/* Category Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-5 gap-4 mt-16">
-          {['Shop', 'Dine', 'Live', 'Stay', 'Events'].map((category) => (
-            <Link
-              key={category}
-              href={`#${category.toLowerCase()}`}
-              className="aspect-square bg-slate-100 hover:bg-slate-200 transition-colors rounded-lg flex items-center justify-center group"
-            >
-              <span className="text-2xl font-semibold text-slate-900 group-hover:scale-110 transition-transform">
-                {category}
-              </span>
-            </Link>
-          ))}
+        {/* Buyer resource links — not midtownvegas.com category mirror */}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-16">
+          {[
+            { label: 'Search Listings', href: REAL_ESTATE_SITE.realScoutUrl, external: true },
+            { label: 'English Residences', href: '/neighborhood/english-residences' },
+            { label: 'Buyer\'s Guide', href: '/buyers-guide-midtown' },
+            { label: 'Events Guide', href: '/events' },
+          ].map((item) =>
+            item.external ? (
+              <a
+                key={item.label}
+                href={item.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-5 bg-slate-100 hover:bg-slate-200 transition-colors rounded-lg flex items-center justify-center text-center font-semibold text-slate-900"
+              >
+                {item.label}
+              </a>
+            ) : (
+              <Link
+                key={item.label}
+                href={item.href}
+                className="p-5 bg-slate-100 hover:bg-slate-200 transition-colors rounded-lg flex items-center justify-center text-center font-semibold text-slate-900"
+              >
+                {item.label}
+              </Link>
+            )
+          )}
         </div>
       </section>
 
-      {/* Where is Midtown */}
+      {/* Where is Midtown — buyer geography */}
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-slate-50">
         <div className="max-w-7xl mx-auto">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
               <p className="text-sm font-semibold text-slate-500 uppercase tracking-wide mb-4">
-                The Arts District <span className="italic">North of Charleston</span>
+                Listing geography · Arts District north of Charleston
               </p>
               <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6">
-                Where is Midtown?
+                Where my Midtown listings sit
               </h2>
               <p className="text-lg text-slate-600 leading-relaxed mb-4">
-                Emerging is Midtown, the new neighborhood just north of Charleston, offering 
-                the perfect homebase to fully experience the{' '}
-                <Link href="/neighborhood/arts-district" className="text-slate-900 font-semibold hover:underline">
-                  Las Vegas Arts District
-                </Link>.
+                Midtown centers on 921 S Main Street between Charleston and downtown — anchored by The English Hotel,
+                English Residences, and{' '}
+                <Link href="/neighborhood/midtown-plaza" className="text-slate-900 font-semibold hover:underline">
+                  Midtown Plaza
+                </Link>
+                . I map commute times, airport access, and walk routes during every consultation.
               </p>
               <p className="text-base text-slate-600 leading-relaxed mb-4">
                 Located between Charleston Boulevard and the Fremont East Entertainment District, Midtown encompasses 
@@ -524,10 +481,10 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12">
             <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6">
-              Why Midtown Las Vegas Stands Out
+              Why buyers hire Dr. Jan
             </h2>
             <p className="text-xl text-slate-600 max-w-3xl mx-auto">
-              Discover what makes Midtown the premier destination for authentic Las Vegas living
+              {REAL_ESTATE_SITE.yearsExperience} years of Las Vegas expertise focused on Midtown condos, English Residences, and Arts District investments
             </p>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -597,7 +554,7 @@ export default function HomePage() {
               href="/midtown-real-estate"
               className="inline-block px-8 py-4 bg-slate-900 text-white rounded-lg font-semibold hover:bg-slate-800 transition-colors"
             >
-              Explore Midtown Real Estate
+              Explore listings with Dr. Jan
             </Link>
           </div>
         </div>
@@ -611,15 +568,20 @@ export default function HomePage() {
               Upcoming Events
             </h2>
             <p className="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
-              Stay in the know with what's happening in Midtown. From{' '}
-              <Link href="/neighborhood/first-fridays" className="text-slate-900 font-semibold hover:underline">
-                art walks
-              </Link>{' '}
-              and food festivals to pop-up markets and live performances, there's always something 
-              exciting to discover.{' '}
+              Planning to live near Midtown events? First Friday, run clubs, and seasonal festivals are part of the buyer
+              experience here.{' '}
               <Link href="/events" className="text-slate-900 font-semibold hover:underline">
-                View all events
-              </Link>.
+                Browse our events guide
+              </Link>{' '}
+              or visit the{' '}
+              <a
+                href="https://midtownvegas.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-slate-900 font-semibold hover:underline"
+              >
+                official Midtown calendar
+              </a>.
             </p>
           </div>
           <UpcomingEvents />
@@ -692,10 +654,11 @@ export default function HomePage() {
           </h2>
           <div className="grid md:grid-cols-3 gap-8">
             <div>
-              <h3 className="text-xl font-semibold text-slate-900 mb-2">Address</h3>
+              <h3 className="text-xl font-semibold text-slate-900 mb-2">Office</h3>
               <p className="text-slate-600">
-                921 South Main Street<br />
-                Las Vegas, NV 89101
+                {REAL_ESTATE_SITE.address.street}<br />
+                {REAL_ESTATE_SITE.address.city}, {REAL_ESTATE_SITE.address.region}{' '}
+                {REAL_ESTATE_SITE.address.postalCode}
               </p>
             </div>
             <div>

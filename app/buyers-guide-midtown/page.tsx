@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import { Metadata } from 'next'
 import { Breadcrumb } from '../components/breadcrumb'
+import { CalendlyBookingSection } from '../components/calendly-booking-section'
 import { CalendlyLink } from '../components/calendly-link'
 import { RealScoutListings } from '../components/realscout-listings'
 import { RealScoutSearch } from '../components/realscout-search'
@@ -36,11 +37,24 @@ export default function BuyersGuideMidtownPage() {
         <h1 className="text-5xl md:text-6xl font-bold text-slate-900 mb-6">
           Buyer's Guide to Midtown Las Vegas
         </h1>
-        <p className="text-xl text-slate-600 mb-12 max-w-3xl">
+        <p className="text-xl text-slate-600 mb-8 max-w-3xl">
           Everything you need to know about buying property in Midtown Las Vegas. From 
           understanding the market to closing the deal, this comprehensive guide will help 
           you navigate the buying process with confidence.
         </p>
+
+        <div className="bg-slate-50 border border-slate-200 rounded-xl p-6 mb-12 max-w-4xl">
+          <h2 className="text-xl font-bold text-slate-900 mb-3">
+            Reddit-backed buyer research guides
+          </h2>
+          <p className="text-slate-600 mb-4">
+            Questions from r/vegaslocals and r/vegas — walkability, HOA fees, safety, First
+            Friday living, and rent vs buy — with FAQ schema and Midtown-specific answers.
+          </p>
+          <Link href="/guides" className="text-slate-900 font-semibold hover:underline">
+            View all buyer guides →
+          </Link>
+        </div>
 
         {/* Understanding the Market */}
         <section className="mb-20">
@@ -294,6 +308,12 @@ export default function BuyersGuideMidtownPage() {
             listingStatus="For Sale"
           />
         </section>
+
+        <CalendlyBookingSection
+          heading="Book Your Buyer Consultation"
+          description="Meet Dr. Jan Duffy in person to discuss Midtown condos, English Residences, and your Arts District home search."
+          className="px-0"
+        />
 
         {/* CTA Section */}
         <section className="bg-gradient-to-br from-slate-900 to-slate-700 text-white rounded-lg p-12 text-center">

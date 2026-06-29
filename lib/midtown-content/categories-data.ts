@@ -1,189 +1,190 @@
 import type { MidtownCategory } from './types'
 
+/** Buyer-guide copy — never mirrors midtownvegas.com lifestyle marketing voice */
 export const MIDTOWN_CATEGORIES: MidtownCategory[] = [
   {
     slug: 'dine',
-    title: 'Dine in Midtown Las Vegas | Arts District Restaurants',
+    title: 'Dining Near Midtown Condos | Buyer\'s Guide by Dr. Jan Duffy',
     description:
-      'Discover dining in Midtown and the Las Vegas Arts District — KJ\'s, locally-owned restaurants, craft cocktails, and chef-driven cuisine near The English Residences.',
-    keywords: ['Midtown dining', 'Arts District restaurants Las Vegas', 'English Hotel restaurants', 'downtown Las Vegas food'],
-    h1: 'Dine in Midtown',
-    heroSubtitle: 'Local food is our amenity — where Las Vegas locals go to eat',
+      'If you buy in Midtown, these are the walkable restaurants buyers ask about — KJ\'s, Midtown Plaza, and Arts District favorites near The English Residences.',
+    keywords: ['Midtown dining for residents', 'Arts District restaurants near condos', 'English Hotel restaurants', 'walkable dining Las Vegas'],
+    h1: 'Dining Walk Score for Midtown Buyers',
+    heroSubtitle: 'What you can walk to from Arts District condos — and why locals choose this over the Strip',
     sections: [
       {
         paragraphs: [
-          'The Las Vegas Arts District is where bold creativity thrives. Gritty murals, indie galleries, and craft cocktail bars bring the cool and cultured together. Vintage shops, hip cafés, and edgy nightlife make it the perfect spot to experience the real Vegas vibe — sophisticated yet full of untamed energy.',
+          'When my clients evaluate Midtown condos, dining walkability is usually top three on their list. The Arts District is where Las Vegas locals eat — independent restaurants, craft bars, and chef-driven spots you cannot replicate in a master-planned suburb.',
         ],
       },
       {
         heading: 'KJ\'s at The English Hotel',
         paragraphs: [
-          'KJ\'s at The English Hotel fits right into the Arts District: a little polished, a little playful, and always lively. The table fills with lobster, oysters, prime steaks, and the kind of food that deserves another round of drinks. Add a big game on the screens and the whole place takes on a celebratory mood.',
+          'Owners at The English Residences can walk to KJ\'s without a rideshare — seafood, steaks, and a sports-bar energy that fits the neighborhood. I point buyers here during evening tours so they feel the block after dark, not just the floor plan.',
         ],
       },
       {
-        heading: 'Midtown Plaza Dining',
+        heading: 'Midtown Plaza & Arts District options',
         paragraphs: [
-          'Midtown Plaza curates locally-owned restaurants, artisan coffee, and chef-driven concepts — all walkable from The English Residences. Living in Midtown means your favorite restaurants are steps away, not a Strip traffic jam away.',
+          'Midtown Plaza clusters locally owned concepts steps from 921 S Main St. That matters for resale: buyers pay for daily convenience, not weekend-only entertainment. I compare HOA plus dining access when we run the ownership math together.',
         ],
       },
     ],
     faqs: [
-      { question: 'What restaurants are in Midtown Las Vegas?', answer: 'Midtown features KJ\'s Restaurant at The English Hotel, dining at Midtown Plaza, and dozens of Arts District establishments within walking distance.' },
-      { question: 'Is Midtown good for food lovers?', answer: 'Yes — the Arts District is known as Las Vegas\'s tasting kitchen for locals, with independent restaurants prioritizing craft over chains.' },
+      { question: 'Do Midtown condos have walkable restaurants?', answer: 'Yes — KJ\'s, Midtown Plaza, and dozens of Arts District restaurants are within walking distance of The English Residences. I map this on every buyer tour.' },
+      { question: 'Is dining access worth paying more for in Midtown?', answer: 'Walk Score and amenity access often justify higher price-per-square-foot versus car-dependent communities. We review comps together before you offer.' },
     ],
     featuredLinks: [
-      { name: 'KJ\'s Restaurant', href: '/neighborhood/kjs-restaurant', description: 'Seafood, steaks, and sports-bar energy at The English Hotel' },
-      { name: 'The Pepper Club', href: '/neighborhood/pepper-club', description: 'Award-winning dining at The English Hotel' },
-      { name: 'Midtown Plaza', href: '/neighborhood/midtown-plaza', description: 'Walkable dining hub in the Arts District' },
+      { name: 'KJ\'s Restaurant', href: '/neighborhood/kjs-restaurant', description: 'Walkable dining at The English Hotel' },
+      { name: 'The Pepper Club', href: '/neighborhood/pepper-club', description: 'Fine dining option for owners & guests' },
+      { name: 'Midtown Plaza', href: '/neighborhood/midtown-plaza', description: 'Retail & dining hub near listings' },
     ],
   },
   {
     slug: 'shop',
-    title: 'Shop Midtown Las Vegas | Arts District Retail',
-    description: 'Shopping in Midtown and the Las Vegas Arts District — vintage boutiques, artisan markets, galleries, and unique retail near The English Residences.',
-    keywords: ['Midtown shopping', 'Arts District retail Las Vegas', 'Market in the Alley', 'vintage Las Vegas'],
-    h1: 'Shop Midtown',
-    heroSubtitle: 'Curated retail and artisan markets in the Arts District',
+    title: 'Shopping Near Midtown Listings | Arts District Retail Guide',
+    description: 'Retail and markets within walking distance of Midtown condos — what owners actually use, from Market in the Alley to Arts District boutiques.',
+    keywords: ['Midtown shopping walkability', 'Arts District retail near condos', 'Market in the Alley residents'],
+    h1: 'Shopping Within Walking Distance',
+    heroSubtitle: 'Artisan markets and indie retail — a resale amenity, not a tourist stop',
     sections: [
       {
         paragraphs: [
-          'Midtown and the Arts District offer shopping you won\'t find on the Strip — vintage clothing boutiques, contemporary art galleries, specialty food markets, and handmade goods at Market in the Alley.',
+          'Investors and end-users both ask: “What can I walk to?” Market in the Alley, vintage boutiques, and gallery retail along Main and Commerce are part of the answer when we underwrite a Midtown purchase.',
         ],
       },
       {
         heading: 'Market in the Alley',
         paragraphs: [
-          'Market in the Alley brings local makers and small businesses together monthly at 1326 S Main St — handcrafted jewelry, original art, ceramics, candles, and one-of-a-kind finds.',
+          'Monthly makers market at 1326 S Main St — handmade goods, art, and small-business energy. For condo-hotel owners, this is the kind of foot traffic that supports occupancy and guest experience.',
         ],
       },
     ],
     faqs: [
-      { question: 'Where can I shop near Midtown?', answer: 'Midtown Plaza, Market in the Alley, and dozens of Arts District boutiques are all within walking distance of The English Residences.' },
+      { question: 'Is there everyday shopping near English Residences?', answer: 'Midtown Plaza, Market in the Alley, and Arts District boutiques are walkable. Grocery runs may still need a short drive — we discuss your daily routine on consultation calls.' },
     ],
     featuredLinks: [
-      { name: 'Market in the Alley', href: '/events/market-in-the-alley', description: 'Monthly artisan market in the Arts District' },
+      { name: 'Market in the Alley', href: '/events/market-in-the-alley', description: 'Artisan market near listings' },
       { name: 'Midtown Plaza', href: '/neighborhood/midtown-plaza', description: 'Neighborhood retail hub' },
     ],
   },
   {
     slug: 'stay',
-    title: 'Stay in Midtown Las Vegas | English Hotel & Residences',
-    description: 'Where to stay in Midtown — The English Hotel, The English Residences condo-hotel, and Arts District hospitality near downtown Las Vegas.',
-    keywords: ['Stay Midtown Las Vegas', 'English Hotel', 'English Residences', 'Arts District hotels'],
-    h1: 'Stay in Midtown',
-    heroSubtitle: 'Hotel hospitality meets Arts District ownership',
+    title: 'English Hotel & Residences | Ownership Guide',
+    description: 'Condo-hotel ownership at The English Residences — stay when you want, rental income when you travel. Dr. Jan Duffy explains the model for buyers.',
+    keywords: ['English Residences investment', 'English Hotel condo-hotel', 'Midtown ownership model'],
+    h1: 'Own Instead of Just Staying',
+    heroSubtitle: 'Hotel-branded residences — income, use, and HOA structure explained for buyers',
     sections: [
       {
         paragraphs: [
-          'The English Hotel offers boutique hospitality in the Arts District, while The English Residences let you own a Marriott Tribute Portfolio condo-hotel — stay when you want, earn when you\'re away.',
+          'The English Hotel handles hospitality; The English Residences let you own the asset. I walk buyers through Tribute Portfolio branding, rental management, and how personal use interacts with guest bookings.',
         ],
       },
     ],
     faqs: [
-      { question: 'Can I own a hotel residence in Midtown?', answer: 'Yes — The English Residences are fully owned condo-hotel units managed within The English Hotel collection. Contact Dr. Jan at (702) 500-1980.' },
+      { question: 'Can I live in The English Residences full time?', answer: 'Ownership rules vary by unit and program. Call (702) 500-1980 — I will review the offering plan and management agreement with you before you commit.' },
     ],
     featuredLinks: [
-      { name: 'The English Hotel', href: '/neighborhood/english-hotel', description: 'Boutique hotel in the Arts District' },
-      { name: 'The English Residences', href: '/neighborhood/english-residences', description: 'Luxury condo-hotel ownership' },
+      { name: 'The English Hotel', href: '/neighborhood/english-hotel', description: 'On-site boutique hotel' },
+      { name: 'The English Residences', href: '/neighborhood/english-residences', description: 'Condo-hotel listings I represent' },
     ],
   },
   {
     slug: 'live',
-    title: 'Live in Midtown Las Vegas | Arts District Urban Living',
-    description: 'Live in Midtown Las Vegas — walkable Arts District condos at The English Residences, EV program, run club, and culture at your doorstep.',
-    keywords: ['Live Midtown Las Vegas', 'Arts District condos', 'walkable Las Vegas', 'English Residences'],
-    h1: 'Live in Midtown',
-    heroSubtitle: 'Sleek design meets a lifestyle that doesn\'t wait around',
+    title: 'Living in Midtown Condos | Arts District Buyer Guide',
+    description: 'Walkability, EV amenities, run club, and daily life if you buy in Midtown — practical guidance from Dr. Jan Duffy, not neighborhood marketing.',
+    keywords: ['Live Midtown Las Vegas condos', 'Arts District walkable living', 'English Residences daily life'],
+    h1: 'Daily Life If You Buy Here',
+    heroSubtitle: 'Run club, EV charging, First Friday on your block — what ownership actually feels like',
     sections: [
       {
         paragraphs: [
-          'Unique condo residences anchored in the heart of Midtown at the Arts District, created for those who want to be part of the neighborhood\'s pulse. Own your home steps from culture, cuisine, and the city\'s forward momentum.',
+          'Clients buy Midtown for car-optional routines: morning runs with the Midtown Run Club, EV charging on site, and First Friday outside their door. I help you match building amenities to how you actually live.',
         ],
       },
       {
-        heading: 'Walkable Urban Living',
+        heading: 'Walkable urban ownership',
         paragraphs: [
-          'Midtown puts galleries, restaurants, First Friday, and Midtown Plaza within walking distance. The EV Vehicle Program, Run Club, and Arts District amenities make car-optional living a reality in Las Vegas.',
+          'Gallery walks, Midtown Plaza, and 18b Arts District venues are steps from The English Residences. We compare this lifestyle cost against suburban HOA plus two-car ownership when you are deciding on price range.',
         ],
       },
     ],
     faqs: [
-      { question: 'What condos are available in Midtown?', answer: 'The English Residences offer studios to penthouses at 921 S Main St. Contact Dr. Jan Duffy at (702) 500-1980 for current inventory.' },
+      { question: 'What inventory is available in Midtown now?', answer: 'Studios through penthouses at The English Residences and select Arts District resales. Browse my RealScout feed or call (702) 500-1980 for a private showing.' },
     ],
     featuredLinks: [
-      { name: 'The English Residences', href: '/neighborhood/english-residences', description: 'Luxury Arts District condos' },
-      { name: 'EV Vehicle Program', href: '/neighborhood/ev-program', description: 'Electric vehicle amenities for residents' },
-      { name: 'Midtown Run Club', href: '/neighborhood/run-club', description: 'Community running in the Arts District' },
+      { name: 'The English Residences', href: '/neighborhood/english-residences', description: 'Primary Midtown listings' },
+      { name: 'EV Vehicle Program', href: '/neighborhood/ev-program', description: 'Charging amenities for owners' },
+      { name: 'Midtown Run Club', href: '/neighborhood/run-club', description: 'Community fitness near 921 S Main' },
     ],
   },
   {
     slug: 'things-to-do-in-las-vegas',
-    title: 'Things to Do in Las Vegas | Arts District & Midtown Guide',
-    description: 'Things to do in Las Vegas beyond the Strip — First Friday, galleries, Market in the Alley, Neon City Festival, and Midtown Arts District experiences.',
-    keywords: ['things to do Las Vegas', 'Arts District activities', 'Midtown Las Vegas', 'First Friday Las Vegas'],
-    h1: 'Things to Do Near Midtown',
-    heroSubtitle: 'Culture, events, and experiences in the Arts District',
+    title: 'Arts District Lifestyle | What Owners Get Access To',
+    description: 'First Friday, galleries, and festivals near Midtown listings — how local culture affects property value and quality of life for buyers.',
+    keywords: ['Arts District lifestyle buyers', 'First Friday living', 'Midtown things to do owners'],
+    h1: 'Culture on Your Doorstep',
+    heroSubtitle: 'Events and experiences that matter when you own — not a visitor itinerary',
     sections: [
       {
         paragraphs: [
-          'Las Vegas locals know the Arts District and Midtown offer the city\'s most authentic experiences — monthly First Friday art walks, Market in the Alley, gallery openings, brewery crawls, and festivals like Neon City and Downtown Brew Festival.',
+          'Official event calendars live on midtownvegas.com. As your REALTOR®, I focus on how First Friday, Market in the Alley, and downtown festivals affect noise, parking, walkability, and why owners consider that a feature, not a hassle.',
         ],
       },
       {
-        heading: 'Monthly & Weekly Events',
+        heading: 'Recurring events owners use',
         paragraphs: [
-          'First Friday transforms the Arts District into a street festival on the first Friday of each month. Midtown Run Club meets regularly at 921 S Main St. Gallery walks and Makers Markets add year-round programming.',
+          'First Friday, gallery walks, and the Run Club create year-round street life. That supports English Residences guest demand and makes resale stories easy to tell — “walk to the largest art walk in the Southwest.”',
         ],
       },
     ],
     faqs: [
-      { question: 'What is there to do in the Arts District?', answer: 'First Friday, Market in the Alley, gallery walks, dining at KJ\'s and Midtown Plaza, and festivals throughout the year — all walkable from Midtown.' },
+      { question: 'Will events affect my condo?', answer: 'First Friday brings crowds and street closures nearby. I discuss sound, parking, and guest access for each building so there are no surprises after closing.' },
     ],
     featuredLinks: [
-      { name: 'First Fridays', href: '/neighborhood/first-fridays', description: 'Monthly art festival' },
-      { name: 'Events Calendar', href: '/events', description: 'Full Midtown events list' },
-      { name: 'Arts District Guide', href: '/arts-district-guide', description: 'Complete neighborhood guide' },
+      { name: 'First Fridays guide', href: '/neighborhood/first-fridays', description: 'Monthly art walk near listings' },
+      { name: 'Events guide for buyers', href: '/events', description: 'How events relate to ownership' },
+      { name: 'Arts District guide', href: '/arts-district-guide', description: 'Full buyer neighborhood brief' },
     ],
   },
   {
     slug: 'art',
-    title: 'Art Events in Midtown Las Vegas | Arts District',
-    description: 'Art events in Midtown and the Las Vegas Arts District — First Friday, galleries, Market in the Alley, and Art U OK? Wellness Festival.',
-    keywords: ['Las Vegas art events', 'Arts District galleries', 'First Friday art', 'Midtown art'],
-    h1: 'Art in Midtown',
-    heroSubtitle: 'Galleries, festivals, and creative culture in the 18b Arts District',
+    title: 'Art Scene Near Midtown Condos | Buyer Perspective',
+    description: 'Galleries and art events walking distance from Midtown listings — resale and lifestyle context from Dr. Jan Duffy.',
+    keywords: ['Las Vegas art near condos', 'Arts District galleries walkable', 'First Friday owners'],
+    h1: 'Art Access for Owners',
+    heroSubtitle: 'Gallery district proximity as a property feature — not a tourism pitch',
     sections: [
       {
         paragraphs: [
-          'From First Friday\'s monthly art walk to independent galleries along Casino Center and Main Street, Midtown sits at the center of Las Vegas\'s creative renaissance.',
+          'First Friday and 18b galleries are why many buyers choose Midtown over Summerlin or Henderson. I highlight which buildings have the best walk routes to Casino Center and Main Street gallery clusters.',
         ],
       },
     ],
     faqs: [],
     featuredLinks: [
-      { name: 'First Fridays', href: '/neighborhood/first-fridays', description: 'Southwest\'s largest monthly art event' },
-      { name: 'Las Vegas Arts District', href: '/neighborhood/arts-district', description: 'Neighborhood art guide' },
+      { name: 'First Fridays', href: '/neighborhood/first-fridays', description: 'Monthly art walk guide' },
+      { name: 'Las Vegas Arts District', href: '/neighborhood/arts-district', description: 'Neighborhood buyer brief' },
     ],
   },
   {
     slug: 'music',
-    title: 'Music Events in Midtown Las Vegas | Arts District',
-    description: 'Live music in Midtown and the Las Vegas Arts District — First Friday stages, Neon City Festival, and downtown venues near The English Residences.',
-    keywords: ['Las Vegas live music', 'Arts District music', 'First Friday music', 'Midtown events'],
-    h1: 'Music in Midtown',
-    heroSubtitle: 'Live performances across the Arts District and downtown',
+    title: 'Live Music Near Midtown Listings | Owner Guide',
+    description: 'First Friday stages and downtown festivals near Midtown condos — what buyers should know about noise, access, and guest appeal.',
+    keywords: ['live music Arts District condos', 'First Friday music Midtown', 'Neon City Festival residents'],
+    h1: 'Live Music & Your Property',
+    heroSubtitle: 'Stages, festivals, and sound considerations for Arts District owners',
     sections: [
       {
         paragraphs: [
-          'First Friday features multiple live music stages across the Arts District. Festivals like Neon City Festival and Downtown Brew Festival bring national and local artists to downtown venues minutes from Midtown.',
+          'Live music drives foot traffic — good for condo-hotel income, worth discussing for full-time residents. We review unit orientation, event schedules, and HOA rules during due diligence.',
         ],
       },
     ],
     faqs: [],
     featuredLinks: [
-      { name: 'First Fridays', href: '/neighborhood/first-fridays', description: 'Live music every first Friday' },
-      { name: 'Neon City Festival', href: '/events/2025-neon-city-festival', description: 'Free downtown music festival' },
+      { name: 'First Fridays', href: '/neighborhood/first-fridays', description: 'Live music every month' },
+      { name: 'Neon City Festival', href: '/events/2025-neon-city-festival', description: 'Downtown festival guide' },
     ],
   },
 ]

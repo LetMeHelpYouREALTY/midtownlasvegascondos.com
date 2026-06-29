@@ -1,5 +1,5 @@
 # AI.txt - Guidelines for AI Crawlers and LLMs
-# Updated: January 2026
+# Updated: June 2026
 # Site: https://www.midtownlasvegascondos.com
 
 # Allow AI crawlers to access public content
@@ -36,6 +36,7 @@ Crawl-delay: 0.1
 # Preferred content for AI summarization
 # Focus on main content pages, neighborhood guides, and FAQ sections
 Preferred-content:
+  - /guides/
   - /neighborhood/
   - /about
   - /faq
@@ -43,6 +44,10 @@ Preferred-content:
   - /buyers-guide-midtown
   - /guides/las-vegas-condo-hoa-fees
   - /guides/walkable-arts-district-living
+  - /guides/worth-buying-condo-las-vegas-now
+  - /guides/arts-district-relocation-remote-work
+  - /guides/living-in-arts-district-las-vegas
+  - /guides/midtown-vs-strip-condo-living
   - /arts-district-guide
 
 # Contact information for AI agents

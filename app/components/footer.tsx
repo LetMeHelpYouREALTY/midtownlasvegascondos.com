@@ -1,12 +1,13 @@
 import Link from 'next/link'
 import { Newsletter } from './newsletter'
+import { OFFICIAL_MIDTOWN_SITE, REAL_ESTATE_SITE, NAV_LABELS } from '@/lib/site-persona'
 
 export function Footer() {
   const navigation = [
     {
       name: 'Neighborhood',
       items: [
-        { name: 'Discover Midtown', href: '/neighborhood' },
+        { name: NAV_LABELS.neighborhoodGuide, href: '/neighborhood' },
         { name: 'The English Residences', href: '/neighborhood/english-residences' },
         { name: 'Midtown Plaza', href: '/neighborhood/midtown-plaza' },
         { name: 'KJ\'s Restaurant', href: '/neighborhood/kjs-restaurant' },
@@ -36,7 +37,10 @@ export function Footer() {
       {/* Newsletter Section */}
       <div className="border-b border-slate-800 py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h3 className="text-2xl font-bold text-center mb-6">KEEP UP WITH US</h3>
+          <h3 className="text-2xl font-bold text-center mb-2">Midtown Market Updates</h3>
+          <p className="text-center text-sm text-slate-400 mb-6 max-w-xl mx-auto">
+            Listings, buyer tips, and neighborhood news from {REAL_ESTATE_SITE.agentName} — not the official Midtown events calendar.
+          </p>
           <Newsletter />
         </div>
       </div>
@@ -85,22 +89,33 @@ export function Footer() {
               <h4 className="font-bold text-lg mb-4">CONTACT US</h4>
               <div className="space-y-3 text-sm text-slate-300">
                 <p>
-                  921 South Main Street<br />
-                  Las Vegas, NV 89101
+                  {REAL_ESTATE_SITE.address.street}<br />
+                  {REAL_ESTATE_SITE.address.city}, {REAL_ESTATE_SITE.address.region} {REAL_ESTATE_SITE.address.postalCode}
                 </p>
                 <p>
-                  <a href="tel:7025001980" className="hover:text-white transition-colors">
-                    (702) 500-1980
+                  <a href={REAL_ESTATE_SITE.phoneTel} className="hover:text-white transition-colors">
+                    {REAL_ESTATE_SITE.phone}
                   </a>
                 </p>
                 <p>
-                  <a href="mailto:DrJanSells@MidtownVegasCondos.com" className="hover:text-white transition-colors">
-                    DrJanSells@MidtownVegasCondos.com
+                  <a href={`mailto:${REAL_ESTATE_SITE.email}`} className="hover:text-white transition-colors">
+                    {REAL_ESTATE_SITE.email}
                   </a>
                 </p>
                 <p>
                   Sun-Thu: 9 am – 5 pm<br />
                   Fri-Sat: Closed
+                </p>
+                <p className="pt-2 border-t border-slate-800">
+                  <span className="text-slate-400 block mb-1">Official neighborhood site (events & dining directory):</span>
+                  <a
+                    href={OFFICIAL_MIDTOWN_SITE.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="font-semibold text-white hover:text-slate-200 transition-colors"
+                  >
+                    {OFFICIAL_MIDTOWN_SITE.url.replace('https://', '')} ↗
+                  </a>
                 </p>
               </div>
             </div>
@@ -155,12 +170,16 @@ export function Footer() {
           </div>
 
           {/* Copyright */}
-          <div className="text-center text-sm text-slate-400 border-t border-slate-800 pt-8">
-            <p>© 2025 Midtown Las Vegas | Condos By Dr. Jan Duffy S.0197614. All Rights Reserved.</p>
+          <div className="text-center text-sm text-slate-400 border-t border-slate-800 pt-8 space-y-2">
+            <p>
+              © {new Date().getFullYear()} {REAL_ESTATE_SITE.name} | {REAL_ESTATE_SITE.agentName} {REAL_ESTATE_SITE.license}. All Rights Reserved.
+            </p>
+            <p className="text-xs text-slate-500">
+              This site is independent real estate guidance — not affiliated with {OFFICIAL_MIDTOWN_SITE.name} ({OFFICIAL_MIDTOWN_SITE.url}).
+            </p>
           </div>
         </div>
       </div>
     </footer>
   )
 }
-

@@ -3,7 +3,12 @@ import { CalendlyLink } from '@/app/components/calendly-link'
 import { Breadcrumb } from '@/app/components/breadcrumb'
 import { PageFAQSchema } from '@/app/components/page-faq-schema'
 import { RealScoutSection } from '@/app/components/realscout-section'
+import { SitePersonaBanner } from '@/app/components/site-persona-banner'
+import { AgentByline } from '@/app/components/agent-byline'
+import { REAL_ESTATE_SITE } from '@/lib/site-persona'
 import type { MidtownBreadcrumb, MidtownFAQ, MidtownSection } from '@/lib/midtown-content/types'
+
+type PersonaBannerVariant = 'neighborhood' | 'event' | 'news'
 
 type MidtownContentPageProps = {
   h1: string
@@ -15,6 +20,8 @@ type MidtownContentPageProps = {
   featuredLinks?: { name: string; href: string; description: string }[]
   schema?: React.ReactNode
   showAuthor?: boolean
+  showPersonaBanner?: boolean
+  personaBannerVariant?: PersonaBannerVariant
   listingsTitle?: string
   listingsDescription?: string
 }
@@ -28,7 +35,9 @@ export function MidtownContentPage({
   relatedLinks = [],
   featuredLinks = [],
   schema,
-  showAuthor = false,
+  showAuthor = true,
+  showPersonaBanner = true,
+  personaBannerVariant = 'neighborhood',
   listingsTitle,
   listingsDescription,
 }: MidtownContentPageProps) {
@@ -39,6 +48,9 @@ export function MidtownContentPage({
 
       <section className="relative py-20 bg-gradient-to-br from-slate-900 to-slate-700 text-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <p className="text-sm font-semibold uppercase tracking-wide text-white/70 mb-3">
+            {REAL_ESTATE_SITE.shortName}
+          </p>
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">{h1}</h1>
           {heroSubtitle && (
             <p className="text-xl text-white/90 max-w-3xl mx-auto">{heroSubtitle}</p>
@@ -49,19 +61,9 @@ export function MidtownContentPage({
       <section className="py-16 px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto">
         <Breadcrumb items={breadcrumbs} />
 
-        {showAuthor && (
-          <div className="flex items-center gap-3 mb-8 pt-4 border-t border-slate-200">
-            <div className="flex-1">
-              <p className="text-sm font-semibold text-slate-900">By Dr. Jan Duffy</p>
-              <p className="text-xs text-slate-600">
-                Real Estate Agent • License S.0197614.LLC • Midtown Las Vegas Specialist • (702) 500-1980
-              </p>
-            </div>
-            <Link href="/about" className="text-sm text-slate-600 hover:text-slate-900 transition-colors">
-              Learn More →
-            </Link>
-          </div>
-        )}
+        {showPersonaBanner && <SitePersonaBanner variant={personaBannerVariant} />}
+
+        {showAuthor && <AgentByline />}
 
         <div className="prose prose-lg max-w-none text-slate-600 space-y-8">
           {sections.map((section, index) => (
@@ -80,7 +82,7 @@ export function MidtownContentPage({
 
         {featuredLinks.length > 0 && (
           <div className="mt-12">
-            <h2 className="text-2xl font-bold text-slate-900 mb-6">Explore Midtown</h2>
+            <h2 className="text-2xl font-bold text-slate-900 mb-6">Buyer Guides for Midtown</h2>
             <div className="grid sm:grid-cols-2 gap-4">
               {featuredLinks.map((link) => (
                 <Link
@@ -135,19 +137,19 @@ export function MidtownContentPage({
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-4xl font-bold mb-6">Live in the Heart of Midtown</h2>
           <p className="text-xl text-white/90 mb-8">
-            Walk to First Friday, dining, and Arts District culture. Contact Dr. Jan Duffy at Berkshire Hathaway HomeServices Nevada Properties.
+            Walk to First Friday, dining, and Arts District culture. Contact {REAL_ESTATE_SITE.agentName} at {REAL_ESTATE_SITE.brokerage}.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <CalendlyLink text="Schedule Your Walk-to-Everything Tour" variant="primary" />
             <a
-              href="tel:7025001980"
+              href={REAL_ESTATE_SITE.phoneTel}
               className="inline-block px-8 py-4 bg-transparent border-2 border-white text-white rounded-lg font-semibold hover:bg-white/10 transition-colors"
             >
-              Call (702) 500-1980
+              Call {REAL_ESTATE_SITE.phone}
             </a>
           </div>
           <p className="mt-6 text-sm text-white/70">
-            Dr. Jan Duffy • Berkshire Hathaway HomeServices Nevada Properties • License S.0197614.LLC
+            {REAL_ESTATE_SITE.agentName} • {REAL_ESTATE_SITE.brokerage} • License {REAL_ESTATE_SITE.license}
           </p>
         </div>
       </section>

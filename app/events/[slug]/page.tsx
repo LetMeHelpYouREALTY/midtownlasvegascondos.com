@@ -4,6 +4,7 @@ import { MidtownContentPage } from '@/app/components/midtown-content-page'
 import { EventSchema } from '@/app/components/event-schema'
 import { getAllEventSlugs, getEventBySlug } from '@/lib/midtown-content/events-data'
 import { SITE_URL } from '@/lib/midtown-content/constants'
+import { EVENT_ORGANIZER_DEFAULT } from '@/lib/site-persona'
 
 type EventPageProps = {
   params: Promise<{ slug: string }>
@@ -63,6 +64,8 @@ export default async function EventDetailPage({ params }: EventPageProps) {
       relatedLinks={event.relatedLinks}
       listingsTitle={`Homes Near ${event.title.split('|')[0].trim()}`}
       listingsDescription="Explore Midtown and Arts District condos within walking distance of this event. Updated daily."
+      personaBannerVariant="event"
+      showAuthor
       schema={
         <EventSchema
           name={event.title.split('|')[0].trim()}
@@ -79,7 +82,10 @@ export default async function EventDetailPage({ params }: EventPageProps) {
               addressCountry: 'US',
             },
           }}
-          organizer={{ name: 'Midtown Las Vegas' }}
+          organizer={{
+            name: event.organizerName ?? EVENT_ORGANIZER_DEFAULT,
+            url: event.organizerUrl,
+          }}
           url={`${SITE_URL}/events/${slug}`}
         />
       }

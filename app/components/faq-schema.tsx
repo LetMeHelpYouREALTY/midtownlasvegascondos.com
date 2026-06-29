@@ -1,5 +1,7 @@
 // FAQ Structured Data for SEO
 
+import { REAL_ESTATE_SITE, formatPostalAddress } from '@/lib/site-persona'
+
 export function FAQSchema() {
   const schema = {
     '@context': 'https://schema.org',
@@ -11,6 +13,14 @@ export function FAQSchema() {
         acceptedAnswer: {
           '@type': 'Answer',
           text: 'The English Residences are luxury condo-hotel units within The English Hotel in Midtown Las Vegas. Owners can use their residence when they want and earn income when they\'re away through professional hotel management.',
+        },
+      },
+      {
+        '@type': 'Question',
+        name: 'Where is Dr. Jan Duffy\'s office?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: `Dr. Jan Duffy's office is at ${formatPostalAddress(REAL_ESTATE_SITE.address)} — the same Russell Road office hub used by Nevada Real Estate Group. Midtown property tours and English Residences showings meet at ${formatPostalAddress(REAL_ESTATE_SITE.midtownShowroom)} in the Arts District.`,
         },
       },
       {

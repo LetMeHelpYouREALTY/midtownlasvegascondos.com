@@ -7,7 +7,7 @@ import { Breadcrumb } from '../components/breadcrumb'
 import { CalendlyLink } from '../components/calendly-link'
 
 export const metadata: Metadata = {
-  title: 'Property Search | Midtown Las Vegas Condos & Homes',
+  title: 'Property Search',
   description:
     'Search available luxury condominiums, condo-hotels, townhouses, and single-family homes in Midtown Las Vegas and the Arts District. Prices from $150,000 to $3,000,000+. Find your perfect property today.',
   keywords: [

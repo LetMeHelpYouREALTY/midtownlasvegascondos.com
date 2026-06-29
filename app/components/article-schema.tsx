@@ -1,6 +1,8 @@
 // Article Schema for Blog Posts
 // 2026 SEO: Article schema with author bylines enhances E-E-A-T
 
+import { REAL_ESTATE_SITE } from '@/lib/site-persona'
+
 interface ArticleSchemaProps {
   headline: string
   description: string
@@ -27,8 +29,8 @@ export function ArticleSchema({
   url,
   author,
   publisher = {
-    name: 'Midtown Las Vegas Condos',
-    logo: 'https://www.midtownlasvegascondos.com/images/logos/midtown-logo.svg',
+    name: REAL_ESTATE_SITE.name,
+    logo: `${REAL_ESTATE_SITE.url}/images/logos/midtown-logo.svg`,
   },
 }: ArticleSchemaProps) {
   const schema = {
