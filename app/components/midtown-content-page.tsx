@@ -5,7 +5,9 @@ import { PageFAQSchema } from '@/app/components/page-faq-schema'
 import { RealScoutSection } from '@/app/components/realscout-section'
 import { SitePersonaBanner } from '@/app/components/site-persona-banner'
 import { AgentByline } from '@/app/components/agent-byline'
+import { SectionFigure } from '@/app/components/section-figure'
 import { REAL_ESTATE_SITE } from '@/lib/site-persona'
+import type { SectionImageKey } from '@/lib/section-images'
 import type { MidtownBreadcrumb, MidtownFAQ, MidtownSection } from '@/lib/midtown-content/types'
 
 type PersonaBannerVariant = 'neighborhood' | 'event' | 'news'
@@ -24,6 +26,7 @@ type MidtownContentPageProps = {
   personaBannerVariant?: PersonaBannerVariant
   listingsTitle?: string
   listingsDescription?: string
+  image?: SectionImageKey
 }
 
 export function MidtownContentPage({
@@ -40,6 +43,7 @@ export function MidtownContentPage({
   personaBannerVariant = 'neighborhood',
   listingsTitle,
   listingsDescription,
+  image = 'artsDistrictStreet',
 }: MidtownContentPageProps) {
   return (
     <div className="min-h-screen bg-white">
@@ -60,6 +64,8 @@ export function MidtownContentPage({
 
       <section className="py-16 px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto">
         <Breadcrumb items={breadcrumbs} />
+
+        <SectionFigure image={image} priority className="mt-6" />
 
         {showPersonaBanner && <SitePersonaBanner variant={personaBannerVariant} />}
 

@@ -8,6 +8,7 @@ import { RealScoutSection } from '@/app/components/realscout-section'
 import { SitePersonaBanner } from '@/app/components/site-persona-banner'
 import { AgentByline } from '@/app/components/agent-byline'
 import { OFFICIAL_MIDTOWN_SITE, REAL_ESTATE_SITE } from '@/lib/site-persona'
+import { SectionFigure } from '@/app/components/section-figure'
 
 export const metadata: Metadata = {
   title: 'Midtown Las Vegas Neighborhood Guide | Buyer\'s Guide by Dr. Jan Duffy',
@@ -81,6 +82,7 @@ export default function NeighborhoodHubPage() {
 
       <section className="py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
         <Breadcrumb items={[{ name: 'Home', url: '/' }, { name: 'Neighborhood', url: '/neighborhood' }]} />
+        <SectionFigure image="artsDistrictStreet" priority />
 
         <SitePersonaBanner variant="neighborhood" />
         <AgentByline />

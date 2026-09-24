@@ -2,6 +2,7 @@ import Link from 'next/link'
 import { Metadata } from 'next'
 import { RealScoutListings } from '@/app/components/realscout-listings'
 import { RealScoutSection } from '@/app/components/realscout-section'
+import { SectionFigure } from '@/app/components/section-figure'
 
 export const metadata: Metadata = {
   title: 'Midtown Run Club | Community Running Group in Arts District',
@@ -40,6 +41,9 @@ export default function RunClubPage() {
           </div>
         </div>
       </section>
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        <SectionFigure image="runRouteSunrise" priority />
+      </div>
 
       {/* Introduction */}
       <section className="py-20 px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto text-center">

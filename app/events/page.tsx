@@ -7,6 +7,7 @@ import { RealScoutSection } from '@/app/components/realscout-section'
 import { SitePersonaBanner } from '@/app/components/site-persona-banner'
 import { AgentByline } from '@/app/components/agent-byline'
 import { OFFICIAL_MIDTOWN_SITE, REAL_ESTATE_SITE } from '@/lib/site-persona'
+import { SectionFigure } from '@/app/components/section-figure'
 
 export const metadata: Metadata = {
   title: 'Midtown Events Guide for Buyers | First Friday & Arts District Calendar',
@@ -118,6 +119,7 @@ export default function EventsPage() {
       <section className="py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
         <div className="max-w-4xl mx-auto">
           <Breadcrumb items={breadcrumbItems} />
+          <SectionFigure image="firstFridayNight" priority />
           <SitePersonaBanner variant="event" />
           <AgentByline compact />
           <h2 className="text-4xl font-bold text-slate-900 mb-8">Why Events Matter When You Buy Here</h2>

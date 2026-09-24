@@ -5,6 +5,7 @@ import { RealScoutScript } from '@/app/components/realscout-script'
 import { PageFAQ } from '@/app/components/page-faq'
 import { Breadcrumb } from '@/app/components/breadcrumb'
 import { Metadata } from 'next'
+import { SectionFigure } from '@/app/components/section-figure'
 
 export const metadata: Metadata = {
   title: 'Midtown Plaza Las Vegas | Shopping, Dining & Entertainment',
@@ -42,6 +43,7 @@ export default function MidtownPlazaPage() {
       {/* Content */}
       <section className="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
         <Breadcrumb items={breadcrumbItems} />
+        <SectionFigure image="plazaCourtyard" priority />
         <div className="grid md:grid-cols-2 gap-12 items-center mb-16">
           <div>
             <h2 className="text-4xl font-bold text-slate-900 mb-6">

@@ -5,6 +5,7 @@ import { CalendlyBookingSection } from '../components/calendly-booking-section'
 import { CalendlyLink } from '../components/calendly-link'
 import { RealScoutListings } from '../components/realscout-listings'
 import { RealScoutSearch } from '../components/realscout-search'
+import { SectionFigure } from '@/app/components/section-figure'
 
 export const metadata: Metadata = {
   title: "Buyer's Guide to Midtown Las Vegas | How to Buy in Arts District",
@@ -57,6 +58,7 @@ export default function BuyersGuideMidtownPage() {
         </div>
 
         {/* Understanding the Market */}
+        <SectionFigure image="buyerPlanningDesk" priority />
         <section className="mb-20">
           <h2 className="text-4xl font-bold text-slate-900 mb-8">
             Understanding the Midtown Market

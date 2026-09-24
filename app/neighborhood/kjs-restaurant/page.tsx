@@ -4,6 +4,7 @@ import { Breadcrumb } from '@/app/components/breadcrumb'
 import { PageFAQSchema } from '@/app/components/page-faq-schema'
 import { CalendlyLink } from '@/app/components/calendly-link'
 import { RealScoutSection } from '@/app/components/realscout-section'
+import { SectionFigure } from '@/app/components/section-figure'
 
 export const metadata: Metadata = {
   title: 'KJ\'s Restaurant | Midtown Las Vegas at The English Hotel',
@@ -48,6 +49,7 @@ export default function KjsRestaurantPage() {
               { name: 'KJ\'s Restaurant', url: '/neighborhood/kjs-restaurant' },
             ]}
           />
+          <SectionFigure image="restaurantDining" priority />
 
           <div className="prose prose-lg max-w-none text-slate-600 space-y-6">
             <p>

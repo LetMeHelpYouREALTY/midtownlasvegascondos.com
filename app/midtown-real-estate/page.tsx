@@ -6,6 +6,7 @@ import { RealScoutScript } from '../components/realscout-script'
 import { CalendlyBookingSection } from '../components/calendly-booking-section'
 import { CalendlyLink } from '../components/calendly-link'
 import { RealScoutSearch } from '../components/realscout-search'
+import { SectionFigure } from '@/app/components/section-figure'
 
 export const metadata: Metadata = {
   title: 'Midtown Real Estate Las Vegas | Midtown Condos & Homes for Sale',
@@ -47,6 +48,7 @@ export default function MidtownRealEstatePage() {
         </p>
 
         {/* Neighborhood Overview */}
+        <SectionFigure image="condoInterior" priority />
         <section className="mb-20">
           <h2 className="text-4xl font-bold text-slate-900 mb-8">
             About Midtown Las Vegas

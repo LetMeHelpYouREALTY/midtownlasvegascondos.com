@@ -5,6 +5,7 @@ import { Metadata } from 'next'
 import Link from 'next/link'
 import { Breadcrumb } from '../components/breadcrumb'
 import { CalendlyLink } from '../components/calendly-link'
+import { SectionFigure } from '@/app/components/section-figure'
 
 export const metadata: Metadata = {
   title: 'Property Search',
@@ -54,6 +55,7 @@ export default function SearchPage() {
       <section className="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
         <div className="mb-8">
           <Breadcrumb items={breadcrumbItems} />
+          <SectionFigure image="condoBuilding" priority />
         </div>
         <div className="max-w-4xl mx-auto mb-16">
           <h2 className="text-4xl font-bold text-slate-900 mb-8">Your Midtown Property Search Starts Here</h2>

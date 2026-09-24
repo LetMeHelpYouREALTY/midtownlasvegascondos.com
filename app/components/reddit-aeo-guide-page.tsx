@@ -13,6 +13,8 @@ import {
 } from '@/lib/reddit-aeo-topics'
 import { REAL_ESTATE_SITE } from '@/lib/site-persona'
 import { AgentByline } from '@/app/components/agent-byline'
+import { SectionFigure } from '@/app/components/section-figure'
+import { GUIDE_IMAGE_BY_SLUG } from '@/lib/section-images'
 
 function GuideBlock({ block }: { block: GuideContentBlock }) {
   switch (block.type) {
@@ -172,6 +174,12 @@ export function RedditAeoGuidePage({ guide }: RedditAeoGuidePageProps) {
 
           <h1 className="text-5xl md:text-6xl font-bold text-slate-900 mb-6">{guide.h1}</h1>
           <AgentByline />
+
+          <SectionFigure
+            image={GUIDE_IMAGE_BY_SLUG[guide.slug] ?? 'walkableStreetDay'}
+            priority
+            className="max-w-4xl"
+          />
 
           <div className="aeo-quick-answer bg-slate-50 border border-slate-200 rounded-xl p-6 mb-10 max-w-4xl">
             <p className="text-lg text-slate-700 leading-relaxed">

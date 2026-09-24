@@ -66,6 +66,7 @@ export default async function NewsDetailPage({ params }: NewsPageProps) {
         relatedLinks={article.relatedLinks}
         showAuthor
         personaBannerVariant="news"
+        image="downtownSkylineDusk"
         listingsTitle="Midtown & Arts District Properties"
         listingsDescription="Browse condos and residences near the news you read — live where Midtown is growing."
       />

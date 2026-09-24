@@ -6,6 +6,7 @@ import { CalendlyLink } from '../components/calendly-link'
 import { Breadcrumb } from '../components/breadcrumb'
 import { RealScoutSection } from '../components/realscout-section'
 import { REAL_ESTATE_SITE, formatPostalAddress } from '@/lib/site-persona'
+import { SectionFigure } from '@/app/components/section-figure'
 
 const officeMapQuery = encodeURIComponent(formatPostalAddress(REAL_ESTATE_SITE.address))
 const midtownMapQuery = encodeURIComponent(formatPostalAddress(REAL_ESTATE_SITE.midtownShowroom))
@@ -63,6 +64,7 @@ export default function ContactPage() {
       <section className="py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
         <div className="max-w-4xl mx-auto">
           <Breadcrumb items={breadcrumbItems} />
+          <SectionFigure image="consultationOffice" priority />
           <h2 className="text-4xl font-bold text-slate-900 mb-8 text-center">Why Work With Dr. Jan Duffy?</h2>
           
           <div className="flex justify-center mb-8">

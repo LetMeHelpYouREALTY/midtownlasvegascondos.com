@@ -7,6 +7,7 @@ import { RealScoutSection } from '@/app/components/realscout-section'
 import { SitePersonaBanner } from '@/app/components/site-persona-banner'
 import { AgentByline } from '@/app/components/agent-byline'
 import { OFFICIAL_MIDTOWN_SITE, REAL_ESTATE_SITE } from '@/lib/site-persona'
+import { SectionFigure } from '@/app/components/section-figure'
 
 export const metadata: Metadata = {
   title: 'Midtown News for Buyers | Arts District Development Updates',
@@ -71,6 +72,7 @@ export default function NewsPage() {
       {/* News Introduction */}
       <section className="py-12 px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto">
         <Breadcrumb items={breadcrumbItems} />
+        <SectionFigure image="downtownSkylineDusk" priority />
         <SitePersonaBanner variant="news" />
         <AgentByline compact />
         <div className="prose prose-lg text-slate-600 space-y-4 mb-12">

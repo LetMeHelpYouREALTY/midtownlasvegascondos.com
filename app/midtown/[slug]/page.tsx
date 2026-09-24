@@ -3,6 +3,7 @@ import { Metadata } from 'next'
 import { MidtownContentPage } from '@/app/components/midtown-content-page'
 import { getAllCategorySlugs, getCategoryBySlug } from '@/lib/midtown-content/categories-data'
 import { SITE_URL } from '@/lib/midtown-content/constants'
+import { MIDTOWN_IMAGE_BY_SLUG } from '@/lib/section-images'
 
 type CategoryPageProps = {
   params: Promise<{ slug: string }>
@@ -55,6 +56,7 @@ export default async function MidtownCategoryPage({ params }: CategoryPageProps)
       listingsDescription={category.description}
       personaBannerVariant="neighborhood"
       showAuthor
+      image={MIDTOWN_IMAGE_BY_SLUG[slug] ?? 'artsDistrictStreet'}
     />
   )
 }
