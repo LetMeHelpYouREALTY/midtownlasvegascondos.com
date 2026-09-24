@@ -6,9 +6,9 @@ import { RealScoutSection } from '../components/realscout-section'
 import { SectionFigure } from '@/app/components/section-figure'
 
 export const metadata: Metadata = {
-  title: 'Arts District Las Vegas Guide | Culture, Dining, Real Estate',
+  title: 'Las Vegas Arts District Things to Do Guide',
   description:
-    'Comprehensive guide to the Las Vegas Arts District. History, culture, events, dining, galleries, and real estate opportunities in downtown Las Vegas\'s most exciting neighborhood.',
+    'Things to do in the Las Vegas Arts District: galleries, First Friday, restaurants, breweries, and antiques along Main Street, plus Midtown condos nearby.',
   keywords: [
     'Arts District Las Vegas',
     'Arts District living',

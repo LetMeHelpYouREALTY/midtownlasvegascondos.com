@@ -118,10 +118,10 @@ const REDDIT = {
 export const REDDIT_AEO_GUIDES: RedditAeoGuide[] = [
   {
     slug: 'walkable-arts-district-living',
-    title: 'Walkable Living in Las Vegas Arts District | Midtown Guide',
+    title: 'Walkable Neighborhoods in Las Vegas: Arts District',
     h1: 'Walkable Living in the Las Vegas Arts District',
     metaDescription:
-      'Is the Las Vegas Arts District walkable? Guide for remote workers and relocators on walkable daily life, safety, condos vs rent, and Midtown at 921 S Main St. Call (702) 500-1980.',
+      'The Las Vegas Arts District is one of the most walkable neighborhoods in Las Vegas (Walk Score ~86). Daily life on foot, condos vs renting, and Midtown tips.',
     ogTitle: 'Walkable Arts District Living | Midtown Las Vegas',
     ogDescription:
       'Everything you need to know about walkable daily life in the Las Vegas Arts District and Midtown — dining, galleries, condos, and relocation tips.',
@@ -233,10 +233,10 @@ export const REDDIT_AEO_GUIDES: RedditAeoGuide[] = [
   },
   {
     slug: 'las-vegas-condo-hoa-fees',
-    title: 'Las Vegas Condo HOA Fees Guide | Arts District & Midtown',
+    title: 'Las Vegas Condo HOA Fees: Average Costs',
     h1: 'Las Vegas Condo HOA Fees: What You\'re Really Paying For',
     metaDescription:
-      'What do HOA fees cost for Las Vegas condos? Typical Arts District and Midtown HOA ranges, what fees cover, and how to evaluate HOA health before you buy. Call (702) 500-1980.',
+      'Average Las Vegas condo HOA fees run about $50–$150/mo in low-rises and $400–$800+ in high-rises. What fees cover and how to check HOA reserves before you buy.',
     ogTitle: 'Las Vegas Condo HOA Fees Guide | Midtown Arts District',
     ogDescription:
       'Typical HOA fees for Las Vegas condos, including Arts District high-rises and Midtown communities — what you pay and what to ask before buying.',
@@ -350,7 +350,7 @@ export const REDDIT_AEO_GUIDES: RedditAeoGuide[] = [
   },
   {
     slug: 'living-in-arts-district-las-vegas',
-    title: 'Living in the Arts District Las Vegas | Part-Time vs Full-Time',
+    title: 'Living in the Las Vegas Arts District',
     h1: 'Living in the Las Vegas Arts District: What Residents Actually Say',
     metaDescription:
       'Should you live full-time or part-time in the Las Vegas Arts District? Reddit-backed guide on best buildings, lifestyle tradeoffs, and Midtown condo options. Call (702) 500-1980.',
@@ -442,7 +442,7 @@ export const REDDIT_AEO_GUIDES: RedditAeoGuide[] = [
   },
   {
     slug: 'arts-district-relocation-remote-work',
-    title: 'Arts District Relocation for Remote Workers | Las Vegas Guide',
+    title: 'Moving to the Las Vegas Arts District',
     h1: 'Relocating to the Las Vegas Arts District for Remote Work',
     metaDescription:
       'Moving to Las Vegas and working remotely? Arts District relocation guide for walkable daily life, condo vs rent, and Midtown at 921 S Main St. Call (702) 500-1980.',
@@ -531,15 +531,15 @@ export const REDDIT_AEO_GUIDES: RedditAeoGuide[] = [
   },
   {
     slug: 'arts-district-safety-for-residents',
-    title: 'Arts District Safety for Residents | Las Vegas Walking Guide',
+    title: 'Is the Las Vegas Arts District Safe? How to Check',
     h1: 'Is the Las Vegas Arts District Safe for Residents?',
     metaDescription:
-      'Arts District safety for condo buyers — walking at night, building security, and what Las Vegas locals say on Reddit. Midtown buyer guide. Call (702) 500-1980.',
+      'How to research safety in the Las Vegas Arts District: check LVMPD crime data for any address and verify building security features before you buy a condo.',
     ogTitle: 'Arts District Safety for Residents | Midtown Las Vegas',
     ogDescription:
       'Safety tips for living in the Las Vegas Arts District — walking at night, condo security, and resident perspectives from local forums.',
     quickAnswer:
-      'Arts District safety improves on well-lit Main Street and event corridors during gallery hours and First Friday, when foot traffic is high. Condo buyers prioritize buildings with controlled access, secure parking, and on-site management — the same factors r/vegaslocals relocators cite when comparing downtown condos to apartments.',
+      'Safety is personal, so check the data yourself: the Las Vegas Metropolitan Police Department (LVMPD) publishes crime statistics you can review for any address. Then verify each building\'s security features — controlled access, secured garage parking, cameras, and on-site management hours — during your tour.',
     datePublished: '2026-06-28',
     cardSummary: 'Walking at night, building security, and practical safety tips for Arts District condo buyers.',
     redditSources: [REDDIT.safetyWalking, REDDIT.rentVsBuy],
@@ -547,7 +547,7 @@ export const REDDIT_AEO_GUIDES: RedditAeoGuide[] = [
       {
         question: 'Is it safe to walk in the Arts District at night?',
         answer:
-          'Main Street and active event corridors see more foot traffic during gallery hours and First Friday. Residents recommend staying on lit streets, walking with awareness, and using building secure parking rather than street parking late at night — similar to any urban core.',
+          'Review LVMPD crime data for the specific blocks you plan to walk, and visit at the times you would be out. Buildings with secured garage parking reduce late-night street parking, a point locals raise often on r/vegaslocals.',
       },
       {
         question: 'Do Arts District condos offer better security than apartments?',
@@ -555,14 +555,14 @@ export const REDDIT_AEO_GUIDES: RedditAeoGuide[] = [
           'Most buyer-focused condos and high-rises offer controlled entry, secure parking garages, and cameras — features frequently requested in r/vegaslocals threads comparing rent vs buy downtown. Always verify current security staffing and access policies during your tour.',
       },
       {
-        question: 'Are there areas of the Arts District to avoid?',
+        question: 'How do I research safety for a specific Arts District condo?',
         answer:
-          'The 18b Arts District is an evolving urban neighborhood. Blocks closer to Main Street and Midtown Plaza see the most consistent activity. Dr. Jan Duffy can walk you through block-by-block context during an in-person tour so you evaluate safety with local expertise.',
+          'Use LVMPD crime statistics for the exact address, walk the area at different times of day, and ask the HOA about security staffing, incident reporting, and access-control upgrades. Dr. Jan Duffy can pull HOA documents and building security details for any listing.',
       },
       {
         question: 'Does living near First Friday affect safety or noise?',
         answer:
-          'First Friday brings large crowds and increased police presence on event nights — generally positive for active streets, with tradeoffs in noise and parking. See our [First Friday living guide](/guides/first-friday-living-nearby) for buyer expectations.',
+          'First Friday brings large crowds on event nights, with tradeoffs in noise, traffic, and parking. See our [First Friday living guide](/guides/first-friday-living-nearby) for buyer expectations.',
       },
     ],
     sections: [
@@ -598,23 +598,23 @@ export const REDDIT_AEO_GUIDES: RedditAeoGuide[] = [
         ],
       },
       {
-        heading: 'Safety and lifestyle: why buyers still choose Midtown',
+        heading: 'Weighing security features against walkable living',
         blocks: [
           {
             type: 'p',
-            text: 'Buyers accept urban tradeoffs because walkable culture, remote-work convenience, and equity potential in a supply-limited district outweigh suburban isolation. Pair security features with [walkable living](/guides/walkable-arts-district-living) benefits to decide if Arts District ownership fits your comfort level.',
+            text: 'Buyers compare security features with walkability, remote-work convenience, and resale potential in a supply-limited district. Pair the building checklist above with the [walkable living](/guides/walkable-arts-district-living) guide to decide if Arts District ownership fits you.',
           },
         ],
       },
     ],
     relatedGuideSlugs: ['first-friday-living-nearby', 'walkable-arts-district-living', 'arts-district-relocation-remote-work'],
-    calendlyText: 'Schedule a Safety-Focused Neighborhood Tour',
-    realScoutTitle: 'Secure Arts District Condos',
+    calendlyText: 'Schedule a Building Security Walkthrough',
+    realScoutTitle: 'Arts District Condos with Controlled Access',
     realScoutDescription: 'Browse Midtown listings with controlled access and secure parking options.',
   },
   {
     slug: 'first-friday-living-nearby',
-    title: 'Living Near First Friday Las Vegas | Arts District Buyer Guide',
+    title: 'Living Near First Friday Las Vegas',
     h1: 'Living Near First Friday in the Las Vegas Arts District',
     metaDescription:
       'What is it like to live near First Friday Las Vegas? Noise, parking, and buyer tips for Arts District condos near 921 S Main St. Call (702) 500-1980.',
@@ -702,7 +702,7 @@ export const REDDIT_AEO_GUIDES: RedditAeoGuide[] = [
   },
   {
     slug: 'midtown-vs-strip-condo-living',
-    title: 'Midtown vs Strip Condo Living | Las Vegas Buyer Comparison',
+    title: 'Midtown vs Las Vegas Strip Condos: Compared',
     h1: 'Midtown vs Strip Condo Living in Las Vegas',
     metaDescription:
       'Strip high-rise vs Arts District Midtown condos — HOA costs, lifestyle, and what Vegas Reddit buyers compare. Dr. Jan Duffy guide. Call (702) 500-1980.',
@@ -782,7 +782,7 @@ export const REDDIT_AEO_GUIDES: RedditAeoGuide[] = [
   },
   {
     slug: 'worth-buying-condo-las-vegas-now',
-    title: 'Is Buying a Las Vegas Condo Worth It Now? | 2026 Buyer Guide',
+    title: 'Is Buying a Las Vegas Condo Worth It in 2026?',
     h1: 'Is Buying a Las Vegas Condo Worth It Now?',
     metaDescription:
       'Is buying a Las Vegas condo worth it in 2026? Reddit-backed analysis of rent vs buy, HOA costs, interest rates, and Arts District Midtown opportunities. Call (702) 500-1980.',

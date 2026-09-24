@@ -8,21 +8,29 @@ import { getUpcomingFirstFridays } from '@/lib/first-friday'
 
 export const revalidate = 86400
 
-export const metadata: Metadata = {
-  title: 'First Friday Las Vegas | Arts District Monthly Art Walk',
-  description:
-    'Experience First Friday Las Vegas, the largest monthly art event in the Southwest. Join 10,000+ visitors for gallery walks, live music, food trucks, and street art in the Arts District. Free admission, 5-11 PM first Friday of every month.',
-  keywords: [
-    'First Friday Las Vegas',
-    'Arts District First Friday',
-    'Las Vegas art walk',
-    'monthly art event Las Vegas',
-    '18b Arts District events',
-    'First Friday festival',
-  ],
-  alternates: {
-    canonical: 'https://www.midtownlasvegascondos.com/neighborhood/first-fridays',
-  },
+const shortDate = new Intl.DateTimeFormat('en-US', { month: 'short', day: 'numeric', timeZone: 'UTC' })
+
+const metadataKeywords = [
+  'First Friday Las Vegas',
+  'Arts District First Friday',
+  'Las Vegas art walk',
+  'monthly art event Las Vegas',
+  '18b Arts District events',
+  'where to park for First Friday Las Vegas',
+]
+
+export function generateMetadata(): Metadata {
+  const [next] = getUpcomingFirstFridays(1)
+  const nextShort = shortDate.format(new Date(`${next.startDate.slice(0, 10)}T12:00:00Z`))
+
+  return {
+    title: `First Friday Las Vegas: Next Date ${nextShort}`,
+    description: `Next First Friday Las Vegas: ${next.label}, 5–11 PM in the 18b Arts District. Galleries, live music, food trucks, and parking tips.`,
+    keywords: metadataKeywords,
+    alternates: {
+      canonical: 'https://www.midtownlasvegascondos.com/neighborhood/first-fridays',
+    },
+  }
 }
 
 export default function FirstFridaysPage() {

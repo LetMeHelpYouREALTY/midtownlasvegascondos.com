@@ -7,9 +7,9 @@ import { RealScoutSection } from '@/app/components/realscout-section'
 import { SectionFigure } from '@/app/components/section-figure'
 
 export const metadata: Metadata = {
-  title: 'KJ\'s Restaurant | Midtown Las Vegas at The English Hotel',
+  title: 'KJ\'s Restaurant Las Vegas | The English Hotel',
   description:
-    'KJ\'s Restaurant at The English Hotel, 921 S Main St — lobster, oysters, prime steaks, and sports-bar energy in the Las Vegas Arts District. Near The English Residences.',
+    'KJ\'s Restaurant is inside The English Hotel at 921 S Main St, Las Vegas Arts District: lobster, oysters, prime steaks, and a sports-bar vibe.',
   keywords: ['KJs Restaurant Las Vegas', 'English Hotel dining', 'Midtown restaurants', 'Arts District food'],
   alternates: { canonical: 'https://www.midtownlasvegascondos.com/neighborhood/kjs-restaurant' },
 }

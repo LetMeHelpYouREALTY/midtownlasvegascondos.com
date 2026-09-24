@@ -8,9 +8,9 @@ import { RealScoutSearch } from '../components/realscout-search'
 import { SectionFigure } from '@/app/components/section-figure'
 
 export const metadata: Metadata = {
-  title: "Buyer's Guide to Midtown Las Vegas | How to Buy in Arts District",
+  title: 'Buying a Condo in Las Vegas: Buyer\'s Guide',
   description:
-    'Complete guide to buying in Midtown Las Vegas. Learn about neighborhoods, prices, financing, and the buying process. Get expert advice from Arts District specialists.',
+    'Buying a condo in Las Vegas, step by step: budget with HOA fees, get pre-approved, review HOA reserves, compare buildings, and close with confidence.',
   keywords: [
     'buying in Midtown',
     'how to buy Arts District',
@@ -36,7 +36,7 @@ export default function BuyersGuideMidtownPage() {
         <Breadcrumb items={breadcrumbItems} />
         
         <h1 className="text-5xl md:text-6xl font-bold text-slate-900 mb-6">
-          Buyer's Guide to Midtown Las Vegas
+          Buying a Condo in Las Vegas: Midtown Buyer's Guide
         </h1>
         <p className="text-xl text-slate-600 mb-8 max-w-3xl">
           Everything you need to know about buying property in Midtown Las Vegas. From 

@@ -9,9 +9,9 @@ import { RealScoutSearch } from '../components/realscout-search'
 import { SectionFigure } from '@/app/components/section-figure'
 
 export const metadata: Metadata = {
-  title: 'Midtown Real Estate Las Vegas | Midtown Condos & Homes for Sale',
+  title: 'Midtown Las Vegas Real Estate & Listings',
   description:
-    'Discover Midtown Las Vegas real estate. Luxury condos, homes, and condo-hotels in the Arts District. Walkable urban living with galleries, restaurants, and culture. Browse properties today.',
+    'Midtown Las Vegas real estate: Arts District condos, English Residences condo-hotels, and nearby homes for sale. Live listings and tours with Dr. Jan Duffy.',
   keywords: [
     'midtown real estate',
     'midtown las vegas',

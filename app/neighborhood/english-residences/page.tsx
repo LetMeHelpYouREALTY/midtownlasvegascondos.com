@@ -6,10 +6,12 @@ import { RealScoutScript } from '@/app/components/realscout-script'
 import { PageFAQ } from '@/app/components/page-faq'
 import { Breadcrumb } from '@/app/components/breadcrumb'
 import { Metadata } from 'next'
+import { SectionImage } from '@/app/components/section-image'
 
 export const metadata: Metadata = {
-  title: 'The English Residences | Luxury Condo-Hotels in Midtown Las Vegas',
-  description: 'Own a piece of The English Hotel. Luxury condo-hotel units in the Arts District. Stay when you want, earn when you\'re away. Call Dr. Jan at (702) 500-1980.',
+  title: 'English Residences Las Vegas Condos for Sale',
+  description:
+    'The English Residences Las Vegas condos for sale at 921 S Main St: condo-hotel units in the Arts District. Use yours or earn rental income. (702) 500-1980.',
   keywords: 'English Residences, Midtown Las Vegas condos, Arts District condos, condo-hotel Las Vegas, luxury condos downtown Las Vegas, investment property Las Vegas',
   alternates: {
     canonical: 'https://www.midtownlasvegascondos.com/neighborhood/english-residences',
@@ -172,11 +174,7 @@ export default function EnglishResidencesPage() {
               Register for Webinar
             </Link>
           </div>
-          <div className="aspect-[4/3] bg-slate-200 rounded-lg" role="img" aria-label="Luxury English Residences condo-hotel unit interior in The English Hotel featuring modern design, floor-to-ceiling windows, and Arts District views">
-            <div className="w-full h-full flex items-center justify-center text-slate-400">
-              English Residences Interior
-            </div>
-          </div>
+          <SectionImage image="condoInterior" />
         </div>
 
         {/* Investment Details */}

@@ -11,9 +11,9 @@ import { OFFICIAL_MIDTOWN_SITE, REAL_ESTATE_SITE } from '@/lib/site-persona'
 import { SectionFigure } from '@/app/components/section-figure'
 
 export const metadata: Metadata = {
-  title: 'Midtown Las Vegas Neighborhood Guide | Buyer\'s Guide by Dr. Jan Duffy',
+  title: 'Midtown Las Vegas Neighborhood Guide',
   description:
-    'A real estate buyer\'s guide to Midtown Las Vegas — English Residences, Midtown Plaza, First Friday, and walkable Arts District living. Call (702) 500-1980.',
+    'Midtown Las Vegas neighborhood guide for buyers: The English Residences, Midtown Plaza, First Friday, dining, and walkable Arts District living.',
   keywords: [
     'Midtown Las Vegas neighborhood',
     'Arts District places',

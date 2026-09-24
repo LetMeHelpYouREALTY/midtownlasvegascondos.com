@@ -69,14 +69,14 @@ export const REAL_ESTATE_SITE = {
   seo: {
     /** Primary geo keyword — leads homepage H1 and default title */
     primaryKeyword: 'Midtown Las Vegas Condos',
-    defaultTitle: 'Midtown Las Vegas Condos | Dr. Jan Duffy, REALTOR® | (702) 500-1980',
-    titleTemplate: '%s | Dr. Jan Duffy, REALTOR®',
+    defaultTitle: 'Midtown Las Vegas Condos for Sale | Dr. Jan Duffy',
+    titleTemplate: '%s | Dr. Jan Duffy',
     schemaBrandName: 'Midtown Las Vegas Condos | Homes by Dr. Jan Duffy',
     openGraphTitle: 'Midtown Las Vegas Condos | Dr. Jan Duffy, REALTOR®',
     manifestName: 'Midtown Las Vegas Condos | Dr. Jan Duffy',
     manifestShortName: 'Midtown · Dr. Jan',
     defaultDescription:
-      'Your Dream · Your Life · Your Home. Dr. Jan Duffy, REALTOR® GRI, guides buyers through Midtown Las Vegas condos, English Residences, and Arts District investments. Call (702) 500-1980.',
+      'Midtown Las Vegas condos for sale in the Arts District: English Residences, lofts, and condo-hotels. Tours with Dr. Jan Duffy, REALTOR®. (702) 500-1980.',
   },
   /** How this site speaks — consultative, first-person agent, transaction-focused */
   voice: {

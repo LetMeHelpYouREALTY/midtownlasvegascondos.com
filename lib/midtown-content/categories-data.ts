@@ -69,8 +69,8 @@ export const MIDTOWN_CATEGORIES: MidtownCategory[] = [
   },
   {
     slug: 'stay',
-    title: 'English Hotel & Residences | Ownership Guide',
-    description: 'Condo-hotel ownership at The English Residences — stay when you want, rental income when you travel. Dr. Jan Duffy explains the model for buyers.',
+    title: 'Las Vegas Arts District Hotels & Residences',
+    description: 'Where to stay in the Las Vegas Arts District: The English Hotel at 921 S Main St, plus how English Residences condo-hotel ownership works for buyers.',
     keywords: ['English Residences investment', 'English Hotel condo-hotel', 'Midtown ownership model'],
     h1: 'Own Instead of Just Staying',
     heroSubtitle: 'Hotel-branded residences — income, use, and HOA structure explained for buyers',
