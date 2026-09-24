@@ -9,6 +9,17 @@ const REDIRECT_HOSTS = new Set([
   'www.midtownvegascondos.com',
 ])
 
+/** Google sometimes requests the SearchAction placeholder as a real URL. */
+const SEARCH_TEMPLATE_QUERY = '{search_term_string}'
+
+function stripSearchTemplateQuery(url: NextRequest['nextUrl']) {
+  if (url.pathname === '/search' && url.searchParams.get('q') === SEARCH_TEMPLATE_QUERY) {
+    url.searchParams.delete('q')
+    return true
+  }
+  return false
+}
+
 export function proxy(request: NextRequest) {
   const hostname = request.headers.get('host')?.split(':')[0] || ''
   const url = request.nextUrl.clone()
@@ -16,6 +27,11 @@ export function proxy(request: NextRequest) {
   if (REDIRECT_HOSTS.has(hostname)) {
     url.protocol = 'https:'
     url.hostname = WWW_HOST
+    stripSearchTemplateQuery(url)
+    return NextResponse.redirect(url, 301)
+  }
+
+  if (stripSearchTemplateQuery(url)) {
     return NextResponse.redirect(url, 301)
   }
 
