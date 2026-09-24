@@ -7,6 +7,7 @@ import { PageFAQ } from '@/app/components/page-faq'
 import { Breadcrumb } from '@/app/components/breadcrumb'
 import { Metadata } from 'next'
 import { CalendlyLink } from '@/app/components/calendly-link'
+import { SECTION_IMAGES } from '@/lib/section-images'
 
 export const metadata: Metadata = {
   title: 'Arts District Las Vegas Real Estate | Midtown Condo Homes for Sale',
@@ -32,12 +33,12 @@ export default function ArtsDistrictPage() {
       <section className="relative h-[60vh] flex items-center justify-center">
         <div className="absolute inset-0">
           <Image
-            src="/images/midtown/blvd-aerial-rendering.jpg"
-            alt="Aerial nighttime view of BLVD complex and Las Vegas Arts District showing 18-block cultural neighborhood with galleries, restaurants, The English Hotel, and vibrant urban development"
+            src={SECTION_IMAGES.artsDistrictStreet.src}
+            alt={SECTION_IMAGES.artsDistrictStreet.alt}
             fill
             className="object-cover"
             priority
-            quality={85}
+            sizes="100vw"
           />
         </div>
         <div className="absolute inset-0 bg-black/40" />
@@ -159,10 +160,10 @@ export default function ArtsDistrictPage() {
             accomplish daily tasks—a rarity in car-centric Nevada.
           </p>
           <p className="text-slate-600 mb-4 leading-relaxed">
-            The demographic mix includes artists and creative professionals drawn to the cultural scene, young professionals 
-            seeking authentic urban living, empty-nesters downsizing from suburban homes, and investors recognizing the 
-            neighborhood's appreciation potential. This diversity creates vibrant street life where you're as likely to encounter 
-            gallery owners, tech entrepreneurs, retirees, and visiting tourists all enjoying the same sidewalk café.
+            Housing ranges from loft-style condos and condo-hotel residences to mid-rise units with rooftop decks, secured
+            parking, and ground-floor retail. Buyers weigh square footage, HOA dues, parking, and walking distance to galleries,
+            cafés, and the First Friday footprint. Investors also compare short-term rental rules and hotel rental-pool terms
+            before choosing a building.
           </p>
           <p className="text-slate-600 leading-relaxed">
             Property values reflect the neighborhood's transformation and continuing demand. Condos purchased in 2015 for $200,000 

@@ -4,6 +4,7 @@ import { CalendlyLink } from '../components/calendly-link'
 import { RealScoutSection } from '../components/realscout-section'
 import { Breadcrumb } from '../components/breadcrumb'
 import { REAL_ESTATE_SITE } from '@/lib/site-persona'
+import { SectionFigure } from '@/app/components/section-figure'
 
 export const metadata: Metadata = {
   title: 'Midtown Buyer FAQ',
@@ -106,7 +107,7 @@ const faqs = [
       },
       {
         q: 'What about schools?',
-        a: 'Midtown is primarily an arts and entertainment district with fewer families, but Las Vegas has various public and private school options nearby. Contact Dr. Jan for information about schools in the area.',
+        a: 'School assignments depend on the exact property address. Use the Clark County School District zoning lookup to confirm assigned schools, and Dr. Jan can share school names and drive times for any listing you are considering.',
       },
       {
         q: 'Is Midtown pet-friendly?',
@@ -119,7 +120,7 @@ const faqs = [
     questions: [
       {
         q: 'Is Midtown a good investment?',
-        a: 'Midtown has shown strong growth as Las Vegas\'s cultural center. The area attracts tourists, young professionals, and artists. The English Residences offer unique investment potential with rental income, while the neighborhood continues to develop.',
+        a: 'Midtown sits in Las Vegas\'s walkable Arts District, with galleries, restaurants, and monthly First Friday events that draw visitors year-round. The English Residences add a condo-hotel rental-income option, and new development continues nearby. Dr. Jan reviews comps, HOA reserves, and rental rules for each building before you decide.',
       },
       {
         q: 'Can I rent out my condo?',
@@ -127,7 +128,7 @@ const faqs = [
       },
       {
         q: 'What\'s the rental demand like?',
-        a: 'Midtown has strong rental demand from young professionals, artists, and tourists visiting for events like First Friday. The English Residences benefit from The English Hotel\'s established guest base.',
+        a: 'Demand comes from Arts District visitors, event traffic such as First Friday, and downtown workers who want a walkable commute. The English Residences draw on The English Hotel\'s guest bookings. Ask Dr. Jan for current rent and occupancy comps before you buy.',
       },
     ],
   },
@@ -159,6 +160,8 @@ export default function FAQPage() {
       {/* FAQ Introduction */}
       <section className="py-12 px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto">
         <Breadcrumb items={breadcrumbItems} />
+        <SectionFigure image="buyerPlanningDesk" priority />
+        <h2 className="text-3xl font-bold text-slate-900 mb-6">What to Know Before Buying a Midtown Las Vegas Condo</h2>
         <div className="prose prose-lg text-slate-600 space-y-4 mb-12">
           <p>
             Moving to or investing in Midtown Las Vegas represents a significant decision, and we understand you'll have questions about 
@@ -173,8 +176,8 @@ export default function FAQPage() {
           </p>
           <p>
             Midtown attracts diverse buyers with varying priorities. Some seek walkable urban convenience after years of suburban car-dependent 
-            living. Others prioritize investment properties with income generation potential. Creative professionals want proximity to galleries 
-            and cultural events. Retirees desire vibrant community without overwhelming tourist crowds. Whatever brings you to explore Midtown, 
+            living. Others prioritize investment properties with income generation potential. Others want to be steps from galleries 
+            and cultural events, or prefer quieter streets set back from event-night crowds. Whatever brings you to explore Midtown, 
             understanding the neighborhood's unique characteristics helps determine whether it matches your lifestyle and financial goals.
           </p>
           <div className="space-y-6 mt-8">

@@ -12,6 +12,9 @@ import { REAL_ESTATE_SITE, OFFICIAL_MIDTOWN_SITE } from '@/lib/site-persona'
 import { REDDIT_HOMEPAGE_QUESTIONS } from '@/lib/reddit-aeo-topics'
 import { SitePersonaBanner } from './components/site-persona-banner'
 import { AGENT_PHOTO_ALT, getAgentPhotoUrl } from '@/lib/agent-photo'
+import { SectionFigure } from './components/section-figure'
+
+export const revalidate = 86400
 
 export const metadata: Metadata = {
   title: {
@@ -149,8 +152,9 @@ export default function HomePage() {
       <section className="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto bg-slate-50">
         <div className="text-center mb-8">
           <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-4">
-            Find Your Midtown Home
+            Search Midtown Las Vegas Condos for Sale
           </h2>
+          <SectionFigure image="condoInterior" className="max-w-4xl mx-auto" />
           <p className="text-xl text-slate-600 max-w-3xl mx-auto">
             Search available properties in the Arts District
           </p>
@@ -164,8 +168,9 @@ export default function HomePage() {
       <section className="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto bg-white">
         <div className="text-center mb-12">
           <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6">
-            Why I specialize in Midtown
+            Why I Specialize in Midtown Las Vegas Condos
           </h2>
+          <SectionFigure image="walkableStreetDay" className="max-w-4xl mx-auto" />
           <p className="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed mb-6">
             Midtown at 921 S Main Street sits in the walkable Arts District north of Charleston. I help buyers compare
             English Residences, resales, and investment math — while official neighborhood events and dining stay on{' '}
@@ -240,7 +245,7 @@ export default function HomePage() {
                 Listing geography · Arts District north of Charleston
               </p>
               <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6">
-                Where my Midtown listings sit
+                Where Midtown Las Vegas Is: Arts District North of Charleston
               </h2>
               <p className="text-lg text-slate-600 leading-relaxed mb-4">
                 Midtown centers on 921 S Main Street between Charleston and downtown — anchored by The English Hotel,
@@ -332,8 +337,9 @@ export default function HomePage() {
             Constantly Evolving but Always True to Itself
           </p>
           <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6">
-            A Journey of Transformation
+            How the Arts District Transformed Midtown Las Vegas
           </h2>
+          <SectionFigure image="downtownSkylineDusk" className="max-w-4xl mx-auto" />
           <p className="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed mb-6">
             From its origins as an industrial hub to the art center of Sin City, change is 
             baked into the Arts District identity. Witness the transformation of a neighborhood 
@@ -403,8 +409,8 @@ export default function HomePage() {
                   The English Residences
                 </Link>
                 {' '}demonstrated that luxury living could coexist with the neighborhood's artistic character. These developments 
-                attracted a new demographic of residents—professionals, empty-nesters, and investors—who appreciated both the 
-                cultural amenities and the investment potential.
+                added condo inventory with amenities like secured parking, rooftop space, and hotel services, drawing buyers and
+                investors who wanted both the cultural amenities and the investment potential.
               </p>
               <p className="text-base text-slate-600 leading-relaxed mb-3">
                 The opening of{' '}
@@ -490,7 +496,7 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12">
             <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6">
-              Why buyers hire Dr. Jan
+              Why Midtown Condo Buyers Hire Dr. Jan Duffy
             </h2>
             <p className="text-xl text-slate-600 max-w-3xl mx-auto">
               {REAL_ESTATE_SITE.yearsExperience} years of Las Vegas expertise focused on Midtown condos, English Residences, and Arts District investments
@@ -574,8 +580,9 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12">
             <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6">
-              Upcoming Events
+              Upcoming Events Near Midtown Las Vegas Condos
             </h2>
+            <SectionFigure image="firstFridayNight" className="max-w-4xl mx-auto" />
             <p className="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
               Planning to live near Midtown events? First Friday, run clubs, and seasonal festivals are part of the buyer
               experience here.{' '}
@@ -659,7 +666,7 @@ export default function HomePage() {
       <section id="contact" className="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
         <div className="text-center">
           <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-12">
-            Contact Us
+            Contact Dr. Jan Duffy About Midtown Condos
           </h2>
           <div className="grid md:grid-cols-3 gap-8">
             <div>

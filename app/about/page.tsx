@@ -8,6 +8,7 @@ import { RealScoutSection } from '../components/realscout-section'
 import { SitePersonaBanner } from '../components/site-persona-banner'
 import { AgentByline } from '../components/agent-byline'
 import { OFFICIAL_MIDTOWN_SITE, REAL_ESTATE_SITE } from '@/lib/site-persona'
+import { SectionFigure } from '@/app/components/section-figure'
 
 export const metadata: Metadata = {
   title: 'About Dr. Jan Duffy',
@@ -53,6 +54,7 @@ export default function AboutPage() {
       {/* Content */}
       <section className="py-20 px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto">
         <Breadcrumb items={breadcrumbItems} />
+        <SectionFigure image="consultationOffice" priority />
         <SitePersonaBanner variant="neighborhood" />
         <AgentByline />
         <div className="prose prose-lg max-w-none">
@@ -85,9 +87,8 @@ export default function AboutPage() {
             Since 2015, Midtown has experienced remarkable transformation, with property values increasing an average of 45% 
             as urban revitalization efforts converted former industrial warehouses into sought-after residential and commercial 
             destinations. This growth reflects Las Vegas's evolution beyond its entertainment reputation, proving the city offers 
-            world-class cultural amenities and authentic urban living. The neighborhood now attracts creative professionals, young 
-            families, empty-nesters seeking walkable communities, and investors recognizing the area's appreciation potential and 
-            cultural significance.
+            world-class cultural amenities and authentic urban living. Buyers now compare loft condos, condo-hotel residences, and
+            mid-rise units by square footage, HOA dues, parking, and walking distance to galleries and dining.
           </p>
           <p className="text-base text-slate-600 mb-6 leading-relaxed">
             What began as a grassroots artist movement in the late 1990s has matured into a thriving mixed-use neighborhood where 
@@ -254,8 +255,8 @@ export default function AboutPage() {
             Choosing where to live shapes daily life in profound ways. Midtown offers something increasingly rare: genuine 
             walkability combined with cultural richness and community connection. Instead of hours commuting from suburban 
             developments, residents walk to work, dinner, and entertainment while building relationships with local business 
-            owners. This lifestyle appeals to professionals tired of car-dependent living, empty-nesters seeking vibrant retirement 
-            alternatives, and young creatives drawn to the neighborhood's artistic energy. The investment case extends beyond lifestyle 
+            owners. Buyers choose Midtown for walk-to-everything errands, gallery and dining access, and
+            low-maintenance condo living in place of long car commutes. The investment case extends beyond lifestyle 
             to financial performance, with properties consistently appreciating ahead of Las Vegas averages.
           </p>
           <div className="space-y-6 mt-8">

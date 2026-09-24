@@ -3,6 +3,7 @@ import { Metadata } from 'next'
 import { Breadcrumb } from '../components/breadcrumb'
 import { RealScoutListings } from '../components/realscout-listings'
 import { RealScoutSection } from '../components/realscout-section'
+import { SectionFigure } from '@/app/components/section-figure'
 
 export const metadata: Metadata = {
   title: 'Arts District Las Vegas Guide | Culture, Dining, Real Estate',
@@ -42,6 +43,7 @@ export default function ArtsDistrictGuidePage() {
         </p>
 
         {/* History Section */}
+        <SectionFigure image="artsDistrictStreet" priority />
         <section className="mb-20">
           <h2 className="text-4xl font-bold text-slate-900 mb-8">
             History of the Arts District
@@ -85,7 +87,7 @@ export default function ArtsDistrictGuidePage() {
                 The English Hotel
               </Link>{' '}
               demonstrated that luxury living could coexist with the neighborhood's artistic 
-              character, attracting professionals, empty-nesters, and investors.
+              character, adding amenity-rich condos for owner-occupants and investors.
             </p>
           </div>
         </section>

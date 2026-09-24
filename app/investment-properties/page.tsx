@@ -5,6 +5,7 @@ import { RealEstateListingSchema } from '../components/real-estate-listing-schem
 import { CalendlyLink } from '../components/calendly-link'
 import { RealScoutListings } from '../components/realscout-listings'
 import { RealScoutSection } from '../components/realscout-section'
+import { SectionFigure } from '@/app/components/section-figure'
 
 export const metadata: Metadata = {
   title: 'Investment Properties Midtown Las Vegas | Cap Rates, Cash Flow',
@@ -43,6 +44,7 @@ export default function InvestmentPropertiesPage() {
         </p>
 
         {/* Why Midtown for Investors */}
+        <SectionFigure image="condoBuilding" priority />
         <section className="mb-20">
           <h2 className="text-4xl font-bold text-slate-900 mb-8">
             Why Midtown for Investors
@@ -166,9 +168,9 @@ export default function InvestmentPropertiesPage() {
                 Long-Term Rental Properties
               </h3>
               <p className="text-slate-600 leading-relaxed mb-4">
-                Traditional condos and single-family homes in Midtown attract professionals, 
-                creatives, and empty-nesters seeking walkable urban living. The neighborhood's 
-                cultural appeal and proximity to downtown create strong rental demand.
+                Traditional condos and single-family homes in Midtown appeal to renters who want a
+                walkable address near downtown offices, galleries, and dining. Confirm each HOA&apos;s
+                lease minimums and rental caps before you underwrite the income.
               </p>
               <ul className="list-disc list-inside text-slate-600 space-y-2">
                 <li>Stable monthly rental income</li>
