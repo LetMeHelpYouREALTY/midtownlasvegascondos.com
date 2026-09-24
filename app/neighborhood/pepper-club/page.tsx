@@ -3,11 +3,12 @@ import { Metadata } from 'next'
 import { RealScoutListings } from '@/app/components/realscout-listings'
 import { RealScoutSection } from '@/app/components/realscout-section'
 import { SectionFigure } from '@/app/components/section-figure'
+import { SectionImage } from '@/app/components/section-image'
 
 export const metadata: Metadata = {
-  title: 'The Pepper Club | Award-Winning Restaurant at The English Hotel',
+  title: 'The Pepper Club (Closed) at The English Hotel',
   description:
-    'The Pepper Club at The English Hotel offers award-winning dining in Midtown Las Vegas Arts District. Chef-driven cuisine, craft cocktails, and an elegant atmosphere. Located at 921 S Main Street.',
+    'The Pepper Club at The English Hotel closed December 20, 2025. See what is open now at 921 S Main St, including KJ\'s Restaurant, near Midtown condos.',
   keywords: [
     'Pepper Club Las Vegas',
     'English Hotel restaurant',
@@ -32,22 +33,33 @@ export default function PepperClubPage() {
             The Pepper Club
           </h1>
           <p className="text-xl text-white/90 mb-8">
-            Award-winning dining in the heart of Midtown
+            Closed December 20, 2025 — see what&apos;s open now at The English Hotel
           </p>
         </div>
       </section>
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-        <SectionFigure image="restaurantDining" priority />
+        <aside className="mt-10 rounded-xl border-2 border-amber-300 bg-amber-50 p-6">
+          <h2 className="text-xl font-bold text-slate-900 mb-2">The Pepper Club Has Closed</h2>
+          <p className="text-slate-700 leading-relaxed">
+            The Pepper Club at The English Hotel, 921 S Main St, closed on December 20, 2025, as the hotel prepared a new
+            culinary concept.{' '}
+            <Link href="/neighborhood/kjs-restaurant" className="font-semibold text-slate-900 hover:underline">
+              KJ&apos;s Restaurant
+            </Link>{' '}
+            now serves hotel guests and Midtown residents. Read the{' '}
+            <Link href="/news/the-pepper-club-to-close" className="font-semibold text-slate-900 hover:underline">
+              closure announcement
+            </Link>
+            . The history below is kept for reference.
+          </p>
+        </aside>
+        <SectionFigure image="boutiqueHotelLobby" priority />
       </div>
 
       {/* Introduction */}
       <section className="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
         <div className="grid md:grid-cols-2 gap-12 items-center mb-16">
-          <div className="aspect-[4/3] bg-slate-200 rounded-lg" role="img" aria-label="The Pepper Club restaurant interior at The English Hotel in Midtown Las Vegas Arts District featuring modern dining space with contemporary design">
-            <div className="w-full h-full flex items-center justify-center text-slate-400">
-              The Pepper Club Restaurant
-            </div>
-          </div>
+          <SectionImage image="restaurantDining" />
           <div>
             <h2 className="text-4xl font-bold text-slate-900 mb-6">
               Innovative Cuisine, Local Flavors
@@ -264,11 +276,7 @@ export default function PepperClubPage() {
               ))}
             </ul>
           </div>
-          <div className="aspect-[4/3] bg-slate-200 rounded-lg" role="img" aria-label="The Pepper Club restaurant interior showcasing sophisticated dining atmosphere with exposed brick and contemporary art in the Arts District">
-            <div className="w-full h-full flex items-center justify-center text-slate-400">
-              Restaurant Interior
-            </div>
-          </div>
+          <SectionImage image="plazaCourtyard" />
         </div>
       </section>
 

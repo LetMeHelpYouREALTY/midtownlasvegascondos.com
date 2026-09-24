@@ -10,8 +10,9 @@ import { CalendlyLink } from '@/app/components/calendly-link'
 import { SECTION_IMAGES } from '@/lib/section-images'
 
 export const metadata: Metadata = {
-  title: 'Arts District Las Vegas Real Estate | Midtown Condo Homes for Sale',
-  description: 'Explore homes for sale in Las Vegas\'s Arts District. 18 blocks of galleries, restaurants, culture. Midtown condos offer authentic urban living near downtown. Schedule your tour today.',
+  title: 'Las Vegas Arts District (18b): Where It Is',
+  description:
+    'The 18b Las Vegas Arts District runs from Hoover Ave to Colorado Ave between Commerce St and Las Vegas Blvd, with Charleston Blvd through the middle.',
   keywords: 'Las Vegas Arts District, 18b Arts District, downtown Las Vegas homes, First Friday Las Vegas, Arts District condos, creative Las Vegas neighborhood',
   alternates: {
     canonical: 'https://www.midtownlasvegascondos.com/neighborhood/arts-district',
@@ -55,14 +56,45 @@ export default function ArtsDistrictPage() {
       {/* Content */}
       <section className="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
         <Breadcrumb items={breadcrumbItems} />
+        <div className="aeo-quick-answer max-w-4xl mx-auto mb-16 rounded-xl border border-slate-200 bg-slate-50 p-6">
+          <h2 className="text-2xl font-bold text-slate-900 mb-3">Where Is the Arts District in Las Vegas?</h2>
+          <p className="text-lg text-slate-700 leading-relaxed mb-3">
+            The 18b Las Vegas Arts District is in downtown Las Vegas, north of the Strip. The City of Las Vegas sets its
+            boundaries as Hoover Avenue to the north, Commerce Street to the west, just past Colorado Avenue to the south, and
+            Las Vegas Boulevard (then 4th Street south of Charleston) to the east. East Charleston Boulevard runs through the
+            middle, and Main Street and Casino Center Boulevard are the main corridors. Midtown at 921 S Main Street sits
+            inside the district.
+          </p>
+          <p className="text-sm text-slate-600 leading-relaxed">
+            The name comes from the original 18 city blocks; the district now covers about 21. See the{' '}
+            <a
+              href="https://files.lasvegasnevada.gov/map/Arts-District-Plot-Map.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-semibold text-slate-900 hover:underline"
+            >
+              City of Las Vegas Arts District map (PDF)
+            </a>
+            . Charleston Boulevard storm-drain construction runs through 2027, so check city notices for lane and
+            intersection closures before you drive in.
+          </p>
+        </div>
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-slate-900 mb-6">
-            The Most Exciting Neighborhood in Las Vegas
+            Downtown Las Vegas&apos;s Gallery and Dining District
           </h2>
           <p className="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
-            CNN called the Arts District "the most exciting neighborhood" in Las Vegas, and 
-            it's easy to see why. This 18-block cultural epicenter is home to galleries, 
-            studios, vintage shops, and some of the city's best dining.
+            In March 2024,{' '}
+            <a
+              href="https://www.cnn.com/travel/arts-district-las-vegas"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-semibold text-slate-900 hover:underline"
+            >
+              CNN Travel
+            </a>{' '}
+            called the Arts District &ldquo;the most exciting neighborhood in the city.&rdquo; Originally 18 blocks and now about
+            21, it is home to galleries, studios, vintage shops, breweries, and some of the city&apos;s best independent dining.
           </p>
         </div>
 
@@ -305,7 +337,7 @@ export default function ArtsDistrictPage() {
               Search Arts District Homes
             </h2>
             <p className="text-xl text-slate-600 max-w-3xl mx-auto">
-              Browse all available properties in the most exciting neighborhood in Las Vegas
+              Browse available condos and homes in and around the Las Vegas Arts District
             </p>
           </div>
           <div className="max-w-4xl mx-auto">
@@ -323,7 +355,7 @@ export default function ArtsDistrictPage() {
               {
                 question: 'Why is the Arts District called "18b"?',
                 answer:
-                  'The "18b" designation comes from the original Las Vegas township plat. The area was Township 18, Block B. This historic designation has become a beloved nickname for the neighborhood.',
+                  'The name refers to the original 18 city blocks when the district was designated. A sign on Casino Center Boulevard marked the 18b Arts District in 2009, and the district now covers about 21 blocks.',
               },
               {
                 question: 'What happens during First Friday?',
@@ -333,12 +365,12 @@ export default function ArtsDistrictPage() {
               {
                 question: 'How walkable is the neighborhood?',
                 answer:
-                  'The Arts District is one of Las Vegas\'s most walkable neighborhoods. You can easily walk to galleries, restaurants, cafes, and shops. The entire 18-block district is designed for pedestrians.',
+                  'The Arts District is one of Las Vegas\'s most walkable neighborhoods. You can easily walk to galleries, restaurants, cafes, and shops. Main Street and Casino Center Boulevard are the most pedestrian-friendly corridors.',
               },
               {
-                question: 'What type of people live in the Arts District?',
+                question: 'Where is the Arts District in Las Vegas?',
                 answer:
-                  'The neighborhood attracts artists, creative professionals, young urban dwellers, and people who appreciate walkable urban living. It\'s a diverse community of locals who love authentic Las Vegas culture.',
+                  'The 18b Arts District is in downtown Las Vegas, north of the Strip. City boundaries run from Hoover Avenue south to just past Colorado Avenue, and from Commerce Street east to Las Vegas Boulevard (4th Street south of Charleston). Charleston Boulevard runs through the middle.',
               },
             ]}
           />

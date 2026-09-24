@@ -3,11 +3,12 @@ import { Metadata } from 'next'
 import { RealScoutListings } from '@/app/components/realscout-listings'
 import { RealScoutSection } from '@/app/components/realscout-section'
 import { SectionFigure } from '@/app/components/section-figure'
+import { SectionImage } from '@/app/components/section-image'
 
 export const metadata: Metadata = {
-  title: 'The English Hotel | Boutique Luxury Hotel in Las Vegas Arts District',
+  title: 'The English Hotel, Las Vegas Arts District',
   description:
-    'The English Hotel at 921 S Main Street is a boutique luxury hotel in the heart of Midtown Las Vegas Arts District. Home to The Pepper Club restaurant and The English Residences. Experience authentic Las Vegas culture.',
+    'The English Hotel is a boutique hotel at 921 S Main St in the Las Vegas Arts District, home to KJ\'s Restaurant and The English Residences condo-hotels.',
   keywords: [
     'English Hotel Las Vegas',
     'boutique hotel Arts District',
@@ -57,7 +58,7 @@ export default function EnglishHotelPage() {
               {[
                 'Boutique accommodations with modern amenities',
                 'Walking distance to galleries, restaurants, and entertainment',
-                'The Pepper Club restaurant on-site',
+                'KJ\'s Restaurant on-site',
                 'Personalized concierge services',
                 'Unique design reflecting Arts District character',
               ].map((feature) => (
@@ -86,11 +87,7 @@ export default function EnglishHotelPage() {
               Book Your Stay
             </Link>
           </div>
-          <div className="aspect-[4/3] bg-slate-200 rounded-lg" role="img" aria-label="The English Hotel boutique luxury hotel exterior in Las Vegas Arts District at 921 S Main Street with modern industrial design">
-            <div className="w-full h-full flex items-center justify-center text-slate-400">
-              The English Hotel
-            </div>
-          </div>
+          <SectionImage image="boutiqueHotelLobby" />
         </div>
 
         {/* Hotel Experience */}
@@ -113,10 +110,10 @@ export default function EnglishHotelPage() {
               First Friday
             </Link>
             {' '}experiences that guidebooks miss. The{' '}
-            <Link href="/neighborhood/pepper-club" className="text-slate-900 font-semibold hover:underline">
-              Pepper Club
+            <Link href="/neighborhood/kjs-restaurant" className="text-slate-900 font-semibold hover:underline">
+              KJ&apos;s Restaurant
             </Link>
-            {' '}restaurant serves 
+            {' '}serves 
             hotel guests and local residents alike, creating a neighborhood gathering spot that exemplifies the hotel's integration 
             into the community. This approach resonates with travelers seeking authentic Las Vegas experiences beyond slot machines and 
             buffets—people who want to discover the city's creative soul.
@@ -161,8 +158,8 @@ export default function EnglishHotelPage() {
                   Arts District galleries
                 </Link>
                 , and{' '}
-                <Link href="/neighborhood/pepper-club" className="text-slate-900 font-semibold hover:underline">
-                  The Pepper Club
+                <Link href="/neighborhood/kjs-restaurant" className="text-slate-900 font-semibold hover:underline">
+                  KJ&apos;s Restaurant
                 </Link>
                 {' '}creates a truly walkable experience where guests can explore the neighborhood on foot. This convenience appeals to 
                 travelers seeking authentic urban experiences, as well as potential residents evaluating Midtown's lifestyle. The hotel 
@@ -190,23 +187,20 @@ export default function EnglishHotelPage() {
               </p>
             </div>
             <div>
-              <h3 className="text-2xl font-bold text-slate-900 mb-4">The Pepper Club Restaurant</h3>
+              <h3 className="text-2xl font-bold text-slate-900 mb-4">Dining at The English Hotel</h3>
               <p className="text-slate-600 mb-3 leading-relaxed">
-                {' '}
-                <Link href="/neighborhood/pepper-club" className="text-slate-900 font-semibold hover:underline">
-                  The Pepper Club
+                <Link href="/neighborhood/kjs-restaurant" className="text-slate-900 font-semibold hover:underline">
+                  KJ&apos;s Restaurant
                 </Link>
-                {' '}restaurant exemplifies The English Hotel's integration into the Midtown community. This award-winning restaurant serves 
-                both hotel guests and local residents, creating a neighborhood gathering spot that reflects the hotel's commitment to 
-                authentic community connection. The restaurant's chef-driven cuisine and craft cocktails attract diners from across Las Vegas, 
-                while its presence within the hotel creates a seamless experience for guests seeking exceptional dining without leaving the property.
+                {' '}serves hotel guests and Midtown residents with lobster, oysters, prime steaks, and a sports-bar atmosphere, so
+                dining is steps from The English Residences.
               </p>
               <p className="text-slate-600 leading-relaxed">
-                The restaurant's success demonstrates The English Hotel's philosophy of quality over quantity. Rather than multiple generic 
-                dining options, the hotel features one exceptional restaurant that serves as a destination in its own right. This approach 
-                aligns with the Arts District's emphasis on locally-owned, chef-driven establishments, creating an authentic experience that 
-                distinguishes The English Hotel from chain properties. Guests enjoy priority reservations, while residents appreciate access 
-                to award-winning dining within walking distance of their homes.
+                The hotel&apos;s original restaurant,{' '}
+                <Link href="/news/the-pepper-club-to-close" className="text-slate-900 font-semibold hover:underline">
+                  The Pepper Club, closed December 20, 2025
+                </Link>
+                . Confirm current restaurant hours with the hotel before you visit.
               </p>
             </div>
           </div>
@@ -223,9 +217,9 @@ export default function EnglishHotelPage() {
             },
             {
               icon: '🍽️',
-              title: 'The Pepper Club',
+              title: 'KJ\'s Restaurant',
               description:
-                'Award-winning restaurant and bar serving innovative cuisine with locally-sourced ingredients.',
+                'On-site dining with lobster, oysters, prime steaks, and a sports-bar atmosphere.',
             },
             {
               icon: '🎨',
