@@ -32,6 +32,9 @@ importers:
       '@upstash/redis':
         specifier: ^1.35.1
         version: 1.35.5
+      '@vercel/speed-insights':
+        specifier: ^2.0.0
+        version: 2.0.0(next@16.1.4(react-dom@19.1.0(react@19.1.0))(react@19.1.0))(react@19.1.0)
       class-variance-authority:
         specifier: ^0.7.1
         version: 0.7.1
@@ -1339,6 +1342,32 @@ packages:
   '@vercel/queue@0.3.1':
     resolution: {integrity: sha512-6pjdXyNfdCQnj1nyeB1rPtll/XUhmciyeZJD0rpIUUwmcIfR+utDl6+iFvlHvsBdqAVT8UC6ydObT0v+xldfUQ==}
     engines: {node: '>=20.0.0'}
+
+  '@vercel/speed-insights@2.0.0':
+    resolution: {integrity: sha512-jwkNcrTeafWxjmWq4AHBaptSqZiJkYU5adLC9QBSqeim0GcqDMgN5Ievh8OG1rJ6W3A4l1oiP7qr9CWxGuzu3w==}
+    peerDependencies:
+      '@sveltejs/kit': ^1 || ^2
+      next: '>= 13'
+      nuxt: '>= 3'
+      react: ^18 || ^19 || ^19.0.0-rc
+      svelte: '>= 4'
+      vue: ^3
+      vue-router: ^4
+    peerDependenciesMeta:
+      '@sveltejs/kit':
+        optional: true
+      next:
+        optional: true
+      nuxt:
+        optional: true
+      react:
+        optional: true
+      svelte:
+        optional: true
+      vue:
+        optional: true
+      vue-router:
+        optional: true
 
   '@workflow/astro@4.0.10':
     resolution: {integrity: sha512-uGoA1xHmi8hiadiloqO+xb2GYmQCxltNFJWC99bTnGV4V5lvAgXq01TDESQIReE1ZlA+PuPPtv3jtWk8mCOZRQ==}
@@ -4191,6 +4220,11 @@ snapshots:
       minimatch: 10.2.5
       mixpart: 0.0.6
       picocolors: 1.1.1
+
+  '@vercel/speed-insights@2.0.0(next@16.1.4(react-dom@19.1.0(react@19.1.0))(react@19.1.0))(react@19.1.0)':
+    optionalDependencies:
+      next: 16.1.4(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
+      react: 19.1.0
 
   '@workflow/astro@4.0.10(@swc/helpers@0.5.15)':
     dependencies:
