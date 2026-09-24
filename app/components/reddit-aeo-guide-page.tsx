@@ -12,6 +12,7 @@ import {
   type RedditAeoGuide,
 } from '@/lib/reddit-aeo-topics'
 import { REAL_ESTATE_SITE } from '@/lib/site-persona'
+import { AgentByline } from '@/app/components/agent-byline'
 
 function GuideBlock({ block }: { block: GuideContentBlock }) {
   switch (block.type) {
@@ -170,6 +171,7 @@ export function RedditAeoGuidePage({ guide }: RedditAeoGuidePageProps) {
           <Breadcrumb items={breadcrumbItems} />
 
           <h1 className="text-5xl md:text-6xl font-bold text-slate-900 mb-6">{guide.h1}</h1>
+          <AgentByline />
 
           <div className="aeo-quick-answer bg-slate-50 border border-slate-200 rounded-xl p-6 mb-10 max-w-4xl">
             <p className="text-lg text-slate-700 leading-relaxed">

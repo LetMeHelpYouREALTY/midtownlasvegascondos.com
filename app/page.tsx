@@ -11,6 +11,7 @@ import { CalendlyLink } from './components/calendly-link'
 import { REAL_ESTATE_SITE, OFFICIAL_MIDTOWN_SITE } from '@/lib/site-persona'
 import { REDDIT_HOMEPAGE_QUESTIONS } from '@/lib/reddit-aeo-topics'
 import { SitePersonaBanner } from './components/site-persona-banner'
+import { AGENT_PHOTO_ALT, getAgentPhotoUrl } from '@/lib/agent-photo'
 
 export const metadata: Metadata = {
   title: {
@@ -54,8 +55,16 @@ export default function HomePage() {
         </div>
         <div className="absolute inset-0 bg-black/50" />
         <div className="relative z-10 text-center px-4 sm:px-6 max-w-4xl mx-auto">
+          <Image
+            src={getAgentPhotoUrl()}
+            alt={AGENT_PHOTO_ALT}
+            width={112}
+            height={112}
+            priority
+            className="mx-auto mb-6 h-24 w-24 rounded-full shadow-lg md:h-28 md:w-28"
+          />
           <p className="text-sm md:text-base font-semibold uppercase tracking-widest text-amber-200 mb-4">
-            {REAL_ESTATE_SITE.tagline}
+            {REAL_ESTATE_SITE.logoLine}
           </p>
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-4 tracking-tight">
             {REAL_ESTATE_SITE.seo.primaryKeyword}

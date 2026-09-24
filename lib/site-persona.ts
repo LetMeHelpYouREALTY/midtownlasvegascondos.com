@@ -32,6 +32,9 @@ export function formatPostalAddress(
 export const REAL_ESTATE_SITE = {
   name: 'Homes by Dr. Jan Duffy',
   shortName: 'Dr. Jan Duffy Real Estate',
+  /** Header and footer lockup — place name, then the agent line */
+  logoTitle: 'Midtown Las Vegas Condos',
+  logoLine: 'By Dr. Jan Duffy',
   /** Agent-site tagline — NOT "Meet me in Midtown" */
   tagline: 'Your Dream · Your Life · Your Home',
   subtagline: 'Your Midtown Arts District REALTOR®',

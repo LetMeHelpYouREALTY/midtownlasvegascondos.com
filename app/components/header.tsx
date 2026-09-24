@@ -3,7 +3,8 @@
 import { useState } from 'react'
 import Link from 'next/link'
 import { Menu, X } from 'lucide-react'
-import { REAL_ESTATE_SITE, OFFICIAL_MIDTOWN_SITE, NAV_LABELS } from '@/lib/site-persona'
+import { OFFICIAL_MIDTOWN_SITE, NAV_LABELS } from '@/lib/site-persona'
+import { SiteLogo } from './site-logo'
 
 export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
@@ -58,11 +59,7 @@ export function Header() {
     <header className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-slate-200">
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
-          {/* Logo */}
-          <Link href="/" className="flex flex-col leading-tight">
-            <span className="text-base font-bold text-slate-900 tracking-tight">{REAL_ESTATE_SITE.name}</span>
-            <span className="text-xs font-medium text-amber-800">{REAL_ESTATE_SITE.tagline}</span>
-          </Link>
+          <SiteLogo />
 
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center space-x-8">

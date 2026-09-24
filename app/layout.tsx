@@ -15,6 +15,7 @@ import { WidgetTracker } from './components/widget-tracker'
 import { CalendlyBadge } from './components/calendly-badge'
 import { CalendlyScript } from './components/calendly-script'
 import { REAL_ESTATE_SITE } from '@/lib/site-persona'
+import { AgentByline } from './components/agent-byline'
 import { getGoogleSiteVerification, SITE_URL } from '@/lib/search-console'
 
 const inter = Inter({ 
@@ -88,9 +89,13 @@ export const metadata: Metadata = {
     : undefined,
   manifest: '/manifest.json',
   icons: {
-    icon: '/favicon.ico',
+    icon: [
+      { url: '/favicon.ico', sizes: '48x48', type: 'image/x-icon' },
+      { url: '/icons/icon-32.png', sizes: '32x32', type: 'image/png' },
+      { url: '/icons/icon-192.png', sizes: '192x192', type: 'image/png' },
+    ],
     apple: [
-      { url: '/favicon.ico', sizes: '180x180', type: 'image/x-icon' },
+      { url: '/icons/apple-touch-icon.png', sizes: '180x180', type: 'image/png' },
     ],
   },
   category: 'real estate',
@@ -122,8 +127,7 @@ export default function RootLayout({
           href="/images/midtown/blvd-aerial-rendering.jpg"
           fetchPriority="high"
         />
-        {/* Apple touch icon - using favicon.ico as fallback until dedicated PNG is created */}
-        <link rel="apple-touch-icon" href="/favicon.ico" sizes="180x180" />
+        <link rel="apple-touch-icon" href="/icons/apple-touch-icon.png" sizes="180x180" />
         {/* theme-color is supported by Chrome, Edge, Safari, and mobile browsers (not Firefox/Opera) */}
         <meta name="theme-color" content="#0f172a" />
         {/* DNS Prefetch for non-critical resources */}
@@ -180,6 +184,11 @@ export default function RootLayout({
         <FAQSchema />
         <Header />
         <main className="pt-16">{children}</main>
+        <div className="border-t border-slate-200 bg-slate-50">
+          <div className="mx-auto max-w-7xl px-4 py-4 sm:px-6 lg:px-8">
+            <AgentByline compact />
+          </div>
+        </div>
         <Footer />
         <StickyCTABar />
         <CalendlyScript />

@@ -35,7 +35,7 @@ export function AgentProfilePhoto({
         src={src}
         alt={AGENT_PHOTO_ALT}
         fill
-        className="object-cover object-top"
+        className="object-cover object-center"
         quality={85}
         priority={priority}
         sizes={`${px}px`}

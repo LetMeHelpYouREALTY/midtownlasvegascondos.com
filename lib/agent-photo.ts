@@ -1,7 +1,5 @@
 /**
- * Dr. Jan Duffy profile photo — sourced from Cloudflare-hosted portfolio asset
- * (suncityvegas.com/images/agent/dr-jan-duffy.jpg).
- *
+ * Dr. Jan Duffy portrait used in the header, footer, bylines, and profile sections.
  * Override with NEXT_PUBLIC_AGENT_PHOTO_URL for Cloudflare Images (imagedelivery.net).
  */
 

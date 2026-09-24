@@ -22,7 +22,7 @@ export function LocalBusinessSchema() {
     name: REAL_ESTATE_SITE.seo.schemaBrandName,
     description:
       'Discover luxury condos and charming homes in Downtown Las Vegas with Dr. Jan Duffy, a real estate expert with 30+ years of experience. Personalized service guaranteed!',
-    image: 'https://www.midtownlasvegascondos.com/images/logos/midtown-logo.svg',
+    image: getAgentPhotoAbsoluteUrl(),
     '@id': 'https://www.midtownlasvegascondos.com#business',
     url: 'https://www.midtownlasvegascondos.com',
     telephone: '+17025001980',

@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import { Newsletter } from './newsletter'
 import { OFFICIAL_MIDTOWN_SITE, REAL_ESTATE_SITE, NAV_LABELS } from '@/lib/site-persona'
+import { SiteLogo } from './site-logo'
 
 export function Footer() {
   const navigation = [
@@ -48,6 +49,9 @@ export function Footer() {
       {/* Main Footer Content */}
       <div className="py-12 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
+          <div className="mb-10">
+            <SiteLogo variant="footer" />
+          </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
             {/* Navigation Links */}
             <div className="lg:col-span-2">
