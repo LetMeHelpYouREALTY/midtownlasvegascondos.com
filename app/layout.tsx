@@ -109,8 +109,6 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        {/* Explicit robots meta tag to ensure indexing */}
-        <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
         {/* Core Web Vitals Optimization - Preconnect EARLY to critical third-party domains */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />

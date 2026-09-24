@@ -18,7 +18,7 @@ export function SiteLogo({ variant = 'header' }: SiteLogoProps) {
   const px = SIZE[variant]
 
   return (
-    <Link href="/" className="flex items-center gap-2.5 min-w-0">
+    <Link href="/" className="flex shrink-0 items-center gap-2.5">
       <Image
         src={getAgentPhotoUrl()}
         alt={AGENT_PHOTO_ALT}
@@ -27,16 +27,16 @@ export function SiteLogo({ variant = 'header' }: SiteLogoProps) {
         priority={variant === 'header'}
         className="shrink-0 rounded-full"
       />
-      <span className="flex min-w-0 flex-col leading-tight">
+      <span className="flex flex-col leading-tight">
         <span
-          className={`truncate font-bold tracking-tight ${
+          className={`whitespace-nowrap font-bold tracking-tight ${
             onDark ? 'text-sm text-white sm:text-base' : 'text-[13px] text-slate-900 sm:text-base'
           }`}
         >
           {REAL_ESTATE_SITE.logoTitle}
         </span>
         <span
-          className={`truncate text-xs font-medium ${onDark ? 'text-amber-200' : 'text-amber-800'}`}
+          className={`whitespace-nowrap text-xs font-medium ${onDark ? 'text-amber-200' : 'text-amber-800'}`}
         >
           {REAL_ESTATE_SITE.logoLine}
         </span>

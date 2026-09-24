@@ -161,6 +161,16 @@ const nextConfig: NextConfig = {
         permanent: true,
       },
       {
+        source: '/blog',
+        destination: '/news',
+        permanent: true,
+      },
+      {
+        source: '/blog/:path*',
+        destination: '/news',
+        permanent: true,
+      },
+      {
         source: '/listings/luxury-condo',
         destination: '/midtown-real-estate',
         permanent: true,

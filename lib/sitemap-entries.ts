@@ -25,7 +25,6 @@ export function buildSitemapEntries(): SitemapEntry[] {
     { url: encodeSitemapLoc(`${SITE_URL}/buyers-guide-midtown`), lastModified: currentDate, changeFrequency: 'monthly', priority: 0.8 },
     { url: encodeSitemapLoc(`${SITE_URL}/guides`), lastModified: currentDate, changeFrequency: 'weekly', priority: 0.9 },
     { url: encodeSitemapLoc(`${SITE_URL}/arts-district-guide`), lastModified: currentDate, changeFrequency: 'weekly', priority: 0.9 },
-    { url: encodeSitemapLoc(`${SITE_URL}/blog`), lastModified: currentDate, changeFrequency: 'weekly', priority: 0.7 },
     { url: encodeSitemapLoc(`${SITE_URL}/neighborhood/english-residences`), lastModified: currentDate, changeFrequency: 'weekly', priority: 0.9 },
     { url: encodeSitemapLoc(`${SITE_URL}/neighborhood/english-residences/gallery`), lastModified: currentDate, changeFrequency: 'weekly', priority: 0.8 },
     { url: encodeSitemapLoc(`${SITE_URL}/neighborhood/midtown-plaza`), lastModified: currentDate, changeFrequency: 'weekly', priority: 0.8 },
