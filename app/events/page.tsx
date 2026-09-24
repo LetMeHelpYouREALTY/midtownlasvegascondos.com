@@ -8,6 +8,7 @@ import { SitePersonaBanner } from '@/app/components/site-persona-banner'
 import { AgentByline } from '@/app/components/agent-byline'
 import { OFFICIAL_MIDTOWN_SITE, REAL_ESTATE_SITE } from '@/lib/site-persona'
 import { SectionFigure } from '@/app/components/section-figure'
+import { SectionImage } from '@/app/components/section-image'
 
 export const metadata: Metadata = {
   title: 'Midtown Events Guide for Buyers | First Friday & Arts District Calendar',
@@ -31,6 +32,7 @@ export default function EventsPage() {
   const events = [
     {
       title: 'First Friday',
+      image: 'firstFridayNight' as const,
       date: 'First Friday of Every Month',
       time: '5:00 PM - 11:00 PM',
       description:
@@ -39,23 +41,8 @@ export default function EventsPage() {
       link: '/neighborhood/first-fridays',
     },
     {
-      title: 'The Las Vegas Book Festival',
-      date: 'Saturday, October 18th, 2025',
-      time: '10:00 AM - 6:00 PM',
-      description:
-        'A celebration of literature featuring author talks, book signings, and literary workshops for all ages.',
-      category: 'Annual',
-    },
-    {
-      title: '2025 Las Vegas Marathon',
-      date: 'Sunday, October 26th, 2025',
-      time: '5:00 AM - 2:00 PM',
-      description:
-        'Run through the heart of Las Vegas including the vibrant Arts District. Multiple race distances available.',
-      category: 'Annual',
-    },
-    {
       title: 'Arts District Gallery Walk',
+      image: 'artsDistrictStreet' as const,
       date: 'Every Saturday',
       time: '6:00 PM - 9:00 PM',
       description:
@@ -64,6 +51,7 @@ export default function EventsPage() {
     },
     {
       title: 'Midtown Run Club',
+      image: 'runRouteSunrise' as const,
       date: 'Tuesdays & Thursdays',
       time: '6:30 AM',
       description:
@@ -73,6 +61,7 @@ export default function EventsPage() {
     },
     {
       title: 'Makers Market',
+      image: 'plazaCourtyard' as const,
       date: 'Last Sunday of Every Month',
       time: '9:00 AM - 3:00 PM',
       description:
@@ -81,7 +70,6 @@ export default function EventsPage() {
     },
   ]
 
-  const categories = ['All', 'Weekly', 'Monthly', 'Annual']
   const breadcrumbItems = [
     { name: 'Home', url: '/' },
     { name: 'Events', url: '/events' },
@@ -259,9 +247,7 @@ export default function EventsPage() {
               key={index}
               className="bg-white rounded-lg shadow-md border border-slate-200 overflow-hidden hover:shadow-lg transition-shadow"
             >
-              <div className="h-48 bg-slate-200 flex items-center justify-center text-slate-400" role="img" aria-label={`${event.title} event in Midtown Las Vegas Arts District`}>
-                Event Image
-              </div>
+              <SectionImage image={event.image} className="h-48" sizes="(max-width: 768px) 100vw, 33vw" />
               <div className="p-6">
                 <div className="inline-block px-3 py-1 bg-slate-100 text-slate-700 text-sm font-semibold rounded-full mb-3">
                   {event.category}

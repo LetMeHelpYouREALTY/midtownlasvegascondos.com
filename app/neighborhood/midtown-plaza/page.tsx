@@ -6,6 +6,7 @@ import { PageFAQ } from '@/app/components/page-faq'
 import { Breadcrumb } from '@/app/components/breadcrumb'
 import { Metadata } from 'next'
 import { SectionFigure } from '@/app/components/section-figure'
+import { SectionImage } from '@/app/components/section-image'
 
 export const metadata: Metadata = {
   title: 'Midtown Plaza Las Vegas | Shopping, Dining & Entertainment',
@@ -176,11 +177,7 @@ export default function MidtownPlazaPage() {
               ))}
             </ul>
           </div>
-          <div className="aspect-[4/3] bg-slate-200 rounded-lg" role="img" aria-label="Midtown Plaza shopping and dining district in Las Vegas Arts District with walkable streets, local restaurants, and unique retail shops">
-            <div className="w-full h-full flex items-center justify-center text-slate-400">
-              Midtown Plaza
-            </div>
-          </div>
+          <SectionImage image="plazaCourtyard" />
         </div>
 
         {/* Features Grid */}

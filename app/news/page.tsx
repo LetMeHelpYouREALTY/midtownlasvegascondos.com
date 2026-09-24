@@ -8,6 +8,7 @@ import { SitePersonaBanner } from '@/app/components/site-persona-banner'
 import { AgentByline } from '@/app/components/agent-byline'
 import { OFFICIAL_MIDTOWN_SITE, REAL_ESTATE_SITE } from '@/lib/site-persona'
 import { SectionFigure } from '@/app/components/section-figure'
+import { SectionImage } from '@/app/components/section-image'
 
 export const metadata: Metadata = {
   title: 'Midtown News for Buyers | Arts District Development Updates',
@@ -203,11 +204,7 @@ export default function NewsPage() {
       <section className="py-12 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
         <Link href={`/news/${MIDTOWN_NEWS[0].slug}`} className="block bg-gradient-to-br from-slate-900 to-slate-700 rounded-lg overflow-hidden hover:opacity-95 transition-opacity">
           <div className="grid md:grid-cols-2 gap-8">
-            <div className="aspect-video md:aspect-auto bg-slate-700" role="img" aria-label="Midtown Las Vegas Arts District development news">
-              <div className="w-full h-full flex items-center justify-center text-slate-400">
-                Featured News
-              </div>
-            </div>
+            <SectionImage image="artsDistrictStreet" className="aspect-video md:aspect-auto md:min-h-72" />
             <div className="p-8 md:p-12 flex flex-col justify-center text-white">
               <div className="inline-block px-3 py-1 bg-white/20 text-white text-sm font-semibold rounded-full mb-4 w-fit">
                 Featured
