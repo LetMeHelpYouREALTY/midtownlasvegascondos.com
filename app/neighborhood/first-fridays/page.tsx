@@ -1,10 +1,10 @@
 import Link from 'next/link'
 import { Metadata } from 'next'
-import { RealScoutListings } from '@/app/components/realscout-listings'
 import { RealScoutSection } from '@/app/components/realscout-section'
 import { EventSchema } from '@/app/components/event-schema'
 import { SectionFigure } from '@/app/components/section-figure'
 import { getUpcomingFirstFridays } from '@/lib/first-friday'
+import { OfficeListings } from '@/app/components/office-listings'
 
 export const revalidate = 86400
 
@@ -56,6 +56,7 @@ export default function FirstFridaysPage() {
           </div>
         </div>
       </section>
+      <OfficeListings title="Live in the Heart of First Friday" description="Find your home in the Arts District where First Friday happens" priceMin="250000" priceMax="2000000" propertyTypes=",SFR,CONDO,TC" />
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionFigure image="firstFridayNight" priority />
       </div>
@@ -300,21 +301,6 @@ export default function FirstFridaysPage() {
               </p>
             </div>
           </div>
-        </div>
-      </section>
-
-      {/* Featured Properties */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
-        <div className="max-w-7xl mx-auto">
-          <RealScoutListings
-            title="Live in the Heart of First Friday"
-            description="Find your home in the Arts District where First Friday happens"
-            priceMin="250000"
-            priceMax="2000000"
-            sortOrder="NEWEST"
-            propertyTypes=",SFR,CONDO,TC"
-            listingStatus="For Sale"
-          />
         </div>
       </section>
 

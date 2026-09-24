@@ -5,6 +5,7 @@ import { RealScoutSection } from '../components/realscout-section'
 import { Breadcrumb } from '../components/breadcrumb'
 import { REAL_ESTATE_SITE } from '@/lib/site-persona'
 import { SectionFigure } from '@/app/components/section-figure'
+import { OfficeListings } from '@/app/components/office-listings'
 
 export const metadata: Metadata = {
   title: 'Midtown Buyer FAQ',
@@ -160,6 +161,7 @@ export default function FAQPage() {
       {/* FAQ Introduction */}
       <section className="py-12 px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto">
         <Breadcrumb items={breadcrumbItems} />
+        <OfficeListings />
         <SectionFigure image="buyerPlanningDesk" priority />
         <h2 className="text-3xl font-bold text-slate-900 mb-6">What to Know Before Buying a Midtown Las Vegas Condo</h2>
         <div className="prose prose-lg text-slate-600 space-y-4 mb-12">

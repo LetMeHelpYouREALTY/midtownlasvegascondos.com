@@ -5,6 +5,7 @@ import { PageFAQSchema } from '@/app/components/page-faq-schema'
 import { CalendlyLink } from '@/app/components/calendly-link'
 import { RealScoutSection } from '@/app/components/realscout-section'
 import { SectionFigure } from '@/app/components/section-figure'
+import { OfficeListings } from '@/app/components/office-listings'
 
 export const metadata: Metadata = {
   title: 'KJ\'s Restaurant Las Vegas | The English Hotel',
@@ -49,6 +50,7 @@ export default function KjsRestaurantPage() {
               { name: 'KJ\'s Restaurant', url: '/neighborhood/kjs-restaurant' },
             ]}
           />
+          <OfficeListings propertyTypes=",TC" />
           <SectionFigure image="restaurantDining" priority />
 
           <div className="prose prose-lg max-w-none text-slate-600 space-y-6">

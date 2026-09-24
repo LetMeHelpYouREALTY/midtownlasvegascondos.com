@@ -1,12 +1,12 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import { RealScoutSearch } from '@/app/components/realscout-search'
-import { RealScoutListings } from '@/app/components/realscout-listings'
 import { RealScoutScript } from '@/app/components/realscout-script'
 import { PageFAQ } from '@/app/components/page-faq'
 import { Breadcrumb } from '@/app/components/breadcrumb'
 import { Metadata } from 'next'
 import { SectionImage } from '@/app/components/section-image'
+import { OfficeListings } from '@/app/components/office-listings'
 
 export const metadata: Metadata = {
   title: 'English Residences Las Vegas Condos for Sale',
@@ -51,6 +51,7 @@ export default function EnglishResidencesPage() {
           </p>
         </div>
       </section>
+      <OfficeListings title="Available English Residences & Midtown Condos" description="Browse luxury condo-hotel units and condominiums in the Arts District" priceMin="450000" priceMax="1300000" propertyTypes=",SFR,TC,MF" />
 
       {/* Content */}
       <section className="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
@@ -289,21 +290,6 @@ export default function EnglishResidencesPage() {
               </p>
             </div>
           ))}
-        </div>
-      </section>
-
-      {/* Available Condo Listings */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
-        <div className="max-w-7xl mx-auto">
-          <RealScoutListings
-            title="Available English Residences & Midtown Condos"
-            description="Browse luxury condo-hotel units and condominiums in the Arts District"
-            priceMin="450000"
-            priceMax="1300000"
-            sortOrder="NEWEST"
-            propertyTypes=",SFR,TC,MF"
-            listingStatus="For Sale"
-          />
         </div>
       </section>
 

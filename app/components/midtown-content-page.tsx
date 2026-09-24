@@ -6,6 +6,7 @@ import { RealScoutSection } from '@/app/components/realscout-section'
 import { SitePersonaBanner } from '@/app/components/site-persona-banner'
 import { AgentByline } from '@/app/components/agent-byline'
 import { SectionFigure } from '@/app/components/section-figure'
+import { OfficeListings } from '@/app/components/office-listings'
 import { REAL_ESTATE_SITE } from '@/lib/site-persona'
 import type { SectionImageKey } from '@/lib/section-images'
 import type { MidtownBreadcrumb, MidtownFAQ, MidtownSection } from '@/lib/midtown-content/types'
@@ -61,6 +62,8 @@ export function MidtownContentPage({
           )}
         </div>
       </section>
+
+      <OfficeListings title={listingsTitle} description={listingsDescription} />
 
       <section className="py-16 px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto">
         <Breadcrumb items={breadcrumbs} />

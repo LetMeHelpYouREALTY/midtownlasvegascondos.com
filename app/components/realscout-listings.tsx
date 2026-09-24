@@ -13,6 +13,35 @@ interface RealScoutListingsProps {
   limit?: string
 }
 
+const PROPERTY_TYPE_CODES: Record<string, string> = {
+  SFR: 'SFR',
+  'SINGLE FAMILY': 'SFR',
+  'SINGLE FAMILY RESIDENCE': 'SFR',
+  TC: 'TC',
+  CONDO: 'TC',
+  CONDOS: 'TC',
+  TOWNHOUSE: 'TC',
+  TOWNHOME: 'TC',
+  MF: 'MF',
+  'MULTI-FAMILY': 'MF',
+  MULTIFAMILY: 'MF',
+  MOBILE: 'MOBILE',
+}
+
+/**
+ * RealScout only accepts its own codes (SFR, TC, MF, MOBILE) with a leading comma.
+ * Unknown names like "Condo" silently return zero listings, so translate them here.
+ */
+export function normalizePropertyTypes(value?: string): string | undefined {
+  if (!value) return undefined
+  const codes = value
+    .split(',')
+    .map((t) => PROPERTY_TYPE_CODES[t.trim().toUpperCase()])
+    .filter((c): c is string => Boolean(c))
+  const unique = [...new Set(codes)]
+  return unique.length ? `,${unique.join(',')}` : undefined
+}
+
 // Map our sort order values to RealScout's expected values
 const mapSortOrder = (sortOrder: string): string => {
   switch (sortOrder) {
@@ -44,6 +73,7 @@ export function RealScoutListings({
   const [widgetKey, setWidgetKey] = useState(0)
   const containerRef = useRef<HTMLDivElement>(null)
   const mappedSortOrder = mapSortOrder(sortOrder)
+  const propertyTypeCodes = normalizePropertyTypes(propertyTypes)
 
   // Load widget script - use Intersection Observer if below fold, otherwise load immediately
   useEffect(() => {
@@ -174,7 +204,7 @@ export function RealScoutListings({
     'agent-encoded-id="QWdlbnQtMjI1MDUw"',
     `sort-order="${mappedSortOrder}"`,
     `listing-status="${listingStatus}"`,
-    propertyTypes ? `property-types="${propertyTypes}"` : '',
+    propertyTypeCodes ? `property-types="${propertyTypeCodes}"` : '',
     priceMin ? `price-min="${priceMin}"` : '',
     priceMax ? `price-max="${priceMax}"` : '',
   ].filter(Boolean).join(' ')
@@ -195,7 +225,7 @@ export function RealScoutListings({
           )}
         </div>
       )}
-      <div ref={containerRef} className="w-full min-h-[300px]">
+      <div ref={containerRef} className="w-full min-h-[480px]">
         {isClient && scriptLoaded ? (
           <div 
             dangerouslySetInnerHTML={{ __html: widgetHtml }}

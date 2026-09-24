@@ -1,12 +1,12 @@
 import Link from 'next/link'
 import { RealScoutSearch } from '@/app/components/realscout-search'
-import { RealScoutListings } from '@/app/components/realscout-listings'
 import { RealScoutScript } from '@/app/components/realscout-script'
 import { PageFAQ } from '@/app/components/page-faq'
 import { Breadcrumb } from '@/app/components/breadcrumb'
 import { Metadata } from 'next'
 import { SectionFigure } from '@/app/components/section-figure'
 import { SectionImage } from '@/app/components/section-image'
+import { OfficeListings } from '@/app/components/office-listings'
 
 export const metadata: Metadata = {
   title: 'Midtown Plaza Las Vegas | Shopping, Dining & Entertainment',
@@ -44,6 +44,7 @@ export default function MidtownPlazaPage() {
       {/* Content */}
       <section className="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
         <Breadcrumb items={breadcrumbItems} />
+        <OfficeListings title="Homes Near Midtown Plaza" description="Walk to restaurants, shops, and entertainment from these properties" priceMin="450000" priceMax="1300000" propertyTypes=",SFR,TC,MF" />
         <SectionFigure image="plazaCourtyard" priority />
         <div className="grid md:grid-cols-2 gap-12 items-center mb-16">
           <div>
@@ -206,21 +207,6 @@ export default function MidtownPlazaPage() {
               <p className="text-slate-600">{feature.description}</p>
             </div>
           ))}
-        </div>
-      </section>
-
-      {/* Available Listings Near Plaza */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
-        <div className="max-w-7xl mx-auto">
-          <RealScoutListings
-            title="Homes Near Midtown Plaza"
-            description="Walk to restaurants, shops, and entertainment from these properties"
-            priceMin="450000"
-            priceMax="1300000"
-            sortOrder="NEWEST"
-            propertyTypes=",SFR,TC,MF"
-            listingStatus="For Sale"
-          />
         </div>
       </section>
 

@@ -9,6 +9,7 @@ import { SitePersonaBanner } from '../components/site-persona-banner'
 import { AgentByline } from '../components/agent-byline'
 import { OFFICIAL_MIDTOWN_SITE, REAL_ESTATE_SITE } from '@/lib/site-persona'
 import { SectionFigure } from '@/app/components/section-figure'
+import { OfficeListings } from '@/app/components/office-listings'
 
 export const metadata: Metadata = {
   title: 'About Dr. Jan Duffy',
@@ -54,6 +55,7 @@ export default function AboutPage() {
       {/* Content */}
       <section className="py-20 px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto">
         <Breadcrumb items={breadcrumbItems} />
+        <OfficeListings />
         <SectionFigure image="consultationOffice" priority />
         <SitePersonaBanner variant="neighborhood" />
         <AgentByline />

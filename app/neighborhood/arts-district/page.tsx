@@ -1,13 +1,13 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import { RealScoutSearch } from '@/app/components/realscout-search'
-import { RealScoutListings } from '@/app/components/realscout-listings'
 import { RealScoutScript } from '@/app/components/realscout-script'
 import { PageFAQ } from '@/app/components/page-faq'
 import { Breadcrumb } from '@/app/components/breadcrumb'
 import { Metadata } from 'next'
 import { CalendlyLink } from '@/app/components/calendly-link'
 import { SECTION_IMAGES } from '@/lib/section-images'
+import { OfficeListings } from '@/app/components/office-listings'
 
 export const metadata: Metadata = {
   title: 'Las Vegas Arts District (18b): Where It Is',
@@ -52,6 +52,7 @@ export default function ArtsDistrictPage() {
           </p>
         </div>
       </section>
+      <OfficeListings title="Arts District Properties" description="Live among galleries, restaurants, and creative spaces" priceMin="450000" priceMax="1300000" propertyTypes=",SFR,TC,MF" />
 
       {/* Content */}
       <section className="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
@@ -311,21 +312,6 @@ export default function ArtsDistrictPage() {
               </p>
             </div>
           </div>
-        </div>
-      </section>
-
-      {/* Featured Arts District Listings */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
-        <div className="max-w-7xl mx-auto">
-          <RealScoutListings
-            title="Arts District Properties"
-            description="Live among galleries, restaurants, and creative spaces"
-            priceMin="450000"
-            priceMax="1300000"
-            sortOrder="NEWEST"
-            propertyTypes=",SFR,TC,MF"
-            listingStatus="For Sale"
-          />
         </div>
       </section>
 

@@ -3,6 +3,7 @@ import { FloorPlanViewer } from '@/app/components/floor-plan-viewer'
 import { Metadata } from 'next'
 import Link from 'next/link'
 import { RealScoutSection } from '@/app/components/realscout-section'
+import { OfficeListings } from '@/app/components/office-listings'
 
 export const metadata: Metadata = {
   title: 'English Residences Gallery | Luxury Condo-Hotel Photos & Floor Plans',
@@ -151,6 +152,7 @@ export default function EnglishResidencesGalleryPage() {
           </p>
         </div>
       </section>
+      <OfficeListings propertyTypes=",TC" />
 
       {/* Image Gallery */}
       <section className="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">

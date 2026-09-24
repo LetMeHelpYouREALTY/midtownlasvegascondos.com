@@ -9,6 +9,7 @@ import { AgentByline } from '@/app/components/agent-byline'
 import { OFFICIAL_MIDTOWN_SITE, REAL_ESTATE_SITE } from '@/lib/site-persona'
 import { SectionFigure } from '@/app/components/section-figure'
 import { SectionImage } from '@/app/components/section-image'
+import { OfficeListings } from '@/app/components/office-listings'
 
 export const metadata: Metadata = {
   title: 'Midtown News for Buyers | Arts District Development Updates',
@@ -73,6 +74,7 @@ export default function NewsPage() {
       {/* News Introduction */}
       <section className="py-12 px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto">
         <Breadcrumb items={breadcrumbItems} />
+        <OfficeListings />
         <SectionFigure image="downtownSkylineDusk" priority />
         <SitePersonaBanner variant="news" />
         <AgentByline compact />

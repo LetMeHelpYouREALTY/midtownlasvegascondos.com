@@ -1,8 +1,8 @@
 import Link from 'next/link'
 import { Metadata } from 'next'
-import { RealScoutListings } from '@/app/components/realscout-listings'
 import { RealScoutSection } from '@/app/components/realscout-section'
 import { SectionFigure } from '@/app/components/section-figure'
+import { OfficeListings } from '@/app/components/office-listings'
 
 export const metadata: Metadata = {
   title: 'Midtown Run Club | Community Running Group in Arts District',
@@ -41,6 +41,7 @@ export default function RunClubPage() {
           </div>
         </div>
       </section>
+      <OfficeListings title="Live Near the Run Club" description="Find your home in walkable Midtown Las Vegas" priceMin="250000" priceMax="2000000" propertyTypes=",SFR,CONDO,TC" />
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionFigure image="runRouteSunrise" priority />
       </div>
@@ -314,21 +315,6 @@ export default function RunClubPage() {
               </div>
             </div>
           ))}
-        </div>
-      </section>
-
-      {/* Featured Properties */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
-        <div className="max-w-7xl mx-auto">
-          <RealScoutListings
-            title="Live Near the Run Club"
-            description="Find your home in walkable Midtown Las Vegas"
-            priceMin="250000"
-            priceMax="2000000"
-            sortOrder="NEWEST"
-            propertyTypes=",SFR,CONDO,TC"
-            listingStatus="For Sale"
-          />
         </div>
       </section>
 

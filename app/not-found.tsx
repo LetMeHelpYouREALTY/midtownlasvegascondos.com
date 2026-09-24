@@ -80,6 +80,7 @@ export default function NotFound() {
       </div>
 
       <RealScoutSection
+        showListings
         listingsTitle="Browse Midtown Properties"
         listingsDescription="Find your home in the Las Vegas Arts District while you explore the site."
       />

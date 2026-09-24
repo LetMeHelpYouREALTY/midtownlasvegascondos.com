@@ -1,12 +1,12 @@
 import Link from 'next/link'
 import { Metadata } from 'next'
 import { Breadcrumb } from '../components/breadcrumb'
-import { RealScoutListings } from '../components/realscout-listings'
 import { RealScoutScript } from '../components/realscout-script'
 import { CalendlyBookingSection } from '../components/calendly-booking-section'
 import { CalendlyLink } from '../components/calendly-link'
 import { RealScoutSearch } from '../components/realscout-search'
 import { SectionFigure } from '@/app/components/section-figure'
+import { OfficeListings } from '@/app/components/office-listings'
 
 export const metadata: Metadata = {
   title: 'Midtown Las Vegas Real Estate & Listings',
@@ -48,6 +48,7 @@ export default function MidtownRealEstatePage() {
         </p>
 
         {/* Neighborhood Overview */}
+        <OfficeListings title="Featured Midtown Properties" description="Explore luxury condos and homes in the heart of the Arts District" priceMin="450000" priceMax="1300000" propertyTypes=",SFR,TC,MF" />
         <SectionFigure image="condoInterior" priority />
         <section className="mb-20">
           <h2 className="text-4xl font-bold text-slate-900 mb-8">
@@ -161,19 +162,6 @@ export default function MidtownRealEstatePage() {
               </p>
             </div>
           </div>
-        </section>
-
-        {/* Featured Listings */}
-        <section className="mb-20">
-          <RealScoutListings
-            title="Featured Midtown Properties"
-            description="Explore luxury condos and homes in the heart of the Arts District"
-            priceMin="450000"
-            priceMax="1300000"
-            sortOrder="NEWEST"
-            propertyTypes=",SFR,TC,MF"
-            listingStatus="For Sale"
-          />
         </section>
 
         {/* Property Search */}

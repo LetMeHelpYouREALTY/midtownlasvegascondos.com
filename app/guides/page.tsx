@@ -7,6 +7,7 @@ import { PageFAQSchema } from '@/app/components/page-faq-schema'
 import { REDDIT_AEO_GUIDES } from '@/lib/reddit-aeo-topics'
 import { REAL_ESTATE_SITE } from '@/lib/site-persona'
 import { SectionFigure } from '@/app/components/section-figure'
+import { OfficeListings } from '@/app/components/office-listings'
 
 const CANONICAL_URL = `${REAL_ESTATE_SITE.url}/guides`
 
@@ -69,6 +70,7 @@ export default function GuidesHubPage() {
             </p>
           </div>
 
+          <OfficeListings />
           <SectionFigure image="walkableStreetDay" priority />
           <section className="mb-16">
             <h2 className="text-3xl font-bold text-slate-900 mb-8">

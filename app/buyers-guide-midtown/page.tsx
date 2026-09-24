@@ -3,9 +3,9 @@ import { Metadata } from 'next'
 import { Breadcrumb } from '../components/breadcrumb'
 import { CalendlyBookingSection } from '../components/calendly-booking-section'
 import { CalendlyLink } from '../components/calendly-link'
-import { RealScoutListings } from '../components/realscout-listings'
 import { RealScoutSearch } from '../components/realscout-search'
 import { SectionFigure } from '@/app/components/section-figure'
+import { OfficeListings } from '@/app/components/office-listings'
 
 export const metadata: Metadata = {
   title: 'Buying a Condo in Las Vegas: Buyer\'s Guide',
@@ -43,6 +43,8 @@ export default function BuyersGuideMidtownPage() {
           understanding the market to closing the deal, this comprehensive guide will help 
           you navigate the buying process with confidence.
         </p>
+
+        <OfficeListings title="Available Homes in Midtown" description="Start your search with these featured properties" priceMin="250000" priceMax="2000000" propertyTypes=",SFR,CONDO,TC" />
 
         <div className="bg-slate-50 border border-slate-200 rounded-xl p-6 mb-12 max-w-4xl">
           <h2 className="text-xl font-bold text-slate-900 mb-3">
@@ -296,19 +298,6 @@ export default function BuyersGuideMidtownPage() {
         {/* Property Search */}
         <section className="mb-20">
           <RealScoutSearch priceMin="250000" priceMax="2000000" />
-        </section>
-
-        {/* Featured Properties */}
-        <section className="mb-20">
-          <RealScoutListings
-            title="Available Homes in Midtown"
-            description="Start your search with these featured properties"
-            priceMin="250000"
-            priceMax="2000000"
-            sortOrder="NEWEST"
-            propertyTypes=",SFR,CONDO,TC"
-            listingStatus="For Sale"
-          />
         </section>
 
         <CalendlyBookingSection

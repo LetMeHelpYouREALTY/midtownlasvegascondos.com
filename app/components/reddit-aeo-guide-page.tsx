@@ -14,6 +14,7 @@ import {
 import { REAL_ESTATE_SITE } from '@/lib/site-persona'
 import { AgentByline } from '@/app/components/agent-byline'
 import { SectionFigure } from '@/app/components/section-figure'
+import { OfficeListings } from '@/app/components/office-listings'
 import { GUIDE_IMAGE_BY_SLUG } from '@/lib/section-images'
 
 function GuideBlock({ block }: { block: GuideContentBlock }) {
@@ -174,6 +175,15 @@ export function RedditAeoGuidePage({ guide }: RedditAeoGuidePageProps) {
 
           <h1 className="text-5xl md:text-6xl font-bold text-slate-900 mb-6">{guide.h1}</h1>
           <AgentByline />
+        </div>
+
+        <OfficeListings
+          title={guide.realScoutTitle}
+          description={guide.realScoutDescription}
+          propertyTypes={guide.realScoutPropertyTypes}
+        />
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-12">
 
           <SectionFigure
             image={GUIDE_IMAGE_BY_SLUG[guide.slug] ?? 'walkableStreetDay'}

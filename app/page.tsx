@@ -4,7 +4,6 @@ import { Metadata } from 'next'
 import { Newsletter } from './components/newsletter'
 import { UpcomingEvents } from './components/upcoming-events'
 import { RealScoutSearch } from './components/realscout-search'
-import { RealScoutListings } from './components/realscout-listings'
 import { RealScoutScript } from './components/realscout-script'
 import { PageFAQ } from './components/page-faq'
 import { CalendlyLink } from './components/calendly-link'
@@ -13,6 +12,7 @@ import { REDDIT_HOMEPAGE_QUESTIONS } from '@/lib/reddit-aeo-topics'
 import { SitePersonaBanner } from './components/site-persona-banner'
 import { AGENT_PHOTO_ALT, getAgentPhotoUrl } from '@/lib/agent-photo'
 import { SectionFigure } from './components/section-figure'
+import { OfficeListings } from '@/app/components/office-listings'
 
 export const revalidate = 86400
 
@@ -95,6 +95,8 @@ export default function HomePage() {
         </div>
       </section>
 
+      <OfficeListings title="Featured Homes in Midtown Las Vegas" />
+
       <section className="py-10 px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto">
         <SitePersonaBanner variant="neighborhood" />
       </section>
@@ -133,18 +135,6 @@ export default function HomePage() {
               </div>
             ))}
           </div>
-        </div>
-      </section>
-
-      {/* Featured Homes $500K-$600K */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto bg-white">
-        <div className="max-w-7xl mx-auto">
-          <RealScoutListings
-            title="Featured Homes in Midtown"
-            description="Discover beautiful single-family homes in your price range"
-            sortOrder="NEWEST"
-            listingStatus="For Sale"
-          />
         </div>
       </section>
 

@@ -1,9 +1,9 @@
 import Link from 'next/link'
 import { Metadata } from 'next'
-import { RealScoutListings } from '@/app/components/realscout-listings'
 import { RealScoutSection } from '@/app/components/realscout-section'
 import { SectionFigure } from '@/app/components/section-figure'
 import { SectionImage } from '@/app/components/section-image'
+import { OfficeListings } from '@/app/components/office-listings'
 
 export const metadata: Metadata = {
   title: 'EV Vehicle Program | Electric Vehicle Charging in Midtown Las Vegas',
@@ -37,6 +37,7 @@ export default function EVProgramPage() {
           </p>
         </div>
       </section>
+      <OfficeListings title="EV-Friendly Homes in Midtown" description="Find properties with electric vehicle charging infrastructure" priceMin="250000" priceMax="2000000" propertyTypes=",SFR,CONDO,TC" />
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionFigure image="evCharging" priority />
       </div>
@@ -267,21 +268,6 @@ export default function EVProgramPage() {
               </div>
             ))}
           </div>
-        </div>
-      </section>
-
-      {/* Featured EV-Friendly Properties */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
-        <div className="max-w-7xl mx-auto">
-          <RealScoutListings
-            title="EV-Friendly Homes in Midtown"
-            description="Find properties with electric vehicle charging infrastructure"
-            priceMin="250000"
-            priceMax="2000000"
-            sortOrder="NEWEST"
-            propertyTypes=",SFR,CONDO,TC"
-            listingStatus="For Sale"
-          />
         </div>
       </section>
 

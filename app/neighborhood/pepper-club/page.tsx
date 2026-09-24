@@ -1,9 +1,9 @@
 import Link from 'next/link'
 import { Metadata } from 'next'
-import { RealScoutListings } from '@/app/components/realscout-listings'
 import { RealScoutSection } from '@/app/components/realscout-section'
 import { SectionFigure } from '@/app/components/section-figure'
 import { SectionImage } from '@/app/components/section-image'
+import { OfficeListings } from '@/app/components/office-listings'
 
 export const metadata: Metadata = {
   title: 'The Pepper Club (Closed) at The English Hotel',
@@ -37,6 +37,7 @@ export default function PepperClubPage() {
           </p>
         </div>
       </section>
+      <OfficeListings title="Homes Near The English Hotel" description="Condos and homes for sale near 921 S Main St in the Las Vegas Arts District" priceMin="250000" priceMax="1500000" propertyTypes=",SFR,CONDO,TC" />
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         <aside className="mt-10 rounded-xl border-2 border-amber-300 bg-amber-50 p-6">
           <h2 className="text-xl font-bold text-slate-900 mb-2">The Pepper Club Has Closed</h2>
@@ -297,21 +298,6 @@ export default function PepperClubPage() {
           >
             Inquire About Events
           </Link>
-        </div>
-      </section>
-
-      {/* Featured Properties */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
-        <div className="max-w-7xl mx-auto">
-          <RealScoutListings
-            title="Homes Near The Pepper Club"
-            description="Live steps away from award-winning dining"
-            priceMin="250000"
-            priceMax="1500000"
-            sortOrder="NEWEST"
-            propertyTypes=",SFR,CONDO,TC"
-            listingStatus="For Sale"
-          />
         </div>
       </section>
 

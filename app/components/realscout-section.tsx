@@ -19,7 +19,7 @@ export function RealScoutSection({
   listingsTitle = 'Homes Near Midtown Las Vegas',
   listingsDescription = 'Browse available condos and residences in the Las Vegas Arts District — updated daily with Dr. Jan Duffy\'s listings.',
   searchTitle = 'Search All Midtown Properties',
-  showListings = true,
+  showListings = false,
   showSearch = true,
   priceMin = '450000',
   priceMax = '1000000',
