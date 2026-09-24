@@ -5,7 +5,7 @@ interface EventSchemaProps {
   name: string
   description: string
   startDate: string
-  endDate?: string
+  endDate: string
   location?: {
     name?: string
     address?: {
@@ -40,7 +40,7 @@ export function EventSchema({
     name,
     description,
     startDate,
-    ...(endDate && { endDate }),
+    endDate,
     ...(image && { image }),
     ...(url && { url }),
   }

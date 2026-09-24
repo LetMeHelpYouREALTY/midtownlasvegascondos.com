@@ -7,8 +7,6 @@ import { Footer } from './components/footer'
 import { LocalBusinessSchema, WebSiteSchema, PersonSchema } from './components/structured-data'
 import { FAQSchema } from './components/faq-schema'
 import { GoogleAnalytics } from './components/google-analytics'
-import { AggregateRatingSchema } from './components/aggregate-rating-schema'
-import { ReviewSchema } from './components/review-schema'
 import { ServiceSchema } from './components/service-schema'
 import { StickyCTABar } from './components/sticky-cta-bar'
 import { WidgetTracker } from './components/widget-tracker'
@@ -176,8 +174,6 @@ export default function RootLayout({
         <WebSiteSchema />
         <PersonSchema />
         <LocalBusinessSchema />
-        <AggregateRatingSchema />
-        <ReviewSchema />
         <ServiceSchema />
         <FAQSchema />
         <Header />

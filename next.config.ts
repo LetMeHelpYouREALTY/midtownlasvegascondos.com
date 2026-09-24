@@ -121,6 +121,15 @@ const nextConfig: NextConfig = {
           },
         ],
       },
+      {
+        source: '/manifest.json',
+        headers: [
+          {
+            key: 'X-Robots-Tag',
+            value: 'noindex, nofollow',
+          },
+        ],
+      },
     ]
   },
   // Image optimization for Core Web Vitals

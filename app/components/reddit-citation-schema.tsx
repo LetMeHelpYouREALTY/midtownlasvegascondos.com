@@ -1,5 +1,26 @@
 import type { RedditSource } from '@/lib/reddit-aeo-topics'
 
+/**
+ * External Reddit threads are citations, not forum posts hosted on this site.
+ * DiscussionForumPosting requires author, datePublished, and headline, and
+ * Google only accepts that type for discussions the page itself hosts.
+ */
+function redditCitation(source: RedditSource) {
+  const subredditPath = source.subreddit.replace(/^\/+/, '')
+
+  return {
+    '@type': 'CreativeWork' as const,
+    url: source.url,
+    name: source.topic,
+    headline: source.topic,
+    isPartOf: {
+      '@type': 'WebSite' as const,
+      name: source.subreddit,
+      url: `https://www.reddit.com/${subredditPath}/`,
+    },
+  }
+}
+
 interface RedditCitationSchemaProps {
   headline: string
   url: string
@@ -47,21 +68,8 @@ export function RedditCitationSchema({
       '@type': 'SpeakableSpecification',
       cssSelector: ['h1', '.aeo-quick-answer', 'h2'],
     },
-    citation: redditSources.map((source) => ({
-      '@type': 'DiscussionForumPosting',
-      url: source.url,
-      name: source.topic,
-      isPartOf: {
-        '@type': 'WebPage',
-        name: source.subreddit,
-        url: `https://www.reddit.com/${source.subreddit.replace('r/', '')}/`,
-      },
-    })),
-    isBasedOn: redditSources.map((source) => ({
-      '@type': 'CreativeWork',
-      url: source.url,
-      name: `${source.subreddit}: ${source.topic}`,
-    })),
+    citation: redditSources.map(redditCitation),
+    isBasedOn: redditSources.map(redditCitation),
     about: [
       {
         '@type': 'Place',

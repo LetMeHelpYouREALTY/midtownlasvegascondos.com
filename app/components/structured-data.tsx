@@ -5,6 +5,7 @@ import {
   MIDTOWN_SHOWROOM,
   REAL_ESTATE_SITE,
 } from '@/lib/site-persona'
+import { siteAggregateRating, siteReviews } from './review-schema'
 
 const officePostalAddress = {
   '@type': 'PostalAddress' as const,
@@ -28,14 +29,8 @@ export function LocalBusinessSchema() {
     telephone: '+17025001980',
     email: 'DrJanSells@MidtownVegasCondos.com',
     foundingDate: '2009-09-20',
-    // GBP Optimization - Aggregate Rating
-    aggregateRating: {
-      '@type': 'AggregateRating',
-      ratingValue: '4.8',
-      reviewCount: '50',
-      bestRating: '5',
-      worstRating: '1',
-    },
+    aggregateRating: siteAggregateRating,
+    review: siteReviews,
     address: officePostalAddress,
     geo: {
       '@type': 'GeoCoordinates',
@@ -289,6 +284,7 @@ export function WebSiteSchema() {
       },
       {
         '@type': 'ScheduleAction',
+        name: 'Schedule a home tour consultation',
         target: {
           '@type': 'EntryPoint',
           urlTemplate: 'https://calendly.com/drjanduffy/in-person-real-estate-consultation',
@@ -296,11 +292,6 @@ export function WebSiteSchema() {
             'http://schema.org/DesktopWebPlatform',
             'http://schema.org/MobileWebPlatform',
           ],
-        },
-        result: {
-          '@type': 'Event',
-          name: 'Home Tour Consultation',
-          description: '30-minute personalized home tour with Dr. Jan Duffy',
         },
       },
     ],
