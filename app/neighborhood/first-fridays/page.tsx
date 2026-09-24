@@ -3,6 +3,10 @@ import { Metadata } from 'next'
 import { RealScoutListings } from '@/app/components/realscout-listings'
 import { RealScoutSection } from '@/app/components/realscout-section'
 import { EventSchema } from '@/app/components/event-schema'
+import { SectionFigure } from '@/app/components/section-figure'
+import { getUpcomingFirstFridays } from '@/lib/first-friday'
+
+export const revalidate = 86400
 
 export const metadata: Metadata = {
   title: 'First Friday Las Vegas | Arts District Monthly Art Walk',
@@ -22,6 +26,8 @@ export const metadata: Metadata = {
 }
 
 export default function FirstFridaysPage() {
+  const [next] = getUpcomingFirstFridays(1)
+
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
@@ -38,16 +44,20 @@ export default function FirstFridaysPage() {
             <p className="text-white font-semibold">
               Every First Friday of the Month | 5:00 PM - 11:00 PM
             </p>
+            <p className="text-white/90 text-sm mt-1">Next: {next.label}</p>
           </div>
         </div>
       </section>
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        <SectionFigure image="firstFridayNight" priority />
+      </div>
 
       {/* Event Schema for First Friday */}
       <EventSchema
         name="First Friday Las Vegas"
         description="Las Vegas's largest monthly art event in the Arts District. Gallery openings, live music, food trucks, street performers, and artisan markets."
-        startDate="2025-02-07T17:00:00-08:00"
-        endDate="2025-02-07T23:00:00-08:00"
+        startDate={next.startDate}
+        endDate={next.endDate}
         location={{
           name: "Las Vegas Arts District",
           address: {
@@ -115,8 +125,8 @@ export default function FirstFridaysPage() {
               {' '}information booth near Main Street and Charleston to grab an event 
               map showing all participating galleries, food vendors, and performance stages. Come with comfortable walking shoes, bring 
               cash for artisan vendors (though most galleries and food trucks accept cards), and don't hesitate to engage with artists 
-              and gallery owners—they're passionate about sharing their work and stories. The event is family-friendly earlier in the 
-              evening, though crowds and atmosphere become more adult-oriented after 9 PM. Consider purchasing art during First Friday 
+              and gallery owners—they're passionate about sharing their work and stories. Early evening
+              is the best time to browse galleries before crowds peak, and live music and bar venues stay busy after 9 PM. Consider purchasing art during First Friday 
               to support local artists and acquire unique pieces that remind you of Las Vegas's creative soul beyond the Strip's 
               commercial galleries.
             </p>

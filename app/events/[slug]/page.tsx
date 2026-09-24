@@ -10,6 +10,16 @@ type EventPageProps = {
   params: Promise<{ slug: string }>
 }
 
+const eventDateFormat = new Intl.DateTimeFormat('en-US', {
+  weekday: 'long',
+  month: 'long',
+  day: 'numeric',
+  year: 'numeric',
+  timeZone: 'America/Los_Angeles',
+})
+
+export const revalidate = 86400
+
 export async function generateStaticParams() {
   return getAllEventSlugs().map((slug) => ({ slug }))
 }
@@ -45,16 +55,26 @@ export default async function EventDetailPage({ params }: EventPageProps) {
     { name: event.title.split('|')[0].trim(), url: `/events/${slug}` },
   ]
 
+  const eventDate = eventDateFormat.format(new Date(event.startDate))
+  const hasEnded = new Date(event.endDate).getTime() < Date.now()
+
   return (
     <MidtownContentPage
       h1={event.title.split('|')[0].trim()}
-      heroSubtitle={`${event.startTime} – ${event.endTime} • ${event.location.name}`}
+      heroSubtitle={`${eventDate} • ${event.startTime} – ${event.endTime} • ${event.location.name}`}
       breadcrumbs={breadcrumbs}
+      image="firstFridayNight"
       sections={[
         {
+          heading: 'Event Details',
           paragraphs: [
+            ...(hasEnded
+              ? [
+                  'This event has already taken place. Check the organizer or the official Midtown calendar for the next date.',
+                ]
+              : []),
             `Categories: ${event.categories.join(' • ')}`,
-            `Date: ${event.startTime} – ${event.endTime}`,
+            `Date: ${eventDate}, ${event.startTime} – ${event.endTime}`,
             `Location: ${event.location.streetAddress ? `${event.location.streetAddress}, ` : ''}${event.location.addressLocality}, ${event.location.addressRegion} ${event.location.postalCode ?? ''}`.trim(),
           ],
         },
