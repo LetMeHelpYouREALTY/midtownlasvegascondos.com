@@ -15,6 +15,7 @@ import { CalendlyScript } from './components/calendly-script'
 import { REAL_ESTATE_SITE } from '@/lib/site-persona'
 import { AgentByline } from './components/agent-byline'
 import { getGoogleSiteVerification, SITE_URL } from '@/lib/search-console'
+import { Analytics } from '@vercel/analytics/next'
 
 const inter = Inter({ 
   subsets: ['latin'],
@@ -187,6 +188,7 @@ export default function RootLayout({
         <StickyCTABar />
         <CalendlyScript />
         <CalendlyBadge />
+        <Analytics />
       </body>
     </html>
   )
