@@ -117,13 +117,6 @@ export default function RootLayout({
         {/* Preconnect to CloudFront for RealScout listing images - critical for LCP */}
         <link rel="preconnect" href="https://d1buiexcd5gara.cloudfront.net" crossOrigin="anonymous" />
         <link rel="manifest" href="/manifest.json" />
-        {/* Preload hero image for faster LCP - MUST be before other resources */}
-        <link
-          rel="preload"
-          as="image"
-          href="/images/midtown/blvd-aerial-rendering.jpg"
-          fetchPriority="high"
-        />
         <link rel="apple-touch-icon" href="/icons/apple-touch-icon.png" sizes="180x180" />
         {/* theme-color is supported by Chrome, Edge, Safari, and mobile browsers (not Firefox/Opera) */}
         <meta name="theme-color" content="#0f172a" />
