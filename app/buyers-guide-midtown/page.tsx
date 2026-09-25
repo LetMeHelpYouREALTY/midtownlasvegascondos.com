@@ -44,7 +44,7 @@ export default function BuyersGuideMidtownPage() {
           you navigate the buying process with confidence.
         </p>
 
-        <OfficeListings title="Available Homes in Midtown" description="Start your search with these featured properties" priceMin="250000" priceMax="2000000" propertyTypes=",SFR,CONDO,TC" />
+        <OfficeListings title="Available Homes in Midtown" description="Start your search with these featured properties" priceMin="250000" priceMax="2000000" propertyTypes=",SFR,TC" />
 
         <div className="bg-slate-50 border border-slate-200 rounded-xl p-6 mb-12 max-w-4xl">
           <h2 className="text-xl font-bold text-slate-900 mb-3">

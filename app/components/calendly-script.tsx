@@ -1,20 +1,11 @@
 'use client'
 
-import Script from 'next/script'
-import { CALENDLY_SCRIPT_URL } from '@/lib/calendly-config'
+import { useEffect } from 'react'
+import { loadCalendlyScript } from '@/lib/load-calendly-script'
+import { scheduleDeferredLoad } from '@/lib/schedule-deferred-load'
 
-/** Load Calendly widget.js once site-wide (popup, badge, inline). */
+/** Load Calendly after interaction so the badge script stays off the first paint. */
 export function CalendlyScript() {
-  return (
-    <Script
-      id="calendly-widget-script"
-      src={CALENDLY_SCRIPT_URL}
-      strategy="afterInteractive"
-      onLoad={() => {
-        if (typeof window !== 'undefined') {
-          window.dispatchEvent(new Event('calendly-script-loaded'))
-        }
-      }}
-    />
-  )
+  useEffect(() => scheduleDeferredLoad(() => loadCalendlyScript()), [])
+  return null
 }

@@ -6,6 +6,7 @@ import {
   CALENDLY_INLINE_DEFAULTS,
 } from '@/lib/calendly-config'
 import { useCalendlyReady } from '@/lib/hooks/use-calendly'
+import { loadCalendlyScript } from '@/lib/load-calendly-script'
 
 type CalendlyInlineWidgetProps = {
   url?: string
@@ -25,6 +26,10 @@ export function CalendlyInlineWidget({
   const containerRef = useRef<HTMLDivElement>(null)
   const initializedRef = useRef(false)
   const ready = useCalendlyReady()
+
+  useEffect(() => {
+    loadCalendlyScript()
+  }, [])
 
   useEffect(() => {
     if (!ready || !containerRef.current || initializedRef.current) return

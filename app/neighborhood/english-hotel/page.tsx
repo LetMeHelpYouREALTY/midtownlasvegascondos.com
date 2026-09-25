@@ -37,7 +37,7 @@ export default function EnglishHotelPage() {
           </p>
         </div>
       </section>
-      <OfficeListings title="Homes Near The English Hotel" description="Find your home in the heart of Midtown" priceMin="250000" priceMax="1500000" propertyTypes=",SFR,CONDO,TC" />
+      <OfficeListings title="Homes Near The English Hotel" description="Find your home in the heart of Midtown" priceMin="250000" priceMax="1500000" propertyTypes=",SFR,TC" />
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionFigure image="boutiqueHotelLobby" priority />
       </div>

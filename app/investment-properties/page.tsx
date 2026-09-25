@@ -44,7 +44,7 @@ export default function InvestmentPropertiesPage() {
         </p>
 
         {/* Why Midtown for Investors */}
-        <OfficeListings title="Featured Investment Properties" description="Browse available investment opportunities in Midtown Las Vegas" priceMin="250000" priceMax="1500000" propertyTypes=",SFR,CONDO,TC,MF" />
+        <OfficeListings title="Featured Investment Properties" description="Browse available investment opportunities in Midtown Las Vegas" priceMin="250000" priceMax="1500000" propertyTypes=",SFR,TC" />
         <SectionFigure image="condoBuilding" priority />
         <section className="mb-20">
           <h2 className="text-4xl font-bold text-slate-900 mb-8">

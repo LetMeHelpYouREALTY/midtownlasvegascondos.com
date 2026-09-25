@@ -1,6 +1,5 @@
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
-import Script from 'next/script'
 import { Analytics } from '@vercel/analytics/next'
 import { SpeedInsights } from '@vercel/speed-insights/next'
 import './globals.css'
@@ -109,37 +108,21 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        {/* Core Web Vitals Optimization - Preconnect EARLY to critical third-party domains */}
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link rel="preconnect" href="https://www.googletagmanager.com" />
-        <link rel="preconnect" href="https://em.realscout.com" />
-        <link rel="preconnect" href="https://www.realscout.com" />
-        {/* Preconnect to CloudFront for RealScout listing images - critical for LCP */}
-        <link rel="preconnect" href="https://d1buiexcd5gara.cloudfront.net" crossOrigin="anonymous" />
         <link rel="manifest" href="/manifest.json" />
         <link rel="apple-touch-icon" href="/icons/apple-touch-icon.png" sizes="180x180" />
         {/* theme-color is supported by Chrome, Edge, Safari, and mobile browsers (not Firefox/Opera) */}
         <meta name="theme-color" content="#0f172a" />
-        {/* DNS Prefetch for non-critical resources */}
+        {/* DNS prefetch only. Preconnecting these hosts competed with the hero image. */}
         <link rel="dns-prefetch" href="https://assets.calendly.com" />
         <link rel="dns-prefetch" href="https://calendly.com" />
         <link rel="dns-prefetch" href="https://widgetbe.com" />
+        <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+        <link rel="dns-prefetch" href="https://em.realscout.com" />
+        <link rel="dns-prefetch" href="https://www.realscout.com" />
+        <link rel="dns-prefetch" href="https://d1buiexcd5gara.cloudfront.net" />
         <link rel="dns-prefetch" href="https://maps.googleapis.com" />
         <link rel="dns-prefetch" href="https://storage.googleapis.com" />
         <meta httpEquiv="x-dns-prefetch-control" content="on" />
-        {/* RealScout widget script - load after interactive for above-fold widgets */}
-        <Script
-          src="https://em.realscout.com/widgets/realscout-web-components.umd.js"
-          strategy="afterInteractive"
-          id="realscout-web-components-script"
-        />
-        {/* Calendly CSS - loaded asynchronously to avoid render blocking */}
-        <link
-          href="https://assets.calendly.com/assets/external/widget.css"
-          rel="stylesheet"
-          media="print"
-        />
         {/* RealScout widget styles */}
         <style>{`
           realscout-office-listings,
@@ -151,17 +134,6 @@ export default function RootLayout({
             min-height: 200px;
           }
         `}</style>
-        <Script id="calendly-css-loader" strategy="afterInteractive">
-          {`
-            (function() {
-              if (typeof document === 'undefined') return;
-              const link = document.querySelector('link[href*="calendly.com"][media="print"]');
-              if (link) {
-                link.media = 'all';
-              }
-            })();
-          `}
-        </Script>
       </head>
       <body className={`${inter.className} antialiased`}>
         <GoogleAnalytics />
