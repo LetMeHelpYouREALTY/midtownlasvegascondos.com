@@ -5,11 +5,12 @@ import { CalendlyInlineWidget } from '../components/calendly-inline-widget'
 import { CalendlyLink } from '../components/calendly-link'
 import { Breadcrumb } from '../components/breadcrumb'
 import { RealScoutSection } from '../components/realscout-section'
-import { REAL_ESTATE_SITE, formatPostalAddress } from '@/lib/site-persona'
+import { OFFICE_ADDRESS, REAL_ESTATE_SITE, formatPostalAddress } from '@/lib/site-persona'
 import { SectionFigure } from '@/app/components/section-figure'
 import { OfficeListings } from '@/app/components/office-listings'
 
-const officeMapQuery = encodeURIComponent(formatPostalAddress(REAL_ESTATE_SITE.address))
+// Brokerage administrative office (Russell Rd) — not this business's primary NAP.
+const officeMapQuery = encodeURIComponent(formatPostalAddress(OFFICE_ADDRESS))
 const midtownMapQuery = encodeURIComponent(formatPostalAddress(REAL_ESTATE_SITE.midtownShowroom))
 
 export const metadata: Metadata = {
@@ -243,9 +244,9 @@ export default function ContactPage() {
                   Office
                 </h3>
                 <p className="text-slate-600 ml-9">
-                  {REAL_ESTATE_SITE.address.street}<br />
-                  {REAL_ESTATE_SITE.address.city}, {REAL_ESTATE_SITE.address.region}{' '}
-                  {REAL_ESTATE_SITE.address.postalCode}
+                  {OFFICE_ADDRESS.street}<br />
+                  {OFFICE_ADDRESS.city}, {OFFICE_ADDRESS.region}{' '}
+                  {OFFICE_ADDRESS.postalCode}
                 </p>
                 <p className="text-sm text-slate-500 ml-9 mt-2">
                   Same office hub as Nevada Real Estate Group — consultations and paperwork by appointment.
@@ -382,7 +383,7 @@ export default function ContactPage() {
                     loading="lazy"
                     allowFullScreen
                     referrerPolicy="no-referrer-when-downgrade"
-                    title={`${formatPostalAddress(REAL_ESTATE_SITE.address)} - Dr. Jan Duffy office`}
+                    title={`${formatPostalAddress(OFFICE_ADDRESS)} - Dr. Jan Duffy office`}
                   />
                 </div>
                 <p className="text-sm text-slate-600 mt-3">

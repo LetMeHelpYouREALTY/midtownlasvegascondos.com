@@ -1,7 +1,7 @@
 // FAQ Structured Data for SEO
 
 import { CNN_ARTS_DISTRICT_ARTICLE } from '@/lib/citations'
-import { REAL_ESTATE_SITE, formatPostalAddress } from '@/lib/site-persona'
+import { OFFICE_ADDRESS, REAL_ESTATE_SITE, formatPostalAddress } from '@/lib/site-persona'
 
 export function FAQSchema() {
   const schema = {
@@ -21,7 +21,7 @@ export function FAQSchema() {
         name: 'Where is Dr. Jan Duffy\'s office?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: `Dr. Jan Duffy's office is at ${formatPostalAddress(REAL_ESTATE_SITE.address)} — the same Russell Road office hub used by Nevada Real Estate Group. Midtown property tours and English Residences showings meet at ${formatPostalAddress(REAL_ESTATE_SITE.midtownShowroom)} in the Arts District.`,
+          text: `Dr. Jan Duffy's Midtown office is at ${formatPostalAddress(REAL_ESTATE_SITE.address)} in the Arts District — the primary meeting point for property tours and English Residences showings. Paperwork and consultations can also be scheduled at the Russell Road brokerage office (${formatPostalAddress(OFFICE_ADDRESS)}), shared with Nevada Real Estate Group.`,
         },
       },
       {

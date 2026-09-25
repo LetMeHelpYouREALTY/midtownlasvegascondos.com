@@ -47,12 +47,18 @@ export const REAL_ESTATE_SITE = {
   license: 'S.0197614.LLC',
   brokerage: 'Berkshire Hathaway HomeServices Nevada Properties',
   yearsExperience: '30+',
-  /** Business office NAP — matches shared Russell Rd location */
-  address: OFFICE_ADDRESS,
+  /**
+   * Primary business NAP — must match the Google Business Profile listing
+   * ("Las Vegas Arts District Condos | Homes by Dr. Jan Duffy", 921 S Main St, Las Vegas, NV 89101).
+   * The Russell Rd brokerage office (OFFICE_ADDRESS) is a separate, non-primary detail —
+   * referenced directly where it needs to appear (e.g. the Contact page's brokerage-office block).
+   */
+  address: MIDTOWN_SHOWROOM,
   midtownShowroom: MIDTOWN_SHOWROOM,
+  /** Primary business geo — matches the GBP address above (same coordinates as midtownGeo) */
   geo: {
-    latitude: 36.0994,
-    longitude: -115.2624,
+    latitude: 36.1622,
+    longitude: -115.1513,
   },
   midtownGeo: {
     latitude: 36.1622,
