@@ -57,7 +57,7 @@ export function RedditCitationSchema({
     },
     publisher: {
       '@type': 'Organization',
-      name: 'Homes by Dr. Jan Duffy',
+      name: 'Las Vegas Arts District Condos | Homes by Dr. Jan Duffy',
       url: 'https://www.midtownlasvegascondos.com',
     },
     mainEntityOfPage: {

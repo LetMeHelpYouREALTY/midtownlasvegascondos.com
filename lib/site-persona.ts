@@ -16,7 +16,7 @@ export const OFFICE_ADDRESS = {
 
 /** Midtown listings & property tours — not the business office NAP */
 export const MIDTOWN_SHOWROOM = {
-  street: '921 South Main Street',
+  street: '921 S Main St',
   city: 'Las Vegas',
   region: 'NV',
   postalCode: '89101',
@@ -30,7 +30,7 @@ export function formatPostalAddress(
 }
 
 export const REAL_ESTATE_SITE = {
-  name: 'Homes by Dr. Jan Duffy',
+  name: 'Las Vegas Arts District Condos | Homes by Dr. Jan Duffy',
   shortName: 'Dr. Jan Duffy Real Estate',
   /** Header and footer lockup — place name, then the agent line */
   logoTitle: 'Midtown Las Vegas Condos',
@@ -77,7 +77,7 @@ export const REAL_ESTATE_SITE = {
     primaryKeyword: 'Midtown Las Vegas Condos',
     defaultTitle: 'Midtown Las Vegas Condos for Sale | Dr. Jan Duffy',
     titleTemplate: '%s | Dr. Jan Duffy',
-    schemaBrandName: 'Midtown Las Vegas Condos | Homes by Dr. Jan Duffy',
+    schemaBrandName: 'Las Vegas Arts District Condos | Homes by Dr. Jan Duffy',
     openGraphTitle: 'Midtown Las Vegas Condos | Dr. Jan Duffy, REALTOR®',
     manifestName: 'Midtown Las Vegas Condos | Dr. Jan Duffy',
     manifestShortName: 'Midtown · Dr. Jan',
