@@ -704,8 +704,7 @@ export default function HomePage() {
             <div>
               <h3 className="text-xl font-semibold text-slate-900 mb-2">Hours</h3>
               <p className="text-slate-600">
-                Sun-Thu: 9 am – 5 pm<br />
-                Fri-Sat: Closed
+                Sun-Sat: 8 am – 8 pm
               </p>
             </div>
           </div>

@@ -351,9 +351,7 @@ export default function ContactPage() {
                   Office Hours
                 </h3>
                 <p className="text-slate-600 ml-9">
-                  Sunday - Thursday: 9:00 AM - 5:00 PM<br />
-                  Friday - Saturday: Closed<br />
-                  Saturday - Sunday: Closed
+                  Sunday - Saturday: 8:00 AM - 8:00 PM
                 </p>
               </div>
 

@@ -107,8 +107,7 @@ export function Footer() {
                   </a>
                 </p>
                 <p>
-                  Sun-Thu: 9 am – 5 pm<br />
-                  Fri-Sat: Closed
+                  Sun-Sat: 8 am – 8 pm
                 </p>
                 <p className="pt-2 border-t border-slate-800">
                   <span className="text-slate-400 block mb-1">Official neighborhood site (events & dining directory):</span>
