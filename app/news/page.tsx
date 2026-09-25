@@ -10,6 +10,7 @@ import { OFFICIAL_MIDTOWN_SITE, REAL_ESTATE_SITE } from '@/lib/site-persona'
 import { SectionFigure } from '@/app/components/section-figure'
 import { SectionImage } from '@/app/components/section-image'
 import { OfficeListings } from '@/app/components/office-listings'
+import { CNN_ARTS_DISTRICT_ARTICLE } from '@/lib/citations'
 
 export const metadata: Metadata = {
   title: 'Midtown News for Buyers | Arts District Development Updates',
@@ -95,8 +96,16 @@ export default function NewsPage() {
             <Link href="/neighborhood/first-fridays" className="text-slate-900 font-semibold hover:underline">
               First Friday
             </Link>
-            , creating year-round social infrastructure that strengthens neighborhood bonds. CNN's recognition 
-            of the Arts District as "the most exciting neighborhood" validates what locals have known for years—Midtown offers authentic urban culture 
+            , creating year-round social infrastructure that strengthens neighborhood bonds.{' '}
+            <a
+              href={CNN_ARTS_DISTRICT_ARTICLE.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-semibold text-slate-900 hover:underline"
+            >
+              CNN Travel&apos;s {CNN_ARTS_DISTRICT_ARTICLE.published} article
+            </a>{' '}
+            calls the Arts District the most exciting neighborhood in the city, which matches what locals have known for years—Midtown offers authentic urban culture 
             that rivals established arts districts in larger cities.
           </p>
         </div>

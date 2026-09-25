@@ -56,7 +56,7 @@ export default function FirstFridaysPage() {
           </div>
         </div>
       </section>
-      <OfficeListings title="Live in the Heart of First Friday" description="Find your home in the Arts District where First Friday happens" priceMin="250000" priceMax="2000000" propertyTypes=",SFR,CONDO,TC" />
+      <OfficeListings title="Live in the Heart of First Friday" description="Find your home in the Arts District where First Friday happens" priceMin="250000" priceMax="2000000" propertyTypes=",SFR,TC" />
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionFigure image="firstFridayNight" priority />
       </div>

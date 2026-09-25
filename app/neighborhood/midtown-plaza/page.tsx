@@ -44,7 +44,7 @@ export default function MidtownPlazaPage() {
       {/* Content */}
       <section className="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
         <Breadcrumb items={breadcrumbItems} />
-        <OfficeListings title="Homes Near Midtown Plaza" description="Walk to restaurants, shops, and entertainment from these properties" priceMin="450000" priceMax="1300000" propertyTypes=",SFR,TC,MF" />
+        <OfficeListings title="Homes Near Midtown Plaza" description="Walk to restaurants, shops, and entertainment from these properties" priceMin="450000" priceMax="1300000" propertyTypes=",SFR,TC" />
         <SectionFigure image="plazaCourtyard" priority />
         <div className="grid md:grid-cols-2 gap-12 items-center mb-16">
           <div>

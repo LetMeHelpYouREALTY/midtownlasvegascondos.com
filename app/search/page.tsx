@@ -55,7 +55,7 @@ export default function SearchPage() {
       <section className="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
         <div className="mb-8">
           <Breadcrumb items={breadcrumbItems} />
-          <OfficeListings title="All Midtown & Arts District Listings" description="Browse all available properties in and around Midtown" priceMin="450000" priceMax="1300000" propertyTypes=",SFR,TC,MF" />
+          <OfficeListings title="All Midtown & Arts District Listings" description="Browse all available properties in and around Midtown" priceMin="450000" priceMax="1300000" propertyTypes=",SFR,TC" />
           <SectionFigure image="condoBuilding" priority />
         </div>
         <div className="max-w-4xl mx-auto mb-16">

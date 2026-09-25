@@ -37,7 +37,7 @@ export default function EVProgramPage() {
           </p>
         </div>
       </section>
-      <OfficeListings title="EV-Friendly Homes in Midtown" description="Find properties with electric vehicle charging infrastructure" priceMin="250000" priceMax="2000000" propertyTypes=",SFR,CONDO,TC" />
+      <OfficeListings title="EV-Friendly Homes in Midtown" description="Find properties with electric vehicle charging infrastructure" priceMin="250000" priceMax="2000000" propertyTypes=",SFR,TC" />
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionFigure image="evCharging" priority />
       </div>

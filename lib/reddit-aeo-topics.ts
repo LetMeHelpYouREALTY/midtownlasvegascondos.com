@@ -346,7 +346,7 @@ export const REDDIT_AEO_GUIDES: RedditAeoGuide[] = [
     calendlyText: 'Schedule an HOA Review Consultation',
     realScoutTitle: 'Las Vegas Arts District Condos',
     realScoutDescription: 'Compare HOA and pricing across Midtown condo listings with Dr. Jan Duffy.',
-    realScoutPropertyTypes: 'Condo',
+    realScoutPropertyTypes: 'TC',
   },
   {
     slug: 'living-in-arts-district-las-vegas',
@@ -778,7 +778,7 @@ export const REDDIT_AEO_GUIDES: RedditAeoGuide[] = [
     calendlyText: 'Schedule a Midtown vs Strip Comparison Tour',
     realScoutTitle: 'Arts District vs Strip Alternatives',
     realScoutDescription: 'Explore Midtown condos with local Arts District character and walkable daily life.',
-    realScoutPropertyTypes: 'Condo',
+    realScoutPropertyTypes: 'TC',
   },
   {
     slug: 'worth-buying-condo-las-vegas-now',
@@ -862,7 +862,7 @@ export const REDDIT_AEO_GUIDES: RedditAeoGuide[] = [
     calendlyText: 'Schedule a Rent vs Buy Consultation',
     realScoutTitle: 'Las Vegas Condos for Sale',
     realScoutDescription: 'Compare ownership costs across Midtown and Arts District listings.',
-    realScoutPropertyTypes: 'Condo',
+    realScoutPropertyTypes: 'TC',
   },
 ]
 

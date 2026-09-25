@@ -8,6 +8,7 @@ import { Metadata } from 'next'
 import { CalendlyLink } from '@/app/components/calendly-link'
 import { SECTION_IMAGES } from '@/lib/section-images'
 import { OfficeListings } from '@/app/components/office-listings'
+import { CNN_ARTS_DISTRICT_ARTICLE } from '@/lib/citations'
 
 export const metadata: Metadata = {
   title: 'Las Vegas Arts District (18b): Where It Is',
@@ -52,7 +53,7 @@ export default function ArtsDistrictPage() {
           </p>
         </div>
       </section>
-      <OfficeListings title="Arts District Properties" description="Live among galleries, restaurants, and creative spaces" priceMin="450000" priceMax="1300000" propertyTypes=",SFR,TC,MF" />
+      <OfficeListings title="Arts District Properties" description="Live among galleries, restaurants, and creative spaces" priceMin="450000" priceMax="1300000" propertyTypes=",SFR,TC" />
 
       {/* Content */}
       <section className="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
@@ -87,7 +88,7 @@ export default function ArtsDistrictPage() {
           <p className="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
             In March 2024,{' '}
             <a
-              href="https://www.cnn.com/travel/arts-district-las-vegas"
+              href={CNN_ARTS_DISTRICT_ARTICLE.href}
               target="_blank"
               rel="noopener noreferrer"
               className="font-semibold text-slate-900 hover:underline"
@@ -205,8 +206,16 @@ export default function ArtsDistrictPage() {
             authentic character. For potential residents, the question isn't "Is the Arts District worth it?" but rather "Which 
             part of the Arts District fits my lifestyle best?" Whether you prioritize proximity to galleries, walkability to 
             dining, or investment potential near upcoming developments, Dr. Jan can help identify the perfect Arts District location 
-            for your needs. Contact her today to explore your options and discover why CNN called this "the most exciting neighborhood" 
-            in Las Vegas.
+            for your needs. Contact her today to explore your options and discover why{' '}
+            <a
+              href={CNN_ARTS_DISTRICT_ARTICLE.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-semibold text-slate-900 hover:underline"
+            >
+              CNN Travel
+            </a>{' '}
+            called this &quot;the most exciting neighborhood&quot; in Las Vegas.
           </p>
         </div>
 
@@ -275,7 +284,15 @@ export default function ArtsDistrictPage() {
                 {' '}in 2022 brought international attention to Midtown while maintaining the area's authentic character.
               </p>
               <p className="text-base text-white/90 leading-relaxed">
-                CNN's 2024 recognition of the Arts District as "the most exciting neighborhood" in Las Vegas validated what locals had known 
+                <a
+                  href={CNN_ARTS_DISTRICT_ARTICLE.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-semibold text-white hover:underline"
+                >
+                  CNN Travel&apos;s {CNN_ARTS_DISTRICT_ARTICLE.published} recognition
+                </a>{' '}
+                of the Arts District as &quot;the most exciting neighborhood&quot; in Las Vegas validated what locals had known 
                 for years—Midtown offers authentic urban culture that rivals established arts districts in larger cities. Today, the neighborhood 
                 continues to evolve, with new developments like the Plaza Tower scheduled to open in 2025, bringing modern amenities while 
                 preserving the neighborhood's artistic identity.
@@ -370,7 +387,15 @@ export default function ArtsDistrictPage() {
             Make the Arts District Your Home
           </h2>
           <p className="text-xl text-white/90 mb-8">
-            CNN called it "the most exciting neighborhood" in Las Vegas. Contact Dr. Jan to discover 
+            <a
+              href={CNN_ARTS_DISTRICT_ARTICLE.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-semibold text-white hover:underline"
+            >
+              CNN Travel
+            </a>{' '}
+            called it &quot;the most exciting neighborhood&quot; in Las Vegas. Contact Dr. Jan to discover 
             luxury living in the heart of the Arts District.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">

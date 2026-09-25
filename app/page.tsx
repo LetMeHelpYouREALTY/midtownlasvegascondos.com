@@ -13,6 +13,7 @@ import { SitePersonaBanner } from './components/site-persona-banner'
 import { AGENT_PHOTO_ALT, getAgentPhotoUrl } from '@/lib/agent-photo'
 import { SectionFigure } from './components/section-figure'
 import { OfficeListings } from '@/app/components/office-listings'
+import { CNN_ARTS_DISTRICT_ARTICLE } from '@/lib/citations'
 
 export const revalidate = 86400
 
@@ -440,7 +441,11 @@ export default function HomePage() {
               { year: '2014', event: 'Anthony Bourdain highlights Makers & Finders on "Parts Unknown"' },
               { year: '2016', event: 'Majestic Repertory Theatre Opens' },
               { year: '2022', event: 'The English Hotel Opens', event2: 'The Pepper Club Opens', link: '/neighborhood/english-hotel', link2: '/neighborhood/pepper-club' },
-              { year: '2024', event: 'CNN called the Arts District "the most exciting neighborhood" in Las Vegas' },
+              {
+                year: '2024',
+                event: 'CNN Travel called the Arts District "the most exciting neighborhood" in Las Vegas',
+                external: CNN_ARTS_DISTRICT_ARTICLE.href,
+              },
               { year: '2025', event: 'The Plaza Tower will open' },
             ].map((item, index) => (
               <div
@@ -453,7 +458,16 @@ export default function HomePage() {
                   <div className="bg-white p-6 rounded-lg shadow-sm border border-slate-200">
                     <div className="text-3xl font-bold text-slate-900 mb-2">{item.year}</div>
                     <p className="text-slate-600">
-                      {item.link ? (
+                      {item.external ? (
+                        <a
+                          href={item.external}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-slate-900 font-semibold hover:underline"
+                        >
+                          {item.event}
+                        </a>
+                      ) : item.link ? (
                         <Link href={item.link} className="text-slate-900 font-semibold hover:underline">
                           {item.event}
                         </Link>
@@ -612,7 +626,11 @@ export default function HomePage() {
               {
                 question: 'Why should I buy in the Arts District?',
                 answer:
-                  'CNN called it "the most exciting neighborhood" in Las Vegas. You get walkable urban living, monthly First Friday events, 30+ art galleries, locally-owned restaurants, and a vibrant creative community - all while being close to the Strip and downtown.',
+                  'In March 2024, CNN Travel called it "the most exciting neighborhood" in Las Vegas. You get walkable urban living, monthly First Friday events, 30+ art galleries, locally-owned restaurants, and a vibrant creative community - all while being close to the Strip and downtown.',
+                source: {
+                  href: CNN_ARTS_DISTRICT_ARTICLE.href,
+                  label: `${CNN_ARTS_DISTRICT_ARTICLE.label}, ${CNN_ARTS_DISTRICT_ARTICLE.published}`,
+                },
               },
               {
                 question: 'How do I get started?',

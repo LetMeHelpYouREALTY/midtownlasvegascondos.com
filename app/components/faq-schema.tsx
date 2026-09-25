@@ -1,5 +1,6 @@
 // FAQ Structured Data for SEO
 
+import { CNN_ARTS_DISTRICT_ARTICLE } from '@/lib/citations'
 import { REAL_ESTATE_SITE, formatPostalAddress } from '@/lib/site-persona'
 
 export function FAQSchema() {
@@ -52,7 +53,7 @@ export function FAQSchema() {
         name: 'Is Midtown Las Vegas a good investment?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'Midtown has been recognized as one of the fastest-growing neighborhoods in Las Vegas. The English Residences offer unique income potential through hotel management, and the area continues to attract new businesses, galleries, and residents. CNN called the Arts District "the most exciting neighborhood" in Las Vegas.',
+          text: `Midtown has been recognized as one of the fastest-growing neighborhoods in Las Vegas. The English Residences offer unique income potential through hotel management, and the area continues to attract new businesses, galleries, and residents. In ${CNN_ARTS_DISTRICT_ARTICLE.published}, ${CNN_ARTS_DISTRICT_ARTICLE.label} called the Arts District "the most exciting neighborhood" in Las Vegas (${CNN_ARTS_DISTRICT_ARTICLE.href}).`,
         },
       },
       {
@@ -68,7 +69,7 @@ export function FAQSchema() {
         name: 'Why should I buy in Midtown Las Vegas?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'CNN called the Arts District "the most exciting neighborhood" in Las Vegas. You get walkable urban living, monthly First Friday events, 30+ art galleries, locally-owned restaurants, and a vibrant creative community - all while being close to the Strip and downtown. Property values have appreciated 45% since 2015.',
+          text: `In ${CNN_ARTS_DISTRICT_ARTICLE.published}, ${CNN_ARTS_DISTRICT_ARTICLE.label} called the Arts District "the most exciting neighborhood" in Las Vegas (${CNN_ARTS_DISTRICT_ARTICLE.href}). You get walkable urban living, monthly First Friday events, 30+ art galleries, locally-owned restaurants, and a vibrant creative community - all while being close to the Strip and downtown. Property values have appreciated 45% since 2015.`,
         },
       },
       {

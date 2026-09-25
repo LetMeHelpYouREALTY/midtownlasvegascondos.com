@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect, useState } from 'react'
+import { loadCalendlyScript } from '@/lib/load-calendly-script'
 
 declare global {
   interface Window {
@@ -42,7 +43,7 @@ export function useCalendlyReady() {
       }
     }, 100)
 
-    const timeout = setTimeout(() => clearInterval(interval), 8000)
+    const timeout = setTimeout(() => clearInterval(interval), 20000)
 
     return () => {
       window.removeEventListener('calendly-script-loaded', onReady)
@@ -56,6 +57,8 @@ export function useCalendlyReady() {
 
 export function openCalendlyPopup(url: string) {
   if (typeof window === 'undefined') return
+
+  loadCalendlyScript()
 
   try {
     if (window.Calendly) {

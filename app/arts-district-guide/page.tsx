@@ -4,6 +4,7 @@ import { Breadcrumb } from '../components/breadcrumb'
 import { RealScoutSection } from '../components/realscout-section'
 import { SectionFigure } from '@/app/components/section-figure'
 import { OfficeListings } from '@/app/components/office-listings'
+import { CNN_ARTS_DISTRICT_ARTICLE } from '@/lib/citations'
 
 export const metadata: Metadata = {
   title: 'Las Vegas Arts District Things to Do Guide',
@@ -38,12 +39,20 @@ export default function ArtsDistrictGuidePage() {
         </h1>
         <p className="text-xl text-slate-600 mb-12 max-w-3xl">
           Discover the history, culture, dining, galleries, and real estate opportunities in 
-          Las Vegas's most exciting neighborhood. CNN called it "the most exciting neighborhood" 
-          in Las Vegas.
+          Las Vegas&apos;s most exciting neighborhood.{' '}
+          <a
+            href={CNN_ARTS_DISTRICT_ARTICLE.href}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="font-semibold text-slate-900 hover:underline"
+          >
+            CNN Travel
+          </a>{' '}
+          called it &quot;the most exciting neighborhood&quot; in Las Vegas.
         </p>
 
         {/* History Section */}
-        <OfficeListings title="Arts District Homes for Sale" description="Discover available properties in the Las Vegas Arts District" priceMin="250000" priceMax="2000000" propertyTypes=",SFR,CONDO,TC" />
+        <OfficeListings title="Arts District Homes for Sale" description="Discover available properties in the Las Vegas Arts District" priceMin="250000" priceMax="2000000" propertyTypes=",SFR,TC" />
         <SectionFigure image="artsDistrictStreet" priority />
         <section className="mb-20">
           <h2 className="text-4xl font-bold text-slate-900 mb-8">

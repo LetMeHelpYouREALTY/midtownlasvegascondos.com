@@ -41,7 +41,7 @@ export default function RunClubPage() {
           </div>
         </div>
       </section>
-      <OfficeListings title="Live Near the Run Club" description="Find your home in walkable Midtown Las Vegas" priceMin="250000" priceMax="2000000" propertyTypes=",SFR,CONDO,TC" />
+      <OfficeListings title="Live Near the Run Club" description="Find your home in walkable Midtown Las Vegas" priceMin="250000" priceMax="2000000" propertyTypes=",SFR,TC" />
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionFigure image="runRouteSunrise" priority />
       </div>

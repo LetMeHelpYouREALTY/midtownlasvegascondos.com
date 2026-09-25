@@ -5,6 +5,10 @@ import { useState } from 'react'
 interface FAQ {
   question: string
   answer: string
+  source?: {
+    href: string
+    label: string
+  }
 }
 
 interface PageFAQProps {
@@ -47,7 +51,22 @@ export function PageFAQ({ faqs, title = 'Frequently Asked Questions' }: PageFAQP
             </button>
             {openIndex === index && (
               <div className="px-6 py-4 bg-slate-50 border-t border-slate-200">
-                <p className="text-slate-600 leading-relaxed">{faq.answer}</p>
+                <p className="text-slate-600 leading-relaxed">
+                  {faq.answer}
+                  {faq.source ? (
+                    <>
+                      {' '}
+                      <a
+                        href={faq.source.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="font-semibold text-slate-900 underline"
+                      >
+                        {faq.source.label}
+                      </a>
+                    </>
+                  ) : null}
+                </p>
               </div>
             )}
           </div>

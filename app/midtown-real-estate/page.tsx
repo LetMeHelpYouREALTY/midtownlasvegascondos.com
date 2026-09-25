@@ -2,6 +2,7 @@ import Link from 'next/link'
 import { Metadata } from 'next'
 import { Breadcrumb } from '../components/breadcrumb'
 import { RealScoutScript } from '../components/realscout-script'
+import { CNN_ARTS_DISTRICT_ARTICLE } from '@/lib/citations'
 import { CalendlyBookingSection } from '../components/calendly-booking-section'
 import { CalendlyLink } from '../components/calendly-link'
 import { RealScoutSearch } from '../components/realscout-search'
@@ -48,7 +49,7 @@ export default function MidtownRealEstatePage() {
         </p>
 
         {/* Neighborhood Overview */}
-        <OfficeListings title="Featured Midtown Properties" description="Explore luxury condos and homes in the heart of the Arts District" priceMin="450000" priceMax="1300000" propertyTypes=",SFR,TC,MF" />
+        <OfficeListings title="Featured Midtown Properties" description="Explore luxury condos and homes in the heart of the Arts District" priceMin="450000" priceMax="1300000" propertyTypes=",SFR,TC" />
         <SectionFigure image="condoInterior" priority />
         <section className="mb-20">
           <h2 className="text-4xl font-bold text-slate-900 mb-8">
@@ -60,7 +61,15 @@ export default function MidtownRealEstatePage() {
               with galleries, restaurants, and residential options that appeal to buyers seeking authentic downtown Las Vegas living.
             </p>
             <p className="text-lg text-slate-600 leading-relaxed mb-4">
-              CNN called the Arts District "the most exciting neighborhood" in Las Vegas, and 
+              <a
+                href={CNN_ARTS_DISTRICT_ARTICLE.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-semibold text-slate-900 hover:underline"
+              >
+                CNN Travel
+              </a>{' '}
+              called the Arts District &quot;the most exciting neighborhood&quot; in Las Vegas, and 
               Midtown builds on this legacy by providing residential opportunities that allow 
               residents to live within walking distance of world-class amenities. The area features 
               converted warehouses housing contemporary art galleries, chef-driven restaurants 

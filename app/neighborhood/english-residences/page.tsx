@@ -51,7 +51,7 @@ export default function EnglishResidencesPage() {
           </p>
         </div>
       </section>
-      <OfficeListings title="Available English Residences & Midtown Condos" description="Browse luxury condo-hotel units and condominiums in the Arts District" priceMin="450000" priceMax="1300000" propertyTypes=",SFR,TC,MF" />
+      <OfficeListings title="Available English Residences & Midtown Condos" description="Browse luxury condo-hotel units and condominiums in the Arts District" priceMin="450000" priceMax="1300000" propertyTypes=",SFR,TC" />
 
       {/* Content */}
       <section className="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
