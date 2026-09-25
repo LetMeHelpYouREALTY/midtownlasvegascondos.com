@@ -40,7 +40,7 @@ export function Footer() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h3 className="text-2xl font-bold text-center mb-2">Midtown Market Updates</h3>
           <p className="text-center text-sm text-slate-400 mb-6 max-w-xl mx-auto">
-            Listings, buyer tips, and neighborhood news from {REAL_ESTATE_SITE.agentName} — not the official Midtown events calendar.
+            Talk directly with {REAL_ESTATE_SITE.agentName} about listings, buyer tips, and Midtown neighborhood news — not the official Midtown events calendar.
           </p>
           <Newsletter />
         </div>

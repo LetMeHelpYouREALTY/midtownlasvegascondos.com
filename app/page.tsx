@@ -664,7 +664,7 @@ export default function HomePage() {
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-slate-900 text-white">
         <div className="max-w-xl mx-auto text-center">
           <h2 className="text-3xl font-bold mb-4">
-            Get the latest Midtown happenings in your inbox
+            Stay ahead on Midtown happenings — pick a time to talk
           </h2>
           <Newsletter />
         </div>
