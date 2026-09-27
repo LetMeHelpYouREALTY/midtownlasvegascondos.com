@@ -100,7 +100,10 @@ describe('handleCalendlyWebhookPost', () => {
     const payload = sampleWebhook(MIDTOWN_CALENDLY_UTM_SOURCE)
     const body = JSON.stringify(payload)
     const header = signCalendlyWebhookPayload(body, SIGNING_KEY, now)
-    const startWorkflow = mock.fn(async () => undefined)
+    let workflowPayload: CalendlyWebhookPayload | undefined
+    const startWorkflow = async (received: CalendlyWebhookPayload) => {
+      workflowPayload = received
+    }
 
     const result = await handleCalendlyWebhookPost(body, header, {
       signingKey: SIGNING_KEY,
@@ -112,10 +115,6 @@ describe('handleCalendlyWebhookPost', () => {
     assert.deepEqual(result.body, {
       message: 'Webhook received; lead workflow started',
     })
-    assert.equal(startWorkflow.mock.calls.length, 1)
-    const startedPayload = (
-      startWorkflow.mock.calls[0]?.arguments as [CalendlyWebhookPayload]
-    )[0]
-    assert.deepEqual(startedPayload, payload)
+    assert.deepEqual(workflowPayload, payload)
   })
 })
