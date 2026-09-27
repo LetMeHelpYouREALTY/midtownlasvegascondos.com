@@ -113,8 +113,9 @@ describe('handleCalendlyWebhookPost', () => {
       message: 'Webhook received; lead workflow started',
     })
     assert.equal(startWorkflow.mock.calls.length, 1)
-    const firstCall = startWorkflow.mock.calls[0]
-    assert.ok(firstCall)
-    assert.deepEqual(firstCall.arguments[0], payload)
+    const startedPayload = (
+      startWorkflow.mock.calls[0]?.arguments as [CalendlyWebhookPayload]
+    )[0]
+    assert.deepEqual(startedPayload, payload)
   })
 })
