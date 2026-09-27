@@ -1,7 +1,7 @@
 /**
  * One aggregate rating and its reviews for the site business entity.
  * Google rejects a reviewed item that carries more than one aggregateRating.
- * Do not emit this block from a second JSON-LD node that shares #business.
+ * Do not emit aggregateRating from a second JSON-LD node that shares the agent @id.
  */
 
 export const siteAggregateRating = {

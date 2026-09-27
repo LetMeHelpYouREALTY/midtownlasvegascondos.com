@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import { Metadata } from 'next'
+import { Breadcrumb } from '@/app/components/breadcrumb'
 import { RealScoutSection } from '@/app/components/realscout-section'
 import { SectionFigure } from '@/app/components/section-figure'
 import { SectionImage } from '@/app/components/section-image'
@@ -39,6 +40,13 @@ export default function PepperClubPage() {
       </section>
       <OfficeListings title="Homes Near The English Hotel" description="Condos and homes for sale near 921 S Main St in the Las Vegas Arts District" priceMin="250000" priceMax="1500000" propertyTypes=",SFR,TC" />
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        <Breadcrumb
+          items={[
+            { name: 'Home', url: '/' },
+            { name: 'Neighborhood', url: '/neighborhood' },
+            { name: 'The Pepper Club', url: '/neighborhood/pepper-club' },
+          ]}
+        />
         <aside className="mt-10 rounded-xl border-2 border-amber-300 bg-amber-50 p-6">
           <h2 className="text-xl font-bold text-slate-900 mb-2">The Pepper Club Has Closed</h2>
           <p className="text-slate-700 leading-relaxed">

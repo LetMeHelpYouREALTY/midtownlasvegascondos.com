@@ -1,7 +1,9 @@
-import { REAL_ESTATE_SITE } from '@/lib/site-persona'
-// 2026 SEO: Detailed service offerings enhance E-E-A-T and local relevance
+import { REAL_ESTATE_AGENT_SCHEMA_ID } from '@/lib/schema-ids'
 
-export function ServiceSchema() {
+const agentRef = { '@id': REAL_ESTATE_AGENT_SCHEMA_ID }
+
+/** Service offerings linked to the canonical RealEstateAgent @id. */
+export function getRealEstateServiceCatalogItems() {
   const services = [
     {
       '@type': 'Service',
@@ -13,10 +15,7 @@ export function ServiceSchema() {
         '@type': 'City',
         name: 'Las Vegas Arts District, NV',
       },
-      provider: {
-        '@type': 'RealEstateAgent',
-        name: 'Dr. Jan Duffy',
-      },
+      provider: agentRef,
       offers: {
         '@type': 'Offer',
         priceCurrency: 'USD',
@@ -33,10 +32,7 @@ export function ServiceSchema() {
         '@type': 'City',
         name: 'Las Vegas Arts District, NV',
       },
-      provider: {
-        '@type': 'RealEstateAgent',
-        name: 'Dr. Jan Duffy',
-      },
+      provider: agentRef,
     },
     {
       '@type': 'Service',
@@ -48,10 +44,7 @@ export function ServiceSchema() {
         '@type': 'City',
         name: 'Las Vegas Arts District, NV',
       },
-      provider: {
-        '@type': 'RealEstateAgent',
-        name: 'Dr. Jan Duffy',
-      },
+      provider: agentRef,
       offers: {
         '@type': 'Offer',
         price: '0',
@@ -69,33 +62,13 @@ export function ServiceSchema() {
         '@type': 'City',
         name: 'Las Vegas Arts District, NV',
       },
-      provider: {
-        '@type': 'RealEstateAgent',
-        name: 'Dr. Jan Duffy',
-      },
+      provider: agentRef,
     },
   ]
 
-  const schema = {
-    '@context': 'https://schema.org',
-    '@type': 'LocalBusiness',
-    '@id': 'https://www.midtownlasvegascondos.com#business',
-    name: REAL_ESTATE_SITE.seo.schemaBrandName,
-    hasOfferCatalog: {
-      '@type': 'OfferCatalog',
-      name: 'Real Estate Services',
-      itemListElement: services.map((service, index) => ({
-        '@type': 'OfferCatalogItem',
-        position: index + 1,
-        itemOffered: service,
-      })),
-    },
-  }
-
-  return (
-    <script
-      type="application/ld+json"
-      dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
-    />
-  )
+  return services.map((service, index) => ({
+    '@type': 'OfferCatalogItem',
+    position: index + 1,
+    itemOffered: service,
+  }))
 }

@@ -2,6 +2,7 @@ import { ImageGallery } from '@/app/components/image-gallery'
 import { FloorPlanViewer } from '@/app/components/floor-plan-viewer'
 import { Metadata } from 'next'
 import Link from 'next/link'
+import { Breadcrumb } from '@/app/components/breadcrumb'
 import { RealScoutSection } from '@/app/components/realscout-section'
 import { OfficeListings } from '@/app/components/office-listings'
 
@@ -135,15 +136,14 @@ export default function EnglishResidencesGalleryPage() {
       {/* Header */}
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-slate-50 border-b border-slate-200">
         <div className="max-w-7xl mx-auto">
-          <nav className="text-sm text-slate-600 mb-4">
-            <Link href="/" className="hover:text-slate-900">Home</Link>
-            {' / '}
-            <Link href="/neighborhood/english-residences" className="hover:text-slate-900">
-              The English Residences
-            </Link>
-            {' / '}
-            <span className="text-slate-900">Gallery & Floor Plans</span>
-          </nav>
+          <Breadcrumb
+            items={[
+              { name: 'Home', url: '/' },
+              { name: 'Neighborhood', url: '/neighborhood' },
+              { name: 'The English Residences', url: '/neighborhood/english-residences' },
+              { name: 'Gallery & Floor Plans', url: '/neighborhood/english-residences/gallery' },
+            ]}
+          />
           <h1 className="text-4xl md:text-5xl font-bold text-slate-900 mb-4">
             Gallery & Floor Plans
           </h1>
