@@ -1,9 +1,11 @@
 /**
  * Follow Up Boss API Integration
- * 
+ *
  * This module handles integration with Follow Up Boss CRM
  * to automatically create contacts and leads from Calendly webhooks
  */
+
+import { MIDTOWN_FUB_SOURCE } from '@/lib/calendly-utm'
 
 interface FollowUpBossContact {
   firstName: string
@@ -145,11 +147,11 @@ export async function createContactFromCalendly(
     scheduledTime?: string
     questions?: Array<{ question: string; answer: string }>
     tracking?: {
-      utm_campaign?: string
-      utm_source?: string
-      utm_medium?: string
-      utm_content?: string
-      utm_term?: string
+      utm_campaign?: string | null
+      utm_source?: string | null
+      utm_medium?: string | null
+      utm_content?: string | null
+      utm_term?: string | null
     }
   },
 ): Promise<FollowUpBossAPIResponse> {
@@ -180,7 +182,7 @@ export async function createContactFromCalendly(
         : []),
     ]
 
-    const source = 'midtownlasvegascondos.com'
+    const source = MIDTOWN_FUB_SOURCE
 
     const contact: FollowUpBossContact = {
       firstName: inviteeData.name,
@@ -192,7 +194,7 @@ export async function createContactFromCalendly(
       notes: notes,
       customFields: {
         calendly_appointment_time: inviteeData.scheduledTime,
-        calendly_source: 'Website',
+        calendly_source: MIDTOWN_FUB_SOURCE,
         ...(inviteeData.tracking && {
           utm_campaign: inviteeData.tracking.utm_campaign,
           utm_source: inviteeData.tracking.utm_source,
