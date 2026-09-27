@@ -9,7 +9,7 @@ This document lists all environment variables needed for the site to function pr
 ### Follow Up Boss API Key
 
 **Variable**: `FOLLOW_UP_BOSS_API_KEY`  
-**Value**: `fka_0N4mnN3SvIsd5iQpoTwAbE21ySYkA3rxZD`  
+**Value**: Set in Vercel env `FOLLOW_UP_BOSS_API_KEY` (placeholder: `fka_xxxxxxxx`)  
 **Purpose**: API key for Follow Up Boss CRM integration  
 **Required**: Yes (for CRM automation)
 
@@ -18,13 +18,13 @@ This document lists all environment variables needed for the site to function pr
 2. Navigate to **Settings** → **Environment Variables**
 3. Click **Add New**
 4. Key: `FOLLOW_UP_BOSS_API_KEY`
-5. Value: `fka_0N4mnN3SvIsd5iQpoTwAbE21ySYkA3rxZD`
+5. Value: your Follow Up Boss API key (starts with `fka_`)
 6. Select environments: Production, Preview, Development
 7. Click **Save**
 
 **How to Set Locally (.env.local):**
 ```bash
-FOLLOW_UP_BOSS_API_KEY=fka_0N4mnN3SvIsd5iQpoTwAbE21ySYkA3rxZD
+FOLLOW_UP_BOSS_API_KEY=fka_xxxxxxxx
 ```
 
 ---
@@ -73,13 +73,13 @@ FOLLOW_UP_BOSS_API_KEY=fka_0N4mnN3SvIsd5iQpoTwAbE21ySYkA3rxZD
 ## Environment Variable Checklist
 
 ### Production (Vercel)
-- [x] `FOLLOW_UP_BOSS_API_KEY` - Set to: `fka_0N4mnN3SvIsd5iQpoTwAbE21ySYkA3rxZD`
+- [x] `FOLLOW_UP_BOSS_API_KEY` - Set in Vercel (team-shared key)
 - [ ] `CALENDLY_WEBHOOK_SIGNING_KEY` - Optional but recommended
 - [x] `NEXT_PUBLIC_GA_ID` - Already configured
 
 ### Local Development
 - [ ] Create `.env.local` file
-- [ ] Add `FOLLOW_UP_BOSS_API_KEY=fka_0N4mnN3SvIsd5iQpoTwAbE21ySYkA3rxZD`
+- [ ] Add `FOLLOW_UP_BOSS_API_KEY=fka_xxxxxxxx`
 - [ ] Add other variables as needed
 
 ---

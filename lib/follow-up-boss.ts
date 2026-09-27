@@ -51,12 +51,15 @@ async function makeFUBRequest(
     const apiKey = getFUBAPIKey()
     const url = `${FUB_API_BASE_URL}${endpoint}`
 
+    const basicAuth = Buffer.from(`${apiKey}:`).toString('base64')
+
     const options: RequestInit = {
       method,
       headers: {
-        'Authorization': `Bearer ${apiKey}`,
+        Authorization: `Basic ${basicAuth}`,
         'Content-Type': 'application/json',
-        'Accept': 'application/json',
+        Accept: 'application/json',
+        'X-System': 'midtownlasvegascondos.com',
       },
     }
 
@@ -168,13 +171,16 @@ export async function createContactFromCalendly(
     // Build tags
     const tags = [
       'Calendly',
-      'Website Lead',
-      ...(inviteeData.tracking?.utm_source ? [`Source: ${inviteeData.tracking.utm_source}`] : []),
-      ...(inviteeData.tracking?.utm_campaign ? [`Campaign: ${inviteeData.tracking.utm_campaign}`] : []),
+      'midtownlasvegascondos.com',
+      ...(inviteeData.tracking?.utm_source
+        ? [inviteeData.tracking.utm_source]
+        : []),
+      ...(inviteeData.tracking?.utm_campaign
+        ? [`Campaign: ${inviteeData.tracking.utm_campaign}`]
+        : []),
     ]
 
-    // Determine source
-    const source = inviteeData.tracking?.utm_source || 'Website'
+    const source = 'midtownlasvegascondos.com'
 
     const contact: FollowUpBossContact = {
       firstName: inviteeData.name,

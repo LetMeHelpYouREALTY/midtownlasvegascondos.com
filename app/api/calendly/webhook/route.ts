@@ -31,21 +31,29 @@ export async function POST(request: NextRequest) {
     const payload: CalendlyWebhookPayload = JSON.parse(rawBody)
 
     const signingKey = process.env.CALENDLY_WEBHOOK_SIGNING_KEY
-    if (signingKey) {
-      const signature = request.headers.get('calendly-webhook-signature')
-      if (!signature) {
-        return NextResponse.json(
-          { error: 'Missing webhook signature' },
-          { status: 401 },
-        )
-      }
+    if (!signingKey) {
+      console.error(
+        '[Calendly Webhook] CALENDLY_WEBHOOK_SIGNING_KEY is not configured',
+      )
+      return NextResponse.json(
+        { error: 'webhook signing key not configured' },
+        { status: 401 },
+      )
+    }
 
-      if (!verifyWebhookSignature(rawBody, signature, signingKey)) {
-        return NextResponse.json(
-          { error: 'Invalid webhook signature' },
-          { status: 401 },
-        )
-      }
+    const signature = request.headers.get('calendly-webhook-signature')
+    if (!signature) {
+      return NextResponse.json(
+        { error: 'Missing webhook signature' },
+        { status: 401 },
+      )
+    }
+
+    if (!verifyWebhookSignature(rawBody, signature, signingKey)) {
+      return NextResponse.json(
+        { error: 'Invalid webhook signature' },
+        { status: 401 },
+      )
     }
 
     await start(processCalendlyLead, [payload])

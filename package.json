@@ -10,7 +10,8 @@
     "lint": "next lint",
     "format": "prettier --write \"**/*.{ts,tsx}\"",
     "format:check": "prettier --check \"**/*.{ts,tsx}\"",
-    "workflow:web": "workflow web"
+    "workflow:web": "workflow web",
+    "test": "node --import tsx --test lib/**/*.test.ts"
   },
   "dependencies": {
     "@radix-ui/react-alert-dialog": "^1.1.14",
@@ -43,6 +44,7 @@
     "prettier": "^3.6.2",
     "tailwindcss": "^4",
     "tw-animate-css": "^1.3.5",
+    "tsx": "^4.20.5",
     "typescript": "^5"
   },
   "prettier": {
