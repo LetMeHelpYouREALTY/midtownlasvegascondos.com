@@ -16,13 +16,16 @@ export type CuratedPlace = {
   id: string
   name: string
   categories: AmenityCategoryId[]
-  streetAddress: string
+  /** Omit when address is not verified for JSON-LD */
+  streetAddress?: string
   addressLocality: string
   addressRegion: string
-  postalCode: string
+  postalCode?: string
   lat: number
   lng: number
   schemaType: string
+  /** Official primary source used to verify name/address */
+  sourceUrl: string
   note?: string
 }
 

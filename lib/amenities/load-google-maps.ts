@@ -1,36 +1,30 @@
-declare global {
-  interface Window {
-    __googleMapsLoadPromise?: Promise<void>
-  }
+let mapsReady: Promise<void> | null = null
+export function loadGoogleMaps(apiKey: string): Promise<void> {
+  if (typeof window === 'undefined') return Promise.reject(new Error('ssr'))
+  if (typeof window.google?.maps?.importLibrary === 'function') return Promise.resolve()
+  if (mapsReady) return mapsReady
+  mapsReady = new Promise<void>((resolve, reject) => {
+    const cb = '__gmapsReady'
+    ;(window as unknown as Record<string, () => void>)[cb] = () => resolve()
+    ;(window as unknown as { gm_authFailure?: () => void }).gm_authFailure = () => {
+      window.dispatchEvent(new Event('gmaps:auth-failure'))
+      reject(new Error('gm_authFailure'))
+    }
+    const s = document.createElement('script')
+    s.src = `https://maps.googleapis.com/maps/api/js?key=${encodeURIComponent(apiKey)}&v=weekly&loading=async&callback=${cb}`
+    s.async = true
+    s.onerror = () => {
+      mapsReady = null
+      reject(new Error('maps script failed'))
+    }
+    document.head.appendChild(s)
+  })
+  return mapsReady
 }
 
-/** Load Maps JavaScript API once (async bootstrap). */
-export function loadGoogleMapsScript(apiKey: string): Promise<void> {
-  if (typeof window === 'undefined') {
-    return Promise.reject(new Error('Google Maps can only load in the browser'))
-  }
-
-  if (window.google?.maps) {
-    return Promise.resolve()
-  }
-
-  if (window.__googleMapsLoadPromise) {
-    return window.__googleMapsLoadPromise
-  }
-
-  window.__googleMapsLoadPromise = new Promise((resolve, reject) => {
-    const script = document.createElement('script')
-    script.src = `https://maps.googleapis.com/maps/api/js?key=${encodeURIComponent(apiKey)}&loading=async`
-    script.async = true
-    script.defer = true
-    script.dataset.googleMapsLoader = 'true'
-    script.onerror = () => {
-      window.__googleMapsLoadPromise = undefined
-      reject(new Error('Failed to load Google Maps'))
-    }
-    script.onload = () => resolve()
-    document.head.appendChild(script)
+export let mapsAuthFailed = false
+if (typeof window !== 'undefined') {
+  window.addEventListener('gmaps:auth-failure', () => {
+    mapsAuthFailed = true
   })
-
-  return window.__googleMapsLoadPromise
 }

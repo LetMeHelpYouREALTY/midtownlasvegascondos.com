@@ -1,8 +1,7 @@
 import type { AmenityCategoryId, CuratedPlace } from './types'
 
 /**
- * Verified places with addresses documented on this site or Midtown event data.
- * Used for fallback map list and ItemList JSON-LD (no invented businesses).
+ * Hyperlocal Midtown / Arts District anchors — each entry verified against sourceUrl.
  */
 export const CURATED_NEARBY_PLACES: CuratedPlace[] = [
   {
@@ -16,6 +15,7 @@ export const CURATED_NEARBY_PLACES: CuratedPlace[] = [
     lat: 36.1612393,
     lng: -115.1522884,
     schemaType: 'Place',
+    sourceUrl: 'https://midtownvegas.com/about/',
     note: 'Arts District hub — The English Hotel, Midtown Plaza, and English Residences',
   },
   {
@@ -29,10 +29,11 @@ export const CURATED_NEARBY_PLACES: CuratedPlace[] = [
     lat: 36.1612393,
     lng: -115.1522884,
     schemaType: 'Hotel',
+    sourceUrl: 'https://www.marriott.com/en-us/hotels/lastd-the-english-hotel-las-vegas-a-tribute-portfolio-hotel/overview/',
   },
   {
-    id: 'kjs-restaurant',
-    name: "KJ's Restaurant",
+    id: 'kjs-social',
+    name: "KJ's Social",
     categories: ['restaurants'],
     streetAddress: '921 South Main Street',
     addressLocality: 'Las Vegas',
@@ -41,6 +42,8 @@ export const CURATED_NEARBY_PLACES: CuratedPlace[] = [
     lat: 36.1612393,
     lng: -115.1522884,
     schemaType: 'Restaurant',
+    sourceUrl: 'https://kjslv.com/',
+    note: 'Inside The English Hotel (formerly The Pepper Club space)',
   },
   {
     id: 'midtown-plaza',
@@ -53,6 +56,7 @@ export const CURATED_NEARBY_PLACES: CuratedPlace[] = [
     lat: 36.1612393,
     lng: -115.1522884,
     schemaType: 'ShoppingCenter',
+    sourceUrl: 'https://midtownvegas.com/about/',
   },
   {
     id: 'market-in-the-alley',
@@ -61,11 +65,12 @@ export const CURATED_NEARBY_PLACES: CuratedPlace[] = [
     streetAddress: '1326 South Main Street',
     addressLocality: 'Las Vegas',
     addressRegion: 'NV',
-    postalCode: '89101',
+    postalCode: '89104',
     lat: 36.1589,
     lng: -115.1521,
     schemaType: 'EventVenue',
-    note: 'Also uses 1401 S Commerce for vendor booths',
+    sourceUrl: 'https://www.marketinthealley.com/pages/vendor',
+    note: 'Flagship Arts District market — also uses 1401 S Commerce for some vendor booths',
   },
   {
     id: 'first-friday-parking-garage',
@@ -78,7 +83,8 @@ export const CURATED_NEARBY_PLACES: CuratedPlace[] = [
     lat: 36.1648,
     lng: -115.1525,
     schemaType: 'ParkingFacility',
-    note: 'Free Park & Ride shuttle for First Friday (per site FAQ)',
+    sourceUrl: 'https://www.lasvegasnevada.gov/News/Blog/Detail/first-friday-parking-in-downtown-las-vegas',
+    note: 'Free Park & Ride shuttle for First Friday (3:00 PM–midnight, per City of Las Vegas)',
   },
   {
     id: 'commerce-street-parking',
@@ -91,6 +97,8 @@ export const CURATED_NEARBY_PLACES: CuratedPlace[] = [
     lat: 36.1595,
     lng: -115.1488,
     schemaType: 'ParkingFacility',
+    sourceUrl: 'https://www.ffflv.org/',
+    note: 'First Friday Foundation lists walk-in parking at 1000 Commerce St',
   },
 ]
 
@@ -101,7 +109,13 @@ export function curatedPlacesForCategory(
 }
 
 export function formatPlaceAddress(place: CuratedPlace): string {
-  return `${place.streetAddress}, ${place.addressLocality}, ${place.addressRegion} ${place.postalCode}`
+  if (place.streetAddress && place.postalCode) {
+    return `${place.streetAddress}, ${place.addressLocality}, ${place.addressRegion} ${place.postalCode}`
+  }
+  if (place.streetAddress) {
+    return `${place.streetAddress}, ${place.addressLocality}, ${place.addressRegion}`
+  }
+  return `${place.addressLocality}, ${place.addressRegion}`
 }
 
 export function googleMapsDirectionsUrl(lat: number, lng: number): string {

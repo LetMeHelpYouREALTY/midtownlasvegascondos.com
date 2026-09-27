@@ -11,27 +11,33 @@ export function AmenitiesPageSchema({ pageUrl }: AmenitiesPageSchemaProps) {
     '@context': 'https://schema.org',
     '@type': 'ItemList',
     name: `Featured places near ${MIDTOWN_COMMUNITY.name}`,
-    itemListElement: CURATED_NEARBY_PLACES.map((place, index) => ({
-      '@type': 'ListItem',
-      position: index + 1,
-      item: {
+    itemListElement: CURATED_NEARBY_PLACES.map((place, index) => {
+      const item: Record<string, unknown> = {
         '@type': place.schemaType,
         name: place.name,
-        address: {
-          '@type': 'PostalAddress',
-          streetAddress: place.streetAddress,
-          addressLocality: place.addressLocality,
-          addressRegion: place.addressRegion,
-          postalCode: place.postalCode,
-          addressCountry: 'US',
-        },
+        url: place.sourceUrl,
         geo: {
           '@type': 'GeoCoordinates',
           latitude: place.lat,
           longitude: place.lng,
         },
-      },
-    })),
+      }
+      if (place.streetAddress) {
+        item.address = {
+          '@type': 'PostalAddress',
+          streetAddress: place.streetAddress,
+          addressLocality: place.addressLocality,
+          addressRegion: place.addressRegion,
+          ...(place.postalCode ? { postalCode: place.postalCode } : {}),
+          addressCountry: 'US',
+        }
+      }
+      return {
+        '@type': 'ListItem',
+        position: index + 1,
+        item,
+      }
+    }),
   }
 
   const communityPlaceSchema = {

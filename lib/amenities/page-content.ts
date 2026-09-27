@@ -24,7 +24,7 @@ export const AMENITIES_PAGE_FAQS = [
   {
     question: 'Can I walk to restaurants from Midtown condos?',
     answer:
-      "Yes — KJ's Restaurant, Midtown Plaza, and Arts District dining on Main Street and Charleston are walkable from The English Residences and nearby Midtown inventory.",
+      "Yes — KJ's Social, Midtown Plaza, and Arts District dining on Main Street and Charleston are walkable from The English Residences and nearby Midtown inventory.",
   },
   {
     question: 'How far is Harry Reid International Airport from Midtown?',
@@ -42,7 +42,7 @@ export const AMENITIES_WRITTEN_SECTIONS = [
   {
     id: 'dining',
     title: 'Dining & Nightlife',
-    body: `Midtown anchors Arts District dining at ${MIDTOWN_COMMUNITY.streetAddress}: KJ's Restaurant inside The English Hotel, chef-driven concepts at Midtown Plaza, and walkable spots along South Main Street. First Friday brings food trucks and pop-ups within blocks of English Residences owners.`,
+    body: `Midtown anchors Arts District dining at ${MIDTOWN_COMMUNITY.streetAddress}: KJ's Social inside The English Hotel, chef-driven concepts at Midtown Plaza, and walkable spots along South Main Street. First Friday brings food trucks and pop-ups within blocks of English Residences owners.`,
   },
   {
     id: 'attractions',
