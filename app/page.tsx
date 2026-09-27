@@ -14,6 +14,7 @@ import { AGENT_PHOTO_ALT, getAgentPhotoUrl } from '@/lib/agent-photo'
 import { SectionFigure } from './components/section-figure'
 import { OfficeListings } from '@/app/components/office-listings'
 import { CNN_ARTS_DISTRICT_ARTICLE } from '@/lib/citations'
+import { AmenityMapSection } from '@/app/components/amenity-map/amenity-map-section'
 
 export const revalidate = 86400
 
@@ -320,6 +321,12 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+      <AmenityMapSection
+        title="What's Nearby in Midtown Las Vegas"
+        description="Filter restaurants, attractions, parking, and more around 921 S Main Street — then open the full amenities guide for commute and FAQ details."
+        className="py-20 px-4 sm:px-6 lg:px-8 bg-white border-y border-slate-100"
+      />
 
       {/* Journey of Transformation */}
       <section className="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">

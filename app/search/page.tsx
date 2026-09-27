@@ -6,6 +6,7 @@ import { Breadcrumb } from '../components/breadcrumb'
 import { CalendlyLink } from '../components/calendly-link'
 import { SectionFigure } from '@/app/components/section-figure'
 import { OfficeListings } from '@/app/components/office-listings'
+import { AmenityMapSection } from '@/app/components/amenity-map/amenity-map-section'
 
 export const metadata: Metadata = {
   title: 'Property Search',
@@ -176,6 +177,13 @@ export default function SearchPage() {
 
         <RealScoutSearch priceMin="450000" priceMax="1000000" />
       </section>
+
+      <AmenityMapSection
+        title="What's Near Your Midtown Search Area"
+        description="Compare listings with nearby dining, parking, and Arts District destinations."
+        className="py-16 px-4 sm:px-6 lg:px-8 bg-white"
+        variant="compact"
+      />
 
       {/* Featured Neighborhoods */}
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-slate-50">

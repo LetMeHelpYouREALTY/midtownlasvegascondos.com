@@ -4,6 +4,7 @@ import { Breadcrumb } from '../components/breadcrumb'
 import { RealScoutSection } from '../components/realscout-section'
 import { SectionFigure } from '@/app/components/section-figure'
 import { OfficeListings } from '@/app/components/office-listings'
+import { AmenityMapSection } from '@/app/components/amenity-map/amenity-map-section'
 import { CNN_ARTS_DISTRICT_ARTICLE } from '@/lib/citations'
 
 export const metadata: Metadata = {
@@ -254,6 +255,13 @@ export default function ArtsDistrictGuidePage() {
           priceMin="250000"
           priceMax="2000000"
           className="bg-white mb-20"
+        />
+
+        <AmenityMapSection
+          title="Arts District Amenities Map"
+          description="Explore what surrounds Midtown at 921 S Main St — dining, parking, parks, and more."
+          className="py-16 px-0 mb-20"
+          variant="compact"
         />
 
         {/* CTA Section */}

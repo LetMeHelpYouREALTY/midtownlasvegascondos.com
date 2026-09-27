@@ -8,6 +8,7 @@ import { CalendlyLink } from '../components/calendly-link'
 import { RealScoutSearch } from '../components/realscout-search'
 import { SectionFigure } from '@/app/components/section-figure'
 import { OfficeListings } from '@/app/components/office-listings'
+import { AmenityMapSection } from '@/app/components/amenity-map/amenity-map-section'
 
 export const metadata: Metadata = {
   title: 'Midtown Las Vegas Real Estate & Listings',
@@ -255,6 +256,13 @@ export default function MidtownRealEstatePage() {
           heading="Tour Midtown Listings In Person"
           description="Schedule an in-person consultation with Dr. Jan Duffy to view Arts District condos and English Residences."
           className="px-0 py-12"
+        />
+
+        <AmenityMapSection
+          title="Amenities Near Midtown Listings"
+          description="See restaurants, parking, and daily errands around the Arts District hub while you compare active listings."
+          className="py-16 px-0"
+          variant="compact"
         />
 
         {/* CTA Section */}
