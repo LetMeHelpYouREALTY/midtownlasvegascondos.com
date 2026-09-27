@@ -25,6 +25,7 @@ export function Footer() {
         { name: 'Shop', href: '/midtown/shop' },
         { name: 'Live', href: '/midtown/live' },
         { name: 'Things to Do', href: '/midtown/things-to-do-in-las-vegas' },
+        { name: 'Nearby Amenities', href: '/amenities' },
       ],
     },
     { name: 'Events', href: '/events' },

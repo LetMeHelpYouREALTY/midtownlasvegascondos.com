@@ -10,6 +10,7 @@ import { AgentByline } from '@/app/components/agent-byline'
 import { OFFICIAL_MIDTOWN_SITE, REAL_ESTATE_SITE } from '@/lib/site-persona'
 import { SectionFigure } from '@/app/components/section-figure'
 import { OfficeListings } from '@/app/components/office-listings'
+import { AmenityMapSection } from '@/app/components/amenity-map/amenity-map-section'
 
 export const metadata: Metadata = {
   title: 'Midtown Las Vegas Neighborhood Guide',
@@ -157,6 +158,13 @@ export default function NeighborhoodHubPage() {
           ))}
         </div>
       </section>
+
+      <AmenityMapSection
+        title="Life Near Midtown Las Vegas"
+        description="See what is walkable from the neighborhood hub before you tour English Residences or Arts District condos."
+        className="py-16 px-4 sm:px-6 lg:px-8 bg-slate-50"
+        variant="compact"
+      />
 
       <RealScoutSection
         listingsTitle="Own in Midtown Las Vegas"
