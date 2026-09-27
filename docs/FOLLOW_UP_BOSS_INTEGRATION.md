@@ -25,12 +25,12 @@ Add your Follow Up Boss API key to your environment variables:
 2. Navigate to **Settings** → **Environment Variables**
 3. Add:
    ```
-   FOLLOW_UP_BOSS_API_KEY=fka_0N4mnN3SvIsd5iQpoTwAbE21ySYkA3rxZD
+   FOLLOW_UP_BOSS_API_KEY=fka_xxxxxxxx
    ```
 
 **Local Development (.env.local):**
 ```bash
-FOLLOW_UP_BOSS_API_KEY=fka_0N4mnN3SvIsd5iQpoTwAbE21ySYkA3rxZD
+FOLLOW_UP_BOSS_API_KEY=fka_xxxxxxxx
 ```
 
 ---

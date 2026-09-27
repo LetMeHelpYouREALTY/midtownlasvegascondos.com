@@ -1,10 +1,8 @@
 'use client'
 
 import { useEffect, useRef } from 'react'
-import {
-  CALENDLY_CONSULTATION_URL,
-  CALENDLY_INLINE_DEFAULTS,
-} from '@/lib/calendly-config'
+import { CALENDLY_INLINE_DEFAULTS } from '@/lib/calendly-config'
+import { useCalendlyAttribution } from '@/lib/hooks/use-calendly-attribution'
 import { useCalendlyReady } from '@/lib/hooks/use-calendly'
 import { loadCalendlyScript } from '@/lib/load-calendly-script'
 
@@ -14,18 +12,22 @@ type CalendlyInlineWidgetProps = {
   minWidth?: string
   className?: string
   title?: string
+  utmCampaign?: string
 }
 
 export function CalendlyInlineWidget({
-  url = CALENDLY_CONSULTATION_URL,
+  url: urlOverride,
   height = CALENDLY_INLINE_DEFAULTS.height,
   minWidth = CALENDLY_INLINE_DEFAULTS.minWidth,
   className = '',
   title = 'Schedule an in-person real estate consultation with Dr. Jan Duffy',
+  utmCampaign,
 }: CalendlyInlineWidgetProps) {
   const containerRef = useRef<HTMLDivElement>(null)
   const initializedRef = useRef(false)
   const ready = useCalendlyReady()
+  const { url: attributedUrl, utm } = useCalendlyAttribution(utmCampaign)
+  const url = urlOverride ?? attributedUrl
 
   useEffect(() => {
     loadCalendlyScript()
@@ -41,12 +43,13 @@ export function CalendlyInlineWidget({
       window.Calendly?.initInlineWidget({
         url,
         parentElement: parent,
+        utm,
       })
       initializedRef.current = true
     } catch (error) {
       console.error('[Calendly] Inline widget init failed:', error)
     }
-  }, [ready, url])
+  }, [ready, url, utm])
 
   return (
     <div

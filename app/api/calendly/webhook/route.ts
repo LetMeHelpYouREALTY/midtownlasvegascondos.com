@@ -1,66 +1,28 @@
 import { NextRequest, NextResponse } from 'next/server'
-import crypto from 'crypto'
 import { start } from 'workflow/api'
-import type { CalendlyWebhookPayload } from '@/lib/calendly-types'
+import { handleCalendlyWebhookPost } from '@/lib/calendly-webhook-handler'
 import { processCalendlyLead } from '@/workflows/calendly-lead'
 
-function verifyWebhookSignature(
-  payload: string,
-  signature: string,
-  secret: string,
-): boolean {
-  try {
-    const hmac = crypto.createHmac('sha256', secret)
-    const digest = hmac.update(payload).digest('base64')
-    return crypto.timingSafeEqual(
-      Buffer.from(signature),
-      Buffer.from(digest),
-    )
-  } catch (error) {
-    console.error('Error verifying webhook signature:', error)
-    return false
-  }
-}
-
 /**
- * POST handler — verify signature, then enqueue durable workflow (fast 200).
+ * POST handler — verify signature, filter by Midtown UTM, enqueue workflow.
  */
 export async function POST(request: NextRequest) {
   try {
     const rawBody = await request.text()
-    const payload: CalendlyWebhookPayload = JSON.parse(rawBody)
+    const signatureHeader = request.headers.get('calendly-webhook-signature')
 
-    const signingKey = process.env.CALENDLY_WEBHOOK_SIGNING_KEY
-    if (signingKey) {
-      const signature = request.headers.get('calendly-webhook-signature')
-      if (!signature) {
-        return NextResponse.json(
-          { error: 'Missing webhook signature' },
-          { status: 401 },
-        )
-      }
+    const result = await handleCalendlyWebhookPost(rawBody, signatureHeader, {
+      signingKey: process.env.CALENDLY_WEBHOOK_SIGNING_KEY,
+      startWorkflow: async (payload) => {
+        await start(processCalendlyLead, [payload])
+      },
+    })
 
-      if (!verifyWebhookSignature(rawBody, signature, signingKey)) {
-        return NextResponse.json(
-          { error: 'Invalid webhook signature' },
-          { status: 401 },
-        )
-      }
-    }
-
-    await start(processCalendlyLead, [payload])
-
-    return NextResponse.json(
-      { message: 'Webhook received; lead workflow started' },
-      { status: 200 },
-    )
+    return NextResponse.json(result.body, { status: result.status })
   } catch (error) {
     console.error('[Calendly Webhook] Error:', error)
     return NextResponse.json(
-      {
-        error: 'Error processing webhook',
-        message: error instanceof Error ? error.message : 'Unknown error',
-      },
+      { error: 'Error processing webhook' },
       { status: 200 },
     )
   }

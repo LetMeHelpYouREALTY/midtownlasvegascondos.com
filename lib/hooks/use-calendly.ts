@@ -13,10 +13,24 @@ declare global {
         color: string
         textColor: string
         branding: boolean
+        utm?: {
+          utmCampaign?: string
+          utmSource?: string
+          utmMedium?: string
+          utmContent?: string
+          utmTerm?: string
+        }
       }) => void
       initInlineWidget: (options: {
         url: string
         parentElement: HTMLElement
+        utm?: {
+          utmCampaign?: string
+          utmSource?: string
+          utmMedium?: string
+          utmContent?: string
+          utmTerm?: string
+        }
       }) => void
     }
   }

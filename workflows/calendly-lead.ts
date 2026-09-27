@@ -24,10 +24,12 @@ export async function processCalendlyLead(payload: CalendlyWebhookPayload) {
   }
 }
 
-async function createLeadFromBooking(payload: CalendlyWebhookPayload) {
+async function createLeadFromBooking(webhook: CalendlyWebhookPayload) {
   'use step'
 
-  const { invitee, time } = payload
+  const invitee = webhook.payload
+  const scheduledTime =
+    invitee.scheduled_event?.start_time ?? webhook.created_at
 
   if (!invitee.email?.includes('@')) {
     throw new FatalError('Invalid invitee email')
@@ -36,10 +38,10 @@ async function createLeadFromBooking(payload: CalendlyWebhookPayload) {
   const result = await createContactFromCalendly({
     name: invitee.name,
     email: invitee.email,
-    phone: invitee.text_reminder_number,
-    scheduledTime: time,
+    phone: invitee.text_reminder_number ?? undefined,
+    scheduledTime,
     questions: invitee.questions_and_answers,
-    tracking: invitee.tracking,
+    tracking: invitee.tracking ?? undefined,
   })
 
   if (!result.success) {
@@ -47,18 +49,23 @@ async function createLeadFromBooking(payload: CalendlyWebhookPayload) {
   }
 
   return {
-    event: payload.event,
+    event: webhook.event,
     email: invitee.email,
     rescheduled: invitee.rescheduled,
     fubSuccess: true,
   }
 }
 
-async function recordCancellation(payload: CalendlyWebhookPayload) {
+async function recordCancellation(webhook: CalendlyWebhookPayload) {
   'use step'
 
-  const { invitee, cancel_reason, canceled_at } = payload
-  const note = `Appointment canceled${cancel_reason ? ` - Reason: ${cancel_reason}` : ''}${canceled_at ? ` on ${canceled_at}` : ''}${invitee.rescheduled ? ' (Rescheduled)' : ''}`
+  const invitee = webhook.payload
+  const cancellation = invitee.cancellation
+  const note = `Appointment canceled${
+    cancellation?.reason ? ` - Reason: ${cancellation.reason}` : ''
+  }${cancellation?.created_at ? ` on ${cancellation.created_at}` : ''}${
+    invitee.rescheduled ? ' (Rescheduled)' : ''
+  }`
 
   const result = await addNoteToContact(invitee.email, note)
 
@@ -67,7 +74,7 @@ async function recordCancellation(payload: CalendlyWebhookPayload) {
   }
 
   return {
-    event: payload.event,
+    event: webhook.event,
     email: invitee.email,
     fubSuccess: true,
   }

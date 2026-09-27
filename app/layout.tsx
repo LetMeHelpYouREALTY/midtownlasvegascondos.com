@@ -5,10 +5,9 @@ import { SpeedInsights } from '@vercel/speed-insights/next'
 import './globals.css'
 import { Header } from './components/header'
 import { Footer } from './components/footer'
-import { LocalBusinessSchema, WebSiteSchema, PersonSchema } from './components/structured-data'
+import { LocalBusinessSchema, WebSiteSchema } from './components/structured-data'
 import { FAQSchema } from './components/faq-schema'
 import { GoogleAnalytics } from './components/google-analytics'
-import { ServiceSchema } from './components/service-schema'
 import { StickyCTABar } from './components/sticky-cta-bar'
 import { WidgetTracker } from './components/widget-tracker'
 import { CalendlyBadge } from './components/calendly-badge'
@@ -139,9 +138,7 @@ export default function RootLayout({
         <GoogleAnalytics />
         <WidgetTracker />
         <WebSiteSchema />
-        <PersonSchema />
         <LocalBusinessSchema />
-        <ServiceSchema />
         <FAQSchema />
         <Header />
         <main className="pt-16">{children}</main>

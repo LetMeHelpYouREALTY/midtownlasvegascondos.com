@@ -1,10 +1,13 @@
 // Structured Data (JSON-LD) for SEO
 
 import { getAgentPhotoAbsoluteUrl } from '@/lib/agent-photo'
+import { REAL_ESTATE_AGENT_SCHEMA_ID } from '@/lib/schema-ids'
+import { SITE_URL } from '@/lib/search-console'
 import {
   MIDTOWN_SHOWROOM,
   REAL_ESTATE_SITE,
 } from '@/lib/site-persona'
+import { getRealEstateServiceCatalogItems } from './service-schema'
 import { siteAggregateRating, siteReviews } from './review-schema'
 
 const officePostalAddress = {
@@ -19,13 +22,18 @@ const officePostalAddress = {
 export function LocalBusinessSchema() {
   const schema = {
     '@context': 'https://schema.org',
-    '@type': ['RealEstateAgent', 'RealEstateAgency', 'Organization', 'LocalBusiness'],
-    name: REAL_ESTATE_SITE.seo.schemaBrandName,
+    '@type': 'RealEstateAgent',
+    '@id': REAL_ESTATE_AGENT_SCHEMA_ID,
+    name: REAL_ESTATE_SITE.agentName,
+    alternateName: [
+      REAL_ESTATE_SITE.seo.schemaBrandName,
+      REAL_ESTATE_SITE.shortName,
+      REAL_ESTATE_SITE.name,
+    ],
     description:
       'Discover luxury condos and charming homes in Downtown Las Vegas with Dr. Jan Duffy, a real estate expert with 30+ years of experience. Personalized service guaranteed!',
     image: getAgentPhotoAbsoluteUrl(),
-    '@id': 'https://www.midtownlasvegascondos.com#business',
-    url: 'https://www.midtownlasvegascondos.com',
+    url: REAL_ESTATE_SITE.url,
     telephone: '+17025001980',
     email: 'DrJanSells@MidtownVegasCondos.com',
     foundingDate: '2009-09-20',
@@ -132,13 +140,13 @@ export function LocalBusinessSchema() {
         value: true,
       },
     ],
+    worksFor: {
+      '@type': 'RealEstateAgency',
+      name: REAL_ESTATE_SITE.brokerage,
+      url: 'https://www.berkshirehathawayhs.com',
+    },
     sameAs: [
       'https://www.linkedin.com/company/downtown-las-vegas-condos-and-homes-for-sale',
-    ],
-    additionalType: [
-      'https://schema.org/RealEstateAgent',
-      'https://schema.org/RealEstateAgency',
-      'https://schema.org/RealEstateDeveloper',
     ],
     // GBP Optimization - Business attributes
     paymentAccepted: 'Cash, Check, Credit Card, Financing Available',
@@ -149,36 +157,21 @@ export function LocalBusinessSchema() {
     hasOfferCatalog: {
       '@type': 'OfferCatalog',
       name: 'Real Estate Services',
-      itemListElement: [
-        {
-          '@type': 'OfferCatalogItem',
-          position: 1,
-          itemOffered: {
-            '@type': 'Service',
-            serviceType: 'Real Estate Sales',
-            name: 'Luxury Condo Sales',
-          },
-        },
-        {
-          '@type': 'OfferCatalogItem',
-          position: 2,
-          itemOffered: {
-            '@type': 'Service',
-            serviceType: 'Real Estate Investment Consulting',
-            name: 'Investment Property Consulting',
-          },
-        },
-        {
-          '@type': 'OfferCatalogItem',
-          position: 3,
-          itemOffered: {
-            '@type': 'Service',
-            serviceType: 'Property Tours',
-            name: 'Personalized Property Tours',
-          },
-        },
-      ],
+      itemListElement: getRealEstateServiceCatalogItems(),
     },
+    hasCredential: [
+      {
+        '@type': 'EducationalOccupationalCredential',
+        credentialCategory: 'License',
+        name: 'Nevada Real Estate License',
+        credentialID: REAL_ESTATE_SITE.license,
+        recognizedBy: {
+          '@type': 'Organization',
+          name: 'Nevada Real Estate Division',
+          url: 'https://red.nv.gov',
+        },
+      },
+    ],
   }
 
   return (
@@ -189,6 +182,14 @@ export function LocalBusinessSchema() {
   )
 }
 
+function toAbsoluteSchemaUrl(url: string): string {
+  if (url.startsWith('http://') || url.startsWith('https://')) {
+    return url
+  }
+  const path = url.startsWith('/') ? url : `/${url}`
+  return path === '/' ? `${SITE_URL}/` : `${SITE_URL}${path}`
+}
+
 export function BreadcrumbSchema({ items }: { items: { name: string; url: string }[] }) {
   const schema = {
     '@context': 'https://schema.org',
@@ -197,7 +198,7 @@ export function BreadcrumbSchema({ items }: { items: { name: string; url: string
       '@type': 'ListItem',
       position: index + 1,
       name: item.name,
-      item: item.url,
+      item: toAbsoluteSchemaUrl(item.url),
     })),
   }
 
@@ -272,9 +273,7 @@ export function WebSiteSchema() {
     url: 'https://www.midtownlasvegascondos.com',
     description: REAL_ESTATE_SITE.seo.defaultDescription,
     publisher: {
-      '@type': 'Organization',
-      name: REAL_ESTATE_SITE.seo.schemaBrandName,
-      url: 'https://www.midtownlasvegascondos.com',
+      '@id': REAL_ESTATE_AGENT_SCHEMA_ID,
     },
     potentialAction: [
       {
@@ -323,98 +322,3 @@ export function WebSiteSchema() {
   )
 }
 
-/**
- * Person schema for E-E-A-T (Experience, Expertise, Authoritativeness, Trust)
- * 2026 requirement for verified human experience signals
- * Enhanced with experience signals, awards, and detailed credentials
- */
-export function PersonSchema() {
-  const schema = {
-    '@context': 'https://schema.org',
-    '@type': 'Person',
-    name: 'Dr. Jan Duffy',
-    alternateName: 'Dr. Janet Duffy',
-    jobTitle: 'Real Estate Agent',
-    worksFor: {
-      '@type': 'RealEstateAgency',
-      name: 'Berkshire Hathaway HomeServices Nevada Properties',
-      url: 'https://www.berkshirehathawayhs.com',
-    },
-    description:
-      'Dr. Jan Duffy is a licensed real estate agent specializing in Midtown Las Vegas and Arts District properties. With 30+ years of experience, she provides personalized service for luxury condos, investment properties, and downtown living.',
-    url: 'https://www.midtownlasvegascondos.com/about',
-    image: getAgentPhotoAbsoluteUrl(),
-    email: 'DrJanSells@MidtownVegasCondos.com',
-    telephone: '+17025001980',
-    address: officePostalAddress,
-    sameAs: [
-      'https://www.linkedin.com/company/downtown-las-vegas-condos-and-homes-for-sale',
-    ],
-    knowsAbout: [
-      'Real Estate',
-      'Luxury Condos',
-      'Downtown Las Vegas',
-      'Arts District Real Estate',
-      'Investment Properties',
-      'Property Management',
-      'Real Estate Development',
-      'Condo-Hotel Investments',
-      'Midtown Las Vegas Neighborhood',
-      'First Friday Las Vegas',
-      'The English Residences',
-      'Las Vegas condo HOA fees',
-      'Arts District walkability',
-      'Midtown vs Strip condo living',
-    ],
-    hasCredential: [
-      {
-        '@type': 'EducationalOccupationalCredential',
-        credentialCategory: 'License',
-        name: 'Nevada Real Estate License',
-        credentialAwarded: '1994',
-        recognizedBy: {
-          '@type': 'Organization',
-          name: 'Nevada Real Estate Division',
-          url: 'https://red.nv.gov',
-        },
-      },
-    ],
-    alumniOf: {
-      '@type': 'EducationalOrganization',
-      name: 'Real Estate Education',
-    },
-    // E-E-A-T Experience Signals (2026 requirement)
-    // Years of experience
-    additionalProperty: [
-      {
-        '@type': 'PropertyValue',
-        name: 'Years of Experience',
-        value: '30+',
-      },
-      {
-        '@type': 'PropertyValue',
-        name: 'Specialization',
-        value: 'Midtown Las Vegas Arts District Real Estate',
-      },
-      {
-        '@type': 'PropertyValue',
-        name: 'Service Area',
-        value: 'Las Vegas Arts District, Downtown Las Vegas, Midtown',
-      },
-    ],
-    // Authoritativeness signals
-    memberOf: [
-      {
-        '@type': 'Organization',
-        name: 'Berkshire Hathaway HomeServices Nevada Properties',
-      },
-    ],
-  }
-
-  return (
-    <script
-      type="application/ld+json"
-      dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
-    />
-  )
-}

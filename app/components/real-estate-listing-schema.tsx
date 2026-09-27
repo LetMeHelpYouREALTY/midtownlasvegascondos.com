@@ -1,5 +1,7 @@
 // RealEstateListing Structured Data for SEO
 
+import { REAL_ESTATE_AGENT_SCHEMA_ID } from '@/lib/schema-ids'
+
 interface RealEstateListingSchemaProps {
   url: string
   name: string
@@ -45,11 +47,8 @@ export function RealEstateListingSchema({
       addressCountry: address.addressCountry,
     },
     agent: {
-      '@type': 'RealEstateAgent',
-      name: agentName,
-      url: 'https://www.midtownlasvegascondos.com/about',
-      telephone: '+17025001980',
-      email: 'DrJanSells@MidtownVegasCondos.com',
+      '@id': REAL_ESTATE_AGENT_SCHEMA_ID,
+      ...(agentName !== 'Dr. Jan Duffy' ? { name: agentName } : {}),
     },
     areaServed: {
       '@type': 'City',

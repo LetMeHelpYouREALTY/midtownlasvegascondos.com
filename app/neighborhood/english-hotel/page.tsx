@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import { Metadata } from 'next'
+import { Breadcrumb } from '@/app/components/breadcrumb'
 import { RealScoutSection } from '@/app/components/realscout-section'
 import { SectionFigure } from '@/app/components/section-figure'
 import { SectionImage } from '@/app/components/section-image'
@@ -44,7 +45,14 @@ export default function EnglishHotelPage() {
 
       {/* Content */}
       <section className="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
-        <div className="grid md:grid-cols-2 gap-12 items-center mb-16">
+        <Breadcrumb
+          items={[
+            { name: 'Home', url: '/' },
+            { name: 'Neighborhood', url: '/neighborhood' },
+            { name: 'The English Hotel', url: '/neighborhood/english-hotel' },
+          ]}
+        />
+        <div className="grid md:grid-cols-2 gap-12 items-center mb-16 mt-6">
           <div>
             <h2 className="text-4xl font-bold text-slate-900 mb-6">
               A Unique Hospitality Experience

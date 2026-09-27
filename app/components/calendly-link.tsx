@@ -1,21 +1,26 @@
 'use client'
 
-import { CALENDLY_CONSULTATION_URL } from '@/lib/calendly-config'
 import { openCalendlyPopup } from '@/lib/hooks/use-calendly'
+import { useCalendlyAttribution } from '@/lib/hooks/use-calendly-attribution'
 
 type CalendlyLinkProps = {
   text?: string
   className?: string
   variant?: 'primary' | 'secondary' | 'link'
   url?: string
+  utmCampaign?: string
 }
 
 export function CalendlyLink({
   text = 'Schedule time with me',
   className = '',
   variant = 'primary',
-  url = CALENDLY_CONSULTATION_URL,
+  url: urlOverride,
+  utmCampaign,
 }: CalendlyLinkProps) {
+  const { url: attributedUrl } = useCalendlyAttribution(utmCampaign)
+  const url = urlOverride ?? attributedUrl
+
   const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
     e.preventDefault()
     openCalendlyPopup(url)

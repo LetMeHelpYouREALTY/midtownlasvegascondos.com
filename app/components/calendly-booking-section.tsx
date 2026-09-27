@@ -7,6 +7,7 @@ type CalendlyBookingSectionProps = {
   showPopupFallback?: boolean
   popupText?: string
   className?: string
+  utmCampaign?: string
 }
 
 export function CalendlyBookingSection({
@@ -15,17 +16,23 @@ export function CalendlyBookingSection({
   showPopupFallback = true,
   popupText = 'Schedule time with me',
   className = '',
+  utmCampaign,
 }: CalendlyBookingSectionProps) {
   return (
     <section className={`py-16 px-4 sm:px-6 lg:px-8 ${className}`}>
       <div className="max-w-4xl mx-auto">
         <h2 className="text-3xl font-bold text-slate-900 mb-4 text-center">{heading}</h2>
         <p className="text-lg text-slate-600 mb-8 text-center max-w-2xl mx-auto">{description}</p>
-        <CalendlyInlineWidget className="mx-auto max-w-3xl" />
+        <CalendlyInlineWidget className="mx-auto max-w-3xl" utmCampaign={utmCampaign} />
         {showPopupFallback && (
           <p className="text-center mt-6 text-sm text-slate-600">
             Prefer a popup?{' '}
-            <CalendlyLink text={popupText} variant="link" className="text-slate-900" />
+            <CalendlyLink
+              text={popupText}
+              variant="link"
+              className="text-slate-900"
+              utmCampaign={utmCampaign}
+            />
           </p>
         )}
       </div>

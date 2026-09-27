@@ -2,6 +2,7 @@
 // 2026 SEO: Article schema with author bylines enhances E-E-A-T
 
 import { getAgentPhotoAbsoluteUrl } from '@/lib/agent-photo'
+import { REAL_ESTATE_AGENT_SCHEMA_ID } from '@/lib/schema-ids'
 import { REAL_ESTATE_SITE } from '@/lib/site-persona'
 
 interface ArticleSchemaProps {
@@ -46,14 +47,16 @@ export function ArticleSchema({
       : 'https://www.midtownlasvegascondos.com/og-image.png',
     datePublished,
     dateModified: dateModified || datePublished,
-    author: {
-      '@type': 'Person',
-      name: author.name,
-      ...(author.url && { url: author.url }),
-    },
+    author:
+      author.name === REAL_ESTATE_SITE.agentName
+        ? { '@id': REAL_ESTATE_AGENT_SCHEMA_ID }
+        : {
+            '@type': 'Person',
+            name: author.name,
+            ...(author.url && { url: author.url }),
+          },
     publisher: {
-      '@type': 'Organization',
-      name: publisher.name,
+      '@id': REAL_ESTATE_AGENT_SCHEMA_ID,
       ...(publisher.logo && {
         logo: {
           '@type': 'ImageObject',
