@@ -17,7 +17,7 @@ export function getSiteFaqMainEntity() {
       name: "Where is Dr. Jan Duffy's office?",
       acceptedAnswer: {
         '@type': 'Answer' as const,
-        text: `Dr. Jan Duffy's office is at ${formatPostalAddress(REAL_ESTATE_SITE.address)} — the same Russell Road office hub used by Nevada Real Estate Group. Midtown property tours and English Residences showings meet at ${formatPostalAddress(REAL_ESTATE_SITE.midtownShowroom)} in the Arts District.`,
+        text: `Dr. Jan Duffy's office is at ${formatPostalAddress(REAL_ESTATE_SITE.address)} in the Las Vegas Arts District, where Midtown property tours and English Residences showings meet. Call ${REAL_ESTATE_SITE.phone} to schedule.`,
       },
     },
     {

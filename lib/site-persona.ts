@@ -6,15 +6,15 @@
  * - midtownlasvegascondos.com = Dr. Jan Duffy REALTOR® buyer/advisor site (listings, tours, investment)
  */
 
-/** Shared brokerage office (same as Nevada Real Estate Group / valley team hub) */
+/** Business office NAP — must match the Google Business Profile address exactly */
 export const OFFICE_ADDRESS = {
-  street: '8945 W Russell Rd, Suite 170',
+  street: '921 South Main Street',
   city: 'Las Vegas',
   region: 'NV',
-  postalCode: '89148',
+  postalCode: '89101',
 } as const
 
-/** Midtown listings & property tours — not the business office NAP */
+/** Midtown listings & property tour meeting point */
 export const MIDTOWN_SHOWROOM = {
   street: '921 South Main Street',
   city: 'Las Vegas',
@@ -47,12 +47,11 @@ export const REAL_ESTATE_SITE = {
   license: 'S.0197614.LLC',
   brokerage: 'Berkshire Hathaway HomeServices Nevada Properties',
   yearsExperience: '30+',
-  /** Business office NAP — matches shared Russell Rd location */
   address: OFFICE_ADDRESS,
   midtownShowroom: MIDTOWN_SHOWROOM,
   geo: {
-    latitude: 36.0994,
-    longitude: -115.2624,
+    latitude: 36.1622,
+    longitude: -115.1513,
   },
   midtownGeo: {
     latitude: 36.1622,

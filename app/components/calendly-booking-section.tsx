@@ -12,7 +12,7 @@ type CalendlyBookingSectionProps = {
 
 export function CalendlyBookingSection({
   heading = 'Schedule Your In-Person Consultation',
-  description = 'Book a personalized consultation with Dr. Jan Duffy at the Nevada Real Estate Group office or a Midtown property tour. Choose a time that works for you.',
+  description = 'Book a personalized consultation with Dr. Jan Duffy at the Arts District office or a Midtown property tour. Choose a time that works for you.',
   showPopupFallback = true,
   popupText = 'Schedule time with me',
   className = '',

@@ -248,7 +248,7 @@ export default function ContactPage() {
                   {REAL_ESTATE_SITE.address.postalCode}
                 </p>
                 <p className="text-sm text-slate-500 ml-9 mt-2">
-                  Same office hub as Nevada Real Estate Group — consultations and paperwork by appointment.
+                  Arts District office — consultations and paperwork by appointment.
                 </p>
               </div>
 
