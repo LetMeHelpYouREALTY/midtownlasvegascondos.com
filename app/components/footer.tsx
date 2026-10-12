@@ -29,6 +29,7 @@ export function Footer() {
     },
     { name: 'Events', href: '/events' },
     { name: 'News', href: '/news' },
+    { name: "Seller's Guide", href: '/sellers-guide-midtown' },
     { name: 'About', href: '/about' },
     { name: 'Contact', href: '/contact' },
   ]

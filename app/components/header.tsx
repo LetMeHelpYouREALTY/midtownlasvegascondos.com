@@ -39,6 +39,7 @@ export function Header() {
       items: [
         { name: 'Midtown Real Estate', href: '/midtown-real-estate' },
         { name: "Buyer's Guide", href: '/buyers-guide-midtown' },
+        { name: "Seller's Guide", href: '/sellers-guide-midtown' },
         { name: 'All Buyer Guides', href: '/guides' },
         { name: 'Investment Properties', href: '/investment-properties' },
         { name: 'Arts District Guide', href: '/arts-district-guide' },

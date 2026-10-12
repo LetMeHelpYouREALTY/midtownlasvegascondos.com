@@ -7,8 +7,8 @@ import {
   MIDTOWN_SHOWROOM,
   REAL_ESTATE_SITE,
 } from '@/lib/site-persona'
+import { MIDTOWN_COMMUNITY_AREA_SERVED } from '@/lib/schema-area-served'
 import { getRealEstateServiceCatalogItems } from './service-schema'
-import { siteAggregateRating, siteReviews } from './review-schema'
 
 const officePostalAddress = {
   '@type': 'PostalAddress' as const,
@@ -37,8 +37,6 @@ export function LocalBusinessSchema() {
     telephone: '+17025001980',
     email: 'DrJanSells@MidtownVegasCondos.com',
     foundingDate: '2009-09-20',
-    aggregateRating: siteAggregateRating,
-    review: siteReviews,
     address: officePostalAddress,
     geo: {
       '@type': 'GeoCoordinates',
@@ -62,16 +60,7 @@ export function LocalBusinessSchema() {
       },
     ],
     priceRange: '$$$',
-    areaServed: [
-      {
-        '@type': 'City',
-        name: 'Arts District, Las Vegas, NV, USA',
-      },
-      {
-        '@type': 'City',
-        name: 'Downtown Las Vegas, Las Vegas, NV, USA',
-      },
-    ],
+    areaServed: MIDTOWN_COMMUNITY_AREA_SERVED,
     serviceArea: {
       '@type': 'GeoCircle',
       geoMidpoint: {

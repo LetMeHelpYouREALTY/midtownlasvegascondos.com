@@ -1,3 +1,4 @@
+import { MIDTOWN_COMMUNITY_AREA_SERVED } from '@/lib/schema-area-served'
 import { REAL_ESTATE_AGENT_SCHEMA_ID } from '@/lib/schema-ids'
 
 const agentRef = { '@id': REAL_ESTATE_AGENT_SCHEMA_ID }
@@ -11,10 +12,7 @@ export function getRealEstateServiceCatalogItems() {
       name: 'Luxury Condo Sales',
       description:
         'Expert guidance for buying and selling luxury condominiums in Midtown Las Vegas and the Arts District. Specialized knowledge of The English Residences, Midtown Plaza, and downtown properties.',
-      areaServed: {
-        '@type': 'City',
-        name: 'Las Vegas Arts District, NV',
-      },
+      areaServed: MIDTOWN_COMMUNITY_AREA_SERVED,
       provider: agentRef,
       offers: {
         '@type': 'Offer',
@@ -28,10 +26,7 @@ export function getRealEstateServiceCatalogItems() {
       name: 'Investment Property Consulting',
       description:
         'Comprehensive investment analysis for Midtown properties including ROI calculations, rental income potential, and market trends. Specialized expertise in condo-hotel investments.',
-      areaServed: {
-        '@type': 'City',
-        name: 'Las Vegas Arts District, NV',
-      },
+      areaServed: MIDTOWN_COMMUNITY_AREA_SERVED,
       provider: agentRef,
     },
     {
@@ -40,10 +35,7 @@ export function getRealEstateServiceCatalogItems() {
       name: 'Personalized Property Tours',
       description:
         '30-minute personalized home tours of Midtown Las Vegas properties. Experience the neighborhood, view available homes, and get expert guidance on Arts District living.',
-      areaServed: {
-        '@type': 'City',
-        name: 'Las Vegas Arts District, NV',
-      },
+      areaServed: MIDTOWN_COMMUNITY_AREA_SERVED,
       provider: agentRef,
       offers: {
         '@type': 'Offer',
@@ -58,10 +50,7 @@ export function getRealEstateServiceCatalogItems() {
       name: 'Buyer Consultation',
       description:
         'Expert consultation for first-time and experienced buyers. Learn about Midtown neighborhoods, financing options, and the buying process in the Las Vegas Arts District.',
-      areaServed: {
-        '@type': 'City',
-        name: 'Las Vegas Arts District, NV',
-      },
+      areaServed: MIDTOWN_COMMUNITY_AREA_SERVED,
       provider: agentRef,
     },
   ]

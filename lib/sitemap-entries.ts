@@ -23,6 +23,7 @@ export function buildSitemapEntries(): SitemapEntry[] {
     { url: encodeSitemapLoc(`${SITE_URL}/investment-properties`), lastModified: currentDate, changeFrequency: 'weekly', priority: 0.9 },
     { url: encodeSitemapLoc(`${SITE_URL}/midtown-real-estate`), lastModified: currentDate, changeFrequency: 'daily', priority: 1.0 },
     { url: encodeSitemapLoc(`${SITE_URL}/buyers-guide-midtown`), lastModified: currentDate, changeFrequency: 'monthly', priority: 0.8 },
+    { url: encodeSitemapLoc(`${SITE_URL}/sellers-guide-midtown`), lastModified: currentDate, changeFrequency: 'monthly', priority: 0.85 },
     { url: encodeSitemapLoc(`${SITE_URL}/guides`), lastModified: currentDate, changeFrequency: 'weekly', priority: 0.9 },
     { url: encodeSitemapLoc(`${SITE_URL}/arts-district-guide`), lastModified: currentDate, changeFrequency: 'weekly', priority: 0.9 },
     { url: encodeSitemapLoc(`${SITE_URL}/neighborhood/english-residences`), lastModified: currentDate, changeFrequency: 'weekly', priority: 0.9 },

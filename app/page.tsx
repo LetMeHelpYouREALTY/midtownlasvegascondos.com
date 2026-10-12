@@ -14,6 +14,7 @@ import { AGENT_PHOTO_ALT, getAgentPhotoUrl } from '@/lib/agent-photo'
 import { SectionFigure } from './components/section-figure'
 import { OfficeListings } from '@/app/components/office-listings'
 import { CNN_ARTS_DISTRICT_ARTICLE } from '@/lib/citations'
+import { buildListingConsultationUrl } from '@/lib/calendly-utm'
 
 export const revalidate = 86400
 
@@ -655,6 +656,34 @@ export default function HomePage() {
               className="text-slate-900 hover:text-slate-700 font-semibold underline"
             >
               View All FAQs →
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Seller / home valuation */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white border-t border-slate-100">
+        <div className="max-w-3xl mx-auto text-center">
+          <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-4">
+            Selling a Midtown Las Vegas Condo?
+          </h2>
+          <p className="text-lg text-slate-600 mb-8 leading-relaxed">
+            Dr. Jan Duffy lists units at The English Residences, The English Hotel, and Midtown
+            Plaza. Start with a home valuation consult tailored to condo and condo-hotel ownership
+            at 921 S Main Street.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <a
+              href={buildListingConsultationUrl('homepage-valuation-cta')}
+              className="inline-block px-8 py-4 bg-slate-900 text-white rounded-lg font-semibold hover:bg-slate-800 transition-colors"
+            >
+              Request home valuation with Dr. Jan Duffy
+            </a>
+            <Link
+              href="/sellers-guide-midtown"
+              className="inline-block px-8 py-4 border-2 border-slate-900 text-slate-900 rounded-lg font-semibold hover:bg-slate-50 transition-colors"
+            >
+              Read the seller&apos;s guide
             </Link>
           </div>
         </div>
