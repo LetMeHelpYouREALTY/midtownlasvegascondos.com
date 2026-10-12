@@ -31,9 +31,11 @@ const SELLER_FAQS = [
 ] as const
 
 export const metadata: Metadata = {
-  title: 'Sell Your Midtown Las Vegas Condo | Dr. Jan Duffy',
+  title: {
+    absolute: 'Sell Your Midtown Condo | Dr. Jan Duffy',
+  },
   description:
-    'Sell a condo or condo-hotel unit at English Residences, English Hotel, or Midtown Plaza. Listing strategy and home valuation consult with Dr. Jan Duffy, REALTOR®.',
+    'Sell English Residences, English Hotel, or Midtown Plaza condos. Listing strategy and home valuation consult with Dr. Jan Duffy, REALTOR® in Las Vegas.',
   alternates: {
     canonical: 'https://www.midtownlasvegascondos.com/sellers-guide-midtown',
   },
