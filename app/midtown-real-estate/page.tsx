@@ -7,6 +7,7 @@ import { CalendlyBookingSection } from '../components/calendly-booking-section'
 import { CalendlyLink } from '../components/calendly-link'
 import { RealScoutSearch } from '../components/realscout-search'
 import { SectionFigure } from '@/app/components/section-figure'
+import { MidtownPlaceSchema } from '@/app/components/midtown-place-schema'
 import { OfficeListings } from '@/app/components/office-listings'
 
 export const metadata: Metadata = {
@@ -34,6 +35,7 @@ export default function MidtownRealEstatePage() {
 
   return (
     <>
+      <MidtownPlaceSchema />
       <RealScoutScript />
       <div className="min-h-screen bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
@@ -247,6 +249,29 @@ export default function MidtownRealEstatePage() {
               <p className="text-slate-600">
                 Luxury condo-hotel units with income potential
               </p>
+            </Link>
+          </div>
+        </section>
+
+        <section className="mb-16 grid md:grid-cols-2 gap-6">
+          <div className="border border-slate-200 rounded-xl p-8">
+            <h2 className="text-2xl font-bold text-slate-900 mb-3">Buying in Midtown Las Vegas</h2>
+            <p className="text-slate-600 mb-4 leading-relaxed">
+              Dr. Jan Duffy walks buyers through HOA review, comps, and tours at The English
+              Residences, English Hotel, and Midtown Plaza.
+            </p>
+            <Link href="/buyers-guide-midtown" className="text-slate-900 font-semibold hover:underline">
+              Midtown buyer&apos;s guide →
+            </Link>
+          </div>
+          <div className="border border-slate-200 rounded-xl p-8">
+            <h2 className="text-2xl font-bold text-slate-900 mb-3">Selling a Midtown condo</h2>
+            <p className="text-slate-600 mb-4 leading-relaxed">
+              List English Residences and plaza-area units with a home valuation consult built for
+              condo-hotel and walkable Midtown inventory.
+            </p>
+            <Link href="/sellers-guide-midtown" className="text-slate-900 font-semibold hover:underline">
+              Seller&apos;s guide &amp; valuation →
             </Link>
           </div>
         </section>

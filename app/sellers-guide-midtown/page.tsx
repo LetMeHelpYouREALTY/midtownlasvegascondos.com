@@ -5,6 +5,7 @@ import { PageFAQ } from '../components/page-faq'
 import { PageFAQSchema } from '../components/page-faq-schema'
 import { SectionFigure } from '@/app/components/section-figure'
 import { REAL_ESTATE_SITE } from '@/lib/site-persona'
+import { MidtownPlaceSchema } from '@/app/components/midtown-place-schema'
 import { buildListingConsultationUrl } from '@/lib/calendly-utm'
 
 const SELLER_FAQS = [
@@ -53,6 +54,7 @@ export default function SellersGuideMidtownPage() {
   return (
     <>
       <PageFAQSchema faqs={[...SELLER_FAQS]} />
+      <MidtownPlaceSchema />
       <div className="min-h-screen bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
           <Breadcrumb items={breadcrumbItems} />

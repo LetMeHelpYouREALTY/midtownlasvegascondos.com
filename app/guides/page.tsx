@@ -3,6 +3,7 @@ import { Metadata } from 'next'
 import { Breadcrumb } from '@/app/components/breadcrumb'
 import { CalendlyBookingSection } from '@/app/components/calendly-booking-section'
 import { CalendlyLink } from '@/app/components/calendly-link'
+import { GuidesItemListSchema } from '@/app/components/guides-item-list-schema'
 import { PageFAQSchema } from '@/app/components/page-faq-schema'
 import { REDDIT_AEO_GUIDES } from '@/lib/reddit-aeo-topics'
 import { REAL_ESTATE_SITE } from '@/lib/site-persona'
@@ -52,6 +53,7 @@ export default function GuidesHubPage() {
   return (
     <>
       <PageFAQSchema faqs={hubFaqs} />
+      <GuidesItemListSchema />
 
       <div className="min-h-screen bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
@@ -135,6 +137,12 @@ export default function GuidesHubPage() {
                   FAQ
                 </Link>
                 — common buyer questions
+              </li>
+              <li>
+                <Link href="/sellers-guide-midtown" className="text-slate-900 font-semibold hover:underline">
+                  Seller&apos;s guide
+                </Link>
+                — sell English Residences &amp; Midtown Plaza condos
               </li>
             </ul>
           </section>

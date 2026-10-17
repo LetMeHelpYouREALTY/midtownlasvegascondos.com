@@ -1,3 +1,5 @@
+import { stringifyJsonLd } from '@/lib/json-ld'
+
 interface FAQItem {
   question: string
   answer: string
@@ -24,7 +26,7 @@ export function PageFAQSchema({ faqs }: PageFAQSchemaProps) {
   return (
     <script
       type="application/ld+json"
-      dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+      dangerouslySetInnerHTML={{ __html: stringifyJsonLd(schema) }}
     />
   )
 }

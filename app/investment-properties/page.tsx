@@ -1,7 +1,6 @@
 import Link from 'next/link'
 import { Metadata } from 'next'
 import { Breadcrumb } from '../components/breadcrumb'
-import { RealEstateListingSchema } from '../components/real-estate-listing-schema'
 import { CalendlyLink } from '../components/calendly-link'
 import { RealScoutSection } from '../components/realscout-section'
 import { SectionFigure } from '@/app/components/section-figure'

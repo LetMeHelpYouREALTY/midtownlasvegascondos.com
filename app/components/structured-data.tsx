@@ -1,6 +1,8 @@
 // Structured Data (JSON-LD) for SEO
 
 import { getAgentPhotoAbsoluteUrl } from '@/lib/agent-photo'
+import { stringifyJsonLd } from '@/lib/json-ld'
+import { buildListingConsultationUrl } from '@/lib/calendly-utm'
 import { REAL_ESTATE_AGENT_SCHEMA_ID } from '@/lib/schema-ids'
 import { SITE_URL } from '@/lib/search-console'
 import {
@@ -166,7 +168,7 @@ export function LocalBusinessSchema() {
   return (
     <script
       type="application/ld+json"
-      dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+      dangerouslySetInnerHTML={{ __html: stringifyJsonLd(schema) }}
     />
   )
 }
@@ -194,7 +196,7 @@ export function BreadcrumbSchema({ items }: { items: { name: string; url: string
   return (
     <script
       type="application/ld+json"
-      dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+      dangerouslySetInnerHTML={{ __html: stringifyJsonLd(schema) }}
     />
   )
 }
@@ -237,14 +239,13 @@ export function ResidenceSchema() {
         value: true,
       },
     ],
-    numberOfRooms: '50+',
     petsAllowed: 'Contact for policy',
   }
 
   return (
     <script
       type="application/ld+json"
-      dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+      dangerouslySetInnerHTML={{ __html: stringifyJsonLd(schema) }}
     />
   )
 }
@@ -280,10 +281,22 @@ export function WebSiteSchema() {
       },
       {
         '@type': 'ScheduleAction',
-        name: 'Schedule a home tour consultation',
+        name: 'Schedule a buyer home tour with Dr. Jan Duffy',
         target: {
           '@type': 'EntryPoint',
           urlTemplate: 'https://calendly.com/drjanduffy/in-person-real-estate-consultation',
+          actionPlatform: [
+            'http://schema.org/DesktopWebPlatform',
+            'http://schema.org/MobileWebPlatform',
+          ],
+        },
+      },
+      {
+        '@type': 'ScheduleAction',
+        name: 'Schedule a Midtown listing consultation with Dr. Jan Duffy',
+        target: {
+          '@type': 'EntryPoint',
+          urlTemplate: buildListingConsultationUrl('website-schema-listing-consultation'),
           actionPlatform: [
             'http://schema.org/DesktopWebPlatform',
             'http://schema.org/MobileWebPlatform',
@@ -306,7 +319,7 @@ export function WebSiteSchema() {
   return (
     <script
       type="application/ld+json"
-      dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+      dangerouslySetInnerHTML={{ __html: stringifyJsonLd(schema) }}
     />
   )
 }

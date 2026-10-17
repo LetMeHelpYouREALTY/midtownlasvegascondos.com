@@ -44,6 +44,7 @@ export const GSC_PRIORITY_INDEX_URLS = [
   `${SITE_URL}/midtown-real-estate`,
   `${SITE_URL}/neighborhood/english-residences`,
   `${SITE_URL}/buyers-guide-midtown`,
+  `${SITE_URL}/sellers-guide-midtown`,
   `${SITE_URL}/guides/walkable-arts-district-living`,
   `${SITE_URL}/guides/worth-buying-condo-las-vegas-now`,
 ] as const
