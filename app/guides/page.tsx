@@ -4,6 +4,7 @@ import { Breadcrumb } from '@/app/components/breadcrumb'
 import { CalendlyBookingSection } from '@/app/components/calendly-booking-section'
 import { CalendlyLink } from '@/app/components/calendly-link'
 import { GuidesItemListSchema } from '@/app/components/guides-item-list-schema'
+import { WebPageSchema } from '@/app/components/web-page-schema'
 import { PageFAQSchema } from '@/app/components/page-faq-schema'
 import { REDDIT_AEO_GUIDES } from '@/lib/reddit-aeo-topics'
 import { REAL_ESTATE_SITE } from '@/lib/site-persona'
@@ -54,6 +55,13 @@ export default function GuidesHubPage() {
     <>
       <PageFAQSchema faqs={hubFaqs} />
       <GuidesItemListSchema />
+      <WebPageSchema
+        path="/guides"
+        pageType="CollectionPage"
+        name="Midtown Las Vegas Buyer Guides"
+        description="Las Vegas Arts District and Midtown condo buyer guides — walkability, HOA fees, safety, First Friday living, and rent vs buy. Research informed by local Reddit communities."
+        speakableSelectors={['h1', '.aeo-quick-answer', 'h2']}
+      />
 
       <div className="min-h-screen bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">

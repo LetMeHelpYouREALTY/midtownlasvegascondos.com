@@ -10,12 +10,21 @@ export function GuidesItemListSchema() {
     name: 'Midtown Las Vegas buyer guides by Dr. Jan Duffy',
     description:
       'Reddit-informed Las Vegas Arts District and Midtown condo buyer research guides.',
-    itemListElement: REDDIT_AEO_GUIDES.map((guide, index) => ({
-      '@type': 'ListItem',
-      position: index + 1,
-      name: guide.h1,
-      url: `${REAL_ESTATE_SITE.url}/guides/${guide.slug}`,
-    })),
+    numberOfItems: REDDIT_AEO_GUIDES.length + 1,
+    itemListElement: [
+      ...REDDIT_AEO_GUIDES.map((guide, index) => ({
+        '@type': 'ListItem',
+        position: index + 1,
+        name: guide.h1,
+        url: `${REAL_ESTATE_SITE.url}/guides/${guide.slug}`,
+      })),
+      {
+        '@type': 'ListItem',
+        position: REDDIT_AEO_GUIDES.length + 1,
+        name: 'Sell Your Midtown Las Vegas Condo',
+        url: `${REAL_ESTATE_SITE.url}/sellers-guide-midtown`,
+      },
+    ],
   }
 
   return (

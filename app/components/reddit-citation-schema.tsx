@@ -1,3 +1,6 @@
+import { stringifyJsonLd } from '@/lib/json-ld'
+import { MIDTOWN_PLACE_SCHEMA_ID } from '@/lib/schema-area-served'
+import { REAL_ESTATE_AGENT_SCHEMA_ID } from '@/lib/schema-ids'
 import type { RedditSource } from '@/lib/reddit-aeo-topics'
 
 /**
@@ -49,17 +52,8 @@ export function RedditCitationSchema({
     description,
     datePublished,
     dateModified: dateModified ?? datePublished,
-    author: {
-      '@type': 'Person',
-      name: 'Dr. Jan Duffy',
-      url: 'https://www.midtownlasvegascondos.com/about',
-      jobTitle: 'REALTOR®',
-    },
-    publisher: {
-      '@type': 'Organization',
-      name: 'Homes by Dr. Jan Duffy',
-      url: 'https://www.midtownlasvegascondos.com',
-    },
+    author: { '@id': REAL_ESTATE_AGENT_SCHEMA_ID },
+    publisher: { '@id': REAL_ESTATE_AGENT_SCHEMA_ID },
     mainEntityOfPage: {
       '@type': 'WebPage',
       '@id': url,
@@ -71,18 +65,7 @@ export function RedditCitationSchema({
     citation: redditSources.map(redditCitation),
     isBasedOn: redditSources.map(redditCitation),
     about: [
-      {
-        '@type': 'Place',
-        name: 'Midtown Las Vegas Arts District',
-        address: {
-          '@type': 'PostalAddress',
-          streetAddress: '921 South Main Street',
-          addressLocality: 'Las Vegas',
-          addressRegion: 'NV',
-          postalCode: '89101',
-          addressCountry: 'US',
-        },
-      },
+      { '@id': MIDTOWN_PLACE_SCHEMA_ID },
       {
         '@type': 'Thing',
         name: 'Las Vegas condo buyer research',
@@ -93,7 +76,7 @@ export function RedditCitationSchema({
   return (
     <script
       type="application/ld+json"
-      dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+      dangerouslySetInnerHTML={{ __html: stringifyJsonLd(schema) }}
     />
   )
 }

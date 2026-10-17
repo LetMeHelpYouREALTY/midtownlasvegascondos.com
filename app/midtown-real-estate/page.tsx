@@ -8,6 +8,10 @@ import { CalendlyLink } from '../components/calendly-link'
 import { RealScoutSearch } from '../components/realscout-search'
 import { SectionFigure } from '@/app/components/section-figure'
 import { MidtownPlaceSchema } from '@/app/components/midtown-place-schema'
+import { PageFAQ } from '@/app/components/page-faq'
+import { PageFAQSchema } from '@/app/components/page-faq-schema'
+import { WebPageSchema } from '@/app/components/web-page-schema'
+import { MIDTOWN_REAL_ESTATE_FAQS } from '@/lib/midtown-real-estate-faqs'
 import { OfficeListings } from '@/app/components/office-listings'
 
 export const metadata: Metadata = {
@@ -36,6 +40,12 @@ export default function MidtownRealEstatePage() {
   return (
     <>
       <MidtownPlaceSchema />
+      <WebPageSchema
+        path="/midtown-real-estate"
+        name="Midtown Real Estate Las Vegas"
+        description="Midtown Las Vegas real estate: Arts District condos, English Residences condo-hotels, and nearby homes for sale. Live listings and tours with Dr. Jan Duffy."
+      />
+      <PageFAQSchema faqs={[...MIDTOWN_REAL_ESTATE_FAQS]} />
       <RealScoutScript />
       <div className="min-h-screen bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
@@ -44,10 +54,18 @@ export default function MidtownRealEstatePage() {
         <h1 className="text-5xl md:text-6xl font-bold text-slate-900 mb-6">
           Midtown Real Estate Las Vegas
         </h1>
+        <div className="aeo-quick-answer bg-slate-50 border border-slate-200 rounded-xl p-6 mb-8 max-w-3xl">
+          <p className="text-lg text-slate-700 leading-relaxed">
+            <strong>Quick answer:</strong> Midtown Las Vegas real estate centers on 921 S Main
+            Street — English Residences condo-hotels, The English Hotel, and walkable Midtown
+            Plaza inventory. Dr. Jan Duffy lists and tours these properties with Arts District
+            context.
+          </p>
+        </div>
         <p className="text-xl text-slate-600 mb-12 max-w-3xl">
-          Experience authentic urban living in Las Vegas's most exciting neighborhood. 
-          Midtown offers luxury condos, homes, and unique condo-hotel residences in the 
-          heart of the Arts District.
+          Experience authentic urban living in Las Vegas&apos;s most exciting neighborhood.
+          Midtown offers luxury condos, homes, and unique condo-hotel residences in the heart
+          of the Arts District.
         </p>
 
         {/* Neighborhood Overview */}
@@ -274,6 +292,10 @@ export default function MidtownRealEstatePage() {
               Seller&apos;s guide &amp; valuation →
             </Link>
           </div>
+        </section>
+
+        <section className="mb-16">
+          <PageFAQ faqs={[...MIDTOWN_REAL_ESTATE_FAQS]} title="Midtown real estate FAQs" />
         </section>
 
         <CalendlyBookingSection

@@ -14,6 +14,7 @@ import { AGENT_PHOTO_ALT, getAgentPhotoUrl } from '@/lib/agent-photo'
 import { SectionFigure } from './components/section-figure'
 import { OfficeListings } from '@/app/components/office-listings'
 import { CNN_ARTS_DISTRICT_ARTICLE } from '@/lib/citations'
+import { WebPageSchema } from '@/app/components/web-page-schema'
 import { buildListingConsultationUrl } from '@/lib/calendly-utm'
 
 export const revalidate = 86400
@@ -42,6 +43,12 @@ export const metadata: Metadata = {
 export default function HomePage() {
   return (
     <>
+      <WebPageSchema
+        path="/"
+        name={REAL_ESTATE_SITE.seo.primaryKeyword}
+        description={REAL_ESTATE_SITE.seo.defaultDescription}
+        speakableSelectors={['h1', 'p.text-lg']}
+      />
       <RealScoutScript />
       <div className="min-h-screen bg-white">
       {/* Hero Section */}

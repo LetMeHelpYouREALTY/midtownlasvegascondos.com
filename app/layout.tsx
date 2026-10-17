@@ -5,8 +5,7 @@ import { SpeedInsights } from '@vercel/speed-insights/next'
 import './globals.css'
 import { Header } from './components/header'
 import { Footer } from './components/footer'
-import { LocalBusinessSchema, WebSiteSchema } from './components/structured-data'
-import { FAQSchema } from './components/faq-schema'
+import { SiteSchemaGraph } from './components/site-schema-graph'
 import { GoogleAnalytics } from './components/google-analytics'
 import { StickyCTABar } from './components/sticky-cta-bar'
 import { WidgetTracker } from './components/widget-tracker'
@@ -137,9 +136,7 @@ export default function RootLayout({
       <body className={`${inter.className} antialiased`}>
         <GoogleAnalytics />
         <WidgetTracker />
-        <WebSiteSchema />
-        <LocalBusinessSchema />
-        <FAQSchema />
+        <SiteSchemaGraph />
         <Header />
         <main className="pt-16">{children}</main>
         <div className="border-t border-slate-200 bg-slate-50">

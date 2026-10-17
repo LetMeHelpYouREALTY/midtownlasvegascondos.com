@@ -2,6 +2,7 @@
 // 2026 SEO: Article schema with author bylines enhances E-E-A-T
 
 import { getAgentPhotoAbsoluteUrl } from '@/lib/agent-photo'
+import { stringifyJsonLd } from '@/lib/json-ld'
 import { REAL_ESTATE_AGENT_SCHEMA_ID } from '@/lib/schema-ids'
 import { REAL_ESTATE_SITE } from '@/lib/site-persona'
 
@@ -75,7 +76,7 @@ export function ArticleSchema({
   return (
     <script
       type="application/ld+json"
-      dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+      dangerouslySetInnerHTML={{ __html: stringifyJsonLd(schema) }}
     />
   )
 }

@@ -6,6 +6,7 @@ import { PageFAQSchema } from '../components/page-faq-schema'
 import { SectionFigure } from '@/app/components/section-figure'
 import { REAL_ESTATE_SITE } from '@/lib/site-persona'
 import { MidtownPlaceSchema } from '@/app/components/midtown-place-schema'
+import { WebPageSchema } from '@/app/components/web-page-schema'
 import { buildListingConsultationUrl } from '@/lib/calendly-utm'
 
 const SELLER_FAQS = [
@@ -55,6 +56,12 @@ export default function SellersGuideMidtownPage() {
     <>
       <PageFAQSchema faqs={[...SELLER_FAQS]} />
       <MidtownPlaceSchema />
+      <WebPageSchema
+        path="/sellers-guide-midtown"
+        name="Sell Your Midtown Las Vegas Condo"
+        description="Sell English Residences, English Hotel, or Midtown Plaza condos. Listing strategy and home valuation consult with Dr. Jan Duffy, REALTOR® in Las Vegas."
+        speakableSelectors={['h1', '.aeo-quick-answer', 'h2']}
+      />
       <div className="min-h-screen bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
           <Breadcrumb items={breadcrumbItems} />
@@ -62,9 +69,14 @@ export default function SellersGuideMidtownPage() {
           <h1 className="text-5xl md:text-6xl font-bold text-slate-900 mb-6">
             Sell Your Midtown Las Vegas Condo
           </h1>
+          <div className="aeo-quick-answer bg-slate-50 border border-slate-200 rounded-xl p-6 mb-8 max-w-3xl">
+            <p className="text-lg text-slate-700 leading-relaxed">
+              <strong>Quick answer:</strong> Dr. Jan Duffy lists condo and condo-hotel units at The
+              English Residences, The English Hotel, and Midtown Plaza at 921 S Main Street. Book a
+              listing consultation for a home valuation and prep plan before you list.
+            </p>
+          </div>
           <p className="text-xl text-slate-600 mb-8 max-w-3xl">
-            Dr. Jan Duffy lists condo and condo-hotel units at The English Residences, The English
-            Hotel, and Midtown Plaza — the walkable core at 921 S Main Street in Midtown Las Vegas.
             This seller guide covers what is different about each building and how to start with a
             home valuation consult.
           </p>
