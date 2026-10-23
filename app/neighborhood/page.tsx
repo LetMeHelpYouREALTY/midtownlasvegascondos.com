@@ -58,7 +58,7 @@ const faqs = [
   },
   {
     question: 'Who sells condos in Midtown Las Vegas?',
-    answer: 'Dr. Jan Duffy, Berkshire Hathaway HomeServices Nevada Properties, License S.0197614.LLC. Call (702) 500-1980 for The English Residences.',
+    answer: 'Dr. Jan Duffy, REALTOR®, in real estate since 1983. Call (702) 500-1980 for The English Residences.',
   },
 ]
 

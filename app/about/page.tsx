@@ -13,7 +13,7 @@ import { OfficeListings } from '@/app/components/office-listings'
 
 export const metadata: Metadata = {
   title: 'About Dr. Jan Duffy',
-  description: `${REAL_ESTATE_SITE.agentName}, ${REAL_ESTATE_SITE.agentTitle} — ${REAL_ESTATE_SITE.yearsExperience} years helping Las Vegas buyers with Midtown condos, English Residences, and Arts District investments. Call (702) 500-1980.`,
+  description: `${REAL_ESTATE_SITE.agentName}, ${REAL_ESTATE_SITE.agentTitle} — in real estate since ${REAL_ESTATE_SITE.careerSince}, helping Las Vegas buyers with Midtown condos, English Residences, and Arts District investments. Call (702) 500-1980.`,
   keywords: 'Dr. Jan Duffy realtor, Midtown Las Vegas real estate agent, English Residences specialist, Arts District REALTOR, Berkshire Hathaway Nevada',
   authors: [{ name: 'Dr. Jan Duffy' }],
   creator: 'Dr. Jan Duffy',
@@ -23,7 +23,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: `About ${REAL_ESTATE_SITE.agentName} | Midtown Arts District REALTOR®`,
-    description: `${REAL_ESTATE_SITE.yearsExperience} years guiding buyers through Midtown condos and English Residences ownership.`,
+    description: `In real estate since ${REAL_ESTATE_SITE.careerSince}, guiding buyers through Midtown condos and English Residences ownership.`,
     type: 'website',
     url: 'https://www.midtownlasvegascondos.com/about',
   },
@@ -47,7 +47,7 @@ export default function AboutPage() {
             About {REAL_ESTATE_SITE.agentName}
           </h1>
           <p className="text-xl text-white/90">
-            {REAL_ESTATE_SITE.subtagline} · {REAL_ESTATE_SITE.brokerage}
+            {REAL_ESTATE_SITE.subtagline}
           </p>
         </div>
       </section>
@@ -64,8 +64,8 @@ export default function AboutPage() {
             Your guide to Midtown & Arts District real estate
           </h2>
           <p className="text-lg text-slate-600 mb-6 leading-relaxed">
-            I am {REAL_ESTATE_SITE.agentName}, a licensed REALTOR® ({REAL_ESTATE_SITE.license}) with {REAL_ESTATE_SITE.brokerage}.
-            For {REAL_ESTATE_SITE.yearsExperience} years I have helped Las Vegas buyers and investors navigate condos, townhomes, and condo-hotel
+            I am {REAL_ESTATE_SITE.agentName}, a licensed REALTOR® in real estate since {REAL_ESTATE_SITE.careerSince}.
+            I have helped Las Vegas buyers and investors navigate condos, townhomes, and condo-hotel
             ownership — with a focus on Midtown, the English Residences, and walkable Arts District properties at 921 S Main Street.
           </p>
           <p className="text-lg text-slate-600 mb-6 leading-relaxed">

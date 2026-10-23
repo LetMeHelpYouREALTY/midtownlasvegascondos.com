@@ -88,7 +88,7 @@ export default function HomePage() {
             {REAL_ESTATE_SITE.name}
           </p>
           <p className="text-lg text-white/80 mb-8 max-w-2xl mx-auto">
-            English Residences, Arts District condos, and walkable Midtown listings — private tours and buyer guidance from a {REAL_ESTATE_SITE.yearsExperience}-year Las Vegas specialist.
+            English Residences, Arts District condos, and walkable Midtown listings — private tours and buyer guidance from a Las Vegas specialist in real estate since {REAL_ESTATE_SITE.careerSince}.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <CalendlyLink text="Schedule Your Walk-to-Everything Tour" variant="primary" />
@@ -511,7 +511,7 @@ export default function HomePage() {
               Why Midtown Condo Buyers Hire Dr. Jan Duffy
             </h2>
             <p className="text-xl text-slate-600 max-w-3xl mx-auto">
-              {REAL_ESTATE_SITE.yearsExperience} years of Las Vegas expertise focused on Midtown condos, English Residences, and Arts District investments
+              In real estate since {REAL_ESTATE_SITE.careerSince}, with Las Vegas expertise focused on Midtown condos, English Residences, and Arts District investments
             </p>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">

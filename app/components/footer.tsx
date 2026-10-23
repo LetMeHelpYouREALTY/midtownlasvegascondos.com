@@ -143,7 +143,10 @@ export function Footer() {
           {/* Copyright */}
           <div className="text-center text-sm text-slate-400 border-t border-slate-800 pt-8 space-y-2">
             <p>
-              © {new Date().getFullYear()} {REAL_ESTATE_SITE.name} | {REAL_ESTATE_SITE.agentName} {REAL_ESTATE_SITE.license}. All Rights Reserved.
+              © {new Date().getFullYear()} {REAL_ESTATE_SITE.name} | {REAL_ESTATE_SITE.agentName}. All Rights Reserved.
+            </p>
+            <p>
+              {REAL_ESTATE_SITE.brokerage} since September 2008 · License {REAL_ESTATE_SITE.license}
             </p>
             <p className="text-xs text-slate-500">
               This site is independent real estate guidance — not affiliated with {OFFICIAL_MIDTOWN_SITE.name} ({OFFICIAL_MIDTOWN_SITE.url}).

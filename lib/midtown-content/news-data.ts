@@ -145,13 +145,13 @@ export const MIDTOWN_NEWS: MidtownNewsArticle[] = [
         heading: 'A Marriott Tribute Portfolio Property',
         paragraphs: [
           'As part of Marriott International\'s Tribute Portfolio, The English Residences offer a distinctive blend of independent character and world-class hospitality. Stay when you want, earn when you\'re away — fully owned condo hotels seamlessly managed within The English Hotel\'s collection of rooms.',
-          'Contact Dr. Jan Duffy, Berkshire Hathaway HomeServices Nevada Properties, at (702) 500-1980 for availability and a private tour.',
+          'Contact Dr. Jan Duffy at (702) 500-1980 for availability and a private tour.',
         ],
       },
     ],
     faqs: [
       { question: 'What are The English Residences?', answer: 'Luxury condo-hotel residences at Midtown Las Vegas in the Arts District, managed within The English Hotel Marriott Tribute Portfolio collection.' },
-      { question: 'Who is the listing agent for English Residences?', answer: 'Dr. Jan Duffy, License S.0197614.LLC, Berkshire Hathaway HomeServices Nevada Properties. Call (702) 500-1980.' },
+      { question: 'Who is the listing agent for English Residences?', answer: 'Dr. Jan Duffy, REALTOR®, in real estate since 1983. Call (702) 500-1980.' },
     ],
     relatedLinks: [{ name: 'English Residences Page', href: '/neighborhood/english-residences' }],
   },

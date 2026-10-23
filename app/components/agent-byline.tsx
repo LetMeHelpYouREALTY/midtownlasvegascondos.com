@@ -15,11 +15,11 @@ export function AgentByline({ compact = false }: AgentBylineProps) {
           {REAL_ESTATE_SITE.agentName}, {REAL_ESTATE_SITE.agentTitle}
         </p>
         <p className="text-xs text-slate-600">
-          {REAL_ESTATE_SITE.brokerage} · License {REAL_ESTATE_SITE.license} · {REAL_ESTATE_SITE.phone}
+          {REAL_ESTATE_SITE.phone}
         </p>
         {!compact && (
           <p className="text-xs text-slate-500 mt-1 italic">
-            {REAL_ESTATE_SITE.yearsExperience} years guiding Las Vegas buyers — Midtown & Arts District specialist
+            In real estate since {REAL_ESTATE_SITE.careerSince} — Midtown & Arts District specialist
           </p>
         )}
       </div>

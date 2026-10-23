@@ -146,7 +146,7 @@ export function MidtownContentPage({
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-4xl font-bold mb-6">Live in the Heart of Midtown</h2>
           <p className="text-xl text-white/90 mb-8">
-            Walk to First Friday, dining, and Arts District culture. Contact {REAL_ESTATE_SITE.agentName} at {REAL_ESTATE_SITE.brokerage}.
+            Walk to First Friday, dining, and Arts District culture. Contact {REAL_ESTATE_SITE.agentName}, in real estate since {REAL_ESTATE_SITE.careerSince}.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <CalendlyLink text="Schedule Your Walk-to-Everything Tour" variant="primary" />
@@ -157,9 +157,6 @@ export function MidtownContentPage({
               Call {REAL_ESTATE_SITE.phone}
             </a>
           </div>
-          <p className="mt-6 text-sm text-white/70">
-            {REAL_ESTATE_SITE.agentName} • {REAL_ESTATE_SITE.brokerage} • License {REAL_ESTATE_SITE.license}
-          </p>
         </div>
       </section>
     </div>

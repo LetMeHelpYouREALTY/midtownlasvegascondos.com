@@ -21,7 +21,7 @@ export function getAgentPhotoAbsoluteUrl(): string {
 }
 
 export const AGENT_PHOTO_ALT =
-  'Dr. Jan Duffy, Midtown Las Vegas REALTOR® with 30+ years of Arts District experience'
+  'Dr. Jan Duffy, Midtown Las Vegas REALTOR® in real estate since 1983'
 
 export const AGENT_PHOTO_WIDTH = 180
 export const AGENT_PHOTO_HEIGHT = 180
