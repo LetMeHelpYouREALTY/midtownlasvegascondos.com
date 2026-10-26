@@ -9,9 +9,7 @@ export default function robots(): MetadataRoute.Robots {
         allow: '/',
         disallow: [
           '/api/',
-          '/_next/',
           '/static/',
-          '/listings/',
           '/static/img/icons/',
         ],
       },
@@ -20,9 +18,7 @@ export default function robots(): MetadataRoute.Robots {
         allow: '/',
         disallow: [
           '/api/',
-          '/_next/',
           '/static/',
-          '/listings/',
           '/static/img/icons/',
         ],
       },
@@ -39,21 +35,19 @@ export default function robots(): MetadataRoute.Robots {
         allow: '/',
         disallow: [
           '/api/',
-          '/_next/',
           '/static/',
-          '/listings/',
           '/static/img/icons/',
         ],
       },
       {
         userAgent: 'ChatGPT-User',
         allow: '/',
-        disallow: ['/api/', '/_next/', '/static/'],
+        disallow: ['/api/', '/static/'],
       },
       {
         userAgent: 'GPTBot',
         allow: '/',
-        disallow: ['/api/', '/_next/', '/static/'],
+        disallow: ['/api/', '/static/'],
       },
     ],
     sitemap: SITEMAP_URL,
