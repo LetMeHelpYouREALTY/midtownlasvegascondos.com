@@ -58,7 +58,7 @@ const faqs = [
   },
   {
     question: 'Who sells condos in Midtown Las Vegas?',
-    answer: 'Dr. Jan Duffy, REALTOR®, in real estate since 1983. Call (702) 500-1980 for The English Residences.',
+    answer: 'Dr. Jan Duffy, REALTOR®, licensed since 2008 · 35 years in Las Vegas. Call (702) 500-1980 for The English Residences.',
   },
 ]
 
