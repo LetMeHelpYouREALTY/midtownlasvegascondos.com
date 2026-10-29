@@ -135,7 +135,8 @@ export default function RootLayout({
       </head>
       <body className={`${inter.className} antialiased`}>
         <GoogleAnalytics />
-        <WidgetTracker />
+        {/* Production only: keeps Vercel preview URLs out of the FUB Pixel install list */}
+        {process.env.VERCEL_ENV === "production" && <WidgetTracker />}
         <SiteSchemaGraph />
         <Header />
         <main className="pt-16">{children}</main>
