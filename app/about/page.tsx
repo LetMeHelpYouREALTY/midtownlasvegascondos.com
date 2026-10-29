@@ -47,7 +47,7 @@ export default function AboutPage() {
             About {REAL_ESTATE_SITE.agentName}
           </h1>
           <p className="text-xl text-white/90">
-            {REAL_ESTATE_SITE.subtagline} · Top 1% Las Vegas REALTOR®
+            {REAL_ESTATE_SITE.subtagline} · Las Vegas REALTOR®
           </p>
         </div>
       </section>

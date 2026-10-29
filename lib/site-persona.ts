@@ -46,7 +46,7 @@ export const REAL_ESTATE_SITE = {
   agentTitle: 'REALTOR® · GRI',
   license: 'S.0197614.LLC',
   brokerage: 'Berkshire Hathaway HomeServices Nevada Properties',
-  /** Career start year — body copy says "in real estate since 1983" */
+  /** Career start year — body copy says "licensed since 2008 · 35 years in Las Vegas" */
   careerSince: '1983',
   address: OFFICE_ADDRESS,
   midtownShowroom: MIDTOWN_SHOWROOM,

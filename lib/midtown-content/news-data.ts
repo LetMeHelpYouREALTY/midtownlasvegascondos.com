@@ -151,7 +151,7 @@ export const MIDTOWN_NEWS: MidtownNewsArticle[] = [
     ],
     faqs: [
       { question: 'What are The English Residences?', answer: 'Luxury condo-hotel residences at Midtown Las Vegas in the Arts District, managed within The English Hotel Marriott Tribute Portfolio collection.' },
-      { question: 'Who is the listing agent for English Residences?', answer: 'Dr. Jan Duffy, REALTOR®, in real estate since 1983. Call (702) 500-1980.' },
+      { question: 'Who is the listing agent for English Residences?', answer: 'Dr. Jan Duffy, REALTOR®, licensed since 2008 · 35 years in Las Vegas. Call (702) 500-1980.' },
     ],
     relatedLinks: [{ name: 'English Residences Page', href: '/neighborhood/english-residences' }],
   },
