@@ -7,20 +7,12 @@ export default function robots(): MetadataRoute.Robots {
       {
         userAgent: '*',
         allow: '/',
-        disallow: [
-          '/api/',
-          '/static/',
-          '/static/img/icons/',
-        ],
+        disallow: ['/api/'],
       },
       {
         userAgent: 'Googlebot',
         allow: '/',
-        disallow: [
-          '/api/',
-          '/static/',
-          '/static/img/icons/',
-        ],
+        disallow: ['/api/'],
       },
       {
         userAgent: 'Googlebot-Image',
@@ -33,21 +25,17 @@ export default function robots(): MetadataRoute.Robots {
       {
         userAgent: 'Google-Search-Agent',
         allow: '/',
-        disallow: [
-          '/api/',
-          '/static/',
-          '/static/img/icons/',
-        ],
+        disallow: ['/api/'],
       },
       {
         userAgent: 'ChatGPT-User',
         allow: '/',
-        disallow: ['/api/', '/static/'],
+        disallow: ['/api/'],
       },
       {
         userAgent: 'GPTBot',
         allow: '/',
-        disallow: ['/api/', '/static/'],
+        disallow: ['/api/'],
       },
     ],
     sitemap: SITEMAP_URL,
